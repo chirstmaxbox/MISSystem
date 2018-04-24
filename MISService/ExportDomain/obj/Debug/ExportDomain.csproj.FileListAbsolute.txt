@@ -52,3 +52,9 @@ C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\bin\Debug
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\Debug\ExportDomain.dll
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\Debug\ExportDomain.pdb
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\Debug\ExportDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\bin\Debug\ExportDomain.dll.config
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\bin\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\bin\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.pdb

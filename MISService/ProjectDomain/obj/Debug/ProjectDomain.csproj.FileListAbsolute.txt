@@ -71,3 +71,9 @@ C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\bin\Debu
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.dll
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.pdb
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\bin\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.pdb

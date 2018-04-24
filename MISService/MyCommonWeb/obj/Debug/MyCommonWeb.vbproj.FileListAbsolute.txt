@@ -42,3 +42,14 @@ C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.dll
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.xml
 C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.Resources.resources
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.pdb
