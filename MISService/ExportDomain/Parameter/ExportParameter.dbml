@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sqllhdb" Class="ExportParameterDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=F01\SQLEXPRESS;Initial Catalog=Sqllhdb;Persist Security Info=True;User ID=sa" SettingsObjectName="ExportDomain.Properties.Settings" SettingsPropertyName="SqllhdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ExportParameter" Member="ExportParameters">
+    <Type Name="ExportParameter">
+      <Column Name="PrintingEmployeeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Kam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KamName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cbx1Checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cbx2Checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cbx3Checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cbx4Checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cbx5Checked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstRevID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QuoteRevID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WipTaskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkorderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomInt1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomInt2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomString1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CustomString2" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EstItemID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PrintingEmployeeRoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

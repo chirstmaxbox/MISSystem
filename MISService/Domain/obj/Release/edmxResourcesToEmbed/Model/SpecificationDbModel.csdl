@@ -1,0 +1,2384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpecificationDbModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SpecificationDbEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="EST_Cost_Type_Category" EntityType="SpecificationDbModel.EST_Cost_Type_Category" />
+    <EntitySet Name="EST_Drawing" EntityType="SpecificationDbModel.EST_Drawing" />
+    <EntitySet Name="EST_Item_Drawing" EntityType="SpecificationDbModel.EST_Item_Drawing" />
+    <EntitySet Name="EST_Item_Specification" EntityType="SpecificationDbModel.EST_Item_Specification" />
+    <EntitySet Name="EST_Item_Specification_Template_Option" EntityType="SpecificationDbModel.EST_Item_Specification_Template_Option" />
+    <EntitySet Name="EST_Item_Specification_Template_OptionGroup" EntityType="SpecificationDbModel.EST_Item_Specification_Template_OptionGroup" />
+    <EntitySet Name="EST_Item_Status" EntityType="SpecificationDbModel.EST_Item_Status" />
+    <EntitySet Name="EST_Item_TablePurpose" EntityType="SpecificationDbModel.EST_Item_TablePurpose" />
+    <EntitySet Name="EST_Service" EntityType="SpecificationDbModel.EST_Service" />
+    <EntitySet Name="FW_JOB_TYPE" EntityType="SpecificationDbModel.FW_JOB_TYPE" />
+    <EntitySet Name="JobCostingMaterialTemplates" EntityType="SpecificationDbModel.JobCostingMaterialTemplate" />
+    <EntitySet Name="Products" EntityType="SpecificationDbModel.Product" />
+    <EntitySet Name="ProductFeatures" EntityType="SpecificationDbModel.ProductFeature" />
+    <EntitySet Name="ProductFeatureGroups" EntityType="SpecificationDbModel.ProductFeatureGroup" />
+    <EntitySet Name="RequiredItemPositions" EntityType="SpecificationDbModel.RequiredItemPosition" />
+    <AssociationSet Name="FK_EST_Item_Specification_EST_Item_Specification_Template_OptionGroup" Association="SpecificationDbModel.FK_EST_Item_Specification_EST_Item_Specification_Template_OptionGroup">
+      <End Role="EST_Item_Specification_Template_OptionGroup" EntitySet="EST_Item_Specification_Template_OptionGroup" />
+      <End Role="EST_Item_Specification" EntitySet="EST_Item_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Specification_Template_Option_EST_Item_Specification_Template_OptionGroup" Association="SpecificationDbModel.FK_EST_Item_Specification_Template_Option_EST_Item_Specification_Template_OptionGroup">
+      <End Role="EST_Item_Specification_Template_OptionGroup" EntitySet="EST_Item_Specification_Template_OptionGroup" />
+      <End Role="EST_Item_Specification_Template_Option" EntitySet="EST_Item_Specification_Template_Option" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCostingMaterialTemplate_Product" Association="SpecificationDbModel.FK_JobCostingMaterialTemplate_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="JobCostingMaterialTemplate" EntitySet="JobCostingMaterialTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product" Association="SpecificationDbModel.FK_Product_Product">
+      <End Role="ProductFeatureGroup" EntitySet="ProductFeatureGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductFeature_ProductFeatureGroup" Association="SpecificationDbModel.FK_ProductFeature_ProductFeatureGroup">
+      <End Role="ProductFeatureGroup" EntitySet="ProductFeatureGroups" />
+      <End Role="ProductFeature" EntitySet="ProductFeatures" />
+    </AssociationSet>
+    <EntitySet Name="CR_EstimationRequisitionItem" EntityType="SpecificationDbModel.CR_EstimationRequisitionItem" />
+    <EntitySet Name="Sales_Dispatching_DrawingReq_Purpose" EntityType="SpecificationDbModel.Sales_Dispatching_DrawingReq_Purpose" />
+    <EntitySet Name="EST_Item_Specification_Template" EntityType="SpecificationDbModel.EST_Item_Specification_Template" />
+    <AssociationSet Name="FK_EST_Item_Specification_Template_Product" Association="SpecificationDbModel.FK_EST_Item_Specification_Template_Product">
+      <End Role="EST_Item_Specification_Template_OptionGroup" EntitySet="EST_Item_Specification_Template_OptionGroup" />
+      <End Role="EST_Item_Specification_Template" EntitySet="EST_Item_Specification_Template" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Specification_Template_Product1" Association="SpecificationDbModel.FK_EST_Item_Specification_Template_Product1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="EST_Item_Specification_Template" EntitySet="EST_Item_Specification_Template" />
+    </AssociationSet>
+    <EntitySet Name="Sales_Dispatching" EntityType="SpecificationDbModel.Sales_Dispatching" />
+    <EntitySet Name="ProductCategories" EntityType="SpecificationDbModel.ProductCategory" />
+    <EntitySet Name="ProductSizes" EntityType="SpecificationDbModel.ProductSize" />
+    <AssociationSet Name="FK_Product_ProductCategory" Association="SpecificationDbModel.FK_Product_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSize_ProductCategory" Association="SpecificationDbModel.FK_ProductSize_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductSize" EntitySet="ProductSizes" />
+    </AssociationSet>
+    <EntitySet Name="EST_Item_Specification_Size" EntityType="SpecificationDbModel.EST_Item_Specification_Size" />
+    <EntitySet Name="ParameterSpecifications" EntityType="SpecificationDbModel.ParameterSpecification" />
+    <EntitySet Name="Sales_Dispatching_DrawingRequisition_Estimation" EntityType="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_Estimation" />
+    <AssociationSet Name="FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_Dispatching_DrawingReq_Purpose" Association="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_Dispatching_DrawingReq_Purpose">
+      <End Role="Sales_Dispatching_DrawingReq_Purpose" EntitySet="Sales_Dispatching_DrawingReq_Purpose" />
+      <End Role="Sales_Dispatching_DrawingRequisition_Estimation" EntitySet="Sales_Dispatching_DrawingRequisition_Estimation" />
+    </AssociationSet>
+    <EntitySet Name="JobCostingMaterialTemplateDetails" EntityType="SpecificationDbModel.JobCostingMaterialTemplateDetail" />
+    <AssociationSet Name="FK_JobCostingMaterialTemplateDetail_JobCostingMaterialTemplate" Association="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_JobCostingMaterialTemplate">
+      <End Role="JobCostingMaterialTemplate" EntitySet="JobCostingMaterialTemplates" />
+      <End Role="JobCostingMaterialTemplateDetail" EntitySet="JobCostingMaterialTemplateDetails" />
+    </AssociationSet>
+    <EntitySet Name="MaterialPrices" EntityType="SpecificationDbModel.MaterialPrice" />
+    <EntitySet Name="EST_Cost_Db_Other" EntityType="SpecificationDbModel.EST_Cost_Db_Other" />
+    <EntitySet Name="CR_Cost_Summary" EntityType="SpecificationDbModel.CR_Cost_Summary" />
+    <EntitySet Name="EST_Cost_Template_Detail" EntityType="SpecificationDbModel.EST_Cost_Template_Detail" />
+    <AssociationSet Name="FK_EST_Cost_Template_Detail_EST_Item_Specification_Template_OptionGroup" Association="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Item_Specification_Template_OptionGroup">
+      <End Role="EST_Item_Specification_Template_OptionGroup" EntitySet="EST_Item_Specification_Template_OptionGroup" />
+      <End Role="EST_Cost_Template_Detail" EntitySet="EST_Cost_Template_Detail" />
+    </AssociationSet>
+    <EntitySet Name="CR_CostItem" EntityType="SpecificationDbModel.CR_CostItem" />
+    <EntitySet Name="EST_Cost_Type" EntityType="SpecificationDbModel.EST_Cost_Type" />
+    <AssociationSet Name="FK_CR_CostItem_EST_Cost_Type" Association="SpecificationDbModel.FK_CR_CostItem_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="CR_CostItem" EntitySet="CR_CostItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Db_Other_EST_Cost_Type" Association="SpecificationDbModel.FK_EST_Cost_Db_Other_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="EST_Cost_Db_Other" EntitySet="EST_Cost_Db_Other" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Template_Detail_EST_Cost_Type" Association="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="EST_Cost_Template_Detail" EntitySet="EST_Cost_Template_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Type_EST_Cost_Type_Category" Association="SpecificationDbModel.FK_EST_Cost_Type_EST_Cost_Type_Category">
+      <End Role="EST_Cost_Type_Category" EntitySet="EST_Cost_Type_Category" />
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+    </AssociationSet>
+    <EntitySet Name="Sales_Dispatching_DrawingRequisition_EstimationItem" EntityType="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    <AssociationSet Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item_Status" Association="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item_Status">
+      <End Role="EST_Item_Status" EntitySet="EST_Item_Status" />
+      <End Role="Sales_Dispatching_DrawingRequisition_EstimationItem" EntitySet="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_Sales_Dispatching_DrawingRequisition_Estimation" Association="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_Sales_Dispatching_DrawingRequisition_Estimation">
+      <End Role="Sales_Dispatching_DrawingRequisition_Estimation" EntitySet="Sales_Dispatching_DrawingRequisition_Estimation" />
+      <End Role="Sales_Dispatching_DrawingRequisition_EstimationItem" EntitySet="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    </AssociationSet>
+    <EntitySet Name="MaterialCategory0" EntityType="SpecificationDbModel.MaterialCategory0" />
+    <EntitySet Name="MaterialCategory1" EntityType="SpecificationDbModel.MaterialCategory1" />
+    <EntitySet Name="MaterialCategory2" EntityType="SpecificationDbModel.MaterialCategory2" />
+    <EntitySet Name="MaterialCategory3" EntityType="SpecificationDbModel.MaterialCategory3" />
+    <EntitySet Name="MaterialCategory4" EntityType="SpecificationDbModel.MaterialCategory4" />
+    <AssociationSet Name="FK_MaterialCategory1_MaterialCategory0" Association="SpecificationDbModel.FK_MaterialCategory1_MaterialCategory0">
+      <End Role="MaterialCategory0" EntitySet="MaterialCategory0" />
+      <End Role="MaterialCategory1" EntitySet="MaterialCategory1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialCategory2_MaterialCategory1" Association="SpecificationDbModel.FK_MaterialCategory2_MaterialCategory1">
+      <End Role="MaterialCategory1" EntitySet="MaterialCategory1" />
+      <End Role="MaterialCategory2" EntitySet="MaterialCategory2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialCategory3_MaterialCategory2" Association="SpecificationDbModel.FK_MaterialCategory3_MaterialCategory2">
+      <End Role="MaterialCategory2" EntitySet="MaterialCategory2" />
+      <End Role="MaterialCategory3" EntitySet="MaterialCategory3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialCategory4_MaterialCategory3" Association="SpecificationDbModel.FK_MaterialCategory4_MaterialCategory3">
+      <End Role="MaterialCategory3" EntitySet="MaterialCategory3" />
+      <End Role="MaterialCategory4" EntitySet="MaterialCategory4" />
+    </AssociationSet>
+    <EntitySet Name="Materials" EntityType="SpecificationDbModel.Material" />
+    <EntitySet Name="MaterialPriceUnits" EntityType="SpecificationDbModel.MaterialPriceUnit" />
+    <AssociationSet Name="FK_JobCostingMaterialTemplateDetail_Material" Association="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="JobCostingMaterialTemplateDetail" EntitySet="JobCostingMaterialTemplateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialCategory0" Association="SpecificationDbModel.FK_Material_MaterialCategory0">
+      <End Role="MaterialCategory0" EntitySet="MaterialCategory0" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialCategory1" Association="SpecificationDbModel.FK_Material_MaterialCategory1">
+      <End Role="MaterialCategory1" EntitySet="MaterialCategory1" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialCategory2" Association="SpecificationDbModel.FK_Material_MaterialCategory2">
+      <End Role="MaterialCategory2" EntitySet="MaterialCategory2" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialCategory3" Association="SpecificationDbModel.FK_Material_MaterialCategory3">
+      <End Role="MaterialCategory3" EntitySet="MaterialCategory3" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialCategory4" Association="SpecificationDbModel.FK_Material_MaterialCategory4">
+      <End Role="MaterialCategory4" EntitySet="MaterialCategory4" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_MaterialPriceUnit" Association="SpecificationDbModel.FK_Material_MaterialPriceUnit">
+      <End Role="MaterialPriceUnit" EntitySet="MaterialPriceUnits" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialPrice_Material" Association="SpecificationDbModel.FK_MaterialPrice_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="MaterialPrice" EntitySet="MaterialPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialPrice_MaterialPriceUnit" Association="SpecificationDbModel.FK_MaterialPrice_MaterialPriceUnit">
+      <End Role="MaterialPriceUnit" EntitySet="MaterialPriceUnits" />
+      <End Role="MaterialPrice" EntitySet="MaterialPrices" />
+    </AssociationSet>
+    <EntitySet Name="JobCostingOutsourcingTransactions" EntityType="SpecificationDbModel.JobCostingOutsourcingTransaction" />
+    <EntitySet Name="Sales_JobMasterList_WO" EntityType="SpecificationDbModel.Sales_JobMasterList_WO" />
+    <AssociationSet Name="FK_JobCostingOutsourcingTransaction_EST_Cost_Type" Association="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="JobCostingOutsourcingTransaction" EntitySet="JobCostingOutsourcingTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCostingOutsourcingTransaction_Sales_JobMasterList_WO" Association="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="JobCostingOutsourcingTransaction" EntitySet="JobCostingOutsourcingTransactions" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Template" EntityType="SpecificationDbModel.EST_Cost_Template" />
+    <AssociationSet Name="FK_EST_Cost_Template_Detail_EST_Cost_Template" Association="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Template">
+      <End Role="EST_Cost_Template" EntitySet="EST_Cost_Template" />
+      <End Role="EST_Cost_Template_Detail" EntitySet="EST_Cost_Template_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Template_EST_Cost_Template" Association="SpecificationDbModel.FK_EST_Cost_Template_EST_Cost_Template">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="EST_Cost_Template" EntitySet="EST_Cost_Template" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Bid_Type_Parent" EntityType="SpecificationDbModel.EST_Cost_Bid_Type_Parent" />
+    <EntitySet Name="EST_Cost_Bid_Item" EntityType="SpecificationDbModel.EST_Cost_Bid_Item" />
+    <EntitySet Name="EST_Cost_Bid_Type_Children" EntityType="SpecificationDbModel.EST_Cost_Bid_Type_Children" />
+    <AssociationSet Name="FK_EST_Cost_Bid_Item_EST_Cost_Bid_Type_Children" Association="SpecificationDbModel.FK_EST_Cost_Bid_Item_EST_Cost_Bid_Type_Children">
+      <End Role="EST_Cost_Bid_Type_Children" EntitySet="EST_Cost_Bid_Type_Children" />
+      <End Role="EST_Cost_Bid_Item" EntitySet="EST_Cost_Bid_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Bid_Type_Children_EST_Cost_Bid_Type_Parent" Association="SpecificationDbModel.FK_EST_Cost_Bid_Type_Children_EST_Cost_Bid_Type_Parent">
+      <End Role="EST_Cost_Bid_Type_Parent" EntitySet="EST_Cost_Bid_Type_Parent" />
+      <End Role="EST_Cost_Bid_Type_Children" EntitySet="EST_Cost_Bid_Type_Children" />
+    </AssociationSet>
+    <EntitySet Name="Sales_JobMasterList_EstRev" EntityType="SpecificationDbModel.Sales_JobMasterList_EstRev" />
+    <AssociationSet Name="FK_CR_Cost_Summary_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_CR_Cost_Summary_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="CR_Cost_Summary" EntitySet="CR_Cost_Summary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_CostItem_CR_CostItem" Association="SpecificationDbModel.FK_CR_CostItem_CR_CostItem">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="CR_CostItem" EntitySet="CR_CostItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Bid_Item_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Cost_Bid_Item_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Cost_Bid_Item" EntitySet="EST_Cost_Bid_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Drawing_EST_Drawing" Association="SpecificationDbModel.FK_EST_Drawing_EST_Drawing">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Drawing" EntitySet="EST_Drawing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Service_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Service_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Service" EntitySet="EST_Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParameterSpecification_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_ParameterSpecification_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="ParameterSpecification" EntitySet="ParameterSpecifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_Sales_Dispatching_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="Sales_Dispatching" EntitySet="Sales_Dispatching" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="Sales_Dispatching_DrawingRequisition_Estimation" EntitySet="Sales_Dispatching_DrawingRequisition_Estimation" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Bid_Note" EntityType="SpecificationDbModel.EST_Cost_Bid_Note" />
+    <EntitySet Name="EST_Cost_Bid_Note_Base" EntityType="SpecificationDbModel.EST_Cost_Bid_Note_Base" />
+    <AssociationSet Name="FK_EST_Cost_Bid_Note_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Cost_Bid_Note_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Cost_Bid_Note" EntitySet="EST_Cost_Bid_Note" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Bid_Type_Summary" EntityType="SpecificationDbModel.EST_Cost_Bid_Type_Summary" />
+    <EntitySet Name="EST_Cost_Configuration" EntityType="SpecificationDbModel.EST_Cost_Configuration" />
+    <AssociationSet Name="FK_EST_Cost_Configuration_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Cost_Configuration_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Cost_Configuration" EntitySet="EST_Cost_Configuration" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Bid_ParentItem" EntityType="SpecificationDbModel.EST_Cost_Bid_ParentItem" />
+    <EntitySet Name="EST_Cost_Bid_Summary" EntityType="SpecificationDbModel.EST_Cost_Bid_Summary" />
+    <AssociationSet Name="FK_EST_Cost_Bid_ParentItem_EST_Cost_Bid_Type_Parent" Association="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_EST_Cost_Bid_Type_Parent">
+      <End Role="EST_Cost_Bid_Type_Parent" EntitySet="EST_Cost_Bid_Type_Parent" />
+      <End Role="EST_Cost_Bid_ParentItem" EntitySet="EST_Cost_Bid_ParentItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Bid_ParentItem_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Cost_Bid_ParentItem" EntitySet="EST_Cost_Bid_ParentItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Bid_Summary_EST_Cost_Bid_Type_Summary" Association="SpecificationDbModel.FK_EST_Cost_Bid_Summary_EST_Cost_Bid_Type_Summary">
+      <End Role="EST_Cost_Bid_Type_Summary" EntitySet="EST_Cost_Bid_Type_Summary" />
+      <End Role="EST_Cost_Bid_Summary" EntitySet="EST_Cost_Bid_Summary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Bid_Summary_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Cost_Bid_Summary_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Cost_Bid_Summary" EntitySet="EST_Cost_Bid_Summary" />
+    </AssociationSet>
+    <EntitySet Name="CR_EstimationRequisitionTitle" EntityType="SpecificationDbModel.CR_EstimationRequisitionTitle" />
+    <AssociationSet Name="FK_CR_EstimationRequisitionTitle_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_CR_EstimationRequisitionTitle_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="CR_EstimationRequisitionTitle" EntitySet="CR_EstimationRequisitionTitle" />
+    </AssociationSet>
+    <EntitySet Name="CR_EstCostBidSummary" EntityType="SpecificationDbModel.CR_EstCostBidSummary" />
+    <AssociationSet Name="FK_CR_EstCostBidSummary_EST_Cost_Bid_Type_Summary" Association="SpecificationDbModel.FK_CR_EstCostBidSummary_EST_Cost_Bid_Type_Summary">
+      <End Role="EST_Cost_Bid_Type_Summary" EntitySet="EST_Cost_Bid_Type_Summary" />
+      <End Role="CR_EstCostBidSummary" EntitySet="CR_EstCostBidSummary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_EstCostBidSummary_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_CR_EstCostBidSummary_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="CR_EstCostBidSummary" EntitySet="CR_EstCostBidSummary" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Db_LabourHourPosition" EntityType="SpecificationDbModel.EST_Cost_Db_LabourHourPosition" />
+    <EntitySet Name="EST_Cost_Db_LabourHourProcedure" EntityType="SpecificationDbModel.EST_Cost_Db_LabourHourProcedure" />
+    <AssociationSet Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourPosition1" Association="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourPosition1">
+      <End Role="EST_Cost_Db_LabourHourPosition" EntitySet="EST_Cost_Db_LabourHourPosition" />
+      <End Role="EST_Cost_Db_LabourHourProcedure" EntitySet="EST_Cost_Db_LabourHourProcedure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Type" Association="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="EST_Cost_Db_LabourHourProcedure" EntitySet="EST_Cost_Db_LabourHourProcedure" />
+    </AssociationSet>
+    <EntitySet Name="EST_Item" EntityType="SpecificationDbModel.EST_Item" />
+    <AssociationSet Name="FK_CR_EstimationRequisitionItem_EST_Item" Association="SpecificationDbModel.FK_CR_EstimationRequisitionItem_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="CR_EstimationRequisitionItem" EntitySet="CR_EstimationRequisitionItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Drawing_EST_Item" Association="SpecificationDbModel.FK_EST_Item_Drawing_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="EST_Item_Drawing" EntitySet="EST_Item_Drawing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_EST_Item_Status" Association="SpecificationDbModel.FK_EST_Item_EST_Item_Status">
+      <End Role="EST_Item_Status" EntitySet="EST_Item_Status" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_EST_Item_TablePurpose" Association="SpecificationDbModel.FK_EST_Item_EST_Item_TablePurpose">
+      <End Role="EST_Item_TablePurpose" EntitySet="EST_Item_TablePurpose" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_FW_JOB_TYPE" Association="SpecificationDbModel.FK_EST_Item_FW_JOB_TYPE">
+      <End Role="FW_JOB_TYPE" EntitySet="FW_JOB_TYPE" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Product" Association="SpecificationDbModel.FK_EST_Item_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_RequiredItemPosition" Association="SpecificationDbModel.FK_EST_Item_RequiredItemPosition">
+      <End Role="RequiredItemPosition" EntitySet="RequiredItemPositions" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Sales_JobMasterList_EstRev" Association="SpecificationDbModel.FK_EST_Item_Sales_JobMasterList_EstRev">
+      <End Role="Sales_JobMasterList_EstRev" EntitySet="Sales_JobMasterList_EstRev" />
+      <End Role="EST_Item" EntitySet="EST_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Specification_EST_Item" Association="SpecificationDbModel.FK_EST_Item_Specification_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="EST_Item_Specification" EntitySet="EST_Item_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Item_Specification_Size_EST_Item" Association="SpecificationDbModel.FK_EST_Item_Specification_Size_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="EST_Item_Specification_Size" EntitySet="EST_Item_Specification_Size" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item" Association="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="Sales_Dispatching_DrawingRequisition_EstimationItem" EntitySet="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    </AssociationSet>
+    <EntitySet Name="JobCostingTransactions" EntityType="SpecificationDbModel.JobCostingTransaction" />
+    <AssociationSet Name="FK_JobCostingTransaction_EST_Cost_Type" Association="SpecificationDbModel.FK_JobCostingTransaction_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="JobCostingTransaction" EntitySet="JobCostingTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCostingTransaction_Material" Association="SpecificationDbModel.FK_JobCostingTransaction_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="JobCostingTransaction" EntitySet="JobCostingTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobCostingTransaction_Sales_JobMasterList_WO" Association="SpecificationDbModel.FK_JobCostingTransaction_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="JobCostingTransaction" EntitySet="JobCostingTransactions" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost_Db_LabourHourGroup" EntityType="SpecificationDbModel.EST_Cost_Db_LabourHourGroup" />
+    <EntitySet Name="tblWorkshopProductionProcessSteps" EntityType="SpecificationDbModel.tblWorkshopProductionProcessStep" />
+    <AssociationSet Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourGroup" Association="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourGroup">
+      <End Role="EST_Cost_Db_LabourHourGroup" EntitySet="EST_Cost_Db_LabourHourGroup" />
+      <End Role="EST_Cost_Db_LabourHourProcedure" EntitySet="EST_Cost_Db_LabourHourProcedure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblWorkshopProductionProcessStep_EST_Cost_Db_LabourHourGroup" Association="SpecificationDbModel.FK_tblWorkshopProductionProcessStep_EST_Cost_Db_LabourHourGroup">
+      <End Role="EST_Cost_Db_LabourHourGroup" EntitySet="EST_Cost_Db_LabourHourGroup" />
+      <End Role="tblWorkshopProductionProcessStep" EntitySet="tblWorkshopProductionProcessSteps" />
+    </AssociationSet>
+    <EntitySet Name="EST_Cost" EntityType="SpecificationDbModel.EST_Cost" />
+    <AssociationSet Name="FK_EST_Cost_EST_Cost_Type" Association="SpecificationDbModel.FK_EST_Cost_EST_Cost_Type">
+      <End Role="EST_Cost_Type" EntitySet="EST_Cost_Type" />
+      <End Role="EST_Cost" EntitySet="EST_Cost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EST_Cost_EST_Item" Association="SpecificationDbModel.FK_EST_Cost_EST_Item">
+      <End Role="EST_Item" EntitySet="EST_Item" />
+      <End Role="EST_Cost" EntitySet="EST_Cost" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EST_Cost_Type_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CategoryAbbr" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_EST_Cost_Type_EST_Cost_Type_Category" FromRole="EST_Cost_Type_Category" ToRole="EST_Cost_Type" />
+  </EntityType>
+  <EntityType Name="EST_Drawing">
+    <Key>
+      <PropertyRef Name="DrawingID" />
+    </Key>
+    <Property Type="Int64" Name="DrawingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="String" Name="DrawingType" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DrawingPurpose" Nullable="false" />
+    <Property Type="String" Name="DrawingName" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrawingHyperlink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsFinalDrawing" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Drawing_EST_Drawing" FromRole="EST_Drawing" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Item_Drawing">
+    <Key>
+      <PropertyRef Name="DrawingID" />
+    </Key>
+    <Property Type="Int64" Name="DrawingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="ParentID" Nullable="false" />
+    <Property Type="String" Name="DrawingType" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DrawingPurpose" Nullable="false" />
+    <Property Type="String" Name="DrawingName" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrawingHyperlink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsFinalDrawing" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_Drawing_EST_Item" FromRole="EST_Item_Drawing" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="EST_Item_Specification">
+    <Key>
+      <PropertyRef Name="EstItemSpecificationID" />
+    </Key>
+    <Property Type="Int64" Name="EstItemSpecificationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="Int32" Name="OptionID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsMandatory" Nullable="false" />
+    <Property Type="Boolean" Name="IsValidated" Nullable="false" />
+    <Property Type="String" Name="ErrorMessage" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item_Specification_Template_OptionGroup" Relationship="SpecificationDbModel.FK_EST_Item_Specification_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Item_Specification" ToRole="EST_Item_Specification_Template_OptionGroup" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_Specification_EST_Item" FromRole="EST_Item_Specification" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="EST_Item_Specification_Template_Option">
+    <Key>
+      <PropertyRef Name="OptionID" />
+    </Key>
+    <Property Type="Int32" Name="OptionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="String" Name="OptionName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="EST_Item_Specification_Template_OptionGroup" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Option_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Item_Specification_Template_Option" ToRole="EST_Item_Specification_Template_OptionGroup" />
+  </EntityType>
+  <EntityType Name="EST_Item_Specification_Template_OptionGroup">
+    <Key>
+      <PropertyRef Name="OptionGroupID" />
+    </Key>
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="OptionGroupName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="SysOptionGroupName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item_Specification" Relationship="SpecificationDbModel.FK_EST_Item_Specification_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Item_Specification_Template_OptionGroup" ToRole="EST_Item_Specification" />
+    <NavigationProperty Name="EST_Item_Specification_Template_Option" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Option_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Item_Specification_Template_OptionGroup" ToRole="EST_Item_Specification_Template_Option" />
+    <NavigationProperty Name="EST_Item_Specification_Template" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Product" FromRole="EST_Item_Specification_Template_OptionGroup" ToRole="EST_Item_Specification_Template" />
+    <NavigationProperty Name="EST_Cost_Template_Detail" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Item_Specification_Template_OptionGroup" ToRole="EST_Cost_Template_Detail" />
+  </EntityType>
+  <EntityType Name="EST_Item_Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DirectionID" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_EstimationItem" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item_Status" FromRole="EST_Item_Status" ToRole="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_EST_Item_Status" FromRole="EST_Item_Status" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="EST_Item_TablePurpose">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_EST_Item_TablePurpose" FromRole="EST_Item_TablePurpose" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="EST_Service">
+    <Key>
+      <PropertyRef Name="qsID" />
+    </Key>
+    <Property Type="Int32" Name="qsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" />
+    <Property Type="Int16" Name="qsPrintOrder" />
+    <Property Type="Int16" Name="qsServiceID" />
+    <Property Type="String" Name="qsTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="qsDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="qsAmount" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="qsQty" />
+    <Property Type="Single" Name="qsUnitPrice" />
+    <Property Type="String" Name="recordType" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="qsAmountText" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Service_Sales_JobMasterList_EstRev" FromRole="EST_Service" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="FW_JOB_TYPE">
+    <Key>
+      <PropertyRef Name="TYPE_ID" />
+    </Key>
+    <Property Type="Int32" Name="TYPE_ID" Nullable="false" />
+    <Property Type="String" Name="JOB_TYPE" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="QUOTE_SUPPLY_TYPE" Nullable="false" />
+    <Property Type="Boolean" Name="wSelect" Nullable="false" />
+    <Property Type="Boolean" Name="iSelect" Nullable="false" />
+    <Property Type="Boolean" Name="sSelect" Nullable="false" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_FW_JOB_TYPE" FromRole="FW_JOB_TYPE" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="JobCostingMaterialTemplate">
+    <Key>
+      <PropertyRef Name="TemplateID" />
+    </Key>
+    <Property Type="Int32" Name="TemplateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LastUpdateBy" Nullable="false" />
+    <Property Type="DateTime" Name="LastUpdatedAt" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplate_Product" FromRole="JobCostingMaterialTemplate" ToRole="Product" />
+    <NavigationProperty Name="JobCostingMaterialTemplateDetails" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_JobCostingMaterialTemplate" FromRole="JobCostingMaterialTemplate" ToRole="JobCostingMaterialTemplateDetail" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="ProductName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OptionID1" Nullable="false" />
+    <Property Type="Int32" Name="OptionID2" Nullable="false" />
+    <Property Type="Int32" Name="OptionID3" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Int32" Name="SupplyAndInstall" Nullable="false" />
+    <Property Type="Int32" Name="SupplyOnly" Nullable="false" />
+    <Property Type="Decimal" Name="BasePrice" Nullable="false" Precision="14" Scale="2" />
+    <NavigationProperty Name="JobCostingMaterialTemplates" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplate_Product" FromRole="Product" ToRole="JobCostingMaterialTemplate" />
+    <NavigationProperty Name="ProductFeatureGroup" Relationship="SpecificationDbModel.FK_Product_Product" FromRole="Product" ToRole="ProductFeatureGroup" />
+    <NavigationProperty Name="EST_Item_Specification_Template" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Product1" FromRole="Product" ToRole="EST_Item_Specification_Template" />
+    <NavigationProperty Name="ProductCategory" Relationship="SpecificationDbModel.FK_Product_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
+    <NavigationProperty Name="EST_Cost_Template" Relationship="SpecificationDbModel.FK_EST_Cost_Template_EST_Cost_Template" FromRole="Product" ToRole="EST_Cost_Template" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_Product" FromRole="Product" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="ProductFeature">
+    <Key>
+      <PropertyRef Name="fID" />
+    </Key>
+    <Property Type="Int32" Name="fID" Nullable="false" />
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="String" Name="fName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="ProductFeatureGroup" Relationship="SpecificationDbModel.FK_ProductFeature_ProductFeatureGroup" FromRole="ProductFeature" ToRole="ProductFeatureGroup" />
+  </EntityType>
+  <EntityType Name="ProductFeatureGroup">
+    <Key>
+      <PropertyRef Name="OptionGroupID" />
+    </Key>
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="String" Name="OptionName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="SpecificationDbModel.FK_Product_Product" FromRole="ProductFeatureGroup" ToRole="Product" />
+    <NavigationProperty Name="ProductFeatures" Relationship="SpecificationDbModel.FK_ProductFeature_ProductFeatureGroup" FromRole="ProductFeatureGroup" ToRole="ProductFeature" />
+  </EntityType>
+  <EntityType Name="RequiredItemPosition">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Type="Int32" Name="PositionID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_RequiredItemPosition" FromRole="RequiredItemPosition" ToRole="EST_Item" />
+  </EntityType>
+  <Association Name="FK_EST_Item_Specification_EST_Item_Specification_Template_OptionGroup">
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template_OptionGroup" Role="EST_Item_Specification_Template_OptionGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification" Role="EST_Item_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Specification_Template_OptionGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification">
+        <PropertyRef Name="OptionGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Specification_Template_Option_EST_Item_Specification_Template_OptionGroup">
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template_OptionGroup" Role="EST_Item_Specification_Template_OptionGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template_Option" Role="EST_Item_Specification_Template_Option" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Specification_Template_OptionGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification_Template_Option">
+        <PropertyRef Name="OptionGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCostingMaterialTemplate_Product">
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingMaterialTemplate" Role="JobCostingMaterialTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="JobCostingMaterialTemplate">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product">
+    <End Type="SpecificationDbModel.ProductFeatureGroup" Role="ProductFeatureGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFeatureGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="OptionID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductFeature_ProductFeatureGroup">
+    <End Type="SpecificationDbModel.ProductFeatureGroup" Role="ProductFeatureGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.ProductFeature" Role="ProductFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFeatureGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="ProductFeature">
+        <PropertyRef Name="OptionGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CR_EstimationRequisitionItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contents" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_CR_EstimationRequisitionItem_EST_Item" FromRole="CR_EstimationRequisitionItem" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="Sales_Dispatching_DrawingReq_Purpose">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Type="Int32" Name="RowID" Nullable="false" />
+    <Property Type="Int16" Name="drawingPurposeID" Nullable="false" />
+    <Property Type="String" Name="dpName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="step" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_Estimation" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_Dispatching_DrawingReq_Purpose" FromRole="Sales_Dispatching_DrawingReq_Purpose" ToRole="Sales_Dispatching_DrawingRequisition_Estimation" />
+  </EntityType>
+  <EntityType Name="EST_Item_Specification_Template">
+    <Key>
+      <PropertyRef Name="TemplateID" />
+    </Key>
+    <Property Type="Int32" Name="TemplateID" Nullable="false" />
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="Int32" Name="DefaultValue" Nullable="false" />
+    <Property Type="Boolean" Name="IsMandatory" Nullable="false" />
+    <Property Type="String" Name="DefaultValueString" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OptionGroupName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Item_Specification_Template_OptionGroup" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Product" FromRole="EST_Item_Specification_Template" ToRole="EST_Item_Specification_Template_OptionGroup" />
+    <NavigationProperty Name="Product" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Template_Product1" FromRole="EST_Item_Specification_Template" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_EST_Item_Specification_Template_Product">
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template_OptionGroup" Role="EST_Item_Specification_Template_OptionGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template" Role="EST_Item_Specification_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Specification_Template_OptionGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification_Template">
+        <PropertyRef Name="OptionGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Specification_Template_Product1">
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template" Role="EST_Item_Specification_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification_Template">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sales_Dispatching">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Type="Int64" Name="TaskID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int16" Name="TaskType" Nullable="false" />
+    <Property Type="String" Name="RequestType" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="QuoteRevID" />
+    <Property Type="Int32" Name="WoID" />
+    <Property Type="Int32" Name="InvoiceID" />
+    <Property Type="Int32" Name="SubmitBy" Nullable="false" />
+    <Property Type="Int16" Name="Responsible" Nullable="false" />
+    <Property Type="Int16" Name="CopyTo" />
+    <Property Type="String" Name="Subject" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="SubmitTime" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="LastUpdateTime" Precision="0" />
+    <Property Type="DateTime" Name="RequiredTime" Nullable="false" Precision="0" />
+    <Property Type="Boolean" Name="Rush" Nullable="false" />
+    <Property Type="Int16" Name="Priority" />
+    <Property Type="Int16" Name="Importance" />
+    <Property Type="DateTime" Name="Reminder" Precision="0" />
+    <Property Type="Decimal" Name="CompletePercentage" Precision="8" Scale="0" />
+    <Property Type="Boolean" Name="OwnerFinish" />
+    <Property Type="Boolean" Name="ResponsibleFinish" />
+    <Property Type="DateTime" Name="FinishedDate" Precision="0" />
+    <Property Type="Double" Name="WorkedHour" />
+    <Property Type="Int32" Name="NumberOfDrawing" />
+    <Property Type="String" Name="Note" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IncompleteInfo" Nullable="false" />
+    <Property Type="DateTime" Name="IIMarkedTime" Precision="0" />
+    <Property Type="DateTime" Name="IIOkTime" Precision="0" />
+    <Property Type="String" Name="IIReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_Sales_Dispatching_Sales_JobMasterList_EstRev" FromRole="Sales_Dispatching" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="Contents" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="SpecificationDbModel.FK_Product_ProductCategory" FromRole="ProductCategory" ToRole="Product" />
+    <NavigationProperty Name="ProductSizes" Relationship="SpecificationDbModel.FK_ProductSize_ProductCategory" FromRole="ProductCategory" ToRole="ProductSize" />
+  </EntityType>
+  <EntityType Name="ProductSize">
+    <Key>
+      <PropertyRef Name="SizeID" />
+    </Key>
+    <Property Type="Int32" Name="SizeID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="Contents" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Int32" Name="SizeTotalRows" Nullable="false" />
+    <Property Type="Boolean" Name="IsWidthEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsHeightEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsThicknessEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsPcEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsWidthMandatory" Nullable="false" />
+    <Property Type="Boolean" Name="IsHeightMandatory" Nullable="false" />
+    <Property Type="Boolean" Name="IsThicknessMandatory" Nullable="false" />
+    <Property Type="Boolean" Name="IsPcEnabledMandatory" Nullable="false" />
+    <NavigationProperty Name="ProductCategory" Relationship="SpecificationDbModel.FK_ProductSize_ProductCategory" FromRole="ProductSize" ToRole="ProductCategory" />
+  </EntityType>
+  <Association Name="FK_Product_ProductCategory">
+    <End Type="SpecificationDbModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSize_ProductCategory">
+    <End Type="SpecificationDbModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
+    <End Type="SpecificationDbModel.ProductSize" Role="ProductSize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ProductSize">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Item_Specification_Size">
+    <Key>
+      <PropertyRef Name="EstItemSizeID" />
+    </Key>
+    <Property Type="Int64" Name="EstItemSizeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Boolean" Name="IsWidthEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsWidthMandatory" Nullable="false" />
+    <Property Type="Int32" Name="WidthFeet" />
+    <Property Type="String" Name="WidthInch" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsHeightEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsHeightMandatory" Nullable="false" />
+    <Property Type="Int32" Name="HeightFeet" />
+    <Property Type="String" Name="HeightInch" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsThicknessEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsThicknessMandatory" Nullable="false" />
+    <Property Type="Int32" Name="ThicknessFeet" />
+    <Property Type="String" Name="ThicknessInch" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsPcEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsPcMandatory" Nullable="false" />
+    <Property Type="Int32" Name="Pc" Nullable="false" />
+    <Property Type="Boolean" Name="IsValidated" Nullable="false" />
+    <Property Type="String" Name="ErrorMessage" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Height" />
+    <Property Type="Double" Name="Width" />
+    <Property Type="Double" Name="Thickness" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Size_EST_Item" FromRole="EST_Item_Specification_Size" ToRole="EST_Item" />
+  </EntityType>
+  <EntityType Name="ParameterSpecification">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Boolean" Name="IsAuthorized" Nullable="false" />
+    <Property Type="Boolean" Name="IsResponseOwner" Nullable="false" />
+    <Property Type="Boolean" Name="IsRequestOwner" Nullable="false" />
+    <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+    <Property Type="Boolean" Name="IsSpecificationTemplateEditEnabled" Nullable="false" />
+    <Property Type="Boolean" Name="IsCostTemplateEditEnabled" Nullable="false" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_ParameterSpecification_Sales_JobMasterList_EstRev" FromRole="ParameterSpecification" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="Sales_Dispatching_DrawingRequisition_Estimation">
+    <Key>
+      <PropertyRef Name="RequisitionID" />
+    </Key>
+    <Property Type="Int32" Name="RequisitionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DrawingType" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="MallID" Nullable="false" />
+    <Property Type="Int64" Name="SubmitID" Nullable="false" />
+    <Property Type="Int32" Name="Version" Nullable="false" />
+    <Property Type="Int32" Name="InstalltoCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="BillToCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="DrawingPurpose" Nullable="false" />
+    <Property Type="Int32" Name="IsQuotationAvailable" Nullable="false" />
+    <Property Type="Int32" Name="IsGCorDesignerDrawingAvailable" Nullable="false" />
+    <Property Type="Int32" Name="IsSiteCheckPhotoAvailable" Nullable="false" />
+    <Property Type="Int32" Name="IsSiteCheckReportAvailable" Nullable="false" />
+    <Property Type="Int32" Name="IsLandordOrMallCriteriaAvailable" Nullable="false" />
+    <Property Type="Int32" Name="IsElectronicFillFromClientAvailable" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsValid" Nullable="false" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingReq_Purpose" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_Dispatching_DrawingReq_Purpose" FromRole="Sales_Dispatching_DrawingRequisition_Estimation" ToRole="Sales_Dispatching_DrawingReq_Purpose" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_EstimationItem" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_Sales_Dispatching_DrawingRequisition_Estimation" FromRole="Sales_Dispatching_DrawingRequisition_Estimation" ToRole="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_JobMasterList_EstRev" FromRole="Sales_Dispatching_DrawingRequisition_Estimation" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <Association Name="FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_Dispatching_DrawingReq_Purpose">
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingReq_Purpose" Role="Sales_Dispatching_DrawingReq_Purpose" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_Estimation" Role="Sales_Dispatching_DrawingRequisition_Estimation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Dispatching_DrawingReq_Purpose">
+        <PropertyRef Name="RowID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching_DrawingRequisition_Estimation">
+        <PropertyRef Name="DrawingPurpose" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="JobCostingMaterialTemplateDetail">
+    <Key>
+      <PropertyRef Name="SubTemplateID" />
+    </Key>
+    <Property Type="Int32" Name="SubTemplateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TemplateID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="MaterialID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="UnitPrice" Nullable="false" />
+    <Property Type="Double" Name="Qty" Nullable="false" />
+    <NavigationProperty Name="JobCostingMaterialTemplate" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_JobCostingMaterialTemplate" FromRole="JobCostingMaterialTemplateDetail" ToRole="JobCostingMaterialTemplate" />
+    <NavigationProperty Name="Material" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_Material" FromRole="JobCostingMaterialTemplateDetail" ToRole="Material" />
+  </EntityType>
+  <Association Name="FK_JobCostingMaterialTemplateDetail_JobCostingMaterialTemplate">
+    <End Type="SpecificationDbModel.JobCostingMaterialTemplate" Role="JobCostingMaterialTemplate" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingMaterialTemplateDetail" Role="JobCostingMaterialTemplateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobCostingMaterialTemplate">
+        <PropertyRef Name="TemplateID" />
+      </Principal>
+      <Dependent Role="JobCostingMaterialTemplateDetail">
+        <PropertyRef Name="TemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MaterialPrice">
+    <Key>
+      <PropertyRef Name="PriceID" />
+    </Key>
+    <Property Type="Int32" Name="PriceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="MaterialID" Nullable="false" />
+    <Property Type="Int32" Name="UnitID" Nullable="false" />
+    <Property Type="Double" Name="Price" />
+    <Property Type="Int32" Name="InvoicePriceUnitID" Nullable="false" />
+    <Property Type="Double" Name="InvoicePrice" />
+    <Property Type="DateTime" Name="InputDate" Precision="0" />
+    <Property Type="DateTime" Name="EffectiveDate" Precision="0" />
+    <Property Type="Int32" Name="VenderID" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="Material" Relationship="SpecificationDbModel.FK_MaterialPrice_Material" FromRole="MaterialPrice" ToRole="Material" />
+    <NavigationProperty Name="MaterialPriceUnit" Relationship="SpecificationDbModel.FK_MaterialPrice_MaterialPriceUnit" FromRole="MaterialPrice" ToRole="MaterialPriceUnit" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Db_Other">
+    <Key>
+      <PropertyRef Name="DbItemID" />
+    </Key>
+    <Property Type="Int32" Name="DbItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstCostTypeID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="UnitPrice" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_EST_Cost_Db_Other_EST_Cost_Type" FromRole="EST_Cost_Db_Other" ToRole="EST_Cost_Type" />
+  </EntityType>
+  <EntityType Name="CR_Cost_Summary">
+    <Key>
+      <PropertyRef Name="SummaryID" />
+    </Key>
+    <Property Type="Int64" Name="SummaryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="WorkorderID" Nullable="false" />
+    <Property Type="Int64" Name="WorkorderItemID" Nullable="false" />
+    <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Column0" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Column1" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Column2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_CR_Cost_Summary_Sales_JobMasterList_EstRev" FromRole="CR_Cost_Summary" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Template_Detail">
+    <Key>
+      <PropertyRef Name="SubTemplateID" />
+    </Key>
+    <Property Type="Int32" Name="SubTemplateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TemplateID" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="OptionGroupID" Nullable="false" />
+    <Property Type="Int32" Name="DbItemID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="UnitPrice" Nullable="false" />
+    <Property Type="Double" Name="Qty" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="EST_Item_Specification_Template_OptionGroup" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Item_Specification_Template_OptionGroup" FromRole="EST_Cost_Template_Detail" ToRole="EST_Item_Specification_Template_OptionGroup" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Type" FromRole="EST_Cost_Template_Detail" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="EST_Cost_Template" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Template" FromRole="EST_Cost_Template_Detail" ToRole="EST_Cost_Template" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Template_Detail_EST_Item_Specification_Template_OptionGroup">
+    <End Type="SpecificationDbModel.EST_Item_Specification_Template_OptionGroup" Role="EST_Item_Specification_Template_OptionGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Template_Detail" Role="EST_Cost_Template_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Specification_Template_OptionGroup">
+        <PropertyRef Name="OptionGroupID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Template_Detail">
+        <PropertyRef Name="OptionGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CR_CostItem">
+    <Key>
+      <PropertyRef Name="CostItemID" />
+    </Key>
+    <Property Type="Int64" Name="CostItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="WorkorderID" Nullable="false" />
+    <Property Type="Int64" Name="WorkorderItemID" Nullable="false" />
+    <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+    <Property Type="Int32" Name="TypeOrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="String" Name="TypeName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ItemOrderNumber" Nullable="false" />
+    <Property Type="String" Name="CosItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="UnitPrice" Nullable="false" />
+    <Property Type="Double" Name="Qty" Nullable="false" />
+    <Property Type="Double" Name="SubTotal" Nullable="false" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_CR_CostItem_EST_Cost_Type" FromRole="CR_CostItem" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_CR_CostItem_CR_CostItem" FromRole="CR_CostItem" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="SubTotal" Nullable="false" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="Boolean" Name="IsOutsourcing" Nullable="false" />
+    <Property Type="Boolean" Name="IsMarkupNeeded" Nullable="false" />
+    <Property Type="Int32" Name="TemplateDbTypeID" Nullable="false" />
+    <NavigationProperty Name="CR_CostItem" Relationship="SpecificationDbModel.FK_CR_CostItem_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="CR_CostItem" />
+    <NavigationProperty Name="EST_Cost_Db_Other" Relationship="SpecificationDbModel.FK_EST_Cost_Db_Other_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="EST_Cost_Db_Other" />
+    <NavigationProperty Name="EST_Cost_Template_Detail" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="EST_Cost_Template_Detail" />
+    <NavigationProperty Name="EST_Cost_Type_Category" Relationship="SpecificationDbModel.FK_EST_Cost_Type_EST_Cost_Type_Category" FromRole="EST_Cost_Type" ToRole="EST_Cost_Type_Category" />
+    <NavigationProperty Name="JobCostingOutsourcingTransactions" Relationship="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="JobCostingOutsourcingTransaction" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourProcedure" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="EST_Cost_Db_LabourHourProcedure" />
+    <NavigationProperty Name="JobCostingTransactions" Relationship="SpecificationDbModel.FK_JobCostingTransaction_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="JobCostingTransaction" />
+    <NavigationProperty Name="EST_Cost" Relationship="SpecificationDbModel.FK_EST_Cost_EST_Cost_Type" FromRole="EST_Cost_Type" ToRole="EST_Cost" />
+  </EntityType>
+  <Association Name="FK_CR_CostItem_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_CostItem" Role="CR_CostItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="CR_CostItem">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Db_Other_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Db_Other" Role="EST_Cost_Db_Other" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Db_Other">
+        <PropertyRef Name="EstCostTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Template_Detail_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Template_Detail" Role="EST_Cost_Template_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Template_Detail">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Type_EST_Cost_Type_Category">
+    <End Type="SpecificationDbModel.EST_Cost_Type_Category" Role="EST_Cost_Type_Category" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Type">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sales_Dispatching_DrawingRequisition_EstimationItem">
+    <Key>
+      <PropertyRef Name="RequisitionItemID" />
+    </Key>
+    <Property Type="Int32" Name="RequisitionItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="RequisitionID" Nullable="false" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Qty" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PowerVoltage" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ItemName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsIncludedWhenPrint" Nullable="false" />
+    <NavigationProperty Name="EST_Item_Status" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item_Status" FromRole="Sales_Dispatching_DrawingRequisition_EstimationItem" ToRole="EST_Item_Status" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_Estimation" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_Sales_Dispatching_DrawingRequisition_Estimation" FromRole="Sales_Dispatching_DrawingRequisition_EstimationItem" ToRole="Sales_Dispatching_DrawingRequisition_Estimation" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item" FromRole="Sales_Dispatching_DrawingRequisition_EstimationItem" ToRole="EST_Item" />
+  </EntityType>
+  <Association Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item_Status">
+    <End Type="SpecificationDbModel.EST_Item_Status" Role="EST_Item_Status" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_EstimationItem" Role="Sales_Dispatching_DrawingRequisition_EstimationItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching_DrawingRequisition_EstimationItem">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_Sales_Dispatching_DrawingRequisition_Estimation">
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_Estimation" Role="Sales_Dispatching_DrawingRequisition_Estimation" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_EstimationItem" Role="Sales_Dispatching_DrawingRequisition_EstimationItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Dispatching_DrawingRequisition_Estimation">
+        <PropertyRef Name="RequisitionID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching_DrawingRequisition_EstimationItem">
+        <PropertyRef Name="RequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MaterialCategory0">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory1" Relationship="SpecificationDbModel.FK_MaterialCategory1_MaterialCategory0" FromRole="MaterialCategory0" ToRole="MaterialCategory1" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialCategory0" FromRole="MaterialCategory0" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="MaterialCategory1">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory0" Relationship="SpecificationDbModel.FK_MaterialCategory1_MaterialCategory0" FromRole="MaterialCategory1" ToRole="MaterialCategory0" />
+    <NavigationProperty Name="MaterialCategory2" Relationship="SpecificationDbModel.FK_MaterialCategory2_MaterialCategory1" FromRole="MaterialCategory1" ToRole="MaterialCategory2" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialCategory1" FromRole="MaterialCategory1" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="MaterialCategory2">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory1" Relationship="SpecificationDbModel.FK_MaterialCategory2_MaterialCategory1" FromRole="MaterialCategory2" ToRole="MaterialCategory1" />
+    <NavigationProperty Name="MaterialCategory3" Relationship="SpecificationDbModel.FK_MaterialCategory3_MaterialCategory2" FromRole="MaterialCategory2" ToRole="MaterialCategory3" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialCategory2" FromRole="MaterialCategory2" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="MaterialCategory3">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory2" Relationship="SpecificationDbModel.FK_MaterialCategory3_MaterialCategory2" FromRole="MaterialCategory3" ToRole="MaterialCategory2" />
+    <NavigationProperty Name="MaterialCategory4" Relationship="SpecificationDbModel.FK_MaterialCategory4_MaterialCategory3" FromRole="MaterialCategory3" ToRole="MaterialCategory4" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialCategory3" FromRole="MaterialCategory3" ToRole="Material" />
+  </EntityType>
+  <EntityType Name="MaterialCategory4">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory3" Relationship="SpecificationDbModel.FK_MaterialCategory4_MaterialCategory3" FromRole="MaterialCategory4" ToRole="MaterialCategory3" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialCategory4" FromRole="MaterialCategory4" ToRole="Material" />
+  </EntityType>
+  <Association Name="FK_MaterialCategory1_MaterialCategory0">
+    <End Type="SpecificationDbModel.MaterialCategory0" Role="MaterialCategory0" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialCategory1" Role="MaterialCategory1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory0">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MaterialCategory1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialCategory2_MaterialCategory1">
+    <End Type="SpecificationDbModel.MaterialCategory1" Role="MaterialCategory1" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialCategory2" Role="MaterialCategory2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory1">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MaterialCategory2">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialCategory3_MaterialCategory2">
+    <End Type="SpecificationDbModel.MaterialCategory2" Role="MaterialCategory2" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialCategory3" Role="MaterialCategory3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory2">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MaterialCategory3">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialCategory4_MaterialCategory3">
+    <End Type="SpecificationDbModel.MaterialCategory3" Role="MaterialCategory3" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialCategory4" Role="MaterialCategory4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory3">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MaterialCategory4">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Type="Int32" Name="MaterialID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CategoryID0" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID1" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID2" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID3" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID4" Nullable="false" />
+    <Property Type="String" Name="MaterialCode" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Status" Nullable="false" />
+    <Property Type="Int32" Name="PriceID" Nullable="false" />
+    <Property Type="Int32" Name="UnitID" Nullable="false" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Boolean" Name="IsVirtual" Nullable="false" />
+    <Property Type="Int32" Name="SyncLevel" Nullable="false" />
+    <Property Type="Int32" Name="SyncMethod" Nullable="false" />
+    <Property Type="Double" Name="SynchronizedPrice" Nullable="false" />
+    <Property Type="Int32" Name="ShortageWarningLevel" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="String" Name="SupplierName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CombinedName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="JobCostingMaterialTemplateDetails" Relationship="SpecificationDbModel.FK_JobCostingMaterialTemplateDetail_Material" FromRole="Material" ToRole="JobCostingMaterialTemplateDetail" />
+    <NavigationProperty Name="MaterialCategory0" Relationship="SpecificationDbModel.FK_Material_MaterialCategory0" FromRole="Material" ToRole="MaterialCategory0" />
+    <NavigationProperty Name="MaterialCategory1" Relationship="SpecificationDbModel.FK_Material_MaterialCategory1" FromRole="Material" ToRole="MaterialCategory1" />
+    <NavigationProperty Name="MaterialCategory2" Relationship="SpecificationDbModel.FK_Material_MaterialCategory2" FromRole="Material" ToRole="MaterialCategory2" />
+    <NavigationProperty Name="MaterialCategory3" Relationship="SpecificationDbModel.FK_Material_MaterialCategory3" FromRole="Material" ToRole="MaterialCategory3" />
+    <NavigationProperty Name="MaterialCategory4" Relationship="SpecificationDbModel.FK_Material_MaterialCategory4" FromRole="Material" ToRole="MaterialCategory4" />
+    <NavigationProperty Name="MaterialPriceUnit" Relationship="SpecificationDbModel.FK_Material_MaterialPriceUnit" FromRole="Material" ToRole="MaterialPriceUnit" />
+    <NavigationProperty Name="MaterialPrices" Relationship="SpecificationDbModel.FK_MaterialPrice_Material" FromRole="Material" ToRole="MaterialPrice" />
+    <NavigationProperty Name="JobCostingTransactions" Relationship="SpecificationDbModel.FK_JobCostingTransaction_Material" FromRole="Material" ToRole="JobCostingTransaction" />
+  </EntityType>
+  <EntityType Name="MaterialPriceUnit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Type="Int32" Name="UnitID" Nullable="false" />
+    <Property Type="String" Name="UnitName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Materials" Relationship="SpecificationDbModel.FK_Material_MaterialPriceUnit" FromRole="MaterialPriceUnit" ToRole="Material" />
+    <NavigationProperty Name="MaterialPrices" Relationship="SpecificationDbModel.FK_MaterialPrice_MaterialPriceUnit" FromRole="MaterialPriceUnit" ToRole="MaterialPrice" />
+  </EntityType>
+  <Association Name="FK_JobCostingMaterialTemplateDetail_Material">
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingMaterialTemplateDetail" Role="JobCostingMaterialTemplateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="JobCostingMaterialTemplateDetail">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialCategory0">
+    <End Type="SpecificationDbModel.MaterialCategory0" Role="MaterialCategory0" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory0">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="CategoryID0" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialCategory1">
+    <End Type="SpecificationDbModel.MaterialCategory1" Role="MaterialCategory1" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory1">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="CategoryID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialCategory2">
+    <End Type="SpecificationDbModel.MaterialCategory2" Role="MaterialCategory2" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory2">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="CategoryID2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialCategory3">
+    <End Type="SpecificationDbModel.MaterialCategory3" Role="MaterialCategory3" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory3">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="CategoryID3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialCategory4">
+    <End Type="SpecificationDbModel.MaterialCategory4" Role="MaterialCategory4" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialCategory4">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="CategoryID4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_MaterialPriceUnit">
+    <End Type="SpecificationDbModel.MaterialPriceUnit" Role="MaterialPriceUnit" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialPriceUnit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialPrice_Material">
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialPrice" Role="MaterialPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="MaterialPrice">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialPrice_MaterialPriceUnit">
+    <End Type="SpecificationDbModel.MaterialPriceUnit" Role="MaterialPriceUnit" Multiplicity="1" />
+    <End Type="SpecificationDbModel.MaterialPrice" Role="MaterialPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaterialPriceUnit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="MaterialPrice">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="JobCostingOutsourcingTransaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Type="Int32" Name="TransactionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="WoID" Nullable="false" />
+    <Property Type="String" Name="WorkorderTitle" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="EstCostTypeID" Nullable="false" />
+    <Property Type="Double" Name="Count" Nullable="false" />
+    <Property Type="Double" Name="UnitPrice" Nullable="false" />
+    <Property Type="Double" Name="Amount" Nullable="false" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="TransactionType" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+    <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TempString" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TempInt" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_EST_Cost_Type" FromRole="JobCostingOutsourcingTransaction" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="Sales_JobMasterList_WO" Relationship="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_Sales_JobMasterList_WO" FromRole="JobCostingOutsourcingTransaction" ToRole="Sales_JobMasterList_WO" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_WO">
+    <Key>
+      <PropertyRef Name="woID" />
+    </Key>
+    <Property Type="Int32" Name="woID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="jobID" Nullable="false" />
+    <Property Type="Int32" Name="estRevID" Nullable="false" />
+    <Property Type="Int16" Name="woType" Nullable="false" />
+    <Property Type="Byte" Name="woRev" />
+    <Property Type="Boolean" Name="woCurrent" />
+    <Property Type="String" Name="jobTitle" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WorkorderNumber" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="findSiteAt" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DeadLine" Precision="0" />
+    <Property Type="DateTime" Name="changedDeadLine" Precision="0" />
+    <Property Type="DateTime" Name="targetDate" Precision="0" />
+    <Property Type="DateTime" Name="issuedDate" Precision="0" />
+    <Property Type="String" Name="LuckyTime" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Appointment" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="Company1" />
+    <Property Type="Int32" Name="Company2" />
+    <Property Type="Int32" Name="Contact1" />
+    <Property Type="Int32" Name="Contact2" />
+    <Property Type="Int16" Name="PayMethods" Nullable="false" />
+    <Property Type="Int16" Name="woStatus" Nullable="false" />
+    <Property Type="String" Name="timeRange" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeRangeEnd" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeAllowed" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeAllowedEnd" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ParkingAtSite" />
+    <Property Type="String" Name="ParkingLocation" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ClientArrangeParking" />
+    <Property Type="String" Name="jobDescription" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="graphicDwgPreparation" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="structuralDwgPreparation" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SiteCheck" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="clientApprovalSentDate" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="clientApprovedDate" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="landlordApprovalSendDate" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="landlordApprovedDate" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="engineeringStampSentDate" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="engineeringStamped" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="permit" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="stakeout" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="outsourcingInstaller" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sales" Nullable="false" />
+    <Property Type="Int32" Name="Sa1ID" />
+    <Property Type="Int32" Name="preWorkOrder" />
+    <Property Type="String" Name="switchPosition" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="temp1" />
+    <Property Type="String" Name="siteSupervisor" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ClientName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="coordinator" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="reDo" Nullable="false" />
+    <Property Type="Boolean" Name="rush" Nullable="false" />
+    <Property Type="Boolean" Name="revise" Nullable="false" />
+    <Property Type="String" Name="rushReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="redoReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="revisedReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="addNewItemReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="CurrentRev" />
+    <Property Type="Boolean" Name="NochargeApproved" />
+    <Property Type="Boolean" Name="Approved1" />
+    <Property Type="Int32" Name="invID" />
+    <Property Type="Int16" Name="redoVer" />
+    <Property Type="Int16" Name="reviseVer" />
+    <Property Type="String" Name="NoChargeReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ExactDate" Nullable="false" />
+    <Property Type="String" Name="RedoOfWoNumbers" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="GenerateFrom" />
+    <Property Type="String" Name="PreviousServiceWO" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ChecklistApplicable" Nullable="false" />
+    <Property Type="Int32" Name="LongestLeadtime" Nullable="false" />
+    <Property Type="Boolean" Name="SpecialProcedureApplicable" Nullable="false" />
+    <Property Type="Boolean" Name="RushChargeApplied" Nullable="false" />
+    <Property Type="Double" Name="RushChargeAmount" Nullable="false" />
+    <Property Type="DateTime" Name="SalesProposedDeadline" Precision="0" />
+    <Property Type="DateTime" Name="SalesProposedDeadlinePrevious" Precision="0" />
+    <Property Type="DateTime" Name="SalesProposedDeadlineLastUpdateWhen" Precision="0" />
+    <Property Type="Int32" Name="SalesProposedDeadlineLastUpdateWho" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionProposedDeadline" Precision="0" />
+    <Property Type="DateTime" Name="ProductionProposedDeadlinePrevious" Precision="0" />
+    <Property Type="DateTime" Name="ProductionProposedDeadlineLastUpdateWhen" Precision="0" />
+    <Property Type="Int32" Name="ProductionProposedDeadlineLastUpdateWho" Nullable="false" />
+    <Property Type="DateTime" Name="FinalDeadLine" Precision="0" />
+    <Property Type="DateTime" Name="FinalDeadlinePrevious" Precision="0" />
+    <Property Type="Int32" Name="FinalDeadlineLastUpdateWho" />
+    <Property Type="DateTime" Name="FinalDeadlineLastUpdateWhen" Precision="0" />
+    <Property Type="DateTime" Name="RevisedDeadline" Precision="0" />
+    <Property Type="DateTime" Name="RevisedDeadlinePrevious" Precision="0" />
+    <Property Type="Int32" Name="RevisedDeadlineLastUpdateWho" />
+    <Property Type="DateTime" Name="RevisedDeadlineLastUpdateWhen" Precision="0" />
+    <Property Type="Boolean" Name="IsDisplayToPurchasingInfo" Nullable="false" />
+    <Property Type="Double" Name="EstimatedShippingCharge" />
+    <Property Type="String" Name="FedTaxIDNumber" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="WorkorderAmount" Nullable="false" />
+    <NavigationProperty Name="JobCostingOutsourcingTransactions" Relationship="SpecificationDbModel.FK_JobCostingOutsourcingTransaction_Sales_JobMasterList_WO" FromRole="Sales_JobMasterList_WO" ToRole="JobCostingOutsourcingTransaction" />
+    <Property Type="Double" Name="WorkorderAmountShopOnGoing" />
+    <Property Type="Double" Name="WorkorderAmountShopOriginal" />
+    <Property Type="Double" Name="WorkorderAmountInstallation" />
+    <Property Type="Double" Name="WorkorderAmountSubcontract" />
+    <NavigationProperty Name="JobCostingTransactions" Relationship="SpecificationDbModel.FK_JobCostingTransaction_Sales_JobMasterList_WO" FromRole="Sales_JobMasterList_WO" ToRole="JobCostingTransaction" />
+  </EntityType>
+  <Association Name="FK_JobCostingOutsourcingTransaction_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingOutsourcingTransaction" Role="JobCostingOutsourcingTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="JobCostingOutsourcingTransaction">
+        <PropertyRef Name="EstCostTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCostingOutsourcingTransaction_Sales_JobMasterList_WO">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_WO" Role="Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingOutsourcingTransaction" Role="JobCostingOutsourcingTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="JobCostingOutsourcingTransaction">
+        <PropertyRef Name="WoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Template">
+    <Key>
+      <PropertyRef Name="TemplateID" />
+    </Key>
+    <Property Type="Int32" Name="TemplateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LastUpdateBy" Nullable="false" />
+    <Property Type="DateTime" Name="LastUpdatedAt" Nullable="false" Precision="0" />
+    <Property Type="Boolean" Name="IsFormulaApplicable" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Template_Detail" Relationship="SpecificationDbModel.FK_EST_Cost_Template_Detail_EST_Cost_Template" FromRole="EST_Cost_Template" ToRole="EST_Cost_Template_Detail" />
+    <NavigationProperty Name="Product" Relationship="SpecificationDbModel.FK_EST_Cost_Template_EST_Cost_Template" FromRole="EST_Cost_Template" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Template_Detail_EST_Cost_Template">
+    <End Type="SpecificationDbModel.EST_Cost_Template" Role="EST_Cost_Template" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Template_Detail" Role="EST_Cost_Template_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Template">
+        <PropertyRef Name="TemplateID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Template_Detail">
+        <PropertyRef Name="TemplateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Template_EST_Cost_Template">
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Template" Role="EST_Cost_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Template">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Bid_Type_Parent">
+    <Key>
+      <PropertyRef Name="ParentTypeID" />
+    </Key>
+    <Property Type="Int32" Name="ParentTypeID" Nullable="false" />
+    <Property Type="String" Name="ParentTypeName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="Double" Name="ParentOrderNumber" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Children" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Type_Children_EST_Cost_Bid_Type_Parent" FromRole="EST_Cost_Bid_Type_Parent" ToRole="EST_Cost_Bid_Type_Children" />
+    <NavigationProperty Name="EST_Cost_Bid_ParentItem" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_EST_Cost_Bid_Type_Parent" FromRole="EST_Cost_Bid_Type_Parent" ToRole="EST_Cost_Bid_ParentItem" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Bid_Item">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Type="Int32" Name="RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ChildrenTypeID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Double" Name="Qty" Nullable="false" />
+    <Property Type="Double" Name="UnitPriceA" Nullable="false" />
+    <Property Type="Double" Name="SubTotalA" />
+    <Property Type="Double" Name="UnitPriceB" Nullable="false" />
+    <Property Type="Double" Name="SubTotalB" />
+    <Property Type="String" Name="OtherItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Children" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Item_EST_Cost_Bid_Type_Children" FromRole="EST_Cost_Bid_Item" ToRole="EST_Cost_Bid_Type_Children" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Item_Sales_JobMasterList_EstRev" FromRole="EST_Cost_Bid_Item" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Bid_Type_Children">
+    <Key>
+      <PropertyRef Name="ChildrenTypeID" />
+    </Key>
+    <Property Type="Int32" Name="ChildrenTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ParentTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ChildrenOrderNumber" Nullable="false" />
+    <Property Type="String" Name="ChildrenTypeName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsSyncNeeded" Nullable="false" />
+    <Property Type="Boolean" Name="IsTotalRow" Nullable="false" />
+    <Property Type="Boolean" Name="IsDefault" Nullable="false" />
+    <Property Type="Int32" Name="SummaryGroupID" Nullable="false" />
+    <Property Type="Int32" Name="DistributionToItemGroupID" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Item" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Item_EST_Cost_Bid_Type_Children" FromRole="EST_Cost_Bid_Type_Children" ToRole="EST_Cost_Bid_Item" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Parent" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Type_Children_EST_Cost_Bid_Type_Parent" FromRole="EST_Cost_Bid_Type_Children" ToRole="EST_Cost_Bid_Type_Parent" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Bid_Item_EST_Cost_Bid_Type_Children">
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Children" Role="EST_Cost_Bid_Type_Children" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Item" Role="EST_Cost_Bid_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Bid_Type_Children">
+        <PropertyRef Name="ChildrenTypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Item">
+        <PropertyRef Name="ChildrenTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Bid_Type_Children_EST_Cost_Bid_Type_Parent">
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Parent" Role="EST_Cost_Bid_Type_Parent" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Children" Role="EST_Cost_Bid_Type_Children" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Bid_Type_Parent">
+        <PropertyRef Name="ParentTypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Type_Children">
+        <PropertyRef Name="ParentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sales_JobMasterList_EstRev">
+    <Key>
+      <PropertyRef Name="EstRevID" />
+    </Key>
+    <Property Type="Int32" Name="EstRevID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Byte" Name="erRev" Nullable="false" />
+    <Property Type="Boolean" Name="erLocked" Nullable="false" />
+    <Property Type="Decimal" Name="erAmount" Precision="8" Scale="2" />
+    <Property Type="String" Name="noEstimationReason" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="sa1ID" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TaskID" Nullable="false" />
+    <Property Type="Int32" Name="BidSignQty" />
+    <Property Type="String" Name="BidNote" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="BidCashAllowance" />
+    <Property Type="Double" Name="BidTaxRate" />
+    <Property Type="Double" Name="BidTaxAmountA" />
+    <Property Type="Double" Name="BidTaxAmountB" />
+    <Property Type="Double" Name="PriceA" />
+    <Property Type="Double" Name="PriceB" />
+    <Property Type="Double" Name="SubtotalA" />
+    <Property Type="Double" Name="SubtotalB" />
+    <Property Type="Double" Name="QtySum" />
+    <NavigationProperty Name="CR_Cost_Summary" Relationship="SpecificationDbModel.FK_CR_Cost_Summary_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="CR_Cost_Summary" />
+    <NavigationProperty Name="CR_CostItem" Relationship="SpecificationDbModel.FK_CR_CostItem_CR_CostItem" FromRole="Sales_JobMasterList_EstRev" ToRole="CR_CostItem" />
+    <NavigationProperty Name="EST_Cost_Bid_Item" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Item_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Cost_Bid_Item" />
+    <NavigationProperty Name="EST_Drawing" Relationship="SpecificationDbModel.FK_EST_Drawing_EST_Drawing" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Drawing" />
+    <NavigationProperty Name="EST_Service" Relationship="SpecificationDbModel.FK_EST_Service_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Service" />
+    <NavigationProperty Name="ParameterSpecifications" Relationship="SpecificationDbModel.FK_ParameterSpecification_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="ParameterSpecification" />
+    <NavigationProperty Name="Sales_Dispatching" Relationship="SpecificationDbModel.FK_Sales_Dispatching_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="Sales_Dispatching" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_Estimation" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="Sales_Dispatching_DrawingRequisition_Estimation" />
+    <NavigationProperty Name="EST_Cost_Bid_Note" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Note_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Cost_Bid_Note" />
+    <NavigationProperty Name="EST_Cost_Configuration" Relationship="SpecificationDbModel.FK_EST_Cost_Configuration_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Cost_Configuration" />
+    <NavigationProperty Name="EST_Cost_Bid_ParentItem" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Cost_Bid_ParentItem" />
+    <NavigationProperty Name="EST_Cost_Bid_Summary" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Summary_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Cost_Bid_Summary" />
+    <NavigationProperty Name="CR_EstimationRequisitionTitle" Relationship="SpecificationDbModel.FK_CR_EstimationRequisitionTitle_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="CR_EstimationRequisitionTitle" />
+    <NavigationProperty Name="CR_EstCostBidSummary" Relationship="SpecificationDbModel.FK_CR_EstCostBidSummary_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="CR_EstCostBidSummary" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Item_Sales_JobMasterList_EstRev" FromRole="Sales_JobMasterList_EstRev" ToRole="EST_Item" />
+  </EntityType>
+  <Association Name="FK_CR_Cost_Summary_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_Cost_Summary" Role="CR_Cost_Summary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="CR_Cost_Summary">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_CostItem_CR_CostItem">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_CostItem" Role="CR_CostItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="CR_CostItem">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Bid_Item_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Item" Role="EST_Cost_Bid_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Item">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Drawing_EST_Drawing">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Drawing" Role="EST_Drawing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Drawing">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Service_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="0..1" />
+    <End Type="SpecificationDbModel.EST_Service" Role="EST_Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Service">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParameterSpecification_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.ParameterSpecification" Role="ParameterSpecification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="ParameterSpecification">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching" Role="Sales_Dispatching" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_DrawingRequisition_Estimation_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_Estimation" Role="Sales_Dispatching_DrawingRequisition_Estimation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching_DrawingRequisition_Estimation">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Bid_Note">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Type="Int32" Name="RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="String" Name="NoteName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="OrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="ContentType" Nullable="false" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Note_Sales_JobMasterList_EstRev" FromRole="EST_Cost_Bid_Note" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Bid_Note_Base">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Type="Int32" Name="RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="NoteName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="OrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="ContentType" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Bid_Note_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Note" Role="EST_Cost_Bid_Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Note">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Bid_Type_Summary">
+    <Key>
+      <PropertyRef Name="SummaryTypeID" />
+    </Key>
+    <Property Type="Int32" Name="SummaryTypeID" Nullable="false" />
+    <Property Type="Int32" Name="PaOrderNumber" Nullable="false" />
+    <Property Type="Int32" Name="PbOrderNumber" Nullable="false" />
+    <Property Type="String" Name="SummaryTypeName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PbCalculateOrder" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Summary" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Summary_EST_Cost_Bid_Type_Summary" FromRole="EST_Cost_Bid_Type_Summary" ToRole="EST_Cost_Bid_Summary" />
+    <NavigationProperty Name="CR_EstCostBidSummary" Relationship="SpecificationDbModel.FK_CR_EstCostBidSummary_EST_Cost_Bid_Type_Summary" FromRole="EST_Cost_Bid_Type_Summary" ToRole="CR_EstCostBidSummary" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Configuration">
+    <Key>
+      <PropertyRef Name="ConfigID" />
+    </Key>
+    <Property Type="Int64" Name="ConfigID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Double" Name="MaterialMarkupPercentage" Nullable="false" />
+    <Property Type="Double" Name="DiscountRate" Nullable="false" />
+    <Property Type="Double" Name="LabourRateShop" Nullable="false" />
+    <Property Type="Double" Name="LabourRateInstallation" Nullable="false" />
+    <Property Type="Double" Name="OverheadRate" Nullable="false" />
+    <Property Type="Double" Name="TargetProfitRate" Nullable="false" />
+    <Property Type="Double" Name="MarkupShopMaterial" Nullable="false" />
+    <Property Type="Double" Name="MarkupInstallationMaterial" Nullable="false" />
+    <Property Type="Double" Name="MarkupStandardItem" Nullable="false" />
+    <Property Type="Double" Name="LabourRateLocalInstaller" Nullable="false" />
+    <Property Type="Double" Name="MaterialWastageRate" Nullable="false" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Cost_Configuration_Sales_JobMasterList_EstRev" FromRole="EST_Cost_Configuration" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Configuration_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Configuration" Role="EST_Cost_Configuration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Configuration">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Bid_ParentItem">
+    <Key>
+      <PropertyRef Name="ParentItemRowID" />
+    </Key>
+    <Property Type="Int32" Name="ParentItemRowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ParentTypeID" Nullable="false" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Double" Name="OrderNumber" Nullable="false" />
+    <Property Type="Double" Name="Subtoal" />
+    <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ChildrenRowCount" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Parent" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_EST_Cost_Bid_Type_Parent" FromRole="EST_Cost_Bid_ParentItem" ToRole="EST_Cost_Bid_Type_Parent" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_ParentItem_Sales_JobMasterList_EstRev" FromRole="EST_Cost_Bid_ParentItem" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Bid_Summary">
+    <Key>
+      <PropertyRef Name="SummaryRowID" />
+    </Key>
+    <Property Type="Int32" Name="SummaryRowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="SummaryTypeID" Nullable="false" />
+    <Property Type="Double" Name="PaSubtotal" Nullable="false" />
+    <Property Type="Double" Name="Supply" Nullable="false" />
+    <Property Type="Double" Name="Shipping" Nullable="false" />
+    <Property Type="Double" Name="Travelling" Nullable="false" />
+    <Property Type="Double" Name="Installation" Nullable="false" />
+    <Property Type="Int32" Name="TempInt1" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Summary" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Summary_EST_Cost_Bid_Type_Summary" FromRole="EST_Cost_Bid_Summary" ToRole="EST_Cost_Bid_Type_Summary" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Cost_Bid_Summary_Sales_JobMasterList_EstRev" FromRole="EST_Cost_Bid_Summary" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Bid_ParentItem_EST_Cost_Bid_Type_Parent">
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Parent" Role="EST_Cost_Bid_Type_Parent" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_ParentItem" Role="EST_Cost_Bid_ParentItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Bid_Type_Parent">
+        <PropertyRef Name="ParentTypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_ParentItem">
+        <PropertyRef Name="ParentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Bid_ParentItem_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_ParentItem" Role="EST_Cost_Bid_ParentItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_ParentItem">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Bid_Summary_EST_Cost_Bid_Type_Summary">
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Summary" Role="EST_Cost_Bid_Type_Summary" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Summary" Role="EST_Cost_Bid_Summary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Bid_Type_Summary">
+        <PropertyRef Name="SummaryTypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Summary">
+        <PropertyRef Name="SummaryTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Bid_Summary_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Summary" Role="EST_Cost_Bid_Summary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Bid_Summary">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CR_EstimationRequisitionTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="SubProjectNumber" Nullable="false" />
+    <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+    <Property Type="String" Name="JobNumber" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobTitle" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsBidToProject" Nullable="false" />
+    <Property Type="String" Name="TargetDate" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QuoteToCompanyName" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobLocation" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="IndustryCodeID" Nullable="false" />
+    <Property Type="Int32" Name="Rev" Nullable="false" />
+    <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+    <Property Type="Boolean" Name="IsRush" Nullable="false" />
+    <Property Type="String" Name="SalesName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubmittedTime" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Estimator" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FinishedTime" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DrawingPurpose" Nullable="false" />
+    <Property Type="String" Name="MallID" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_CR_EstimationRequisitionTitle_Sales_JobMasterList_EstRev" FromRole="CR_EstimationRequisitionTitle" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <Association Name="FK_CR_EstimationRequisitionTitle_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_EstimationRequisitionTitle" Role="CR_EstimationRequisitionTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="CR_EstimationRequisitionTitle">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CR_EstCostBidSummary">
+    <Key>
+      <PropertyRef Name="SummaryRowID" />
+    </Key>
+    <Property Type="Int32" Name="SummaryRowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EstRevID" Nullable="false" />
+    <Property Type="Int32" Name="SummaryTypeID" Nullable="false" />
+    <Property Type="Double" Name="PaSubtotal" Nullable="false" />
+    <Property Type="Double" Name="Supply" Nullable="false" />
+    <Property Type="Double" Name="Shipping" Nullable="false" />
+    <Property Type="Double" Name="Travelling" Nullable="false" />
+    <Property Type="Double" Name="Installation" Nullable="false" />
+    <Property Type="Int32" Name="TempInt1" Nullable="false" />
+    <Property Type="Int64" Name="EstItemID" Nullable="false" />
+    <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Bid_Type_Summary" Relationship="SpecificationDbModel.FK_CR_EstCostBidSummary_EST_Cost_Bid_Type_Summary" FromRole="CR_EstCostBidSummary" ToRole="EST_Cost_Bid_Type_Summary" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_CR_EstCostBidSummary_Sales_JobMasterList_EstRev" FromRole="CR_EstCostBidSummary" ToRole="Sales_JobMasterList_EstRev" />
+  </EntityType>
+  <Association Name="FK_CR_EstCostBidSummary_EST_Cost_Bid_Type_Summary">
+    <End Type="SpecificationDbModel.EST_Cost_Bid_Type_Summary" Role="EST_Cost_Bid_Type_Summary" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_EstCostBidSummary" Role="CR_EstCostBidSummary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Bid_Type_Summary">
+        <PropertyRef Name="SummaryTypeID" />
+      </Principal>
+      <Dependent Role="CR_EstCostBidSummary">
+        <PropertyRef Name="SummaryTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_EstCostBidSummary_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_EstCostBidSummary" Role="CR_EstCostBidSummary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="CR_EstCostBidSummary">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Db_LabourHourPosition">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Name="PositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RateA" Type="Double" Nullable="false" />
+    <Property Name="RateB" Type="Double" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourProcedure" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourPosition1" FromRole="EST_Cost_Db_LabourHourPosition" ToRole="EST_Cost_Db_LabourHourProcedure" />
+  </EntityType>
+  <EntityType Name="EST_Cost_Db_LabourHourProcedure">
+    <Key>
+      <PropertyRef Name="DbItemID" />
+    </Key>
+    <Property Name="DbItemID" Type="Int32" Nullable="false" />
+    <Property Name="EstCostTypeID" Type="Int32" Nullable="false" />
+    <Property Name="PositionID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourPosition" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourPosition1" FromRole="EST_Cost_Db_LabourHourProcedure" ToRole="EST_Cost_Db_LabourHourPosition" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Type" FromRole="EST_Cost_Db_LabourHourProcedure" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourGroup" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourGroup" FromRole="EST_Cost_Db_LabourHourProcedure" ToRole="EST_Cost_Db_LabourHourGroup" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourPosition1">
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourPosition" Role="EST_Cost_Db_LabourHourPosition" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourProcedure" Role="EST_Cost_Db_LabourHourProcedure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Db_LabourHourPosition">
+        <PropertyRef Name="PositionID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Db_LabourHourProcedure">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourProcedure" Role="EST_Cost_Db_LabourHourProcedure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Db_LabourHourProcedure">
+        <PropertyRef Name="EstCostTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Item">
+    <Key>
+      <PropertyRef Name="EstItemID" />
+    </Key>
+    <Property Name="EstItemID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EstRevID" Type="Int32" Nullable="false" />
+    <Property Name="SerialID" Type="Int32" Nullable="false" />
+    <Property Name="EstItemNo" Type="Int16" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="ItemOption" Type="Int16" Nullable="false" />
+    <Property Name="IsFinalOption" Type="Boolean" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="BySubcontractor" Type="Boolean" Nullable="false" />
+    <Property Name="ItemPurposeID" Type="Int32" Nullable="false" />
+    <Property Name="RequirementID" Type="Int32" Nullable="false" />
+    <Property Name="PositionID" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="QtyPC" Type="Int32" Nullable="false" />
+    <Property Name="Permit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="IsHide" Type="Boolean" Nullable="false" />
+    <Property Name="EstimatorPrice" Type="Double" />
+    <Property Name="SpecialRequirement" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="contentsChanged" Type="Boolean" Nullable="false" />
+    <Property Name="DirectionID" Type="Int32" Nullable="false" />
+    <Property Name="IsTemplateApplicable" Type="Boolean" Nullable="false" />
+    <Property Name="IsThereSpecialMaterial" Type="Boolean" Nullable="false" />
+    <Property Name="SpecialMaterial" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialMaterialLeadTime" Type="Int32" Nullable="false" />
+    <Property Name="IsPreviousEstimationAvailable" Type="Int32" Nullable="false" />
+    <Property Name="ReportDescription" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="IsValidated" Type="Boolean" Nullable="false" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SizeRows" Type="Int32" Nullable="false" />
+    <Property Name="Width" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EstPart" Type="Int32" Nullable="false" />
+    <Property Name="PriceA" Type="Double" />
+    <Property Name="PriceB" Type="Double" />
+    <Property Name="PriceExtra" Type="Double" />
+    <Property Name="BidSignIdCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BidReferenceDrawing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BidDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BidRemark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SalesDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SupplyA" Type="Double" />
+    <Property Name="InstallationA" Type="Double" />
+    <Property Name="UnitPriceA" Type="Double" />
+    <Property Name="SupplyB" Type="Double" />
+    <Property Name="InstallationB" Type="Double" />
+    <Property Name="UnitPriceB" Type="Double" />
+    <NavigationProperty Name="CR_EstimationRequisitionItem" Relationship="SpecificationDbModel.FK_CR_EstimationRequisitionItem_EST_Item" FromRole="EST_Item" ToRole="CR_EstimationRequisitionItem" />
+    <NavigationProperty Name="EST_Item_Drawing" Relationship="SpecificationDbModel.FK_EST_Item_Drawing_EST_Item" FromRole="EST_Item" ToRole="EST_Item_Drawing" />
+    <NavigationProperty Name="EST_Item_Status" Relationship="SpecificationDbModel.FK_EST_Item_EST_Item_Status" FromRole="EST_Item" ToRole="EST_Item_Status" />
+    <NavigationProperty Name="EST_Item_TablePurpose" Relationship="SpecificationDbModel.FK_EST_Item_EST_Item_TablePurpose" FromRole="EST_Item" ToRole="EST_Item_TablePurpose" />
+    <NavigationProperty Name="FW_JOB_TYPE" Relationship="SpecificationDbModel.FK_EST_Item_FW_JOB_TYPE" FromRole="EST_Item" ToRole="FW_JOB_TYPE" />
+    <NavigationProperty Name="Product" Relationship="SpecificationDbModel.FK_EST_Item_Product" FromRole="EST_Item" ToRole="Product" />
+    <NavigationProperty Name="RequiredItemPosition" Relationship="SpecificationDbModel.FK_EST_Item_RequiredItemPosition" FromRole="EST_Item" ToRole="RequiredItemPosition" />
+    <NavigationProperty Name="Sales_JobMasterList_EstRev" Relationship="SpecificationDbModel.FK_EST_Item_Sales_JobMasterList_EstRev" FromRole="EST_Item" ToRole="Sales_JobMasterList_EstRev" />
+    <NavigationProperty Name="EST_Item_Specification" Relationship="SpecificationDbModel.FK_EST_Item_Specification_EST_Item" FromRole="EST_Item" ToRole="EST_Item_Specification" />
+    <NavigationProperty Name="EST_Item_Specification_Size" Relationship="SpecificationDbModel.FK_EST_Item_Specification_Size_EST_Item" FromRole="EST_Item" ToRole="EST_Item_Specification_Size" />
+    <NavigationProperty Name="Sales_Dispatching_DrawingRequisition_EstimationItem" Relationship="SpecificationDbModel.FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item" FromRole="EST_Item" ToRole="Sales_Dispatching_DrawingRequisition_EstimationItem" />
+    <NavigationProperty Name="EST_Cost" Relationship="SpecificationDbModel.FK_EST_Cost_EST_Item" FromRole="EST_Item" ToRole="EST_Cost" />
+  </EntityType>
+  <Association Name="FK_CR_EstimationRequisitionItem_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.CR_EstimationRequisitionItem" Role="CR_EstimationRequisitionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="CR_EstimationRequisitionItem">
+        <PropertyRef Name="EstItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Drawing_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Drawing" Role="EST_Item_Drawing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="EST_Item_Drawing">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_EST_Item_Status">
+    <End Type="SpecificationDbModel.EST_Item_Status" Role="EST_Item_Status" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_EST_Item_TablePurpose">
+    <End Type="SpecificationDbModel.EST_Item_TablePurpose" Role="EST_Item_TablePurpose" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item_TablePurpose">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="ItemPurposeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_FW_JOB_TYPE">
+    <End Type="SpecificationDbModel.FW_JOB_TYPE" Role="FW_JOB_TYPE" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_JOB_TYPE">
+        <PropertyRef Name="TYPE_ID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="RequirementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Product">
+    <End Type="SpecificationDbModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_RequiredItemPosition">
+    <End Type="SpecificationDbModel.RequiredItemPosition" Role="RequiredItemPosition" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequiredItemPosition">
+        <PropertyRef Name="PositionID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Sales_JobMasterList_EstRev">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_EstRev" Role="Sales_JobMasterList_EstRev" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_EstRev">
+        <PropertyRef Name="EstRevID" />
+      </Principal>
+      <Dependent Role="EST_Item">
+        <PropertyRef Name="EstRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Specification_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification" Role="EST_Item_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification">
+        <PropertyRef Name="EstItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Item_Specification_Size_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Item_Specification_Size" Role="EST_Item_Specification_Size" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="EST_Item_Specification_Size">
+        <PropertyRef Name="EstItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_DrawingRequisition_EstimationItem_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.Sales_Dispatching_DrawingRequisition_EstimationItem" Role="Sales_Dispatching_DrawingRequisition_EstimationItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching_DrawingRequisition_EstimationItem">
+        <PropertyRef Name="EstItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="JobCostingTransaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="WoID" Type="Int32" Nullable="false" />
+    <Property Name="WoItemID" Type="Int32" Nullable="false" />
+    <Property Name="EstCostTypeID" Type="Int32" Nullable="false" />
+    <Property Name="MaterialID" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Double" Nullable="false" />
+    <Property Name="PriceUnitID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionType" Type="Int16" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProcedureGroupID" Type="Int32" Nullable="false" />
+    <Property Name="Count1" Type="Double" />
+    <Property Name="Amount1" Type="Double" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_JobCostingTransaction_EST_Cost_Type" FromRole="JobCostingTransaction" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="Material" Relationship="SpecificationDbModel.FK_JobCostingTransaction_Material" FromRole="JobCostingTransaction" ToRole="Material" />
+    <NavigationProperty Name="Sales_JobMasterList_WO" Relationship="SpecificationDbModel.FK_JobCostingTransaction_Sales_JobMasterList_WO" FromRole="JobCostingTransaction" ToRole="Sales_JobMasterList_WO" />
+  </EntityType>
+  <Association Name="FK_JobCostingTransaction_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingTransaction" Role="JobCostingTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="JobCostingTransaction">
+        <PropertyRef Name="EstCostTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCostingTransaction_Material">
+    <End Type="SpecificationDbModel.Material" Role="Material" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingTransaction" Role="JobCostingTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="JobCostingTransaction">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobCostingTransaction_Sales_JobMasterList_WO">
+    <End Type="SpecificationDbModel.Sales_JobMasterList_WO" Role="Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Type="SpecificationDbModel.JobCostingTransaction" Role="JobCostingTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="JobCostingTransaction">
+        <PropertyRef Name="WoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost_Db_LabourHourGroup">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="EstCostTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="IsEnterHour" Type="Boolean" Nullable="false" />
+    <Property Name="IsSchedule" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourProcedure" Relationship="SpecificationDbModel.FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourGroup" FromRole="EST_Cost_Db_LabourHourGroup" ToRole="EST_Cost_Db_LabourHourProcedure" />
+    <NavigationProperty Name="tblWorkshopProductionProcessSteps" Relationship="SpecificationDbModel.FK_tblWorkshopProductionProcessStep_EST_Cost_Db_LabourHourGroup" FromRole="EST_Cost_Db_LabourHourGroup" ToRole="tblWorkshopProductionProcessStep" />
+  </EntityType>
+  <EntityType Name="tblWorkshopProductionProcessStep">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="Contents" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="ProcedureGroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Db_LabourHourGroup" Relationship="SpecificationDbModel.FK_tblWorkshopProductionProcessStep_EST_Cost_Db_LabourHourGroup" FromRole="tblWorkshopProductionProcessStep" ToRole="EST_Cost_Db_LabourHourGroup" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_Db_LabourHourProcedure_EST_Cost_Db_LabourHourGroup">
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourGroup" Role="EST_Cost_Db_LabourHourGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourProcedure" Role="EST_Cost_Db_LabourHourProcedure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Db_LabourHourGroup">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="EST_Cost_Db_LabourHourProcedure">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblWorkshopProductionProcessStep_EST_Cost_Db_LabourHourGroup">
+    <End Type="SpecificationDbModel.EST_Cost_Db_LabourHourGroup" Role="EST_Cost_Db_LabourHourGroup" Multiplicity="1" />
+    <End Type="SpecificationDbModel.tblWorkshopProductionProcessStep" Role="tblWorkshopProductionProcessStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Db_LabourHourGroup">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="tblWorkshopProductionProcessStep">
+        <PropertyRef Name="ProcedureGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EST_Cost">
+    <Key>
+      <PropertyRef Name="CostItemID" />
+    </Key>
+    <Property Name="CostItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EstItemID" Type="Int64" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="OrderNumber" Type="Double" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="UnitPrice" Type="Double" Nullable="false" />
+    <Property Name="Qty" Type="Double" Nullable="false" />
+    <Property Name="SubTotal" Type="Double" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DbItemID" Type="Int32" Nullable="false" />
+    <Property Name="WoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EST_Cost_Type" Relationship="SpecificationDbModel.FK_EST_Cost_EST_Cost_Type" FromRole="EST_Cost" ToRole="EST_Cost_Type" />
+    <NavigationProperty Name="EST_Item" Relationship="SpecificationDbModel.FK_EST_Cost_EST_Item" FromRole="EST_Cost" ToRole="EST_Item" />
+  </EntityType>
+  <Association Name="FK_EST_Cost_EST_Cost_Type">
+    <End Type="SpecificationDbModel.EST_Cost_Type" Role="EST_Cost_Type" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost" Role="EST_Cost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Cost_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="EST_Cost">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EST_Cost_EST_Item">
+    <End Type="SpecificationDbModel.EST_Item" Role="EST_Item" Multiplicity="1" />
+    <End Type="SpecificationDbModel.EST_Cost" Role="EST_Cost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EST_Item">
+        <PropertyRef Name="EstItemID" />
+      </Principal>
+      <Dependent Role="EST_Cost">
+        <PropertyRef Name="EstItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

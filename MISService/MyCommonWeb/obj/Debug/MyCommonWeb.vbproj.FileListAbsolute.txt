@@ -1,0 +1,44 @@
+F:\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.dll
+F:\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.pdb
+F:\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.xml
+F:\MIS2015\MyCommonWeb\bin\Debug\MyCommon.dll
+F:\MIS2015\MyCommonWeb\bin\Debug\MyCommon.pdb
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.Resources.resources
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.dll
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.xml
+F:\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.Resources.resources
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.Resources.resources
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\Projects\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.Resources.resources
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\Debug\MyCommonWeb.pdb

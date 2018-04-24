@@ -1,0 +1,67 @@
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\MyCommon.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\MyCommon.pdb
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015Temp\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.xml
+F:\MIS2015Temp\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015Temp\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+F:\MIS2015Temp\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.pdb
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommon.dll
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommon.pdb
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.xml
+F:\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+F:\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\Projects\MISService\EmployeeDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.pdb

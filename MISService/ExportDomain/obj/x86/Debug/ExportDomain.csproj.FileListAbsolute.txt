@@ -1,0 +1,12 @@
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\bin\x86\Debug\ExportDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\bin\x86\Debug\ExportDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\bin\x86\Debug\ExportDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\x86\Debug\ExportDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\x86\Debug\ExportDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\x86\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\bin\x86\Debug\ExportDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\bin\x86\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\bin\x86\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\x86\Debug\ExportDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\x86\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ExportDomain\obj\x86\Debug\ExportDomain.pdb

@@ -1,0 +1,221 @@
+D:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+D:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+D:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+D:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+F:\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+F:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+F:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+F:\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+F:\FWD180\MIS\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+D:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll.config
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll.config
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+F:\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Mvc.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.Razor.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\SalesCenter\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll.config
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EntityFramework.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\Projects\MISService\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\SalesCenterDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\CustomerDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EntityFramework.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\ExportDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\SalesCenterDomain\obj\Debug\SalesCenterDomain.pdb

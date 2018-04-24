@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32A698E1-A626-4BB6-A29E-F13DED93F7CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalesCenterDomain</RootNamespace>
+    <AssemblyName>SalesCenterDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDL\BaseObject.cs" />
+    <Compile Include="BDL\CopyRecords.cs" />
+    <Compile Include="BDL\Invoice\Copy.cs" />
+    <Compile Include="BDL\Invoice\CreateNew.cs" />
+    <Compile Include="BDL\Invoice\CreditNote.cs" />
+    <Compile Include="BDL\Invoice\Delete.cs" />
+    <Compile Include="BDL\Invoice\InvoiceChildren.cs" />
+    <Compile Include="BDL\Invoice\InvoiceCollection.cs" />
+    <Compile Include="BDL\Invoice\InvoiceField.cs" />
+    <Compile Include="BDL\Invoice\InvoiceItem.cs" />
+    <Compile Include="BDL\Invoice\InvoiceWorkorder.cs" />
+    <Compile Include="BDL\Invoice\Property.cs" />
+    <Compile Include="BDL\Invoice\PropertyStatus.cs" />
+    <Compile Include="BDL\Invoice\PropertyType.cs" />
+    <Compile Include="BDL\Invoice\PropertyWriteOnly.cs" />
+    <Compile Include="BDL\Invoice\VersionControl.cs" />
+    <Compile Include="BDL\Item\Currency.cs" />
+    <Compile Include="BDL\Quote\QuoteTitleGenerate.cs" />
+    <Compile Include="BDL\Workorder\WorkorderAmount.cs" />
+    <Compile Include="BDL\Workorder\WorkorderItemDrawing.cs" />
+    <Compile Include="BDL\Item\LeadTime.cs" />
+    <Compile Include="BDL\Item\Note.cs" />
+    <Compile Include="BDL\Item\ObjItem.cs" />
+    <Compile Include="BDL\NumberControl\NumberControl.cs" />
+    <Compile Include="BDL\Project\Children.cs" />
+    <Compile Include="BDL\Project\ChildrenVersion.cs" />
+    <Compile Include="BDL\Project\CreateNew.cs" />
+    <Compile Include="BDL\Project\FieldStatus.cs" />
+    <Compile Include="BDL\Project\Marketing.cs" />
+    <Compile Include="BDL\Project\ProjectChildrenItemSP.cs" />
+    <Compile Include="BDL\Project\ProjectChildrenItemTable.cs" />
+    <Compile Include="BDL\Project\ProjectCompany.cs" />
+    <Compile Include="BDL\Project\ProjectField.cs" />
+    <Compile Include="BDL\Project\ProjectNote.cs" />
+    <Compile Include="BDL\Project\ProjectStatus.cs" />
+    <Compile Include="BDL\Project\Property.cs" />
+    <Compile Include="BDL\Quote\ChildrenItemTable.cs" />
+    <Compile Include="BDL\Quote\Copy.cs" />
+    <Compile Include="BDL\Quote\GenerateQuoteValidation.cs" />
+    <Compile Include="BDL\Quote\Delete.cs" />
+    <Compile Include="BDL\Quote\Field.cs" />
+    <Compile Include="BDL\Quote\Property.cs" />
+    <Compile Include="BDL\Quote\QuoteItem.cs" />
+    <Compile Include="BDL\Quote\QuoteItemCrystalReport.cs" />
+    <Compile Include="BDL\Quote\QuoteItemEdit.cs" />
+    <Compile Include="BDL\Quote\Shared.cs" />
+    <Compile Include="BDL\Search\Search.cs" />
+    <Compile Include="BDL\Service\CreateNew.cs" />
+    <Compile Include="BDL\Service\Definition.cs" />
+    <Compile Include="BDL\Service\FsService.cs" />
+    <Compile Include="BDL\Service\Update.cs" />
+    <Compile Include="BDL\SqlCommon.cs" />
+    <Compile Include="BDL\Task\bllTask.cs" />
+    <Compile Include="BDL\Task\dalTask.cs" />
+    <Compile Include="BDL\Task\Note.cs" />
+    <Compile Include="BDL\Task\TaskChangeDueTime.cs" />
+    <Compile Include="BDL\ValidationErrorMessage.cs" />
+    <Compile Include="BDL\Workorder\Communication.cs" />
+    <Compile Include="BDL\Workorder\Copy.cs" />
+    <Compile Include="BDL\Workorder\CreateNew.cs" />
+    <Compile Include="BDL\Workorder\Delete.cs" />
+    <Compile Include="BDL\Workorder\PropertyCheckList.cs" />
+    <Compile Include="BDL\Workorder\Read.cs" />
+    <Compile Include="BDL\Workorder\Select.cs" />
+    <Compile Include="BDL\Workorder\Update.cs" />
+    <Compile Include="BDL\Workorder\Update1.cs" />
+    <Compile Include="BDL\Workorder\Validation.cs" />
+    <Compile Include="BLL\ConvertToProject.cs" />
+    <Compile Include="BLL\MyProjectBidding.cs" />
+    <Compile Include="BO\DispatchingTaskEN.cs" />
+    <Compile Include="BO\MyEnum.cs" />
+    <Compile Include="BO\NValidationErrorValue.cs" />
+    <Compile Include="BO\NWorkorderValidationError.cs" />
+    <Compile Include="BO\SalesCenerENum.cs" />
+    <Compile Include="BO\SalesCenterConstants.cs" />
+    <Compile Include="BO\SalesCenterDomainConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BLL\boTask.cs" />
+    <Compile Include="BLL\MyInvoice.cs" />
+    <Compile Include="BLL\MyInvoiceItem.cs" />
+    <Compile Include="BLL\MyProject.cs" />
+    <Compile Include="BLL\MyQuoteItem.cs" />
+    <Compile Include="BLL\MySalesDispatching.cs" />
+    <Compile Include="BLL\MySalesJobStatusTable.cs" />
+    <Compile Include="BLL\MySalesSpecialMaterial.cs" />
+    <Compile Include="BLL\MySalesSpecialMaterialRequest.cs" />
+    <Compile Include="BLL\MyWipTask.cs" />
+    <Compile Include="BLL\MyWorkorder.cs" />
+    <Compile Include="BLL\MyWorkorderDeliveryNote.cs" />
+    <Compile Include="BLL\MyWorkorderItem.cs" />
+    <Compile Include="BLL\MyWorkorderShipping.cs" />
+    <Compile Include="BLL\MyWorkorderValidationContractAmount.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerDomain\CustomerDomain.csproj">
+      <Project>{3f6a0b60-cfbe-4175-8a8e-cbf0779eec6e}</Project>
+      <Name>CustomerDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\SpecDomain.csproj">
+      <Project>{f7fdc9bf-2586-4c01-ab1b-7f02723038a8}</Project>
+      <Name>SpecDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeDomain\EmployeeDomain.csproj">
+      <Project>{7cba035d-63a6-4d67-b5c8-e5187072a183}</Project>
+      <Name>EmployeeDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportDomain\ExportDomain.csproj">
+      <Project>{ce690287-3b37-4861-9af2-da07587f6152}</Project>
+      <Name>ExportDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCommonWeb\MyCommonWeb.vbproj">
+      <Project>{c1543d65-5222-4ea1-8074-c13b759422ae}</Project>
+      <Name>MyCommonWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCommon\MyCommon.csproj">
+      <Project>{661dcd9d-aaef-40bf-bc9a-290693d1df2d}</Project>
+      <Name>MyCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectDomain\ProjectDomain.csproj">
+      <Project>{4556e56e-cea0-48d2-be5a-1fb7a10fa7d0}</Project>
+      <Name>ProjectDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

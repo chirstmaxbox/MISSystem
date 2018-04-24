@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7FDC9BF-2586-4C01-AB1B-7F02723038A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpecDomain</RootNamespace>
+    <AssemblyName>SpecDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomerDomain">
+      <HintPath>..\..\Customer\CustomerDomain\bin\Debug\CustomerDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Production2\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Production2\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\Production2\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Production2\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CostDb\CostDbItemSearchVM.cs" />
+    <Compile Include="BLL\CostDb\DbItemBase.cs" />
+    <Compile Include="BLL\CostDb\MyEstCostConfigurationPPP.cs" />
+    <Compile Include="BLL\CostDb\MyEstCostConfiguration.cs" />
+    <Compile Include="BLL\Cost\CostCommon.cs" />
+    <Compile Include="BLL\Cost\MyCostItem.cs" />
+    <Compile Include="BLL\Cost\MyEstCostDetails.cs" />
+    <Compile Include="BLL\Cost\MyEstCostItemPrint.cs" />
+    <Compile Include="BLL\Cost\MyCostSummary.cs" />
+    <Compile Include="BLL\Cost\MyEstCostSummaryPrint.cs" />
+    <Compile Include="BLL\Cost\MyEstCostSummaryVmByEstItemID.cs" />
+    <Compile Include="BLL\Drawing\FileUpload.cs" />
+    <Compile Include="BLL\Drawing\MyEstItemDrawing.cs" />
+    <Compile Include="BLL\Drawing\MyEstDrawing.cs" />
+    <Compile Include="BLL\EstItemTemplate\MyEstItemTemplate.cs" />
+    <Compile Include="BLL\EstItem\EstItemCommon.cs" />
+    <Compile Include="BLL\EstItem\MyEstItem.cs" />
+    <Compile Include="BLL\EstItem\MyEstItemBase.cs" />
+    <Compile Include="BLL\EstItem\MyEstItemCopy.cs" />
+    <Compile Include="BLL\EstItem\MyEstItemCreate.cs" />
+    <Compile Include="BLL\EstItem\MyEstItemDelete.cs" />
+    <Compile Include="BLL\EstItem\MyCrEstimationRequisitionItem.cs" />
+    <Compile Include="BLL\EstItem\MyEstItemUpdate.cs" />
+    <Compile Include="BLL\EstItem\ValidationEstItem.cs" />
+    <Compile Include="BLL\EstItem\ValidationErrorMessage.cs" />
+    <Compile Include="BLL\EstTitle\MyEstRev.cs" />
+    <Compile Include="BLL\EstTitle\ValidationSubmitEstimationRequest.cs" />
+    <Compile Include="BLL\Material\MaterialCreateIfNotExist.cs" />
+    <Compile Include="BLL\Service\MyEstServiceCreate.cs" />
+    <Compile Include="BLL\Service\SpecServiceGroup.cs" />
+    <Compile Include="BLL\EstTitle\SpecProjectCompany.cs" />
+    <Compile Include="BLL\EstTitle\SpecProjectDetail.cs" />
+    <Compile Include="BLL\Material\MaterialBase.cs" />
+    <Compile Include="BLL\Material\MaterialSearchJobCosting.cs" />
+    <Compile Include="BLL\Material\MaterialCategoryFactory.cs" />
+    <Compile Include="BLL\Material\MaterialCategoryMaintenanceVm.cs" />
+    <Compile Include="BLL\Material\MaterialCategorySearchVm.cs" />
+    <Compile Include="BLL\Material\MaterialCommon.cs" />
+    <Compile Include="BLL\Material\MaterialDeleteVm.cs" />
+    <Compile Include="BLL\Material\MaterialIndexVm.cs" />
+    <Compile Include="BLL\Material\MaterialPriceBase.cs" />
+    <Compile Include="BLL\Service\MyEstService.cs" />
+    <Compile Include="BLL\SpecificationAuthorization.cs" />
+    <Compile Include="BLL\Task\DrawingRequisitionEstimationItem.cs" />
+    <Compile Include="BLL\Task\DrawingRequisitionFormVm.cs" />
+    <Compile Include="BLL\Task\SubmitDrawingRequestVm.cs" />
+    <Compile Include="BLL\Task\SubmitEstimationRequestVm.cs" />
+    <Compile Include="BO\ISelecListItems.cs" />
+    <Compile Include="BO\SpecCommon.cs" />
+    <Compile Include="BO\SpecDomainConfiguration.cs" />
+    <Compile Include="BO\SpecConstant.cs" />
+    <Compile Include="BO\SpecEnum.cs" />
+    <Compile Include="Model\CR_CostItem.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CR_Cost_Summary.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CR_EstCostBidSummary.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CR_EstimationRequisitionItem.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CR_EstimationRequisitionTitle.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Item.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Note.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Note_Base.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_ParentItem.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Summary.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Type_Children.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Type_Parent.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Bid_Type_Summary.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Configuration.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Db_LabourHourGroup.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Db_LabourHourPosition.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Db_LabourHourProcedure.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Db_Other.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Template.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Template_Detail.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Type.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Cost_Type_Category.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Drawing.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Drawing.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Specification.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Specification_Size.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Specification_Template.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Specification_Template_Option.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Specification_Template_OptionGroup.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_Status.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Item_TablePurpose.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EST_Service.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FW_JOB_TYPE.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobCostingMaterialTemplate.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobCostingMaterialTemplateDetail.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobCostingOutsourcingTransaction.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\JobCostingTransaction.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Material.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCategory0.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCategory1.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCategory2.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCategory3.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCategory4.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialPrice.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialPriceUnit.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ParameterSpecification.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductCategory.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductFeature.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductFeatureGroup.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductSize.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RequiredItemPosition.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_Dispatching.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_Dispatching_DrawingRequisition_Estimation.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_Dispatching_DrawingRequisition_EstimationItem.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_Dispatching_DrawingReq_Purpose.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_JobMasterList_EstRev.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sales_JobMasterList_WO.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpecificationDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecificationDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpecificationDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SpecificationDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecificationDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblWorkshopProductionProcessStep.cs">
+      <DependentUpon>SpecificationDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model\SpecificationDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpecificationDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SpecificationDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SpecificationDbModel.Context.cs</LastGenOutput>
+      <DependentUpon>SpecificationDbModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\SpecificationDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SpecificationDbModel.cs</LastGenOutput>
+      <DependentUpon>SpecificationDbModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeDomain\EmployeeDomain.csproj">
+      <Project>{7CBA035D-63A6-4D67-B5C8-E5187072A183}</Project>
+      <Name>EmployeeDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCommon\MyCommon.csproj">
+      <Project>{661DCD9D-AAEF-40BF-BC9A-290693D1DF2D}</Project>
+      <Name>MyCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\JobCosting\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

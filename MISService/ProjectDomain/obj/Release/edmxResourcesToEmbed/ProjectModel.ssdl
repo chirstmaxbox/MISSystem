@@ -1,0 +1,1708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CommissionInforInvoice">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="RowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="InvoiceDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="ZeroDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="SalesAmount" Type="float" Nullable="false" />
+    <Property Name="CustomerID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SalesRepID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="350" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="MisInvoiceID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CR_Commission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Position" Type="int" Nullable="false" />
+    <Property Name="ZeroDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="AppliedRuleID" Type="int" Nullable="false" />
+    <Property Name="ProductLine" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InvoiceDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="SalesAmount" Type="float" Nullable="false" />
+    <Property Name="PersonalRate" Type="float" Nullable="false" />
+    <Property Name="CommissionAmount" Type="float" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="PreviouseInvoiceTotalOfTheProject" Type="float" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="CR_Commission_InvoiceList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="SalesID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AppliedRuleID" Type="int" Nullable="false" />
+    <Property Name="ProductLine" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InvoiceDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="ZeroDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="SalesAmount" Type="float" Nullable="false" />
+    <Property Name="FirstInvoiceDate" Type="smalldatetime" />
+    <Property Name="CustomerRowID" Type="int" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="IsAbnormal" Type="bit" Nullable="false" />
+    <Property Name="AbnormalReason" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CR_OnGoingContract">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="SalesName" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobNumber" Type="nchar" MaxLength="15" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="TargetDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="IssueDateOfLastWorkorder" Type="smalldatetime" />
+    <Property Name="DaysBetweenLastWorkorAndTargetDate" Type="int" Nullable="false" />
+    <Property Name="ContractAmount" Type="float" Nullable="false" />
+    <Property Name="IssuedWorkorderAmount" Type="float" Nullable="false" />
+    <Property Name="IssuedWorkorderCount" Type="int" />
+    <Property Name="ToBeIssuedWorkorderAmount" Type="float" Nullable="false" />
+    <Property Name="WoFinishedAmount" Type="float" Nullable="false" />
+    <Property Name="WoOnGoingAmount" Type="float" Nullable="false" />
+    <Property Name="WoOnGoingAmountShop" Type="float" />
+    <Property Name="WoOnGoingAmountInstallation" Type="float" />
+    <Property Name="WoOnGoingAmountLocalInstaller" Type="float" />
+    <Property Name="InvoicedAmount" Type="float" />
+    <Property Name="SalesID" Type="int" Nullable="false" />
+    <Property Name="PcID" Type="int" Nullable="false" />
+    <Property Name="QuoteRevID" Type="int" Nullable="false" />
+    <Property Name="InstallToCustomerID" Type="int" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeTeamID" Type="int" Nullable="false" />
+    <Property Name="Problem" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IssuedWorkorderNumbers" Type="varchar" MaxLength="1000" />
+    <Property Name="FinishedWorkorderNumbers" Type="varchar" MaxLength="1000" />
+    <Property Name="OnGoingWorkorderNumbers" Type="varchar" MaxLength="1000" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="WeekNumber" Type="int" Nullable="false" />
+    <Property Name="ColourCode" Type="int" Nullable="false" />
+    <Property Name="SignedContractAmount" Type="float" />
+    <Property Name="AdminFee" Type="float" />
+    <Property Name="SignedContractPlusAdminFee" Type="float" />
+  </EntityType>
+  <EntityType Name="CR_ProjectStage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeTeamID" Type="int" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="InstallToCustomerID" Type="int" Nullable="false" />
+    <Property Name="InstallToAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="TargetDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="EstimationSubmit" Type="datetime" />
+    <Property Name="EstimationReceived" Type="datetime" />
+    <Property Name="IsBidding" Type="bit" Nullable="false" />
+    <Property Name="QuoteRevID" Type="int" Nullable="false" />
+    <Property Name="QuoteVersion" Type="int" Nullable="false" />
+    <Property Name="QuoteAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="QuotationSendDate" Type="smalldatetime" />
+    <Property Name="LastQuotationFollowUpDate" Type="smalldatetime" />
+    <Property Name="LastQuotationFollowUpContent" Type="nvarchar" MaxLength="400" />
+    <Property Name="Result" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ResultNote" Type="nchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="CR_ProjectWip">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeID" Type="int" Nullable="false" />
+    <Property Name="ReportEmployeeTeamID" Type="int" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="InstallToCustomerID" Type="int" Nullable="false" />
+    <Property Name="InstallToAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="TargetDate" Type="smalldatetime" />
+    <Property Name="QuoteRevID" Type="int" Nullable="false" />
+    <Property Name="ContractAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CollectingInfo" Type="nvarchar" MaxLength="10" />
+    <Property Name="OpID" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CR_ProjectWipDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="RowType" Type="int" Nullable="false" />
+    <Property Name="PreDrawing" Type="nvarchar" MaxLength="50" />
+    <Property Name="GraphicDrawingPreparation" Type="smalldatetime" />
+    <Property Name="StructuralDrawingPreparation" Type="smalldatetime" />
+    <Property Name="SiteCheck" Type="smalldatetime" />
+    <Property Name="SampleApproval" Type="smalldatetime" />
+    <Property Name="ClientApproval" Type="smalldatetime" />
+    <Property Name="LandlordApproval" Type="smalldatetime" />
+    <Property Name="EngineeringStamp" Type="smalldatetime" />
+    <Property Name="PermitApply" Type="smalldatetime" />
+    <Property Name="StakeoutApply" Type="smalldatetime" />
+    <Property Name="PermitWaiver" Type="smalldatetime" />
+    <Property Name="WorkorderIssuedDate" Type="smalldatetime" />
+    <Property Name="CompletionOfWorkorder" Type="float" />
+    <Property Name="WorkorderDeadline" Type="smalldatetime" />
+    <Property Name="OSID" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="CR_WorkOnHandForAccounting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="BillToCustomerID" Type="int" Nullable="false" />
+    <Property Name="BillToCustomerName" Type="nvarchar" MaxLength="300" />
+    <Property Name="InstallToCustomerID" Type="int" Nullable="false" />
+    <Property Name="InstallToAddress" Type="nvarchar" MaxLength="500" />
+    <Property Name="TargetDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="EstimatedCost" Type="float" />
+    <Property Name="QuoteRevID" Type="int" Nullable="false" />
+    <Property Name="ContractAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="BilledToDate" Type="float" />
+    <Property Name="InstallationHours" Type="float" />
+    <Property Name="ProductionHours" Type="float" />
+  </EntityType>
+  <EntityType Name="CR_Workorder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="WoID" Type="int" Nullable="false" />
+    <Property Name="WorkorderNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="WorkorderTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="WorkorderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="RecordType" Type="int" Nullable="false" />
+    <Property Name="SalesID" Type="int" Nullable="false" />
+    <Property Name="PcID" Type="int" Nullable="false" />
+    <Property Name="ShowingNumber" Type="int" Nullable="false" />
+    <Property Name="SalesName" Type="nchar" MaxLength="30" />
+    <Property Name="IsInvoiceIssued" Type="bit" Nullable="false" />
+    <Property Name="TempInt" Type="int" Nullable="false" />
+    <Property Name="TempString" Type="nvarchar" MaxLength="500" />
+    <Property Name="TempBool" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FW_Employees">
+    <Key>
+      <PropertyRef Name="EmployeeNumber" />
+    </Key>
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="15" />
+    <Property Name="Department" Type="nvarchar" MaxLength="20" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="15" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="15" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="15" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="25" />
+    <Property Name="DateofBirth" Type="datetime" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="60" />
+    <Property Name="City" Type="nvarchar" MaxLength="15" />
+    <Property Name="Province" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="15" />
+    <Property Name="HomePhone" Type="nvarchar" MaxLength="24" />
+    <Property Name="CellPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="SINCardNumber" Type="int" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactNumber1" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactNumber2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" />
+    <Property Name="paytype" Type="int" />
+    <Property Name="payrate" Type="int" />
+    <Property Name="CompanyEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyCellphone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Extension" Type="nvarchar" MaxLength="4" />
+    <Property Name="Performance" Type="nvarchar" MaxLength="50" />
+    <Property Name="History" Type="nvarchar" MaxLength="50" />
+    <Property Name="Training" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberInfor" Type="nchar" MaxLength="10" />
+    <Property Name="Password" Type="nchar" MaxLength="8" />
+    <Property Name="Roles" Type="nchar" MaxLength="10" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Sa1Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Sa2Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="SalesName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="PayrollNumber" Type="int" Nullable="false" />
+    <Property Name="DepartmentID" Type="nchar" MaxLength="15" />
+    <Property Name="ncrEnable" Type="bit" Nullable="false" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="response" Type="bit" />
+    <Property Name="signature" Type="image" />
+    <Property Name="dID" Type="int" Nullable="false" />
+    <Property Name="Team" Type="int" Nullable="false" />
+    <Property Name="isLeadHand" Type="bit" Nullable="false" />
+    <Property Name="isAE" Type="bit" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="StartWorkingDate" Type="smalldatetime" />
+    <Property Name="EndWorkingDate1" Type="smalldatetime" />
+    <Property Name="ReturnToWorkDate" Type="smalldatetime" />
+    <Property Name="EndWorkingDate2" Type="smalldatetime" />
+    <Property Name="SelectType" Type="smallint" Nullable="false" />
+    <Property Name="IsProbation" Type="nchar" MaxLength="10" />
+    <Property Name="IsInProbation" Type="bit" Nullable="false" />
+    <Property Name="ProbationPeriod" Type="int" Nullable="false" />
+    <Property Name="ShowOnInputHour" Type="bit" Nullable="false" />
+    <Property Name="IsFake" Type="bit" Nullable="false" />
+    <Property Name="IsShowOnPerformanceReport" Type="bit" Nullable="false" />
+    <Property Name="ShowOnCrmPage1" Type="bit" Nullable="false" />
+    <Property Name="ShowOnCommissionPage1" Type="bit" Nullable="false" />
+    <Property Name="ShowOnCommissionPage2" Type="bit" Nullable="false" />
+    <Property Name="CrmLeadOwner" Type="bit" Nullable="false" />
+    <Property Name="CrmLeadAE" Type="bit" Nullable="false" />
+    <Property Name="CrmLeadSelectAeEnable" Type="bit" Nullable="false" />
+    <Property Name="IsAdminTaskSelected" Type="bit" Nullable="false" />
+    <Property Name="IsShowOnSubdepartmentSchedule" Type="bit" Nullable="false" />
+    <Property Name="IsMtoAwared" Type="bit" Nullable="false" />
+    <Property Name="ProcedureGroupID" Type="int" Nullable="false" />
+    <Property Name="EntityID" Type="int" Nullable="false" />
+    <Property Name="IsSubcontract" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FW_JOB_TYPE">
+    <Key>
+      <PropertyRef Name="TYPE_ID" />
+    </Key>
+    <Property Name="TYPE_ID" Type="int" Nullable="false" />
+    <Property Name="JOB_TYPE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="QUOTE_SUPPLY_TYPE" Type="smallint" Nullable="false" />
+    <Property Name="wSelect" Type="bit" Nullable="false" />
+    <Property Name="iSelect" Type="bit" Nullable="false" />
+    <Property Name="sSelect" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FW_WORK_ORDER">
+    <Key>
+      <PropertyRef Name="WORKORDER_NUMBER" />
+    </Key>
+    <Property Name="WORKORDER_NUMBER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+    <Property Name="ITEM_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="JOB_DEADLINE" Type="datetime" />
+    <Property Name="SALES" Type="nvarchar" MaxLength="40" />
+    <Property Name="SALES_ASSISTANT_1" Type="nvarchar" MaxLength="30" />
+    <Property Name="SALES_ASSISTANT_2" Type="nvarchar" MaxLength="30" />
+    <Property Name="JOB_TYPE" Type="nvarchar" MaxLength="60" />
+    <Property Name="QUOTATION_EST_WORKSHOP" Type="float" />
+    <Property Name="QUOTATION_EST_METAL" Type="float" />
+    <Property Name="QUOTATION_EST_PLASTIC_A" Type="float" />
+    <Property Name="QUOTATION_EST_PLASTIC_B" Type="float" />
+    <Property Name="QUOTATION_EST_PAINTING" Type="float" />
+    <Property Name="QUOTATION_EST_RA3" Type="float" />
+    <Property Name="QUOTATION_EST_INSTALLATION" Type="float" />
+    <Property Name="QUOTATION_EST_SITECHECK" Type="float" />
+    <Property Name="QUOTATION_EST_STRUCTURAL" Type="float" />
+    <Property Name="QUOTATION_EST_ARTROOM" Type="float" />
+    <Property Name="QUOTATION_EST_WSERVICE" Type="float" />
+    <Property Name="CONTRACT_AMOUNT" Type="float" />
+    <Property Name="EXTRA_WORKSHOP" Type="float" />
+    <Property Name="EXTRA_INSTALLATION" Type="float" />
+    <Property Name="EXTRA_ARTROOM" Type="float" />
+    <Property Name="STATUS_WORKSHOP" Type="varchar" MaxLength="15" />
+    <Property Name="STATUS_INSTALLATION" Type="varchar" MaxLength="15" />
+    <Property Name="STATUS_ARTROOM" Type="varchar" MaxLength="15" />
+    <Property Name="FINISHED_DATE_ARTROOM" Type="datetime" />
+    <Property Name="FINISHED_DATE_WORKSHOP" Type="datetime" />
+    <Property Name="FINISHED_DATE_INSTALLATION" Type="datetime" />
+    <Property Name="CHANGED_JOB_DEADLINE" Type="datetime" />
+    <Property Name="INSTALLATION_TIME" Type="nchar" MaxLength="10" />
+    <Property Name="JOB_TYPE_ID" Type="int" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="POST_CODE" Type="nchar" MaxLength="6" />
+    <Property Name="Redo" Type="bit" Nullable="false" />
+    <Property Name="Rush" Type="bit" Nullable="false" />
+    <Property Name="Revise" Type="bit" Nullable="false" />
+    <Property Name="woID" Type="int" Nullable="false" />
+    <Property Name="WorkorderStatus" Type="int" Nullable="false" />
+    <Property Name="Workload" Type="float" />
+    <Property Name="SubDepartmentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="ProductionScheduleDate" Type="smalldatetime" />
+    <Property Name="ProductionFinishDate" Type="smalldatetime" />
+    <Property Name="Schedule1" Type="smalldatetime" />
+    <Property Name="Schedule2" Type="smalldatetime" />
+    <Property Name="Schedule3" Type="smalldatetime" />
+    <Property Name="Schedule4" Type="smalldatetime" />
+    <Property Name="Schedule5" Type="smalldatetime" />
+    <Property Name="Finish1" Type="int" Nullable="false" />
+    <Property Name="Finish2" Type="int" Nullable="false" />
+    <Property Name="Finish3" Type="int" Nullable="false" />
+    <Property Name="Finish4" Type="int" Nullable="false" />
+    <Property Name="Finish5" Type="int" Nullable="false" />
+    <Property Name="IsJobCostingRequired" Type="int" Nullable="false" />
+    <Property Name="InstallationSubDeptID" Type="int" Nullable="false" />
+    <Property Name="OriginalEst" Type="float" />
+    <Property Name="Variance" Type="float" Nullable="false" />
+    <Property Name="VarianceReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="VarianceStatusID" Type="int" Nullable="false" />
+    <Property Name="ManagerFinishDate" Type="smalldatetime" />
+    <Property Name="EstInputStatusID" Type="int" Nullable="false" />
+    <Property Name="EstInputStatusLastUpdateTime" Type="datetime" />
+    <Property Name="EstInputStatusLastUpdateBy" Type="int" Nullable="false" />
+    <Property Name="ReviseVer" Type="int" Nullable="false" />
+    <Property Name="IsMisc" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice_Item">
+    <Key>
+      <PropertyRef Name="quoteItemID" />
+    </Key>
+    <Property Name="quoteItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quoteRevID" Type="int" Nullable="false" />
+    <Property Name="estItemID" Type="int" Nullable="false" />
+    <Property Name="qiPrintOrder" Type="smallint" Nullable="false" />
+    <Property Name="quoteOption" Type="smallint" Nullable="false" />
+    <Property Name="isFinal" Type="bit" Nullable="false" />
+    <Property Name="supplyType" Type="smallint" Nullable="false" />
+    <Property Name="qiItemTitle" Type="nvarchar(max)" />
+    <Property Name="qiDescription" Type="nvarchar(max)" />
+    <Property Name="qiAmount" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="qiUnitPrice" Type="real" />
+    <Property Name="qiQty" Type="smallint" Nullable="false" />
+    <Property Name="qiQtypc" Type="smallint" />
+    <Property Name="heightFromGround" Type="nvarchar" MaxLength="100" />
+    <Property Name="Requirement" Type="smallint" Nullable="false" />
+    <Property Name="Position" Type="nchar" MaxLength="7" />
+    <Property Name="estItemNameText" Type="nchar" MaxLength="200" />
+    <Property Name="recordType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="quoteOptionText" Type="nvarchar" MaxLength="300" />
+    <Property Name="qiAmountText" Type="nvarchar" MaxLength="300" />
+    <Property Name="NameDetailsID" Type="int" Nullable="false" />
+    <Property Name="SerialID" Type="nchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
+    <Property Name="OptionID1" Type="int" Nullable="false" />
+    <Property Name="OptionID2" Type="int" Nullable="false" />
+    <Property Name="OptionID3" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="SupplyAndInstall" Type="int" Nullable="false" />
+    <Property Name="SupplyOnly" Type="int" Nullable="false" />
+    <Property Name="BasePrice" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quote_Item">
+    <Key>
+      <PropertyRef Name="quoteItemID" />
+    </Key>
+    <Property Name="quoteItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quoteRevID" Type="int" Nullable="false" />
+    <Property Name="estItemID" Type="int" Nullable="false" />
+    <Property Name="qiPrintOrder" Type="smallint" Nullable="false" />
+    <Property Name="quoteOption" Type="smallint" Nullable="false" />
+    <Property Name="isFinal" Type="bit" Nullable="false" />
+    <Property Name="supplyType" Type="smallint" Nullable="false" />
+    <Property Name="qiItemTitle" Type="nvarchar(max)" />
+    <Property Name="qiDescription" Type="nvarchar(max)" />
+    <Property Name="qiAmount" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="qiUnitPrice" Type="real" />
+    <Property Name="qiQty" Type="smallint" Nullable="false" />
+    <Property Name="qiQtypc" Type="smallint" />
+    <Property Name="heightFromGround" Type="nvarchar" MaxLength="100" />
+    <Property Name="Requirement" Type="smallint" />
+    <Property Name="Position" Type="nchar" MaxLength="7" />
+    <Property Name="estItemNameText" Type="nchar" MaxLength="200" />
+    <Property Name="recordType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="quoteOptionText" Type="nvarchar" MaxLength="300" />
+    <Property Name="qiAmountText" Type="nvarchar" MaxLength="300" />
+    <Property Name="NameDetailsID" Type="int" Nullable="false" />
+    <Property Name="SerialID" Type="nchar" MaxLength="3" />
+    <Property Name="BySubcontractor" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_Dispatching">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskType" Type="smallint" Nullable="false" />
+    <Property Name="RequestType" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="EstRevID" Type="int" Nullable="false" />
+    <Property Name="QuoteRevID" Type="int" />
+    <Property Name="WoID" Type="int" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="SubmitBy" Type="int" Nullable="false" />
+    <Property Name="Responsible" Type="smallint" Nullable="false" />
+    <Property Name="CopyTo" Type="smallint" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+    <Property Name="SubmitTime" Type="smalldatetime" Nullable="false" />
+    <Property Name="LastUpdateTime" Type="smalldatetime" />
+    <Property Name="RequiredTime" Type="smalldatetime" Nullable="false" />
+    <Property Name="Rush" Type="bit" Nullable="false" />
+    <Property Name="Priority" Type="smallint" />
+    <Property Name="Importance" Type="smallint" />
+    <Property Name="Reminder" Type="smalldatetime" />
+    <Property Name="CompletePercentage" Type="decimal" Precision="8" Scale="0" />
+    <Property Name="OwnerFinish" Type="bit" />
+    <Property Name="ResponsibleFinish" Type="bit" />
+    <Property Name="FinishedDate" Type="smalldatetime" />
+    <Property Name="WorkedHour" Type="float" />
+    <Property Name="NumberOfDrawing" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IncompleteInfo" Type="bit" Nullable="false" />
+    <Property Name="IIMarkedTime" Type="smalldatetime" />
+    <Property Name="IIOkTime" Type="smalldatetime" />
+    <Property Name="IIReason" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Sales_JobMaster_BiddingJob">
+    <Key>
+      <PropertyRef Name="BiddingID" />
+    </Key>
+    <Property Name="BiddingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="BillToID" Type="int" Nullable="false" />
+    <Property Name="InstallToID" Type="int" Nullable="false" />
+    <Property Name="QuoteToID" Type="int" Nullable="false" />
+    <Property Name="SubmitID" Type="int" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="TempCompanyName" Type="nvarchar" MaxLength="300" />
+    <Property Name="BiddingSourceID" Type="int" Nullable="false" />
+    <Property Name="BiddingTypeID" Type="int" Nullable="false" />
+    <Property Name="ProductRequired" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="AeAssignedDate" Type="smalldatetime" />
+    <Property Name="BidDeadline" Type="smalldatetime" />
+    <Property Name="TempProjectName" Type="nvarchar" MaxLength="500" />
+    <Property Name="TempTargetDate" Type="smalldatetime" />
+    <Property Name="TempAE" Type="int" Nullable="false" />
+    <Property Name="TempAmount" Type="float" />
+    <Property Name="Winner" Type="nvarchar" MaxLength="300" />
+    <Property Name="WinnerAmount" Type="float" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="Sales_JobMaster_Invoice_CommissionOnHold">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="RowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="invoiceID" Type="int" Nullable="false" />
+    <Property Name="invoiceNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ZeroDate" Type="smalldatetime" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList">
+    <Key>
+      <PropertyRef Name="jobID" />
+    </Key>
+    <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="JobStatus" Type="smallint" />
+    <Property Name="jobTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="OriginalTargetDate" Type="smalldatetime" />
+    <Property Name="targetDate" Type="smalldatetime" />
+    <Property Name="sales" Type="int" Nullable="false" />
+    <Property Name="sa1ID" Type="int" Nullable="false" />
+    <Property Name="ObsoleteestimationRevID" Type="int" />
+    <Property Name="ObsoletequoteRevID" Type="int" />
+    <Property Name="startTimeStamp" Type="smalldatetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Rush" Type="bit" />
+    <Property Name="StatusChanged" Type="bit" />
+    <Property Name="timeLimit" Type="nvarchar" MaxLength="50" />
+    <Property Name="isBidToProject" Type="bit" Nullable="false" />
+    <Property Name="subProject" Type="smallint" Nullable="false" />
+    <Property Name="yearNumber" Type="smallint" Nullable="false" />
+    <Property Name="Customer" Type="int" Nullable="false" />
+    <Property Name="SalesType" Type="int" Nullable="false" />
+    <Property Name="isLost" Type="bit" Nullable="false" />
+    <Property Name="idCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="locationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReasonOfNoContract" Type="nvarchar" MaxLength="500" />
+    <Property Name="MarketingTeam" Type="int" Nullable="false" />
+    <Property Name="MarketingProduct" Type="int" Nullable="false" />
+    <Property Name="MarketingAttribute" Type="int" Nullable="false" />
+    <Property Name="InternalReferralEmployeeID" Type="int" Nullable="false" />
+    <Property Name="OriginalAccountOwner" Type="int" Nullable="false" />
+    <Property Name="AETM" Type="int" Nullable="false" />
+    <Property Name="IsPaidPremiu" Type="bit" Nullable="false" />
+    <Property Name="OverLimitRate" Type="float" />
+    <Property Name="ProductLine" Type="int" Nullable="false" />
+    <Property Name="ProjectGiveBy" Type="int" Nullable="false" />
+    <Property Name="PreviousProjectID" Type="int" Nullable="false" />
+    <Property Name="IsGivenByOldPartner" Type="bit" Nullable="false" />
+    <Property Name="ReasonOfNoWorkorder" Type="nvarchar" MaxLength="500" />
+    <Property Name="FollowupDate1" Type="smalldatetime" />
+    <Property Name="FollowupDate2" Type="smalldatetime" />
+    <Property Name="LeadID" Type="int" Nullable="false" />
+    <Property Name="LastEstItemID" Type="int" Nullable="false" />
+    <Property Name="LastQuoteItemID" Type="int" Nullable="false" />
+    <Property Name="LastWorkorderItemID" Type="int" Nullable="false" />
+    <Property Name="LastInvoiceItemID" Type="int" Nullable="false" />
+    <Property Name="IssuedWorkorderAmount" Type="float" Nullable="false" />
+    <Property Name="IsAllProductionWorkorderIssued" Type="bit" Nullable="false" />
+    <Property Name="FinishedWorkorderAmount" Type="float" Nullable="false" />
+    <Property Name="IsAllProductionWorkorderFinished" Type="bit" Nullable="false" />
+    <Property Name="IsOnHold" Type="bit" Nullable="false" />
+    <Property Name="AbnormalWorkorderIssueStatus" Type="int" Nullable="false" />
+    <Property Name="AbnormalWorkorderIssueReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsFinished" Type="bit" Nullable="false" />
+    <Property Name="FinishedDate" Type="smalldatetime" />
+    <Property Name="IsOrderConfirmationSent" Type="bit" Nullable="false" />
+    <Property Name="OrderConfirmationPrinted" Type="int" Nullable="false" />
+    <Property Name="OrderConfirmationSenderID" Type="int" Nullable="false" />
+    <Property Name="OrderConfirmationSentTime" Type="smalldatetime" />
+    <Property Name="reasonOfLoss" Type="nvarchar" MaxLength="200" />
+    <Property Name="WipRemark" Type="nvarchar(max)" />
+    <Property Name="CommissionGivenBy" Type="int" Nullable="false" />
+    <Property Name="PreviousInvoiceAmount" Type="float" />
+    <Property Name="IssuedWorkorderAmountShop" Type="float" />
+    <Property Name="IssuedWorkorderAmountInstallation" Type="float" />
+    <Property Name="IssuedWorkorderAmountLocalInstaller" Type="float" />
+    <Property Name="IsExcludedFromReceivable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_Customer">
+    <Key>
+      <PropertyRef Name="jcID" />
+    </Key>
+    <Property Name="jcID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="cID" Type="int" Nullable="false" />
+    <Property Name="contactName" Type="int" Nullable="false" />
+    <Property Name="isBillTo" Type="bit" Nullable="false" />
+    <Property Name="isQuoteTo" Type="bit" Nullable="false" />
+    <Property Name="isInstallOrShipTo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_Invoice">
+    <Key>
+      <PropertyRef Name="invoiceID" />
+    </Key>
+    <Property Name="invoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="invoiceNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Revision" Type="tinyint" Nullable="false" />
+    <Property Name="invoiceType" Type="smallint" Nullable="false" />
+    <Property Name="invoiceDate" Type="smalldatetime" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ContactID" Type="int" />
+    <Property Name="Term" Type="smallint" />
+    <Property Name="Workorders" Type="nvarchar" MaxLength="600" />
+    <Property Name="ContractNo" Type="nvarchar" MaxLength="65" />
+    <Property Name="ShipVia" Type="nvarchar" MaxLength="50" />
+    <Property Name="Approved1" Type="bit" />
+    <Property Name="Approved2" Type="bit" />
+    <Property Name="Operator" Type="smallint" />
+    <Property Name="Datetimestamp" Type="smalldatetime" />
+    <Property Name="gst" Type="bit" />
+    <Property Name="pst" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Final" Type="bit" />
+    <Property Name="InvoiceAmount" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="10" />
+    <Property Name="Sales" Type="int" />
+    <Property Name="iStatus" Type="smallint" />
+    <Property Name="jobLocation" Type="nvarchar" MaxLength="300" />
+    <Property Name="fromWhere" Type="tinyint" />
+    <Property Name="Deposit" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="po" Type="nvarchar" MaxLength="200" />
+    <Property Name="Balance" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="SA1" Type="int" Nullable="false" />
+    <Property Name="atDetails" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ActionTaken" Type="nvarchar" MaxLength="800" />
+    <Property Name="emptyRows3" Type="smallint" Nullable="false" />
+    <Property Name="emptyRows1" Type="smallint" Nullable="false" />
+    <Property Name="emptyRows2" Type="smallint" Nullable="false" />
+    <Property Name="pstAmount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="contractDate" Type="smalldatetime" />
+    <Property Name="CurrencyRate" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="printOption" Type="smallint" Nullable="false" />
+    <Property Name="isMultipleLegalName" Type="bit" Nullable="false" />
+    <Property Name="MultipleLegalNameText" Type="nvarchar" MaxLength="300" />
+    <Property Name="TaxOption" Type="smallint" Nullable="false" />
+    <Property Name="NameSurfix" Type="nvarchar" MaxLength="10" />
+    <Property Name="WorkordersCopy" Type="nvarchar" MaxLength="600" />
+    <Property Name="AETM" Type="int" Nullable="false" />
+    <Property Name="InternalReferral" Type="int" Nullable="false" />
+    <Property Name="OriginalAccountOwner" Type="int" Nullable="false" />
+    <Property Name="IsAlert" Type="bit" Nullable="false" />
+    <Property Name="AlertReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="CommissionAmountAdjustment" Type="float" />
+    <Property Name="CommissionCustomRate" Type="float" />
+    <Property Name="CommissionIsWaived" Type="bit" Nullable="false" />
+    <Property Name="CommissionRemark" Type="nvarchar" MaxLength="500" />
+    <Property Name="CommissionAmountAdjustmentOP" Type="float" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_Invoice_Workorder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" Nullable="false" />
+    <Property Name="WorkorderNumber" Type="varchar" MaxLength="15" />
+    <Property Name="woID" Type="int" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_QuoteFollow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="fDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="3000" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="IsEmailedToSales" Type="bit" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_QuoteRev">
+    <Key>
+      <PropertyRef Name="quoteRevID" />
+    </Key>
+    <Property Name="quoteRevID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estRevID" Type="int" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="quoteRev" Type="tinyint" />
+    <Property Name="quoteOption" Type="smallint" />
+    <Property Name="quoteAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="quoteGST" Type="bit" />
+    <Property Name="quotePST" Type="bit" />
+    <Property Name="termDeposit" Type="smallint" />
+    <Property Name="termBalance" Type="smallint" />
+    <Property Name="Currency" Type="char" MaxLength="3" />
+    <Property Name="followupDate" Type="smalldatetime" />
+    <Property Name="quoteLocked" Type="bit" />
+    <Property Name="quoteStatus" Type="smallint" />
+    <Property Name="contractAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="contractNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="isItemCopied" Type="bit" />
+    <Property Name="reasonOfAddProduct" Type="nvarchar" MaxLength="200" />
+    <Property Name="printOption" Type="smallint" />
+    <Property Name="DiscountText" Type="nvarchar" MaxLength="200" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="isssueDate" Type="smalldatetime" />
+    <Property Name="emptyRow1" Type="tinyint" Nullable="false" />
+    <Property Name="emptyRow2" Type="tinyint" Nullable="false" />
+    <Property Name="emptyRow3" Type="tinyint" Nullable="false" />
+    <Property Name="pstAmount" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="CurrencyRate" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="contractDate" Type="smalldatetime" />
+    <Property Name="printJobTitle" Type="bit" Nullable="false" />
+    <Property Name="isLost" Type="bit" Nullable="false" />
+    <Property Name="sa1ID" Type="int" Nullable="false" />
+    <Property Name="TaxOption" Type="smallint" Nullable="false" />
+    <Property Name="ReportFormat" Type="smallint" Nullable="false" />
+    <Property Name="ContractFilename" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_WO">
+    <Key>
+      <PropertyRef Name="woID" />
+    </Key>
+    <Property Name="woID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="estRevID" Type="int" Nullable="false" />
+    <Property Name="woType" Type="smallint" Nullable="false" />
+    <Property Name="woRev" Type="tinyint" />
+    <Property Name="woCurrent" Type="bit" />
+    <Property Name="jobTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="WorkorderNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="findSiteAt" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeadLine" Type="smalldatetime" />
+    <Property Name="changedDeadLine" Type="smalldatetime" />
+    <Property Name="targetDate" Type="smalldatetime" />
+    <Property Name="issuedDate" Type="smalldatetime" />
+    <Property Name="LuckyTime" Type="nchar" MaxLength="7" />
+    <Property Name="Appointment" Type="nchar" MaxLength="7" />
+    <Property Name="Company1" Type="int" />
+    <Property Name="Company2" Type="int" />
+    <Property Name="Contact1" Type="int" />
+    <Property Name="Contact2" Type="int" />
+    <Property Name="PayMethods" Type="smallint" Nullable="false" />
+    <Property Name="woStatus" Type="smallint" Nullable="false" />
+    <Property Name="timeRange" Type="nvarchar" MaxLength="50" />
+    <Property Name="timeRangeEnd" Type="nvarchar" MaxLength="50" />
+    <Property Name="timeAllowed" Type="nvarchar" MaxLength="50" />
+    <Property Name="timeAllowedEnd" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParkingAtSite" Type="bit" />
+    <Property Name="ParkingLocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClientArrangeParking" Type="bit" />
+    <Property Name="jobDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="graphicDwgPreparation" Type="nvarchar" MaxLength="25" />
+    <Property Name="structuralDwgPreparation" Type="nvarchar" MaxLength="25" />
+    <Property Name="SiteCheck" Type="nvarchar" MaxLength="25" />
+    <Property Name="clientApprovalSentDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="clientApprovedDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="landlordApprovalSendDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="landlordApprovedDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="engineeringStampSentDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="engineeringStamped" Type="nvarchar" MaxLength="25" />
+    <Property Name="permit" Type="nvarchar" MaxLength="25" />
+    <Property Name="stakeout" Type="nvarchar" MaxLength="25" />
+    <Property Name="outsourcingInstaller" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="300" />
+    <Property Name="Sales" Type="int" Nullable="false" />
+    <Property Name="Sa1ID" Type="int" />
+    <Property Name="preWorkOrder" Type="int" />
+    <Property Name="switchPosition" Type="nvarchar" MaxLength="200" />
+    <Property Name="temp1" Type="int" />
+    <Property Name="siteSupervisor" Type="nvarchar" MaxLength="200" />
+    <Property Name="ClientName" Type="nvarchar" MaxLength="200" />
+    <Property Name="coordinator" Type="nvarchar" MaxLength="50" />
+    <Property Name="reDo" Type="bit" Nullable="false" />
+    <Property Name="rush" Type="bit" Nullable="false" />
+    <Property Name="revise" Type="bit" Nullable="false" />
+    <Property Name="rushReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="redoReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="revisedReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="addNewItemReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="CurrentRev" Type="bit" />
+    <Property Name="NochargeApproved" Type="bit" />
+    <Property Name="Approved1" Type="bit" />
+    <Property Name="invID" Type="int" />
+    <Property Name="redoVer" Type="smallint" />
+    <Property Name="reviseVer" Type="smallint" />
+    <Property Name="NoChargeReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="ExactDate" Type="bit" Nullable="false" />
+    <Property Name="RedoOfWoNumbers" Type="nvarchar" MaxLength="70" />
+    <Property Name="GenerateFrom" Type="tinyint" />
+    <Property Name="PreviousServiceWO" Type="nvarchar" MaxLength="200" />
+    <Property Name="ChecklistApplicable" Type="bit" Nullable="false" />
+    <Property Name="LongestLeadtime" Type="int" Nullable="false" />
+    <Property Name="SpecialProcedureApplicable" Type="bit" Nullable="false" />
+    <Property Name="RushChargeApplied" Type="bit" Nullable="false" />
+    <Property Name="RushChargeAmount" Type="float" Nullable="false" />
+    <Property Name="SalesProposedDeadline" Type="smalldatetime" />
+    <Property Name="SalesProposedDeadlinePrevious" Type="smalldatetime" />
+    <Property Name="SalesProposedDeadlineLastUpdateWhen" Type="smalldatetime" />
+    <Property Name="SalesProposedDeadlineLastUpdateWho" Type="int" Nullable="false" />
+    <Property Name="ProductionProposedDeadline" Type="smalldatetime" />
+    <Property Name="ProductionProposedDeadlinePrevious" Type="smalldatetime" />
+    <Property Name="ProductionProposedDeadlineLastUpdateWhen" Type="smalldatetime" />
+    <Property Name="ProductionProposedDeadlineLastUpdateWho" Type="int" Nullable="false" />
+    <Property Name="FinalDeadLine" Type="smalldatetime" />
+    <Property Name="FinalDeadlinePrevious" Type="smalldatetime" />
+    <Property Name="FinalDeadlineLastUpdateWho" Type="int" />
+    <Property Name="FinalDeadlineLastUpdateWhen" Type="smalldatetime" />
+    <Property Name="RevisedDeadline" Type="smalldatetime" />
+    <Property Name="RevisedDeadlinePrevious" Type="smalldatetime" />
+    <Property Name="RevisedDeadlineLastUpdateWho" Type="int" />
+    <Property Name="RevisedDeadlineLastUpdateWhen" Type="smalldatetime" />
+    <Property Name="IsDisplayToPurchasingInfo" Type="bit" Nullable="false" />
+    <Property Name="EstimatedShippingCharge" Type="float" />
+    <Property Name="FedTaxIDNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="WorkorderAmount" Type="float" Nullable="false" />
+    <Property Name="WorkorderAmountShopOnGoing" Type="float" />
+    <Property Name="WorkorderAmountShopOriginal" Type="float" />
+    <Property Name="WorkorderAmountInstallation" Type="float" />
+    <Property Name="WorkorderAmountSubcontract" Type="float" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_WO_Note">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="woID" Type="int" Nullable="false" />
+    <Property Name="rDate" Type="smalldatetime" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="InvoiceExclude" Type="bit" Nullable="false" />
+    <Property Name="NoteType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_JobStatusTable">
+    <Key>
+      <PropertyRef Name="jsrID" />
+    </Key>
+    <Property Name="jsrID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobID" Type="int" Nullable="false" />
+    <Property Name="jobStatus" Type="smallint" />
+    <Property Name="accomplishDate" Type="smalldatetime" />
+    <Property Name="Performer" Type="int" />
+    <Property Name="Ref" Type="nvarchar" MaxLength="15" />
+    <Property Name="RefVersion" Type="nchar" MaxLength="3" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sales_SpecialMaterial">
+    <Key>
+      <PropertyRef Name="JobSpecialMaterialID" />
+    </Key>
+    <Property Name="JobSpecialMaterialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="HandlingProcess" Type="nvarchar" MaxLength="50" />
+    <Property Name="LsmID" Type="int" Nullable="false" />
+    <Property Name="Contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="float" />
+    <Property Name="Count" Type="float" />
+    <Property Name="Amount" Type="float" StoreGeneratedPattern="Computed" />
+    <Property Name="Leadtime" Type="int" Nullable="false" />
+    <Property Name="ExpectingDeliveryTime" Type="smalldatetime" />
+    <Property Name="ActualReceivedTime" Type="smalldatetime" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specification" Type="nvarchar" MaxLength="200" />
+    <Property Name="Colour" Type="nchar" MaxLength="50" />
+    <Property Name="ItemNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_SpecialMaterialRequest">
+    <Key>
+      <PropertyRef Name="SpmID" />
+    </Key>
+    <Property Name="SpmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="SubmitTime" Type="smalldatetime" Nullable="false" />
+    <Property Name="SubmitBy" Type="int" Nullable="false" />
+    <Property Name="Estimation" Type="bit" Nullable="false" />
+    <Property Name="StructuralDrawing" Type="bit" Nullable="false" />
+    <Property Name="GraphicDrawing" Type="bit" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="RequiredDate" Type="smalldatetime" />
+    <Property Name="ReceivedDate" Type="smalldatetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="SubmitToPurchasingDate" Type="smalldatetime" />
+    <Property Name="EstimationSubmitDate" Type="smalldatetime" />
+    <Property Name="StructuralDrawingSubmitDate" Type="smalldatetime" />
+    <Property Name="GraphicDrawingSubmitDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Sales_Wip">
+    <Key>
+      <PropertyRef Name="WipTaskID" />
+    </Key>
+    <Property Name="WipTaskID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="estRevID" Type="int" Nullable="false" />
+    <Property Name="quoteRevID" Type="int" Nullable="false" />
+    <Property Name="woID" Type="int" Nullable="false" />
+    <Property Name="invoiceID" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="smallint" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="Contents" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+    <Property Name="ScheduleStartDate" Type="smalldatetime" />
+    <Property Name="ScheduleFinishDate" Type="smalldatetime" />
+    <Property Name="ActualFinishDate" Type="smalldatetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Responsible" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="LastUpdatedAt" Type="smalldatetime" />
+    <Property Name="LastUpdatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales_WipPublic">
+    <Key>
+      <PropertyRef Name="WipTaskID" />
+    </Key>
+    <Property Name="WipTaskID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="estRevID" Type="int" Nullable="false" />
+    <Property Name="quoteRevID" Type="int" Nullable="false" />
+    <Property Name="woID" Type="int" Nullable="false" />
+    <Property Name="invoiceID" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="smallint" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="Contents" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Status" Type="smallint" Nullable="false" />
+    <Property Name="ScheduleStartDate" Type="smalldatetime" />
+    <Property Name="ScheduleFinishDate" Type="smalldatetime" />
+    <Property Name="ActualFinishDate" Type="smalldatetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Responsible" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="LastUpdatedAt" Type="smalldatetime" />
+    <Property Name="LastUpdatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblBiddingJobSource">
+    <Key>
+      <PropertyRef Name="BiddingJobSourceID" />
+    </Key>
+    <Property Name="BiddingJobSourceID" Type="int" Nullable="false" />
+    <Property Name="BiddingJobSourceName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblBiddingJobType">
+    <Key>
+      <PropertyRef Name="BiddingJobTypeID" />
+    </Key>
+    <Property Name="BiddingJobTypeID" Type="int" Nullable="false" />
+    <Property Name="BiddingJobTypeName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblQuoteFollowupStatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblWipTask">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="ContentName" Type="nvarchar" MaxLength="100" />
+    <Property Name="OptionType" Type="smallint" Nullable="false" />
+    <Property Name="LeadTime" Type="int" Nullable="false" />
+    <Property Name="StageID" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="StartDateAssignType" Type="int" Nullable="false" />
+    <Property Name="FinishDateAssignType" Type="int" Nullable="false" />
+    <Property Name="StartDatePriorTo" Type="int" Nullable="false" />
+    <Property Name="IsInternal" Type="bit" Nullable="false" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+    <Property Name="PublicContentName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WO_Item">
+    <Key>
+      <PropertyRef Name="woItemID" />
+    </Key>
+    <Property Name="woItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="woID" Type="int" Nullable="false" />
+    <Property Name="estItemID" Type="bigint" Nullable="false" />
+    <Property Name="woDescription" Type="nvarchar" MaxLength="2500" />
+    <Property Name="woPrintOrder" Type="smallint" />
+    <Property Name="scPurpose" Type="smallint" />
+    <Property Name="scFindSiteAt" Type="nvarchar" MaxLength="500" />
+    <Property Name="scHydroInspectionRequired" Type="bit" />
+    <Property Name="scPurposeOther" Type="nvarchar" MaxLength="100" />
+    <Property Name="qty" Type="smallint" />
+    <Property Name="qtyPC" Type="smallint" />
+    <Property Name="heightFromGround" Type="nvarchar" MaxLength="100" />
+    <Property Name="Requirement" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nchar" MaxLength="7" Nullable="false" />
+    <Property Name="estItemNameText" Type="nvarchar" MaxLength="2500" />
+    <Property Name="scPurpose1" Type="bit" />
+    <Property Name="scPurpose2" Type="bit" />
+    <Property Name="scPurpose3" Type="bit" />
+    <Property Name="scPurpose4" Type="bit" />
+    <Property Name="fromWhere" Type="smallint" />
+    <Property Name="qtyUnit" Type="nvarchar" MaxLength="50" />
+    <Property Name="qtyPcUnit" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameDetailsID" Type="int" Nullable="false" />
+    <Property Name="qiAmount" Type="float" Nullable="false" />
+    <Property Name="LeadTime" Type="int" Nullable="false" />
+    <Property Name="ReasonOfAlterLeadtime" Type="nvarchar" MaxLength="200" />
+    <Property Name="SerialID" Type="nchar" MaxLength="3" />
+    <Property Name="BySubcontractor" Type="bit" Nullable="false" />
+    <Property Name="IsHide" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WO_Shipping">
+    <Key>
+      <PropertyRef Name="ShippingID" />
+    </Key>
+    <Property Name="ShippingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WoID" Type="int" Nullable="false" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrackingNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="WaybillNote" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShipToName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" />
+    <Property Name="Postcode" Type="nchar" MaxLength="15" />
+    <Property Name="AttnName" Type="nchar" MaxLength="50" />
+    <Property Name="AttnPhone" Type="nchar" MaxLength="30" />
+    <Property Name="WorkorderNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryDate" Type="smalldatetime" />
+    <Property Name="AeName" Type="nchar" MaxLength="50" />
+    <Property Name="AePhone" Type="nchar" MaxLength="30" />
+    <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="Total" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WO_ShippingItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WoID" Type="int" Nullable="false" />
+    <Property Name="ItemNumber" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_CommissionInforInvoice_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="CommissionInforInvoice" Type="Self.CommissionInforInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="CommissionInforInvoice">
+        <PropertyRef Name="MisInvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_Commission_InvoiceList_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="CR_Commission_InvoiceList" Type="Self.CR_Commission_InvoiceList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="CR_Commission_InvoiceList">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_Commission_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="CR_Commission" Type="Self.CR_Commission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="CR_Commission">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_OnGoingContract_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="CR_OnGoingContract" Type="Self.CR_OnGoingContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="CR_OnGoingContract">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_ProjectStage_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="CR_ProjectStage" Type="Self.CR_ProjectStage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="CR_ProjectStage">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_ProjectWip_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="CR_ProjectWip" Type="Self.CR_ProjectWip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="CR_ProjectWip">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_ProjectWipDetails_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="CR_ProjectWipDetails" Type="Self.CR_ProjectWipDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="CR_ProjectWipDetails">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_WorkOnHandForAccounting_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="CR_WorkOnHandForAccounting" Type="Self.CR_WorkOnHandForAccounting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="CR_WorkOnHandForAccounting">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CR_Workorder_FW_WORK_ORDER">
+    <End Role="FW_WORK_ORDER" Type="Self.FW_WORK_ORDER" Multiplicity="1" />
+    <End Role="CR_Workorder" Type="Self.CR_Workorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_WORK_ORDER">
+        <PropertyRef Name="WORKORDER_NUMBER" />
+      </Principal>
+      <Dependent Role="CR_Workorder">
+        <PropertyRef Name="WorkorderNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FW_WORK_ORDER_Sales_JobMasterList_WO">
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Role="FW_WORK_ORDER" Type="Self.FW_WORK_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="FW_WORK_ORDER">
+        <PropertyRef Name="woID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Item_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="Invoice_Item" Type="Self.Invoice_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="Invoice_Item">
+        <PropertyRef Name="quoteRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Item_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Quote_Item" Type="Self.Quote_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Quote_Item">
+        <PropertyRef Name="NameDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Item_Sales_JobMasterList_QuoteRev">
+    <End Role="Sales_JobMasterList_QuoteRev" Type="Self.Sales_JobMasterList_QuoteRev" Multiplicity="1" />
+    <End Role="Quote_Item" Type="Self.Quote_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_QuoteRev">
+        <PropertyRef Name="quoteRevID" />
+      </Principal>
+      <Dependent Role="Quote_Item">
+        <PropertyRef Name="quoteRevID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_FW_Employees">
+    <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+    <End Role="Sales_Dispatching" Type="Self.Sales_Dispatching" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching">
+        <PropertyRef Name="SubmitBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Dispatching_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_Dispatching" Type="Self.Sales_Dispatching" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_Dispatching">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMaster_BiddingJob" Type="Self.Sales_JobMaster_BiddingJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMaster_BiddingJob">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMaster_BiddingJob_Sales_JobMasterList">
+    <End Role="TblBiddingJobType" Type="Self.TblBiddingJobType" Multiplicity="1" />
+    <End Role="Sales_JobMaster_BiddingJob" Type="Self.Sales_JobMaster_BiddingJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblBiddingJobType">
+        <PropertyRef Name="BiddingJobTypeID" />
+      </Principal>
+      <Dependent Role="Sales_JobMaster_BiddingJob">
+        <PropertyRef Name="BiddingTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMaster_BiddingJob_TblBiddingJobSource">
+    <End Role="TblBiddingJobSource" Type="Self.TblBiddingJobSource" Multiplicity="1" />
+    <End Role="Sales_JobMaster_BiddingJob" Type="Self.Sales_JobMaster_BiddingJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblBiddingJobSource">
+        <PropertyRef Name="BiddingJobSourceID" />
+      </Principal>
+      <Dependent Role="Sales_JobMaster_BiddingJob">
+        <PropertyRef Name="BiddingSourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMaster_Invoice_CommissionOnHold_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="Sales_JobMaster_Invoice_CommissionOnHold" Type="Self.Sales_JobMaster_Invoice_CommissionOnHold" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="Sales_JobMaster_Invoice_CommissionOnHold">
+        <PropertyRef Name="invoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_Customer_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_Customer" Type="Self.Sales_JobMasterList_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_Customer">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_Employee">
+    <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList">
+        <PropertyRef Name="sales" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_Invoice_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_Invoice_Workorder_Sales_JobMasterList_Invoice">
+    <End Role="Sales_JobMasterList_Invoice" Type="Self.Sales_JobMasterList_Invoice" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_Invoice_Workorder" Type="Self.Sales_JobMasterList_Invoice_Workorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_Invoice">
+        <PropertyRef Name="invoiceID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_Invoice_Workorder">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_QuoteFollow_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_QuoteFollow" Type="Self.Sales_JobMasterList_QuoteFollow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_QuoteFollow">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_QuoteFollow_TblQuoteFollowupStatus">
+    <End Role="TblQuoteFollowupStatus" Type="Self.TblQuoteFollowupStatus" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_QuoteFollow" Type="Self.Sales_JobMasterList_QuoteFollow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblQuoteFollowupStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_QuoteFollow">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_QuoteRev_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_QuoteRev" Type="Self.Sales_JobMasterList_QuoteRev" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_QuoteRev">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_WO_Note_Sales_JobMasterList_WO">
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_WO_Note" Type="Self.Sales_JobMasterList_WO_Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_WO_Note">
+        <PropertyRef Name="woID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_WO_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_WO_Sales_JobMasterList_WO">
+    <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="Sales" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobStatusTable_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_JobStatusTable" Type="Self.Sales_JobStatusTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_JobStatusTable">
+        <PropertyRef Name="jobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_SpecialMaterial_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_SpecialMaterial" Type="Self.Sales_SpecialMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_SpecialMaterial">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_SpecialMaterialRequest_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_SpecialMaterialRequest" Type="Self.Sales_SpecialMaterialRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_SpecialMaterialRequest">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Wip_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_Wip" Type="Self.Sales_Wip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_Wip">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Wip_tblWipTask">
+    <End Role="tblWipTask" Type="Self.tblWipTask" Multiplicity="1" />
+    <End Role="Sales_Wip" Type="Self.Sales_Wip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWipTask">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Sales_Wip">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_WipPublic_Sales_JobMasterList">
+    <End Role="Sales_JobMasterList" Type="Self.Sales_JobMasterList" Multiplicity="1" />
+    <End Role="Sales_WipPublic" Type="Self.Sales_WipPublic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList">
+        <PropertyRef Name="jobID" />
+      </Principal>
+      <Dependent Role="Sales_WipPublic">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WO_Item_Sales_JobMasterList_WO">
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Role="WO_Item" Type="Self.WO_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="WO_Item">
+        <PropertyRef Name="woID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WO_Item_WO_Item">
+    <End Role="FW_JOB_TYPE" Type="Self.FW_JOB_TYPE" Multiplicity="1" />
+    <End Role="WO_Item" Type="Self.WO_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_JOB_TYPE">
+        <PropertyRef Name="TYPE_ID" />
+      </Principal>
+      <Dependent Role="WO_Item">
+        <PropertyRef Name="Requirement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WO_Shipping_Sales_JobMasterList_WO">
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Role="WO_Shipping" Type="Self.WO_Shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="WO_Shipping">
+        <PropertyRef Name="WoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WO_ShippingItem_Sales_JobMasterList_WO">
+    <End Role="Sales_JobMasterList_WO" Type="Self.Sales_JobMasterList_WO" Multiplicity="1" />
+    <End Role="WO_ShippingItem" Type="Self.WO_ShippingItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_JobMasterList_WO">
+        <PropertyRef Name="woID" />
+      </Principal>
+      <Dependent Role="WO_ShippingItem">
+        <PropertyRef Name="WoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectModelStoreContainer">
+    <EntitySet Name="CommissionInforInvoice" EntityType="Self.CommissionInforInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_Commission" EntityType="Self.CR_Commission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_Commission_InvoiceList" EntityType="Self.CR_Commission_InvoiceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_OnGoingContract" EntityType="Self.CR_OnGoingContract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_ProjectStage" EntityType="Self.CR_ProjectStage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_ProjectWip" EntityType="Self.CR_ProjectWip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_ProjectWipDetails" EntityType="Self.CR_ProjectWipDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_WorkOnHandForAccounting" EntityType="Self.CR_WorkOnHandForAccounting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CR_Workorder" EntityType="Self.CR_Workorder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FW_Employees" EntityType="Self.FW_Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FW_JOB_TYPE" EntityType="Self.FW_JOB_TYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FW_WORK_ORDER" EntityType="Self.FW_WORK_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice_Item" EntityType="Self.Invoice_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quote_Item" EntityType="Self.Quote_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Dispatching" EntityType="Self.Sales_Dispatching" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMaster_BiddingJob" EntityType="Self.Sales_JobMaster_BiddingJob" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMaster_Invoice_CommissionOnHold" EntityType="Self.Sales_JobMaster_Invoice_CommissionOnHold" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList" EntityType="Self.Sales_JobMasterList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_Customer" EntityType="Self.Sales_JobMasterList_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_Invoice" EntityType="Self.Sales_JobMasterList_Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_Invoice_Workorder" EntityType="Self.Sales_JobMasterList_Invoice_Workorder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_QuoteFollow" EntityType="Self.Sales_JobMasterList_QuoteFollow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_QuoteRev" EntityType="Self.Sales_JobMasterList_QuoteRev" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_WO" EntityType="Self.Sales_JobMasterList_WO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobMasterList_WO_Note" EntityType="Self.Sales_JobMasterList_WO_Note" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_JobStatusTable" EntityType="Self.Sales_JobStatusTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_SpecialMaterial" EntityType="Self.Sales_SpecialMaterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_SpecialMaterialRequest" EntityType="Self.Sales_SpecialMaterialRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Wip" EntityType="Self.Sales_Wip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_WipPublic" EntityType="Self.Sales_WipPublic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblBiddingJobSource" EntityType="Self.TblBiddingJobSource" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblBiddingJobType" EntityType="Self.TblBiddingJobType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblQuoteFollowupStatus" EntityType="Self.TblQuoteFollowupStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWipTask" EntityType="Self.tblWipTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WO_Item" EntityType="Self.WO_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WO_Shipping" EntityType="Self.WO_Shipping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WO_ShippingItem" EntityType="Self.WO_ShippingItem" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CommissionInforInvoice_Sales_JobMasterList_Invoice" Association="Self.FK_CommissionInforInvoice_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="CommissionInforInvoice" EntitySet="CommissionInforInvoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_Commission_InvoiceList_Sales_JobMasterList_Invoice" Association="Self.FK_CR_Commission_InvoiceList_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="CR_Commission_InvoiceList" EntitySet="CR_Commission_InvoiceList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_Commission_Sales_JobMasterList_Invoice" Association="Self.FK_CR_Commission_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="CR_Commission" EntitySet="CR_Commission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_OnGoingContract_Sales_JobMasterList" Association="Self.FK_CR_OnGoingContract_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="CR_OnGoingContract" EntitySet="CR_OnGoingContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_ProjectStage_Sales_JobMasterList" Association="Self.FK_CR_ProjectStage_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="CR_ProjectStage" EntitySet="CR_ProjectStage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_ProjectWip_Sales_JobMasterList" Association="Self.FK_CR_ProjectWip_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="CR_ProjectWip" EntitySet="CR_ProjectWip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_ProjectWipDetails_Sales_JobMasterList" Association="Self.FK_CR_ProjectWipDetails_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="CR_ProjectWipDetails" EntitySet="CR_ProjectWipDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_WorkOnHandForAccounting_Sales_JobMasterList" Association="Self.FK_CR_WorkOnHandForAccounting_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="CR_WorkOnHandForAccounting" EntitySet="CR_WorkOnHandForAccounting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CR_Workorder_FW_WORK_ORDER" Association="Self.FK_CR_Workorder_FW_WORK_ORDER">
+      <End Role="FW_WORK_ORDER" EntitySet="FW_WORK_ORDER" />
+      <End Role="CR_Workorder" EntitySet="CR_Workorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FW_WORK_ORDER_Sales_JobMasterList_WO" Association="Self.FK_FW_WORK_ORDER_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="FW_WORK_ORDER" EntitySet="FW_WORK_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Item_Sales_JobMasterList_Invoice" Association="Self.FK_Invoice_Item_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="Invoice_Item" EntitySet="Invoice_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Item_Product" Association="Self.FK_Quote_Item_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Quote_Item" EntitySet="Quote_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Item_Sales_JobMasterList_QuoteRev" Association="Self.FK_Quote_Item_Sales_JobMasterList_QuoteRev">
+      <End Role="Sales_JobMasterList_QuoteRev" EntitySet="Sales_JobMasterList_QuoteRev" />
+      <End Role="Quote_Item" EntitySet="Quote_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_FW_Employees" Association="Self.FK_Sales_Dispatching_FW_Employees">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="Sales_Dispatching" EntitySet="Sales_Dispatching" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Dispatching_Sales_JobMasterList" Association="Self.FK_Sales_Dispatching_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_Dispatching" EntitySet="Sales_Dispatching" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob" Association="Self.FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMaster_BiddingJob" EntitySet="Sales_JobMaster_BiddingJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMaster_BiddingJob_Sales_JobMasterList" Association="Self.FK_Sales_JobMaster_BiddingJob_Sales_JobMasterList">
+      <End Role="TblBiddingJobType" EntitySet="TblBiddingJobType" />
+      <End Role="Sales_JobMaster_BiddingJob" EntitySet="Sales_JobMaster_BiddingJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMaster_BiddingJob_TblBiddingJobSource" Association="Self.FK_Sales_JobMaster_BiddingJob_TblBiddingJobSource">
+      <End Role="TblBiddingJobSource" EntitySet="TblBiddingJobSource" />
+      <End Role="Sales_JobMaster_BiddingJob" EntitySet="Sales_JobMaster_BiddingJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMaster_Invoice_CommissionOnHold_Sales_JobMasterList_Invoice" Association="Self.FK_Sales_JobMaster_Invoice_CommissionOnHold_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="Sales_JobMaster_Invoice_CommissionOnHold" EntitySet="Sales_JobMaster_Invoice_CommissionOnHold" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_Customer_Sales_JobMasterList" Association="Self.FK_Sales_JobMasterList_Customer_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMasterList_Customer" EntitySet="Sales_JobMasterList_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_Employee" Association="Self.FK_Sales_JobMasterList_Employee">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_Invoice_Sales_JobMasterList" Association="Self.FK_Sales_JobMasterList_Invoice_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_Invoice_Workorder_Sales_JobMasterList_Invoice" Association="Self.FK_Sales_JobMasterList_Invoice_Workorder_Sales_JobMasterList_Invoice">
+      <End Role="Sales_JobMasterList_Invoice" EntitySet="Sales_JobMasterList_Invoice" />
+      <End Role="Sales_JobMasterList_Invoice_Workorder" EntitySet="Sales_JobMasterList_Invoice_Workorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_QuoteFollow_Sales_JobMasterList" Association="Self.FK_Sales_JobMasterList_QuoteFollow_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMasterList_QuoteFollow" EntitySet="Sales_JobMasterList_QuoteFollow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_QuoteFollow_TblQuoteFollowupStatus" Association="Self.FK_Sales_JobMasterList_QuoteFollow_TblQuoteFollowupStatus">
+      <End Role="TblQuoteFollowupStatus" EntitySet="TblQuoteFollowupStatus" />
+      <End Role="Sales_JobMasterList_QuoteFollow" EntitySet="Sales_JobMasterList_QuoteFollow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_QuoteRev_Sales_JobMasterList" Association="Self.FK_Sales_JobMasterList_QuoteRev_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMasterList_QuoteRev" EntitySet="Sales_JobMasterList_QuoteRev" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_WO_Note_Sales_JobMasterList_WO" Association="Self.FK_Sales_JobMasterList_WO_Note_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="Sales_JobMasterList_WO_Note" EntitySet="Sales_JobMasterList_WO_Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_WO_Sales_JobMasterList" Association="Self.FK_Sales_JobMasterList_WO_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_WO_Sales_JobMasterList_WO" Association="Self.FK_Sales_JobMasterList_WO_Sales_JobMasterList_WO">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobStatusTable_Sales_JobMasterList" Association="Self.FK_Sales_JobStatusTable_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_JobStatusTable" EntitySet="Sales_JobStatusTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_SpecialMaterial_Sales_JobMasterList" Association="Self.FK_Sales_SpecialMaterial_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_SpecialMaterial" EntitySet="Sales_SpecialMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_SpecialMaterialRequest_Sales_JobMasterList" Association="Self.FK_Sales_SpecialMaterialRequest_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_SpecialMaterialRequest" EntitySet="Sales_SpecialMaterialRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Wip_Sales_JobMasterList" Association="Self.FK_Sales_Wip_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_Wip" EntitySet="Sales_Wip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Wip_tblWipTask" Association="Self.FK_Sales_Wip_tblWipTask">
+      <End Role="tblWipTask" EntitySet="tblWipTask" />
+      <End Role="Sales_Wip" EntitySet="Sales_Wip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_WipPublic_Sales_JobMasterList" Association="Self.FK_Sales_WipPublic_Sales_JobMasterList">
+      <End Role="Sales_JobMasterList" EntitySet="Sales_JobMasterList" />
+      <End Role="Sales_WipPublic" EntitySet="Sales_WipPublic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WO_Item_Sales_JobMasterList_WO" Association="Self.FK_WO_Item_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="WO_Item" EntitySet="WO_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WO_Item_WO_Item" Association="Self.FK_WO_Item_WO_Item">
+      <End Role="FW_JOB_TYPE" EntitySet="FW_JOB_TYPE" />
+      <End Role="WO_Item" EntitySet="WO_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WO_Shipping_Sales_JobMasterList_WO" Association="Self.FK_WO_Shipping_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="WO_Shipping" EntitySet="WO_Shipping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WO_ShippingItem_Sales_JobMasterList_WO" Association="Self.FK_WO_ShippingItem_Sales_JobMasterList_WO">
+      <End Role="Sales_JobMasterList_WO" EntitySet="Sales_JobMasterList_WO" />
+      <End Role="WO_ShippingItem" EntitySet="WO_ShippingItem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,5 @@
+2018-04-23 18:20:18,537 [9] ERROR MISService.Method.LogMethods - Error of creating a New Project:0
+2018-04-23 18:20:51,530 [10] ERROR MISService.Method.LogMethods - Error of creating a New Project:0
+2018-04-23 18:22:24,808 ERROR MISService.Method.LogMethods - Error of creating a New Project:0
+2018-04-24 13:35:25,245 ERROR MISService.Method.LogMethods - DeleteProject:Crash:The DELETE statement conflicted with the REFERENCE constraint "FK_Sales_JobMasterList_Invoice_Sales_JobMasterList". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList_Invoice", column 'jobID'.
+The statement has been terminated.

@@ -1,0 +1,1423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmployeeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CR_TimeCard">
+          <Key>
+            <PropertyRef Name="tcID" />
+          </Key>
+          <Property Name="tcID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+          <Property Name="eID" Type="int" Nullable="false" />
+          <Property Name="CLOCK_IN" Type="datetime" Nullable="false" />
+          <Property Name="CLOCK_OUT" Type="datetime" Nullable="false" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="eName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TRANSACTION_ID" Type="bigint" Nullable="false" />
+          <Property Name="EMPLOYEE_ID" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="DEPARTMENT_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOURS_WORKED" Type="float" Nullable="false" />
+          <Property Name="HOURS_BREAK" Type="float" Nullable="false" />
+          <Property Name="HOURS_PREVIOUS" Type="float" Nullable="false" />
+          <Property Name="HOURS_OVERALL" Type="float" Nullable="false" />
+          <Property Name="SETUP_COMPLETED" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="pID" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="EarningCode" Type="int" Nullable="false" />
+          <Property Name="SubstitudeID" Type="int" Nullable="false" />
+          <Property Name="OvertimeID" Type="int" Nullable="false" />
+          <Property Name="ShiftID" Type="int" Nullable="false" />
+          <Property Name="PayableClockIn" Type="smalldatetime" Nullable="false" />
+          <Property Name="PayableClockOut" Type="smalldatetime" Nullable="false" />
+          <Property Name="WeekNumber" Type="int" Nullable="false" />
+          <Property Name="PayrollPeriodID" Type="int" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CR_Timecard_Substitude">
+          <Key>
+            <PropertyRef Name="TempID" />
+          </Key>
+          <Property Name="TempID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="HolidayID" Type="int" Nullable="false" />
+          <Property Name="eName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANSACTION_ID" Type="bigint" Nullable="false" />
+          <Property Name="CLOCK_IN" Type="datetime" Nullable="false" />
+          <Property Name="CLOCK_OUT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CR_Timecard_Summary">
+          <Key>
+            <PropertyRef Name="SummaryID" />
+          </Key>
+          <Property Name="SummaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrintingEmployeeID" Type="int" Nullable="false" />
+          <Property Name="PayRollID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="eName" Type="nvarchar" MaxLength="50" />
+          <Property Name="WeekNumber" Type="int" Nullable="false" />
+          <Property Name="WorkedHour" Type="float" Nullable="false" />
+          <Property Name="RegularHour" Type="float" Nullable="false" />
+          <Property Name="RegularOvertime" Type="float" Nullable="false" />
+          <Property Name="HolidayHour" Type="float" Nullable="false" />
+          <Property Name="HolidayOvertime" Type="float" Nullable="false" />
+          <Property Name="eID" Type="int" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_Department1">
+          <Key>
+            <PropertyRef Name="DEPARTMENTID" />
+          </Key>
+          <Property Name="DEPARTMENTID" Type="int" Nullable="false" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar" MaxLength="20" />
+          <Property Name="PARENT_DEPARTMENT" Type="varchar" MaxLength="20" />
+          <Property Name="NameInInfor" Type="nchar" MaxLength="20" />
+          <Property Name="REPORT_ID" Type="int" />
+          <Property Name="Category" Type="nvarchar" MaxLength="20" />
+          <Property Name="deptLevel" Type="smallint" />
+          <Property Name="ncrPurpose" Type="bit" />
+          <Property Name="wSelect" Type="smallint" />
+          <Property Name="InputHourSelect" Type="smallint" Nullable="false" />
+          <Property Name="InputHourName" Type="nchar" MaxLength="15" />
+          <Property Name="supervisorID" Type="int" />
+          <Property Name="pSelect" Type="bit" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="AdminTaskSelect" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Overtime">
+          <Key>
+            <PropertyRef Name="OvertimeID" />
+          </Key>
+          <Property Name="OvertimeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+          <Property Name="StartWorkingTime" Type="smalldatetime" />
+          <Property Name="EndWorkingTime" Type="smalldatetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ApplyBy" Type="int" Nullable="false" />
+          <Property Name="ApplyAt" Type="smalldatetime" />
+          <Property Name="ApproveBy" Type="int" Nullable="false" />
+          <Property Name="ApproveAt" Type="smalldatetime" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsMinusDinnerBreak" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Shift">
+          <Key>
+            <PropertyRef Name="rowID" />
+          </Key>
+          <Property Name="rowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShiftID" Type="int" Nullable="false" />
+          <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+          <Property Name="EffectiveDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Substitude">
+          <Key>
+            <PropertyRef Name="SubstitudeID" />
+          </Key>
+          <Property Name="SubstitudeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="HolidayID" Type="int" Nullable="false" />
+          <Property Name="SubstitudeDate" Type="smalldatetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_Employee_WorkingHistory">
+          <Key>
+            <PropertyRef Name="eWorkingHistoryID" />
+          </Key>
+          <Property Name="eWorkingHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+          <Property Name="StartWorkingDate" Type="smalldatetime" />
+          <Property Name="EndWorkingDate" Type="smalldatetime" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="FW_Employees">
+          <Key>
+            <PropertyRef Name="EmployeeNumber" />
+          </Key>
+          <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="15" />
+          <Property Name="Department" Type="nvarchar" MaxLength="20" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="15" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="15" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="15" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="25" />
+          <Property Name="DateofBirth" Type="datetime" />
+          <Property Name="HireDate" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="15" />
+          <Property Name="Province" Type="nvarchar" MaxLength="15" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="24" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="SINCardNumber" Type="int" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyContactNumber1" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmergencyContactNumber2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="30" />
+          <Property Name="paytype" Type="int" />
+          <Property Name="payrate" Type="int" />
+          <Property Name="CompanyEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyCellphone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="4" />
+          <Property Name="Performance" Type="nvarchar" MaxLength="50" />
+          <Property Name="History" Type="nvarchar" MaxLength="50" />
+          <Property Name="Training" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumberInfor" Type="nchar" MaxLength="10" />
+          <Property Name="Password" Type="nchar" MaxLength="8" />
+          <Property Name="Roles" Type="nchar" MaxLength="10" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sa1Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Sa2Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="SalesName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="PayrollNumber" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="nchar" MaxLength="15" />
+          <Property Name="ncrEnable" Type="bit" Nullable="false" />
+          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="response" Type="bit" />
+          <Property Name="signature" Type="image" />
+          <Property Name="dID" Type="int" Nullable="false" />
+          <Property Name="Team" Type="int" Nullable="false" />
+          <Property Name="isLeadHand" Type="bit" Nullable="false" />
+          <Property Name="isAE" Type="bit" Nullable="false" />
+          <Property Name="Role" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="StartWorkingDate" Type="smalldatetime" />
+          <Property Name="EndWorkingDate1" Type="smalldatetime" />
+          <Property Name="ReturnToWorkDate" Type="smalldatetime" />
+          <Property Name="EndWorkingDate2" Type="smalldatetime" />
+          <Property Name="SelectType" Type="smallint" Nullable="false" />
+          <Property Name="IsProbation" Type="nchar" MaxLength="10" />
+          <Property Name="IsInProbation" Type="bit" Nullable="false" />
+          <Property Name="ProbationPeriod" Type="int" Nullable="false" />
+          <Property Name="ShowOnInputHour" Type="bit" Nullable="false" />
+          <Property Name="IsFake" Type="bit" Nullable="false" />
+          <Property Name="IsShowOnPerformanceReport" Type="bit" Nullable="false" />
+          <Property Name="ShowOnCrmPage1" Type="bit" Nullable="false" />
+          <Property Name="ShowOnCommissionPage1" Type="bit" Nullable="false" />
+          <Property Name="ShowOnCommissionPage2" Type="bit" Nullable="false" />
+          <Property Name="CrmLeadOwner" Type="bit" Nullable="false" />
+          <Property Name="CrmLeadAE" Type="bit" Nullable="false" />
+          <Property Name="CrmLeadSelectAeEnable" Type="bit" Nullable="false" />
+          <Property Name="IsAdminTaskSelected" Type="bit" Nullable="false" />
+          <Property Name="IsShowOnSubdepartmentSchedule" Type="bit" Nullable="false" />
+          <Property Name="IsMtoAwared" Type="bit" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="int" Nullable="false" />
+          <Property Name="EntityID" Type="int" Nullable="false" />
+          <Property Name="IsSubcontract" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FW_EmployeesTeam">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Name="teamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="nvarchar" MaxLength="100" />
+          <Property Name="teamNote" Type="nvarchar" MaxLength="500" />
+          <Property Name="teamType" Type="smallint" />
+          <Property Name="Presentation" Type="bit" />
+          <Property Name="AbbrName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Estimation" Type="int" Nullable="false" />
+          <Property Name="Artist" Type="int" Nullable="false" />
+          <Property Name="Engineer" Type="int" Nullable="false" />
+          <Property Name="woApproval" Type="int" Nullable="false" />
+          <Property Name="Replace" Type="bit" Nullable="false" />
+          <Property Name="EstimatorReplace" Type="int" Nullable="false" />
+          <Property Name="ArtistReplace" Type="int" Nullable="false" />
+          <Property Name="EngineerReplace" Type="int" Nullable="false" />
+          <Property Name="woApprovalReplace" Type="int" Nullable="false" />
+          <Property Name="IsShowOnTV" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FwLabourTicketStationEmployee">
+          <Key>
+            <PropertyRef Name="RowID" />
+          </Key>
+          <Property Name="RowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StationID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PayrollPeriod">
+          <Key>
+            <PropertyRef Name="PayrollPeriodID" />
+          </Key>
+          <Property Name="PayrollPeriodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PayrollNumber" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="EndDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTimeCard_Holiday">
+          <Key>
+            <PropertyRef Name="HolidayID" />
+          </Key>
+          <Property Name="HolidayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="HolidayName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfHoliday" Type="smalldatetime" Nullable="false" />
+          <Property Name="ActualDayOff" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTimeCard_Shift">
+          <Key>
+            <PropertyRef Name="SHIFT_ID" />
+          </Key>
+          <Property Name="SHIFT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SHIFT_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHIFT_START" Type="smalldatetime" Nullable="false" />
+          <Property Name="SHIFT_START_WEEKEND" Type="smalldatetime" Nullable="false" />
+          <Property Name="SHIFT_END" Type="smalldatetime" Nullable="false" />
+          <Property Name="SHIFT_END_WEEKEND" Type="smalldatetime" Nullable="false" />
+          <Property Name="MEAL_START" Type="smalldatetime" />
+          <Property Name="MEAL_END" Type="smalldatetime" />
+          <Property Name="MEAL_PAY" Type="bit" Nullable="false" />
+          <Property Name="BREAK_START1" Type="smalldatetime" />
+          <Property Name="BREAK_END1" Type="smalldatetime" />
+          <Property Name="BREAK_PAY1" Type="bit" Nullable="false" />
+          <Property Name="BREAK_START2" Type="smalldatetime" />
+          <Property Name="BREAK_END2" Type="smalldatetime" />
+          <Property Name="BREAK_PAY2" Type="bit" Nullable="false" />
+          <Property Name="SHIFT_START_TYPE" Type="smallint" Nullable="false" />
+          <Property Name="OVERTIME_RATE" Type="float" Nullable="false" />
+          <Property Name="EARNING_CODE" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="WEEKEND_PAY_FIXSALARY" Type="bit" Nullable="false" />
+          <Property Name="OVERTIME_START" Type="smalldatetime" Nullable="false" />
+          <Property Name="SHIFT_END_TYPE" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CR_TimeCard_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="CR_TimeCard" Type="Self.CR_TimeCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_TimeCard">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CR_TimeCard_PayrollPeriod">
+          <End Role="PayrollPeriod" Type="Self.PayrollPeriod" Multiplicity="1" />
+          <End Role="CR_TimeCard" Type="Self.CR_TimeCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PayrollPeriod">
+              <PropertyRef Name="PayrollPeriodID" />
+            </Principal>
+            <Dependent Role="CR_TimeCard">
+              <PropertyRef Name="PayrollPeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CR_Timecard_Substitude_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="CR_Timecard_Substitude" Type="Self.CR_Timecard_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_Timecard_Substitude">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CR_Timecard_Summary_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="CR_Timecard_Summary" Type="Self.CR_Timecard_Summary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_Timecard_Summary">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Overtime_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="FW_Employee_Overtime" Type="Self.FW_Employee_Overtime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Overtime">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Shift_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="FW_Employee_Shift" Type="Self.FW_Employee_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Shift">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Shift_tblTimeCard_Shift">
+          <End Role="tblTimeCard_Shift" Type="Self.tblTimeCard_Shift" Multiplicity="1" />
+          <End Role="FW_Employee_Shift" Type="Self.FW_Employee_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTimeCard_Shift">
+              <PropertyRef Name="SHIFT_ID" />
+            </Principal>
+            <Dependent Role="FW_Employee_Shift">
+              <PropertyRef Name="ShiftID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Substitude_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="FW_Employee_Substitude" Type="Self.FW_Employee_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Substitude">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Substitude_tblTimeCard_Holiday">
+          <End Role="tblTimeCard_Holiday" Type="Self.tblTimeCard_Holiday" Multiplicity="1" />
+          <End Role="FW_Employee_Substitude" Type="Self.FW_Employee_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTimeCard_Holiday">
+              <PropertyRef Name="HolidayID" />
+            </Principal>
+            <Dependent Role="FW_Employee_Substitude">
+              <PropertyRef Name="HolidayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_WorkingHistory_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="FW_Employee_WorkingHistory" Type="Self.FW_Employee_WorkingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_WorkingHistory">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employees_FW_Department1">
+          <End Role="FW_Department1" Type="Self.FW_Department1" Multiplicity="1" />
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Department1">
+              <PropertyRef Name="DEPARTMENTID" />
+            </Principal>
+            <Dependent Role="FW_Employees">
+              <PropertyRef Name="dID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employees_FW_EmployeesTeam">
+          <End Role="FW_EmployeesTeam" Type="Self.FW_EmployeesTeam" Multiplicity="1" />
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_EmployeesTeam">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="FW_Employees">
+              <PropertyRef Name="Team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FwLabourTicketStationEmployee_FW_Employees">
+          <End Role="FW_Employees" Type="Self.FW_Employees" Multiplicity="1" />
+          <End Role="FwLabourTicketStationEmployee" Type="Self.FwLabourTicketStationEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FwLabourTicketStationEmployee">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeeDbModelStoreContainer">
+          <EntitySet Name="CR_TimeCard" EntityType="Self.CR_TimeCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CR_Timecard_Substitude" EntityType="Self.CR_Timecard_Substitude" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CR_Timecard_Summary" EntityType="Self.CR_Timecard_Summary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Department1" EntityType="Self.FW_Department1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Employee_Overtime" EntityType="Self.FW_Employee_Overtime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Employee_Shift" EntityType="Self.FW_Employee_Shift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Employee_Substitude" EntityType="Self.FW_Employee_Substitude" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Employee_WorkingHistory" EntityType="Self.FW_Employee_WorkingHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_Employees" EntityType="Self.FW_Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FW_EmployeesTeam" EntityType="Self.FW_EmployeesTeam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FwLabourTicketStationEmployee" EntityType="Self.FwLabourTicketStationEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PayrollPeriod" EntityType="Self.PayrollPeriod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTimeCard_Holiday" EntityType="Self.tblTimeCard_Holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTimeCard_Shift" EntityType="Self.tblTimeCard_Shift" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CR_TimeCard_FW_Employees" Association="Self.FK_CR_TimeCard_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_TimeCard" EntitySet="CR_TimeCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CR_TimeCard_PayrollPeriod" Association="Self.FK_CR_TimeCard_PayrollPeriod">
+            <End Role="PayrollPeriod" EntitySet="PayrollPeriod" />
+            <End Role="CR_TimeCard" EntitySet="CR_TimeCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CR_Timecard_Substitude_FW_Employees" Association="Self.FK_CR_Timecard_Substitude_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_Timecard_Substitude" EntitySet="CR_Timecard_Substitude" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CR_Timecard_Summary_FW_Employees" Association="Self.FK_CR_Timecard_Summary_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_Timecard_Summary" EntitySet="CR_Timecard_Summary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Overtime_FW_Employees" Association="Self.FK_FW_Employee_Overtime_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Overtime" EntitySet="FW_Employee_Overtime" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Shift_FW_Employees" Association="Self.FK_FW_Employee_Shift_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Shift" EntitySet="FW_Employee_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Shift_tblTimeCard_Shift" Association="Self.FK_FW_Employee_Shift_tblTimeCard_Shift">
+            <End Role="tblTimeCard_Shift" EntitySet="tblTimeCard_Shift" />
+            <End Role="FW_Employee_Shift" EntitySet="FW_Employee_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Substitude_FW_Employees" Association="Self.FK_FW_Employee_Substitude_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Substitude" EntitySet="FW_Employee_Substitude" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Substitude_tblTimeCard_Holiday" Association="Self.FK_FW_Employee_Substitude_tblTimeCard_Holiday">
+            <End Role="tblTimeCard_Holiday" EntitySet="tblTimeCard_Holiday" />
+            <End Role="FW_Employee_Substitude" EntitySet="FW_Employee_Substitude" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_WorkingHistory_FW_Employees" Association="Self.FK_FW_Employee_WorkingHistory_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_WorkingHistory" EntitySet="FW_Employee_WorkingHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employees_FW_Department1" Association="Self.FK_FW_Employees_FW_Department1">
+            <End Role="FW_Department1" EntitySet="FW_Department1" />
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employees_FW_EmployeesTeam" Association="Self.FK_FW_Employees_FW_EmployeesTeam">
+            <End Role="FW_EmployeesTeam" EntitySet="FW_EmployeesTeam" />
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FwLabourTicketStationEmployee_FW_Employees" Association="Self.FK_FwLabourTicketStationEmployee_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FwLabourTicketStationEmployee" EntitySet="FwLabourTicketStationEmployee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeDbModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="EmployeeDbModelEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="CR_Timecard_Substitude" EntityType="EmployeeDbModel.CR_Timecard_Substitude" />
+          <EntitySet Name="FW_Employee_Shift" EntityType="EmployeeDbModel.FW_Employee_Shift" />
+          <EntitySet Name="FW_Employee_Substitude" EntityType="EmployeeDbModel.FW_Employee_Substitude" />
+          <EntitySet Name="tblTimeCard_Holiday" EntityType="EmployeeDbModel.tblTimeCard_Holiday" />
+          <EntitySet Name="tblTimeCard_Shift" EntityType="EmployeeDbModel.tblTimeCard_Shift" />
+          <AssociationSet Name="FK_FW_Employee_Shift_tblTimeCard_Shift" Association="EmployeeDbModel.FK_FW_Employee_Shift_tblTimeCard_Shift">
+            <End Role="tblTimeCard_Shift" EntitySet="tblTimeCard_Shift" />
+            <End Role="FW_Employee_Shift" EntitySet="FW_Employee_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Substitude_tblTimeCard_Holiday" Association="EmployeeDbModel.FK_FW_Employee_Substitude_tblTimeCard_Holiday">
+            <End Role="tblTimeCard_Holiday" EntitySet="tblTimeCard_Holiday" />
+            <End Role="FW_Employee_Substitude" EntitySet="FW_Employee_Substitude" />
+          </AssociationSet>
+          <EntitySet Name="FW_Employee_WorkingHistory" EntityType="EmployeeDbModel.FW_Employee_WorkingHistory" />
+          <EntitySet Name="FW_Department1" EntityType="EmployeeDbModel.FW_Department1" />
+          <EntitySet Name="FW_Employee_Overtime" EntityType="EmployeeDbModel.FW_Employee_Overtime" />
+          <EntitySet Name="PayrollPeriods" EntityType="EmployeeDbModel.PayrollPeriod" />
+          <EntitySet Name="FW_EmployeesTeam" EntityType="EmployeeDbModel.FW_EmployeesTeam" />
+          <EntitySet Name="FwLabourTicketStationEmployees" EntityType="EmployeeDbModel.FwLabourTicketStationEmployee" />
+          <EntitySet Name="CR_TimeCard" EntityType="EmployeeDbModel.CR_TimeCard" />
+          <EntitySet Name="CR_Timecard_Summary" EntityType="EmployeeDbModel.CR_Timecard_Summary" />
+          <AssociationSet Name="FK_CR_TimeCard_PayrollPeriod" Association="EmployeeDbModel.FK_CR_TimeCard_PayrollPeriod">
+            <End Role="PayrollPeriod" EntitySet="PayrollPeriods" />
+            <End Role="CR_TimeCard" EntitySet="CR_TimeCard" />
+          </AssociationSet>
+          <EntitySet Name="FW_Employees" EntityType="EmployeeDbModel.FW_Employees" />
+          <AssociationSet Name="FK_CR_TimeCard_FW_Employees" Association="EmployeeDbModel.FK_CR_TimeCard_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_TimeCard" EntitySet="CR_TimeCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CR_Timecard_Substitude_FW_Employees" Association="EmployeeDbModel.FK_CR_Timecard_Substitude_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_Timecard_Substitude" EntitySet="CR_Timecard_Substitude" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CR_Timecard_Summary_FW_Employees" Association="EmployeeDbModel.FK_CR_Timecard_Summary_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="CR_Timecard_Summary" EntitySet="CR_Timecard_Summary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employees_FW_Department1" Association="EmployeeDbModel.FK_FW_Employees_FW_Department1">
+            <End Role="FW_Department1" EntitySet="FW_Department1" />
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Overtime_FW_Employees" Association="EmployeeDbModel.FK_FW_Employee_Overtime_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Overtime" EntitySet="FW_Employee_Overtime" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Shift_FW_Employees" Association="EmployeeDbModel.FK_FW_Employee_Shift_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Shift" EntitySet="FW_Employee_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_Substitude_FW_Employees" Association="EmployeeDbModel.FK_FW_Employee_Substitude_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_Substitude" EntitySet="FW_Employee_Substitude" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employee_WorkingHistory_FW_Employees" Association="EmployeeDbModel.FK_FW_Employee_WorkingHistory_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FW_Employee_WorkingHistory" EntitySet="FW_Employee_WorkingHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FW_Employees_FW_EmployeesTeam" Association="EmployeeDbModel.FK_FW_Employees_FW_EmployeesTeam">
+            <End Role="FW_EmployeesTeam" EntitySet="FW_EmployeesTeam" />
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FwLabourTicketStationEmployee_FW_Employees" Association="EmployeeDbModel.FK_FwLabourTicketStationEmployee_FW_Employees">
+            <End Role="FW_Employees" EntitySet="FW_Employees" />
+            <End Role="FwLabourTicketStationEmployee" EntitySet="FwLabourTicketStationEmployees" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CR_Timecard_Substitude">
+          <Key>
+            <PropertyRef Name="TempID" />
+          </Key>
+          <Property Type="Int32" Name="TempID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="PrintingEmployeeID" Nullable="false" />
+          <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+          <Property Type="Int32" Name="HolidayID" Nullable="false" />
+          <Property Type="String" Name="eName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="TRANSACTION_ID" Nullable="false" />
+          <Property Type="DateTime" Name="CLOCK_IN" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CLOCK_OUT" Nullable="false" Precision="3" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_CR_Timecard_Substitude_FW_Employees" FromRole="CR_Timecard_Substitude" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Shift">
+          <Key>
+            <PropertyRef Name="rowID" />
+          </Key>
+          <Property Type="Int32" Name="rowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ShiftID" Nullable="false" />
+          <Property Type="Int32" Name="EmployeeNumber" Nullable="false" />
+          <Property Type="DateTime" Name="EffectiveDate" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="tblTimeCard_Shift" Relationship="EmployeeDbModel.FK_FW_Employee_Shift_tblTimeCard_Shift" FromRole="FW_Employee_Shift" ToRole="tblTimeCard_Shift" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employee_Shift_FW_Employees" FromRole="FW_Employee_Shift" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Substitude">
+          <Key>
+            <PropertyRef Name="SubstitudeID" />
+          </Key>
+          <Property Type="Int32" Name="SubstitudeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+          <Property Type="Int32" Name="HolidayID" Nullable="false" />
+          <Property Type="DateTime" Name="SubstitudeDate" Precision="0" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <NavigationProperty Name="tblTimeCard_Holiday" Relationship="EmployeeDbModel.FK_FW_Employee_Substitude_tblTimeCard_Holiday" FromRole="FW_Employee_Substitude" ToRole="tblTimeCard_Holiday" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employee_Substitude_FW_Employees" FromRole="FW_Employee_Substitude" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="tblTimeCard_Holiday">
+          <Key>
+            <PropertyRef Name="HolidayID" />
+          </Key>
+          <Property Type="Int32" Name="HolidayID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="String" Name="HolidayName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateOfHoliday" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="ActualDayOff" Nullable="false" Precision="0" />
+          <NavigationProperty Name="FW_Employee_Substitude" Relationship="EmployeeDbModel.FK_FW_Employee_Substitude_tblTimeCard_Holiday" FromRole="tblTimeCard_Holiday" ToRole="FW_Employee_Substitude" />
+        </EntityType>
+        <EntityType Name="tblTimeCard_Shift">
+          <Key>
+            <PropertyRef Name="SHIFT_ID" />
+          </Key>
+          <Property Type="Int32" Name="SHIFT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="SHIFT_NAME" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SHIFT_START" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="SHIFT_START_WEEKEND" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="SHIFT_END" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="SHIFT_END_WEEKEND" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="MEAL_START" Precision="0" />
+          <Property Type="DateTime" Name="MEAL_END" Precision="0" />
+          <Property Type="Boolean" Name="MEAL_PAY" Nullable="false" />
+          <Property Type="DateTime" Name="BREAK_START1" Precision="0" />
+          <Property Type="DateTime" Name="BREAK_END1" Precision="0" />
+          <Property Type="Boolean" Name="BREAK_PAY1" Nullable="false" />
+          <Property Type="DateTime" Name="BREAK_START2" Precision="0" />
+          <Property Type="DateTime" Name="BREAK_END2" Precision="0" />
+          <Property Type="Boolean" Name="BREAK_PAY2" Nullable="false" />
+          <Property Type="Int16" Name="SHIFT_START_TYPE" Nullable="false" />
+          <Property Type="Double" Name="OVERTIME_RATE" Nullable="false" />
+          <Property Type="String" Name="EARNING_CODE" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="ACTIVE" Nullable="false" />
+          <Property Type="Boolean" Name="WEEKEND_PAY_FIXSALARY" Nullable="false" />
+          <Property Type="DateTime" Name="OVERTIME_START" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="SHIFT_END_TYPE" Nullable="false" />
+          <NavigationProperty Name="FW_Employee_Shift" Relationship="EmployeeDbModel.FK_FW_Employee_Shift_tblTimeCard_Shift" FromRole="tblTimeCard_Shift" ToRole="FW_Employee_Shift" />
+        </EntityType>
+        <Association Name="FK_FW_Employee_Shift_tblTimeCard_Shift">
+          <End Type="EmployeeDbModel.tblTimeCard_Shift" Role="tblTimeCard_Shift" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_Shift" Role="FW_Employee_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTimeCard_Shift">
+              <PropertyRef Name="SHIFT_ID" />
+            </Principal>
+            <Dependent Role="FW_Employee_Shift">
+              <PropertyRef Name="ShiftID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Substitude_tblTimeCard_Holiday">
+          <End Type="EmployeeDbModel.tblTimeCard_Holiday" Role="tblTimeCard_Holiday" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_Substitude" Role="FW_Employee_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTimeCard_Holiday">
+              <PropertyRef Name="HolidayID" />
+            </Principal>
+            <Dependent Role="FW_Employee_Substitude">
+              <PropertyRef Name="HolidayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FW_Employee_WorkingHistory">
+          <Key>
+            <PropertyRef Name="eWorkingHistoryID" />
+          </Key>
+          <Property Type="Int32" Name="eWorkingHistoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="EmployeeNumber" Nullable="false" />
+          <Property Type="DateTime" Name="StartWorkingDate" Precision="0" />
+          <Property Type="DateTime" Name="EndWorkingDate" Precision="0" />
+          <Property Type="String" Name="Note" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employee_WorkingHistory_FW_Employees" FromRole="FW_Employee_WorkingHistory" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="FW_Department1">
+          <Key>
+            <PropertyRef Name="DEPARTMENTID" />
+          </Key>
+          <Property Type="Int32" Name="DEPARTMENTID" Nullable="false" />
+          <Property Type="String" Name="DEPARTMENT_NAME" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PARENT_DEPARTMENT" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NameInInfor" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="REPORT_ID" />
+          <Property Type="String" Name="Category" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="deptLevel" />
+          <Property Type="Boolean" Name="ncrPurpose" />
+          <Property Type="Int16" Name="wSelect" />
+          <Property Type="Int16" Name="InputHourSelect" Nullable="false" />
+          <Property Type="String" Name="InputHourName" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="supervisorID" />
+          <Property Type="Boolean" Name="pSelect" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="Boolean" Name="AdminTaskSelect" Nullable="false" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employees_FW_Department1" FromRole="FW_Department1" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="FW_Employee_Overtime">
+          <Key>
+            <PropertyRef Name="OvertimeID" />
+          </Key>
+          <Property Type="Int32" Name="OvertimeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="EmployeeNumber" Nullable="false" />
+          <Property Type="DateTime" Name="StartWorkingTime" Precision="0" />
+          <Property Type="DateTime" Name="EndWorkingTime" Precision="0" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="ApplyBy" Nullable="false" />
+          <Property Type="DateTime" Name="ApplyAt" Precision="0" />
+          <Property Type="Int32" Name="ApproveBy" Nullable="false" />
+          <Property Type="DateTime" Name="ApproveAt" Precision="0" />
+          <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsMinusDinnerBreak" Nullable="false" />
+          <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employee_Overtime_FW_Employees" FromRole="FW_Employee_Overtime" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="PayrollPeriod">
+          <Key>
+            <PropertyRef Name="PayrollPeriodID" />
+          </Key>
+          <Property Type="Int32" Name="PayrollPeriodID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="PayrollNumber" Nullable="false" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+          <NavigationProperty Name="CR_TimeCard" Relationship="EmployeeDbModel.FK_CR_TimeCard_PayrollPeriod" FromRole="PayrollPeriod" ToRole="CR_TimeCard" />
+        </EntityType>
+        <EntityType Name="FW_EmployeesTeam">
+          <Key>
+            <PropertyRef Name="teamID" />
+          </Key>
+          <Property Type="Int32" Name="teamID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="teamName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="teamNote" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="teamType" />
+          <Property Type="Boolean" Name="Presentation" />
+          <Property Type="String" Name="AbbrName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Estimation" Nullable="false" />
+          <Property Type="Int32" Name="Artist" Nullable="false" />
+          <Property Type="Int32" Name="Engineer" Nullable="false" />
+          <Property Type="Int32" Name="woApproval" Nullable="false" />
+          <Property Type="Boolean" Name="Replace" Nullable="false" />
+          <Property Type="Int32" Name="EstimatorReplace" Nullable="false" />
+          <Property Type="Int32" Name="ArtistReplace" Nullable="false" />
+          <Property Type="Int32" Name="EngineerReplace" Nullable="false" />
+          <Property Type="Int32" Name="woApprovalReplace" Nullable="false" />
+          <Property Type="Boolean" Name="IsShowOnTV" Nullable="false" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FW_Employees_FW_EmployeesTeam" FromRole="FW_EmployeesTeam" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="FwLabourTicketStationEmployee">
+          <Key>
+            <PropertyRef Name="RowID" />
+          </Key>
+          <Property Name="RowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StationID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_FwLabourTicketStationEmployee_FW_Employees" FromRole="FwLabourTicketStationEmployee" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="CR_TimeCard">
+          <Key>
+            <PropertyRef Name="tcID" />
+          </Key>
+          <Property Name="tcID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrintingEmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="eID" Type="Int32" Nullable="false" />
+          <Property Name="CLOCK_IN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CLOCK_OUT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="DepartmentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TRANSACTION_ID" Type="Int64" Nullable="false" />
+          <Property Name="EMPLOYEE_ID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOURS_WORKED" Type="Double" Nullable="false" />
+          <Property Name="HOURS_BREAK" Type="Double" Nullable="false" />
+          <Property Name="HOURS_PREVIOUS" Type="Double" Nullable="false" />
+          <Property Name="HOURS_OVERALL" Type="Double" Nullable="false" />
+          <Property Name="SETUP_COMPLETED" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="pID" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="EarningCode" Type="Int32" Nullable="false" />
+          <Property Name="SubstitudeID" Type="Int32" Nullable="false" />
+          <Property Name="OvertimeID" Type="Int32" Nullable="false" />
+          <Property Name="ShiftID" Type="Int32" Nullable="false" />
+          <Property Name="PayableClockIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PayableClockOut" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WeekNumber" Type="Int32" Nullable="false" />
+          <Property Name="PayrollPeriodID" Type="Int32" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PayrollPeriod" Relationship="EmployeeDbModel.FK_CR_TimeCard_PayrollPeriod" FromRole="CR_TimeCard" ToRole="PayrollPeriod" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_CR_TimeCard_FW_Employees" FromRole="CR_TimeCard" ToRole="FW_Employees" />
+        </EntityType>
+        <EntityType Name="CR_Timecard_Summary">
+          <Key>
+            <PropertyRef Name="SummaryID" />
+          </Key>
+          <Property Name="SummaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrintingEmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="PayRollID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="eName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WeekNumber" Type="Int32" Nullable="false" />
+          <Property Name="WorkedHour" Type="Double" Nullable="false" />
+          <Property Name="RegularHour" Type="Double" Nullable="false" />
+          <Property Name="RegularOvertime" Type="Double" Nullable="false" />
+          <Property Name="HolidayHour" Type="Double" Nullable="false" />
+          <Property Name="HolidayOvertime" Type="Double" Nullable="false" />
+          <Property Name="eID" Type="Int32" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FW_Employees" Relationship="EmployeeDbModel.FK_CR_Timecard_Summary_FW_Employees" FromRole="CR_Timecard_Summary" ToRole="FW_Employees" />
+        </EntityType>
+        <Association Name="FK_CR_TimeCard_PayrollPeriod">
+          <End Type="EmployeeDbModel.PayrollPeriod" Role="PayrollPeriod" Multiplicity="1" />
+          <End Type="EmployeeDbModel.CR_TimeCard" Role="CR_TimeCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PayrollPeriod">
+              <PropertyRef Name="PayrollPeriodID" />
+            </Principal>
+            <Dependent Role="CR_TimeCard">
+              <PropertyRef Name="PayrollPeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FW_Employees">
+          <Key>
+            <PropertyRef Name="EmployeeNumber" />
+          </Key>
+          <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
+          <Property Name="NickName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="3" />
+          <Property Name="HireDate" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SINCardNumber" Type="Int32" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyContactNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmergencyContactNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="paytype" Type="Int32" />
+          <Property Name="payrate" Type="Int32" />
+          <Property Name="CompanyEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyCellphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Extension" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Performance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="History" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Training" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberInfor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Name="Roles" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sa1Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Sa2Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SalesName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PayrollNumber" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="ncrEnable" Type="Boolean" Nullable="false" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="response" Type="Boolean" />
+          <Property Name="signature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="dID" Type="Int32" Nullable="false" />
+          <Property Name="Team" Type="Int32" Nullable="false" />
+          <Property Name="isLeadHand" Type="Boolean" Nullable="false" />
+          <Property Name="isAE" Type="Boolean" Nullable="false" />
+          <Property Name="Role" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="StartWorkingDate" Type="DateTime" Precision="0" />
+          <Property Name="EndWorkingDate1" Type="DateTime" Precision="0" />
+          <Property Name="ReturnToWorkDate" Type="DateTime" Precision="0" />
+          <Property Name="EndWorkingDate2" Type="DateTime" Precision="0" />
+          <Property Name="SelectType" Type="Int16" Nullable="false" />
+          <Property Name="IsProbation" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsInProbation" Type="Boolean" Nullable="false" />
+          <Property Name="ProbationPeriod" Type="Int32" Nullable="false" />
+          <Property Name="ShowOnInputHour" Type="Boolean" Nullable="false" />
+          <Property Name="IsFake" Type="Boolean" Nullable="false" />
+          <Property Name="IsShowOnPerformanceReport" Type="Boolean" Nullable="false" />
+          <Property Name="ShowOnCrmPage1" Type="Boolean" Nullable="false" />
+          <Property Name="ShowOnCommissionPage1" Type="Boolean" Nullable="false" />
+          <Property Name="ShowOnCommissionPage2" Type="Boolean" Nullable="false" />
+          <Property Name="CrmLeadOwner" Type="Boolean" Nullable="false" />
+          <Property Name="CrmLeadAE" Type="Boolean" Nullable="false" />
+          <Property Name="CrmLeadSelectAeEnable" Type="Boolean" Nullable="false" />
+          <Property Name="IsAdminTaskSelected" Type="Boolean" Nullable="false" />
+          <Property Name="IsShowOnSubdepartmentSchedule" Type="Boolean" Nullable="false" />
+          <Property Name="IsMtoAwared" Type="Boolean" Nullable="false" />
+          <Property Name="ProcedureGroupID" Type="Int32" Nullable="false" />
+          <Property Name="EntityID" Type="Int32" Nullable="false" />
+          <Property Name="IsSubcontract" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CR_TimeCard" Relationship="EmployeeDbModel.FK_CR_TimeCard_FW_Employees" FromRole="FW_Employees" ToRole="CR_TimeCard" />
+          <NavigationProperty Name="CR_Timecard_Substitude" Relationship="EmployeeDbModel.FK_CR_Timecard_Substitude_FW_Employees" FromRole="FW_Employees" ToRole="CR_Timecard_Substitude" />
+          <NavigationProperty Name="CR_Timecard_Summary" Relationship="EmployeeDbModel.FK_CR_Timecard_Summary_FW_Employees" FromRole="FW_Employees" ToRole="CR_Timecard_Summary" />
+          <NavigationProperty Name="FW_Department1" Relationship="EmployeeDbModel.FK_FW_Employees_FW_Department1" FromRole="FW_Employees" ToRole="FW_Department1" />
+          <NavigationProperty Name="FW_Employee_Overtime" Relationship="EmployeeDbModel.FK_FW_Employee_Overtime_FW_Employees" FromRole="FW_Employees" ToRole="FW_Employee_Overtime" />
+          <NavigationProperty Name="FW_Employee_Shift" Relationship="EmployeeDbModel.FK_FW_Employee_Shift_FW_Employees" FromRole="FW_Employees" ToRole="FW_Employee_Shift" />
+          <NavigationProperty Name="FW_Employee_Substitude" Relationship="EmployeeDbModel.FK_FW_Employee_Substitude_FW_Employees" FromRole="FW_Employees" ToRole="FW_Employee_Substitude" />
+          <NavigationProperty Name="FW_Employee_WorkingHistory" Relationship="EmployeeDbModel.FK_FW_Employee_WorkingHistory_FW_Employees" FromRole="FW_Employees" ToRole="FW_Employee_WorkingHistory" />
+          <NavigationProperty Name="FW_EmployeesTeam" Relationship="EmployeeDbModel.FK_FW_Employees_FW_EmployeesTeam" FromRole="FW_Employees" ToRole="FW_EmployeesTeam" />
+          <NavigationProperty Name="FwLabourTicketStationEmployees" Relationship="EmployeeDbModel.FK_FwLabourTicketStationEmployee_FW_Employees" FromRole="FW_Employees" ToRole="FwLabourTicketStationEmployee" />
+        </EntityType>
+        <Association Name="FK_CR_TimeCard_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.CR_TimeCard" Role="CR_TimeCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_TimeCard">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CR_Timecard_Substitude_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.CR_Timecard_Substitude" Role="CR_Timecard_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_Timecard_Substitude">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CR_Timecard_Summary_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.CR_Timecard_Summary" Role="CR_Timecard_Summary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="CR_Timecard_Summary">
+              <PropertyRef Name="PrintingEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employees_FW_Department1">
+          <End Type="EmployeeDbModel.FW_Department1" Role="FW_Department1" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Department1">
+              <PropertyRef Name="DEPARTMENTID" />
+            </Principal>
+            <Dependent Role="FW_Employees">
+              <PropertyRef Name="dID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Overtime_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_Overtime" Role="FW_Employee_Overtime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Overtime">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Shift_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_Shift" Role="FW_Employee_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Shift">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_Substitude_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_Substitude" Role="FW_Employee_Substitude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_Substitude">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employee_WorkingHistory_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employee_WorkingHistory" Role="FW_Employee_WorkingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FW_Employee_WorkingHistory">
+              <PropertyRef Name="EmployeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FW_Employees_FW_EmployeesTeam">
+          <End Type="EmployeeDbModel.FW_EmployeesTeam" Role="FW_EmployeesTeam" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_EmployeesTeam">
+              <PropertyRef Name="teamID" />
+            </Principal>
+            <Dependent Role="FW_Employees">
+              <PropertyRef Name="Team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FwLabourTicketStationEmployee_FW_Employees">
+          <End Type="EmployeeDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+          <End Type="EmployeeDbModel.FwLabourTicketStationEmployee" Role="FwLabourTicketStationEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FW_Employees">
+              <PropertyRef Name="EmployeeNumber" />
+            </Principal>
+            <Dependent Role="FwLabourTicketStationEmployee">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeDbModelStoreContainer" CdmEntityContainer="EmployeeDbModelEntities">
+          <EntitySetMapping Name="CR_Timecard_Substitude">
+            <EntityTypeMapping TypeName="EmployeeDbModel.CR_Timecard_Substitude">
+              <MappingFragment StoreEntitySet="CR_Timecard_Substitude">
+                <ScalarProperty Name="CLOCK_OUT" ColumnName="CLOCK_OUT" />
+                <ScalarProperty Name="CLOCK_IN" ColumnName="CLOCK_IN" />
+                <ScalarProperty Name="TRANSACTION_ID" ColumnName="TRANSACTION_ID" />
+                <ScalarProperty Name="eName" ColumnName="eName" />
+                <ScalarProperty Name="HolidayID" ColumnName="HolidayID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+                <ScalarProperty Name="TempID" ColumnName="TempID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Employee_Shift">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Employee_Shift">
+              <MappingFragment StoreEntitySet="FW_Employee_Shift">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+                <ScalarProperty Name="rowID" ColumnName="rowID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Employee_Substitude">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Employee_Substitude">
+              <MappingFragment StoreEntitySet="FW_Employee_Substitude">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SubstitudeDate" ColumnName="SubstitudeDate" />
+                <ScalarProperty Name="HolidayID" ColumnName="HolidayID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="SubstitudeID" ColumnName="SubstitudeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTimeCard_Holiday">
+            <EntityTypeMapping TypeName="EmployeeDbModel.tblTimeCard_Holiday">
+              <MappingFragment StoreEntitySet="tblTimeCard_Holiday">
+                <ScalarProperty Name="ActualDayOff" ColumnName="ActualDayOff" />
+                <ScalarProperty Name="DateOfHoliday" ColumnName="DateOfHoliday" />
+                <ScalarProperty Name="HolidayName" ColumnName="HolidayName" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="HolidayID" ColumnName="HolidayID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTimeCard_Shift">
+            <EntityTypeMapping TypeName="EmployeeDbModel.tblTimeCard_Shift">
+              <MappingFragment StoreEntitySet="tblTimeCard_Shift">
+                <ScalarProperty Name="SHIFT_END_TYPE" ColumnName="SHIFT_END_TYPE" />
+                <ScalarProperty Name="OVERTIME_START" ColumnName="OVERTIME_START" />
+                <ScalarProperty Name="WEEKEND_PAY_FIXSALARY" ColumnName="WEEKEND_PAY_FIXSALARY" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="EARNING_CODE" ColumnName="EARNING_CODE" />
+                <ScalarProperty Name="OVERTIME_RATE" ColumnName="OVERTIME_RATE" />
+                <ScalarProperty Name="SHIFT_START_TYPE" ColumnName="SHIFT_START_TYPE" />
+                <ScalarProperty Name="BREAK_PAY2" ColumnName="BREAK_PAY2" />
+                <ScalarProperty Name="BREAK_END2" ColumnName="BREAK_END2" />
+                <ScalarProperty Name="BREAK_START2" ColumnName="BREAK_START2" />
+                <ScalarProperty Name="BREAK_PAY1" ColumnName="BREAK_PAY1" />
+                <ScalarProperty Name="BREAK_END1" ColumnName="BREAK_END1" />
+                <ScalarProperty Name="BREAK_START1" ColumnName="BREAK_START1" />
+                <ScalarProperty Name="MEAL_PAY" ColumnName="MEAL_PAY" />
+                <ScalarProperty Name="MEAL_END" ColumnName="MEAL_END" />
+                <ScalarProperty Name="MEAL_START" ColumnName="MEAL_START" />
+                <ScalarProperty Name="SHIFT_END_WEEKEND" ColumnName="SHIFT_END_WEEKEND" />
+                <ScalarProperty Name="SHIFT_END" ColumnName="SHIFT_END" />
+                <ScalarProperty Name="SHIFT_START_WEEKEND" ColumnName="SHIFT_START_WEEKEND" />
+                <ScalarProperty Name="SHIFT_START" ColumnName="SHIFT_START" />
+                <ScalarProperty Name="SHIFT_NAME" ColumnName="SHIFT_NAME" />
+                <ScalarProperty Name="SHIFT_ID" ColumnName="SHIFT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Employee_WorkingHistory">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Employee_WorkingHistory">
+              <MappingFragment StoreEntitySet="FW_Employee_WorkingHistory">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="EndWorkingDate" ColumnName="EndWorkingDate" />
+                <ScalarProperty Name="StartWorkingDate" ColumnName="StartWorkingDate" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="eWorkingHistoryID" ColumnName="eWorkingHistoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Department1">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Department1">
+              <MappingFragment StoreEntitySet="FW_Department1">
+                <ScalarProperty Name="AdminTaskSelect" ColumnName="AdminTaskSelect" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="pSelect" ColumnName="pSelect" />
+                <ScalarProperty Name="supervisorID" ColumnName="supervisorID" />
+                <ScalarProperty Name="InputHourName" ColumnName="InputHourName" />
+                <ScalarProperty Name="InputHourSelect" ColumnName="InputHourSelect" />
+                <ScalarProperty Name="wSelect" ColumnName="wSelect" />
+                <ScalarProperty Name="ncrPurpose" ColumnName="ncrPurpose" />
+                <ScalarProperty Name="deptLevel" ColumnName="deptLevel" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="REPORT_ID" ColumnName="REPORT_ID" />
+                <ScalarProperty Name="NameInInfor" ColumnName="NameInInfor" />
+                <ScalarProperty Name="PARENT_DEPARTMENT" ColumnName="PARENT_DEPARTMENT" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="DEPARTMENTID" ColumnName="DEPARTMENTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Employee_Overtime">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Employee_Overtime">
+              <MappingFragment StoreEntitySet="FW_Employee_Overtime">
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsMinusDinnerBreak" ColumnName="IsMinusDinnerBreak" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ApproveAt" ColumnName="ApproveAt" />
+                <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+                <ScalarProperty Name="ApplyAt" ColumnName="ApplyAt" />
+                <ScalarProperty Name="ApplyBy" ColumnName="ApplyBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EndWorkingTime" ColumnName="EndWorkingTime" />
+                <ScalarProperty Name="StartWorkingTime" ColumnName="StartWorkingTime" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="OvertimeID" ColumnName="OvertimeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayrollPeriods">
+            <EntityTypeMapping TypeName="EmployeeDbModel.PayrollPeriod">
+              <MappingFragment StoreEntitySet="PayrollPeriod">
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="PayrollNumber" ColumnName="PayrollNumber" />
+                <ScalarProperty Name="PayrollPeriodID" ColumnName="PayrollPeriodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_EmployeesTeam">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_EmployeesTeam">
+              <MappingFragment StoreEntitySet="FW_EmployeesTeam">
+                <ScalarProperty Name="IsShowOnTV" ColumnName="IsShowOnTV" />
+                <ScalarProperty Name="woApprovalReplace" ColumnName="woApprovalReplace" />
+                <ScalarProperty Name="EngineerReplace" ColumnName="EngineerReplace" />
+                <ScalarProperty Name="ArtistReplace" ColumnName="ArtistReplace" />
+                <ScalarProperty Name="EstimatorReplace" ColumnName="EstimatorReplace" />
+                <ScalarProperty Name="Replace" ColumnName="Replace" />
+                <ScalarProperty Name="woApproval" ColumnName="woApproval" />
+                <ScalarProperty Name="Engineer" ColumnName="Engineer" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Estimation" ColumnName="Estimation" />
+                <ScalarProperty Name="AbbrName" ColumnName="AbbrName" />
+                <ScalarProperty Name="Presentation" ColumnName="Presentation" />
+                <ScalarProperty Name="teamType" ColumnName="teamType" />
+                <ScalarProperty Name="teamNote" ColumnName="teamNote" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="teamID" ColumnName="teamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FwLabourTicketStationEmployees">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FwLabourTicketStationEmployee">
+              <MappingFragment StoreEntitySet="FwLabourTicketStationEmployee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="StationID" ColumnName="StationID" />
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CR_TimeCard">
+            <EntityTypeMapping TypeName="EmployeeDbModel.CR_TimeCard">
+              <MappingFragment StoreEntitySet="CR_TimeCard">
+                <ScalarProperty Name="ProcedureGroupID" ColumnName="ProcedureGroupID" />
+                <ScalarProperty Name="PayrollPeriodID" ColumnName="PayrollPeriodID" />
+                <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+                <ScalarProperty Name="PayableClockOut" ColumnName="PayableClockOut" />
+                <ScalarProperty Name="PayableClockIn" ColumnName="PayableClockIn" />
+                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+                <ScalarProperty Name="OvertimeID" ColumnName="OvertimeID" />
+                <ScalarProperty Name="SubstitudeID" ColumnName="SubstitudeID" />
+                <ScalarProperty Name="EarningCode" ColumnName="EarningCode" />
+                <ScalarProperty Name="pID" ColumnName="pID" />
+                <ScalarProperty Name="SETUP_COMPLETED" ColumnName="SETUP_COMPLETED" />
+                <ScalarProperty Name="HOURS_OVERALL" ColumnName="HOURS_OVERALL" />
+                <ScalarProperty Name="HOURS_PREVIOUS" ColumnName="HOURS_PREVIOUS" />
+                <ScalarProperty Name="HOURS_BREAK" ColumnName="HOURS_BREAK" />
+                <ScalarProperty Name="HOURS_WORKED" ColumnName="HOURS_WORKED" />
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="TRANSACTION_ID" ColumnName="TRANSACTION_ID" />
+                <ScalarProperty Name="eName" ColumnName="eName" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="CLOCK_OUT" ColumnName="CLOCK_OUT" />
+                <ScalarProperty Name="CLOCK_IN" ColumnName="CLOCK_IN" />
+                <ScalarProperty Name="eID" ColumnName="eID" />
+                <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+                <ScalarProperty Name="tcID" ColumnName="tcID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CR_Timecard_Summary">
+            <EntityTypeMapping TypeName="EmployeeDbModel.CR_Timecard_Summary">
+              <MappingFragment StoreEntitySet="CR_Timecard_Summary">
+                <ScalarProperty Name="ProcedureGroupID" ColumnName="ProcedureGroupID" />
+                <ScalarProperty Name="eID" ColumnName="eID" />
+                <ScalarProperty Name="HolidayOvertime" ColumnName="HolidayOvertime" />
+                <ScalarProperty Name="HolidayHour" ColumnName="HolidayHour" />
+                <ScalarProperty Name="RegularOvertime" ColumnName="RegularOvertime" />
+                <ScalarProperty Name="RegularHour" ColumnName="RegularHour" />
+                <ScalarProperty Name="WorkedHour" ColumnName="WorkedHour" />
+                <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+                <ScalarProperty Name="eName" ColumnName="eName" />
+                <ScalarProperty Name="PayRollID" ColumnName="PayRollID" />
+                <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+                <ScalarProperty Name="SummaryID" ColumnName="SummaryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FW_Employees">
+            <EntityTypeMapping TypeName="EmployeeDbModel.FW_Employees">
+              <MappingFragment StoreEntitySet="FW_Employees">
+                <ScalarProperty Name="IsSubcontract" ColumnName="IsSubcontract" />
+                <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+                <ScalarProperty Name="ProcedureGroupID" ColumnName="ProcedureGroupID" />
+                <ScalarProperty Name="IsMtoAwared" ColumnName="IsMtoAwared" />
+                <ScalarProperty Name="IsShowOnSubdepartmentSchedule" ColumnName="IsShowOnSubdepartmentSchedule" />
+                <ScalarProperty Name="IsAdminTaskSelected" ColumnName="IsAdminTaskSelected" />
+                <ScalarProperty Name="CrmLeadSelectAeEnable" ColumnName="CrmLeadSelectAeEnable" />
+                <ScalarProperty Name="CrmLeadAE" ColumnName="CrmLeadAE" />
+                <ScalarProperty Name="CrmLeadOwner" ColumnName="CrmLeadOwner" />
+                <ScalarProperty Name="ShowOnCommissionPage2" ColumnName="ShowOnCommissionPage2" />
+                <ScalarProperty Name="ShowOnCommissionPage1" ColumnName="ShowOnCommissionPage1" />
+                <ScalarProperty Name="ShowOnCrmPage1" ColumnName="ShowOnCrmPage1" />
+                <ScalarProperty Name="IsShowOnPerformanceReport" ColumnName="IsShowOnPerformanceReport" />
+                <ScalarProperty Name="IsFake" ColumnName="IsFake" />
+                <ScalarProperty Name="ShowOnInputHour" ColumnName="ShowOnInputHour" />
+                <ScalarProperty Name="ProbationPeriod" ColumnName="ProbationPeriod" />
+                <ScalarProperty Name="IsInProbation" ColumnName="IsInProbation" />
+                <ScalarProperty Name="IsProbation" ColumnName="IsProbation" />
+                <ScalarProperty Name="SelectType" ColumnName="SelectType" />
+                <ScalarProperty Name="EndWorkingDate2" ColumnName="EndWorkingDate2" />
+                <ScalarProperty Name="ReturnToWorkDate" ColumnName="ReturnToWorkDate" />
+                <ScalarProperty Name="EndWorkingDate1" ColumnName="EndWorkingDate1" />
+                <ScalarProperty Name="StartWorkingDate" ColumnName="StartWorkingDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="isAE" ColumnName="isAE" />
+                <ScalarProperty Name="isLeadHand" ColumnName="isLeadHand" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="dID" ColumnName="dID" />
+                <ScalarProperty Name="signature" ColumnName="signature" />
+                <ScalarProperty Name="response" ColumnName="response" />
+                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+                <ScalarProperty Name="ncrEnable" ColumnName="ncrEnable" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="PayrollNumber" ColumnName="PayrollNumber" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="SalesName" ColumnName="SalesName" />
+                <ScalarProperty Name="Sa2Name" ColumnName="Sa2Name" />
+                <ScalarProperty Name="Sa1Name" ColumnName="Sa1Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="NumberInfor" ColumnName="NumberInfor" />
+                <ScalarProperty Name="Training" ColumnName="Training" />
+                <ScalarProperty Name="History" ColumnName="History" />
+                <ScalarProperty Name="Performance" ColumnName="Performance" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="CompanyCellphone" ColumnName="CompanyCellphone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="payrate" ColumnName="payrate" />
+                <ScalarProperty Name="paytype" ColumnName="paytype" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="EmergencyContactNumber2" ColumnName="EmergencyContactNumber2" />
+                <ScalarProperty Name="EmergencyContactNumber1" ColumnName="EmergencyContactNumber1" />
+                <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="SINCardNumber" ColumnName="SINCardNumber" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="EmployeeDbModel" ZoomLevel="78">
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.CR_Timecard_Substitude" Width="1.75" PointX="0.5" PointY="8.25" Height="2.9417936197916674" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Employee_Shift" Width="2" PointX="6.75" PointY="3.625" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Employee_Substitude" Width="1.875" PointX="6.625" PointY="0.875" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.tblTimeCard_Holiday" Width="2.875" PointX="11.25" PointY="1" Height="2.1725878906250031" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.tblTimeCard_Shift" Width="2.875" PointX="11.375" PointY="3.625" Height="5.4417122395833317" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_Shift_tblTimeCard_Shift">
+          <edmx:ConnectorPoint PointX="11.375" PointY="4.8074446614583328" />
+          <edmx:ConnectorPoint PointX="8.75" PointY="4.8074446614583328" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_Substitude_tblTimeCard_Holiday">
+          <edmx:ConnectorPoint PointX="11.25" PointY="2.0862939453125016" />
+          <edmx:ConnectorPoint PointX="8.5" PointY="2.0862939453125016" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Employee_WorkingHistory" Width="2.5" PointX="6.875" PointY="7.375" Height="2.172587890624996" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Department1" Width="2.875" PointX="0.5" PointY="12.75" Height="4.0956022135416674" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Employee_Overtime" Width="1.5" PointX="6.75" PointY="11.125" Height="3.5186979166666745" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.PayrollPeriod" Width="1.5" PointX="13.875" PointY="21.75" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_EmployeesTeam" Width="1.5" PointX="0.75" PointY="1" Height="4.2879036458333388" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FwLabourTicketStationEmployee" Width="1.5" PointX="6.625" PointY="15.625" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.CR_TimeCard" Width="1.5" PointX="10.5" PointY="18.5" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.CR_Timecard_Summary" Width="1.5" PointX="6.375" PointY="18.5" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_CR_TimeCard_PayrollPeriod" />
+        <edmx:EntityTypeShape EntityType="EmployeeDbModel.FW_Employees" Width="1.5" PointX="4.125" PointY="0.75" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_CR_TimeCard_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_CR_Timecard_Substitude_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_CR_Timecard_Summary_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employees_FW_Department1" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_Overtime_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_Shift_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_Substitude_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employee_WorkingHistory_FW_Employees" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FW_Employees_FW_EmployeesTeam" />
+        <edmx:AssociationConnector Association="EmployeeDbModel.FK_FwLabourTicketStationEmployee_FW_Employees" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

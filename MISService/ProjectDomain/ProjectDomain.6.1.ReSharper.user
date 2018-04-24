@@ -1,0 +1,29 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="F7FDC9BF-2586-4C01-AB1B-7F02723038A8/d:BLL/f:SubContractRequirementSync.cs" caret="3233" fromTop="29" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="F7FDC9BF-2586-4C01-AB1B-7F02723038A8/d:BLL/f:SubContractRequirementSync.cs" caret="3621" fromTop="16" />
+      <File id="F7FDC9BF-2586-4C01-AB1B-7F02723038A8/d:BLL/f:SubContractRequirementSync.cs" caret="180" fromTop="7" />
+      <File id="F7FDC9BF-2586-4C01-AB1B-7F02723038A8/d:BLL/f:SubContractRequirementSync.cs" caret="3233" fromTop="29" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False" />
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

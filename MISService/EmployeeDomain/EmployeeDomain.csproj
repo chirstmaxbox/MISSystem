@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CBA035D-63A6-4D67-B5C8-E5187072A183}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmployeeDomain</RootNamespace>
+    <AssemblyName>EmployeeDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Production2\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Production2\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\MyEmployees.cs" />
+    <Compile Include="BLL\EmployeePicture.cs" />
+    <Compile Include="BLL\EmployeeSignature.cs" />
+    <Compile Include="BLL\FsEmployeeCopy.cs" />
+    <Compile Include="BLL\FsEmployees.cs" />
+    <Compile Include="BLL\OperationAuthorization.cs" />
+    <Compile Include="BLL\SalesQuotaOriginalData.cs" />
+    <Compile Include="BLL\EmployeeRole.cs" />
+    <Compile Include="BLL\Membership.cs" />
+    <Compile Include="BLL\MembershipAuthorizationArray.cs" />
+    <Compile Include="BLL\MembershipMgt.cs" />
+    <Compile Include="BLL\EmployeeDropdownlistExceptionHandler.cs" />
+    <Compile Include="EmployeeConfiguration.cs" />
+    <Compile Include="BLL\Collection.cs" />
+    <Compile Include="BLL\Department.cs" />
+    <Compile Include="BLL\Team.cs" />
+    <Compile Include="BLL\ProfileSearch.cs" />
+    <Compile Include="BLL\Employee.cs" />
+    <Compile Include="BLL\Probation.cs" />
+    <Compile Include="EmployeeEN.cs" />
+    <Compile Include="Models\CR_TimeCard.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CR_Timecard_Substitude.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CR_Timecard_Summary.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FwLabourTicketStationEmployee.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Department1.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Employees.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_EmployeesTeam.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Employee_Overtime.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Employee_Shift.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Employee_Substitude.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FW_Employee_WorkingHistory.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayrollPeriod.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTimeCard_Holiday.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTimeCard_Shift.cs">
+      <DependentUpon>EmployeeDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Models\EmployeeDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\EmployeeDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmployeeDbModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\EmployeeDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmployeeDbModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyCommonWeb\MyCommonWeb.vbproj">
+      <Project>{c1543d65-5222-4ea1-8074-c13b759422ae}</Project>
+      <Name>MyCommonWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCommon\MyCommon.csproj">
+      <Project>{661dcd9d-aaef-40bf-bc9a-290693d1df2d}</Project>
+      <Name>MyCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

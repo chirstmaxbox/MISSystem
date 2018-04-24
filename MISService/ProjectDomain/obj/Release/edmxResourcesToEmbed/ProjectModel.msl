@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectModelDbEntities">
+    <EntitySetMapping Name="Sales_JobMasterList_Invoice_Workorder">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_Invoice_Workorder">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_Invoice_Workorder">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="WorkorderNumber" ColumnName="WorkorderNumber" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Wip">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_Wip">
+        <MappingFragment StoreEntitySet="Sales_Wip">
+          <ScalarProperty Name="WipTaskID" ColumnName="WipTaskID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="estRevID" ColumnName="estRevID" />
+          <ScalarProperty Name="quoteRevID" ColumnName="quoteRevID" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
+          <ScalarProperty Name="ScheduleFinishDate" ColumnName="ScheduleFinishDate" />
+          <ScalarProperty Name="ActualFinishDate" ColumnName="ActualFinishDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdatedAt" ColumnName="LastUpdatedAt" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWipTasks">
+      <EntityTypeMapping TypeName="ProjectModel.tblWipTask">
+        <MappingFragment StoreEntitySet="tblWipTask">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="ContentName" ColumnName="ContentName" />
+          <ScalarProperty Name="OptionType" ColumnName="OptionType" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="StageID" ColumnName="StageID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="StartDateAssignType" ColumnName="StartDateAssignType" />
+          <ScalarProperty Name="FinishDateAssignType" ColumnName="FinishDateAssignType" />
+          <ScalarProperty Name="StartDatePriorTo" ColumnName="StartDatePriorTo" />
+          <ScalarProperty Name="IsInternal" ColumnName="IsInternal" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+          <ScalarProperty Name="PublicContentName" ColumnName="PublicContentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice_Item">
+      <EntityTypeMapping TypeName="ProjectModel.Invoice_Item">
+        <MappingFragment StoreEntitySet="Invoice_Item">
+          <ScalarProperty Name="SerialID" ColumnName="SerialID" />
+          <ScalarProperty Name="NameDetailsID" ColumnName="NameDetailsID" />
+          <ScalarProperty Name="qiAmountText" ColumnName="qiAmountText" />
+          <ScalarProperty Name="quoteOptionText" ColumnName="quoteOptionText" />
+          <ScalarProperty Name="recordType" ColumnName="recordType" />
+          <ScalarProperty Name="estItemNameText" ColumnName="estItemNameText" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+          <ScalarProperty Name="heightFromGround" ColumnName="heightFromGround" />
+          <ScalarProperty Name="qiQtypc" ColumnName="qiQtypc" />
+          <ScalarProperty Name="qiQty" ColumnName="qiQty" />
+          <ScalarProperty Name="qiUnitPrice" ColumnName="qiUnitPrice" />
+          <ScalarProperty Name="qiAmount" ColumnName="qiAmount" />
+          <ScalarProperty Name="qiDescription" ColumnName="qiDescription" />
+          <ScalarProperty Name="qiItemTitle" ColumnName="qiItemTitle" />
+          <ScalarProperty Name="supplyType" ColumnName="supplyType" />
+          <ScalarProperty Name="isFinal" ColumnName="isFinal" />
+          <ScalarProperty Name="quoteOption" ColumnName="quoteOption" />
+          <ScalarProperty Name="qiPrintOrder" ColumnName="qiPrintOrder" />
+          <ScalarProperty Name="estItemID" ColumnName="estItemID" />
+          <ScalarProperty Name="quoteRevID" ColumnName="quoteRevID" />
+          <ScalarProperty Name="quoteItemID" ColumnName="quoteItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_SpecialMaterial">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_SpecialMaterial">
+        <MappingFragment StoreEntitySet="Sales_SpecialMaterial">
+          <ScalarProperty Name="ItemNum" ColumnName="ItemNum" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ActualReceivedTime" ColumnName="ActualReceivedTime" />
+          <ScalarProperty Name="ExpectingDeliveryTime" ColumnName="ExpectingDeliveryTime" />
+          <ScalarProperty Name="Leadtime" ColumnName="Leadtime" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="LsmID" ColumnName="LsmID" />
+          <ScalarProperty Name="HandlingProcess" ColumnName="HandlingProcess" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobSpecialMaterialID" ColumnName="JobSpecialMaterialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_SpecialMaterialRequest">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_SpecialMaterialRequest">
+        <MappingFragment StoreEntitySet="Sales_SpecialMaterialRequest">
+          <ScalarProperty Name="SubmitToPurchasingDate" ColumnName="SubmitToPurchasingDate" />
+          <ScalarProperty Name="GraphicDrawingSubmitDate" ColumnName="GraphicDrawingSubmitDate" />
+          <ScalarProperty Name="StructuralDrawingSubmitDate" ColumnName="StructuralDrawingSubmitDate" />
+          <ScalarProperty Name="EstimationSubmitDate" ColumnName="EstimationSubmitDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="GraphicDrawing" ColumnName="GraphicDrawing" />
+          <ScalarProperty Name="StructuralDrawing" ColumnName="StructuralDrawing" />
+          <ScalarProperty Name="Estimation" ColumnName="Estimation" />
+          <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="SpmID" ColumnName="SpmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WO_Shipping">
+      <EntityTypeMapping TypeName="ProjectModel.WO_Shipping">
+        <MappingFragment StoreEntitySet="WO_Shipping">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="AePhone" ColumnName="AePhone" />
+          <ScalarProperty Name="AeName" ColumnName="AeName" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="WorkorderNumber" ColumnName="WorkorderNumber" />
+          <ScalarProperty Name="AttnPhone" ColumnName="AttnPhone" />
+          <ScalarProperty Name="AttnName" ColumnName="AttnName" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ShipToName" ColumnName="ShipToName" />
+          <ScalarProperty Name="WaybillNote" ColumnName="WaybillNote" />
+          <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="WoID" ColumnName="WoID" />
+          <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WO_ShippingItem">
+      <EntityTypeMapping TypeName="ProjectModel.WO_ShippingItem">
+        <MappingFragment StoreEntitySet="WO_ShippingItem">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="WoID" ColumnName="WoID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WO_Item">
+      <EntityTypeMapping TypeName="ProjectModel.WO_Item">
+        <MappingFragment StoreEntitySet="WO_Item">
+          <ScalarProperty Name="IsHide" ColumnName="IsHide" />
+          <ScalarProperty Name="BySubcontractor" ColumnName="BySubcontractor" />
+          <ScalarProperty Name="SerialID" ColumnName="SerialID" />
+          <ScalarProperty Name="ReasonOfAlterLeadtime" ColumnName="ReasonOfAlterLeadtime" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="qiAmount" ColumnName="qiAmount" />
+          <ScalarProperty Name="NameDetailsID" ColumnName="NameDetailsID" />
+          <ScalarProperty Name="qtyPcUnit" ColumnName="qtyPcUnit" />
+          <ScalarProperty Name="qtyUnit" ColumnName="qtyUnit" />
+          <ScalarProperty Name="fromWhere" ColumnName="fromWhere" />
+          <ScalarProperty Name="scPurpose4" ColumnName="scPurpose4" />
+          <ScalarProperty Name="scPurpose3" ColumnName="scPurpose3" />
+          <ScalarProperty Name="scPurpose2" ColumnName="scPurpose2" />
+          <ScalarProperty Name="scPurpose1" ColumnName="scPurpose1" />
+          <ScalarProperty Name="estItemNameText" ColumnName="estItemNameText" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+          <ScalarProperty Name="heightFromGround" ColumnName="heightFromGround" />
+          <ScalarProperty Name="qtyPC" ColumnName="qtyPC" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="scPurposeOther" ColumnName="scPurposeOther" />
+          <ScalarProperty Name="scHydroInspectionRequired" ColumnName="scHydroInspectionRequired" />
+          <ScalarProperty Name="scFindSiteAt" ColumnName="scFindSiteAt" />
+          <ScalarProperty Name="scPurpose" ColumnName="scPurpose" />
+          <ScalarProperty Name="woPrintOrder" ColumnName="woPrintOrder" />
+          <ScalarProperty Name="woDescription" ColumnName="woDescription" />
+          <ScalarProperty Name="estItemID" ColumnName="estItemID" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+          <ScalarProperty Name="woItemID" ColumnName="woItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_QuoteRev">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_QuoteRev">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_QuoteRev">
+          <ScalarProperty Name="ContractFilename" ColumnName="ContractFilename" />
+          <ScalarProperty Name="ReportFormat" ColumnName="ReportFormat" />
+          <ScalarProperty Name="TaxOption" ColumnName="TaxOption" />
+          <ScalarProperty Name="sa1ID" ColumnName="sa1ID" />
+          <ScalarProperty Name="isLost" ColumnName="isLost" />
+          <ScalarProperty Name="printJobTitle" ColumnName="printJobTitle" />
+          <ScalarProperty Name="contractDate" ColumnName="contractDate" />
+          <ScalarProperty Name="CurrencyRate" ColumnName="CurrencyRate" />
+          <ScalarProperty Name="pstAmount" ColumnName="pstAmount" />
+          <ScalarProperty Name="emptyRow3" ColumnName="emptyRow3" />
+          <ScalarProperty Name="emptyRow2" ColumnName="emptyRow2" />
+          <ScalarProperty Name="emptyRow1" ColumnName="emptyRow1" />
+          <ScalarProperty Name="isssueDate" ColumnName="isssueDate" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="DiscountText" ColumnName="DiscountText" />
+          <ScalarProperty Name="printOption" ColumnName="printOption" />
+          <ScalarProperty Name="reasonOfAddProduct" ColumnName="reasonOfAddProduct" />
+          <ScalarProperty Name="isItemCopied" ColumnName="isItemCopied" />
+          <ScalarProperty Name="contractNumber" ColumnName="contractNumber" />
+          <ScalarProperty Name="contractAmount" ColumnName="contractAmount" />
+          <ScalarProperty Name="quoteStatus" ColumnName="quoteStatus" />
+          <ScalarProperty Name="quoteLocked" ColumnName="quoteLocked" />
+          <ScalarProperty Name="followupDate" ColumnName="followupDate" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="termBalance" ColumnName="termBalance" />
+          <ScalarProperty Name="termDeposit" ColumnName="termDeposit" />
+          <ScalarProperty Name="quotePST" ColumnName="quotePST" />
+          <ScalarProperty Name="quoteGST" ColumnName="quoteGST" />
+          <ScalarProperty Name="quoteAmount" ColumnName="quoteAmount" />
+          <ScalarProperty Name="quoteOption" ColumnName="quoteOption" />
+          <ScalarProperty Name="quoteRev" ColumnName="quoteRev" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="estRevID" ColumnName="estRevID" />
+          <ScalarProperty Name="quoteRevID" ColumnName="quoteRevID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobStatusTable">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobStatusTable">
+        <MappingFragment StoreEntitySet="Sales_JobStatusTable">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="RefVersion" ColumnName="RefVersion" />
+          <ScalarProperty Name="Ref" ColumnName="Ref" />
+          <ScalarProperty Name="Performer" ColumnName="Performer" />
+          <ScalarProperty Name="accomplishDate" ColumnName="accomplishDate" />
+          <ScalarProperty Name="jobStatus" ColumnName="jobStatus" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="jsrID" ColumnName="jsrID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_Commission">
+      <EntityTypeMapping TypeName="ProjectModel.CR_Commission">
+        <MappingFragment StoreEntitySet="CR_Commission">
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PreviouseInvoiceTotalOfTheProject" ColumnName="PreviouseInvoiceTotalOfTheProject" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+          <ScalarProperty Name="PersonalRate" ColumnName="PersonalRate" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="AppliedRuleID" ColumnName="AppliedRuleID" />
+          <ScalarProperty Name="ZeroDate" ColumnName="ZeroDate" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_Commission_InvoiceList">
+      <EntityTypeMapping TypeName="ProjectModel.CR_Commission_InvoiceList">
+        <MappingFragment StoreEntitySet="CR_Commission_InvoiceList">
+          <ScalarProperty Name="AbnormalReason" ColumnName="AbnormalReason" />
+          <ScalarProperty Name="IsAbnormal" ColumnName="IsAbnormal" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerRowID" ColumnName="CustomerRowID" />
+          <ScalarProperty Name="FirstInvoiceDate" ColumnName="FirstInvoiceDate" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="ZeroDate" ColumnName="ZeroDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="AppliedRuleID" ColumnName="AppliedRuleID" />
+          <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommissionInforInvoices">
+      <EntityTypeMapping TypeName="ProjectModel.CommissionInforInvoice">
+        <MappingFragment StoreEntitySet="CommissionInforInvoice">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MisInvoiceID" ColumnName="MisInvoiceID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="ZeroDate" ColumnName="ZeroDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="RowID" ColumnName="RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMaster_Invoice_CommissionOnHold">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMaster_Invoice_CommissionOnHold">
+        <MappingFragment StoreEntitySet="Sales_JobMaster_Invoice_CommissionOnHold">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ZeroDate" ColumnName="ZeroDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="RowID" ColumnName="RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_Invoice">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_Invoice">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_Invoice">
+          <ScalarProperty Name="CommissionAmountAdjustmentOP" ColumnName="CommissionAmountAdjustmentOP" />
+          <ScalarProperty Name="CommissionRemark" ColumnName="CommissionRemark" />
+          <ScalarProperty Name="CommissionIsWaived" ColumnName="CommissionIsWaived" />
+          <ScalarProperty Name="CommissionCustomRate" ColumnName="CommissionCustomRate" />
+          <ScalarProperty Name="CommissionAmountAdjustment" ColumnName="CommissionAmountAdjustment" />
+          <ScalarProperty Name="AlertReason" ColumnName="AlertReason" />
+          <ScalarProperty Name="IsAlert" ColumnName="IsAlert" />
+          <ScalarProperty Name="OriginalAccountOwner" ColumnName="OriginalAccountOwner" />
+          <ScalarProperty Name="InternalReferral" ColumnName="InternalReferral" />
+          <ScalarProperty Name="AETM" ColumnName="AETM" />
+          <ScalarProperty Name="WorkordersCopy" ColumnName="WorkordersCopy" />
+          <ScalarProperty Name="NameSurfix" ColumnName="NameSurfix" />
+          <ScalarProperty Name="TaxOption" ColumnName="TaxOption" />
+          <ScalarProperty Name="MultipleLegalNameText" ColumnName="MultipleLegalNameText" />
+          <ScalarProperty Name="isMultipleLegalName" ColumnName="isMultipleLegalName" />
+          <ScalarProperty Name="printOption" ColumnName="printOption" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="CurrencyRate" ColumnName="CurrencyRate" />
+          <ScalarProperty Name="contractDate" ColumnName="contractDate" />
+          <ScalarProperty Name="pstAmount" ColumnName="pstAmount" />
+          <ScalarProperty Name="emptyRows2" ColumnName="emptyRows2" />
+          <ScalarProperty Name="emptyRows1" ColumnName="emptyRows1" />
+          <ScalarProperty Name="emptyRows3" ColumnName="emptyRows3" />
+          <ScalarProperty Name="ActionTaken" ColumnName="ActionTaken" />
+          <ScalarProperty Name="atDetails" ColumnName="atDetails" />
+          <ScalarProperty Name="SA1" ColumnName="SA1" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="po" ColumnName="po" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="fromWhere" ColumnName="fromWhere" />
+          <ScalarProperty Name="jobLocation" ColumnName="jobLocation" />
+          <ScalarProperty Name="iStatus" ColumnName="iStatus" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="Final" ColumnName="Final" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="pst" ColumnName="pst" />
+          <ScalarProperty Name="gst" ColumnName="gst" />
+          <ScalarProperty Name="Datetimestamp" ColumnName="Datetimestamp" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="Approved2" ColumnName="Approved2" />
+          <ScalarProperty Name="Approved1" ColumnName="Approved1" />
+          <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="Workorders" ColumnName="Workorders" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+          <ScalarProperty Name="invoiceType" ColumnName="invoiceType" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_WipPublic">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_WipPublic">
+        <MappingFragment StoreEntitySet="Sales_WipPublic">
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedAt" ColumnName="LastUpdatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ActualFinishDate" ColumnName="ActualFinishDate" />
+          <ScalarProperty Name="ScheduleFinishDate" ColumnName="ScheduleFinishDate" />
+          <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+          <ScalarProperty Name="quoteRevID" ColumnName="quoteRevID" />
+          <ScalarProperty Name="estRevID" ColumnName="estRevID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="WipTaskID" ColumnName="WipTaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FW_JOB_TYPE">
+      <EntityTypeMapping TypeName="ProjectModel.FW_JOB_TYPE">
+        <MappingFragment StoreEntitySet="FW_JOB_TYPE">
+          <ScalarProperty Name="sSelect" ColumnName="sSelect" />
+          <ScalarProperty Name="iSelect" ColumnName="iSelect" />
+          <ScalarProperty Name="wSelect" ColumnName="wSelect" />
+          <ScalarProperty Name="QUOTE_SUPPLY_TYPE" ColumnName="QUOTE_SUPPLY_TYPE" />
+          <ScalarProperty Name="JOB_TYPE" ColumnName="JOB_TYPE" />
+          <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_ProjectStage">
+      <EntityTypeMapping TypeName="ProjectModel.CR_ProjectStage">
+        <MappingFragment StoreEntitySet="CR_ProjectStage">
+          <ScalarProperty Name="ResultNote" ColumnName="ResultNote" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="LastQuotationFollowUpContent" ColumnName="LastQuotationFollowUpContent" />
+          <ScalarProperty Name="LastQuotationFollowUpDate" ColumnName="LastQuotationFollowUpDate" />
+          <ScalarProperty Name="QuotationSendDate" ColumnName="QuotationSendDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="QuoteAmount" ColumnName="QuoteAmount" />
+          <ScalarProperty Name="QuoteVersion" ColumnName="QuoteVersion" />
+          <ScalarProperty Name="QuoteRevID" ColumnName="QuoteRevID" />
+          <ScalarProperty Name="IsBidding" ColumnName="IsBidding" />
+          <ScalarProperty Name="EstimationReceived" ColumnName="EstimationReceived" />
+          <ScalarProperty Name="EstimationSubmit" ColumnName="EstimationSubmit" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+          <ScalarProperty Name="InstallToAddress" ColumnName="InstallToAddress" />
+          <ScalarProperty Name="InstallToCustomerID" ColumnName="InstallToCustomerID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ReportEmployeeTeamID" ColumnName="ReportEmployeeTeamID" />
+          <ScalarProperty Name="ReportEmployeeID" ColumnName="ReportEmployeeID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_ProjectWip">
+      <EntityTypeMapping TypeName="ProjectModel.CR_ProjectWip">
+        <MappingFragment StoreEntitySet="CR_ProjectWip">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OpID" ColumnName="OpID" />
+          <ScalarProperty Name="CollectingInfo" ColumnName="CollectingInfo" />
+          <ScalarProperty Name="ContractAmount" ColumnName="ContractAmount" />
+          <ScalarProperty Name="QuoteRevID" ColumnName="QuoteRevID" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+          <ScalarProperty Name="InstallToAddress" ColumnName="InstallToAddress" />
+          <ScalarProperty Name="InstallToCustomerID" ColumnName="InstallToCustomerID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ReportEmployeeTeamID" ColumnName="ReportEmployeeTeamID" />
+          <ScalarProperty Name="ReportEmployeeID" ColumnName="ReportEmployeeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_ProjectWipDetails">
+      <EntityTypeMapping TypeName="ProjectModel.CR_ProjectWipDetails">
+        <MappingFragment StoreEntitySet="CR_ProjectWipDetails">
+          <ScalarProperty Name="OSID" ColumnName="OSID" />
+          <ScalarProperty Name="WorkorderDeadline" ColumnName="WorkorderDeadline" />
+          <ScalarProperty Name="CompletionOfWorkorder" ColumnName="CompletionOfWorkorder" />
+          <ScalarProperty Name="WorkorderIssuedDate" ColumnName="WorkorderIssuedDate" />
+          <ScalarProperty Name="PermitWaiver" ColumnName="PermitWaiver" />
+          <ScalarProperty Name="StakeoutApply" ColumnName="StakeoutApply" />
+          <ScalarProperty Name="PermitApply" ColumnName="PermitApply" />
+          <ScalarProperty Name="EngineeringStamp" ColumnName="EngineeringStamp" />
+          <ScalarProperty Name="LandlordApproval" ColumnName="LandlordApproval" />
+          <ScalarProperty Name="ClientApproval" ColumnName="ClientApproval" />
+          <ScalarProperty Name="SampleApproval" ColumnName="SampleApproval" />
+          <ScalarProperty Name="SiteCheck" ColumnName="SiteCheck" />
+          <ScalarProperty Name="StructuralDrawingPreparation" ColumnName="StructuralDrawingPreparation" />
+          <ScalarProperty Name="GraphicDrawingPreparation" ColumnName="GraphicDrawingPreparation" />
+          <ScalarProperty Name="PreDrawing" ColumnName="PreDrawing" />
+          <ScalarProperty Name="RowType" ColumnName="RowType" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_WorkOnHandForAccounting">
+      <EntityTypeMapping TypeName="ProjectModel.CR_WorkOnHandForAccounting">
+        <MappingFragment StoreEntitySet="CR_WorkOnHandForAccounting">
+          <ScalarProperty Name="ProductionHours" ColumnName="ProductionHours" />
+          <ScalarProperty Name="InstallationHours" ColumnName="InstallationHours" />
+          <ScalarProperty Name="BilledToDate" ColumnName="BilledToDate" />
+          <ScalarProperty Name="ContractAmount" ColumnName="ContractAmount" />
+          <ScalarProperty Name="QuoteRevID" ColumnName="QuoteRevID" />
+          <ScalarProperty Name="EstimatedCost" ColumnName="EstimatedCost" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+          <ScalarProperty Name="InstallToAddress" ColumnName="InstallToAddress" />
+          <ScalarProperty Name="InstallToCustomerID" ColumnName="InstallToCustomerID" />
+          <ScalarProperty Name="BillToCustomerName" ColumnName="BillToCustomerName" />
+          <ScalarProperty Name="BillToCustomerID" ColumnName="BillToCustomerID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_Customer">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_Customer">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_Customer">
+          <ScalarProperty Name="isInstallOrShipTo" ColumnName="isInstallOrShipTo" />
+          <ScalarProperty Name="isQuoteTo" ColumnName="isQuoteTo" />
+          <ScalarProperty Name="isBillTo" ColumnName="isBillTo" />
+          <ScalarProperty Name="contactName" ColumnName="contactName" />
+          <ScalarProperty Name="cID" ColumnName="cID" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="jcID" ColumnName="jcID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Dispatching">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_Dispatching">
+        <MappingFragment StoreEntitySet="Sales_Dispatching">
+          <ScalarProperty Name="IIReason" ColumnName="IIReason" />
+          <ScalarProperty Name="IIOkTime" ColumnName="IIOkTime" />
+          <ScalarProperty Name="IIMarkedTime" ColumnName="IIMarkedTime" />
+          <ScalarProperty Name="IncompleteInfo" ColumnName="IncompleteInfo" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="NumberOfDrawing" ColumnName="NumberOfDrawing" />
+          <ScalarProperty Name="WorkedHour" ColumnName="WorkedHour" />
+          <ScalarProperty Name="FinishedDate" ColumnName="FinishedDate" />
+          <ScalarProperty Name="ResponsibleFinish" ColumnName="ResponsibleFinish" />
+          <ScalarProperty Name="OwnerFinish" ColumnName="OwnerFinish" />
+          <ScalarProperty Name="CompletePercentage" ColumnName="CompletePercentage" />
+          <ScalarProperty Name="Reminder" ColumnName="Reminder" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Rush" ColumnName="Rush" />
+          <ScalarProperty Name="RequiredTime" ColumnName="RequiredTime" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CopyTo" ColumnName="CopyTo" />
+          <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+          <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="WoID" ColumnName="WoID" />
+          <ScalarProperty Name="QuoteRevID" ColumnName="QuoteRevID" />
+          <ScalarProperty Name="EstRevID" ColumnName="EstRevID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ProjectModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+          <ScalarProperty Name="SupplyOnly" ColumnName="SupplyOnly" />
+          <ScalarProperty Name="SupplyAndInstall" ColumnName="SupplyAndInstall" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="OptionID3" ColumnName="OptionID3" />
+          <ScalarProperty Name="OptionID2" ColumnName="OptionID2" />
+          <ScalarProperty Name="OptionID1" ColumnName="OptionID1" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quote_Item">
+      <EntityTypeMapping TypeName="ProjectModel.Quote_Item">
+        <MappingFragment StoreEntitySet="Quote_Item">
+          <ScalarProperty Name="BySubcontractor" ColumnName="BySubcontractor" />
+          <ScalarProperty Name="SerialID" ColumnName="SerialID" />
+          <ScalarProperty Name="NameDetailsID" ColumnName="NameDetailsID" />
+          <ScalarProperty Name="qiAmountText" ColumnName="qiAmountText" />
+          <ScalarProperty Name="quoteOptionText" ColumnName="quoteOptionText" />
+          <ScalarProperty Name="recordType" ColumnName="recordType" />
+          <ScalarProperty Name="estItemNameText" ColumnName="estItemNameText" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+          <ScalarProperty Name="heightFromGround" ColumnName="heightFromGround" />
+          <ScalarProperty Name="qiQtypc" ColumnName="qiQtypc" />
+          <ScalarProperty Name="qiQty" ColumnName="qiQty" />
+          <ScalarProperty Name="qiUnitPrice" ColumnName="qiUnitPrice" />
+          <ScalarProperty Name="qiAmount" ColumnName="qiAmount" />
+          <ScalarProperty Name="qiDescription" ColumnName="qiDescription" />
+          <ScalarProperty Name="qiItemTitle" ColumnName="qiItemTitle" />
+          <ScalarProperty Name="supplyType" ColumnName="supplyType" />
+          <ScalarProperty Name="isFinal" ColumnName="isFinal" />
+          <ScalarProperty Name="quoteOption" ColumnName="quoteOption" />
+          <ScalarProperty Name="qiPrintOrder" ColumnName="qiPrintOrder" />
+          <ScalarProperty Name="estItemID" ColumnName="estItemID" />
+          <ScalarProperty Name="quoteRevID" ColumnName="quoteRevID" />
+          <ScalarProperty Name="quoteItemID" ColumnName="quoteItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_OnGoingContract">
+      <EntityTypeMapping TypeName="ProjectModel.CR_OnGoingContract">
+        <MappingFragment StoreEntitySet="CR_OnGoingContract">
+          <ScalarProperty Name="SignedContractPlusAdminFee" ColumnName="SignedContractPlusAdminFee" />
+          <ScalarProperty Name="AdminFee" ColumnName="AdminFee" />
+          <ScalarProperty Name="SignedContractAmount" ColumnName="SignedContractAmount" />
+          <ScalarProperty Name="ColourCode" ColumnName="ColourCode" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="OnGoingWorkorderNumbers" ColumnName="OnGoingWorkorderNumbers" />
+          <ScalarProperty Name="FinishedWorkorderNumbers" ColumnName="FinishedWorkorderNumbers" />
+          <ScalarProperty Name="IssuedWorkorderNumbers" ColumnName="IssuedWorkorderNumbers" />
+          <ScalarProperty Name="Problem" ColumnName="Problem" />
+          <ScalarProperty Name="ReportEmployeeTeamID" ColumnName="ReportEmployeeTeamID" />
+          <ScalarProperty Name="ReportEmployeeID" ColumnName="ReportEmployeeID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="InstallToCustomerID" ColumnName="InstallToCustomerID" />
+          <ScalarProperty Name="QuoteRevID" ColumnName="QuoteRevID" />
+          <ScalarProperty Name="PcID" ColumnName="PcID" />
+          <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+          <ScalarProperty Name="InvoicedAmount" ColumnName="InvoicedAmount" />
+          <ScalarProperty Name="WoOnGoingAmountLocalInstaller" ColumnName="WoOnGoingAmountLocalInstaller" />
+          <ScalarProperty Name="WoOnGoingAmountInstallation" ColumnName="WoOnGoingAmountInstallation" />
+          <ScalarProperty Name="WoOnGoingAmountShop" ColumnName="WoOnGoingAmountShop" />
+          <ScalarProperty Name="WoOnGoingAmount" ColumnName="WoOnGoingAmount" />
+          <ScalarProperty Name="WoFinishedAmount" ColumnName="WoFinishedAmount" />
+          <ScalarProperty Name="ToBeIssuedWorkorderAmount" ColumnName="ToBeIssuedWorkorderAmount" />
+          <ScalarProperty Name="IssuedWorkorderCount" ColumnName="IssuedWorkorderCount" />
+          <ScalarProperty Name="IssuedWorkorderAmount" ColumnName="IssuedWorkorderAmount" />
+          <ScalarProperty Name="ContractAmount" ColumnName="ContractAmount" />
+          <ScalarProperty Name="DaysBetweenLastWorkorAndTargetDate" ColumnName="DaysBetweenLastWorkorAndTargetDate" />
+          <ScalarProperty Name="IssueDateOfLastWorkorder" ColumnName="IssueDateOfLastWorkorder" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobNumber" ColumnName="JobNumber" />
+          <ScalarProperty Name="SalesName" ColumnName="SalesName" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_WO">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_WO">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_WO">
+          <ScalarProperty Name="WorkorderAmountSubcontract" ColumnName="WorkorderAmountSubcontract" />
+          <ScalarProperty Name="WorkorderAmountInstallation" ColumnName="WorkorderAmountInstallation" />
+          <ScalarProperty Name="WorkorderAmountShopOriginal" ColumnName="WorkorderAmountShopOriginal" />
+          <ScalarProperty Name="WorkorderAmountShopOnGoing" ColumnName="WorkorderAmountShopOnGoing" />
+          <ScalarProperty Name="WorkorderAmount" ColumnName="WorkorderAmount" />
+          <ScalarProperty Name="FedTaxIDNumber" ColumnName="FedTaxIDNumber" />
+          <ScalarProperty Name="EstimatedShippingCharge" ColumnName="EstimatedShippingCharge" />
+          <ScalarProperty Name="IsDisplayToPurchasingInfo" ColumnName="IsDisplayToPurchasingInfo" />
+          <ScalarProperty Name="RevisedDeadlineLastUpdateWhen" ColumnName="RevisedDeadlineLastUpdateWhen" />
+          <ScalarProperty Name="RevisedDeadlineLastUpdateWho" ColumnName="RevisedDeadlineLastUpdateWho" />
+          <ScalarProperty Name="RevisedDeadlinePrevious" ColumnName="RevisedDeadlinePrevious" />
+          <ScalarProperty Name="RevisedDeadline" ColumnName="RevisedDeadline" />
+          <ScalarProperty Name="FinalDeadlineLastUpdateWhen" ColumnName="FinalDeadlineLastUpdateWhen" />
+          <ScalarProperty Name="FinalDeadlineLastUpdateWho" ColumnName="FinalDeadlineLastUpdateWho" />
+          <ScalarProperty Name="FinalDeadlinePrevious" ColumnName="FinalDeadlinePrevious" />
+          <ScalarProperty Name="FinalDeadLine" ColumnName="FinalDeadLine" />
+          <ScalarProperty Name="ProductionProposedDeadlineLastUpdateWho" ColumnName="ProductionProposedDeadlineLastUpdateWho" />
+          <ScalarProperty Name="ProductionProposedDeadlineLastUpdateWhen" ColumnName="ProductionProposedDeadlineLastUpdateWhen" />
+          <ScalarProperty Name="ProductionProposedDeadlinePrevious" ColumnName="ProductionProposedDeadlinePrevious" />
+          <ScalarProperty Name="ProductionProposedDeadline" ColumnName="ProductionProposedDeadline" />
+          <ScalarProperty Name="SalesProposedDeadlineLastUpdateWho" ColumnName="SalesProposedDeadlineLastUpdateWho" />
+          <ScalarProperty Name="SalesProposedDeadlineLastUpdateWhen" ColumnName="SalesProposedDeadlineLastUpdateWhen" />
+          <ScalarProperty Name="SalesProposedDeadlinePrevious" ColumnName="SalesProposedDeadlinePrevious" />
+          <ScalarProperty Name="SalesProposedDeadline" ColumnName="SalesProposedDeadline" />
+          <ScalarProperty Name="RushChargeAmount" ColumnName="RushChargeAmount" />
+          <ScalarProperty Name="RushChargeApplied" ColumnName="RushChargeApplied" />
+          <ScalarProperty Name="SpecialProcedureApplicable" ColumnName="SpecialProcedureApplicable" />
+          <ScalarProperty Name="LongestLeadtime" ColumnName="LongestLeadtime" />
+          <ScalarProperty Name="ChecklistApplicable" ColumnName="ChecklistApplicable" />
+          <ScalarProperty Name="PreviousServiceWO" ColumnName="PreviousServiceWO" />
+          <ScalarProperty Name="GenerateFrom" ColumnName="GenerateFrom" />
+          <ScalarProperty Name="RedoOfWoNumbers" ColumnName="RedoOfWoNumbers" />
+          <ScalarProperty Name="ExactDate" ColumnName="ExactDate" />
+          <ScalarProperty Name="NoChargeReason" ColumnName="NoChargeReason" />
+          <ScalarProperty Name="reviseVer" ColumnName="reviseVer" />
+          <ScalarProperty Name="redoVer" ColumnName="redoVer" />
+          <ScalarProperty Name="invID" ColumnName="invID" />
+          <ScalarProperty Name="Approved1" ColumnName="Approved1" />
+          <ScalarProperty Name="NochargeApproved" ColumnName="NochargeApproved" />
+          <ScalarProperty Name="CurrentRev" ColumnName="CurrentRev" />
+          <ScalarProperty Name="addNewItemReason" ColumnName="addNewItemReason" />
+          <ScalarProperty Name="revisedReason" ColumnName="revisedReason" />
+          <ScalarProperty Name="redoReason" ColumnName="redoReason" />
+          <ScalarProperty Name="rushReason" ColumnName="rushReason" />
+          <ScalarProperty Name="revise" ColumnName="revise" />
+          <ScalarProperty Name="rush" ColumnName="rush" />
+          <ScalarProperty Name="reDo" ColumnName="reDo" />
+          <ScalarProperty Name="coordinator" ColumnName="coordinator" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="siteSupervisor" ColumnName="siteSupervisor" />
+          <ScalarProperty Name="temp1" ColumnName="temp1" />
+          <ScalarProperty Name="switchPosition" ColumnName="switchPosition" />
+          <ScalarProperty Name="preWorkOrder" ColumnName="preWorkOrder" />
+          <ScalarProperty Name="Sa1ID" ColumnName="Sa1ID" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="outsourcingInstaller" ColumnName="outsourcingInstaller" />
+          <ScalarProperty Name="stakeout" ColumnName="stakeout" />
+          <ScalarProperty Name="permit" ColumnName="permit" />
+          <ScalarProperty Name="engineeringStamped" ColumnName="engineeringStamped" />
+          <ScalarProperty Name="engineeringStampSentDate" ColumnName="engineeringStampSentDate" />
+          <ScalarProperty Name="landlordApprovedDate" ColumnName="landlordApprovedDate" />
+          <ScalarProperty Name="landlordApprovalSendDate" ColumnName="landlordApprovalSendDate" />
+          <ScalarProperty Name="clientApprovedDate" ColumnName="clientApprovedDate" />
+          <ScalarProperty Name="clientApprovalSentDate" ColumnName="clientApprovalSentDate" />
+          <ScalarProperty Name="SiteCheck" ColumnName="SiteCheck" />
+          <ScalarProperty Name="structuralDwgPreparation" ColumnName="structuralDwgPreparation" />
+          <ScalarProperty Name="graphicDwgPreparation" ColumnName="graphicDwgPreparation" />
+          <ScalarProperty Name="jobDescription" ColumnName="jobDescription" />
+          <ScalarProperty Name="ClientArrangeParking" ColumnName="ClientArrangeParking" />
+          <ScalarProperty Name="ParkingLocation" ColumnName="ParkingLocation" />
+          <ScalarProperty Name="ParkingAtSite" ColumnName="ParkingAtSite" />
+          <ScalarProperty Name="timeAllowedEnd" ColumnName="timeAllowedEnd" />
+          <ScalarProperty Name="timeAllowed" ColumnName="timeAllowed" />
+          <ScalarProperty Name="timeRangeEnd" ColumnName="timeRangeEnd" />
+          <ScalarProperty Name="timeRange" ColumnName="timeRange" />
+          <ScalarProperty Name="woStatus" ColumnName="woStatus" />
+          <ScalarProperty Name="PayMethods" ColumnName="PayMethods" />
+          <ScalarProperty Name="Contact2" ColumnName="Contact2" />
+          <ScalarProperty Name="Contact1" ColumnName="Contact1" />
+          <ScalarProperty Name="Company2" ColumnName="Company2" />
+          <ScalarProperty Name="Company1" ColumnName="Company1" />
+          <ScalarProperty Name="Appointment" ColumnName="Appointment" />
+          <ScalarProperty Name="LuckyTime" ColumnName="LuckyTime" />
+          <ScalarProperty Name="issuedDate" ColumnName="issuedDate" />
+          <ScalarProperty Name="targetDate" ColumnName="targetDate" />
+          <ScalarProperty Name="changedDeadLine" ColumnName="changedDeadLine" />
+          <ScalarProperty Name="DeadLine" ColumnName="DeadLine" />
+          <ScalarProperty Name="findSiteAt" ColumnName="findSiteAt" />
+          <ScalarProperty Name="WorkorderNumber" ColumnName="WorkorderNumber" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="woCurrent" ColumnName="woCurrent" />
+          <ScalarProperty Name="woRev" ColumnName="woRev" />
+          <ScalarProperty Name="woType" ColumnName="woType" />
+          <ScalarProperty Name="estRevID" ColumnName="estRevID" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_WO_Note">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_WO_Note">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_WO_Note">
+          <ScalarProperty Name="NoteType" ColumnName="NoteType" />
+          <ScalarProperty Name="InvoiceExclude" ColumnName="InvoiceExclude" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="rDate" ColumnName="rDate" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CR_Workorder">
+      <EntityTypeMapping TypeName="ProjectModel.CR_Workorder">
+        <MappingFragment StoreEntitySet="CR_Workorder">
+          <ScalarProperty Name="TempBool" ColumnName="TempBool" />
+          <ScalarProperty Name="TempString" ColumnName="TempString" />
+          <ScalarProperty Name="TempInt" ColumnName="TempInt" />
+          <ScalarProperty Name="IsInvoiceIssued" ColumnName="IsInvoiceIssued" />
+          <ScalarProperty Name="SalesName" ColumnName="SalesName" />
+          <ScalarProperty Name="ShowingNumber" ColumnName="ShowingNumber" />
+          <ScalarProperty Name="PcID" ColumnName="PcID" />
+          <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="WorkorderDate" ColumnName="WorkorderDate" />
+          <ScalarProperty Name="WorkorderTitle" ColumnName="WorkorderTitle" />
+          <ScalarProperty Name="WorkorderNumber" ColumnName="WorkorderNumber" />
+          <ScalarProperty Name="WoID" ColumnName="WoID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PrintingEmployeeID" ColumnName="PrintingEmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList">
+          <ScalarProperty Name="IsExcludedFromReceivable" ColumnName="IsExcludedFromReceivable" />
+          <ScalarProperty Name="IssuedWorkorderAmountLocalInstaller" ColumnName="IssuedWorkorderAmountLocalInstaller" />
+          <ScalarProperty Name="IssuedWorkorderAmountInstallation" ColumnName="IssuedWorkorderAmountInstallation" />
+          <ScalarProperty Name="IssuedWorkorderAmountShop" ColumnName="IssuedWorkorderAmountShop" />
+          <ScalarProperty Name="PreviousInvoiceAmount" ColumnName="PreviousInvoiceAmount" />
+          <ScalarProperty Name="CommissionGivenBy" ColumnName="CommissionGivenBy" />
+          <ScalarProperty Name="WipRemark" ColumnName="WipRemark" />
+          <ScalarProperty Name="reasonOfLoss" ColumnName="reasonOfLoss" />
+          <ScalarProperty Name="OrderConfirmationSentTime" ColumnName="OrderConfirmationSentTime" />
+          <ScalarProperty Name="OrderConfirmationSenderID" ColumnName="OrderConfirmationSenderID" />
+          <ScalarProperty Name="OrderConfirmationPrinted" ColumnName="OrderConfirmationPrinted" />
+          <ScalarProperty Name="IsOrderConfirmationSent" ColumnName="IsOrderConfirmationSent" />
+          <ScalarProperty Name="FinishedDate" ColumnName="FinishedDate" />
+          <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+          <ScalarProperty Name="AbnormalWorkorderIssueReason" ColumnName="AbnormalWorkorderIssueReason" />
+          <ScalarProperty Name="AbnormalWorkorderIssueStatus" ColumnName="AbnormalWorkorderIssueStatus" />
+          <ScalarProperty Name="IsOnHold" ColumnName="IsOnHold" />
+          <ScalarProperty Name="IsAllProductionWorkorderFinished" ColumnName="IsAllProductionWorkorderFinished" />
+          <ScalarProperty Name="FinishedWorkorderAmount" ColumnName="FinishedWorkorderAmount" />
+          <ScalarProperty Name="IsAllProductionWorkorderIssued" ColumnName="IsAllProductionWorkorderIssued" />
+          <ScalarProperty Name="IssuedWorkorderAmount" ColumnName="IssuedWorkorderAmount" />
+          <ScalarProperty Name="LastInvoiceItemID" ColumnName="LastInvoiceItemID" />
+          <ScalarProperty Name="LastWorkorderItemID" ColumnName="LastWorkorderItemID" />
+          <ScalarProperty Name="LastQuoteItemID" ColumnName="LastQuoteItemID" />
+          <ScalarProperty Name="LastEstItemID" ColumnName="LastEstItemID" />
+          <ScalarProperty Name="LeadID" ColumnName="LeadID" />
+          <ScalarProperty Name="FollowupDate2" ColumnName="FollowupDate2" />
+          <ScalarProperty Name="FollowupDate1" ColumnName="FollowupDate1" />
+          <ScalarProperty Name="ReasonOfNoWorkorder" ColumnName="ReasonOfNoWorkorder" />
+          <ScalarProperty Name="IsGivenByOldPartner" ColumnName="IsGivenByOldPartner" />
+          <ScalarProperty Name="PreviousProjectID" ColumnName="PreviousProjectID" />
+          <ScalarProperty Name="ProjectGiveBy" ColumnName="ProjectGiveBy" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="OverLimitRate" ColumnName="OverLimitRate" />
+          <ScalarProperty Name="IsPaidPremiu" ColumnName="IsPaidPremiu" />
+          <ScalarProperty Name="AETM" ColumnName="AETM" />
+          <ScalarProperty Name="OriginalAccountOwner" ColumnName="OriginalAccountOwner" />
+          <ScalarProperty Name="InternalReferralEmployeeID" ColumnName="InternalReferralEmployeeID" />
+          <ScalarProperty Name="MarketingAttribute" ColumnName="MarketingAttribute" />
+          <ScalarProperty Name="MarketingProduct" ColumnName="MarketingProduct" />
+          <ScalarProperty Name="MarketingTeam" ColumnName="MarketingTeam" />
+          <ScalarProperty Name="ReasonOfNoContract" ColumnName="ReasonOfNoContract" />
+          <ScalarProperty Name="locationCode" ColumnName="locationCode" />
+          <ScalarProperty Name="idCode" ColumnName="idCode" />
+          <ScalarProperty Name="isLost" ColumnName="isLost" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="yearNumber" ColumnName="yearNumber" />
+          <ScalarProperty Name="subProject" ColumnName="subProject" />
+          <ScalarProperty Name="isBidToProject" ColumnName="isBidToProject" />
+          <ScalarProperty Name="timeLimit" ColumnName="timeLimit" />
+          <ScalarProperty Name="StatusChanged" ColumnName="StatusChanged" />
+          <ScalarProperty Name="Rush" ColumnName="Rush" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="startTimeStamp" ColumnName="startTimeStamp" />
+          <ScalarProperty Name="ObsoletequoteRevID" ColumnName="ObsoletequoteRevID" />
+          <ScalarProperty Name="ObsoleteestimationRevID" ColumnName="ObsoleteestimationRevID" />
+          <ScalarProperty Name="sa1ID" ColumnName="sa1ID" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="targetDate" ColumnName="targetDate" />
+          <ScalarProperty Name="OriginalTargetDate" ColumnName="OriginalTargetDate" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+          <ScalarProperty Name="jobNumber" ColumnName="jobNumber" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBiddingJobSources">
+      <EntityTypeMapping TypeName="ProjectModel.TblBiddingJobSource">
+        <MappingFragment StoreEntitySet="TblBiddingJobSource">
+          <ScalarProperty Name="BiddingJobSourceName" ColumnName="BiddingJobSourceName" />
+          <ScalarProperty Name="BiddingJobSourceID" ColumnName="BiddingJobSourceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBiddingJobTypes">
+      <EntityTypeMapping TypeName="ProjectModel.TblBiddingJobType">
+        <MappingFragment StoreEntitySet="TblBiddingJobType">
+          <ScalarProperty Name="BiddingJobTypeName" ColumnName="BiddingJobTypeName" />
+          <ScalarProperty Name="BiddingJobTypeID" ColumnName="BiddingJobTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMasterList_QuoteFollow">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMasterList_QuoteFollow">
+        <MappingFragment StoreEntitySet="Sales_JobMasterList_QuoteFollow">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="IsEmailedToSales" ColumnName="IsEmailedToSales" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="fDate" ColumnName="fDate" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblQuoteFollowupStatus">
+      <EntityTypeMapping TypeName="ProjectModel.TblQuoteFollowupStatu">
+        <MappingFragment StoreEntitySet="TblQuoteFollowupStatus">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_JobMaster_BiddingJob">
+      <EntityTypeMapping TypeName="ProjectModel.Sales_JobMaster_BiddingJob">
+        <MappingFragment StoreEntitySet="Sales_JobMaster_BiddingJob">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="WinnerAmount" ColumnName="WinnerAmount" />
+          <ScalarProperty Name="Winner" ColumnName="Winner" />
+          <ScalarProperty Name="TempAmount" ColumnName="TempAmount" />
+          <ScalarProperty Name="TempAE" ColumnName="TempAE" />
+          <ScalarProperty Name="TempTargetDate" ColumnName="TempTargetDate" />
+          <ScalarProperty Name="TempProjectName" ColumnName="TempProjectName" />
+          <ScalarProperty Name="BidDeadline" ColumnName="BidDeadline" />
+          <ScalarProperty Name="AeAssignedDate" ColumnName="AeAssignedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ProductRequired" ColumnName="ProductRequired" />
+          <ScalarProperty Name="BiddingTypeID" ColumnName="BiddingTypeID" />
+          <ScalarProperty Name="BiddingSourceID" ColumnName="BiddingSourceID" />
+          <ScalarProperty Name="TempCompanyName" ColumnName="TempCompanyName" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="SubmitID" ColumnName="SubmitID" />
+          <ScalarProperty Name="QuoteToID" ColumnName="QuoteToID" />
+          <ScalarProperty Name="InstallToID" ColumnName="InstallToID" />
+          <ScalarProperty Name="BillToID" ColumnName="BillToID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="BiddingID" ColumnName="BiddingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FW_WORK_ORDER">
+      <EntityTypeMapping TypeName="ProjectModel.FW_WORK_ORDER">
+        <MappingFragment StoreEntitySet="FW_WORK_ORDER">
+          <ScalarProperty Name="IsMisc" ColumnName="IsMisc" />
+          <ScalarProperty Name="ReviseVer" ColumnName="ReviseVer" />
+          <ScalarProperty Name="EstInputStatusLastUpdateBy" ColumnName="EstInputStatusLastUpdateBy" />
+          <ScalarProperty Name="EstInputStatusLastUpdateTime" ColumnName="EstInputStatusLastUpdateTime" />
+          <ScalarProperty Name="EstInputStatusID" ColumnName="EstInputStatusID" />
+          <ScalarProperty Name="ManagerFinishDate" ColumnName="ManagerFinishDate" />
+          <ScalarProperty Name="VarianceStatusID" ColumnName="VarianceStatusID" />
+          <ScalarProperty Name="VarianceReason" ColumnName="VarianceReason" />
+          <ScalarProperty Name="Variance" ColumnName="Variance" />
+          <ScalarProperty Name="OriginalEst" ColumnName="OriginalEst" />
+          <ScalarProperty Name="InstallationSubDeptID" ColumnName="InstallationSubDeptID" />
+          <ScalarProperty Name="IsJobCostingRequired" ColumnName="IsJobCostingRequired" />
+          <ScalarProperty Name="Finish5" ColumnName="Finish5" />
+          <ScalarProperty Name="Finish4" ColumnName="Finish4" />
+          <ScalarProperty Name="Finish3" ColumnName="Finish3" />
+          <ScalarProperty Name="Finish2" ColumnName="Finish2" />
+          <ScalarProperty Name="Finish1" ColumnName="Finish1" />
+          <ScalarProperty Name="Schedule5" ColumnName="Schedule5" />
+          <ScalarProperty Name="Schedule4" ColumnName="Schedule4" />
+          <ScalarProperty Name="Schedule3" ColumnName="Schedule3" />
+          <ScalarProperty Name="Schedule2" ColumnName="Schedule2" />
+          <ScalarProperty Name="Schedule1" ColumnName="Schedule1" />
+          <ScalarProperty Name="ProductionFinishDate" ColumnName="ProductionFinishDate" />
+          <ScalarProperty Name="ProductionScheduleDate" ColumnName="ProductionScheduleDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubDepartmentStatus" ColumnName="SubDepartmentStatus" />
+          <ScalarProperty Name="Workload" ColumnName="Workload" />
+          <ScalarProperty Name="WorkorderStatus" ColumnName="WorkorderStatus" />
+          <ScalarProperty Name="woID" ColumnName="woID" />
+          <ScalarProperty Name="Revise" ColumnName="Revise" />
+          <ScalarProperty Name="Rush" ColumnName="Rush" />
+          <ScalarProperty Name="Redo" ColumnName="Redo" />
+          <ScalarProperty Name="POST_CODE" ColumnName="POST_CODE" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+          <ScalarProperty Name="JOB_TYPE_ID" ColumnName="JOB_TYPE_ID" />
+          <ScalarProperty Name="INSTALLATION_TIME" ColumnName="INSTALLATION_TIME" />
+          <ScalarProperty Name="CHANGED_JOB_DEADLINE" ColumnName="CHANGED_JOB_DEADLINE" />
+          <ScalarProperty Name="FINISHED_DATE_INSTALLATION" ColumnName="FINISHED_DATE_INSTALLATION" />
+          <ScalarProperty Name="FINISHED_DATE_WORKSHOP" ColumnName="FINISHED_DATE_WORKSHOP" />
+          <ScalarProperty Name="FINISHED_DATE_ARTROOM" ColumnName="FINISHED_DATE_ARTROOM" />
+          <ScalarProperty Name="STATUS_ARTROOM" ColumnName="STATUS_ARTROOM" />
+          <ScalarProperty Name="STATUS_INSTALLATION" ColumnName="STATUS_INSTALLATION" />
+          <ScalarProperty Name="STATUS_WORKSHOP" ColumnName="STATUS_WORKSHOP" />
+          <ScalarProperty Name="EXTRA_ARTROOM" ColumnName="EXTRA_ARTROOM" />
+          <ScalarProperty Name="EXTRA_INSTALLATION" ColumnName="EXTRA_INSTALLATION" />
+          <ScalarProperty Name="EXTRA_WORKSHOP" ColumnName="EXTRA_WORKSHOP" />
+          <ScalarProperty Name="CONTRACT_AMOUNT" ColumnName="CONTRACT_AMOUNT" />
+          <ScalarProperty Name="QUOTATION_EST_WSERVICE" ColumnName="QUOTATION_EST_WSERVICE" />
+          <ScalarProperty Name="QUOTATION_EST_ARTROOM" ColumnName="QUOTATION_EST_ARTROOM" />
+          <ScalarProperty Name="QUOTATION_EST_STRUCTURAL" ColumnName="QUOTATION_EST_STRUCTURAL" />
+          <ScalarProperty Name="QUOTATION_EST_SITECHECK" ColumnName="QUOTATION_EST_SITECHECK" />
+          <ScalarProperty Name="QUOTATION_EST_INSTALLATION" ColumnName="QUOTATION_EST_INSTALLATION" />
+          <ScalarProperty Name="QUOTATION_EST_RA3" ColumnName="QUOTATION_EST_RA3" />
+          <ScalarProperty Name="QUOTATION_EST_PAINTING" ColumnName="QUOTATION_EST_PAINTING" />
+          <ScalarProperty Name="QUOTATION_EST_PLASTIC_B" ColumnName="QUOTATION_EST_PLASTIC_B" />
+          <ScalarProperty Name="QUOTATION_EST_PLASTIC_A" ColumnName="QUOTATION_EST_PLASTIC_A" />
+          <ScalarProperty Name="QUOTATION_EST_METAL" ColumnName="QUOTATION_EST_METAL" />
+          <ScalarProperty Name="QUOTATION_EST_WORKSHOP" ColumnName="QUOTATION_EST_WORKSHOP" />
+          <ScalarProperty Name="JOB_TYPE" ColumnName="JOB_TYPE" />
+          <ScalarProperty Name="SALES_ASSISTANT_2" ColumnName="SALES_ASSISTANT_2" />
+          <ScalarProperty Name="SALES_ASSISTANT_1" ColumnName="SALES_ASSISTANT_1" />
+          <ScalarProperty Name="SALES" ColumnName="SALES" />
+          <ScalarProperty Name="JOB_DEADLINE" ColumnName="JOB_DEADLINE" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="WORKORDER_NUMBER" ColumnName="WORKORDER_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FW_Employees">
+      <EntityTypeMapping TypeName="ProjectModel.FW_Employees">
+        <MappingFragment StoreEntitySet="FW_Employees">
+          <ScalarProperty Name="IsSubcontract" ColumnName="IsSubcontract" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="ProcedureGroupID" ColumnName="ProcedureGroupID" />
+          <ScalarProperty Name="IsMtoAwared" ColumnName="IsMtoAwared" />
+          <ScalarProperty Name="IsShowOnSubdepartmentSchedule" ColumnName="IsShowOnSubdepartmentSchedule" />
+          <ScalarProperty Name="IsAdminTaskSelected" ColumnName="IsAdminTaskSelected" />
+          <ScalarProperty Name="CrmLeadSelectAeEnable" ColumnName="CrmLeadSelectAeEnable" />
+          <ScalarProperty Name="CrmLeadAE" ColumnName="CrmLeadAE" />
+          <ScalarProperty Name="CrmLeadOwner" ColumnName="CrmLeadOwner" />
+          <ScalarProperty Name="ShowOnCommissionPage2" ColumnName="ShowOnCommissionPage2" />
+          <ScalarProperty Name="ShowOnCommissionPage1" ColumnName="ShowOnCommissionPage1" />
+          <ScalarProperty Name="ShowOnCrmPage1" ColumnName="ShowOnCrmPage1" />
+          <ScalarProperty Name="IsShowOnPerformanceReport" ColumnName="IsShowOnPerformanceReport" />
+          <ScalarProperty Name="IsFake" ColumnName="IsFake" />
+          <ScalarProperty Name="ShowOnInputHour" ColumnName="ShowOnInputHour" />
+          <ScalarProperty Name="ProbationPeriod" ColumnName="ProbationPeriod" />
+          <ScalarProperty Name="IsInProbation" ColumnName="IsInProbation" />
+          <ScalarProperty Name="IsProbation" ColumnName="IsProbation" />
+          <ScalarProperty Name="SelectType" ColumnName="SelectType" />
+          <ScalarProperty Name="EndWorkingDate2" ColumnName="EndWorkingDate2" />
+          <ScalarProperty Name="ReturnToWorkDate" ColumnName="ReturnToWorkDate" />
+          <ScalarProperty Name="EndWorkingDate1" ColumnName="EndWorkingDate1" />
+          <ScalarProperty Name="StartWorkingDate" ColumnName="StartWorkingDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="isAE" ColumnName="isAE" />
+          <ScalarProperty Name="isLeadHand" ColumnName="isLeadHand" />
+          <ScalarProperty Name="Team" ColumnName="Team" />
+          <ScalarProperty Name="dID" ColumnName="dID" />
+          <ScalarProperty Name="signature" ColumnName="signature" />
+          <ScalarProperty Name="response" ColumnName="response" />
+          <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+          <ScalarProperty Name="ncrEnable" ColumnName="ncrEnable" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="PayrollNumber" ColumnName="PayrollNumber" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="SalesName" ColumnName="SalesName" />
+          <ScalarProperty Name="Sa2Name" ColumnName="Sa2Name" />
+          <ScalarProperty Name="Sa1Name" ColumnName="Sa1Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NumberInfor" ColumnName="NumberInfor" />
+          <ScalarProperty Name="Training" ColumnName="Training" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Performance" ColumnName="Performance" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="CompanyCellphone" ColumnName="CompanyCellphone" />
+          <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+          <ScalarProperty Name="payrate" ColumnName="payrate" />
+          <ScalarProperty Name="paytype" ColumnName="paytype" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="EmergencyContactNumber2" ColumnName="EmergencyContactNumber2" />
+          <ScalarProperty Name="EmergencyContactNumber1" ColumnName="EmergencyContactNumber1" />
+          <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SINCardNumber" ColumnName="SINCardNumber" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

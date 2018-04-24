@@ -1,0 +1,8 @@
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\bin\x64\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\bin\x64\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\obj\x64\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\obj\x64\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommon\bin\x64\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommon\bin\x64\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommon\obj\x64\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommon\obj\x64\Debug\MyCommon.pdb

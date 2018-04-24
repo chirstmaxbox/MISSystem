@@ -1,0 +1,21 @@
+F:\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.dll.config
+F:\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.dll
+F:\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.pdb
+F:\MIS2015\MessagerServer\MessagerDomain\obj\Debug\MessagerDomain.dll
+F:\MIS2015\MessagerServer\MessagerDomain\obj\Debug\MessagerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\bin\Debug\MessagerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\obj\Debug\MessagerDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\obj\Debug\MessagerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MessagerServer\MessagerDomain\obj\Debug\MessagerDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\Projects\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll.config
+C:\Users\anh.tran\Documents\Projects\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\MessagerDomain\bin\Debug\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\MessagerDomain\obj\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\MessagerDomain\obj\Debug\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MessagerDomain\bin\Debug\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MessagerDomain\obj\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MessagerDomain\obj\Debug\MessagerDomain.pdb

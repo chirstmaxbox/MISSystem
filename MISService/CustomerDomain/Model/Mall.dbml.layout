@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Mall">
+  <DataContextMoniker Name="/MallDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8544fbab-7ef2-4550-89cb-8ebb5550c8cf" absoluteBounds="2.125, 2.625, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/MallDataContext/VenderMall" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bc5ad2a-f3d4-4870-9f51-e25cb1bc78e9" absoluteBounds="2.1399999999999997, 3.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

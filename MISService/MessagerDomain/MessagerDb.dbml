@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sqllhdb" Class="MessagerDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=f01\SQLEXPRESS;Initial Catalog=Sqllhdb;Persist Security Info=True;User ID=sa" SettingsObjectName="MessagerDomain.Properties.Settings" SettingsPropertyName="SqllhdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.InterActionMessageType" Member="InterActionMessageTypes">
+    <Type Name="InterActionMessageType">
+      <Column Name="MessageTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MessageCategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="InterActionMessageType_InterActionMessage" Member="InterActionMessages" ThisKey="MessageTypeID" OtherKey="MessageTypeID" Type="InterActionMessage" />
+      <Association Name="InterActionMessageCategory_InterActionMessageType" Member="InterActionMessageCategory" ThisKey="MessageCategoryID" OtherKey="MessageCategoryID" Type="InterActionMessageCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InterActionMessageCategory" Member="InterActionMessageCategories">
+    <Type Name="InterActionMessageCategory">
+      <Column Name="MessageCategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MessageCategoryName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="InterActionMessageCategory_InterActionMessageType" Member="InterActionMessageTypes" ThisKey="MessageCategoryID" OtherKey="MessageCategoryID" Type="InterActionMessageType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InterActionMessageEmployeeStatus" Member="InterActionMessageEmployeeStatus">
+    <Type Name="InterActionMessageEmployeeStatus">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NewMessageStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FW_Employee_InterActionMessageEmployeeStatus" Member="FW_Employee" ThisKey="EmployeeID" OtherKey="EmployeeNumber" Type="FW_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InterActionMessage" Member="InterActionMessages">
+    <Type Name="InterActionMessage">
+      <Column Name="MessageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MessageTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Receiver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sender" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ObjectTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SentTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ResponseTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HandlingItemType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HandlingItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="InterActionMessageType_InterActionMessage" Member="InterActionMessageType" ThisKey="MessageTypeID" OtherKey="MessageTypeID" Type="InterActionMessageType" IsForeignKey="true" />
+      <Association Name="FW_Employee_InterActionMessage" Member="FW_Employee" ThisKey="Sender" OtherKey="EmployeeNumber" Type="FW_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FW_Employees" Member="FW_Employees">
+    <Type Name="FW_Employee">
+      <Column Name="EmployeeNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NickName" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="DateofBirth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(24)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="SINCardNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmergencyContactPerson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmergencyContactNumber1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmergencyContactNumber2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="paytype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payrate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyCellphone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Performance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="History" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Training" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NumberInfor" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="Roles" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Sa1Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Sa2Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SalesName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PayrollNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NChar(15)" CanBeNull="true" />
+      <Column Name="ncrEnable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SSMA_TimeStamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="response" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="signature" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="dID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isLeadHand" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isAE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartWorkingDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndWorkingDate1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ReturnToWorkDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndWorkingDate2" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SelectType" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsProbation" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IsInProbation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ProbationPeriod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShowOnInputHour" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsFake" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsShowOnPerformanceReport" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowOnCrmPage1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowOnCommissionPage1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowOnCommissionPage2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CrmLeadOwner" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CrmLeadAE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CrmLeadSelectAeEnable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdminTaskSelected" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FW_Employee_InterActionMessageEmployeeStatus" Member="InterActionMessageEmployeeStatus" ThisKey="EmployeeNumber" OtherKey="EmployeeID" Type="InterActionMessageEmployeeStatus" Cardinality="One" />
+      <Association Name="FW_Employee_InterActionMessage" Member="InterActionMessages" ThisKey="EmployeeNumber" OtherKey="Sender" Type="InterActionMessage" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 27.625" name="MessagerDb">
+  <DataContextMoniker Name="/MessagerDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dd528a06-c541-45eb-99e4-896ea4f5aed2" absoluteBounds="2, 7.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/MessagerDbDataContext/InterActionMessageType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="381437a3-895e-4527-879b-8f404063ad5e" absoluteBounds="2.0149999999999997, 8.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16eb490a-c39d-4168-9ed5-2ff4ebcce32e" absoluteBounds="1.875, 5.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MessagerDbDataContext/InterActionMessageCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92a18da5-0837-4ab3-8525-5df4ce22c64e" absoluteBounds="1.8899999999999997, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.9375 : 6.70359537760417); (2.9375 : 7.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MessagerDbDataContext/InterActionMessageCategory/InterActionMessageCategory_InterActionMessageType" />
+      <nodes>
+        <classShapeMoniker Id="16eb490a-c39d-4168-9ed5-2ff4ebcce32e" />
+        <classShapeMoniker Id="dd528a06-c541-45eb-99e4-896ea4f5aed2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="24ef9e4c-8b5f-4136-a05c-923d5ce35ab0" absoluteBounds="6.25, 8.5, 2.5, 1.3862939453125">
+      <DataClassMoniker Name="/MessagerDbDataContext/InterActionMessageEmployeeStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63ecda7c-727b-4b26-be0b-1576c9bb3f68" absoluteBounds="6.265, 8.96, 2.4699999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4958360-c3ae-4bda-900d-a4a2907cecb5" absoluteBounds="2, 12.375, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/MessagerDbDataContext/InterActionMessage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b04f0484-0b36-463d-93dd-ab9911b90a53" absoluteBounds="2.015, 12.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 9.39589680989583); (3 : 12.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MessagerDbDataContext/InterActionMessageType/InterActionMessageType_InterActionMessage" />
+      <nodes>
+        <classShapeMoniker Id="dd528a06-c541-45eb-99e4-896ea4f5aed2" />
+        <classShapeMoniker Id="c4958360-c3ae-4bda-900d-a4a2907cecb5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f8394580-c379-411e-a5ec-24aa1a68f644" absoluteBounds="6.375, 13.125, 2, 14.270489908854165">
+      <DataClassMoniker Name="/MessagerDbDataContext/FW_Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e95d7d19-e2c1-4a25-9e06-c648e56c95b8" absoluteBounds="6.39, 13.585, 1.9700000000000002, 13.710489908854166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.375 : 13.125); (7.375 : 9.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MessagerDbDataContext/FW_Employee/FW_Employee_InterActionMessageEmployeeStatus" />
+      <nodes>
+        <classShapeMoniker Id="f8394580-c379-411e-a5ec-24aa1a68f644" />
+        <classShapeMoniker Id="24ef9e4c-8b5f-4136-a05c-923d5ce35ab0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 14.5969555664062); (4 : 14.5969555664062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MessagerDbDataContext/FW_Employee/FW_Employee_InterActionMessage" />
+      <nodes>
+        <classShapeMoniker Id="f8394580-c379-411e-a5ec-24aa1a68f644" />
+        <classShapeMoniker Id="c4958360-c3ae-4bda-900d-a4a2907cecb5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

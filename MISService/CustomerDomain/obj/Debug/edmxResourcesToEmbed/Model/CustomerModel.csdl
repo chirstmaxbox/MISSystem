@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CustomerDbModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="CustomerDbEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Customer_Activity" EntityType="CustomerDbModel.Customer_Activity" />
+    <EntitySet Name="CUSTOMER_CONTACT" EntityType="CustomerDbModel.CUSTOMER_CONTACT" />
+    <EntitySet Name="Sales_JobMasterList_Customer" EntityType="CustomerDbModel.Sales_JobMasterList_Customer" />
+    <AssociationSet Name="FK_Sales_JobMasterList_Customer_CUSTOMER_CONTACT" Association="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER_CONTACT">
+      <End Role="CUSTOMER_CONTACT" EntitySet="CUSTOMER_CONTACT" />
+      <End Role="Sales_JobMasterList_Customer" EntitySet="Sales_JobMasterList_Customer" />
+    </AssociationSet>
+    <EntitySet Name="CrmActivityMarketings" EntityType="CustomerDbModel.CrmActivityMarketing" />
+    <EntitySet Name="CrmLeadAddresses" EntityType="CustomerDbModel.CrmLeadAddress" />
+    <EntitySet Name="CrmLeadContacts" EntityType="CustomerDbModel.CrmLeadContact" />
+    <EntitySet Name="CrmLeadContentsMarketings" EntityType="CustomerDbModel.CrmLeadContentsMarketing" />
+    <EntitySet Name="CrmLeadContentsProgresses" EntityType="CustomerDbModel.CrmLeadContentsProgress" />
+    <EntitySet Name="CrmLeadCustomers" EntityType="CustomerDbModel.CrmLeadCustomer" />
+    <EntitySet Name="CrmLeadDocuments" EntityType="CustomerDbModel.CrmLeadDocument" />
+    <EntitySet Name="CrmLeadHistoryEvents" EntityType="CustomerDbModel.CrmLeadHistoryEvent" />
+    <EntitySet Name="CrmLeadOthers" EntityType="CustomerDbModel.CrmLeadOther" />
+    <EntitySet Name="CrmLeadRateAuthorities" EntityType="CustomerDbModel.CrmLeadRateAuthority" />
+    <EntitySet Name="CrmLeadRateBudgets" EntityType="CustomerDbModel.CrmLeadRateBudget" />
+    <EntitySet Name="CrmLeadRateGrowths" EntityType="CustomerDbModel.CrmLeadRateGrowth" />
+    <EntitySet Name="CrmLeadRateInterActions" EntityType="CustomerDbModel.CrmLeadRateInterAction" />
+    <EntitySet Name="CrmLeadRateRepeatCustomers" EntityType="CustomerDbModel.CrmLeadRateRepeatCustomer" />
+    <EntitySet Name="CrmLeadRateTimeframes" EntityType="CustomerDbModel.CrmLeadRateTimeframe" />
+    <EntitySet Name="CrmLeadRatings" EntityType="CustomerDbModel.CrmLeadRating" />
+    <EntitySet Name="CrmStages" EntityType="CustomerDbModel.CrmStage" />
+    <EntitySet Name="FW_QUOTE_IC" EntityType="CustomerDbModel.FW_QUOTE_IC" />
+    <EntitySet Name="FW_QUOTE_SOURCE" EntityType="CustomerDbModel.FW_QUOTE_SOURCE" />
+    <AssociationSet Name="FK_CrmActivityMarketing_CrmLeadContentsMarketing" Association="CustomerDbModel.FK_CrmActivityMarketing_CrmLeadContentsMarketing">
+      <End Role="CrmLeadContentsMarketing" EntitySet="CrmLeadContentsMarketings" />
+      <End Role="CrmActivityMarketing" EntitySet="CrmActivityMarketings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadContact_CUSTOMER" Association="CustomerDbModel.FK_CrmLeadContact_CUSTOMER">
+      <End Role="CUSTOMER_CONTACT" EntitySet="CUSTOMER_CONTACT" />
+      <End Role="CrmLeadContact" EntitySet="CrmLeadContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRateAuthority" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateAuthority">
+      <End Role="CrmLeadRateAuthority" EntitySet="CrmLeadRateAuthorities" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRating" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRating">
+      <End Role="CrmLeadRateBudget" EntitySet="CrmLeadRateBudgets" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRateGrowth" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateGrowth">
+      <End Role="CrmLeadRateGrowth" EntitySet="CrmLeadRateGrowths" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRateInterAction" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateInterAction">
+      <End Role="CrmLeadRateInterAction" EntitySet="CrmLeadRateInterActions" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRateRepeatCustomer" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateRepeatCustomer">
+      <End Role="CrmLeadRateRepeatCustomer" EntitySet="CrmLeadRateRepeatCustomers" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLeadRateTimeframe" Association="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateTimeframe">
+      <End Role="CrmLeadRateTimeframe" EntitySet="CrmLeadRateTimeframes" />
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+    </AssociationSet>
+    <EntitySet Name="CrmLeads" EntityType="CustomerDbModel.CrmLead" />
+    <EntitySet Name="CrmLeadHistories" EntityType="CustomerDbModel.CrmLeadHistory" />
+    <EntitySet Name="CUSTOMERs" EntityType="CustomerDbModel.CUSTOMER" />
+    <AssociationSet Name="FK_CrmActivityMarketing_CrmLead" Association="CustomerDbModel.FK_CrmActivityMarketing_CrmLead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmActivityMarketing" EntitySet="CrmActivityMarketings" />
+    </AssociationSet>
+    <AssociationSet Name="Category" Association="CustomerDbModel.Category">
+      <End Role="FW_QUOTE_IC" EntitySet="FW_QUOTE_IC" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLead_CrmLeadAddress" Association="CustomerDbModel.FK_CrmLead_CrmLeadAddress">
+      <End Role="CrmLeadAddress" EntitySet="CrmLeadAddresses" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLead_CrmLeadContact" Association="CustomerDbModel.FK_CrmLead_CrmLeadContact">
+      <End Role="CrmLeadContact" EntitySet="CrmLeadContacts" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLead_CrmLeadContentsProgress" Association="CustomerDbModel.FK_CrmLead_CrmLeadContentsProgress">
+      <End Role="CrmLeadContentsProgress" EntitySet="CrmLeadContentsProgresses" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLead_CrmStage" Association="CustomerDbModel.FK_CrmLead_CrmStage">
+      <End Role="CrmStage" EntitySet="CrmStages" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLead_FW_QUOTE_SOURCE" Association="CustomerDbModel.FK_CrmLead_FW_QUOTE_SOURCE">
+      <End Role="FW_QUOTE_SOURCE" EntitySet="FW_QUOTE_SOURCE" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadContact_CrmLead" Association="CustomerDbModel.FK_CrmLeadContact_CrmLead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmLeadContact" EntitySet="CrmLeadContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadCustomer_CrmLead" Association="CustomerDbModel.FK_CrmLeadCustomer_CrmLead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmLeadCustomer" EntitySet="CrmLeadCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadDocument_CrmLead" Association="CustomerDbModel.FK_CrmLeadDocument_CrmLead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmLeadDocument" EntitySet="CrmLeadDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadHistory_Lead" Association="CustomerDbModel.FK_CrmLeadHistory_Lead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmLeadHistory" EntitySet="CrmLeadHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadOther_CrmLead" Association="CustomerDbModel.FK_CrmLeadOther_CrmLead">
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+      <End Role="CrmLeadOther" EntitySet="CrmLeadOthers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadRating_CrmLead" Association="CustomerDbModel.FK_CrmLeadRating_CrmLead">
+      <End Role="CrmLeadRating" EntitySet="CrmLeadRatings" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadCustomer_CUSTOMER" Association="CustomerDbModel.FK_CrmLeadCustomer_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="CrmLeadCustomer" EntitySet="CrmLeadCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadHistory_Event" Association="CustomerDbModel.FK_CrmLeadHistory_Event">
+      <End Role="CrmLeadHistoryEvent" EntitySet="CrmLeadHistoryEvents" />
+      <End Role="CrmLeadHistory" EntitySet="CrmLeadHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Activity_CUSTOMER" Association="CustomerDbModel.FK_Customer_Activity_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="Customer_Activity" EntitySet="Customer_Activity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_CONTACT_CUSTOMER" Association="CustomerDbModel.FK_CUSTOMER_CONTACT_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="CUSTOMER_CONTACT" EntitySet="CUSTOMER_CONTACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_FW_QUOTE_IC" Association="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_IC">
+      <End Role="FW_QUOTE_IC" EntitySet="FW_QUOTE_IC" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_FW_QUOTE_SOURCE" Association="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_SOURCE">
+      <End Role="FW_QUOTE_SOURCE" EntitySet="FW_QUOTE_SOURCE" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_JobMasterList_Customer_CUSTOMER" Association="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+      <End Role="Sales_JobMasterList_Customer" EntitySet="Sales_JobMasterList_Customer" />
+    </AssociationSet>
+    <EntitySet Name="FW_Employees" EntityType="CustomerDbModel.FW_Employees" />
+    <AssociationSet Name="FK_CrmLead_Employee" Association="CustomerDbModel.FK_CrmLead_Employee">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="CrmLead" EntitySet="CrmLeads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrmLeadHistory_Employee" Association="CustomerDbModel.FK_CrmLeadHistory_Employee">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="CrmLeadHistory" EntitySet="CrmLeadHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUSTOMER_FW_Employees" Association="CustomerDbModel.FK_CUSTOMER_FW_Employees">
+      <End Role="FW_Employees" EntitySet="FW_Employees" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer_Activity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="ROWID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="AE" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Contents" Type="String" MaxLength="3000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="CUSTOMER" Relationship="CustomerDbModel.FK_Customer_Activity_CUSTOMER" FromRole="Customer_Activity" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="CUSTOMER_CONTACT">
+    <Key>
+      <PropertyRef Name="CONTACT_ID" />
+    </Key>
+    <Property Name="CONTACT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="CUSTOMER_ROWID" Type="Int32" Nullable="false" />
+    <Property Name="CONTACT_FIRST_NAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_LAST_NAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_POSITION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_HONORIFIC" Type="String" MaxLength="4" Unicode="true" FixedLength="true" />
+    <Property Name="CONTACT_PHONE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_FAX" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_MOBILE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_EMAIL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CONTACT_ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="isAccountPayable" Type="Boolean" Nullable="false" />
+    <Property Name="isSiteContact" Type="Boolean" Nullable="false" />
+    <Property Name="isProjectManager" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Sales_JobMasterList_Customer" Relationship="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER_CONTACT" FromRole="CUSTOMER_CONTACT" ToRole="Sales_JobMasterList_Customer" />
+    <NavigationProperty Name="CrmLeadContacts" Relationship="CustomerDbModel.FK_CrmLeadContact_CUSTOMER" FromRole="CUSTOMER_CONTACT" ToRole="CrmLeadContact" />
+    <NavigationProperty Name="CUSTOMER" Relationship="CustomerDbModel.FK_CUSTOMER_CONTACT_CUSTOMER" FromRole="CUSTOMER_CONTACT" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="Sales_JobMasterList_Customer">
+    <Key>
+      <PropertyRef Name="jcID" />
+    </Key>
+    <Property Type="Int32" Name="jcID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="jobID" Nullable="false" />
+    <Property Type="Int32" Name="cID" Nullable="false" />
+    <Property Type="Int32" Name="contactName" Nullable="false" />
+    <Property Type="Boolean" Name="isBillTo" Nullable="false" />
+    <Property Type="Boolean" Name="isQuoteTo" Nullable="false" />
+    <Property Type="Boolean" Name="isInstallOrShipTo" Nullable="false" />
+    <NavigationProperty Name="CUSTOMER_CONTACT" Relationship="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER_CONTACT" FromRole="Sales_JobMasterList_Customer" ToRole="CUSTOMER_CONTACT" />
+    <NavigationProperty Name="CUSTOMER" Relationship="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER" FromRole="Sales_JobMasterList_Customer" ToRole="CUSTOMER" />
+  </EntityType>
+  <Association Name="FK_Sales_JobMasterList_Customer_CUSTOMER_CONTACT">
+    <End Type="CustomerDbModel.CUSTOMER_CONTACT" Role="CUSTOMER_CONTACT" Multiplicity="1" />
+    <End Type="CustomerDbModel.Sales_JobMasterList_Customer" Role="Sales_JobMasterList_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER_CONTACT">
+        <PropertyRef Name="CONTACT_ID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_Customer">
+        <PropertyRef Name="contactName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CrmActivityMarketing">
+    <Key>
+      <PropertyRef Name="ActivityMarketingID" />
+    </Key>
+    <Property Type="Int32" Name="ActivityMarketingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="String" Name="Contents" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="FollowupDate" />
+    <Property Type="Boolean" Name="Done" Nullable="false" />
+    <NavigationProperty Name="CrmLeadContentsMarketing" Relationship="CustomerDbModel.FK_CrmActivityMarketing_CrmLeadContentsMarketing" FromRole="CrmActivityMarketing" ToRole="CrmLeadContentsMarketing" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmActivityMarketing_CrmLead" FromRole="CrmActivityMarketing" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadAddress">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Type="Int32" Name="AddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Address1" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Zipcode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PoBox" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MarjorIntersection" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Lattitude" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadAddress" FromRole="CrmLeadAddress" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadContact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Type="Int32" Name="ContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Position" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hornorific" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="HomePhone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BusinessPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mobile" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="EmailOptIn" Nullable="false" />
+    <Property Type="Boolean" Name="OkToCall" Nullable="false" />
+    <Property Type="Int32" Name="CustomerContactID" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsMainContact" Nullable="false" />
+    <NavigationProperty Name="CUSTOMER_CONTACT" Relationship="CustomerDbModel.FK_CrmLeadContact_CUSTOMER" FromRole="CrmLeadContact" ToRole="CUSTOMER_CONTACT" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadContact" FromRole="CrmLeadContact" ToRole="CrmLead" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmLeadContact_CrmLead" FromRole="CrmLeadContact" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadContentsMarketing">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="String" Name="Contents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="CrmActivityMarketings" Relationship="CustomerDbModel.FK_CrmActivityMarketing_CrmLeadContentsMarketing" FromRole="CrmLeadContentsMarketing" ToRole="CrmActivityMarketing" />
+  </EntityType>
+  <EntityType Name="CrmLeadContentsProgress">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="String" Name="Contents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadContentsProgress" FromRole="CrmLeadContentsProgress" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadCustomer">
+    <Key>
+      <PropertyRef Name="LeadCustomerID" />
+    </Key>
+    <Property Type="Int32" Name="LeadCustomerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <Property Type="Int32" Name="RowID" Nullable="false" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmLeadCustomer_CrmLead" FromRole="CrmLeadCustomer" ToRole="CrmLead" />
+    <NavigationProperty Name="CUSTOMER" Relationship="CustomerDbModel.FK_CrmLeadCustomer_CUSTOMER" FromRole="CrmLeadCustomer" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="CrmLeadDocument">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Type="Int32" Name="DocID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <Property Type="String" Name="DocTitle" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocHyperlink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UploadBy" Nullable="false" />
+    <Property Type="DateTime" Name="UploadAt" />
+    <Property Type="String" Name="View1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmLeadDocument_CrmLead" FromRole="CrmLeadDocument" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadHistoryEvent">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Type="Int32" Name="EventID" Nullable="false" />
+    <Property Type="String" Name="EventName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Note" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLeadHistories" Relationship="CustomerDbModel.FK_CrmLeadHistory_Event" FromRole="CrmLeadHistoryEvent" ToRole="CrmLeadHistory" />
+  </EntityType>
+  <EntityType Name="CrmLeadOther">
+    <Key>
+      <PropertyRef Name="OtherID" />
+    </Key>
+    <Property Type="Int32" Name="OtherID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contents" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmLeadOther_CrmLead" FromRole="CrmLeadOther" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateAuthority">
+    <Key>
+      <PropertyRef Name="AuthorityID" />
+    </Key>
+    <Property Type="Int32" Name="AuthorityID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateAuthority" FromRole="CrmLeadRateAuthority" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateBudget">
+    <Key>
+      <PropertyRef Name="BudgetID" />
+    </Key>
+    <Property Type="Int32" Name="BudgetID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRating" FromRole="CrmLeadRateBudget" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateGrowth">
+    <Key>
+      <PropertyRef Name="GrowthID" />
+    </Key>
+    <Property Type="Int32" Name="GrowthID" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateGrowth" FromRole="CrmLeadRateGrowth" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateInterAction">
+    <Key>
+      <PropertyRef Name="InterActionID" />
+    </Key>
+    <Property Type="Int32" Name="InterActionID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateInterAction" FromRole="CrmLeadRateInterAction" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateRepeatCustomer">
+    <Key>
+      <PropertyRef Name="RepeatCustomerID" />
+    </Key>
+    <Property Type="Int32" Name="RepeatCustomerID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateRepeatCustomer" FromRole="CrmLeadRateRepeatCustomer" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRateTimeframe">
+    <Key>
+      <PropertyRef Name="TimeframeID" />
+    </Key>
+    <Property Type="Int32" Name="TimeframeID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRatings" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateTimeframe" FromRole="CrmLeadRateTimeframe" ToRole="CrmLeadRating" />
+  </EntityType>
+  <EntityType Name="CrmLeadRating">
+    <Key>
+      <PropertyRef Name="RatingID" />
+    </Key>
+    <Property Type="Int32" Name="RatingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="Rate" Nullable="false" />
+    <Property Type="Int32" Name="AuthorityID" Nullable="false" />
+    <Property Type="Int32" Name="BudgetID" Nullable="false" />
+    <Property Type="Int32" Name="InterActionID" Nullable="false" />
+    <Property Type="Int32" Name="GrowthID" Nullable="false" />
+    <Property Type="Int32" Name="RepeatCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="TimeframeID" Nullable="false" />
+    <NavigationProperty Name="CrmLeadRateAuthority" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateAuthority" FromRole="CrmLeadRating" ToRole="CrmLeadRateAuthority" />
+    <NavigationProperty Name="CrmLeadRateBudget" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRating" FromRole="CrmLeadRating" ToRole="CrmLeadRateBudget" />
+    <NavigationProperty Name="CrmLeadRateGrowth" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateGrowth" FromRole="CrmLeadRating" ToRole="CrmLeadRateGrowth" />
+    <NavigationProperty Name="CrmLeadRateInterAction" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateInterAction" FromRole="CrmLeadRating" ToRole="CrmLeadRateInterAction" />
+    <NavigationProperty Name="CrmLeadRateRepeatCustomer" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateRepeatCustomer" FromRole="CrmLeadRating" ToRole="CrmLeadRateRepeatCustomer" />
+    <NavigationProperty Name="CrmLeadRateTimeframe" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLeadRateTimeframe" FromRole="CrmLeadRating" ToRole="CrmLeadRateTimeframe" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLead" FromRole="CrmLeadRating" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="CrmStage">
+    <Key>
+      <PropertyRef Name="StageID" />
+    </Key>
+    <Property Type="Int32" Name="StageID" Nullable="false" />
+    <Property Type="String" Name="StageName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_CrmStage" FromRole="CrmStage" ToRole="CrmLead" />
+  </EntityType>
+  <EntityType Name="FW_QUOTE_IC">
+    <Key>
+      <PropertyRef Name="QIC_ID" />
+    </Key>
+    <Property Type="Int32" Name="QIC_ID" Nullable="false" />
+    <Property Type="String" Name="QIC_CONTENTS" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.Category" FromRole="FW_QUOTE_IC" ToRole="CrmLead" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_IC" FromRole="FW_QUOTE_IC" ToRole="CUSTOMER" />
+  </EntityType>
+  <EntityType Name="FW_QUOTE_SOURCE">
+    <Key>
+      <PropertyRef Name="QSOURECE_ID" />
+    </Key>
+    <Property Type="Int32" Name="QSOURECE_ID" Nullable="false" />
+    <Property Type="String" Name="QSOURCE_NAME" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_FW_QUOTE_SOURCE" FromRole="FW_QUOTE_SOURCE" ToRole="CrmLead" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_SOURCE" FromRole="FW_QUOTE_SOURCE" ToRole="CUSTOMER" />
+  </EntityType>
+  <Association Name="FK_CrmActivityMarketing_CrmLeadContentsMarketing">
+    <End Type="CustomerDbModel.CrmLeadContentsMarketing" Role="CrmLeadContentsMarketing" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmActivityMarketing" Role="CrmActivityMarketing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadContentsMarketing">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="CrmActivityMarketing">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadContact_CUSTOMER">
+    <End Type="CustomerDbModel.CUSTOMER_CONTACT" Role="CUSTOMER_CONTACT" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadContact" Role="CrmLeadContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER_CONTACT">
+        <PropertyRef Name="CONTACT_ID" />
+      </Principal>
+      <Dependent Role="CrmLeadContact">
+        <PropertyRef Name="CustomerContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRateAuthority">
+    <End Type="CustomerDbModel.CrmLeadRateAuthority" Role="CrmLeadRateAuthority" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateAuthority">
+        <PropertyRef Name="AuthorityID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="AuthorityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRating">
+    <End Type="CustomerDbModel.CrmLeadRateBudget" Role="CrmLeadRateBudget" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateBudget">
+        <PropertyRef Name="BudgetID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="BudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRateGrowth">
+    <End Type="CustomerDbModel.CrmLeadRateGrowth" Role="CrmLeadRateGrowth" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateGrowth">
+        <PropertyRef Name="GrowthID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="GrowthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRateInterAction">
+    <End Type="CustomerDbModel.CrmLeadRateInterAction" Role="CrmLeadRateInterAction" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateInterAction">
+        <PropertyRef Name="InterActionID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="InterActionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRateRepeatCustomer">
+    <End Type="CustomerDbModel.CrmLeadRateRepeatCustomer" Role="CrmLeadRateRepeatCustomer" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateRepeatCustomer">
+        <PropertyRef Name="RepeatCustomerID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="RepeatCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLeadRateTimeframe">
+    <End Type="CustomerDbModel.CrmLeadRateTimeframe" Role="CrmLeadRateTimeframe" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRateTimeframe">
+        <PropertyRef Name="TimeframeID" />
+      </Principal>
+      <Dependent Role="CrmLeadRating">
+        <PropertyRef Name="TimeframeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CrmLead">
+    <Key>
+      <PropertyRef Name="LeadID" />
+    </Key>
+    <Property Type="Int32" Name="LeadID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="AddressID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WebPage" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="StageID" Nullable="false" />
+    <Property Type="DateTime" Name="CriticalDeadline" />
+    <Property Type="String" Name="Referral" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OriginalOwner" Nullable="false" />
+    <Property Type="Int32" Name="AccountExcutive" Nullable="false" />
+    <Property Type="Int32" Name="SourceID" Nullable="false" />
+    <Property Type="String" Name="KeyProductRequirement" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="PotentialRevenue" />
+    <Property Type="String" Name="ChanceOfSale" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ProgressID" Nullable="false" />
+    <Property Type="String" Name="ProgressContents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedAt" />
+    <Property Type="Int32" Name="LastUpdatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="LastUpdatedAt" />
+    <Property Type="DateTime" Name="AeAssignedAt" />
+    <Property Type="DateTime" Name="UnQualifiedBySalesAt" />
+    <Property Type="DateTime" Name="ProjectCreatedAt" />
+    <Property Type="DateTime" Name="EstRequirementSubmit" />
+    <Property Type="DateTime" Name="LastContactDate" />
+    <Property Type="Int32" Name="RatingID" Nullable="false" />
+    <Property Type="Int32" Name="ContactID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <NavigationProperty Name="CrmActivityMarketings" Relationship="CustomerDbModel.FK_CrmActivityMarketing_CrmLead" FromRole="CrmLead" ToRole="CrmActivityMarketing" />
+    <NavigationProperty Name="FW_QUOTE_IC" Relationship="CustomerDbModel.Category" FromRole="CrmLead" ToRole="FW_QUOTE_IC" />
+    <NavigationProperty Name="CrmLeadAddress" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadAddress" FromRole="CrmLead" ToRole="CrmLeadAddress" />
+    <NavigationProperty Name="CrmLeadContact" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadContact" FromRole="CrmLead" ToRole="CrmLeadContact" />
+    <NavigationProperty Name="CrmLeadContentsProgress" Relationship="CustomerDbModel.FK_CrmLead_CrmLeadContentsProgress" FromRole="CrmLead" ToRole="CrmLeadContentsProgress" />
+    <NavigationProperty Name="CrmStage" Relationship="CustomerDbModel.FK_CrmLead_CrmStage" FromRole="CrmLead" ToRole="CrmStage" />
+    <NavigationProperty Name="FW_QUOTE_SOURCE" Relationship="CustomerDbModel.FK_CrmLead_FW_QUOTE_SOURCE" FromRole="CrmLead" ToRole="FW_QUOTE_SOURCE" />
+    <NavigationProperty Name="CrmLeadContacts" Relationship="CustomerDbModel.FK_CrmLeadContact_CrmLead" FromRole="CrmLead" ToRole="CrmLeadContact" />
+    <NavigationProperty Name="CrmLeadCustomers" Relationship="CustomerDbModel.FK_CrmLeadCustomer_CrmLead" FromRole="CrmLead" ToRole="CrmLeadCustomer" />
+    <NavigationProperty Name="CrmLeadDocuments" Relationship="CustomerDbModel.FK_CrmLeadDocument_CrmLead" FromRole="CrmLead" ToRole="CrmLeadDocument" />
+    <NavigationProperty Name="CrmLeadHistories" Relationship="CustomerDbModel.FK_CrmLeadHistory_Lead" FromRole="CrmLead" ToRole="CrmLeadHistory" />
+    <NavigationProperty Name="CrmLeadOthers" Relationship="CustomerDbModel.FK_CrmLeadOther_CrmLead" FromRole="CrmLead" ToRole="CrmLeadOther" />
+    <NavigationProperty Name="CrmLeadRating" Relationship="CustomerDbModel.FK_CrmLeadRating_CrmLead" FromRole="CrmLead" ToRole="CrmLeadRating" />
+    <NavigationProperty Name="FW_Employees" Relationship="CustomerDbModel.FK_CrmLead_Employee" FromRole="CrmLead" ToRole="FW_Employees" />
+  </EntityType>
+  <EntityType Name="CrmLeadHistory">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Type="Int32" Name="HistoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="EmployeeNumber" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="Int32" Name="EventID" Nullable="false" />
+    <Property Type="Int32" Name="LeadID" Nullable="false" />
+    <NavigationProperty Name="CrmLead" Relationship="CustomerDbModel.FK_CrmLeadHistory_Lead" FromRole="CrmLeadHistory" ToRole="CrmLead" />
+    <NavigationProperty Name="CrmLeadHistoryEvent" Relationship="CustomerDbModel.FK_CrmLeadHistory_Event" FromRole="CrmLeadHistory" ToRole="CrmLeadHistoryEvent" />
+    <NavigationProperty Name="FW_Employees" Relationship="CustomerDbModel.FK_CrmLeadHistory_Employee" FromRole="CrmLeadHistory" ToRole="FW_Employees" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ROWID" />
+    </Key>
+    <Property Type="Int32" Name="ROWID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ID" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NAME" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LEGAL_NAME" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="LEGALNAME_SAMEAS_NAME" Nullable="false" />
+    <Property Type="String" Name="ADDR_1" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ADDR_2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ADDR_3" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CITY" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="STATE" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ZIPCODE" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="COUNTRY" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="poBox" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Intersection" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="NorthWest" Nullable="false" />
+    <Property Type="Boolean" Name="NorthEast" Nullable="false" />
+    <Property Type="Boolean" Name="SouthWest" Nullable="false" />
+    <Property Type="Boolean" Name="SouthEast" Nullable="false" />
+    <Property Type="Double" Name="Lat" Nullable="false" />
+    <Property Type="Double" Name="Lng" Nullable="false" />
+    <Property Type="String" Name="TERRITORY" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="locationCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ACTIVE_FLAG" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="OPEN_DATE" />
+    <Property Type="DateTime" Name="MODIFY_DATE" />
+    <Property Type="String" Name="CURRENCY_ID" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="termID" Nullable="false" />
+    <Property Type="Int16" Name="depositRequired" />
+    <Property Type="DateTime" Name="FirstContractDate" />
+    <Property Type="Int16" Name="selectType" Nullable="false" />
+    <Property Type="Int32" Name="HEADOFFICE" Nullable="false" />
+    <Property Type="Int32" Name="SalesID" Nullable="false" />
+    <Property Type="Int32" Name="Sa1ID" Nullable="false" />
+    <Property Type="String" Name="TempSales" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TempSA1" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="IndustryID" Nullable="false" />
+    <Property Type="Int32" Name="Source" Nullable="false" />
+    <Property Type="Int32" Name="ReferbyEmployee" Nullable="false" />
+    <Property Type="Int32" Name="Referby" Nullable="false" />
+    <Property Type="String" Name="ReferByText" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BelongTo" Nullable="false" />
+    <Property Type="Boolean" Name="DeemedAsOld" Nullable="false" />
+    <Property Type="Int32" Name="PreviousSalesID" Nullable="false" />
+    <Property Type="DateTime" Name="CommissionFirstInvoiceDate" />
+    <Property Type="Boolean" Name="IsReactive" Nullable="false" />
+    <Property Type="Boolean" Name="IsNewLineOfHouseAccount" Nullable="false" />
+    <NavigationProperty Name="CrmLeadCustomers" Relationship="CustomerDbModel.FK_CrmLeadCustomer_CUSTOMER" FromRole="CUSTOMER" ToRole="CrmLeadCustomer" />
+    <NavigationProperty Name="Customer_Activity" Relationship="CustomerDbModel.FK_Customer_Activity_CUSTOMER" FromRole="CUSTOMER" ToRole="Customer_Activity" />
+    <NavigationProperty Name="CUSTOMER_CONTACT" Relationship="CustomerDbModel.FK_CUSTOMER_CONTACT_CUSTOMER" FromRole="CUSTOMER" ToRole="CUSTOMER_CONTACT" />
+    <NavigationProperty Name="FW_QUOTE_IC" Relationship="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_IC" FromRole="CUSTOMER" ToRole="FW_QUOTE_IC" />
+    <NavigationProperty Name="FW_QUOTE_SOURCE" Relationship="CustomerDbModel.FK_CUSTOMER_FW_QUOTE_SOURCE" FromRole="CUSTOMER" ToRole="FW_QUOTE_SOURCE" />
+    <NavigationProperty Name="Sales_JobMasterList_Customer" Relationship="CustomerDbModel.FK_Sales_JobMasterList_Customer_CUSTOMER" FromRole="CUSTOMER" ToRole="Sales_JobMasterList_Customer" />
+    <NavigationProperty Name="FW_Employees" Relationship="CustomerDbModel.FK_CUSTOMER_FW_Employees" FromRole="CUSTOMER" ToRole="FW_Employees" />
+  </EntityType>
+  <Association Name="FK_CrmActivityMarketing_CrmLead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmActivityMarketing" Role="CrmActivityMarketing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmActivityMarketing">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Category">
+    <End Type="CustomerDbModel.FW_QUOTE_IC" Role="FW_QUOTE_IC" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_QUOTE_IC">
+        <PropertyRef Name="QIC_ID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLead_CrmLeadAddress">
+    <End Type="CustomerDbModel.CrmLeadAddress" Role="CrmLeadAddress" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadAddress">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLead_CrmLeadContact">
+    <End Type="CustomerDbModel.CrmLeadContact" Role="CrmLeadContact" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadContact">
+        <PropertyRef Name="ContactID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="ContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLead_CrmLeadContentsProgress">
+    <End Type="CustomerDbModel.CrmLeadContentsProgress" Role="CrmLeadContentsProgress" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadContentsProgress">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="ProgressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLead_CrmStage">
+    <End Type="CustomerDbModel.CrmStage" Role="CrmStage" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmStage">
+        <PropertyRef Name="StageID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="StageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLead_FW_QUOTE_SOURCE">
+    <End Type="CustomerDbModel.FW_QUOTE_SOURCE" Role="FW_QUOTE_SOURCE" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_QUOTE_SOURCE">
+        <PropertyRef Name="QSOURECE_ID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="SourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadContact_CrmLead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadContact" Role="CrmLeadContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmLeadContact">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadCustomer_CrmLead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadCustomer" Role="CrmLeadCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmLeadCustomer">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadDocument_CrmLead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadDocument" Role="CrmLeadDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmLeadDocument">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadHistory_Lead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadHistory" Role="CrmLeadHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmLeadHistory">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadOther_CrmLead">
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadOther" Role="CrmLeadOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLead">
+        <PropertyRef Name="LeadID" />
+      </Principal>
+      <Dependent Role="CrmLeadOther">
+        <PropertyRef Name="LeadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadRating_CrmLead">
+    <End Type="CustomerDbModel.CrmLeadRating" Role="CrmLeadRating" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadRating">
+        <PropertyRef Name="RatingID" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="RatingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadCustomer_CUSTOMER">
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadCustomer" Role="CrmLeadCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="CrmLeadCustomer">
+        <PropertyRef Name="RowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadHistory_Event">
+    <End Type="CustomerDbModel.CrmLeadHistoryEvent" Role="CrmLeadHistoryEvent" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadHistory" Role="CrmLeadHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrmLeadHistoryEvent">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="CrmLeadHistory">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Activity_CUSTOMER">
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="CustomerDbModel.Customer_Activity" Role="Customer_Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="Customer_Activity">
+        <PropertyRef Name="ROWID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_CONTACT_CUSTOMER">
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="CustomerDbModel.CUSTOMER_CONTACT" Role="CUSTOMER_CONTACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="CUSTOMER_CONTACT">
+        <PropertyRef Name="CUSTOMER_ROWID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_FW_QUOTE_IC">
+    <End Type="CustomerDbModel.FW_QUOTE_IC" Role="FW_QUOTE_IC" Multiplicity="1" />
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_QUOTE_IC">
+        <PropertyRef Name="QIC_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="IndustryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_FW_QUOTE_SOURCE">
+    <End Type="CustomerDbModel.FW_QUOTE_SOURCE" Role="FW_QUOTE_SOURCE" Multiplicity="1" />
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_QUOTE_SOURCE">
+        <PropertyRef Name="QSOURECE_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="Source" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_JobMasterList_Customer_CUSTOMER">
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="1" />
+    <End Type="CustomerDbModel.Sales_JobMasterList_Customer" Role="Sales_JobMasterList_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="Sales_JobMasterList_Customer">
+        <PropertyRef Name="cID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FW_Employees">
+    <Key>
+      <PropertyRef Name="EmployeeNumber" />
+    </Key>
+    <Property Type="Int32" Name="EmployeeNumber" Nullable="false" />
+    <Property Type="String" Name="NickName" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Department" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <Property Type="String" Name="LastName" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DisplayName" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sex" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateofBirth" />
+    <Property Type="DateTime" Name="HireDate" />
+    <Property Type="String" Name="Address" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HomePhone" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CellPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Photo" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="SINCardNumber" />
+    <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmergencyContactPerson" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmergencyContactNumber1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmergencyContactNumber2" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Position" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="paytype" />
+    <Property Type="Int32" Name="payrate" />
+    <Property Type="String" Name="CompanyEmail" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CompanyCellphone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Extension" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Performance" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="History" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Training" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NumberInfor" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Password" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Roles" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UserName" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sa1Name" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sa2Name" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SalesName" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayrollNumber" Nullable="false" />
+    <Property Type="String" Name="DepartmentID" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Type="Boolean" Name="ncrEnable" Nullable="false" />
+    <Property Type="Binary" Name="SSMA_TimeStamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Boolean" Name="response" />
+    <Property Type="Binary" Name="signature" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="dID" Nullable="false" />
+    <Property Type="Int32" Name="Team" Nullable="false" />
+    <Property Type="Boolean" Name="isLeadHand" Nullable="false" />
+    <Property Type="Boolean" Name="isAE" Nullable="false" />
+    <Property Type="Int32" Name="Role" Nullable="false" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="DateTime" Name="StartWorkingDate" />
+    <Property Type="DateTime" Name="EndWorkingDate1" />
+    <Property Type="DateTime" Name="ReturnToWorkDate" />
+    <Property Type="DateTime" Name="EndWorkingDate2" />
+    <Property Type="Int16" Name="SelectType" Nullable="false" />
+    <Property Type="String" Name="IsProbation" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Boolean" Name="IsInProbation" Nullable="false" />
+    <Property Type="Int32" Name="ProbationPeriod" Nullable="false" />
+    <Property Type="Boolean" Name="ShowOnInputHour" Nullable="false" />
+    <Property Type="Boolean" Name="IsFake" Nullable="false" />
+    <Property Type="Boolean" Name="IsShowOnPerformanceReport" Nullable="false" />
+    <Property Type="Boolean" Name="ShowOnCrmPage1" Nullable="false" />
+    <Property Type="Boolean" Name="ShowOnCommissionPage1" Nullable="false" />
+    <Property Type="Boolean" Name="ShowOnCommissionPage2" Nullable="false" />
+    <Property Type="Boolean" Name="CrmLeadOwner" Nullable="false" />
+    <Property Type="Boolean" Name="CrmLeadAE" Nullable="false" />
+    <Property Type="Boolean" Name="CrmLeadSelectAeEnable" Nullable="false" />
+    <Property Type="Boolean" Name="IsAdminTaskSelected" Nullable="false" />
+    <NavigationProperty Name="CrmLeads" Relationship="CustomerDbModel.FK_CrmLead_Employee" FromRole="FW_Employees" ToRole="CrmLead" />
+    <NavigationProperty Name="CrmLeadHistories" Relationship="CustomerDbModel.FK_CrmLeadHistory_Employee" FromRole="FW_Employees" ToRole="CrmLeadHistory" />
+    <NavigationProperty Name="CUSTOMERs" Relationship="CustomerDbModel.FK_CUSTOMER_FW_Employees" FromRole="FW_Employees" ToRole="CUSTOMER" />
+  </EntityType>
+  <Association Name="FK_CrmLead_Employee">
+    <End Type="CustomerDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLead" Role="CrmLead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="CrmLead">
+        <PropertyRef Name="AccountExcutive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrmLeadHistory_Employee">
+    <End Type="CustomerDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+    <End Type="CustomerDbModel.CrmLeadHistory" Role="CrmLeadHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="CrmLeadHistory">
+        <PropertyRef Name="EmployeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUSTOMER_FW_Employees">
+    <End Type="CustomerDbModel.FW_Employees" Role="FW_Employees" Multiplicity="1" />
+    <End Type="CustomerDbModel.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FW_Employees">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="SalesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

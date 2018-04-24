@@ -1,0 +1,22 @@
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\x86\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\x86\Debug\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\x86\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\x86\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\x86\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.Resources.resources
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\x86\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\x86\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\x86\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\x86\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\x86\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\bin\x86\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.Resources.resources
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\MyCommonWeb\obj\x86\Debug\MyCommonWeb.pdb

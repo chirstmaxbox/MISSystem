@@ -1,0 +1,82 @@
+F:\MIS2015\Specification\Domain\bin\Debug\SpecDomain.dll.config
+F:\MIS2015\Specification\Domain\bin\Debug\SpecDomain.dll
+F:\MIS2015\Specification\Domain\bin\Debug\SpecDomain.pdb
+F:\MIS2015\Specification\Domain\bin\Debug\CustomerDomain.dll
+F:\MIS2015\Specification\Domain\bin\Debug\EmployeeDomain.dll
+F:\MIS2015\Specification\Domain\bin\Debug\EntityFramework.dll
+F:\MIS2015\Specification\Domain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\Specification\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\MIS2015\Specification\Domain\bin\Debug\MyCommon.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Helpers.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Mvc.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Razor.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.dll
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Razor.dll
+F:\MIS2015\Specification\Domain\bin\Debug\EmployeeDomain.pdb
+F:\MIS2015\Specification\Domain\bin\Debug\MyCommon.pdb
+F:\MIS2015\Specification\Domain\bin\Debug\CustomerDomain.pdb
+F:\MIS2015\Specification\Domain\bin\Debug\EntityFramework.xml
+F:\MIS2015\Specification\Domain\bin\Debug\EntityFramework.SqlServer.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Helpers.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Mvc.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.Razor.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Razor.xml
+F:\MIS2015\Specification\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\Specification\Domain\obj\Debug\SpecDomain.dll
+F:\MIS2015\Specification\Domain\obj\Debug\SpecDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\SpecDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\SpecDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\SpecDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\CustomerDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EmployeeDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Helpers.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Mvc.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Razor.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EmployeeDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\CustomerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EntityFramework.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Helpers.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Mvc.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.Razor.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\obj\Debug\SpecDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\Specification\Domain\obj\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\SpecDomain.dll.config
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\obj\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\Domain\obj\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\SpecDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\obj\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\Domain\obj\Debug\SpecDomain.pdb

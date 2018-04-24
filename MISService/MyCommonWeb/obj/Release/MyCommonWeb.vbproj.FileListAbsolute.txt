@@ -1,0 +1,22 @@
+F:\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.dll
+F:\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.pdb
+F:\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.xml
+F:\MIS2015\MyCommonWeb\bin\Release\MyCommon.dll
+F:\MIS2015\MyCommonWeb\bin\Release\MyCommon.pdb
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.vbprojResolveAssemblyReference.cache
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.Resources.resources
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.vbproj.GenerateResource.Cache
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.dll
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.xml
+F:\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Release\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Release\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\bin\Release\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.Resources.resources
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.pdb

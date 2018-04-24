@@ -1,0 +1,73 @@
+D:\MIS2013\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+D:\MIS2013\ProjectDomain\bin\Debug\ProjectDomain.dll
+D:\MIS2013\ProjectDomain\bin\Debug\ProjectDomain.pdb
+D:\MIS2013\ProjectDomain\bin\Debug\EntityFramework.dll
+D:\MIS2013\ProjectDomain\bin\Debug\EntityFramework.xml
+D:\MIS2013\ProjectDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS2013\ProjectDomain\obj\Debug\ProjectDomain.dll
+D:\MIS2013\ProjectDomain\obj\Debug\ProjectDomain.pdb
+D:\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+D:\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll
+D:\MIS\ProjectDomain\bin\Debug\ProjectDomain.pdb
+D:\MIS\ProjectDomain\bin\Debug\EntityFramework.dll
+D:\MIS\ProjectDomain\bin\Debug\EntityFramework.xml
+D:\MIS\ProjectDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS\ProjectDomain\obj\Debug\ProjectDomain.dll
+D:\MIS\ProjectDomain\obj\Debug\ProjectDomain.pdb
+F:\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+F:\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll
+F:\MIS\ProjectDomain\bin\Debug\ProjectDomain.pdb
+F:\MIS\ProjectDomain\bin\Debug\EntityFramework.dll
+F:\MIS\ProjectDomain\bin\Debug\EntityFramework.xml
+F:\MIS\ProjectDomain\obj\Debug\ProjectDomain.dll
+F:\MIS\ProjectDomain\obj\Debug\ProjectDomain.pdb
+F:\FWD180\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+F:\FWD180\MIS\ProjectDomain\bin\Debug\ProjectDomain.dll
+F:\FWD180\MIS\ProjectDomain\bin\Debug\ProjectDomain.pdb
+F:\FWD180\MIS\ProjectDomain\bin\Debug\EntityFramework.dll
+F:\FWD180\MIS\ProjectDomain\bin\Debug\EntityFramework.xml
+F:\FWD180\MIS\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+F:\FWD180\MIS\ProjectDomain\obj\Debug\ProjectDomain.dll
+F:\FWD180\MIS\ProjectDomain\obj\Debug\ProjectDomain.pdb
+F:\MIS\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+D:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+D:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll
+D:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.pdb
+D:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.dll
+D:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.dll
+D:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.xml
+D:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.xml
+D:\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.dll
+D:\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.pdb
+D:\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+F:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll
+F:\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.pdb
+F:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.xml
+F:\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.dll
+F:\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\ProjectDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\EntityFramework.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectDomain\obj\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\bin\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\obj\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\obj\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\Projects\MISService\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll.config
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\bin\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\bin\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.dll
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\FTS\MyFirstProject\MISService\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache
