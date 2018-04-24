@@ -16,9 +16,10 @@ namespace MISService
         /// </summary>
         static void Main()
         {
+            /*
             LeadMethods pmt = new LeadMethods();
             pmt.DeleteLead(3061);
-
+            */
             /*
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
