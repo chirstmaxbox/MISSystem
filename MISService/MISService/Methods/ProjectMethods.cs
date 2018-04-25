@@ -13,6 +13,10 @@ namespace MISService.Method
 {
     public class ProjectMethods
     {
+        /// <summary>
+        /// Create a new project
+        /// </summary>
+        /// <param name="userEmployeeID">it is employeenumber in FW_Employees</param>
         public void CreateNewProject(int userEmployeeID)
         {
             try
@@ -28,6 +32,7 @@ namespace MISService.Method
 
                     var est = new MyEstRevCreate();
                     est.Create(newJobID);
+                    LogMethods.Log.Debug("CreateNewProject:Debug:" + "DONE");
                 }
                 else
                 {
@@ -40,6 +45,14 @@ namespace MISService.Method
             }
         }
 
+        /// <summary>
+        /// Edit a project
+        /// </summary>
+        /// <param name="jobID"></param>
+        /// <param name="targetDate"></param>
+        /// <param name="sa1ID"></param>
+        /// <param name="sales"></param>
+        /// <param name="jobTitle"></param>
         public void EditNewProject(int jobID, DateTime targetDate, int sa1ID, int sales, string jobTitle)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
@@ -56,6 +69,7 @@ namespace MISService.Method
                 {
                     Connection.Open();
                     UpdateCommand.ExecuteNonQuery();
+                    LogMethods.Log.Debug("EditNewProject:Debug:" + "DONE");
                 }
                 catch (SqlException ex)
                 {
@@ -68,6 +82,10 @@ namespace MISService.Method
             }
         }
 
+        /// <summary>
+        /// delete a project
+        /// </summary>
+        /// <param name="jobID"></param>
         public void DeleteProject(int jobID)
         {
             int estRevID = 0;
@@ -142,6 +160,7 @@ namespace MISService.Method
                     DelCommand.ExecuteNonQuery();
                     Connection.Close();
                 }
+                LogMethods.Log.Debug("DeleteProject:Debug:" + "DONE");
             }
             catch (Exception e)
             {
