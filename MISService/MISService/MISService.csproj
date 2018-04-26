@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Methods\CustomerMethods.cs" />
+    <Compile Include="Methods\IDMappingMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />
     <Compile Include="Methods\ProjectMethods.cs" />

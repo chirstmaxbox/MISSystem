@@ -1,4 +1,5 @@
-﻿using CustomerDomain.BLL;
+﻿using CustomerDomain.BDL;
+using CustomerDomain.BLL;
 using CustomerDomain.Model;
 using MISService.Method;
 using System;
@@ -54,6 +55,42 @@ namespace MISService.Methods
             {
                 LogMethods.Log.Error("EditCustomer:Crash:" + e.Message);
             }
+        }
+
+        /// <summary>
+        /// Insert a default row to CUSTOMER_CONTACT table 
+        /// </summary>
+        /// <param name="customerID">It is RowID in CUSTOMER table</param>
+        public void CreateCustomerContact(int customerID)
+        {
+            try
+            {
+                var cc = new FsCustomerContact(customerID);
+                cc.InsertContact();
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("CreateCustomerContact:Crash:" + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Edit Customer's Contact
+        /// </summary>
+        /// <param name="cc"></param>
+        public void EditCustomerContact(CUSTOMER_CONTACT cc)
+        {
+            try
+            {
+                _db.Entry(cc).State = EntityState.Modified;
+                _db.SaveChanges();
+                LogMethods.Log.Debug("EditCustomerContact:Debug:" + "DONE");
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("EditCustomerContact:Crash:" + e.Message);
+            }
+
         }
 
     }

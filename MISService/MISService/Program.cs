@@ -1,4 +1,5 @@
-﻿using MISService.Method;
+﻿using CustomerDomain.Model;
+using MISService.Method;
 using MISService.Methods;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,16 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            /*
-            LeadMethods pmt = new LeadMethods();
-            pmt.DeleteLead(3061);
-            */
+            CUSTOMER_CONTACT cc = new CUSTOMER_CONTACT();
+            cc.CONTACT_ID = 20329;
+            cc.CUSTOMER_ROWID = 18458;
+            cc.CONTACT_FIRST_NAME = "firstname";
+            cc.CONTACT_LAST_NAME = "lastname";
+            cc.CONTACT_ACTIVE = true;
+
+            CustomerMethods cmt = new CustomerMethods();
+            cmt.EditCustomerContact(cc);
+
             /*
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
