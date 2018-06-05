@@ -17,6 +17,7 @@ namespace MISService
         /// </summary>
         static void Main()
         {
+            /*
             CUSTOMER_CONTACT cc = new CUSTOMER_CONTACT();
             cc.CONTACT_ID = 20329;
             cc.CUSTOMER_ROWID = 18458;
@@ -26,13 +27,13 @@ namespace MISService
 
             CustomerMethods cmt = new CustomerMethods();
             cmt.EditCustomerContact(cc);
+             * */
 
-            /*
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
-                SalesForceMethods.QueryEnterpriseRecord();
+                ProjectMethods pm = new ProjectMethods();
+                pm.GetAllProjects();
             }
-             * */
 
             /*
             // Making a window service

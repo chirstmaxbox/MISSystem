@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Methods\CommonMethods.cs" />
     <Compile Include="Methods\CustomerMethods.cs" />
     <Compile Include="Methods\IDMappingMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
@@ -457,21 +458,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SfdcReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SfdcReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SfdcReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SfdcReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CustomerDomain\CustomerDomain.csproj">
       <Project>{3f6a0b60-cfbe-4175-8a8e-cbf0779eec6e}</Project>
       <Name>CustomerDomain</Name>
@@ -508,6 +494,21 @@
       <Project>{32a698e1-a626-4bb6-a29e-f13ded93f7cb}</Project>
       <Name>SalesCenterDomain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SfdcReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SfdcReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SfdcReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SfdcReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

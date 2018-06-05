@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c397741-2624-4f57-a33f-e222736c3b6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7125963-a07c-49fe-b3fa-7def3d4523b7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="C:\Users\anh.tran\Documents\Projects\MISService\MISService\enterprise.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\enterprise.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="enterprise.wsdl" MetadataType="Wsdl" ID="c1ab678b-fcc8-4f89-801c-89e0f61f6e1c" SourceId="1" SourceUrl="file:///C:/Users/anh.tran/Documents/Projects/MISService/MISService/enterprise.wsdl" />
+    <MetadataFile FileName="enterprise.wsdl" MetadataType="Wsdl" ID="cd3bafa5-a215-4282-b3ae-45d83dbe582b" SourceId="1" SourceUrl="file:///C:/Users/anh.tran/Documents/GIT/MISSystem/MISService/MISService/enterprise.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -58,3 +58,15 @@ C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\CustomerDomain\bin\Debug
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.dll
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\CustomerDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\CustomerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\EntityFramework.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Debug\CustomerDomain.pdb

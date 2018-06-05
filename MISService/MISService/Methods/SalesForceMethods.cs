@@ -11,12 +11,12 @@ namespace MISService.Method
 {
     public class SalesForceMethods
     {
-        public static string userName = "anh_tranquoc@outlook.com";
-        public static string password = "30ngay1thang";
-        public static string token = "bV9wC0sjf49BVVhf5qkQihSl";
+        public static string userName = "anh.tran@exocloud.ca";
+        public static string password = "6%namnhumoinamA";
+        public static string token = "4OtoAt7RYUMt7NVhgdsCaKS8z";
 
-        private static string sessionId = string.Empty;
-        private static string serverUrl = string.Empty;
+        public static string sessionId = string.Empty;
+        public static string serverUrl = string.Empty;
         /// <summary>
         /// Call SFDC endpoint and retrieve authentication token and API URL for SOAP callers
         /// </summary>
@@ -67,57 +67,6 @@ namespace MISService.Method
 
         }
 
-        /// <summary>
-        /// Use Enteprise API to query and retrieve SFDC records
-        /// </summary>
-        /// <param name="sessionId"></param>
-        /// <param name="serverUrl"></param>
-        public static void QueryEnterpriseRecord()
-        {
-            Console.WriteLine("Querying account records with the Enterprise API ...");
-
-            try
-            {
-                //set query endpoint to value returned by login request
-                EndpointAddress apiAddr = new EndpointAddress(serverUrl);
-
-                //instantiate session header object and set session id
-                enterprise.SessionHeader header = new enterprise.SessionHeader();
-                header.sessionId = sessionId;
-
-                //create service client to call API endpoint
-                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
-                {
-                    //create SQL query statement
-                    string query = "SELECT Name, AccountNumber, BillingState FROM Account WHERE BillingState = 'CA'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    //cast query results
-                    IEnumerable<enterprise.Account> accountList = result.records.Cast<enterprise.Account>();
-
-                    //show results
-                    foreach (var account in accountList)
-                    {
-                        Console.WriteLine(string.Format("Account Name: {0}", account.Name));
-                    }
-
-                    Console.WriteLine("");
-                    Console.WriteLine("Query complete.");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("QueryEnterpriseRecord Error : " + e.Message);
-            }
-
-        }
 
     }
 }

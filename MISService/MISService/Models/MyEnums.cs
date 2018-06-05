@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace MISService.Models
 {
+
+    public class TableName
+    {
+        public static string Sales_JobMasterList = "Sales_JobMasterList";
+    }
+
     public class BusinessObjectEN
     {
         public enum NJobStatus

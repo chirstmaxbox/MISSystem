@@ -24,3 +24,8 @@ C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MessagerDomain\bin\Debug
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MessagerDomain\bin\Debug\MessagerDomain.pdb
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MessagerDomain\obj\Debug\MessagerDomain.dll
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MessagerDomain\obj\Debug\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Debug\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Debug\MessagerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Debug\MessagerDomain.pdb

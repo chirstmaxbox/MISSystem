@@ -5,3 +5,11 @@
 The statement has been terminated.
 2018-04-25 20:18:03,841 DEBUG MISService.Method.LogMethods - EditCustomerContact:Debug:DONE
 2018-04-25 20:19:16,067 DEBUG MISService.Method.LogMethods - EditCustomerContact:Debug:DONE
+2018-06-05 15:15:16,215 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-06-05 15:17:39,907 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-06-05 15:37:56,787 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-06-05 15:38:31,278 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-05 15:38:34,773 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-05 17:10:58,761 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
+2018-06-05 17:18:25,530 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
+2018-06-05 17:19:12,210 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE

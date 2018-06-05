@@ -92,3 +92,15 @@ C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\Domain\bin\Debug\Microso
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\Domain\obj\Debug\SpecDomain.dll
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\Domain\obj\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\SpecDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\SpecDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Debug\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Debug\SpecDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Debug\SpecDomain.pdb

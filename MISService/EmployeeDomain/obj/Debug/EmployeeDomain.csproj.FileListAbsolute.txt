@@ -76,3 +76,14 @@ C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\EmployeeDomain\bin\Debug
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.dll
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Debug\EmployeeDomain.pdb

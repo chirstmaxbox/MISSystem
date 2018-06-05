@@ -46,3 +46,7 @@ C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommon\bin\Debug\MyCom
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommon\bin\Debug\MyCommon.pdb
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.dll
 C:\Users\anh.tran\Documents\GitHub\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.pdb
