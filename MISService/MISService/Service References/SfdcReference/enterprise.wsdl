@@ -1392,6 +1392,7 @@
               <xsd:element minOccurs="0" name="Attachments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Bill_Quote_Ship_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_City__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Billing_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_Postal_Code__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_Province__c" nillable="true" type="xsd:string" />
@@ -1424,6 +1425,7 @@
               <xsd:element minOccurs="0" name="Project_Name__r" nillable="true" type="ens:Opportunity" />
               <xsd:element minOccurs="0" name="Projects__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Quoting_Company_City__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Quoting_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_Postal_Code__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_Province__c" nillable="true" type="xsd:string" />
@@ -1433,6 +1435,7 @@
               <xsd:element minOccurs="0" name="Quoting_Contact_Phone__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="RecordAssociatedGroups" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Shipping_Company_City__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Shipping_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Shipping_Company_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Shipping_Company_Postal_Code__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Shipping_Company_Province__c" nillable="true" type="xsd:string" />
@@ -7088,6 +7091,10 @@
               <xsd:element minOccurs="0" name="AttachedContentNotes" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Attachments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="AutoPID__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Bidding_Due_Date__c" nillable="true" type="xsd:date" />
+              <xsd:element minOccurs="0" name="Bidding_Remark__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Bidding_Source__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Bidding_Type__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Bill_Quote_Ships__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Budget_Confirmed__c" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="Campaign" nillable="true" type="ens:Campaign" />

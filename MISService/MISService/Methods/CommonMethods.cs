@@ -52,10 +52,10 @@ namespace MISService.Methods
             return un;
         }
 
-        public static string GetMISID(string tableName, string salesforceID)
+        public static int GetMISID(string tableName, string salesforceID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
-            string MISID = string.Empty;
+            int MISID = 0;
             try
             {
                 string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID)";
@@ -67,7 +67,7 @@ namespace MISService.Methods
                 {
                     if (dr.Read())
                     {
-                        MISID = dr[0].ToString();
+                        MISID = Convert.ToInt32(dr[0].ToString());
                     }
                 }
             }

@@ -10,6 +10,30 @@ namespace MISService.Models
     public class TableName
     {
         public static string Sales_JobMasterList = "Sales_JobMasterList";
+        public static string Customer = "Customer";
+    }
+
+    public class SalesType
+    {
+        public const string Repeat = "Repeat";
+        public const string New = "New";
+        public const string Bid = "Bid";
+    }
+
+    public class BiddingType
+    {
+        public const string Soft_Bid = "Soft Bid";
+        public const string Hard_Bid = "Hard Bid";
+    }
+
+    public class BiddingSource
+    {
+        public const string BiddingGo = "BiddingGo";
+        public const string Merx = "Merx";
+        public const string GC = "G.C.";
+        public const string Government = "Government";
+        public const string Developer = "Developer";
+        public const string Others = "Others";
     }
 
     public class BusinessObjectEN

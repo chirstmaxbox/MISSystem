@@ -13,6 +13,7 @@ using System.ServiceModel;
 using MISService.Models;
 using EmployeeDomain.BLL;
 using MISService.Methods;
+using SalesCenterDomain.BDL;
 
 namespace MISService.Method
 {
@@ -38,7 +39,8 @@ namespace MISService.Method
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, OwnerId FROM Opportunity";
+                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Bidding_Type__c, Bidding_Source__c,"
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c FROM Opportunity";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -59,24 +61,60 @@ namespace MISService.Method
                         FsEmployee fsEmployee = new FsEmployee(un);
                         if (fsEmployee.EmployeeNumber > 0)
                         {
-                            string projectID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id);
-                            if (string.IsNullOrEmpty(projectID))
+                            int sales_JobMasterListID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id);
+                            if (sales_JobMasterListID == 0)
                             {
                                 int jobID = CreateNewProject(fsEmployee.EmployeeNumber);
-                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name);
+                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type);
                                 /* update jobnumber */
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
                                 CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString());
+                                /* for bidding project */
+                                if(opportunity.Type == SalesType.Bid) {
+                                    /* check if the bidding record exists */
+                                    int biddingID = GetBiddingID(jobID);
+                                    if (biddingID > 0)
+                                    {
+                                        //exist
+                                        UpdateBiddingProject(biddingID, jobID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                    }
+                                    else
+                                    {
+                                        InsertBiddingProject(fsEmployee.EmployeeNumber);
+                                        UpdateBiddingProject(SqlCommon.GetNewlyInsertedRecordID("Sales_JobMaster_BiddingJob"), jobID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                    } 
+                                }
+                                sales_JobMasterListID = jobID;
                             }
                             else
                             {
-                                UpdateProject(Convert.ToInt32(projectID), opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name);
+                                if (opportunity.Type == SalesType.Bid)
+                                {
+                                    /* check if the bidding record exists */
+                                    int biddingID = GetBiddingID(sales_JobMasterListID);
+                                    if (biddingID > 0)
+                                    {
+                                        //exist
+                                        UpdateBiddingProject(biddingID, sales_JobMasterListID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                    }
+                                    else
+                                    {
+                                        InsertBiddingProject(fsEmployee.EmployeeNumber);
+                                        UpdateBiddingProject(SqlCommon.GetNewlyInsertedRecordID("Sales_JobMaster_BiddingJob"), Convert.ToInt32(sales_JobMasterListID), opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                    } 
+                                }
+                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type);
                             }
-                        }
-                    }
+                            /* Bill-Quote-Ship */
+                            CustomerMethods cm = new CustomerMethods();
+                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
-                    LogMethods.Log.Debug("GetAllProjects:Debug:" + "DONE");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
+                        }
+                        LogMethods.Log.Debug("GetAllProjects:Debug:" + "User name " + un + " does not exist in database");
+                    }
+                    LogMethods.Log.Debug("GetAllProjects:Debug:" + "All Projects are done");
                 }
             }
             catch (Exception e)
@@ -123,11 +161,11 @@ namespace MISService.Method
         /// <summary>
         /// Edit a project
         /// </summary>
-        public void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle)
+        public void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
-                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sa1ID = @sa1ID, sales = @sales, jobTitle = @jobTitle  WHERE (jobID = @jobID)";
+                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sa1ID = @sa1ID, sales = @sales, jobTitle = @jobTitle, salesType = @salesType WHERE (jobID = @jobID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
                 if (targetDate != null)
                 {
@@ -137,6 +175,20 @@ namespace MISService.Method
                 {
                     UpdateCommand.Parameters.Add("@targetDate", SqlDbType.DateTime).Value = DBNull.Value;
                 }
+
+                switch (salesType)
+                {
+                    case SalesType.Repeat:
+                        UpdateCommand.Parameters.AddWithValue("@salesType", 0);
+                        break;
+                    case SalesType.Bid:
+                        UpdateCommand.Parameters.AddWithValue("@salesType", 2);
+                        break;
+                    default:
+                        UpdateCommand.Parameters.AddWithValue("@salesType", 1);
+                        break;
+                }
+
                 UpdateCommand.Parameters.Add("@sa1ID", SqlDbType.Int).Value = sa1ID;
                 UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = sales;
                 UpdateCommand.Parameters.Add("@jobTitle", SqlDbType.VarChar, 150).Value = jobTitle;
@@ -171,16 +223,162 @@ namespace MISService.Method
                 {
                     Connection.Open();
                     UPdateCommand.ExecuteNonQuery();
+                    LogMethods.Log.Debug("UpdateJobNumber:Debug:" + "DONE");
                 }
                 catch (SqlException ex)
                 {
                     string errorlog = ex.Message;
+                    LogMethods.Log.Error("UpdateJobNumber:Crash:" + ex.Message);
                 }
                 finally
                 {
                     Connection.Close();
                 }
             }
+        }
+
+
+        public bool InsertBiddingProject(int userEmployeeID)
+        {
+            bool ret = false;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "INSERT INTO [Sales_JobMaster_BiddingJob] (JobID, CreatedBy, AeAssignedDate, BillToID, TempAE) VALUES (@jobID, @createdBy, @aeAssignedDate, @billToID, @tempAE)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@jobID", 0);
+                SelectCommand.Parameters.AddWithValue("@createdBy", userEmployeeID);
+                SelectCommand.Parameters.AddWithValue("@aeAssignedDate", DateTime.Now);
+                SelectCommand.Parameters.AddWithValue("@billToID", 0);
+                SelectCommand.Parameters.AddWithValue("@tempAE", userEmployeeID);
+                Connection.Open();
+                SelectCommand.ExecuteNonQuery();
+                ret = true;
+                LogMethods.Log.Debug("InsertBiddingProject:Debug:" + "DONE");
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("InsertBiddingProject:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ret;
+        }
+
+        private void UpdateBiddingProject(int biddingID, int jobID, string biddingType, string biddingSource, DateTime? deadline, string remark)
+        {
+            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            {
+                string UpdateString = "UPDATE [Sales_JobMaster_BiddingJob] SET [jobID] = @jobID, [BiddingTypeID] = @biddingTypeID, [BiddingSourceID] = @biddingSourceID, [BidDeadline] = @bidDeadline, [Remark] = @remark  WHERE [BiddingID] = @biddingID";
+                var UPdateCommand = new SqlCommand(UpdateString, Connection);
+                UPdateCommand.Parameters.Add("@jobID", SqlDbType.Int).Value = jobID;
+                UPdateCommand.Parameters.Add("@biddingID", SqlDbType.Int).Value = biddingID;
+
+                switch (biddingType)
+                {
+                    case BiddingType.Hard_Bid:
+                        UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 20);
+                        break;
+                    case BiddingType.Soft_Bid:
+                        UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 20);
+                        break;
+                    default:
+                        UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 0);
+                        break;
+                }
+
+                switch (biddingSource)
+                {
+                    case BiddingSource.BiddingGo:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 10);
+                        break;
+                    case BiddingSource.Merx:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 15);
+                        break;
+                    case BiddingSource.GC:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 20);
+                        break;
+                    case BiddingSource.Government:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 25);
+                        break;
+                    case BiddingSource.Developer:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 30);
+                        break;
+                    case BiddingSource.Others:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 99);
+                        break;
+                    default:
+                        UPdateCommand.Parameters.AddWithValue("@BiddingSourceID", 0);
+                        break;
+                }
+
+                if (deadline != null)
+                {
+                    UPdateCommand.Parameters.Add("@bidDeadline", SqlDbType.DateTime).Value = deadline;
+                }
+                else
+                {
+                    UPdateCommand.Parameters.Add("@bidDeadline", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+
+                if (remark != null)
+                {
+                    UPdateCommand.Parameters.AddWithValue("@remark", remark);
+                }
+                else
+                {
+                    UPdateCommand.Parameters.AddWithValue("@remark", DBNull.Value);
+                }
+
+                try
+                {
+                    Connection.Open();
+                    UPdateCommand.ExecuteNonQuery();
+                    LogMethods.Log.Debug("UpdateBiddingProject:Debug:" + "DONE");
+                }
+                catch (SqlException ex)
+                {
+                    string errorlog = ex.Message;
+                    LogMethods.Log.Error("UpdateBiddingProject:Crash:" + ex.Message);
+                }
+                finally
+                {
+                    Connection.Close();
+                }
+            }
+        }
+
+        public int GetBiddingID(int jobID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int biddingID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT BiddingID FROM [Sales_JobMaster_BiddingJob] WHERE ([JobID] = @jobID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@jobID", jobID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        biddingID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetBiddingID:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return biddingID;
         }
 
         /// <summary>

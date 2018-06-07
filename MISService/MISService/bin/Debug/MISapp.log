@@ -13,3 +13,59 @@ The statement has been terminated.
 2018-06-05 17:10:58,761 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
 2018-06-05 17:18:25,530 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
 2018-06-05 17:19:12,210 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 10:39:47,940 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 10:39:51,575 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 10:41:00,870 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 10:41:02,368 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 11:34:56,970 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 11:34:56,986 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 12:30:19,194 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 12:30:40,502 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 12:30:44,012 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 12:30:44,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 13:30:31,525 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 13:37:22,011 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 13:39:24,831 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 13:40:58,908 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 13:41:06,244 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 13:41:06,249 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 13:41:06,249 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 14:14:52,034 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 14:14:56,420 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 14:14:58,239 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
+2018-06-06 16:55:18,930 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-06-06 16:55:18,953 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 16:55:18,956 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
+2018-06-06 16:55:18,989 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
+2018-06-06 16:55:19,000 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:09:12,691 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:09:12,731 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:09:57,053 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:09:57,065 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:10:53,486 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:10:53,499 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:10:55,704 ERROR MISService.Method.LogMethods - GetAllCompanies:Error:INVALID_FIELD: 
+Name, Billing_Company_City__c, Billing_Contact_Name__r, Billing_Company_Name__c
+                               ^
+ERROR at Row:1:Column:43
+No such column 'Billing_Contact_Name__r' on entity 'Bill_Quote_Ship__c'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
+2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
+2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-06 17:11:39,929 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:11:39,941 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:13:56,128 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:13:56,142 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:27:03,431 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:27:03,449 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:28:29,730 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-06-06 17:28:39,394 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-06 17:28:46,714 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-06 17:28:46,715 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
+2018-06-06 17:28:46,715 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-06 17:37:11,221 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-06 17:37:11,239 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
+2018-06-06 17:37:57,261 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 42.0
-Generated on 2018-06-05 14:13:07 +0000.
+Generated on 2018-06-06 19:44:16 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -1459,6 +1459,7 @@ All Rights Reserved
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Bill_Quote_Ship_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Billing_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_Postal_Code__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_Province__c" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -1491,6 +1492,7 @@ All Rights Reserved
                         <element name="Project_Name__r" nillable="true" minOccurs="0" type="ens:Opportunity"/>
                         <element name="Projects__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Quoting_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Quoting_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_Postal_Code__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_Province__c" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -1500,6 +1502,7 @@ All Rights Reserved
                         <element name="Quoting_Contact_Phone__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Shipping_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Shipping_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Shipping_Company_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Shipping_Company_Postal_Code__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Shipping_Company_Province__c" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -7363,6 +7366,10 @@ All Rights Reserved
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AutoPID__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Bidding_Due_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
+                        <element name="Bidding_Remark__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Bidding_Source__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Bidding_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Bill_Quote_Ships__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Budget_Confirmed__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Campaign" nillable="true" minOccurs="0" type="ens:Campaign"/>
