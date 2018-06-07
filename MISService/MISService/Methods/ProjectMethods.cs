@@ -70,49 +70,40 @@ namespace MISService.Method
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
                                 CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString());
-                                /* for bidding project */
-                                if(opportunity.Type == SalesType.Bid) {
-                                    /* check if the bidding record exists */
-                                    int biddingID = GetBiddingID(jobID);
-                                    if (biddingID > 0)
-                                    {
-                                        //exist
-                                        UpdateBiddingProject(biddingID, jobID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
-                                    }
-                                    else
-                                    {
-                                        InsertBiddingProject(fsEmployee.EmployeeNumber);
-                                        UpdateBiddingProject(SqlCommon.GetNewlyInsertedRecordID("Sales_JobMaster_BiddingJob"), jobID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
-                                    } 
-                                }
                                 sales_JobMasterListID = jobID;
                             }
                             else
                             {
-                                if (opportunity.Type == SalesType.Bid)
-                                {
-                                    /* check if the bidding record exists */
-                                    int biddingID = GetBiddingID(sales_JobMasterListID);
-                                    if (biddingID > 0)
-                                    {
-                                        //exist
-                                        UpdateBiddingProject(biddingID, sales_JobMasterListID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
-                                    }
-                                    else
-                                    {
-                                        InsertBiddingProject(fsEmployee.EmployeeNumber);
-                                        UpdateBiddingProject(SqlCommon.GetNewlyInsertedRecordID("Sales_JobMaster_BiddingJob"), Convert.ToInt32(sales_JobMasterListID), opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
-                                    } 
-                                }
                                 UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type);
                             }
+
+                            /* for bidding project */
+                            if (opportunity.Type == SalesType.Bid)
+                            {
+                                /* check if the bidding record exists */
+                                int biddingID = GetBiddingID(sales_JobMasterListID);
+                                if (biddingID > 0)
+                                {
+                                    //exist
+                                    UpdateBiddingProject(biddingID, sales_JobMasterListID, opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                }
+                                else
+                                {
+                                    InsertBiddingProject(fsEmployee.EmployeeNumber);
+                                    UpdateBiddingProject(SqlCommon.GetNewlyInsertedRecordID("Sales_JobMaster_BiddingJob"), Convert.ToInt32(sales_JobMasterListID), opportunity.Bidding_Type__c, opportunity.Bidding_Source__c, opportunity.Bidding_Due_Date__c, opportunity.Bidding_Remark__c);
+                                }
+                            }
+
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods();
                             cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }
-                        LogMethods.Log.Debug("GetAllProjects:Debug:" + "User name " + un + " does not exist in database");
+                        else
+                        {
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "User name " + un + " does not exist in database");
+                        }
                     }
                     LogMethods.Log.Debug("GetAllProjects:Debug:" + "All Projects are done");
                 }

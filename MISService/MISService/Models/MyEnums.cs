@@ -11,6 +11,8 @@ namespace MISService.Models
     {
         public static string Sales_JobMasterList = "Sales_JobMasterList";
         public static string Customer = "Customer";
+        public static string Customer_Contact = "CUSTOMER_CONTACT";
+        public static string Sales_JobMasterList_Customer = "Sales_JobMasterList_Customer";
     }
 
     public class SalesType

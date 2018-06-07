@@ -69,3 +69,60 @@ No such column 'Billing_Contact_Name__r' on entity 'Bill_Quote_Ship__c'. If you 
 2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
 2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
 2018-06-06 17:37:57,261 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 11:18:02,414 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 11:18:27,857 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 12:32:35,045 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 12:32:35,419 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 12:33:42,780 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 12:35:20,249 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 12:35:20,281 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 13:00:53,280 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 13:00:53,358 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 14:01:46,811 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 14:01:46,844 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 14:06:33,147 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:15:50,896 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 14:15:50,920 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 14:16:31,924 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:18:16,244 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-06-07 14:20:39,481 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:20:57,207 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-06-07 14:20:57,233 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:21:08,274 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:21:08,275 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 14:21:08,275 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 14:35:01,850 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 14:35:01,890 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 14:35:12,919 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:35:14,613 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:35:14,643 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 14:38:39,757 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 14:38:39,778 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 14:38:44,243 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:38:44,289 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:38:44,323 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-07 14:41:28,570 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-07 14:41:28,595 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-07 14:41:33,334 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:41:33,426 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:43:13,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:43:13,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-07 14:43:13,885 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-07 14:43:13,885 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
