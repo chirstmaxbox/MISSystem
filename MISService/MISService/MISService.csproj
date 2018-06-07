@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Methods\CommonMethods.cs" />
     <Compile Include="Methods\CustomerMethods.cs" />
+    <Compile Include="Methods\EstimationMethods.cs" />
     <Compile Include="Methods\IDMappingMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />

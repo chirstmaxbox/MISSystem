@@ -96,7 +96,13 @@ namespace MISService.Method
 
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods();
-                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+//                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done " + opportunity.Project_Number__c);
+                            
+                            /* Get Estimation and Items */
+                            EstimationMethods em = new EstimationMethods();
+                            int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }

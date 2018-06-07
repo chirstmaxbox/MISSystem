@@ -110,6 +110,34 @@ namespace MISService.Methods
             return ret;
         }
 
-       
+        public static int GetEstRevID(int jobID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int estRevID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT EstRevID FROM [Sales_JobMasterList_EstRev] WHERE ([jobID] = @jobID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@jobID", jobID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        estRevID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetEstRevID:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return estRevID;
+        }
     }
 }
