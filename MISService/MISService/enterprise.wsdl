@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 42.0
-Generated on 2018-06-06 19:44:16 +0000.
+Generated on 2018-06-08 19:37:01 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -6269,7 +6269,14 @@ All Rights Reserved
                         <element name="Graphic__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="HasInvoiceName__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="HasQuoteName__c" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="Height__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Height_Feet1_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Feet2_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Feet3_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Feet__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Inches1__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Inches2__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Inches3__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Height_Inches__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Histories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Invoice_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Invoice_Name__r" nillable="true" minOccurs="0" type="ens:Invoice__c"/>
@@ -6287,6 +6294,10 @@ All Rights Reserved
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="NotesAndAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="PC1_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="PC2_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="PC3_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="PC_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Position__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Previous_Estimation_Available__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -6300,10 +6311,18 @@ All Rights Reserved
                         <element name="Sign_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
-                        <element name="Thickness__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Thickness_Feet1_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Feet2_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Feet3_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Feet_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Inches1__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Inches2__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Inches3__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Thickness_Inches__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
-                        <element name="Width__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Width_Feet_s__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Width_Inches__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Work_Order_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Work_Order_Name__r" nillable="true" minOccurs="0" type="ens:Work_Order__c"/>
                         </sequence>

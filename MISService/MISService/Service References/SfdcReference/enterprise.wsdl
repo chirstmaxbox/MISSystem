@@ -6030,7 +6030,14 @@
               <xsd:element minOccurs="0" name="Graphic__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="HasInvoiceName__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="HasQuoteName__c" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="Height__c" nillable="true" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Height_Feet1_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Feet2_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Feet3_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Feet__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Inches1__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Inches2__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Inches3__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Height_Inches__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Histories" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Invoice_Name__c" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Invoice_Name__r" nillable="true" type="ens:Invoice__c" />
@@ -6048,6 +6055,10 @@
               <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Notes" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="NotesAndAttachments" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="PC1_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="PC2_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="PC3_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="PC_s__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Position__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Previous_Estimation_Available__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="ProcessInstances" nillable="true" type="tns:QueryResult" />
@@ -6061,10 +6072,18 @@
               <xsd:element minOccurs="0" name="Sign_Type__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="SystemModstamp" nillable="true" type="xsd:dateTime" />
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />
-              <xsd:element minOccurs="0" name="Thickness__c" nillable="true" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Thickness_Feet1_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Feet2_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Feet3_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Feet_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Inches1__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Inches2__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Inches3__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Thickness_Inches__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="TopicAssignments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="UserRecordAccess" nillable="true" type="ens:UserRecordAccess" />
-              <xsd:element minOccurs="0" name="Width__c" nillable="true" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Width_Feet_s__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Width_Inches__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Work_Order_Name__c" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Work_Order_Name__r" nillable="true" type="ens:Work_Order__c" />
             </xsd:sequence>

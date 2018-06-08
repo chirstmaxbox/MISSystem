@@ -39,6 +39,18 @@ namespace MISService.Models
         public const string Others = "Others";
     }
 
+    public class YesNo
+    {
+        public const string Yes = "Yes";
+        public const string No = "No";
+    }
+
+    public class ItemPosition
+    {
+        public const string Indoor = "Indoor";
+        public const string Outdoor = "Outdoor";
+    }
+
     public class BusinessObjectEN
     {
         public enum NJobStatus
@@ -83,6 +95,7 @@ namespace MISService.Models
             ProjectCreated = 101,
             EstimationRequisitionSubmited = 151
         }
+
 
     }
 }

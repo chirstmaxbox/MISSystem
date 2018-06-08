@@ -141,3 +141,20 @@ No such column 'Billing_Contact_Name__r' on entity 'Bill_Quote_Ship__c'. If you 
 2018-06-07 16:58:26,752 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
 2018-06-07 16:58:26,775 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
 2018-06-07 16:58:27,072 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-08 11:01:46,756 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-08 11:01:46,772 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-08 11:01:47,006 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-08 16:45:45,314 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-08 16:45:45,345 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-08 16:45:45,673 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-08 16:59:48,302 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-08 16:59:48,318 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-08 16:59:48,552 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
