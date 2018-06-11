@@ -46,7 +46,7 @@ namespace SpecDomain.BLL.Service
         }
 
         //Insert New
-        private void InsertRecord(int qsServiceID, string qsAmount, int qsQty, string qsDescription, string qsTitle, string qsAmountText, int printNumber)
+        public void InsertRecord(int qsServiceID, string qsAmount, int qsQty, string qsDescription, string qsTitle, string qsAmountText, int printNumber)
         {
             using (var connection = new SqlConnection(SpecConfiguration.ConnectionString))
             {
@@ -83,7 +83,7 @@ namespace SpecDomain.BLL.Service
         }
 
 
-        private int GetQsMaxPrintOrder()
+        public int GetQsMaxPrintOrder()
         {
             int max = 0;
             var connectionSQL =new SqlConnection(SpecConfiguration.ConnectionString);

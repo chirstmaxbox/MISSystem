@@ -99,10 +99,14 @@ namespace MISService.Method
 //                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done " + opportunity.Project_Number__c);
                             
-                            /* Get Estimation and Items */
+                            /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods();
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID);
+//                            em.GetEstimation(opportunity.Id, estRevID);
+
+                             /* Get Drawing */
+                            DrawingMethods dm = new DrawingMethods();
+                            dm.GetAllDrawing(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }

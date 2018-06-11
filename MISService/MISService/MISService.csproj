@@ -64,12 +64,13 @@
   <ItemGroup>
     <Compile Include="Methods\CommonMethods.cs" />
     <Compile Include="Methods\CustomerMethods.cs" />
+    <Compile Include="Methods\DrawingMethods.cs" />
     <Compile Include="Methods\EstimationMethods.cs" />
-    <Compile Include="Methods\IDMappingMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />
     <Compile Include="Methods\ProjectMethods.cs" />
     <Compile Include="Methods\SalesForceMethods.cs" />
+    <Compile Include="Methods\ServiceMethods.cs" />
     <Compile Include="MISServiceConfiguration.cs" />
     <Compile Include="Models\CrmEmployee.cs" />
     <Compile Include="Models\LeadModifyViewMode.cs" />
@@ -207,6 +208,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SfdcReference\MISService.SfdcReference.DescribeQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SfdcReference\MISService.SfdcReference.describeQuickActionsForRecordTypeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SfdcReference\MISService.SfdcReference.describeQuickActionsResponse.datasource">

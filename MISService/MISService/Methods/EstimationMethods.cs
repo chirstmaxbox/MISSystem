@@ -53,16 +53,18 @@ namespace MISService.Methods
                     IEnumerable<enterprise.Estimation__c> estimationList = result.records.Cast<enterprise.Estimation__c>();
 
                     //show results
+                    ServiceMethods sm = new ServiceMethods();
                     foreach (var el in estimationList)
                     {
                         GetAllItems(el.Id, estRevID);
+                        sm.GetAllServices(el.Id, estRevID);
                     }
-                    LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done");
+                    LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetAllCompanies:Error:" + e.Message);
+                LogMethods.Log.Error("GetEstimation:Error:" + e.Message);
             }
         }
 
@@ -122,12 +124,12 @@ namespace MISService.Methods
                              il.PC_s__c, il.PC1_s__c, il.PC2_s__c, il.PC3_s__c);
 
                     }
-                    LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done");
+                    LogMethods.Log.Debug("GetAllItems:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetAllCompanies:Error:" + e.Message);
+                LogMethods.Log.Error("GetAllItems:Error:" + e.Message);
             }
         }
 
@@ -265,17 +267,6 @@ namespace MISService.Methods
                 _db.SaveChanges();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

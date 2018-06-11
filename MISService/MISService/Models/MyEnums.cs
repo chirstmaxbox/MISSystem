@@ -14,6 +14,8 @@ namespace MISService.Models
         public static string Customer_Contact = "CUSTOMER_CONTACT";
         public static string Sales_JobMasterList_Customer = "Sales_JobMasterList_Customer";
         public static string EST_Item = "EST_Item";
+        public static string Est_Service = "Est_Service";
+        public static string Sales_Dispatching_DrawingRequisition_EstimationItem = "Sales_Dispatching_DrawingRequisition_EstimationItem";
     }
 
     public class SalesType
@@ -49,6 +51,20 @@ namespace MISService.Models
     {
         public const string Indoor = "Indoor";
         public const string Outdoor = "Outdoor";
+    }
+
+    public class DrawingType
+    {
+        public const string Graphic = "Graphic";
+        public const string Structure = "Structure";
+    }
+
+    public class DrawingPurpose
+    {
+        public const string Estimation_Drawing = "Estimation Drawing";
+        public const string Permit_Drawing = "Permit Drawing";
+        public const string Workorder_Drawing = "Work-Order Drawing";
+        public const string Concept_Design = "Concept Design";
     }
 
     public class BusinessObjectEN
