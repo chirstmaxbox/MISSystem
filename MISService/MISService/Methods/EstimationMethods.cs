@@ -2,6 +2,7 @@
 using MISService.Method;
 using MISService.Models;
 using SpecDomain.BLL.EstItem;
+using SpecDomain.BLL.Task;
 using SpecDomain.Model;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace MISService.Methods
             header.sessionId = SalesForceMethods.sessionId;
         }
 
-        public void GetEstimation(string sfProjectID, int estRevID)
+        public void GetEstimation(string sfProjectID, int estRevID, int jobID)
         {
             try
             {
@@ -39,7 +40,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query =  "SELECT Id, Name FROM Estimation__c where Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name FROM Estimation__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -48,6 +49,9 @@ namespace MISService.Methods
                         null, //mruheader
                         null, //packageversion
                         query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
 
                     //cast query results
                     IEnumerable<enterprise.Estimation__c> estimationList = result.records.Cast<enterprise.Estimation__c>();
@@ -58,6 +62,7 @@ namespace MISService.Methods
                     {
                         GetAllItems(el.Id, estRevID);
                         sm.GetAllServices(el.Id, estRevID);
+                        GetApprovalData(el.Id, jobID, estRevID);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
                 }
@@ -65,6 +70,55 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetEstimation:Error:" + e.Message);
+            }
+        }
+
+        public void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID)
+        {
+            try
+            {
+                var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201).FirstOrDefault();
+                if (sales_Dispatching == null)
+                {
+                    //create service client to call API endpoint
+                    using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                    {
+                        string query = "SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstance where TargetObjectId = '" + sfEstimaitonID + "'" + " order by CompletedDate desc limit 1";
+
+                        enterprise.QueryResult result;
+                        queryClient.query(
+                            header, //sessionheader
+                            null, //queryoptions
+                            null, //mruheader
+                            null, //packageversion
+                            query, out result);
+
+                        /* if no any record, return */
+                        if (result.size == 0) return;
+
+                        //cast query results
+                        IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
+
+                        //show results
+                        foreach (var el in processInstanceList)
+                        {
+                            if (el.Status == "Approved")
+                            {
+                                string estimatorName = el.LastActor.Name;
+                                SubmitEstimationRequestVm vm = new SubmitEstimationRequestVm();
+                                vm.JobID = jobId;
+                                vm.EstRevID = estRevID;
+                                vm.Create();
+                                vm.OnEstimationSubmitted();
+                            }
+                        }
+                        LogMethods.Log.Debug("GetApprovalData:Debug:" + "Done");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
             }
         }
 
@@ -93,6 +147,9 @@ namespace MISService.Methods
                         null, //mruheader
                         null, //packageversion
                         query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

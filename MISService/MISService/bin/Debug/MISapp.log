@@ -250,3 +250,127 @@ A driving SObject type has already been set, all other entity types in the FROM 
 2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
 2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
 2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-12 10:03:32,939 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 10:03:33,345 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 10:03:33,969 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 10:17:37,447 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 10:17:37,462 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 10:17:37,743 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 10:19:36,522 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 10:19:36,537 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 10:19:36,756 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 10:25:55,758 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 10:25:55,790 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 10:25:56,070 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-12 10:29:30,586 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 10:29:30,633 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 10:29:31,086 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-12 10:51:37,032 ERROR MISService.Method.LogMethods - GetAllProjects:Error:MALFORMED_QUERY: 
+ Sync__c FROM Opportunity where 
+                              ^
+ERROR at Row:1:Column:168
+unexpected token: '<EOF>'
+2018-06-12 10:54:36,016 ERROR MISService.Method.LogMethods - GetAllProjects:Error:INVALID_FIELD: 
+Sync__c FROM Opportunity where Sync__c = 'true'
+                               ^
+ERROR at Row:1:Column:170
+value of filter criterion for field 'Sync__c' must be of type boolean and should not be enclosed in quotes
+2018-06-12 11:49:56,124 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 11:49:56,156 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 11:49:56,436 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 11:53:35,523 ERROR MISService.Method.LogMethods - GetAllQuote:Error:INVALID_FIELD: 
+SELECT Id, Name FROM Quote where Project_Name__c = '006f400000BnKJQAA3'
+                                 ^
+ERROR at Row:1:Column:34
+No such column 'Project_Name__c' on entity 'Quote'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
+2018-06-12 11:53:35,570 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-12 11:53:35,570 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-12 11:54:57,174 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 11:54:57,205 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 11:54:57,501 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 11:59:18,412 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 11:59:18,427 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 11:59:18,693 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 12:01:16,426 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 12:01:16,442 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 12:01:16,660 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 12:32:35,184 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 12:32:35,200 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 12:32:35,480 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 12:32:55,402 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 12:32:56,650 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 12:32:56,650 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 12:38:19,523 ERROR MISService.Method.LogMethods - GetApprovalData:Error:INVALID_TYPE_FOR_OPERATION: entity type ProcessInstanceHistory does not support query
+2018-06-12 12:38:19,570 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-06-12 12:38:49,241 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 12:38:49,273 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 12:38:49,522 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 12:45:17,089 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 12:45:17,105 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 12:45:17,354 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 12:46:39,161 ERROR MISService.Method.LogMethods - GetEstimation:Error:INVALID_TYPE: 
+(SELECT Status, TargetObject FROM ProcessInstance) FROM Estimation__c
+                                  ^
+ERROR at Row:1:Column:52
+Didn't understand relationship 'ProcessInstance' in FROM part of query call. If you are attempting to use a custom relationship, be sure to append the '__r' after the custom relationship name. Please reference your WSDL or the describe call for the appropriate names.
+2018-06-12 12:47:11,578 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 12:47:11,593 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 12:47:11,905 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:01:40,374 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:01:40,421 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:01:40,702 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:06:08,601 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:06:08,617 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:06:08,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:07:51,608 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:07:51,624 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:07:51,920 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:11:49,119 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:11:49,150 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:11:49,446 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:14:26,679 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:14:26,710 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:14:26,960 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:20:43,716 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:20:43,763 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:20:44,044 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:20:52,951 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 13:20:53,310 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:20:53,310 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:22:28,876 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:22:28,907 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:22:29,203 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:22:36,145 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 13:22:36,395 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:22:36,395 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:44:18,360 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:44:18,376 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:44:18,641 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:44:27,845 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 13:44:28,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:44:28,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:46:50,710 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 13:46:50,726 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 13:46:51,006 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 13:47:04,298 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 13:47:04,563 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 13:47:04,578 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:01:38,976 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 14:01:38,991 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 14:01:39,366 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 14:01:47,478 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 14:01:47,743 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:01:47,743 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:02:07,165 DEBUG MISService.Method.LogMethods - GetApprovalData:Debug:Done
+2018-06-12 14:03:33,995 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 14:03:34,026 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 14:03:34,385 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 14:03:43,089 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 14:03:43,370 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:03:43,386 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done

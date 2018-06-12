@@ -212,20 +212,22 @@ namespace SpecDomain.BLL.Task
             }
         }
 
-        
+
         public void CreateRequisitionItems()
         {
             foreach (var lkv in AvailableEstItems)
             {
                 var estItem = _db.EST_Item.Find(lkv.Key);
-                var reqItem = GetNewSalesDispatchingDrawingRequisitionEstimationItem(estItem, RequisitionID);
+                var reqItem = GetNewSalesDispatchingDrawingRequisitionEstimationItem(estItem, RequisitionID, lkv.IsChecked);
                 _db.Sales_Dispatching_DrawingRequisition_EstimationItem.Add(reqItem);
+                _db.SaveChanges();
+                lkv.Value2 = reqItem.RequisitionItemID.ToString();
             }
 
-            _db.SaveChanges();
+            //_db.SaveChanges();
         }
 
-        private Sales_Dispatching_DrawingRequisition_EstimationItem GetNewSalesDispatchingDrawingRequisitionEstimationItem(EST_Item item, int requisitionID)
+        private Sales_Dispatching_DrawingRequisition_EstimationItem GetNewSalesDispatchingDrawingRequisitionEstimationItem(EST_Item item, int requisitionID, bool isIncludedWhenPrint = true)
         {
             var reqItem = new Sales_Dispatching_DrawingRequisition_EstimationItem()
             {
@@ -236,7 +238,8 @@ namespace SpecDomain.BLL.Task
                 Qty = item.Qty.ToString(""),
                 PowerVoltage = GetPowerVoltage(item),
                 Description = item.Description,
-                IsIncludedWhenPrint =true ,
+                IsIncludedWhenPrint = isIncludedWhenPrint,
+                //IsIncludedWhenPrint =true ,
             };
             return reqItem;
         }

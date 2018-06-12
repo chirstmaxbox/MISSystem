@@ -40,7 +40,7 @@ namespace MISService.Method
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Bidding_Type__c, Bidding_Source__c,"
-                                           + " Bidding_Due_Date__c, Bidding_Remark__c FROM Opportunity";
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c FROM Opportunity where Sync__c = true";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -49,6 +49,9 @@ namespace MISService.Method
                         null, //mruheader
                         null, //packageversion
                         query, out result);
+
+                    /* if no any record, return */
+                    if(result.size == 0) return;
 
                     //cast query results
                     IEnumerable<enterprise.Opportunity> opportunityList = result.records.Cast<enterprise.Opportunity>();
@@ -102,11 +105,14 @@ namespace MISService.Method
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods();
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-//                            em.GetEstimation(opportunity.Id, estRevID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods();
-                            dm.GetAllDrawing(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            dm.GetAllDrawing(opportunity.Id, estRevID, sales_JobMasterListID);
+
+                            QuoteMethods qm = new QuoteMethods();
+                            qm.GetAllQuote(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }

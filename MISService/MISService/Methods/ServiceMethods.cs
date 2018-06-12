@@ -47,6 +47,9 @@ namespace MISService.Methods
                         null,
                         query, out result);
 
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new MyEstServiceCreate(estRevID);
                     foreach (var sl in serviceList)

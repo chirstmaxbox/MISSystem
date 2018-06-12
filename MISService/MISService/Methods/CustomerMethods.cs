@@ -195,6 +195,9 @@ namespace MISService.Methods
                         null, //packageversion
                         query, out result);
 
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
                     //cast query results
                     IEnumerable<enterprise.Bill_Quote_Ship__c> billQuoteShipList = result.records.Cast<enterprise.Bill_Quote_Ship__c>();
 

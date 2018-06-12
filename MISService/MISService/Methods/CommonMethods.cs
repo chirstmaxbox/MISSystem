@@ -40,12 +40,15 @@ namespace MISService.Methods
                     null, //packageversion
                     query, out result);
 
-                //cast query results
-                IEnumerable<enterprise.User> userList = result.records.Cast<enterprise.User>();
-                foreach (var user in userList)
+                if (result.size != 0)
                 {
-                    un = user.CommunityNickname;
-                    break;
+                    //cast query results
+                    IEnumerable<enterprise.User> userList = result.records.Cast<enterprise.User>();
+                    foreach (var user in userList)
+                    {
+                        un = user.CommunityNickname;
+                        break;
+                    }
                 }
             }
 

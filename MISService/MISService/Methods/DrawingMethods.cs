@@ -49,6 +49,9 @@ namespace MISService.Methods
                         null,
                         query, out result);
 
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
                     IEnumerable<enterprise.Drawing__c> drawingList = result.records.Cast<enterprise.Drawing__c>();
                     /* in MIS, only one drawing */
                     foreach (var dl in drawingList)
@@ -64,7 +67,7 @@ namespace MISService.Methods
 
                         if (requisitionId != 0)
                         {
-                            GetAllDrawingItems(sfProjectID, requisitionId);
+                            GetAllDrawingItems(sfProjectID, requisitionId, dl.Id);
                         }
                     }
 
@@ -77,7 +80,7 @@ namespace MISService.Methods
             }
         }
 
-        public void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID)
+        public void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string sfDrawingID)
         {
             try
             {
@@ -85,7 +88,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id FROM Item__c where Estimation_Name__r.Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Drawing_Name__c FROM Item__c where Estimation_Name__r.Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -94,6 +97,9 @@ namespace MISService.Methods
                         null, //mruheader
                         null, //packageversion
                         query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
@@ -111,6 +117,15 @@ namespace MISService.Methods
                             {
                                 var r = new MyLongKeyValueBool();
                                 r.Key = itemID;
+                                if (sfDrawingID == il.Drawing_Name__c)
+                                {
+                                    r.IsChecked = true;
+                                }
+                                else
+                                {
+                                    r.IsChecked = false;
+                                }
+                                r.Value1 = il.Id;
                                 results.Add(r);
                             }
                         }
@@ -122,6 +137,10 @@ namespace MISService.Methods
                         vm.RequisitionID = drawingRequisitionID;
                         vm.AvailableEstItems = results;
                         vm.CreateRequisitionItems();
+                        foreach (var ret in results)
+                        {
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, ret.Value1, ret.Value2);
+                        }
                     }
                     LogMethods.Log.Debug("GetAllDrawingItems:Debug:" + "Done");
                 }
@@ -131,48 +150,6 @@ namespace MISService.Methods
                 LogMethods.Log.Error("GetAllDrawingItems:Error:" + e.Message);
             }
         }
-
-        /*
-        public List<MyLongKeyValueBool> GetAllItemsOfSpecificDrawing(string sfDrawingID)
-        {
-            var results = new List<MyLongKeyValueBool>();
-            try
-            {
-                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
-                {
-                    //create SQL query statement
-                    string query = "SELECT Id FROM Item__c where Drawing_Name__c = '" + sfDrawingID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header,
-                        null,
-                        null,
-                        null,
-                        query, out result);
-
-                    IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
-                    foreach (var il in itemList)
-                    {
-                        int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id);
-                        if (itemID != 0)
-                        {
-                            var r = new MyLongKeyValueBool();
-                            r.Key = itemID;
-                            results.Add(r);
-                        }
-                    }
-                    LogMethods.Log.Debug("GetAllItemsOfSpecificDrawing:Debug:" + "Done");
-                }
-            }
-            catch (Exception e)
-            {
-                LogMethods.Log.Error("GetAllItemsOfSpecificDrawing:Error:" + e.Message);
-            }
-
-            return results;
-        }
-        */
 
         public int UpdateDrawing(int estRevID, string drawingType, string drawingPurpose, string Is_Electronic_File_From_Client_Available__c,
             string gIs_GC_Or_Designer_Drawing_Available__c, string Is_Landord_Or_Mall_Criteria_Available__c, string Is_Latest_Version_Q_D_Quotation_Avail__c,
