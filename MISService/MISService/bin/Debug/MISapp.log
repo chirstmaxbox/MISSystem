@@ -244,3 +244,9 @@ A driving SObject type has already been set, all other entity types in the FROM 
 2018-06-11 16:00:30,160 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
 2018-06-11 16:00:34,762 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
 2018-06-11 16:00:34,762 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-12 09:25:18,338 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 09:25:18,369 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 09:25:18,712 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
+2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
