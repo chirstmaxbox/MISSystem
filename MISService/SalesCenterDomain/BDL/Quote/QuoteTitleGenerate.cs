@@ -29,6 +29,7 @@ namespace SalesCenterDomain.BDL.Quote
         public int MyID
         {
             get { return _myID; }
+            set { _myID = value; }
         }
 
         public int ValidationErrorID { get; private set; }
@@ -50,11 +51,10 @@ namespace SalesCenterDomain.BDL.Quote
 
             //SerialID
             //QiDescription
-            mqi.UpdateSpecialFieldFromEstimation() ;
-          
+            mqi.UpdateSpecialFieldFromEstimation();
         }
 
-        private void GenerateTitle()
+        public void GenerateTitle()
         {
             //generate Quote Title
 
@@ -118,21 +118,26 @@ namespace SalesCenterDomain.BDL.Quote
             }
         }
 
-        private int GetNewID()
+        public int GetNewID()
         {
             const string tblName = "Sales_JobMasterList_QuoteRev";
             return SqlCommon.GetNewlyInsertedRecordID(tblName);
         }
 
 
-        private void GenerateNewItems()
+        public void GenerateNewItems()
         {
             var qItem = new QuoteItemsGenerateFromEstimation(_myID, _estRevID);
             qItem.Generate();
         }
 
+        public int GenerateNewItems(int estItemID)
+        {
+            var qItem = new QuoteItemsGenerateFromEstimation(_myID, _estRevID);
+            return qItem.Generate(estItemID);
+        }
 
-        private void GenerateNewService()
+        public void GenerateNewService()
         {
             var svc = new ServiceGenerate(_myID, "Quote", _estRevID, "EST");
             svc.insert();

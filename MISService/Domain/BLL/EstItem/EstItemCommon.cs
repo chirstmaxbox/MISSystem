@@ -133,6 +133,41 @@ namespace SpecDomain.BLL.EstItem
             return list;
         }
 
+        public static DataTable GetEstimationItems(int estRevID, int estItemID)
+        {
+            //Input: Parent ID
+            DataTable t1 = null;
+            var connectionSQL = new SqlConnection(SpecConfiguration.ConnectionString);
+            const string sqlSelectString = "SELECT * FROM [EST_Item] WHERE ([estRevID] = @estRevID AND [EstItemID] = @estItemID AND [ItemPurposeID]=0) order by [EstItemNo]";
+            var selectCommand = new SqlCommand(sqlSelectString, connectionSQL);
+            var adapter1 = new SqlDataAdapter(selectCommand);
+            var ds1 = new DataSet();
+            ds1.Tables.Clear();
+            adapter1.SelectCommand.Parameters.Add("@estRevID", SqlDbType.Int).Value = estRevID;
+            adapter1.SelectCommand.Parameters.Add("@estItemID", SqlDbType.Int).Value = estItemID;
+
+            try
+            {
+                connectionSQL.Open();
+                int rowsAffected = adapter1.Fill(ds1, "t1");
+                if (rowsAffected > 0)
+                {
+                    t1 = ds1.Tables["t1"];
+                }
+            }
+            catch (SqlException ex)
+            {
+                string errLog = ex.Message;
+
+            }
+            finally
+            {
+                connectionSQL.Close();
+            }
+
+            return t1;
+        }
+
         public static DataTable GetEstimationItems(int estRevID)
         {
             //Input: Parent ID

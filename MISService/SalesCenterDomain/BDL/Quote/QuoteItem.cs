@@ -100,11 +100,28 @@ namespace SalesCenterDomain.BDL.Quote
             DataTable tbl = EstItemCommon.GetEstimationItems(_estRevID);
             if (tbl == null) return;
 
-                foreach (DataRow row in tbl.Rows)
-                {
-                    var qi = new QuoteItemGenerateFromEstimationSingleItem(_quoteRevID, row);
-                    qi.Generate();
-                }
+            foreach (DataRow row in tbl.Rows)
+            {
+                var qi = new QuoteItemGenerateFromEstimationSingleItem(_quoteRevID, row);
+                qi.Generate();
+            }
+        }
+
+        public int Generate(int estItemID)
+        {
+            int id = 0;
+            DataTable tbl = EstItemCommon.GetEstimationItems(_estRevID, estItemID);
+            if (tbl == null) return id;
+
+
+            foreach (DataRow row in tbl.Rows)
+            {
+                var qi = new QuoteItemGenerateFromEstimationSingleItem(_quoteRevID, row);
+                qi.Generate();
+                id = qi.NewlyInsertedQuoteItemID;
+            }
+
+            return id;
         }
     }
 

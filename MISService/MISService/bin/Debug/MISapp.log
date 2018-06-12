@@ -374,3 +374,10 @@ Didn't understand relationship 'ProcessInstance' in FROM part of query call. If 
 2018-06-12 14:03:43,089 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
 2018-06-12 14:03:43,370 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
 2018-06-12 14:03:43,386 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:30:32,761 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-12 14:30:32,792 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
+2018-06-12 14:30:33,151 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
+2018-06-12 14:30:37,691 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-06-12 14:30:37,956 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:30:37,972 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-06-12 14:30:38,050 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
