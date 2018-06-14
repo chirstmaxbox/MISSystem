@@ -1,11 +1,16 @@
 ﻿using MISService.Method;
 using MISService.Models;
 using MyCommon.MyEnum;
+using ProjectDomain;
+using SalesCenterDomain.BDL;
 using SalesCenterDomain.BDL.Project;
 using SalesCenterDomain.BDL.Quote;
+using SalesCenterDomain.BDL.Service;
 using SpecDomain.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -16,7 +21,7 @@ namespace MISService.Methods
 {
     public class QuoteMethods
     {
-        private readonly SpecificationDbEntities _db = new SpecificationDbEntities();
+        private readonly ProjectModelDbEntities _db = new ProjectModelDbEntities();
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
 
@@ -38,7 +43,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name FROM Quote where OpportunityId = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name, List_Item_Name__c, List_Service_Name__c, SubTotal_Discount__c "
+                        + " FROM Quote where OpportunityId = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -57,7 +63,7 @@ namespace MISService.Methods
                     foreach (var ql in quoteList)
                     {
                         /* check if the quote exists */
-                        long quoteID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_quoteRev, ql.Id);
+                        int quoteID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_quoteRev, ql.Id);
                         if (quoteID == 0)
                         {
                             // not exist
@@ -65,26 +71,21 @@ namespace MISService.Methods
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
                             qt.GenerateTitle();
                             int quoteRevID = qt.GetNewID();
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString());
+                            quoteID = quoteRevID;
+                        }
+
+                        if (quoteID != 0)
+                        {
+                            UpdateQuote(quoteID, ql.SubTotal_Discount__c);
 
                             // generate quote items
-                            GenerateQuoteItem(ql.Id, jobID, estRevID, quoteRevID);
+                            GenerateQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
 
                             // generate services
-
-                            //Check status
-                            int vid = qt.ValidationErrorID;
-                            if (vid == 0)
-                            {
-                                var ps = new ProjectStatus(jobID);
-                                ps.ChnageTo((int)NJobStatus.qProcessing, userEmployeeID);
-                            }
-
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString());
+                            GenerateQuoteService(jobID, estRevID, quoteID, ql.List_Service_Name__c, ql.Id);
                         }
-                        else
-                        {
-                            // existed already
-                        }
+
                     }
                     LogMethods.Log.Debug("GetAllQuote:Debug:" + "Done");
                 }
@@ -95,15 +96,154 @@ namespace MISService.Methods
             }
         }
 
-        private void GenerateQuoteItem(string sfQuoteID, int jobID, int estRevID, int quoteRevID)
+        private void UpdateQuote(int quoteRevID, double? discountAmount)
+        {
+
+            var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
+            if (sales_JobMasterList_quoteRev != null)
+            {
+                if (discountAmount != null)
+                {
+                    sales_JobMasterList_quoteRev.DiscountAmount = Convert.ToDecimal(discountAmount);
+                }
+
+                _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
+                _db.SaveChanges();
+            }
+
+        }
+
+        public void GenerateQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
+        {
+            try
+            {
+                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                {
+                    string[] services = listServiceID.Split(',');
+                    /* if no any items, return */
+                    if (services.Length == 0) return;
+
+                    //create SQL query statement
+                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Id in (";
+                    foreach (string e in services)
+                    {
+                        if (!string.IsNullOrEmpty(e.Trim()))
+                        {
+                            query += "'" + e + "',";
+                        }
+                    }
+                    query = query.Remove(query.Length - 1);
+                    query += ")";
+
+                    enterprise.QueryResult result;
+                    queryClient.query(
+                        header,
+                        null,
+                        null,
+                        null,
+                        query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
+                    IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
+                    var svc = new FsService(quoteRevID, "Quote");
+                    foreach (var sl in serviceList)
+                    {
+                        long estServiceID = CommonMethods.GetMISID(TableName.Fw_Quote_Service, sl.Id, sfQuoteID);
+                        if (estServiceID == 0)
+                        {
+                            int printOrder = svc.GetQsMaxPrintOrder() + 1;
+                            svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                 sl.Service_Cost__c1 == null? "0": sl.Service_Cost__c1.ToString(),
+                                 1,
+                                 sl.Detail__c == null ? "" : sl.Detail__c,
+                                 sl.Service_Name__r.Name,
+                                 sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
+                                 printOrder
+                            );
+                            int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID);
+                        }
+                        else
+                        {
+                            UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c));
+                        }
+                        LogMethods.Log.Debug("GenerateQuoteService:Debug:" + "Done");
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GenerateQuoteService:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateQuoteService(long quoteServiceID, double? cost, string detail, string name, short qsServiceID)
+        {
+            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            {
+                string UpdateString = "UPDATE FW_QUOTE_SERVICE SET qsAmount = @qsAmount, qsAmountText = @qsAmountText, qsTitle = @qsTitle, qsDescription = @qsDescription, qsServiceID = @qsServiceID WHERE (qsID = @qsID)";
+                var UpdateCommand = new SqlCommand(UpdateString, Connection);
+                if (cost != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qsAmount", "$" + cost.ToString());
+                    UpdateCommand.Parameters.AddWithValue("@qsAmountText", "$" + cost.ToString());
+                }
+
+                if (detail != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qsDescription", detail);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qsDescription", "");
+                }
+
+                UpdateCommand.Parameters.AddWithValue("@qsTitle", name);
+                UpdateCommand.Parameters.AddWithValue("@qsServiceID", qsServiceID);
+                UpdateCommand.Parameters.Add("@qsID", quoteServiceID);
+
+                try
+                {
+                    Connection.Open();
+                    UpdateCommand.ExecuteNonQuery();
+                    LogMethods.Log.Debug("UpdateQuoteService:Debug:" + "DONE");
+                }
+                catch (SqlException ex)
+                {
+                    LogMethods.Log.Error("UpdateQuoteService:Crash:" + ex.Message);
+                }
+                finally
+                {
+                    Connection.Close();
+                }
+            }
+
+        }
+
+        private void GenerateQuoteItem(int jobID, int estRevID, int quoteRevID, string listItemID, string sfQuoteID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
+                    string[] items = listItemID.Split(',');
+                    /* if no any items, return */
+                    if (items.Length == 0) return;
+
                     //create SQL query statement
-                    string query = "SELECT Id FROM Item__c where Quote_Name__c = '" + sfQuoteID + "'";
+                    string query = "SELECT Id, Item_Name__c, Requirement__c, Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
+                    foreach (string e in items)
+                    {
+                        if(!string.IsNullOrEmpty(e.Trim())) {
+                            query += "'" + e + "',";
+                        }
+                    }
+                    query = query.Remove(query.Length - 1);
+                    query += ")";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -122,7 +262,7 @@ namespace MISService.Methods
                     //show results
                     foreach (var il in itemList)
                     {
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, il.Id);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, il.Id, sfQuoteID);
                         if (itemIDTemp == 0)
                         {
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
@@ -134,9 +274,13 @@ namespace MISService.Methods
                                 int quoteItemID = qt.GenerateNewItems(itemID);
                                 if (quoteItemID != 0)
                                 {
-                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString());
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID);
                                 }
                             }
+                        }
+                        else
+                        {
+                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
 
@@ -149,6 +293,80 @@ namespace MISService.Methods
             }
         }
 
+        private void UpdateQuoteItem(long quoteItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        {
+            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            {
+                string UpdateString = "UPDATE Quote_Item SET qiItemTitle = @qiItemTitle, supplyType = @supplyType, qiDescription = @qiDescription, "
+                               + " qiAmount = @qiAmount, qiAmountText = @qiAmountText, qiQty = @qiQty WHERE (quoteItemID = @quoteItemID)";
+                var UpdateCommand = new SqlCommand(UpdateString, Connection);
+                if (itemName != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiItemTitle", itemName);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiItemTitle", "");
+                }
+
+                int requirementID = 10;
+                var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
+                if (jobType != null)
+                {
+                    requirementID = jobType.QUOTE_SUPPLY_TYPE;
+                }
+                else
+                {
+                    LogMethods.Log.Error("UpdateEstItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                }
+                UpdateCommand.Parameters.AddWithValue("@supplyType", requirementID);
+
+                if (description != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiDescription", description);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiDescription", "");
+                }
+
+                if (itemCost != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiAmount", itemCost);
+                    UpdateCommand.Parameters.AddWithValue("@qiAmountText", "$" + itemCost);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiAmount", 0);
+                    UpdateCommand.Parameters.AddWithValue("@qiAmountText", "$" + 0);
+                }
+
+                if (quality != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiQty", quality);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiQty", 1);
+                }
+                UpdateCommand.Parameters.AddWithValue("@quoteItemID", quoteItemID);
+                    
+                try
+                {
+                    Connection.Open();
+                    UpdateCommand.ExecuteNonQuery();
+                    LogMethods.Log.Debug("UpdateQuoteItem:Debug:" + "DONE");
+                }
+                catch (SqlException ex)
+                {
+                    LogMethods.Log.Error("UpdateQuoteItem:Crash:" + ex.Message);
+                }
+                finally
+                {
+                    Connection.Close();
+                }
+            }
+        }
 
     }
 }

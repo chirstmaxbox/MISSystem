@@ -86,17 +86,77 @@ namespace MISService.Methods
             return MISID;
         }
 
+        public static int GetMISID(string tableName, string salesforceID, string salesforceParentID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int MISID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID) and ([SalesForceParentID] = @salesForceParentID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                SelectCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        MISID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetMISID:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MISID;
+        }
+
         public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             try
             {
-                string SqlSelectString = "INSERT INTO [MISSalesForceMapping] VALUES (@tableName, @salesforceID, @MISID)";
+                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID) VALUES (@tableName, @salesforceID, @MISID)";
                 var SelectCommand = new SqlCommand(SqlSelectString, Connection);
                 SelectCommand.Parameters.AddWithValue("@tableName", tableName);
                 SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
                 SelectCommand.Parameters.AddWithValue("@MISID", MISID);
+                Connection.Open();
+                SelectCommand.ExecuteNonQuery();
+                ret = true;
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("InsertToMISSalesForceMapping:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ret;
+        }
+
+        public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID, string salesforceParentID)
+        {
+            bool ret = false;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID, SalesForceParentID) VALUES (@tableName, @salesforceID, @MISID, @SalesForceParentID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                SelectCommand.Parameters.AddWithValue("@MISID", MISID);
+                SelectCommand.Parameters.AddWithValue("@SalesForceParentID", salesforceParentID);
                 Connection.Open();
                 SelectCommand.ExecuteNonQuery();
                 ret = true;

@@ -18,7 +18,7 @@ namespace MISService.Models
         public static string Sales_Dispatching_DrawingRequisition_EstimationItem = "Sales_Dispatching_DrawingRequisition_EstimationItem";
         public static string Sales_JobMasterList_quoteRev = "Sales_JobMasterList_quoteRev";
         public static string Quote_Item = "Quote_Item";
-        public static string FW_Quote_Service = "FW_QUOTE_SERVICE";
+        public static string Fw_Quote_Service = "FW_QUOTE_SERVICE";
     }
 
     public class SalesType

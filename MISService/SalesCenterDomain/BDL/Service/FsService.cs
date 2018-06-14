@@ -60,7 +60,7 @@ namespace SalesCenterDomain.BDL.Service
         }
 
         //Insert New
-        private void InsertRecord(int qsServiceID, string qsAmount, int qsQty, string qsDescription, string qsTitle,
+        public void InsertRecord(int qsServiceID, string qsAmount, int qsQty, string qsDescription, string qsTitle,
                                   string qsAmountText, int printNumber)
         {
             using (var Connection = new SqlConnection(SalesCenterConfiguration.ConnectionString))
@@ -99,7 +99,7 @@ namespace SalesCenterDomain.BDL.Service
         }
 
 
-        private int GetQsMaxPrintOrder()
+        public int GetQsMaxPrintOrder()
         {
             int max = 0;
             var ConnectionSQL = new SqlConnection(SalesCenterConfiguration.ConnectionString);
