@@ -82,17 +82,17 @@ namespace MISService.Methods
             _db.SaveChanges();
         }
 
-        private void HandleCustomerContact(int jobID, int jcID, string contactID, int customerRowID, string firstName, string lastName, string phone, int type)
+        private void HandleCustomerContact(int jobID, int jcID, string contactID, int customerRowID, string firstName, string lastName, string phone, string accountID, int type)
         {
             /* contact info */
-            int vContactID = CommonMethods.GetMISID(TableName.Customer_Contact, contactID);
+            int vContactID = CommonMethods.GetMISID(TableName.Customer_Contact, contactID, accountID);
             if (vContactID == 0)
             {
                 /* add new contact */
                 FsCustomerContact cc = new FsCustomerContact(customerRowID);
                 cc.InsertContact();
                 int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
-                CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString());
+                CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID);
                 vContactID = contact_id;
             }
 
@@ -143,7 +143,7 @@ namespace MISService.Methods
                 int jcID = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_JobMasterList_Customer);
                 int rowID = CreateCustomer(customer, jcID);
                 CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString());
-                HandleCustomerContact(misJobID, jcID, contactID, rowID, firstName, lastName, phone, type);
+                HandleCustomerContact(misJobID, jcID, contactID, rowID, firstName, lastName, phone, accountID, type);
             }
             else
             {
@@ -168,7 +168,7 @@ namespace MISService.Methods
                 Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jobID == misJobID && x.cID == customer.ROWID);
                 if (sales_JobMasterList_Customer != null)
                 {
-                    HandleCustomerContact(misJobID, sales_JobMasterList_Customer.jcID, contactID, customerID, firstName, lastName, phone, type);
+                    HandleCustomerContact(misJobID, sales_JobMasterList_Customer.jcID, contactID, customerID, firstName, lastName, phone, accountID, type);
                 }
             }
             LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done");
@@ -182,10 +182,10 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__c, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c,"
-                        + " Quoting_Company_City__c, Quoting_Company_Name__c, Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c, "
-                        + " Shipping_Company_City__c, Shipping_Company_Name__c, Shipping_Contact_Name__r.Account.Id, Shipping_Company_Postal_Code__c, Shipping_Company_Province__c, Shipping_Company_Street__c, Shipping_Contact_Name__r.FirstName, Shipping_Contact_Name__r.LastName, Shipping_Contact_Name__r.Id, Shipping_Contact_Phone__c, Shipping_Company_Country__c"         
-                        + " FROM Bill_Quote_Ship__c where Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__r.Name, Billing_Company_Name__r.Id, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c,"
+                        + " Quoting_Company_City__c, Quoting_Company_Name__r.Name, Quoting_Company_Name__r.Id,  Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c, "
+                        + " Installing_Company_City__c, Installing_Company_Name__r.Name, Installing_Company_Name__r.Id, Installing_Contact_Name__r.Account.Id, Installing_Company_Postal_Code__c, Installing_Company_Province__c, Installing_Company_Street__c, Installing_Contact_Name__r.FirstName, Installing_Contact_Name__r.LastName, Installing_Contact_Name__r.Id, Installing_Contact_Phone__c, Installing_Company_Country__c"
+                        + " FROM Bill_Quote_Install__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -199,23 +199,22 @@ namespace MISService.Methods
                     if (result.size == 0) return;
 
                     //cast query results
-                    IEnumerable<enterprise.Bill_Quote_Ship__c> billQuoteShipList = result.records.Cast<enterprise.Bill_Quote_Ship__c>();
+                    IEnumerable<enterprise.Bill_Quote_Install__c> billQuoteShipList = result.records.Cast<enterprise.Bill_Quote_Install__c>();
 
                     //show results
                     foreach (var bqs in billQuoteShipList)
                     {
-                        HandleSiteLocation(bqs.Billing_Company_Name__c, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
+                        HandleSiteLocation(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
                             bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
-                            bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Contact_Name__r.Account.Id, 1);
+                            bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
 
-                        HandleSiteLocation(bqs.Quoting_Company_Name__c, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
+                        HandleSiteLocation(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
                             bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
-                            bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Contact_Name__r.Account.Id, 2);
+                            bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
 
-                        HandleSiteLocation(bqs.Shipping_Company_Name__c, bqs.Shipping_Company_Street__c, bqs.Shipping_Company_Province__c, bqs.Shipping_Company_Postal_Code__c,
-                            bqs.Shipping_Company_City__c, bqs.Shipping_Company_Country__c, bqs.Shipping_Contact_Name__r.FirstName,
-                            bqs.Shipping_Contact_Name__r.LastName, bqs.Shipping_Contact_Phone__c, bqs.Shipping_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Shipping_Contact_Name__r.Account.Id, 3);
-
+                        HandleSiteLocation(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
+                            bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
+                            bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
                     }
                     LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done");
                 }

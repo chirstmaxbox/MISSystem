@@ -37,7 +37,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
+                    string query = "SELECT Id, Name, List_Item_Name__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
                         + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
                         + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate FROM Drawing__c where Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc limit 1";
 
@@ -67,7 +67,7 @@ namespace MISService.Methods
 
                         if (requisitionId != 0)
                         {
-                            GetAllDrawingItems(sfProjectID, requisitionId, dl.Id);
+                            GetAllDrawingItems(sfProjectID, requisitionId, dl.List_Item_Name__c, dl.Id);
                         }
                     }
 
@@ -80,15 +80,29 @@ namespace MISService.Methods
             }
         }
 
-        public void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string sfDrawingID)
+        public void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string listItemID, string sfDrawingID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
+                    if (string.IsNullOrEmpty(listItemID)) return;
+                    string[] items = listItemID.Split(',');
+                    /* if no any items, return */
+                    if (items.Length == 0) return;
+
                     //create SQL query statement
-                    string query = "SELECT Id, Drawing_Name__c FROM Item__c where Estimation_Name__r.Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Drawing_Name__c FROM Item__c where Id in (";
+                    foreach (string e in items)
+                    {
+                        if (!string.IsNullOrEmpty(e.Trim()))
+                        {
+                            query += "'" + e + "',";
+                        }
+                    }
+                    query = query.Remove(query.Length - 1);
+                    query += ")";
 
                     enterprise.QueryResult result;
                     queryClient.query(

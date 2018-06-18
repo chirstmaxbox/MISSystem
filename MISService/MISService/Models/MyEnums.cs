@@ -19,6 +19,7 @@ namespace MISService.Models
         public static string Sales_JobMasterList_quoteRev = "Sales_JobMasterList_quoteRev";
         public static string Quote_Item = "Quote_Item";
         public static string Fw_Quote_Service = "FW_QUOTE_SERVICE";
+        public static string Fw_Quote_Note = "FW_Quote_Note";
     }
 
     public class SalesType

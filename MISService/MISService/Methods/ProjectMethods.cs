@@ -105,7 +105,7 @@ namespace MISService.Method
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods();
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods();
