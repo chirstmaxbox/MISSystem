@@ -37,7 +37,7 @@ namespace MISService.Methods
             header.sessionId = SalesForceMethods.sessionId;
         }
 
-        public void GetAllQuote(string sfProjectID, int jobID, int estRevID, int userEmployeeID)
+        public void GetAllQuotes(string sfProjectID, int jobID, int estRevID, int userEmployeeID)
         {
             try
             {

@@ -20,6 +20,9 @@ namespace MISService.Models
         public static string Quote_Item = "Quote_Item";
         public static string Fw_Quote_Service = "FW_QUOTE_SERVICE";
         public static string Fw_Quote_Note = "FW_Quote_Note";
+        public static string PermitForSignPermit = "PermitForSignPermit";
+        public static string PermitLandlord = "PermitLandlord";
+        public static string PermitLandlordContact = "PermitLandlordContact";
     }
 
     public class SalesType

@@ -1,0 +1,41 @@
+D:\MIS2013\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+D:\MIS2013\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+D:\MIS2013\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+D:\MIS2013\ProjectSummaryDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS2013\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+D:\MIS2013\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb
+D:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+D:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+D:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+D:\MIS\ProjectSummaryDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+D:\MIS\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb
+F:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+F:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+F:\MIS\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+F:\MIS\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+F:\MIS\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+F:\MIS2015\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+F:\MIS2015\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb
+F:\MIS2015\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Debug\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Debug\ProjectSummaryDomain.pdb

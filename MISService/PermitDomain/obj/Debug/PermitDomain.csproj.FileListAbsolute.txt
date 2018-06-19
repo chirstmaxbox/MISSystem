@@ -1,0 +1,80 @@
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll.config
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.pdb
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\ProjectDomain.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.pdb
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\ProjectDomain.pdb
+D:\MIS\PermitApplication\PermitDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS\PermitApplication\PermitDomain\obj\Debug\PermitDomain.dll
+D:\MIS\PermitApplication\PermitDomain\obj\Debug\PermitDomain.pdb
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\MyCommon.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\MyCommon.pdb
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\EntityFramework.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.pdb
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\EntityFramework.xml
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\SalesCenterDomain.dll
+D:\MIS\PermitApplication\PermitDomain\bin\Debug\SalesCenterDomain.pdb
+D:\MIS2013\PermitApplication\PermitDomain\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll.config
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\PermitDomain.pdb
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\EntityFramework.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\MyCommon.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.pdb
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.pdb
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\MyCommon.pdb
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\EntityFramework.xml
+D:\MIS2013\PermitApplication\PermitDomain\obj\Debug\PermitDomain.dll
+D:\MIS2013\PermitApplication\PermitDomain\obj\Debug\PermitDomain.pdb
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.dll
+D:\MIS2013\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll.config
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\PermitDomain.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\EntityFramework.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\MyCommon.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.dll
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\MyCommon.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.pdb
+F:\MIS\PermitApplication\PermitDomain\bin\Debug\EntityFramework.xml
+F:\MIS\PermitApplication\PermitDomain\obj\Debug\PermitDomain.csprojResolveAssemblyReference.cache
+F:\MIS\PermitApplication\PermitDomain\obj\Debug\PermitDomain.dll
+F:\MIS\PermitApplication\PermitDomain\obj\Debug\PermitDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\obj\Debug\PermitDomain.csprojResolveAssemblyReference.cache
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\obj\Debug\PermitDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\obj\Debug\PermitDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll.config
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\PermitDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\PermitDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\EntityFramework.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\MyCommon.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.dll
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\CustomerDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\EmployeeDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\MyCommon.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\ProjectSummaryDomain.pdb
+C:\Forward Signs MIS\SourceCode\MIS2015\PermitApplication\PermitDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\obj\Debug\PermitDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\obj\Debug\PermitDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\obj\Debug\PermitDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\PermitDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\PermitDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\PermitDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\CustomerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\ProjectSummaryDomain.pdb

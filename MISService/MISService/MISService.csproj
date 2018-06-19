@@ -68,6 +68,7 @@
     <Compile Include="Methods\EstimationMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />
+    <Compile Include="Methods\PermitMethods.cs" />
     <Compile Include="Methods\ProjectMethods.cs" />
     <Compile Include="Methods\QuoteMethods.cs" />
     <Compile Include="Methods\SalesForceMethods.cs" />
@@ -492,9 +493,17 @@
       <Project>{661dcd9d-aaef-40bf-bc9a-290693d1df2d}</Project>
       <Name>MyCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PermitDomain\PermitDomain.csproj">
+      <Project>{d4c04c72-c3bf-46b8-9c67-dadc1a6834f4}</Project>
+      <Name>PermitDomain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectDomain\ProjectDomain.csproj">
       <Project>{4556e56e-cea0-48d2-be5a-1fb7a10fa7d0}</Project>
       <Name>ProjectDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectSummaryDomain\ProjectSummaryDomain.csproj">
+      <Project>{06a4c396-e3a3-41bd-9f47-fd77a5354aec}</Project>
+      <Name>ProjectSummaryDomain</Name>
     </ProjectReference>
     <ProjectReference Include="..\SalesCenterDomain\SalesCenterDomain.csproj">
       <Project>{32a698e1-a626-4bb6-a29e-f13ded93f7cb}</Project>

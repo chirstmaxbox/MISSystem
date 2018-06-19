@@ -120,3 +120,7 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\obj\Debug\MISSer
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\obj\Debug\MISService.MyMISService.resources
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\obj\Debug\MISService.ProjectInstaller.resources
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\obj\Debug\MISService.csproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\PermitDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\PermitDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\ProjectSummaryDomain.pdb

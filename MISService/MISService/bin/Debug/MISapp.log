@@ -669,3 +669,31 @@ Didn't understand relationship 'Note' in FROM part of query call. If you are att
 2018-06-18 16:47:15,483 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
 2018-06-18 16:47:15,530 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
 2018-06-18 16:47:15,530 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
+2018-06-19 11:46:33,555 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-19 11:46:35,318 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
+2018-06-19 11:48:53,316 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:48:53,316 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:48:53,331 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:48:53,331 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
+2018-06-19 11:48:53,597 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-06-19 11:48:53,597 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
+2018-06-19 11:48:53,612 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-06-19 11:48:53,612 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
+2018-06-19 11:49:52,830 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
+2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-19 11:51:58,229 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-19 11:51:58,977 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
+2018-06-19 11:52:27,026 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:52:27,026 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:52:27,042 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-06-19 11:52:27,042 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
+2018-06-19 11:52:27,619 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-06-19 11:52:27,619 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
+2018-06-19 11:52:27,635 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-06-19 11:52:27,635 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
+2018-06-19 11:52:40,224 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
+2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done

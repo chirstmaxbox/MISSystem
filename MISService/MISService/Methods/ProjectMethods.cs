@@ -112,7 +112,7 @@ namespace MISService.Method
 //                            dm.GetAllDrawing(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             QuoteMethods qm = new QuoteMethods();
-                            qm.GetAllQuote(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }

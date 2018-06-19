@@ -30,7 +30,7 @@ namespace MISService.Methods
             header.sessionId = SalesForceMethods.sessionId;
         }
 
-        public void GetAllDrawing(string sfProjectID, int estRevID, int jobID)
+        public void GetAllDrawings(string sfProjectID, int estRevID, int jobID)
         {
             try
             {

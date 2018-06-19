@@ -1,0 +1,9 @@
+F:\MIS2015\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll.config
+F:\MIS2015\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.pdb
+F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.SqlServer.dll
+F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.xml
+F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.SqlServer.xml
+F:\MIS2015\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.dll
+F:\MIS2015\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.pdb
