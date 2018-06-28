@@ -39,8 +39,8 @@ namespace MISService.Method
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Bidding_Type__c, Bidding_Source__c,"
-                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c FROM Opportunity where Sync__c = true";
+                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Issue_Date__c, Type, OwnerId, Bidding_Type__c, Bidding_Source__c,"
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c FROM Opportunity where Sync__c = true and CloseDate >= TODAY"; 
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -99,17 +99,17 @@ namespace MISService.Method
 
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods();
-//                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done " + opportunity.Project_Number__c);
                             
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods();
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods();
-//                            dm.GetAllDrawing(opportunity.Id, estRevID, sales_JobMasterListID);
+                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             QuoteMethods qm = new QuoteMethods();
                             qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);

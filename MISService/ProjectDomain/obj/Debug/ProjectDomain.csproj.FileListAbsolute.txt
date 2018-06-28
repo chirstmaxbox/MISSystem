@@ -82,3 +82,4 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\bin\Debug\Pro
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\bin\Debug\ProjectDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\obj\Debug\ProjectDomain.csprojResolveAssemblyReference.cache

@@ -37,7 +37,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Estimation_Name__c = '" + sfEstimation + "'";
+                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Estimation_Name__c = '" + sfEstimation + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -59,20 +59,34 @@ namespace MISService.Methods
                         if (estServiceID == 0)
                         {
                             // new service
-                            svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
-                                 "$" + sl.Service_Cost__c1.ToString(),
-                                 1,
-                                 sl.Detail__c == null ? "" : sl.Detail__c,
-                                 sl.Service_Name__r.Name,
-                                 "$" + sl.Service_Cost__c1.ToString(),
-                                 printOrder
-                            );
+                            if (sl.Service_Cost__c1 != null && sl.Service_Cost__c1 > 0)
+                            {
+                                svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                     "$" + sl.Service_Cost__c1.ToString(),
+                                     1,
+                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Name__r.Name,
+                                     "$" + sl.Service_Cost__c1.ToString(),
+                                     printOrder
+                                );
+                            }
+                            else
+                            {
+                                svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                     sl.Note__c,
+                                     1,
+                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Name__r.Name,
+                                     sl.Note__c,
+                                     printOrder
+                                );
+                            }
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Est_Service);
                             CommonMethods.InsertToMISSalesForceMapping(TableName.Est_Service, sl.Id, qs_id.ToString());
                         }
                         else
                         {
-                            UpdateEstService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c));
+                            UpdateEstService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
                         }
 
                         LogMethods.Log.Debug("GetAllServices:Debug:" + "Done");
@@ -86,20 +100,20 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateEstService(long estServiceID, double? cost, string detail, string name, short qsServiceID)
+        private void UpdateEstService(long estServiceID, double? cost, string detail, string name, short qsServiceID, string note)
         {
             var service = _db.EST_Service.Find(estServiceID);
             if (service != null)
             {
-                if (cost != null)
+                if (cost != null && cost > 0)
                 {
                     service.qsAmount = "$" + cost.ToString();
                     service.qsAmountText = "$" + cost.ToString();
                 }
                 else
                 {
-                    service.qsAmount = "$0";
-                    service.qsAmountText = "$0";
+                    service.qsAmount = note;
+                    service.qsAmountText = note;
                 }
 
                 service.qsTitle = name;

@@ -8,6 +8,7 @@ using SalesCenterDomain.BDL.Project;
 using SalesCenterDomain.BDL.Quote;
 using SalesCenterDomain.BDL.Service;
 using SalesCenterDomain.BLL;
+using SalesCenterDomain.BO;
 using SpecDomain.Model;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,9 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status, List_Item_Name__c, List_Service_Name__c, SubTotal_Discount__c, "
-                        + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c "
-                        + " FROM Quote where OpportunityId = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status, List_Item_Name__c, List_Service_Name__c, SubTotal__c, SubTotal_Discount__c, "
+                        + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
+                        + " Tax_Option__c, Tax_Rate__c FROM Quote where OpportunityId = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -80,7 +81,7 @@ namespace MISService.Methods
 
                         if (quoteID != 0)
                         {
-                            UpdateQuote(quoteID, ql.SubTotal_Discount__c);
+                            UpdateQuote(quoteID, ql.SubTotal__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
 
                             // generate quote items
                             GenerateQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
@@ -267,7 +268,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuote(int quoteRevID, double? discountAmount)
+        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, string taxRate)
         {
 
             var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
@@ -276,6 +277,38 @@ namespace MISService.Methods
                 if (discountAmount != null)
                 {
                     sales_JobMasterList_quoteRev.DiscountAmount = Convert.ToDecimal(discountAmount);
+                }
+
+                if (version != null)
+                {
+                    sales_JobMasterList_quoteRev.quoteRev = Convert.ToByte(version);
+                }
+
+                switch (taxOption)
+                {
+                    case "HST":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HST;
+                        break;
+                    case "HST-BC":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HstBC;
+                        break;
+                    case "GST Only":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstOnly;
+                        break;
+                    case "GST & PST":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstAndPst;
+                        break;
+                    case "Manually":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.Manually;
+                        if(subTotal != null && discountAmount != null) {
+                            sales_JobMasterList_quoteRev.pstAmount = Convert.ToDecimal((subTotal - discountAmount) * Convert.ToInt16(taxRate) * 0.01);
+                        }
+                        break;
+                    case "No Tax":
+                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.NoTax;
+                        break;
+                    default:
+                        break;
                 }
 
                 _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
@@ -296,7 +329,7 @@ namespace MISService.Methods
                     if (services.Length == 0) return;
 
                     //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Id in (";
+                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Id in (";
                     foreach (string e in services)
                     {
                         if (!string.IsNullOrEmpty(e.Trim()))
@@ -326,20 +359,34 @@ namespace MISService.Methods
                         if (estServiceID == 0)
                         {
                             int printOrder = svc.GetQsMaxPrintOrder() + 1;
-                            svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
-                                 sl.Service_Cost__c1 == null? "0": sl.Service_Cost__c1.ToString(),
-                                 1,
-                                 sl.Detail__c == null ? "" : sl.Detail__c,
-                                 sl.Service_Name__r.Name,
-                                 sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
-                                 printOrder
-                            );
+                            if (sl.Service_Cost__c1 != null && sl.Service_Cost__c1 > 0)
+                            {
+                                svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                     sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
+                                     1,
+                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Name__r.Name,
+                                     sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
+                                     printOrder
+                                );
+                            }
+                            else
+                            {
+                                svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                    sl.Note__c,
+                                    1,
+                                    sl.Detail__c == null ? "" : sl.Detail__c,
+                                    sl.Service_Name__r.Name,
+                                    sl.Note__c,
+                                    printOrder
+                               );
+                            }
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
                             CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID);
                         }
                         else
                         {
-                            UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c));
+                            UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
                         }
                         LogMethods.Log.Debug("GenerateQuoteService:Debug:" + "Done");
                     }
@@ -352,16 +399,21 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuoteService(long quoteServiceID, double? cost, string detail, string name, short qsServiceID)
+        private void UpdateQuoteService(long quoteServiceID, double? cost, string detail, string name, short qsServiceID, string note)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
                 string UpdateString = "UPDATE FW_QUOTE_SERVICE SET qsAmount = @qsAmount, qsAmountText = @qsAmountText, qsTitle = @qsTitle, qsDescription = @qsDescription, qsServiceID = @qsServiceID WHERE (qsID = @qsID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
-                if (cost != null)
+                if (cost != null && cost > 0)
                 {
                     UpdateCommand.Parameters.AddWithValue("@qsAmount", "$" + cost.ToString());
                     UpdateCommand.Parameters.AddWithValue("@qsAmountText", "$" + cost.ToString());
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qsAmount", note);
+                    UpdateCommand.Parameters.AddWithValue("@qsAmountText", note);
                 }
 
                 if (detail != null)
@@ -408,7 +460,7 @@ namespace MISService.Methods
                     if (items.Length == 0) return;
 
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
+                    string query = "SELECT Id, Item_Name__c, Requirement__c, Quote_Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
                     foreach (string e in items)
                     {
                         if(!string.IsNullOrEmpty(e.Trim())) {
@@ -453,7 +505,7 @@ namespace MISService.Methods
                         }
                         else
                         {
-                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Quote_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
 
