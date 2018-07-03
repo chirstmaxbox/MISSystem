@@ -977,3 +977,18 @@ Didn't understand relationship 'Note' in FROM part of query call. If you are att
 2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
 2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
 2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-03 14:24:09,028 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-03 14:28:14,180 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-03 14:29:01,533 ERROR MISService.Method.LogMethods - GetAllWorkOrders:Error:INVALID_FIELD: 
+Clone_Type__c  FROM Work_Order__c where OpportunityId = '006f400000BoNGSAA3'
+                                        ^
+ERROR at Row:1:Column:156
+No such column 'OpportunityId' on entity 'Work_Order__c'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
+2018-07-03 14:29:01,552 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-07-03 14:29:01,552 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-03 14:29:42,759 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-03 14:31:45,873 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-03 14:51:07,377 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-03 14:54:07,873 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2018-07-03 14:54:07,874 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-07-03 14:54:07,874 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done

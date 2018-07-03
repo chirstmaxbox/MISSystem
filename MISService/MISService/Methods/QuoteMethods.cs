@@ -542,7 +542,7 @@ namespace MISService.Methods
                 }
                 else
                 {
-                    LogMethods.Log.Error("UpdateEstItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    LogMethods.Log.Error("UpdateQuoteItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
                 }
                 UpdateCommand.Parameters.AddWithValue("@supplyType", requirementID);
 

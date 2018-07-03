@@ -25,6 +25,8 @@ namespace MISService.Models
         public static string PermitLandlordContact = "PermitLandlordContact";
         public static string PermitForHoisting = "PermitForHoisting";
         public static string PermitForStakeout = "PermitForStakeout";
+        public static string Sales_JobMasterList_WO = "Sales_JobMasterList_WO";
+        public static string WO_Item = "WO_Item";
     }
 
     public class SalesType

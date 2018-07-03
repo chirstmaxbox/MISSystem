@@ -134,9 +134,8 @@ namespace SalesCenterDomain.BDL.Workorder
             var wr = new WorkorderNumberRegisterToNew(WoID);
             wr.Register();
 
-
             //3. Generate Workorder Itme
-            CreateNewWorkorderItems();
+            //CreateNewWorkorderItems();
         }
 
 
@@ -311,6 +310,7 @@ namespace SalesCenterDomain.BDL.Workorder
     public class WokrorderItemGenerateFromBlank
     {
         private readonly int _woID;
+        public int NewWorkItemID { get; set; }
 
         public WokrorderItemGenerateFromBlank(int woID)
         {
@@ -359,9 +359,9 @@ namespace SalesCenterDomain.BDL.Workorder
         {
             InsertWorkorderItem();
             int newWoItemID = SqlCommon.GetNewlyInsertedRecordID("WO_Item");
+            NewWorkItemID = newWoItemID;
             GenerateSerialID(newWoItemID);
         }
-
 
         private void InsertWorkorderItem()
         {

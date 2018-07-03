@@ -114,9 +114,12 @@ namespace MISService.Method
 //                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             PermitMethods pm = new PermitMethods();
-                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+//                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+//                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+//                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+
+                            WorkOrderMethods wo = new WorkOrderMethods();
+                            wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }
