@@ -4,6 +4,7 @@ using System.Linq;
 using CustomerDomain.BLL;
 using MyCommon;
 using PermitDomain.Model;
+using System.Data.Entity;
 
 
 namespace PermitDomain.BLL

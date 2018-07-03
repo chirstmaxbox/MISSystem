@@ -950,3 +950,30 @@ Didn't understand relationship 'Note' in FROM part of query call. If you are att
 2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
 2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
 2018-06-28 15:58:19,021 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-06-29 10:40:33,121 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 10:50:14,593 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 10:57:19,101 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 10:59:17,459 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-29 15:02:37,091 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 15:02:58,400 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-29 15:10:42,345 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 15:10:48,897 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 15:13:47,081 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 15:13:52,634 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 15:15:22,880 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 15:15:47,092 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-06-29 15:58:21,113 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-06-29 15:58:27,587 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-06-29 15:58:28,491 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using PermitDomain.Model;
+using System.Data.Entity;
 
 namespace PermitDomain.BLL
 {

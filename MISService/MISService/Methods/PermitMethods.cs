@@ -75,9 +75,9 @@ namespace MISService.Methods
                         if (sign_permitID != 0)
                         {
                             HandleLandlord(sp.Id, sp.LandLord_Name__r.Street__c, sp.LandLord_Name__r.City__c, sp.LandLord_Name__r.Province__c, sp.LandLord_Name__r.Postal_Code__c,
-                                sp.LandLord_Name__r.Name, sp.LandLord_Name__r.Phone_Number__c);
+                                sp.LandLord_Name__r.Name, sp.LandLord_Phone_Number__c);
 
-                            UpdateSignPermit(sign_permitID, sp.Number_of_Signs__c, sp.Project_Value_Estimated__c, sp.Issue_Date__c, sp.Due_Date__c, sp.Remarks__c);
+                            UpdateSignPermit(sp.Id, sign_permitID, sp.Number_of_Signs__c, sp.Project_Value_Estimated__c, sp.Issue_Date__c, sp.Due_Date__c, sp.Remarks__c);
                         }
 
                     }
@@ -156,13 +156,261 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateSignPermit(int sign_permitID, double? numOfSigns, double? proValueEstimated, DateTime? issue, DateTime? due, string remarks)
+        private void UpdateSignPermit(string sfLandlordID, int sign_permitID, double? numOfSigns, double? proValueEstimated, DateTime? issueDate, DateTime? dueDate, string remarks)
         {
+            int landlordID = CommonMethods.GetMISID(TableName.PermitLandlord, sfLandlordID);
+            int landlordContactID = CommonMethods.GetMISID(TableName.PermitLandlordContact, sfLandlordID);
+
             var item = _db.PermitForSignPermits.Where(x => x.AppID == sign_permitID).FirstOrDefault();
             if (item != null)
             {
-                
+                if (numOfSigns != null)
+                {
+                    item.NumberOfSigns = numOfSigns;
+                }
+                if (proValueEstimated != null)
+                {
+                    item.ProjectValueEstimated = proValueEstimated;
+                }
+                if (landlordID != 0)
+                {
+                    item.LandlordID = landlordID;
+                }
+                if (landlordContactID != 0)
+                {
+                    item.LandlordContactID = landlordContactID;
+                }
+
+                _db.Entry(item).State = EntityState.Modified;
+                _db.SaveChanges();
+
+                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                if (baseItem != null)
+                {
+                    if (issueDate != null)
+                    {
+                        baseItem.RequestDate = (DateTime)issueDate;
+                    }
+                    if (dueDate != null)
+                    {
+                        baseItem.Deadline = (DateTime)dueDate;
+                    }
+                    baseItem.Remark = remarks;
+
+                    _db.Entry(baseItem).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
             }
         }
+
+
+        public void GetAllHoistingPermits(string sfProjectID, int jobID, int userEmployeeID)
+        {
+            try
+            {
+                //create service client to call API endpoint
+                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                {
+                    //create SQL query statement
+                    string query = "SELECT Id, Occupation_Start_Time__c, Occupation_End_Time__c, Issue_Date__c, Type_Of_Truck__c, "
+                        + " Truck_Weight__c, Foreman_Name__c, Foreman_Phone__c, Remarks__c "
+                        + " FROM Hoisting_Permit__c where Project_Name__c = '" + sfProjectID + "'";
+
+                    enterprise.QueryResult result;
+                    queryClient.query(
+                        header, //sessionheader
+                        null, //queryoptions
+                        null, //mruheader
+                        null, //packageversion
+                        query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
+                    //cast query results
+                    IEnumerable<enterprise.Hoisting_Permit__c> hoistingPermitList = result.records.Cast<enterprise.Hoisting_Permit__c>();
+
+                    foreach (var sp in hoistingPermitList)
+                    {
+                        int hoisting_permitID = CommonMethods.GetMISID(TableName.PermitForHoisting, sp.Id);
+                        if (hoisting_permitID == 0)
+                        {
+                            CreatePermit cpa = new CreatePermit(userEmployeeID, jobID, 30, 0);
+                            cpa.Create();
+                            int id = cpa.NewlyInsertedID;
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForHoisting, sp.Id, id.ToString());
+                            hoisting_permitID = id;
+                        }
+
+                        if (hoisting_permitID != 0)
+                        {
+                            UpdateHoistingPermit(hoisting_permitID, sp.Issue_Date__c, sp.Occupation_Start_Time__c, sp.Occupation_End_Time__c, sp.Type_Of_Truck__c,
+                                sp.Truck_Weight__c, sp.Foreman_Name__c, sp.Foreman_Phone__c, sp.Remarks__c);
+                        }
+
+                    }
+                    LogMethods.Log.Debug("GetAllHoistingPermits:Debug:" + "Done");
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetAllHoistingPermits:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateHoistingPermit(int hoist_PermitID, DateTime? issueDate, DateTime? startTime, DateTime? endTime, string truckType, string weight,
+            string foremanName, string foremanPhone, string remark)
+        {
+            var item = _db.PermitForHoistings.Where(x => x.AppID == hoist_PermitID).FirstOrDefault();
+            if (item != null)
+            {
+                if (startTime != null)
+                {
+                    var localTime = startTime.Value.ToLocalTime();
+                    item.OccupationDate = localTime;
+                    item.OccupationTimeStart = localTime.ToString("hh:mm tt");
+                }
+                if (endTime != null)
+                {
+                    var localTime = endTime.Value.ToLocalTime();
+                    item.OccupationTimeEnd = localTime.ToString("hh:mm tt");
+                }
+
+                switch (truckType)
+                {
+                    case "Boom Truck 40'":
+                        item.TypeOfTruck = 3;
+                        break;
+                    case "Boom Truck 50'":
+                        item.TypeOfTruck = 4;
+                        break;
+                    case "Boom Truck 85'":
+                        item.TypeOfTruck = 5;
+                        break;
+                    case "Lader Van":
+                        item.TypeOfTruck = 2;
+                        break;
+                    case "Pickup Truck":
+                        item.TypeOfTruck = 1;
+                        break;
+                    case "Scissor Lift Only":
+                        item.TypeOfTruck = 6;
+                        break;
+                    default:
+                        item.TypeOfTruck = 0;
+                        break;
+                }
+
+                item.Tonnage = weight;
+                item.ForemanName = foremanName;
+                item.ForemanPhone = foremanPhone;
+
+                _db.Entry(item).State = EntityState.Modified;
+                _db.SaveChanges();
+
+                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                if (baseItem != null)
+                {
+                    if (issueDate != null)
+                    {
+                        if (issueDate != null)
+                        {
+                            baseItem.RequestDate = (DateTime)issueDate;
+                        }
+                    }
+                    baseItem.Remark = remark;
+
+                    _db.Entry(baseItem).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+        }
+
+
+        public void GetAllStakeOutPermits(string sfProjectID, int jobID, int userEmployeeID)
+        {
+            try
+            {
+                //create service client to call API endpoint
+                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                {
+                    //create SQL query statement
+                    string query = "SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c "
+                        + " FROM StakeOut_Permit__c where Project_Name__c = '" + sfProjectID + "'";
+
+                    enterprise.QueryResult result;
+                    queryClient.query(
+                        header, //sessionheader
+                        null, //queryoptions
+                        null, //mruheader
+                        null, //packageversion
+                        query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
+
+                    //cast query results
+                    IEnumerable<enterprise.StakeOut_Permit__c> stakeoutPermitList = result.records.Cast<enterprise.StakeOut_Permit__c>();
+
+                    foreach (var sp in stakeoutPermitList)
+                    {
+                        int stakeout_permitID = CommonMethods.GetMISID(TableName.PermitForStakeout, sp.Id);
+                        if (stakeout_permitID == 0)
+                        {
+                            CreatePermit cpa = new CreatePermit(userEmployeeID, jobID, 20, 0);
+                            cpa.Create();
+                            int id = cpa.NewlyInsertedID;
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForStakeout, sp.Id, id.ToString());
+                            stakeout_permitID = id;
+                        }
+
+                        if (stakeout_permitID != 0)
+                        {
+                            UpdateStakeOutPermit(stakeout_permitID, sp.Stick_Position_Radius__c, sp.Dept_Of_Holes__c, sp.Issue_Date__c,
+                                sp.Due_Date__c, sp.Remarks__c);
+                        }
+
+                    }
+                    LogMethods.Log.Debug("GetAllStakeOutPermits:Debug:" + "Done");
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetAllStakeOutPermits:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateStakeOutPermit(int stakeout_permitID, string Stick_Position_Radius, string Dept_Of_Holes, DateTime? issueDate, 
+            DateTime? dueDate, string remark)
+        {
+            var item = _db.PermitForStakeouts.Where(x => x.AppID == stakeout_permitID).FirstOrDefault();
+            if (item != null)
+            {
+                item.DeptOfHoles = Dept_Of_Holes;
+                item.WayofPointLocation = Stick_Position_Radius;
+
+                _db.Entry(item).State = EntityState.Modified;
+                _db.SaveChanges();
+
+                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                if (baseItem != null)
+                {
+                    if (issueDate != null)
+                    {
+                        baseItem.RequestDate = (DateTime)issueDate;
+                    }
+                    if (dueDate != null)
+                    {
+                        baseItem.Deadline = (DateTime)dueDate;
+                    }
+                    baseItem.Remark = remark;
+
+                    _db.Entry(baseItem).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+
+            }
+        }
+
     }
 }

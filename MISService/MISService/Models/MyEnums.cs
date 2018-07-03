@@ -23,6 +23,8 @@ namespace MISService.Models
         public static string PermitForSignPermit = "PermitForSignPermit";
         public static string PermitLandlord = "PermitLandlord";
         public static string PermitLandlordContact = "PermitLandlordContact";
+        public static string PermitForHoisting = "PermitForHoisting";
+        public static string PermitForStakeout = "PermitForStakeout";
     }
 
     public class SalesType

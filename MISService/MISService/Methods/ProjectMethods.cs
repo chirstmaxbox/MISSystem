@@ -99,20 +99,24 @@ namespace MISService.Method
 
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods();
-                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            LogMethods.Log.Debug("GetAllCompanies:Debug:" + "Done " + opportunity.Project_Number__c);
+//                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods();
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods();
-                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             QuoteMethods qm = new QuoteMethods();
-                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+//                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+
+                            PermitMethods pm = new PermitMethods();
+                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }

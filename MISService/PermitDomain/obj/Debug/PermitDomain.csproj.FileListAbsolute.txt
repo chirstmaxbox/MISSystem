@@ -78,3 +78,7 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\Cust
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EmployeeDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\MyCommon.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EntityFramework.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\PermitDomain\bin\Debug\EntityFramework.SqlServer.xml
