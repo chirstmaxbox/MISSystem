@@ -27,8 +27,9 @@ namespace MISService.Methods
         private readonly ProjectModelDbEntities _db = new ProjectModelDbEntities();
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
+        private string salesForceProjectID;
 
-        public QuoteMethods()
+        public QuoteMethods(string salesForceProjectID)
         {
             //set query endpoint to value returned by login request
             apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
@@ -36,6 +37,7 @@ namespace MISService.Methods
             //instantiate session header object and set session id
             header = new enterprise.SessionHeader();
             header.sessionId = SalesForceMethods.sessionId;
+            this.salesForceProjectID = salesForceProjectID;
         }
 
         public void GetAllQuotes(string sfProjectID, int jobID, int estRevID, int userEmployeeID)
@@ -67,7 +69,7 @@ namespace MISService.Methods
                     foreach (var ql in quoteList)
                     {
                         /* check if the quote exists */
-                        int quoteID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_quoteRev, ql.Id);
+                        int quoteID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_quoteRev, ql.Id, salesForceProjectID);
                         if (quoteID == 0)
                         {
                             // not exist
@@ -75,7 +77,7 @@ namespace MISService.Methods
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
                             qt.GenerateTitle();
                             int quoteRevID = qt.GetNewID();
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString());
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString(), salesForceProjectID);
                             quoteID = quoteRevID;
                         }
 
@@ -83,14 +85,14 @@ namespace MISService.Methods
                         {
                             UpdateQuote(quoteID, ql.SubTotal__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
 
-                            // generate quote items
-                            GenerateQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
+                            // handle quote items
+                            HandleQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
 
-                            // generate services
-                            GenerateQuoteService(jobID, estRevID, quoteID, ql.List_Service_Name__c, ql.Id);
+                            // handle services
+                            HandleQuoteService(jobID, estRevID, quoteID, ql.List_Service_Name__c, ql.Id);
 
-                            // generate notes
-                            GenerateNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes);
+                            // handle notes
+                            HandleNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes, ql.Id);
 
                             if (ql.Status == "Accepted")
                             {
@@ -157,25 +159,80 @@ namespace MISService.Methods
             }
         }
 
-        public void GenerateNotes(int jobID, int estRevID, int quoteRevID, enterprise.QueryResult result)
+        public void HandleNotes(int jobID, int estRevID, int quoteRevID, enterprise.QueryResult result, string sfQuoteID)
         {
             if(result != null) {
 
                 IEnumerable<enterprise.AttachedContentNote> quoteList = result.records.Cast<enterprise.AttachedContentNote>();
+                List<string> notes = new List<string>();
                 foreach (var q in quoteList)
                 {
-                    int noteID = CommonMethods.GetMISID(TableName.Fw_Quote_Note, q.Id);
+                    notes.Add(q.Id);
+                    int noteID = CommonMethods.GetMISID(TableName.Fw_Quote_Note, q.Id, sfQuoteID, salesForceProjectID);
                     if(noteID == 0) {
                         QuoteNoteCreateNew qnc = new QuoteNoteCreateNew(quoteRevID);
                         qnc.Insert();
 
                         int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Note);
-                        CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString());
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString(), sfQuoteID, salesForceProjectID);
                         noteID = newNoteId;
                     }
 
-                    UpdateNote(q.Title, q.TextPreview, noteID);
+                    if (noteID != 0)
+                    {
+                        UpdateNote(q.Title, q.TextPreview, noteID);
+                    }
                 }
+
+                DeleteAllDeletedQuoteNotes(notes.ToArray(), sfQuoteID);
+                LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+            }
+        }
+
+        private void DeleteQuoteNote(int qnId)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM FW_Quote_Note WHERE ([qnID] = @pnID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@pnID", qnId);
+                DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("DeleteQuoteNote:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private void DeleteAllDeletedQuoteNotes(string[] notes, string sfQuoteID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.Fw_Quote_Note, sfQuoteID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(notes, i) == -1)
+                    {
+                        // get MISID
+                        int serviceIDTemp = CommonMethods.GetMISID(TableName.Fw_Quote_Note, i, sfQuoteID, salesForceProjectID);
+                        // delete a row
+                        DeleteQuoteNote(serviceIDTemp);
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.Fw_Quote_Note, i, sfQuoteID, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedQuoteServices:Error:" + e.Message);
             }
         }
 
@@ -317,7 +374,7 @@ namespace MISService.Methods
 
         }
 
-        public void GenerateQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
+        public void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
         {
             try
             {
@@ -355,7 +412,7 @@ namespace MISService.Methods
                     var svc = new FsService(quoteRevID, "Quote");
                     foreach (var sl in serviceList)
                     {
-                        long estServiceID = CommonMethods.GetMISID(TableName.Fw_Quote_Service, sl.Id, sfQuoteID);
+                        long estServiceID = CommonMethods.GetMISID(TableName.Fw_Quote_Service, sl.Id, sfQuoteID, salesForceProjectID);
                         if (estServiceID == 0)
                         {
                             int printOrder = svc.GetQsMaxPrintOrder() + 1;
@@ -382,20 +439,70 @@ namespace MISService.Methods
                                );
                             }
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID, salesForceProjectID);
                         }
                         else
                         {
                             UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
                         }
-                        LogMethods.Log.Debug("GenerateQuoteService:Debug:" + "Done");
+
                     }
+
+                    DeleteAllDeletedQuoteServices(services, sfQuoteID);
+                    LogMethods.Log.Debug("HandleQuoteService:Debug:" + "Done");
                 }
 
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GenerateQuoteService:Error:" + e.Message);
+                LogMethods.Log.Error("HandleQuoteService:Error:" + e.Message);
+            }
+        }
+
+        private void DeleteQuoteService(int qsId)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM FW_QUOTE_SERVICE WHERE ([qsID] = @psID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@psID", qsId);
+                DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("DeleteQuoteService:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private void DeleteAllDeletedQuoteServices(string[] services, string sfQuoteID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.Fw_Quote_Service, sfQuoteID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(services, i) == -1)
+                    {
+                        // get MISID
+                        int serviceIDTemp = CommonMethods.GetMISID(TableName.Fw_Quote_Service, i, sfQuoteID, salesForceProjectID);
+                        // delete a row
+                        DeleteQuoteService(serviceIDTemp);
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.Fw_Quote_Service, i, sfQuoteID, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedQuoteServices:Error:" + e.Message);
             }
         }
 
@@ -447,7 +554,7 @@ namespace MISService.Methods
 
         }
 
-        private void GenerateQuoteItem(int jobID, int estRevID, int quoteRevID, string listItemID, string sfQuoteID)
+        private void HandleQuoteItem(int jobID, int estRevID, int quoteRevID, string listItemID, string sfQuoteID)
         {
             try
             {
@@ -487,19 +594,19 @@ namespace MISService.Methods
                     //show results
                     foreach (var il in itemList)
                     {
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, il.Id, sfQuoteID);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, il.Id, sfQuoteID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
                             qt.MyID = quoteRevID;
 
-                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id);
+                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id, salesForceProjectID);
                             if (itemID != 0)
                             {
                                 int quoteItemID = qt.GenerateNewItems(itemID);
                                 if (quoteItemID != 0)
                                 {
-                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID);
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID, salesForceProjectID);
                                 }
                             }
                         }
@@ -509,12 +616,43 @@ namespace MISService.Methods
                         }
                     }
 
-                    LogMethods.Log.Debug("GenerateQuoteItem:Debug:" + "Done");
+                    DeleteAllDeletedQuoteItems(items, sfQuoteID);
+                    LogMethods.Log.Debug("HandleQuoteItem:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GenerateQuoteItem:Error:" + e.Message);
+                LogMethods.Log.Error("HandleQuoteItem:Error:" + e.Message);
+            }
+        }
+
+        private void DeleteAllDeletedQuoteItems(string[] items, string sfQuoteID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.Quote_Item, sfQuoteID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, i, sfQuoteID, salesForceProjectID);
+                        // get a row
+                        var quoteItem = _db.Quote_Item.Where(x => x.quoteItemID == itemIDTemp).FirstOrDefault();
+                        if (quoteItem != null)
+                        {
+                            _db.Quote_Item.Remove(quoteItem);
+                            _db.SaveChanges();
+                        }
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.Quote_Item, i, sfQuoteID, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedQuoteItems:Error:" + e.Message);
             }
         }
 

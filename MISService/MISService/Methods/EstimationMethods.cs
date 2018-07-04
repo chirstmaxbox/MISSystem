@@ -21,8 +21,9 @@ namespace MISService.Methods
         private readonly SpecificationDbEntities _db = new SpecificationDbEntities();
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
+        private string salesForceProjectID;
 
-        public EstimationMethods()
+        public EstimationMethods(string salesForceProjectID)
         {
             //set query endpoint to value returned by login request
             apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
@@ -30,6 +31,7 @@ namespace MISService.Methods
             //instantiate session header object and set session id
             header = new enterprise.SessionHeader();
             header.sessionId = SalesForceMethods.sessionId;
+            this.salesForceProjectID = salesForceProjectID;
         }
 
         public void GetEstimation(string sfProjectID, int estRevID, int jobID)
@@ -57,11 +59,15 @@ namespace MISService.Methods
                     IEnumerable<enterprise.Estimation__c> estimationList = result.records.Cast<enterprise.Estimation__c>();
 
                     //show results
-                    ServiceMethods sm = new ServiceMethods();
                     foreach (var el in estimationList)
                     {
+                        /* item */
                         GetAllItems(el.Id, estRevID);
+
+                        /* services */
+                        ServiceMethods sm = new ServiceMethods(salesForceProjectID);
                         sm.GetAllServices(el.Id, estRevID);
+
                         GetApprovalData(el.Id, jobID, estRevID);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
@@ -131,7 +137,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, "
+                    string query = "SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, "
                             + "Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, "
                             + "Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, "
                             + "Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, "
@@ -155,9 +161,11 @@ namespace MISService.Methods
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
 
                     //show results
+                    List<string> items = new List<string>();
                     foreach (var il in itemList)
                     {
-                        long estItemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id);
+                        items.Add(il.Id);
+                        long estItemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id, sfEstimation, salesForceProjectID);
                         if (estItemID == 0)
                         {
                             int productID = 0;
@@ -167,11 +175,11 @@ namespace MISService.Methods
                                 productID = optionDetails.ProductID;
                             }
                             var est = new MyEstItemCreate(estRevID, productID, il.Item_Name__c);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.EST_Item, il.Id, est.EstItemID.ToString());
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.EST_Item, il.Id, est.EstItemID.ToString(), sfEstimation, salesForceProjectID);
                             estItemID = est.EstItemID;
                         }
 
-                        UpdateEstItem(estItemID, il.Item_Name__c, il.Sign_Type__c, il.Previous_Estimation_Available__c, il.Sale_Requirement__c,  
+                        UpdateEstItem(estItemID, il.Item_Name__c, il.Item_Order__c, il.Sign_Type__c, il.Previous_Estimation_Available__c, il.Sale_Requirement__c,  
                             il.Estimator_Description__c, il.Position__c, il.Requirement__c, il.Quantity__c, il.Item_Cost__c );
 
                         UpdateEstItemSize(estItemID, il.Height_Feet__c, il.Height_Feet1_s__c, il.Height_Feet2_s__c, il.Height_Feet3_s__c,
@@ -179,14 +187,48 @@ namespace MISService.Methods
                              il.Thickness_Feet_s__c, il.Thickness_Feet1_s__c, il.Thickness_Feet2_s__c, il.Thickness_Feet3_s__c,
                              il.Thickness_Inches__c, il.Thickness_Inches1__c, il.Thickness_Inches2__c, il.Thickness_Inches3__c,
                              il.PC_s__c, il.PC1_s__c, il.PC2_s__c, il.PC3_s__c);
-
                     }
+
+                    /* delete old items */
+                    DeleteAllDeletedEstimationItems(items.ToArray(), sfEstimation);
+
                     LogMethods.Log.Debug("GetAllItems:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllItems:Error:" + e.Message);
+            }
+        }
+
+        private void DeleteAllDeletedEstimationItems(string[] items, string sfEstimation)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.EST_Item, sfEstimation, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.EST_Item, i, sfEstimation, salesForceProjectID);
+                        // get a row
+                        var estItem = _db.EST_Item.Where(x => x.EstItemID == itemIDTemp).FirstOrDefault();
+                        if (estItem != null)
+                        {
+                            estItem.EstRevID = 0;
+                            _db.Entry(estItem).State = EntityState.Modified;
+                            _db.SaveChanges();
+                        }
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.EST_Item, i, sfEstimation, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedEstimationItems:Error:" + e.Message);
             }
         }
 
@@ -254,7 +296,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateEstItem(long estItemID, string itemName, string signType, string previousEstimation, string saleRequirement,
+        private void UpdateEstItem(long estItemID, string itemName, double? itemOrder, string signType, string previousEstimation, string saleRequirement,
             string EstimatorDesc, string position, string requirement, double? quality, double? itemCost)
         {
             var item = _db.EST_Item.Find(estItemID);
@@ -274,6 +316,10 @@ namespace MISService.Methods
                 }
 
                 item.ProductName = itemName;
+                if(itemOrder != null)
+                {
+                    item.EstItemNo = Convert.ToInt16(itemOrder);
+                }
                 /* product ID */
                 int productID = 0;
                 Product optionDetails = _db.Products.Where(x => x.ProductName.Trim() == signType & x.Active).FirstOrDefault();

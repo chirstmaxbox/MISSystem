@@ -64,7 +64,7 @@ namespace MISService.Method
                         FsEmployee fsEmployee = new FsEmployee(un);
                         if (fsEmployee.EmployeeNumber > 0)
                         {
-                            int sales_JobMasterListID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id);
+                            int sales_JobMasterListID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id, opportunity.Id);
                             if (sales_JobMasterListID == 0)
                             {
                                 int jobID = CreateNewProject(fsEmployee.EmployeeNumber);
@@ -72,7 +72,7 @@ namespace MISService.Method
                                 /* update jobnumber */
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString());
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString(), opportunity.Id);
                                 sales_JobMasterListID = jobID;
                             }
                             else
@@ -98,27 +98,27 @@ namespace MISService.Method
                             }
 
                             /* Bill-Quote-Ship */
-                            CustomerMethods cm = new CustomerMethods();
-//                            cm.GetAllCompanies(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            CustomerMethods cm = new CustomerMethods(opportunity.Id);
+                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             
                             /* Get Estimation and Items and Services */
-                            EstimationMethods em = new EstimationMethods();
+                            EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
-                            DrawingMethods dm = new DrawingMethods();
-//                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
+                            DrawingMethods dm = new DrawingMethods(opportunity.Id);
+                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
-                            QuoteMethods qm = new QuoteMethods();
-//                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+                            QuoteMethods qm = new QuoteMethods(opportunity.Id);
+                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
-                            PermitMethods pm = new PermitMethods();
-//                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-//                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-//                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            PermitMethods pm = new PermitMethods(opportunity.Id);
+                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
-                            WorkOrderMethods wo = new WorkOrderMethods();
+                            WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
                             wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
@@ -394,93 +394,5 @@ namespace MISService.Method
 
             return biddingID;
         }
-
-        /// <summary>
-        /// delete a project
-        /// </summary>
-        /// <param name="jobID"></param>
-        public void DeleteProject(int jobID)
-        {
-            int estRevID = 0;
-            try
-            {
-                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                {
-                    string SqlSelectString = "SELECT EstRevID FROM [Sales_JobMasterList_EstRev] WHERE ([jobID] = @jobID)";
-                    var SelectCommand = new SqlCommand(SqlSelectString, Connection);
-                    SelectCommand.Parameters.AddWithValue("@jobID", jobID);
-                    Connection.Open();
-                    using (SqlDataReader dr = SelectCommand.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            estRevID = Convert.ToInt32(dr[0].ToString());
-                            break;
-                        }
-                    }
-                    Connection.Close();
-                }
-
-                if (estRevID != 0)
-                {
-                    using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                    {
-                        Connection.Open();
-                        string SqlDelString = "DELETE FROM EST_Cost_Configuration WHERE ([EstRevID] = @EstRevID)";
-                        var DelCommand = new SqlCommand(SqlDelString, Connection);
-                        DelCommand.Parameters.AddWithValue("@EstRevID", estRevID);
-                        DelCommand.ExecuteNonQuery();
-                        Connection.Close();
-                    }
-
-                    using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                    {
-                        Connection.Open();
-                        string SqlDelString = "DELETE FROM Sales_JobMasterList_EstRev WHERE ([EstRevID] = @EstRevID)";
-                        var DelCommand = new SqlCommand(SqlDelString, Connection);
-                        DelCommand.Parameters.AddWithValue("@EstRevID", estRevID);
-                        DelCommand.ExecuteNonQuery();
-                        Connection.Close();
-                    }
-                }
-
-                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                {
-                    Connection.Open();
-                    string SqlDelString = "DELETE FROM Sales_JobMasterList_Customer WHERE ([jobID] = @jobID)";
-                    var DelCommand = new SqlCommand(SqlDelString, Connection);
-                    DelCommand.Parameters.AddWithValue("@jobID", jobID);
-                    DelCommand.ExecuteNonQuery();
-                    Connection.Close();
-                }
-
-                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                {
-                    Connection.Open();
-                    string SqlDelString = "DELETE FROM Sales_JobStatusTable WHERE ([jobID] = @jobID)";
-                    var DelCommand = new SqlCommand(SqlDelString, Connection);
-                    DelCommand.Parameters.AddWithValue("@jobID", jobID);
-                    DelCommand.ExecuteNonQuery();
-                    Connection.Close();
-                }
-
-                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
-                {
-                    Connection.Open();
-                    string SqlDelString = "DELETE FROM Sales_JobMasterList WHERE ([jobID] = @jobID)";
-                    var DelCommand = new SqlCommand(SqlDelString, Connection);
-                    DelCommand.Parameters.AddWithValue("@jobID", jobID);
-                    DelCommand.ExecuteNonQuery();
-                    Connection.Close();
-                }
-                LogMethods.Log.Debug("DeleteProject:Debug:" + "DONE");
-            }
-            catch (Exception e)
-            {
-                LogMethods.Log.Error("DeleteProject:Crash:" + e.Message);
-            }
-            
-        }
-
     }
 }

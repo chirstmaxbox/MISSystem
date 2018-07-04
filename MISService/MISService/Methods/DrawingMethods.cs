@@ -19,8 +19,9 @@ namespace MISService.Methods
         private readonly SpecificationDbEntities _db = new SpecificationDbEntities();
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
+        private string salesForceProjectID;
 
-        public DrawingMethods()
+        public DrawingMethods(string salesForceProjectID)
         {
             //set query endpoint to value returned by login request
             apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
@@ -28,6 +29,7 @@ namespace MISService.Methods
             //instantiate session header object and set session id
             header = new enterprise.SessionHeader();
             header.sessionId = SalesForceMethods.sessionId;
+            this.salesForceProjectID = salesForceProjectID;
         }
 
         public void GetAllDrawings(string sfProjectID, int estRevID, int jobID)
@@ -122,11 +124,11 @@ namespace MISService.Methods
                     var results = new List<MyLongKeyValueBool>();
                     foreach (var il in itemList)
                     {
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, il.Id);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, il.Id, sfDrawingID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
                             /* get item ID from Mapping Table */
-                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id);
+                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id, salesForceProjectID);
                             if (itemID != 0)
                             {
                                 var r = new MyLongKeyValueBool();
@@ -153,15 +155,49 @@ namespace MISService.Methods
                         vm.CreateRequisitionItems();
                         foreach (var ret in results)
                         {
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, ret.Value1, ret.Value2);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, ret.Value1, ret.Value2, sfDrawingID, salesForceProjectID);
                         }
                     }
+
+                    // delete old data
+                    DeleteAllDeletedDrawingItems(items, sfDrawingID);
+
                     LogMethods.Log.Debug("GetAllDrawingItems:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllDrawingItems:Error:" + e.Message);
+            }
+        }
+
+        private void DeleteAllDeletedDrawingItems(string[] items, string sfDrawingID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, sfDrawingID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, i, sfDrawingID, salesForceProjectID);
+                        // get a row
+                        var drawingItem = _db.Sales_Dispatching_DrawingRequisition_EstimationItem.Where(x => x.RequisitionItemID == itemIDTemp).FirstOrDefault();
+                        if (drawingItem != null)
+                        {
+                            _db.Sales_Dispatching_DrawingRequisition_EstimationItem.Remove(drawingItem);
+                            _db.SaveChanges();
+                        }
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, i, sfDrawingID, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedDrawingItems:Error:" + e.Message);
             }
         }
 

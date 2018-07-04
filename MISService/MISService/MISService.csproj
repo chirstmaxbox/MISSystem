@@ -69,6 +69,7 @@
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />
     <Compile Include="Methods\PermitMethods.cs" />
+    <Compile Include="Methods\ProductionWOMethods.cs" />
     <Compile Include="Methods\ProjectMethods.cs" />
     <Compile Include="Methods\QuoteMethods.cs" />
     <Compile Include="Methods\SalesForceMethods.cs" />

@@ -18,8 +18,9 @@ namespace MISService.Methods
         private readonly ProjectModelDbEntities _db = new ProjectModelDbEntities();
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
+        private string salesForceProjectID;
 
-        public WorkOrderMethods()
+        public WorkOrderMethods(string salesForceProjectID)
         {
             //set query endpoint to value returned by login request
             apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
@@ -27,6 +28,7 @@ namespace MISService.Methods
             //instantiate session header object and set session id
             header = new enterprise.SessionHeader();
             header.sessionId = SalesForceMethods.sessionId;
+            this.salesForceProjectID = salesForceProjectID;
         }
 
         public void GetAllWorkOrders(string sfProjectID, int jobID, int estRevID, int userEmployeeID)
@@ -58,14 +60,14 @@ namespace MISService.Methods
                     foreach (var ql in workOrderList)
                     {
                         /* check if the work order exists */
-                        int workOrderID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_WO, ql.Id);
+                        int workOrderID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_WO, ql.Id, salesForceProjectID);
                         if (workOrderID == 0)
                         {
                             // not exist
                             WorkorderGenerateFromEstimation gw = new WorkorderGenerateFromEstimation(jobID, estRevID);
                             gw.CreateNew();
                             workOrderID = gw.WoID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_WO, ql.Id, workOrderID.ToString());
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_WO, ql.Id, workOrderID.ToString(), salesForceProjectID);
                         }
 
                         if (workOrderID != 0)
@@ -74,7 +76,23 @@ namespace MISService.Methods
                                 ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__c);
 
                             // generate work order items
-                            GenerateWorkOrderItem(workOrderID, ql.List_Item_Name__c, ql.Id);
+                            HandleWorkOrderItem(workOrderID, ql.List_Item_Name__c, ql.Id);
+
+                            switch (ql.Work_Order_Type__c)
+                            {
+                                case "Production":
+
+                                    break;
+                                case "Service":
+
+                                    break;
+                                case "Site Check":
+
+                                    break;
+                                default:
+                                    break;
+                            }
+
                         }
 
                     }
@@ -87,7 +105,7 @@ namespace MISService.Methods
             }
         }
 
-        private void GenerateWorkOrderItem(int workOrderID, string listItemID, string sfWorkOrderID)
+        private void HandleWorkOrderItem(int workOrderID, string listItemID, string sfWorkOrderID)
         {
             try
             {
@@ -128,7 +146,7 @@ namespace MISService.Methods
                     //show results
                     foreach (var il in itemList)
                     {
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Item, il.Id, sfWorkOrderID);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Item, il.Id, sfWorkOrderID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
                             WokrorderItemGenerateFromBlank woItem = new WokrorderItemGenerateFromBlank(workOrderID);
@@ -137,14 +155,19 @@ namespace MISService.Methods
                             {
                                 woItem.InsertItem();
                                 int newWOItemID = woItem.NewWorkItemID;
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item, il.Id, newWOItemID.ToString(), sfWorkOrderID);
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item, il.Id, newWOItemID.ToString(), sfWorkOrderID, salesForceProjectID);
+                                itemIDTemp = newWOItemID;
                             }
                         }
-                        else
+
+                        if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Work_Order_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateWorkOrderItem(il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Work_Order_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
+
+                    /* delete work order items which has been removed out of work order */
+                    DeleteAllDeletedWorkOrderItems(items, sfWorkOrderID);
 
                     LogMethods.Log.Debug("GenerateWorkOrderItem:Debug:" + "Done");
                 }
@@ -155,7 +178,37 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void DeleteAllDeletedWorkOrderItems(string[] items, string sfWorkOrderID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Item, sfWorkOrderID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Item, i, sfWorkOrderID, salesForceProjectID);
+                        // get a row
+                        var workOrderItem = _db.WO_Item.Where(x => x.woItemID == itemIDTemp).FirstOrDefault();
+                        if (workOrderItem != null)
+                        {
+                            _db.WO_Item.Remove(workOrderItem);
+                            _db.SaveChanges();
+                        }
+                        // remove MISID out of MISSalesForceMapping
+                        CommonMethods.Delete(TableName.WO_Item, i, sfWorkOrderID, salesForceProjectID);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateWorkOrderItem(string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
         {
             var workOrderItem = _db.WO_Item.Where(x => x.woItemID == workOrderItemID).FirstOrDefault();
             if (workOrderItem != null)
@@ -180,6 +233,12 @@ namespace MISService.Methods
                 if (itemCost != null)
                 {
                     workOrderItem.qiAmount = (double)itemCost;
+                }
+
+                long estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
+                if (estItemID != 0)
+                {
+                    workOrderItem.estItemID = estItemID;
                 }
 
                 _db.Entry(workOrderItem).State = EntityState.Modified;

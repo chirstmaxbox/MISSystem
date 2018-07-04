@@ -55,16 +55,74 @@ namespace MISService.Methods
             return un;
         }
 
-        public static int GetMISID(string tableName, string salesforceID)
+        public static void Delete(string tableName, string salesforceID, string salesforceParentID, string salesforceProjectID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM MISSalesForceMapping WHERE ([TableName] = @tableName) and ([SalesforceID] = @salesforceID) and ([SalesforceParentID] = @salesforceParentID) and ([SalesForceProjectID] = @salesForceProjectID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@tableName", tableName);
+                DelCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                DelCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                DelCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
+                DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("Delete:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        public static List<string> GetAllSalesForceID(string tableName, string salesforceParentID, string salesforceProjectID)
+        {
+            List<string> ids = new List<string>();
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "SELECT SalesForceID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesforceParentID] = @salesforceParentID) and ([SalesForceProjectID] = @salesForceProjectID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        ids.Add(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetAllSalesForceID:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ids;
+        }
+
+        public static int GetMISID(string tableName, string salesforceID, string salesforceProjectID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             int MISID = 0;
             try
             {
-                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID)";
+                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID) and ([SalesForceProjectID] = @salesForceProjectID)";
                 var SelectCommand = new SqlCommand(SqlSelectString, Connection);
                 SelectCommand.Parameters.AddWithValue("@tableName", tableName);
                 SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
                 Connection.Open();
                 using (SqlDataReader dr = SelectCommand.ExecuteReader())
                 {
@@ -86,17 +144,18 @@ namespace MISService.Methods
             return MISID;
         }
 
-        public static int GetMISID(string tableName, string salesforceID, string salesforceParentID)
+        public static int GetMISID(string tableName, string salesforceID, string salesforceParentID, string salesforceProjectID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             int MISID = 0;
             try
             {
-                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID) and ([SalesForceParentID] = @salesForceParentID)";
+                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID) and ([SalesForceParentID] = @salesForceParentID) and ([SalesForceProjectID] = @salesForceProjectID)";
                 var SelectCommand = new SqlCommand(SqlSelectString, Connection);
                 SelectCommand.Parameters.AddWithValue("@tableName", tableName);
                 SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
                 SelectCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
                 Connection.Open();
                 using (SqlDataReader dr = SelectCommand.ExecuteReader())
                 {
@@ -118,17 +177,18 @@ namespace MISService.Methods
             return MISID;
         }
 
-        public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID)
+        public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID, string salesforceProjectID)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             try
             {
-                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID) VALUES (@tableName, @salesforceID, @MISID)";
+                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID, SalesForceProjectID) VALUES (@tableName, @salesforceID, @MISID, @salesForceProjectID)";
                 var SelectCommand = new SqlCommand(SqlSelectString, Connection);
                 SelectCommand.Parameters.AddWithValue("@tableName", tableName);
                 SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
                 SelectCommand.Parameters.AddWithValue("@MISID", MISID);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
                 Connection.Open();
                 SelectCommand.ExecuteNonQuery();
                 ret = true;
@@ -145,18 +205,19 @@ namespace MISService.Methods
             return ret;
         }
 
-        public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID, string salesforceParentID)
+        public static bool InsertToMISSalesForceMapping(string tableName, string salesforceID, string MISID, string salesforceParentID, string salesforceProjectID)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             try
             {
-                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID, SalesForceParentID) VALUES (@tableName, @salesforceID, @MISID, @SalesForceParentID)";
+                string SqlSelectString = "INSERT INTO [MISSalesForceMapping](TableName, SalesForceID, MISID, SalesForceParentID, SalesForceProjectID) VALUES (@tableName, @salesforceID, @MISID, @SalesForceParentID, @salesForceProjectID)";
                 var SelectCommand = new SqlCommand(SqlSelectString, Connection);
                 SelectCommand.Parameters.AddWithValue("@tableName", tableName);
                 SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
                 SelectCommand.Parameters.AddWithValue("@MISID", MISID);
                 SelectCommand.Parameters.AddWithValue("@SalesForceParentID", salesforceParentID);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
                 Connection.Open();
                 SelectCommand.ExecuteNonQuery();
                 ret = true;

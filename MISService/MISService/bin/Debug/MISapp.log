@@ -1,994 +1,310 @@
-2018-04-23 18:20:18,537 [9] ERROR MISService.Method.LogMethods - Error of creating a New Project:0
-2018-04-23 18:20:51,530 [10] ERROR MISService.Method.LogMethods - Error of creating a New Project:0
-2018-04-23 18:22:24,808 ERROR MISService.Method.LogMethods - Error of creating a New Project:0
-2018-04-24 13:35:25,245 ERROR MISService.Method.LogMethods - DeleteProject:Crash:The DELETE statement conflicted with the REFERENCE constraint "FK_Sales_JobMasterList_Invoice_Sales_JobMasterList". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList_Invoice", column 'jobID'.
-The statement has been terminated.
-2018-04-25 20:18:03,841 DEBUG MISService.Method.LogMethods - EditCustomerContact:Debug:DONE
-2018-04-25 20:19:16,067 DEBUG MISService.Method.LogMethods - EditCustomerContact:Debug:DONE
-2018-06-05 15:15:16,215 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-05 15:17:39,907 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-05 15:37:56,787 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-05 15:38:31,278 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-05 15:38:34,773 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-05 17:10:58,761 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
-2018-06-05 17:18:25,530 ERROR MISService.Method.LogMethods - EditNewProject:Crash:The parameterized query '(@targetDate datetime,@sa1ID int,@sales int,@jobTitle varchar(15' expects the parameter '@targetDate', which was not supplied.
-2018-06-05 17:19:12,210 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 10:39:47,940 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 10:39:51,575 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 10:41:00,870 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 10:41:02,368 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 11:34:56,970 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 11:34:56,986 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 12:30:19,194 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 12:30:40,502 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 12:30:44,012 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 12:30:44,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 13:30:31,525 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 13:37:22,011 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 13:39:24,831 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 13:40:58,908 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 13:41:06,244 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 13:41:06,249 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 13:41:06,249 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 14:14:52,034 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 14:14:56,420 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 14:14:58,239 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:DONE
-2018-06-06 16:55:18,930 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-06 16:55:18,953 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 16:55:18,956 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
-2018-06-06 16:55:18,989 DEBUG MISService.Method.LogMethods - InsertBiddingProject:Debug:DONE
-2018-06-06 16:55:19,000 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:09:12,691 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:09:12,731 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:09:57,053 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:09:57,065 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:10:53,486 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:10:53,499 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:10:55,704 ERROR MISService.Method.LogMethods - GetAllCompanies:Error:INVALID_FIELD: 
-Name, Billing_Company_City__c, Billing_Contact_Name__r, Billing_Company_Name__c
-                               ^
-ERROR at Row:1:Column:43
-No such column 'Billing_Contact_Name__r' on entity 'Bill_Quote_Ship__c'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
-2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
-2018-06-06 17:10:55,704 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-06 17:11:39,929 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:11:39,941 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:13:56,128 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:13:56,142 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:27:03,431 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:27:03,449 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:28:29,730 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-06 17:28:39,394 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-06 17:28:46,714 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-06 17:28:46,715 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
-2018-06-06 17:28:46,715 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-06 17:37:11,221 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-06 17:37:11,239 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-06 17:37:57,260 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:User name anh.tran does not exist in database
-2018-06-06 17:37:57,261 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 11:18:02,414 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 11:18:27,857 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 11:22:07,038 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 12:32:35,045 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 12:32:35,419 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 12:33:42,780 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 12:33:44,278 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 12:35:20,249 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 12:35:20,281 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 13:00:53,280 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 13:00:53,358 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 13:02:08,113 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 14:01:46,811 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 14:01:46,844 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 14:06:33,147 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:15:50,896 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 14:15:50,920 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 14:16:31,924 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:18:16,244 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-07 14:20:39,481 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:20:57,207 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-07 14:20:57,233 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:21:08,274 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:21:08,275 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 14:21:08,275 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 14:35:01,850 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 14:35:01,890 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 14:35:12,919 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:35:14,613 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:35:14,643 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 14:35:14,644 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 14:38:39,757 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 14:38:39,778 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 14:38:44,243 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:38:44,289 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:38:44,323 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 14:38:44,324 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 14:41:28,570 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 14:41:28,595 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 14:41:33,334 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:41:33,426 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:43:13,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:43:13,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-07 14:43:13,885 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-07 14:43:13,885 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-07 16:06:48,198 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 16:06:48,217 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 16:06:48,463 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-07 16:44:04,789 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 16:44:04,811 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 16:44:05,215 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-07 16:50:02,430 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 16:50:02,457 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 16:50:02,692 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-07 16:56:03,328 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 16:56:03,347 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 16:56:03,603 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-07 16:58:26,752 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-07 16:58:26,775 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-07 16:58:27,072 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-08 11:01:46,756 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-08 11:01:46,772 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-08 11:01:47,006 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-08 16:45:45,314 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-08 16:45:45,345 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-08 16:45:45,673 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-08 16:48:54,963 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-08 16:59:48,302 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-08 16:59:48,318 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-08 16:59:48,552 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-08 16:59:54,823 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 12:44:10,849 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 12:44:10,880 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 12:44:11,146 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 12:47:25,506 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 12:47:25,537 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 12:47:25,771 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 12:50:24,298 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 12:50:24,314 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 12:50:24,563 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 12:58:08,196 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 12:58:08,227 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 12:58:08,493 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:00:18,940 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:00:49,407 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:00:49,423 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:00:49,625 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:03:49,166 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:04:19,321 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:04:19,336 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:04:19,617 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:04:59,741 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:05:43,249 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:05:43,280 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:05:43,530 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:05:57,804 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:06:45,150 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:06:45,181 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:06:45,415 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:07:07,692 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:09:25,019 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:09:25,050 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:09:25,331 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:09:32,133 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:09:37,795 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:09:39,683 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-11 13:09:39,683 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 13:09:39,683 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 13:19:53,523 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 13:19:53,538 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 13:19:53,772 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 13:19:59,732 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:19:59,732 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-11 13:19:59,732 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-11 13:19:59,732 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 13:19:59,732 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 14:46:09,767 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 14:46:09,783 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 14:46:10,063 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 14:50:25,592 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 14:50:25,607 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 14:50:25,841 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 14:51:22,438 ERROR MISService.Method.LogMethods - GetAllDrawing:Error:INVALID_TYPE: 
-Is_Site_Check_Report_Available__c FROM Drawing__c, LastModifiedDate where Project_Name__c
-                                                   ^
-ERROR at Row:1:Column:323
-A driving SObject type has already been set, all other entity types in the FROM clause must be relationships to the initial object.  The driving object is Drawing__c.
-2018-06-11 14:51:22,454 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 14:51:22,454 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 14:51:47,632 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 14:51:47,648 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 14:51:47,898 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 14:53:19,173 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 14:53:19,189 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 14:53:19,485 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 14:55:13,724 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 14:55:13,724 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 15:48:48,968 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 15:48:49,264 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 15:48:50,856 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 15:50:54,096 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 15:50:54,096 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 15:54:45,665 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 15:54:45,681 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 15:54:46,008 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 15:54:55,072 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 15:54:55,072 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 15:56:39,015 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 15:56:39,046 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 15:56:39,514 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 15:56:44,880 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 15:56:44,880 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-11 16:00:29,848 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-11 16:00:29,864 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-11 16:00:30,160 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-11 16:00:34,762 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-11 16:00:34,762 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-12 09:25:18,338 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 09:25:18,369 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 09:25:18,712 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-12 09:28:52,012 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-12 10:03:32,939 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 10:03:33,345 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 10:03:33,969 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 10:17:37,447 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 10:17:37,462 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 10:17:37,743 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 10:19:36,522 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 10:19:36,537 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 10:19:36,756 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 10:25:55,758 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 10:25:55,790 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 10:25:56,070 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-12 10:26:18,971 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-12 10:29:30,586 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 10:29:30,633 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 10:29:31,086 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-12 10:29:58,354 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-12 10:51:37,032 ERROR MISService.Method.LogMethods - GetAllProjects:Error:MALFORMED_QUERY: 
- Sync__c FROM Opportunity where 
-                              ^
-ERROR at Row:1:Column:168
-unexpected token: '<EOF>'
-2018-06-12 10:54:36,016 ERROR MISService.Method.LogMethods - GetAllProjects:Error:INVALID_FIELD: 
-Sync__c FROM Opportunity where Sync__c = 'true'
-                               ^
-ERROR at Row:1:Column:170
-value of filter criterion for field 'Sync__c' must be of type boolean and should not be enclosed in quotes
-2018-06-12 11:49:56,124 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 11:49:56,156 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 11:49:56,436 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 11:53:35,523 ERROR MISService.Method.LogMethods - GetAllQuote:Error:INVALID_FIELD: 
-SELECT Id, Name FROM Quote where Project_Name__c = '006f400000BnKJQAA3'
-                                 ^
-ERROR at Row:1:Column:34
-No such column 'Project_Name__c' on entity 'Quote'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
-2018-06-12 11:53:35,570 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-12 11:53:35,570 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-12 11:54:57,174 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 11:54:57,205 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 11:54:57,501 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 11:59:18,412 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 11:59:18,427 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 11:59:18,693 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 12:01:16,426 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 12:01:16,442 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 12:01:16,660 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 12:32:35,184 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 12:32:35,200 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 12:32:35,480 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 12:32:55,402 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 12:32:56,650 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 12:32:56,650 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 12:38:19,523 ERROR MISService.Method.LogMethods - GetApprovalData:Error:INVALID_TYPE_FOR_OPERATION: entity type ProcessInstanceHistory does not support query
-2018-06-12 12:38:19,570 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-12 12:38:49,241 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 12:38:49,273 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 12:38:49,522 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 12:45:17,089 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 12:45:17,105 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 12:45:17,354 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 12:46:39,161 ERROR MISService.Method.LogMethods - GetEstimation:Error:INVALID_TYPE: 
-(SELECT Status, TargetObject FROM ProcessInstance) FROM Estimation__c
-                                  ^
-ERROR at Row:1:Column:52
-Didn't understand relationship 'ProcessInstance' in FROM part of query call. If you are attempting to use a custom relationship, be sure to append the '__r' after the custom relationship name. Please reference your WSDL or the describe call for the appropriate names.
-2018-06-12 12:47:11,578 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 12:47:11,593 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 12:47:11,905 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:01:40,374 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:01:40,421 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:01:40,702 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:06:08,601 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:06:08,617 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:06:08,882 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:07:51,608 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:07:51,624 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:07:51,920 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:11:49,119 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:11:49,150 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:11:49,446 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:14:26,679 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:14:26,710 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:14:26,960 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:20:43,716 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:20:43,763 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:20:44,044 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:20:52,951 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 13:20:53,310 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:20:53,310 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:22:28,876 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:22:28,907 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:22:29,203 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:22:36,145 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 13:22:36,395 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:22:36,395 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:44:18,360 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:44:18,376 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:44:18,641 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:44:27,845 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 13:44:28,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:44:28,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:46:50,710 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 13:46:50,726 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 13:46:51,006 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 13:47:04,298 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 13:47:04,563 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 13:47:04,578 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:01:38,976 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 14:01:38,991 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 14:01:39,366 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 14:01:47,478 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 14:01:47,743 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:01:47,743 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:02:07,165 DEBUG MISService.Method.LogMethods - GetApprovalData:Debug:Done
-2018-06-12 14:03:33,995 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 14:03:34,026 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 14:03:34,385 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 14:03:43,089 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 14:03:43,370 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:03:43,386 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:30:32,761 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-12 14:30:32,792 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-12 14:30:33,151 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-12 14:30:37,691 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-12 14:30:37,956 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:30:37,972 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-12 14:30:38,050 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 09:52:10,845 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 09:52:10,877 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 09:52:11,735 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 09:52:17,101 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 09:52:17,382 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 09:52:17,382 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 09:52:17,460 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 09:58:15,980 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 09:58:16,011 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 09:58:16,260 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 09:58:21,174 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 09:58:21,455 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 09:58:21,455 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 09:58:21,549 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 10:10:01,522 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 10:10:01,553 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 10:10:01,865 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 10:10:07,481 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 10:10:07,871 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 10:10:07,887 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 10:10:07,996 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 10:12:02,531 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 10:12:02,547 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 10:12:03,046 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 10:12:08,101 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 10:12:08,366 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 10:12:08,366 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 10:12:08,444 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 11:50:12,206 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 11:50:12,237 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 11:50:12,471 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 11:50:16,730 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 11:50:17,291 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:50:17,291 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:50:17,369 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 11:53:59,139 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 11:55:27,513 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 11:55:27,544 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 11:55:27,810 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 11:55:32,724 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 11:55:33,036 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:55:33,036 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:55:33,129 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 11:57:20,161 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 11:57:20,192 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 11:57:20,442 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 11:57:25,371 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 11:57:25,637 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:57:25,637 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 11:57:25,730 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 12:01:44,285 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 12:01:44,316 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 12:01:44,660 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 12:01:50,993 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 12:01:51,290 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:01:51,290 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:01:51,368 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 12:07:02,349 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 12:07:02,381 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 12:07:02,740 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 12:07:07,435 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 12:07:07,669 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:07:07,669 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:07:07,747 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 12:08:23,984 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:08:29,476 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:08:32,315 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 12:10:36,444 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 12:10:36,460 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 12:10:36,741 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 12:10:41,889 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 12:10:42,091 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:10:42,091 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:10:42,169 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 12:10:48,144 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:10:48,160 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:10:48,160 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 12:12:32,212 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 12:12:41,790 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 12:12:44,864 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:12:44,879 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 12:12:44,895 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 12:12:46,408 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 12:12:46,408 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 12:12:46,424 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 12:12:46,424 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 12:12:46,424 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-13 12:12:46,424 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-13 12:12:46,424 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-13 12:42:06,558 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 12:42:06,574 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 12:42:06,886 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 12:42:13,516 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 12:42:13,719 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:42:13,719 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 12:42:13,797 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 12:43:42,686 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 12:44:02,701 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 12:44:06,289 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:03:12,961 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 13:03:12,977 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 13:03:13,226 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 13:03:17,719 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 13:03:17,969 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:03:17,985 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:03:18,063 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 13:03:37,921 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:03:37,921 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:03:37,921 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 13:05:10,788 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 13:05:10,804 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 13:05:11,163 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 13:05:16,155 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 13:05:16,451 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:05:16,451 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:05:16,545 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 13:05:20,694 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:05:20,694 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:05:20,694 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 13:05:39,040 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:05:45,483 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:08:23,243 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 13:08:26,300 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:08:26,316 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:08:26,316 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-13 13:08:26,316 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-13 13:08:26,316 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-13 13:36:46,444 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-13 13:36:46,472 DEBUG MISService.Method.LogMethods - UpdateBiddingProject:Debug:DONE
-2018-06-13 13:36:46,714 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P000087
-2018-06-13 13:36:51,845 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-13 13:36:52,095 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:36:52,103 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-13 13:36:52,192 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-13 13:37:23,103 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:37:23,109 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:37:23,110 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 13:37:23,261 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 13:37:23,262 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:37:23,271 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 13:37:23,271 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:37:25,021 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:37:25,026 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:37:25,041 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-13 13:37:25,041 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-13 13:37:25,177 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 13:37:25,177 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:37:25,179 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-13 13:37:25,179 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-13 13:37:25,179 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-13 13:37:25,179 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P000087
-2018-06-13 13:37:25,179 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-18 11:07:59,627 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-18 11:08:19,423 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 11:08:26,911 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
-2018-06-18 11:28:43,840 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 11:29:46,286 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-18 11:30:53,679 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 11:34:50,456 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 11:35:39,658 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 11:55:10,144 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 11:57:11,965 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 11:57:34,444 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-18 11:57:55,598 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 11:57:57,532 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-18 11:57:57,579 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 11:57:59,981 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-18 12:03:15,461 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 12:07:38,774 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 12:07:39,663 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 12:10:47,955 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-18 12:10:50,638 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-18 12:10:50,638 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-18 12:11:38,827 DEBUG MISService.Method.LogMethods - GetApprovalData:Debug:Done
-2018-06-18 12:11:43,055 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-18 12:16:00,580 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 12:16:01,594 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 12:16:18,941 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-18 12:16:19,393 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-18 12:16:19,425 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-18 12:16:19,705 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-18 12:16:37,302 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-18 12:19:53,305 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 12:19:54,132 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 12:21:03,926 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 12:21:05,502 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 12:21:05,533 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 12:21:08,201 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-18 13:00:27,400 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 13:00:27,712 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 13:14:05,403 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 13:14:05,887 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 13:17:37,751 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-18 13:18:34,940 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 13:18:34,972 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 13:18:34,987 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 13:18:34,987 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-18 13:18:35,237 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-18 14:38:09,275 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 14:38:09,572 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 14:38:26,997 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-18 14:39:09,273 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:39:09,273 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:39:09,289 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:39:09,289 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 14:39:10,303 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:39:10,303 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:39:10,303 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:39:10,303 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:40:51,625 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 14:40:53,216 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 14:41:18,160 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:41:18,192 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:41:18,192 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:41:18,192 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 14:41:19,596 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:41:19,596 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:41:19,596 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:41:19,596 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:42:47,330 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-18 14:42:47,330 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-18 14:42:47,330 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-18 14:48:43,226 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 14:48:44,396 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 14:50:00,571 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:50:00,571 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:50:00,571 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 14:50:00,571 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 14:50:00,961 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:50:00,961 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:50:00,961 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 14:50:00,961 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 14:50:00,993 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-18 14:50:00,993 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-18 14:50:00,993 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-18 15:18:26,982 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 15:18:28,027 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 15:19:23,704 ERROR MISService.Method.LogMethods - GetAllQuote:Error:INVALID_TYPE: 
-SELECT Id, Name, (select Title from Note), Status, List_Item_Name__c
-                                    ^
-ERROR at Row:1:Column:37
-Didn't understand relationship 'Note' in FROM part of query call. If you are attempting to use a custom relationship, be sure to append the '__r' after the custom relationship name. Please reference your WSDL or the describe call for the appropriate names.
-2018-06-18 15:19:23,719 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-18 15:19:23,719 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-18 15:20:40,175 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 15:20:41,204 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 15:23:57,921 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 15:23:59,777 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 15:28:24,775 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 15:28:25,773 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 15:32:24,532 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 15:32:26,560 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 16:19:11,710 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 16:19:12,146 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 16:22:01,251 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:22:01,251 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:22:01,251 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:22:01,251 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 16:22:01,766 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:22:01,766 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 16:22:01,766 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:22:01,766 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 16:23:05,102 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 16:23:05,367 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 16:23:19,266 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:23:19,266 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:23:19,266 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:23:19,266 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 16:23:19,500 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:23:19,500 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 16:23:19,500 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:23:19,500 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 16:46:54,610 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-18 16:46:54,922 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-18 16:47:15,140 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:47:15,218 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:47:15,265 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-18 16:47:15,265 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-18 16:47:15,483 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:47:15,483 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-18 16:47:15,530 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-18 16:47:15,530 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-19 11:46:33,555 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-19 11:46:35,318 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-19 11:48:53,316 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:48:53,316 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:48:53,331 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:48:53,331 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-19 11:48:53,597 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-19 11:48:53,597 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-19 11:48:53,612 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-19 11:48:53,612 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-19 11:49:52,830 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-19 11:50:09,693 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-19 11:51:58,229 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-19 11:51:58,977 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000091
-2018-06-19 11:52:27,026 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:52:27,026 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:52:27,042 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-19 11:52:27,042 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-19 11:52:27,619 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-19 11:52:27,619 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-19 11:52:27,635 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-19 11:52:27,635 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-19 11:52:40,224 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000091
-2018-06-19 11:52:42,860 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-28 10:39:00,868 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
-2018-06-28 10:39:02,287 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 10:39:04,128 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
-2018-06-28 10:39:32,395 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-28 10:39:32,645 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:39:33,519 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-28 10:39:33,550 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:39:34,361 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
-2018-06-28 10:39:34,392 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:39:37,528 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:46:30,320 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 10:47:56,542 ERROR MISService.Method.LogMethods - GetAllItems:Error:Sequence contains no elements
-2018-06-28 10:47:57,587 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 10:47:57,602 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 10:48:00,286 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 10:49:59,563 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 10:50:10,983 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:50:12,137 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:50:12,886 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:50:14,758 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:50:18,517 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 10:55:44,714 ERROR MISService.Method.LogMethods - GetAllItems:Error:Sequence contains no elements
-2018-06-28 10:55:53,419 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 10:55:53,419 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 10:55:56,102 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 10:56:59,095 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 10:57:02,995 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:57:03,026 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:57:03,042 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:57:03,042 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 10:57:03,042 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 12:19:38,237 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 12:19:42,246 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:19:42,262 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:19:42,277 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:19:42,277 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:19:42,277 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 12:20:09,016 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 12:20:11,621 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:20:11,621 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:20:16,613 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 12:29:22,895 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 12:29:27,310 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:29:27,341 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:29:27,356 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:29:27,356 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:29:27,356 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 12:29:28,823 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 12:30:56,682 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:37:39,693 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 12:37:43,640 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:37:43,671 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:37:43,687 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:37:43,687 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:37:43,687 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 12:37:44,857 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 12:38:33,747 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:38:53,856 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:38:59,675 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 12:40:51,543 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 12:58:59,727 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 12:59:03,877 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:59:03,908 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:59:04,017 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:59:04,017 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 12:59:04,017 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 12:59:05,203 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 12:59:05,437 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:59:05,437 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 12:59:05,608 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 12:59:06,030 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 13:00:25,948 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:00:27,337 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:00:27,352 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:00:28,210 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 13:00:37,399 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:00:38,382 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:00:38,397 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:00:44,045 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 13:05:07,174 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 13:05:10,809 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:05:10,980 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:05:10,996 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:05:10,996 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:05:10,996 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 13:05:12,182 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 13:05:12,447 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:05:12,447 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:05:13,149 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 13:05:13,695 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 13:05:42,227 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:05:42,430 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:05:42,430 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:05:42,430 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:05:42,586 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:05:42,586 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:05:42,586 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:05:42,586 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:05:42,602 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 13:05:42,726 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:05:42,820 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:05:42,820 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:05:42,960 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:05:42,960 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:05:42,992 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:05:42,992 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:05:43,007 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 13:13:43,122 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 13:13:47,305 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:13:47,461 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:13:47,617 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:13:47,617 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:13:47,617 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 13:13:48,850 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 13:13:49,084 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:13:49,084 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:13:49,286 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 13:13:49,801 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 13:13:53,077 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:13:53,077 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:13:53,077 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:13:53,077 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:13:53,202 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:13:53,202 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:13:53,202 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:13:53,202 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:13:53,218 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 13:13:53,358 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:13:53,358 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:13:53,358 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:13:53,467 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:13:53,467 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:13:53,467 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:13:53,467 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:13:53,483 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 13:58:57,394 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 13:59:01,076 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:59:01,107 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:59:01,138 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:59:01,138 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 13:59:01,138 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 13:59:02,308 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 13:59:02,558 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:59:02,573 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 13:59:02,776 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 13:59:03,291 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 13:59:21,621 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:59:21,621 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:59:21,621 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:59:21,621 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:59:23,368 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:59:23,368 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:59:23,368 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:59:23,368 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:59:23,368 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 13:59:35,177 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:59:35,177 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 13:59:35,177 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 13:59:35,318 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:59:35,318 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:59:35,333 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 13:59:35,333 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 13:59:35,333 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 13:59:35,333 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-28 13:59:35,333 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-28 14:01:24,743 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 14:01:28,316 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:01:28,503 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:01:28,518 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:01:28,518 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:01:28,518 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 14:01:29,657 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 14:01:30,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 14:01:30,032 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 14:01:30,219 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 14:01:30,640 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 14:02:16,286 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:02:16,286 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:02:16,286 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:02:16,286 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 14:02:16,426 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:02:16,426 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:02:16,426 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:02:16,426 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:02:16,426 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 14:02:47,657 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:02:47,657 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:02:47,657 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-28 14:02:48,141 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-28 14:09:26,651 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 14:09:30,317 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:09:30,332 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:09:30,364 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:09:30,364 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 14:09:30,364 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 14:09:31,565 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 14:09:31,814 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 14:09:31,830 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 14:09:32,033 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 14:09:33,016 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 14:09:37,321 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:09:37,321 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:09:37,321 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:09:37,321 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 14:09:49,396 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:09:49,396 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:09:58,334 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:09:58,334 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:09:58,350 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 14:09:58,490 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:09:58,490 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 14:09:58,490 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 14:10:08,241 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:10:08,241 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:10:11,548 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 14:10:11,548 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 14:10:11,548 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-28 14:10:11,548 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-28 14:10:11,548 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-28 15:58:06,962 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-28 15:58:10,691 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 15:58:10,706 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 15:58:10,737 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 15:58:10,737 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
-2018-06-28 15:58:10,737 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done 18P00000102
-2018-06-28 15:58:11,907 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
-2018-06-28 15:58:12,141 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 15:58:12,157 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
-2018-06-28 15:58:12,500 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
-2018-06-28 15:58:12,921 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
-2018-06-28 15:58:18,491 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 15:58:18,491 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 15:58:18,491 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 15:58:18,491 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 15:58:18,647 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 15:58:18,647 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 15:58:18,647 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 15:58:18,647 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 15:58:18,647 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
-2018-06-28 15:58:18,787 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 15:58:18,787 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
-2018-06-28 15:58:18,787 DEBUG MISService.Method.LogMethods - GenerateQuoteItem:Debug:Done
-2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
-2018-06-28 15:58:18,896 DEBUG MISService.Method.LogMethods - GenerateQuoteService:Debug:Done
-2018-06-28 15:58:19,021 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
-2018-06-29 10:40:33,121 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 10:50:14,593 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 10:57:19,101 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 10:59:17,459 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-29 11:00:34,991 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-29 15:02:37,091 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 15:02:58,400 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
-2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-29 15:05:26,055 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-29 15:10:42,345 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 15:10:48,897 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 15:13:47,081 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 15:13:52,634 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 15:15:22,880 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 15:15:47,092 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
-2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-29 15:15:47,310 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-06-29 15:58:21,113 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-06-29 15:58:27,587 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
-2018-06-29 15:58:28,491 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
-2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
-2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-06-29 15:59:32,295 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-07-03 14:24:09,028 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-07-03 14:28:14,180 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-07-03 14:29:01,533 ERROR MISService.Method.LogMethods - GetAllWorkOrders:Error:INVALID_FIELD: 
-Clone_Type__c  FROM Work_Order__c where OpportunityId = '006f400000BoNGSAA3'
-                                        ^
-ERROR at Row:1:Column:156
-No such column 'OpportunityId' on entity 'Work_Order__c'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.
-2018-07-03 14:29:01,552 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-07-03 14:29:01,552 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
-2018-07-03 14:29:42,759 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-07-03 14:31:45,873 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-07-03 14:51:07,377 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
-2018-07-03 14:54:07,873 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
-2018-07-03 14:54:07,874 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
-2018-07-03 14:54:07,874 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 10:58:48,561 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 10:59:55,579 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-07-04 11:00:54,749 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:00:57,136 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:00:57,916 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:00:59,445 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:01:02,393 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-07-04 11:01:02,393 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 11:04:49,889 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 11:04:55,926 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:04:55,973 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:04:56,191 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:04:56,191 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:04:56,347 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-07-04 11:04:56,347 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 11:07:18,760 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 11:07:58,072 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:07:58,103 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:07:58,134 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:07:58,134 DEBUG MISService.Method.LogMethods - GetAllCompanies:Debug:Done
+2018-07-04 11:07:58,259 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000102
+2018-07-04 11:07:58,259 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 12:17:05,889 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-07-04 12:17:05,925 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 12:17:05,961 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
+2018-07-04 12:19:54,838 DEBUG MISService.Method.LogMethods - CreateNewProject:Debug:DONE
+2018-07-04 12:19:54,871 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 12:19:54,879 DEBUG MISService.Method.LogMethods - UpdateJobNumber:Debug:DONE
+2018-07-04 12:46:16,820 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-07-04 12:46:17,023 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 12:46:17,166 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 12:46:17,256 DEBUG MISService.Method.LogMethods - CreateCustomer:Debug:DONE
+2018-07-04 12:46:17,559 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 12:46:17,559 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:26:30,524 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:26:34,315 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:26:34,421 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:26:34,472 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:26:34,472 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:27:51,766 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 13:29:14,422 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:29:18,062 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:29:18,083 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:29:18,099 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:29:18,099 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:33:22,409 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:33:26,433 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:33:26,526 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:33:26,549 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:33:26,550 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:37:36,716 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:37:40,756 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:37:40,824 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:37:40,848 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:37:40,848 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:46:00,467 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:46:04,585 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:46:04,755 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:46:04,794 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:46:04,794 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:49:36,764 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:49:40,556 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:49:40,633 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:49:40,688 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:49:40,688 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 13:54:14,505 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 13:54:18,367 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:54:18,442 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:54:18,542 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 13:54:18,542 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:10:21,838 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:10:25,471 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:10:25,540 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:10:25,605 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:10:25,605 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:10:26,968 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:11:39,400 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:13:01,891 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:13:06,222 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:13:06,263 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:13:06,292 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:13:06,292 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:13:07,638 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:14:03,498 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:14:07,241 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:14:07,265 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:14:07,290 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:14:07,291 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:14:08,809 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:40:46,382 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:40:50,743 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:40:50,764 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:40:50,804 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:40:50,804 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:40:52,089 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:40:52,383 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:40:52,604 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 14:40:56,160 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 14:49:48,474 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:49:52,146 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:49:52,169 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:49:52,241 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:49:52,241 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:49:53,682 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:49:53,941 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:49:54,145 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 14:54:30,476 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:54:34,761 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:54:34,790 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:54:34,826 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:54:34,826 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:54:36,063 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:54:36,302 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:54:36,492 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 14:57:16,044 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:57:19,699 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:57:19,775 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:57:19,799 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:57:19,799 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:57:21,049 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:57:21,297 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:57:21,496 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 14:57:56,525 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 14:58:00,276 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:58:00,356 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:58:00,387 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 14:58:00,387 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 14:58:01,664 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 14:58:01,923 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 14:58:02,137 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:03:11,424 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 15:03:15,393 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:03:15,423 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:03:15,455 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:03:15,456 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 15:03:16,752 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 15:03:17,017 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 15:03:17,234 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:11:59,510 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 15:12:03,524 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:12:03,545 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:12:03,564 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:12:03,564 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 15:12:04,716 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 15:12:04,956 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 15:12:05,270 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:12:05,750 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 15:39:43,098 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 15:39:46,879 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:39:46,933 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:39:46,959 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:39:46,959 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 15:39:48,245 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 15:39:48,539 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 15:39:48,750 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:39:49,218 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 15:43:53,342 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:43:57,266 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:43:59,916 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:44:25,071 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 15:45:12,005 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 15:45:23,117 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 15:45:26,531 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 15:48:38,631 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 15:48:42,701 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:48:42,725 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:48:42,745 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:48:42,745 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 15:48:43,972 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 15:48:44,229 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 15:48:44,434 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:48:44,906 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 15:49:05,016 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:49:05,018 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:49:52,491 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 15:50:02,740 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 15:51:05,291 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 15:52:10,941 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 15:52:13,405 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 15:52:45,808 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 15:56:08,477 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 15:56:12,102 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:56:12,417 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:56:12,442 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 15:56:12,442 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 15:56:13,862 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 15:56:14,138 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 15:56:14,341 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 15:56:14,807 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 15:56:20,450 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:56:20,452 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 15:56:20,453 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 15:56:20,597 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 15:56:20,598 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 15:56:20,602 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 15:56:20,605 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 15:56:20,614 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 15:56:21,271 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 15:56:21,656 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 15:56:22,016 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-07-04 15:56:23,216 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-04 15:56:23,216 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 16:00:35,252 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 16:00:39,067 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:00:39,093 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:00:39,118 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:00:39,118 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 16:00:40,317 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 16:00:40,548 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 16:00:40,752 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 16:00:41,175 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 16:00:42,023 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:00:42,027 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:00:42,029 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 16:00:42,183 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 16:00:42,184 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 16:00:42,188 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 16:00:42,188 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 16:00:42,195 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 16:00:42,626 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 16:00:42,845 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 16:00:43,033 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-07-04 16:08:17,139 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 16:08:20,729 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:08:20,756 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:08:20,778 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:08:20,778 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 16:08:21,966 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 16:08:22,225 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 16:08:22,448 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 16:08:22,918 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 16:08:23,757 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:08:23,758 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:08:23,761 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 16:08:23,908 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 16:08:23,909 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 16:08:23,913 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 16:08:23,914 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 16:08:23,922 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 16:08:24,399 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 16:08:24,611 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 16:08:24,803 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-07-04 16:18:58,561 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 16:19:02,207 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:19:02,234 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:19:02,398 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:19:02,399 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 16:19:03,726 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 16:19:04,001 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 16:19:04,216 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 16:19:04,667 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 16:19:05,578 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:19:05,580 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:19:05,582 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 16:19:05,727 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 16:19:05,728 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 16:19:05,731 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 16:19:05,732 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 16:19:05,742 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 16:19:06,241 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 16:19:06,449 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 16:19:06,636 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-07-04 16:21:56,027 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-04 16:22:01,042 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2018-07-04 16:22:01,042 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-04 16:22:01,042 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 16:23:36,192 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 16:23:39,970 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:23:40,047 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:23:40,071 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:23:40,071 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 16:23:41,370 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 16:23:41,630 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 16:23:41,830 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 16:23:42,272 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 16:23:43,131 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:23:43,132 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:23:43,135 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 16:23:43,253 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 16:23:43,254 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 16:23:43,257 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 16:23:43,258 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 16:23:43,269 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 16:23:43,736 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 16:23:43,942 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 16:23:44,127 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2018-07-04 16:24:05,304 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-04 16:24:05,304 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2018-07-04 16:24:05,305 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-04 16:24:05,305 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-04 16:24:35,381 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-04 16:24:39,191 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:24:39,295 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:24:39,319 DEBUG MISService.Method.LogMethods - HandleSiteLocation:Debug:Done
+2018-07-04 16:24:39,319 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2018-07-04 16:24:40,573 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-04 16:24:40,847 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-04 16:24:41,058 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-04 16:24:41,541 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2018-07-04 16:24:42,444 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:24:42,446 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:DONE
+2018-07-04 16:24:42,448 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2018-07-04 16:24:42,597 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:DONE
+2018-07-04 16:24:42,600 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2018-07-04 16:24:42,604 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:DONE
+2018-07-04 16:24:42,605 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-04 16:24:42,619 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2018-07-04 16:24:43,110 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2018-07-04 16:24:43,343 DEBUG MISService.Method.LogMethods - GetAllHoistingPermits:Debug:Done
+2018-07-04 16:24:43,536 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done

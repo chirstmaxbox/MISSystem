@@ -27,6 +27,7 @@ namespace MISService.Models
         public static string PermitForStakeout = "PermitForStakeout";
         public static string Sales_JobMasterList_WO = "Sales_JobMasterList_WO";
         public static string WO_Item = "WO_Item";
+        public static string WO_Instruction_DataTable = "WO_Instruction_DataTable";
     }
 
     public class SalesType

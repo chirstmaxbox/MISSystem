@@ -336,7 +336,8 @@ namespace SalesCenterDomain.BDL.Workorder
             var wo = new MyWorkorder(_woID);
 
             if (wo.Value.woType == (int) NWorkorderType.Service |
-                wo.Value.woType == (int) NWorkorderType.Sitecheck)
+                wo.Value.woType == (int) NWorkorderType.Sitecheck |
+                 wo.Value.woType == (int)NWorkorderType.Production)
             {
                 return;
             }
