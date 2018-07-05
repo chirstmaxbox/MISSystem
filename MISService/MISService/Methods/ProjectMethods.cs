@@ -99,24 +99,24 @@ namespace MISService.Method
 
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods(opportunity.Id);
-                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+//                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
-                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             QuoteMethods qm = new QuoteMethods(opportunity.Id);
-                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+//                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             PermitMethods pm = new PermitMethods(opportunity.Id);
-                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+ //                           pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+ //                           pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+ //                           pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
                             wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);

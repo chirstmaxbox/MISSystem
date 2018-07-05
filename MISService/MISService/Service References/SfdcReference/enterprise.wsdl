@@ -9133,6 +9133,7 @@
               <xsd:element minOccurs="0" name="Check_List_Item__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="CombinedAttachments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="ContentDocumentLinks" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Content_For_Check_List_Item_As_Others__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Content__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="CreatedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="CreatedById" nillable="true" type="tns:ID" />
@@ -9828,6 +9829,7 @@
               <xsd:element minOccurs="0" name="List_Item_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="List_Service_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="LookedUpFromActivities" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="MIS_Quote_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Notes" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="NotesAndAttachments" nillable="true" type="tns:QueryResult" />
@@ -10363,6 +10365,7 @@
               <xsd:element minOccurs="0" name="Check_List_Item__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="CombinedAttachments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="ContentDocumentLinks" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Content_For_Check_List_Item_As_Others__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Content__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="CreatedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="CreatedById" nillable="true" type="tns:ID" />
@@ -13124,6 +13127,7 @@
               <xsd:element minOccurs="0" name="Rush__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Service_Check_Lists__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Servicer_Instructions__r" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Site_Check_Purpose_As_Other__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Site_Check_Purpose__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="SystemModstamp" nillable="true" type="xsd:dateTime" />
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />

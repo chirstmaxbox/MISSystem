@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-06-28 13:49:37 +0000.
+Generated on 2018-07-05 20:13:05 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -9469,6 +9469,7 @@ All Rights Reserved
                         <element name="Check_List_Item__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="CombinedAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ContentDocumentLinks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Content_For_Check_List_Item_As_Others__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Content__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -10182,6 +10183,7 @@ All Rights Reserved
                         <element name="List_Item_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="List_Service_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="MIS_Quote_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="NotesAndAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -10736,6 +10738,7 @@ All Rights Reserved
                         <element name="Check_List_Item__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="CombinedAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ContentDocumentLinks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Content_For_Check_List_Item_As_Others__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Content__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -13584,6 +13587,7 @@ All Rights Reserved
                         <element name="Rush__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Service_Check_Lists__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Servicer_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Site_Check_Purpose_As_Other__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Site_Check_Purpose__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>

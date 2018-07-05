@@ -1,6 +1,5 @@
 ﻿using MISService.Method;
 using MISService.Models;
-using ProjectDomain;
 using SalesCenterDomain.BDL;
 using System;
 using System.Collections.Generic;
@@ -13,13 +12,13 @@ using enterprise = MISService.SfdcReference;
 
 namespace MISService.Methods
 {
-    public class ProductionWOMethods
+    public class ServiceWOMethods
     {
         private EndpointAddress apiAddr;
         private enterprise.SessionHeader header;
         private string salesForceProjectID;
 
-        public ProductionWOMethods(string salesForceProjectID)
+        public ServiceWOMethods(string salesForceProjectID)
         {
             //set query endpoint to value returned by login request
             apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
@@ -59,12 +58,12 @@ namespace MISService.Methods
                     {
                         items.Add(wl.Id);
                         /* check if the work order exists */
-                        int workShopID = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_PW, wl.Id, sfWorkOrderID, salesForceProjectID);
+                        int workShopID = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_SW, wl.Id, sfWorkOrderID, salesForceProjectID);
                         if (workShopID == 0)
                         {
                             InsertWorkShopInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Instruction_DataTable);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PW, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_SW, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
                         }
                         else
                         {
@@ -81,6 +80,7 @@ namespace MISService.Methods
                 LogMethods.Log.Error("GetAllWorkShopInstruction:Error:" + e.Message);
             }
         }
+
 
         private int DeleteWorkShopInstruction(int dId)
         {
@@ -112,26 +112,26 @@ namespace MISService.Methods
         {
             try
             {
-                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Instruction_DataTable_PW, sfWorkOrderID, salesForceProjectID);
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Instruction_DataTable_SW, sfWorkOrderID, salesForceProjectID);
                 foreach (string i in ids)
                 {
                     // not found
                     if (Array.IndexOf(items, i) == -1)
                     {
                         // get MISID
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_PW, i, sfWorkOrderID, salesForceProjectID);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_SW, i, sfWorkOrderID, salesForceProjectID);
                         // get a row
                         if (DeleteWorkShopInstruction(itemIDTemp) > 0)
                         {
                             // remove MISID out of MISSalesForceMapping
-                            CommonMethods.Delete(TableName.WO_Instruction_DataTable_PW, i, sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.Delete(TableName.WO_Instruction_DataTable_SW, i, sfWorkOrderID, salesForceProjectID);
                         }
                     }
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedWorkShopInstructions:Error:" + e.Message);
             }
         }
 
@@ -193,7 +193,8 @@ namespace MISService.Methods
         public int GetInstructionID(string category, string content)
         {
             int id = 0;
-            switch(category) {
+            switch (category)
+            {
                 case "Material":
                     switch (content)
                     {
@@ -291,7 +292,8 @@ namespace MISService.Methods
             return id;
         }
 
-        public void GetAllInstallerInstructions(int woId, string sfWorkOrderID)
+
+        public void GetAllServicerInstructions(int woId, string sfWorkOrderID)
         {
             try
             {
@@ -300,7 +302,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Category__c, Final_Instruction__c, Instruction__c "
-                        + " FROM Installer_Instruction__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
+                        + " FROM Servicer_Instruction__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -314,36 +316,36 @@ namespace MISService.Methods
                     if (result.size == 0) return;
 
                     //cast query results
-                    IEnumerable<enterprise.Installer_Instruction__c> instInstructionList = result.records.Cast<enterprise.Installer_Instruction__c>();
+                    IEnumerable<enterprise.Servicer_Instruction__c> servInstructionList = result.records.Cast<enterprise.Servicer_Instruction__c>();
                     List<string> items = new List<string>();
-                    foreach (var wl in instInstructionList)
+                    foreach (var wl in servInstructionList)
                     {
                         items.Add(wl.Id);
                         /* check if the work order exists */
-                        int instInstructionID = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_PI, wl.Id, sfWorkOrderID, salesForceProjectID);
+                        int instInstructionID = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_SS, wl.Id, sfWorkOrderID, salesForceProjectID);
                         if (instInstructionID == 0)
                         {
-                            InsertInstallerInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
+                            InsertServicerInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Instruction_DataTable);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PI, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_SS, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
                         }
                         else
                         {
-                            UpdateInstallerInstruction(instInstructionID, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
+                            UpdateServicerInstruction(instInstructionID, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                         }
                     }
 
-                    DeleteAllDeletedInstallerInstructions(items.ToArray(), sfWorkOrderID);
-                    LogMethods.Log.Debug("GetAllInstallerInstructions:Debug:" + "Done");
+                    DeleteAllDeletedServicerInstructions(items.ToArray(), sfWorkOrderID);
+                    LogMethods.Log.Debug("GetAllServicerInstructions:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetAllInstallerInstructions:Error:" + e.Message);
+                LogMethods.Log.Error("GetAllServicerInstructions:Error:" + e.Message);
             }
         }
 
-        private int DeleteInstallerInstruction(int dId)
+        private int DeleteServicerInstruction(int dId)
         {
             int row = 0;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -359,7 +361,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteWorkShopInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteServicerInstruction:Crash:" + ex.Message);
             }
             finally
             {
@@ -369,35 +371,35 @@ namespace MISService.Methods
             return row;
         }
 
-        private void DeleteAllDeletedInstallerInstructions(string[] items, string sfWorkOrderID)
+        private void DeleteAllDeletedServicerInstructions(string[] items, string sfWorkOrderID)
         {
             try
             {
-                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Instruction_DataTable_PI, sfWorkOrderID, salesForceProjectID);
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Instruction_DataTable_SS, sfWorkOrderID, salesForceProjectID);
                 foreach (string i in ids)
                 {
                     // not found
                     if (Array.IndexOf(items, i) == -1)
                     {
                         // get MISID
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_PI, i, sfWorkOrderID, salesForceProjectID);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Instruction_DataTable_SS, i, sfWorkOrderID, salesForceProjectID);
                         // get a row
-                        if (DeleteInstallerInstruction(itemIDTemp) > 0)
+                        if (DeleteServicerInstruction(itemIDTemp) > 0)
                         {
                             // remove MISID out of MISSalesForceMapping
-                            CommonMethods.Delete(TableName.WO_Instruction_DataTable_PI, i, sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.Delete(TableName.WO_Instruction_DataTable_SS, i, sfWorkOrderID, salesForceProjectID);
                         }
                     }
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedServicerInstructions:Error:" + e.Message);
             }
         }
 
 
-        private bool UpdateInstallerInstruction(int dID, string category, string content, string finalContent)
+        private bool UpdateServicerInstruction(int dID, string category, string content, string finalContent)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -406,7 +408,7 @@ namespace MISService.Methods
                 string SqlUpdateString = "UPDATE [WO_Instruction_Datatable] SET  [Contents] = @Contents, [InstructionID] = @InstructionID WHERE [dID] = @dID";
                 var UpdateCommand = new SqlCommand(SqlUpdateString, Connection);
                 UpdateCommand.Parameters.AddWithValue("@dID", dID);
-                UpdateCommand.Parameters.AddWithValue("@InstructionID", GetInstallerInstructionID(category, content));
+                UpdateCommand.Parameters.AddWithValue("@InstructionID", GetServicerInstructionID(category, content));
                 UpdateCommand.Parameters.AddWithValue("@Contents", finalContent);
                 Connection.Open();
                 UpdateCommand.ExecuteNonQuery();
@@ -414,7 +416,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateInstallerInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateServicerInstruction:Crash:" + ex.Message);
             }
             finally
             {
@@ -424,7 +426,7 @@ namespace MISService.Methods
             return ret;
         }
 
-        private bool InsertInstallerInstruction(int woID, string category, string content, string finalContent)
+        private bool InsertServicerInstruction(int woID, string category, string content, string finalContent)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -433,7 +435,7 @@ namespace MISService.Methods
                 string SqlSelectString = "INSERT INTO WO_Instruction_Datatable(woID, InstructionID, Contents, recordType) VALUES (@woID, @InstructionID, @Contents, @recordType)";
                 var InsertCommand = new SqlCommand(SqlSelectString, Connection);
                 InsertCommand.Parameters.AddWithValue("@woID", woID);
-                InsertCommand.Parameters.AddWithValue("@InstructionID", GetInstallerInstructionID(category, content));
+                InsertCommand.Parameters.AddWithValue("@InstructionID", GetServicerInstructionID(category, content));
                 InsertCommand.Parameters.AddWithValue("@Contents", finalContent);
                 InsertCommand.Parameters.AddWithValue("@recordType", 0); //0 for Instruction for Installer and Site-Check inspector.
                 Connection.Open();
@@ -442,7 +444,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertInstallerInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertServicerInstruction:Crash:" + ex.Message);
             }
             finally
             {
@@ -452,147 +454,68 @@ namespace MISService.Methods
             return ret;
         }
 
-        private int GetInstallerInstructionID(string category, string content)
+        private int GetServicerInstructionID(string category, string content)
         {
             int id = 0;
             switch (category)
             {
-                case "Additional Drawing":
-                    id = 1023;
-                    break;
-                case "Additional Details":
-                    id = 1032;
-                    break;
                 case "C.O.D":
-                    id = 1003;
-                    break;
-                case "Confirm Appoint":
-                    id = 1002;
-                    break;
-                case "Hoarding":
-                    switch (content)
-                    {
-                        case "Hoarding is up: Key Code is < insert your content here > to get access into store. No need to meet with client":
-                            id = 1005;
-                            break;
-                        case "Hoarding is up: Meet with client to get access into the store":
-                            id = 1004;
-                            break;
-                        case "Hoarding is up: No special access required to get inside the store":
-                            id = 1006;
-                            break;
-                        case "Hoarding is up: < insert your content here >":
-                            id = 1007;
-                            break;
-                        default:
-                            id = 1008;
-                            break;
-                    }
-                    break;
-                case "Install Only":
-                    id = 1009;
-                    break;
-                case "Installation Method":
-                    switch (content)
-                    {
-                        case "Mount on existing sign":
-                            id = 1015;
-                            break;
-                        default:
-                            id = 1014;
-                            break;
-                    }
-                    break;
-                case "Installation Time":
-                    id = 1013;
+                    id = 1035;
                     break;
                 case "Mall":
                     switch (content)
                     {
-                        case "Install after mall hour - mall arrangement made, sign in with security before work. Call site supervisor upon arrival and leaving site":
-                            id = 1011;
+                        case "Service after mall hour - mall arrangement made, sign in with security before work. Call site supervisor upon arrival and leaving site.":
+                            id = 1037;
                             break;
-                        case "Install before mall hour - mall arrangement made, sign in with security before work. Call site supervisor upon arrival and leaving site":
-                            id = 1010;
+                        case "Service before mall hour - mall arrangement made, sign in with security before work. Call site supervisor upon arrival and leaving site.":
+                            id = 1036;
                             break;
                         default:
-                            id = 1012;
+                            id = 1038;
                             break;
                     }
                     break;
-                case "Other":
-                    id = 1033;
-                    break;
-                case "Pin Point":
-                    switch (content)
-                    {
-                        case "Pin Point Location - AE to go with installer to pin point position of sign":
-                            id = 1000;
-                            break;
-                        default:
-                            id = 1001;
-                            break;
-                    }
-                    break;
-                case "Pylon Sign":
-                    switch (content)
-                    {
-                        case "Pylon Sign - Hole Inspection - meet inspector on site at < insert your content here >":
-                            id = 1017;
-                            break;
-                        default:
-                            id = 1016;
-                            break;
-                    }
+                case "Others":
+                    id = 1049;
                     break;
                 case "Relocation":
-                    id = 1067;
+                    id = 1039;
                     break;
-                case "Servicing":
-                    switch (content)
-                    {
-                        case "Servicing - After installation completed, fix & repair the broken sign: < insert your content here >":
-                            id = 1021;
-                            break;
-                        case "Servicing - After installation completed, fix & repair the broken sign: Replace burnt out lamp":
-                            id = 1020;
-                            break;
-                        default:
-                            id = 1019;
-                            break;
-                    }
+                case "Sign Location":
+                    id = 1034;
                     break;
                 case "Special Equipment":
-                    id = 1022;
+                    id = 1040;
                     break;
                 case "Take Down":
                     switch (content)
                     {
                         case "Patch Hole":
-                            id = 1068;
+                            id = 1041;
                             break;
                         case "Take down & deliver to < insert your content here >":
-                            id = 1074;
+                            id = 1047;
                             break;
-                        case "Take down & repair":
-                            id = 1069;
+                        case "Take down & repair.":
+                            id = 1042;
                             break;
-                        case "Take down in good shape & bring back shop for repair":
-                            id = 1073;
+                        case "Take down in good shape & bring back shop for repair.":
+                            id = 1046;
                             break;
                         case "Take down in good shape & store in FS workshop (If Requirement used: TD & Bring back to shop for stock)":
-                            id = 1072;
+                            id = 1045;
                             break;
-                        case "Take down, take picture, & leave sign at the site with client":
-                            id = 1070;
+                        case "Take down, take picture, & leave sign at the site with client.":
+                            id = 1043;
                             break;
                         default:
-                            id = 1071;
+                            id = 1044;
                             break;
                     }
                     break;
                 default:
-                    id = 1031;
+                    id = 1048;
                     break;
             }
 
@@ -608,7 +531,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c "
-                        + " FROM Production_Check_List__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
+                        + " FROM Service_Check_List__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -622,17 +545,17 @@ namespace MISService.Methods
                     if (result.size == 0) return;
 
                     //cast query results
-                    IEnumerable<enterprise.Production_Check_List__c> checkList = result.records.Cast<enterprise.Production_Check_List__c>();
+                    IEnumerable<enterprise.Service_Check_List__c> checkList = result.records.Cast<enterprise.Service_Check_List__c>();
                     List<string> items = new List<string>();
                     foreach (var wl in checkList)
                     {
                         items.Add(wl.Id);
-                        int checkListID = CommonMethods.GetMISID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, wl.Id, sfWorkOrderID, salesForceProjectID);
+                        int checkListID = CommonMethods.GetMISID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC, wl.Id, sfWorkOrderID, salesForceProjectID);
                         if (checkListID == 0)
                         {
                             InsertCheckList(woId, wl.Check_List_Item__c, wl.Content__c, wl.Content_For_Check_List_Item_As_Others__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
                         }
                         else
                         {
@@ -642,12 +565,12 @@ namespace MISService.Methods
 
                     /* use the same function with Work Shop Instruction */
                     DeleteAllDeletedCheckLists(items.ToArray(), sfWorkOrderID);
-                    LogMethods.Log.Debug("GetAllInstallerInstructions:Debug:" + "Done");
+                    LogMethods.Log.Debug("GetAllCheckLists:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetAllInstallerInstructions:Error:" + e.Message);
+                LogMethods.Log.Error("GetAllCheckLists:Error:" + e.Message);
             }
         }
 
@@ -680,19 +603,19 @@ namespace MISService.Methods
         {
             try
             {
-                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, sfWorkOrderID, salesForceProjectID);
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC, sfWorkOrderID, salesForceProjectID);
                 foreach (string i in ids)
                 {
                     // not found
                     if (Array.IndexOf(items, i) == -1)
                     {
                         // get MISID
-                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, i, sfWorkOrderID, salesForceProjectID);
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC, i, sfWorkOrderID, salesForceProjectID);
                         // get a row
                         if (DeleteCheckList(itemIDTemp) > 0)
                         {
                             // remove MISID out of MISSalesForceMapping
-                            CommonMethods.Delete(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, i, sfWorkOrderID, salesForceProjectID);
+                            CommonMethods.Delete(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC, i, sfWorkOrderID, salesForceProjectID);
                         }
                     }
                 }
@@ -776,44 +699,32 @@ namespace MISService.Methods
             int id = 0;
             switch (item)
             {
+                case "Art Drawing":
+                    id = 210;
+                    break;
+                case "C.O.D Invoice":
+                    id = 214;
+                    break;
                 case "Certificate Of Liability Insurance":
-                    id = 35;
-                    break;
-                case "Duty Cop":
-                    id = 115;
-                    break;
-                case "Hoarding Is Up":
-                    id = 105;
-                    break;
-                case "Hoisting Permit":
-                    id = 25;
+                    id = 217;
                     break;
                 case "Others":
-                    id = 209;
+                    id = 218;
                     break;
-                case "Parking Space Or Loading Dock":
-                    id = 110;
+                case "Photo Of Sign":
+                    id = 213;
                     break;
-                case "Security Office - Contact Phone":
-                    id = 200;
+                case "Site Plan / Sign Location Map":
+                    id = 215;
                     break;
-                case "Sign Permit":
-                    id = 10;
+                case "Structural Drawing":
+                    id = 211;
                     break;
-                case "Sign Permit Waiver":
-                    id = 15;
-                    break;
-                case "Site Check Report":
-                    id = 5;
-                    break;
-                case "Special Equipment":
-                    id = 205;
-                    break;
-                case "Stake Out Report":
-                    id = 20;
+                case "Wiring Diagram":
+                    id = 212;
                     break;
                 default:
-                    id = 30;
+                    id = 216;
                     break;
             }
 

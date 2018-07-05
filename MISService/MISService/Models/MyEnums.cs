@@ -26,8 +26,19 @@ namespace MISService.Models
         public static string PermitForHoisting = "PermitForHoisting";
         public static string PermitForStakeout = "PermitForStakeout";
         public static string Sales_JobMasterList_WO = "Sales_JobMasterList_WO";
+        public static string WO_Sitecheck_Purpose = "WO_Sitecheck_Purpose";
         public static string WO_Item = "WO_Item";
         public static string WO_Instruction_DataTable = "WO_Instruction_DataTable";
+        public static string WO_WORKORDER_CHECKLIST_DATATABLE = "WO_WORKORDER_CHECKLIST_DATATABLE";
+        /* For Work Order Production */
+        public static string WO_Instruction_DataTable_PW = "WO_Instruction_DataTable_PW";
+        public static string WO_Instruction_DataTable_PI = "WO_Instruction_DataTable_PI";
+        public static string WO_WORKORDER_CHECKLIST_DATATABLE_PC = "WO_WORKORDER_CHECKLIST_DATATABLE_PC";
+
+        /* For Work ORder Service */
+        public static string WO_Instruction_DataTable_SW = "WO_Instruction_DataTable_SW";
+        public static string WO_Instruction_DataTable_SS = "WO_Instruction_DataTable_SS";
+        public static string WO_WORKORDER_CHECKLIST_DATATABLE_SC = "WO_WORKORDER_CHECKLIST_DATATABLE_SC";
     }
 
     public class SalesType

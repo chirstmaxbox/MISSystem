@@ -1,10 +1,13 @@
 ﻿using MISService.Method;
 using MISService.Models;
 using ProjectDomain;
+using SalesCenterDomain.BDL;
 using SalesCenterDomain.BDL.Workorder;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -40,7 +43,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
-                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, List_Item_Name__c "
+                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, List_Item_Name__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c "
                         + " FROM Work_Order__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
@@ -73,7 +76,7 @@ namespace MISService.Methods
                         if (workOrderID != 0)
                         {
                             UpdateWorkOrder(workOrderID, ql.Name, ql.Work_Order_Type__c, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
-                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__c);
+                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__c, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id);
 
                             // generate work order items
                             HandleWorkOrderItem(workOrderID, ql.List_Item_Name__c, ql.Id);
@@ -81,10 +84,16 @@ namespace MISService.Methods
                             switch (ql.Work_Order_Type__c)
                             {
                                 case "Production":
-
+                                    ProductionWOMethods pm = new ProductionWOMethods(salesForceProjectID);
+                                    pm.GetAllWorkShopInstructions(workOrderID, ql.Id);
+                                    pm.GetAllInstallerInstructions(workOrderID, ql.Id);
+                                    pm.GetAllCheckLists(workOrderID, ql.Id);
                                     break;
                                 case "Service":
-
+                                    ServiceWOMethods sm = new ServiceWOMethods(salesForceProjectID);
+                                    sm.GetAllWorkShopInstructions(workOrderID, ql.Id);
+                                    sm.GetAllServicerInstructions(workOrderID, ql.Id);
+                                    sm.GetAllCheckLists(workOrderID, ql.Id);
                                     break;
                                 case "Site Check":
 
@@ -247,7 +256,7 @@ namespace MISService.Methods
         }
 
         private void UpdateWorkOrder(int workOrderID, string woNumber, string woType, string paymentMethod, double? version, string rush, string rushReason,
-                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, string preWONumber)
+                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, string preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID)
         {
             var workOrder = _db.Sales_JobMasterList_WO.Where(x => x.woID == workOrderID).FirstOrDefault();
             if (workOrder != null)
@@ -374,8 +383,138 @@ namespace MISService.Methods
 
                 _db.Entry(workOrder).State = EntityState.Modified;
                 _db.SaveChanges();
+
+            }
+
+            if (woType == "Site Check")
+            {
+                int siteCheckID = CommonMethods.GetMISID(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, salesForceProjectID);
+                if (siteCheckID == 0)
+                {
+                    InsertNewSiteCheckPurpose(workOrderID, siteCheckPurpose, siteCheckPurposeAsOther);
+                    int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Sitecheck_Purpose);
+                    CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, newId.ToString(), salesForceProjectID);
+                }
+                else
+                {
+                    UpdateSiteCheckPurpose(siteCheckID, siteCheckPurpose, siteCheckPurposeAsOther);
+                }
             }
 
         }
+
+        private bool UpdateSiteCheckPurpose(int siteCheckID, string siteCheckPurpose, string siteCheckPurposeAsOther)
+        {
+            bool ret = false;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlUpdateString = "UPDATE [WO_Sitecheck_Purpose] SET [scPurpose1] = @scPurpose1, [scPurpose2] = @scPurpose2, [scPurpose3] = @scPurpose3, [scPurpose4] = @scPurpose4, [scPurposeOther] = @scPurposeOther WHERE [scID] = @scID";
+                var UpdateCommand = new SqlCommand(SqlUpdateString, Connection);
+                UpdateCommand.Parameters.AddWithValue("@scID", siteCheckID);
+                switch (siteCheckPurpose)
+                {
+                    case "Quotation":
+                        UpdateCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = true;
+                        UpdateCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                        break;
+                    case "Permit":
+                        UpdateCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = true;
+                        UpdateCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                        break;
+                    case "Production":
+                        UpdateCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = true;
+                        UpdateCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                        break;
+                    default:
+                        UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = siteCheckPurposeAsOther;
+                        UpdateCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                        UpdateCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = true;
+                        break;
+                }
+                Connection.Open();
+                UpdateCommand.ExecuteNonQuery();
+                ret = true;
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("UpdateSiteCheckPurpose:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ret;
+        }
+
+        public void InsertNewSiteCheckPurpose(int woId, string siteCheckPurpose, string siteCheckPurposeAsOther)
+        {
+            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            {
+                string InsertString =
+                    "INSERT INTO [WO_Sitecheck_Purpose] ([woID], [scPurpose1], [scPurpose2], [scPurpose3], [scPurpose4], [scPurposeOther]) VALUES (@woID, @scPurpose1, @scPurpose2, @scPurpose3, @scPurpose4, @scPurposeOther)";
+
+                // Create the command and set its properties.
+                var InsertCommand = new SqlCommand(InsertString, Connection);
+                try
+                {
+                    Connection.Open();
+                    InsertCommand.Parameters.Add("@woID", SqlDbType.Int).Value = woId;
+                    switch (siteCheckPurpose)
+                    {
+                        case "Quotation":
+                            InsertCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = true;
+                            InsertCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                            break;
+                        case "Permit":
+                            InsertCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = true;
+                            InsertCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                            break;
+                        case "Production":
+                            InsertCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = true;
+                            InsertCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                            break;
+                        default:
+                            InsertCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = siteCheckPurposeAsOther;
+                            InsertCommand.Parameters.Add("@scPurpose4", SqlDbType.Bit).Value = true;
+                            InsertCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
+                            InsertCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
+                            break;
+                    }
+                    InsertCommand.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    LogMethods.Log.Error("InsertCheckList:Crash:" + ex.Message);
+                }
+                finally
+                {
+                    Connection.Close();
+                }
+            }
+        }
+
     }
 }
