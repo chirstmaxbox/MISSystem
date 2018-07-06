@@ -30,15 +30,26 @@ namespace MISService.Models
         public static string WO_Item = "WO_Item";
         public static string WO_Instruction_DataTable = "WO_Instruction_DataTable";
         public static string WO_WORKORDER_CHECKLIST_DATATABLE = "WO_WORKORDER_CHECKLIST_DATATABLE";
+        public static string WO_ShippingItem = "WO_ShippingItem";
         /* For Work Order Production */
         public static string WO_Instruction_DataTable_PW = "WO_Instruction_DataTable_PW";
         public static string WO_Instruction_DataTable_PI = "WO_Instruction_DataTable_PI";
         public static string WO_WORKORDER_CHECKLIST_DATATABLE_PC = "WO_WORKORDER_CHECKLIST_DATATABLE_PC";
+        public static string WO_ShippingItem_P = "WO_ShippingItem_P";
 
-        /* For Work ORder Service */
+        /* For Work Order Service */
         public static string WO_Instruction_DataTable_SW = "WO_Instruction_DataTable_SW";
         public static string WO_Instruction_DataTable_SS = "WO_Instruction_DataTable_SS";
         public static string WO_WORKORDER_CHECKLIST_DATATABLE_SC = "WO_WORKORDER_CHECKLIST_DATATABLE_SC";
+        public static string WO_ShippingItem_S = "WO_ShippingItem_S";
+
+        /* For Work Order Site-Check  */
+        public static string WO_Instruction_DataTable_SC_I = "WO_Instruction_DataTable__SC_I";
+        public static string WO_WORKORDER_CHECKLIST_DATATABLE_SC_C = "WO_WORKORDER_CHECKLIST_DATATABLE_SC_C";
+        public static string WO_ShippingItem_SC = "WO_ShippingItem_SC";
+
+        /* End */
+        public static string Sales_Dispatching = "Sales_Dispatching";
     }
 
     public class SalesType

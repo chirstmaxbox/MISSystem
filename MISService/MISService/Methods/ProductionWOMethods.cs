@@ -135,7 +135,7 @@ namespace MISService.Methods
             }
         }
 
-        public bool InsertWorkShopInstruction(int woID, string category, string content, string finalContent)
+        private bool InsertWorkShopInstruction(int woID, string category, string content, string finalContent)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -163,7 +163,7 @@ namespace MISService.Methods
             return ret;
         }
 
-        public bool UpdateWorkShopInstruction(int dID, string category, string content, string finalContent)
+        private bool UpdateWorkShopInstruction(int dID, string category, string content, string finalContent)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -190,7 +190,7 @@ namespace MISService.Methods
             return ret;
         }
 
-        public int GetInstructionID(string category, string content)
+        private int GetInstructionID(string category, string content)
         {
             int id = 0;
             switch(category) {
@@ -699,7 +699,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedCheckLists:Error:" + e.Message);
             }
         }
 
@@ -818,6 +818,150 @@ namespace MISService.Methods
             }
 
             return id;
+        }
+
+        private bool InsertNote(int woId, string title, string content)
+        {
+            bool ret = false;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "INSERT INTO [WO_ShippingItem] ([WoID], [ItemNumber], [Qty], [Description]) VALUES (@WoID, @ItemNumber, @Qty, @Description)";
+                var InsertCommand = new SqlCommand(SqlSelectString, Connection);
+                InsertCommand.Parameters.AddWithValue("@woID", woId);
+                InsertCommand.Parameters.AddWithValue("@ItemNumber", 1);
+                InsertCommand.Parameters.AddWithValue("@Qty", title);
+                if (content != null)
+                {
+                    InsertCommand.Parameters.AddWithValue("@Description", content);
+                }
+                else
+                {
+                    InsertCommand.Parameters.AddWithValue("@Description", "");
+                }
+                Connection.Open();
+                InsertCommand.ExecuteNonQuery();
+                ret = true;
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("InsertNote:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ret;
+        }
+
+        private void UpdateNote(int itemID, string title, string content)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlUpdateString = "UPDATE [WO_ShippingItem] SET [Qty] = @Qty, [Description] = @Description WHERE [ItemID] = @ItemID";
+                var UpdateCommand = new SqlCommand(SqlUpdateString, Connection);
+                UpdateCommand.Parameters.AddWithValue("@ItemID", itemID);
+                UpdateCommand.Parameters.AddWithValue("@Qty", title);
+                if (content != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@Description", content);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@Description", "");
+                }
+                Connection.Open();
+                UpdateCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("UpdateNote:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private int DeleteNote(int itemID)
+        {
+            int row = 0;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM WO_ShippingItem WHERE ([itemID] = @itemID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@itemID", itemID);
+                row = DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("DeleteNote:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return row;
+        }
+
+        private void DeleteAllDeletedNotes(string[] items, string sfWorkOrderID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_ShippingItem_P, sfWorkOrderID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_ShippingItem_P, i, sfWorkOrderID, salesForceProjectID);
+                        // get a row
+                        if (DeleteNote(itemIDTemp) > 0)
+                        {
+                            // remove MISID out of MISSalesForceMapping
+                            CommonMethods.Delete(TableName.WO_ShippingItem_P, i, sfWorkOrderID, salesForceProjectID);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+            }
+        }
+
+        public void GetAllNotes(int woId, enterprise.QueryResult result, string sfWorkOrderID)
+        {
+            if (result != null)
+            {
+                IEnumerable<enterprise.AttachedContentNote> noteList = result.records.Cast<enterprise.AttachedContentNote>();
+                List<string> notes = new List<string>();
+                foreach (var q in noteList)
+                {
+                    notes.Add(q.Id);
+                    int noteID = CommonMethods.GetMISID(TableName.WO_ShippingItem_P, q.Id, sfWorkOrderID, salesForceProjectID);
+                    if (noteID == 0)
+                    {
+                        InsertNote(woId, q.Title, q.TextPreview);
+                        int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_ShippingItem);
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_P, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                    }
+                    else
+                    {
+                        UpdateNote(noteID, q.Title, q.TextPreview);
+                    }
+                }
+
+                DeleteAllDeletedNotes(notes.ToArray(), sfWorkOrderID);
+                LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+            }
         }
 
     }

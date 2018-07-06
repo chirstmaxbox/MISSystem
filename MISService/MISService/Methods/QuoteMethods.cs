@@ -115,7 +115,7 @@ namespace MISService.Methods
             }
         }
 
-        public void UpdateNote(string qnTitle, string qnDescription, int qnID)
+        private void UpdateNote(string qnTitle, string qnDescription, int qnID)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
@@ -159,7 +159,7 @@ namespace MISService.Methods
             }
         }
 
-        public void HandleNotes(int jobID, int estRevID, int quoteRevID, enterprise.QueryResult result, string sfQuoteID)
+        private void HandleNotes(int jobID, int estRevID, int quoteRevID, enterprise.QueryResult result, string sfQuoteID)
         {
             if(result != null) {
 
@@ -374,7 +374,7 @@ namespace MISService.Methods
 
         }
 
-        public void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
+        private void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
         {
             try
             {

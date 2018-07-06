@@ -2,6 +2,7 @@
 using MISService.Models;
 using ProjectDomain;
 using SalesCenterDomain.BDL;
+using SalesCenterDomain.BDL.Task;
 using SalesCenterDomain.BDL.Workorder;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
+                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
                         + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, List_Item_Name__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c "
                         + " FROM Work_Order__c where Project_Name__c = '" + sfProjectID + "'";
 
@@ -88,19 +89,27 @@ namespace MISService.Methods
                                     pm.GetAllWorkShopInstructions(workOrderID, ql.Id);
                                     pm.GetAllInstallerInstructions(workOrderID, ql.Id);
                                     pm.GetAllCheckLists(workOrderID, ql.Id);
+                                    pm.GetAllNotes(workOrderID, ql.AttachedContentNotes, ql.Id);
                                     break;
                                 case "Service":
                                     ServiceWOMethods sm = new ServiceWOMethods(salesForceProjectID);
                                     sm.GetAllWorkShopInstructions(workOrderID, ql.Id);
                                     sm.GetAllServicerInstructions(workOrderID, ql.Id);
                                     sm.GetAllCheckLists(workOrderID, ql.Id);
+                                    sm.GetAllNotes(workOrderID, ql.AttachedContentNotes, ql.Id);
                                     break;
                                 case "Site Check":
-
+                                    SiteCheckWOMethods scm = new SiteCheckWOMethods(salesForceProjectID);
+                                    scm.GetAllInspectorInstructions(workOrderID, ql.Id);
+                                    scm.GetAllCheckLists(workOrderID, ql.Id);
+                                    scm.GetAllNotes(workOrderID, ql.AttachedContentNotes, ql.Id);
                                     break;
                                 default:
                                     break;
                             }
+
+                            /* check if the work order is approved */
+                            HandleApprovalStatus(ql.Id, jobID, userEmployeeID);
 
                         }
 
@@ -111,6 +120,71 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllWorkOrders:Error:" + e.Message);
+            }
+        }
+
+        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int userEmployeeID)
+        {
+            try
+            {
+                var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201).FirstOrDefault();
+                if (sales_Dispatching == null)
+                {
+                    //create service client to call API endpoint
+                    using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                    {
+                        string query = "SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstance where TargetObjectId = '" + sfWorkOrderID + "'" + " order by CompletedDate desc limit 1";
+
+                        enterprise.QueryResult result;
+                        queryClient.query(
+                            header, //sessionheader
+                            null, //queryoptions
+                            null, //mruheader
+                            null, //packageversion
+                            query, out result);
+
+                        /* if no any record, return */
+                        if (result.size == 0) return;
+
+                        //cast query results
+                        IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
+
+                        //show results
+                        foreach (var el in processInstanceList)
+                        {
+                            if (el.Status == "Approved")
+                            {
+                                //nothing to do
+                            }
+                            else if (el.Status == "Pending")
+                            {
+                                int taskID = CommonMethods.GetMISID(TableName.Sales_Dispatching, sfWorkOrderID, salesForceProjectID);
+                                if (taskID == 0)
+                                {
+                                    // Make a new approval request on MIS System
+                                    int taskCategory = 720; //-- [Work order Approval] is defined in Sales_Dispatching_Task_Category
+                                    int submitBy = userEmployeeID;
+                                    string taskFromWhere = "wip";  // coresponding to stage of 2
+
+                                    TaskSubmitFactory foTaskSubmit = new TaskSubmitFactory(taskCategory, submitBy, taskFromWhere);
+                                    TaskSubmit dp = foTaskSubmit.ObjTaskSubmit;
+
+                                    dp.ParameterDispatchingTask.Responsible = 8; // Mr. Fan is approved it
+                                    dp.ParameterDispatchingTask.JobId = jobId;
+
+
+                                }
+
+                            }
+                        }
+
+                        LogMethods.Log.Debug("GetApprovalData:Debug:" + "Done");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
             }
         }
 
@@ -261,8 +335,6 @@ namespace MISService.Methods
             var workOrder = _db.Sales_JobMasterList_WO.Where(x => x.woID == workOrderID).FirstOrDefault();
             if (workOrder != null)
             {
-                workOrder.WorkorderNumber = woNumber;
-
                 switch (woType)
                 {
                     case "Production":
@@ -354,6 +426,7 @@ namespace MISService.Methods
                         workOrder.revise = false;
                         workOrder.reviseVer = null;
                         workOrder.RedoOfWoNumbers = preWONumber;
+                        workOrder.WorkorderNumber = woNumber;
                         if (version != null)
                         {
                             workOrder.redoVer = Convert.ToInt16(version);
@@ -365,6 +438,7 @@ namespace MISService.Methods
                         workOrder.reDo = false;
                         workOrder.redoVer = null;
                         workOrder.RedoOfWoNumbers = preWONumber;
+                        workOrder.WorkorderNumber = preWONumber;
                         if (version != null)
                         {
                             workOrder.reviseVer = Convert.ToInt16(version);
@@ -376,6 +450,7 @@ namespace MISService.Methods
                         workOrder.reDo = false;
                         workOrder.redoVer = null;
                         workOrder.RedoOfWoNumbers = "";
+                        workOrder.WorkorderNumber = woNumber;
                         break;
                     default:
                         break;
@@ -459,7 +534,7 @@ namespace MISService.Methods
             return ret;
         }
 
-        public void InsertNewSiteCheckPurpose(int woId, string siteCheckPurpose, string siteCheckPurposeAsOther)
+        private void InsertNewSiteCheckPurpose(int woId, string siteCheckPurpose, string siteCheckPurposeAsOther)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {

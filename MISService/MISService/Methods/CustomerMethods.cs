@@ -168,7 +168,7 @@ namespace MISService.Methods
          * Type = 2 => Quoting
          * Type = 3 => Shipping
         */
-        public void HandleAccount(string companyName, string companyStreet, string companyProvince, string companyPostalCode,
+        private void HandleAccount(string companyName, string companyStreet, string companyProvince, string companyPostalCode,
             string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, int misJobID, int employeeNumber, string accountID, int type)
         {
             int customerID = CommonMethods.GetMISID(TableName.Customer, accountID, salesForceProjectID);
@@ -232,7 +232,7 @@ namespace MISService.Methods
         /// </summary>
         /// <param name="customer"></param>
         /// <param name="jcID">it is jcID in [Sales_JobMasterList_Customer]</param>
-        public int CreateCustomer(CUSTOMER customer, int jcID)
+        private int CreateCustomer(CUSTOMER customer, int jcID)
         {
             int rowID = 0;
             try

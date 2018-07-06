@@ -75,6 +75,7 @@
     <Compile Include="Methods\SalesForceMethods.cs" />
     <Compile Include="Methods\ServiceMethods.cs" />
     <Compile Include="Methods\ServiceWOMethods.cs" />
+    <Compile Include="Methods\SiteCheckWOMethods.cs" />
     <Compile Include="Methods\WorkOrderMethods.cs" />
     <Compile Include="MISServiceConfiguration.cs" />
     <Compile Include="Models\CrmEmployee.cs" />

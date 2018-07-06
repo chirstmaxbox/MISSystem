@@ -82,7 +82,7 @@ namespace MISService.Methods
             }
         }
 
-        public void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string listItemID, string sfDrawingID)
+        private void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string listItemID, string sfDrawingID)
         {
             try
             {
@@ -201,7 +201,7 @@ namespace MISService.Methods
             }
         }
 
-        public int UpdateDrawing(int estRevID, string drawingType, string drawingPurpose, string Is_Electronic_File_From_Client_Available__c,
+        private int UpdateDrawing(int estRevID, string drawingType, string drawingPurpose, string Is_Electronic_File_From_Client_Available__c,
             string gIs_GC_Or_Designer_Drawing_Available__c, string Is_Landord_Or_Mall_Criteria_Available__c, string Is_Latest_Version_Q_D_Quotation_Avail__c,
             string Is_Site_Check_Photo_Available__c, string Is_Site_Check_Report_Available__c)
         {

@@ -79,7 +79,7 @@ namespace MISService.Methods
             }
         }
 
-        public void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID)
+        private void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID)
         {
             try
             {
@@ -128,8 +128,7 @@ namespace MISService.Methods
             }
         }
 
-
-        public void GetAllItems(string sfEstimation, int estRevID) 
+        private void GetAllItems(string sfEstimation, int estRevID) 
         {
             try
             {

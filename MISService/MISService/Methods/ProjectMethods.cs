@@ -104,7 +104,7 @@ namespace MISService.Method
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
@@ -141,7 +141,7 @@ namespace MISService.Method
         /// Create a new project
         /// </summary>
         /// <param name="userEmployeeID">it is employeenumber in FW_Employees</param>
-        public int CreateNewProject(int userEmployeeID)
+        private int CreateNewProject(int userEmployeeID)
         {
             int newJobID = 0;
             try
@@ -175,7 +175,7 @@ namespace MISService.Method
         /// <summary>
         /// Edit a project
         /// </summary>
-        public void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType)
+        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
@@ -252,7 +252,7 @@ namespace MISService.Method
         }
 
 
-        public bool InsertBiddingProject(int userEmployeeID)
+        private bool InsertBiddingProject(int userEmployeeID)
         {
             bool ret = false;
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
@@ -365,7 +365,7 @@ namespace MISService.Method
             }
         }
 
-        public int GetBiddingID(int jobID)
+        private int GetBiddingID(int jobID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             int biddingID = 0;
