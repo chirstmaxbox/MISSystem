@@ -4,6 +4,7 @@ using ProjectDomain;
 using SalesCenterDomain.BDL;
 using SalesCenterDomain.BDL.Task;
 using SalesCenterDomain.BDL.Workorder;
+using SalesCenterDomain.BO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -109,7 +110,7 @@ namespace MISService.Methods
                             }
 
                             /* check if the work order is approved */
-                            HandleApprovalStatus(ql.Id, jobID, userEmployeeID);
+                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.Work_Order_Type__c);
 
                         }
 
@@ -123,7 +124,7 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int userEmployeeID)
+        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int estRevID, int woId, int userEmployeeID, string remarks, DateTime? dueDate, string rush, string woType )
         {
             try
             {
@@ -154,7 +155,7 @@ namespace MISService.Methods
                         {
                             if (el.Status == "Approved")
                             {
-                                //nothing to do
+                                //nothing to do as in production department they will fill some information before approving
                             }
                             else if (el.Status == "Pending")
                             {
@@ -171,8 +172,55 @@ namespace MISService.Methods
 
                                     dp.ParameterDispatchingTask.Responsible = 8; // Mr. Fan is approved it
                                     dp.ParameterDispatchingTask.JobId = jobId;
+                                    dp.ParameterDispatchingTask.EstRevId = estRevID;
+                                    dp.ParameterDispatchingTask.WoId = woId;
 
+                                    dp.ParameterDispatchingTask.Subject = "Workorder approval";  //DispatchingTaskEN.NDispatchingTaskPurpose.WorkorderApproval
+                                    if (!string.IsNullOrEmpty(remarks))
+                                    {
+                                        dp.ParameterDispatchingTask.Description = remarks.Trim();
+                                    }
 
+                                    if (dueDate != null)
+                                    {
+                                        dp.ParameterDispatchingTask.RequiredTime = (DateTime)dueDate;
+                                    }
+                                    else
+                                    {
+                                        dp.ParameterDispatchingTask.RequiredTime = DateTime.Now.AddDays(1);
+                                    }
+
+                                    dp.ParameterDispatchingTask.SubmitTime = DateTime.Now;
+
+                                    switch(rush) {
+                                        case "Yes":
+                                            dp.ParameterDispatchingTask.Rush = true;
+                                            break;
+                                        default:
+                                            dp.ParameterDispatchingTask.Rush = false;
+                                            break;
+                                    }
+
+                                    switch (woType)
+                                    {
+                                        case "Production":
+                                            dp.ParameterDispatchingTask.WorkorderType = 10;
+                                            break;
+                                        case "Service":
+                                            dp.ParameterDispatchingTask.WorkorderType = 20;
+                                            break;
+                                        case "Site Check":
+                                            dp.ParameterDispatchingTask.WorkorderType = 30;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
+                                    dp.EnableDuplicateSubmit = true;
+                                    dp.Insert();
+
+                                    int newTaskId = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_Dispatching);
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching, sfWorkOrderID, newTaskId.ToString(), salesForceProjectID);
                                 }
 
                             }

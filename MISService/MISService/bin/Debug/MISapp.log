@@ -559,3 +559,32 @@
 2018-07-06 14:07:16,235 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
 2018-07-06 14:07:16,235 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
 2018-07-06 14:07:16,235 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-07 09:29:52,818 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-07 09:29:57,348 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-07 09:29:57,596 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-07 09:29:57,788 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-07 09:29:58,858 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:34:06,313 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-07 09:34:10,524 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2018-07-07 09:34:10,789 DEBUG MISService.Method.LogMethods - GetAllServices:Debug:Done
+2018-07-07 09:34:10,972 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2018-07-07 09:34:12,300 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:34:35,041 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:34:37,852 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:34:38,022 DEBUG MISService.Method.LogMethods - GetAllWorkShopInstruction:Debug:Done
+2018-07-07 09:34:38,185 DEBUG MISService.Method.LogMethods - GetAllInstallerInstructions:Debug:Done
+2018-07-07 09:34:38,335 DEBUG MISService.Method.LogMethods - GetAllInstallerInstructions:Debug:Done
+2018-07-07 09:34:38,337 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-07 09:41:36,170 DEBUG MISService.Method.LogMethods - GetApprovalData:Debug:Done
+2018-07-07 09:41:36,563 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:41:36,694 DEBUG MISService.Method.LogMethods - GetAllWorkShopInstruction:Debug:Done
+2018-07-07 09:41:36,857 DEBUG MISService.Method.LogMethods - GetAllServicerInstructions:Debug:Done
+2018-07-07 09:41:36,997 DEBUG MISService.Method.LogMethods - GetAllCheckLists:Debug:Done
+2018-07-07 09:41:37,001 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-07 09:41:40,068 DEBUG MISService.Method.LogMethods - GenerateWorkOrderItem:Debug:Done
+2018-07-07 09:41:40,225 DEBUG MISService.Method.LogMethods - GetAllInspectorInstructions:Debug:Done
+2018-07-07 09:41:40,363 DEBUG MISService.Method.LogMethods - GetAllInstallerInstructions:Debug:Done
+2018-07-07 09:41:40,371 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2018-07-07 09:41:46,194 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2018-07-07 09:41:46,195 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-07 09:41:46,195 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
