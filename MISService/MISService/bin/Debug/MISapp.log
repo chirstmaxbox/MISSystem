@@ -588,3 +588,54 @@
 2018-07-07 09:41:46,194 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
 2018-07-07 09:41:46,195 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
 2018-07-07 09:41:46,195 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-09 11:27:41,027 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 12:36:18,268 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 12:39:45,262 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 12:39:49,648 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 13:45:29,554 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 13:46:20,252 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 13:47:54,257 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 13:47:57,234 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 13:51:10,070 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 13:51:19,711 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 13:54:19,268 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 13:55:57,027 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 13:56:12,944 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 13:56:13,186 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 13:56:13,348 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 13:56:13,496 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 13:56:13,496 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 13:56:13,496 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 13:56:13,497 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-09 13:56:13,497 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-09 14:18:46,012 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 14:20:44,600 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 14:20:44,810 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 14:20:44,817 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 14:20:44,818 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 14:20:58,377 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 14:20:58,590 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 14:20:58,591 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 14:20:58,591 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 14:20:58,591 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-09 14:20:58,591 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-09 15:36:14,628 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 15:36:25,120 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 15:36:25,360 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 15:36:25,360 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 15:36:25,361 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-09 15:36:25,361 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-09 15:45:06,956 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 15:45:11,815 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 15:45:12,032 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 15:45:12,034 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 15:45:12,035 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 15:45:12,035 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-09 15:45:12,035 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done
+2018-07-09 15:46:55,331 DEBUG MISService.Method.LogMethods - EditNewProject:Debug:DONE
+2018-07-09 15:47:00,117 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2018-07-09 15:47:00,301 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:DONE
+2018-07-09 15:47:00,302 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2018-07-09 15:47:00,302 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2018-07-09 15:47:00,303 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000103
+2018-07-09 15:47:00,303 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All Projects are done

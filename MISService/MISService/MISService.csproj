@@ -66,6 +66,7 @@
     <Compile Include="Methods\CustomerMethods.cs" />
     <Compile Include="Methods\DrawingMethods.cs" />
     <Compile Include="Methods\EstimationMethods.cs" />
+    <Compile Include="Methods\InvoiceMethods.cs" />
     <Compile Include="Methods\LeadMethods.cs" />
     <Compile Include="Methods\LogMethods.cs" />
     <Compile Include="Methods\PermitMethods.cs" />

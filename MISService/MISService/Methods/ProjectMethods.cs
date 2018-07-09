@@ -104,7 +104,7 @@ namespace MISService.Method
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
@@ -119,7 +119,10 @@ namespace MISService.Method
  //                           pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
-                            wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+//                            wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+
+                            InvoiceMethods im = new InvoiceMethods(opportunity.Id);
+                            im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }
