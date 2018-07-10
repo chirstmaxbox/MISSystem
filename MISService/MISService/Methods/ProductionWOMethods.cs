@@ -131,7 +131,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedWorkShopInstructions:Error:" + e.Message);
             }
         }
 
@@ -359,7 +359,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteWorkShopInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteInstallerInstruction:Crash:" + ex.Message);
             }
             finally
             {
@@ -392,7 +392,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedInstallerInstructions:Error:" + e.Message);
             }
         }
 
@@ -642,12 +642,12 @@ namespace MISService.Methods
 
                     /* use the same function with Work Shop Instruction */
                     DeleteAllDeletedCheckLists(items.ToArray(), sfWorkOrderID);
-                    LogMethods.Log.Debug("GetAllInstallerInstructions:Debug:" + "Done");
+                    LogMethods.Log.Debug("GetAllCheckLists:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetAllInstallerInstructions:Error:" + e.Message);
+                LogMethods.Log.Error("GetAllCheckLists:Error:" + e.Message);
             }
         }
 
@@ -933,7 +933,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedNotes:Error:" + e.Message);
             }
         }
 
@@ -960,7 +960,7 @@ namespace MISService.Methods
                 }
 
                 DeleteAllDeletedNotes(notes.ToArray(), sfWorkOrderID);
-                LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+                LogMethods.Log.Debug("GetAllNotes:Debug:" + "Done");
             }
         }
 

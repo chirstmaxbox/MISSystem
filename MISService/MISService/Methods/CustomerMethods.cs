@@ -65,17 +65,26 @@ namespace MISService.Methods
                     //show results
                     foreach (var bqs in billQuoteShipList)
                     {
-                        HandleAccount(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
-                            bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
-                            bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
+                        if (bqs.Billing_Company_Name__r != null && bqs.Billing_Contact_Name__r != null)
+                        {
+                            HandleAccount(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
+                                bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
+                                bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
+                        }
 
-                        HandleAccount(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
-                            bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
-                            bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
+                        if (bqs.Quoting_Company_Name__r != null && bqs.Quoting_Contact_Name__r != null)
+                        {
+                            HandleAccount(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
+                                bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
+                                bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
+                        }
 
-                        HandleAccount(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
-                            bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
-                            bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
+                        if (bqs.Installing_Company_Name__r != null && bqs.Installing_Contact_Name__r != null)
+                        {
+                            HandleAccount(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
+                                bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
+                                bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
+                        }
                     }
                     LogMethods.Log.Debug("GetAllAccounts:Debug:" + "Done");
                 }
@@ -133,6 +142,8 @@ namespace MISService.Methods
                 sales_JobMasterList_Customer.contactName = contactID;
             }
             _db.SaveChanges();
+
+            LogMethods.Log.Debug("UpdateSales_JobMasterList_Customer:Debug:" + "Done");
         }
 
         private void HandleAccountContact(int jobID, int jcID, string contactID, int customerRowID, string firstName, string lastName, string phone, string accountID, int type)
@@ -161,6 +172,8 @@ namespace MISService.Methods
             }
 
             UpdateSales_JobMasterList_Customer(jcID, jobID, vContactID, type);
+
+            LogMethods.Log.Debug("HandleAccountContact:Debug:" + "Done");
         }
 
         /**
@@ -224,7 +237,8 @@ namespace MISService.Methods
                     HandleAccountContact(misJobID, sales_JobMasterList_Customer.jcID, contactID, customerID, firstName, lastName, phone, accountID, type);
                 }
             }
-            LogMethods.Log.Debug("HandleSiteLocation:Debug:" + "Done");
+
+            LogMethods.Log.Debug("HandleAccount:Debug:" + "Done");
         }
 
         /// <summary>

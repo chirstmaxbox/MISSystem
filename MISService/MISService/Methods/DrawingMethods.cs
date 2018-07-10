@@ -6,6 +6,7 @@ using SpecDomain.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -69,6 +70,12 @@ namespace MISService.Methods
 
                         if (requisitionId != 0)
                         {
+                            /* Salesforce can create multi-drawing request but the MIS only supports one at a time so 
+                             I will only show the latest one on the MIS system*/
+                            // update SalesForceParentID in MISSalesForceMapping 
+                            UpdateMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, dl.Id);
+
+                            // add items to drawing
                             GetAllDrawingItems(sfProjectID, requisitionId, dl.List_Item_Name__c, dl.Id);
                         }
                     }
@@ -79,6 +86,31 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllDrawing:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateMISSalesForceMapping(string tableName, string salesforceParentID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "UPDATE MISSalesForceMapping SET [SalesforceParentID] = @salesforceParentID WHERE ([SalesForceProjectID] = @salesForceProjectID) AND ([TableName] = @tableName)";
+                var UpdateCommand = new SqlCommand(SqlDelString, Connection);
+                UpdateCommand.Parameters.AddWithValue("@tableName", tableName);
+                UpdateCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                UpdateCommand.Parameters.AddWithValue("@salesForceProjectID", salesForceProjectID);
+                UpdateCommand.ExecuteNonQuery();
+                Connection.Close();
+                LogMethods.Log.Debug("UpdateMISSalesForceMapping:Debug:" + "Done");
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("UpdateMISSalesForceMapping:Crash:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
             }
         }
 
@@ -133,14 +165,7 @@ namespace MISService.Methods
                             {
                                 var r = new MyLongKeyValueBool();
                                 r.Key = itemID;
-                                if (sfDrawingID == il.Drawing_Name__c)
-                                {
-                                    r.IsChecked = true;
-                                }
-                                else
-                                {
-                                    r.IsChecked = false;
-                                }
+                                r.IsChecked = true;
                                 r.Value1 = il.Id;
                                 results.Add(r);
                             }

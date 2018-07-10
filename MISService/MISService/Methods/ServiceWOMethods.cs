@@ -622,7 +622,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedCheckLists:Error:" + e.Message);
             }
         }
 
@@ -844,7 +844,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedNotes:Error:" + e.Message);
             }
         }
 
@@ -871,7 +871,7 @@ namespace MISService.Methods
                 }
 
                 DeleteAllDeletedNotes(notes.ToArray(), sfWorkOrderID);
-                LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+                LogMethods.Log.Debug("GetAllNotes:Debug:" + "Done");
             }
         }
 

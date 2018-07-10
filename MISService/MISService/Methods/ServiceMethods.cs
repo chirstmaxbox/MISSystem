@@ -157,6 +157,9 @@ namespace MISService.Methods
 
                 _db.Entry(service).State = EntityState.Modified;
                 _db.SaveChanges();
+
+                LogMethods.Log.Debug("UpdateEstService:Debug:" + "Done");
+
             }
         }
 

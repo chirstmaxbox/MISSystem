@@ -27,3 +27,15 @@ F:\MIS2015\Specification\Domain\bin\Release\System.Web.WebPages.Razor.xml
 F:\MIS2015\Specification\Domain\obj\Release\SpecDomain.csprojResolveAssemblyReference.cache
 F:\MIS2015\Specification\Domain\obj\Release\SpecDomain.dll
 F:\MIS2015\Specification\Domain\obj\Release\SpecDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.pdb

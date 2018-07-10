@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PermitDbModelStoreContainer" CdmEntityContainer="PermitDbEntities">
+    <EntitySetMapping Name="PermitDocuments">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitDocument">
+        <MappingFragment StoreEntitySet="PermitDocument">
+          <ScalarProperty Name="IsFinal" ColumnName="IsFinal" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="UploadAt" ColumnName="UploadAt" />
+          <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+          <ScalarProperty Name="DocHyperlink" ColumnName="DocHyperlink" />
+          <ScalarProperty Name="DocTitle" ColumnName="DocTitle" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitLandlords">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitLandlord">
+        <MappingFragment StoreEntitySet="PermitLandlord">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ADDR_2" ColumnName="ADDR_2" />
+          <ScalarProperty Name="ADDR_1" ColumnName="ADDR_1" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitLandlordContacts">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitLandlordContact">
+        <MappingFragment StoreEntitySet="PermitLandlordContact">
+          <ScalarProperty Name="CONTACT_ACTIVE" ColumnName="CONTACT_ACTIVE" />
+          <ScalarProperty Name="CONTACT_EMAIL" ColumnName="CONTACT_EMAIL" />
+          <ScalarProperty Name="CONTACT_MOBILE" ColumnName="CONTACT_MOBILE" />
+          <ScalarProperty Name="CONTACT_FAX" ColumnName="CONTACT_FAX" />
+          <ScalarProperty Name="CONTACT_PHONE" ColumnName="CONTACT_PHONE" />
+          <ScalarProperty Name="CONTACT_HONORIFIC" ColumnName="CONTACT_HONORIFIC" />
+          <ScalarProperty Name="CONTACT_POSITION" ColumnName="CONTACT_POSITION" />
+          <ScalarProperty Name="CONTACT_LAST_NAME" ColumnName="CONTACT_LAST_NAME" />
+          <ScalarProperty Name="CONTACT_FIRST_NAME" ColumnName="CONTACT_FIRST_NAME" />
+          <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitRequirements">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitRequirement">
+        <MappingFragment StoreEntitySet="PermitRequirement">
+          <ScalarProperty Name="RequirementName" ColumnName="RequirementName" />
+          <ScalarProperty Name="RequirementID" ColumnName="RequirementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitStatus">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitStatu">
+        <MappingFragment StoreEntitySet="PermitStatus">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitBases">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitBase">
+        <MappingFragment StoreEntitySet="PermitBase">
+          <ScalarProperty Name="ResponseRemark2" ColumnName="ResponseRemark2" />
+          <ScalarProperty Name="ResponseRemark1" ColumnName="ResponseRemark1" />
+          <ScalarProperty Name="FinishedDate" ColumnName="FinishedDate" />
+          <ScalarProperty Name="ReviseReason" ColumnName="ReviseReason" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="InstallToCustomerID" ColumnName="InstallToCustomerID" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="RequestBy" ColumnName="RequestBy" />
+          <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+          <ScalarProperty Name="RequirementID" ColumnName="RequirementID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobNumber" ColumnName="JobNumber" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitForSignPermits">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitForSignPermit">
+        <MappingFragment StoreEntitySet="PermitForSignPermit">
+          <ScalarProperty Name="ProjectValueEstimated" ColumnName="ProjectValueEstimated" />
+          <ScalarProperty Name="NumberOfSigns" ColumnName="NumberOfSigns" />
+          <ScalarProperty Name="LandlordContactID" ColumnName="LandlordContactID" />
+          <ScalarProperty Name="LandlordID" ColumnName="LandlordID" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitDocumentTypes">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitDocumentType">
+        <MappingFragment StoreEntitySet="PermitDocumentType">
+          <ScalarProperty Name="PermitType" ColumnName="PermitType" />
+          <ScalarProperty Name="SelectTypeID" ColumnName="SelectTypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitForStakeouts">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitForStakeout">
+        <MappingFragment StoreEntitySet="PermitForStakeout">
+          <ScalarProperty Name="WayofPointLocation" ColumnName="WayofPointLocation" />
+          <ScalarProperty Name="DeptOfHoles" ColumnName="DeptOfHoles" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitForHoistings">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitForHoisting">
+        <MappingFragment StoreEntitySet="PermitForHoisting">
+          <ScalarProperty Name="ForemanPhone" ColumnName="ForemanPhone" />
+          <ScalarProperty Name="ForemanName" ColumnName="ForemanName" />
+          <ScalarProperty Name="DutyCopOnly" ColumnName="DutyCopOnly" />
+          <ScalarProperty Name="Tonnage" ColumnName="Tonnage" />
+          <ScalarProperty Name="TypeOfTruck" ColumnName="TypeOfTruck" />
+          <ScalarProperty Name="OccupationTimeEnd" ColumnName="OccupationTimeEnd" />
+          <ScalarProperty Name="OccupationTimeStart" ColumnName="OccupationTimeStart" />
+          <ScalarProperty Name="OccupationDate" ColumnName="OccupationDate" />
+          <ScalarProperty Name="TypeOfWork" ColumnName="TypeOfWork" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitTruckTypes">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitTruckType">
+        <MappingFragment StoreEntitySet="PermitTruckType">
+          <ScalarProperty Name="TruckWeight" ColumnName="TruckWeight" />
+          <ScalarProperty Name="TruckTypeName" ColumnName="TruckTypeName" />
+          <ScalarProperty Name="TruckTypeID" ColumnName="TruckTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitCommunications">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitCommunication">
+        <MappingFragment StoreEntitySet="PermitCommunication">
+          <ScalarProperty Name="PostContents" ColumnName="PostContents" />
+          <ScalarProperty Name="PostAt" ColumnName="PostAt" />
+          <ScalarProperty Name="PostBy" ColumnName="PostBy" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="CommunicationID" ColumnName="CommunicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermitForSignVariances">
+      <EntityTypeMapping TypeName="PermitDbModel.PermitForSignVariance">
+        <MappingFragment StoreEntitySet="PermitForSignVariance">
+          <ScalarProperty Name="ProjectValueEstimated" ColumnName="ProjectValueEstimated" />
+          <ScalarProperty Name="NumberOfSigns" ColumnName="NumberOfSigns" />
+          <ScalarProperty Name="LandlordContactID" ColumnName="LandlordContactID" />
+          <ScalarProperty Name="LandlordID" ColumnName="LandlordID" />
+          <ScalarProperty Name="BaseAppID" ColumnName="BaseAppID" />
+          <ScalarProperty Name="AppID" ColumnName="AppID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

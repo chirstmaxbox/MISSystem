@@ -22,3 +22,15 @@ C:\Forward Signs MIS\SourceCode\MIS2015\Customer\CustomerDomain\bin\Release\Enti
 C:\Forward Signs MIS\SourceCode\MIS2015\Customer\CustomerDomain\obj\Release\CustomerDomain.csprojResolveAssemblyReference.cache
 C:\Forward Signs MIS\SourceCode\MIS2015\Customer\CustomerDomain\obj\Release\CustomerDomain.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\Customer\CustomerDomain\obj\Release\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.pdb

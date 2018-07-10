@@ -16,3 +16,8 @@ C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\bin\Release\ExportDo
 C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\Release\ExportDomain.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\Release\ExportDomain.pdb
 C:\Forward Signs MIS\SourceCode\MIS2015\Report\ExportDomain\obj\Release\ExportDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.pdb

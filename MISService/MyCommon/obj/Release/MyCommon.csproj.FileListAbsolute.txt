@@ -12,3 +12,7 @@ C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\bin\Release\MyCommon.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\bin\Release\MyCommon.pdb
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\obj\Release\MyCommon.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommon\obj\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Release\MyCommon.pdb

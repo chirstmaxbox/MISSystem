@@ -226,13 +226,13 @@ namespace MISService.Methods
                             }
                         }
 
-                        LogMethods.Log.Debug("GetApprovalData:Debug:" + "Done");
+                        LogMethods.Log.Debug("HandleApprovalStatus:Debug:" + "Done");
                     }
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
+                LogMethods.Log.Error("HandleApprovalStatus:Error:" + e.Message);
             }
         }
 
@@ -300,12 +300,12 @@ namespace MISService.Methods
                     /* delete work order items which has been removed out of work order */
                     DeleteAllDeletedWorkOrderItems(items, sfWorkOrderID);
 
-                    LogMethods.Log.Debug("GenerateWorkOrderItem:Debug:" + "Done");
+                    LogMethods.Log.Debug("HandleWorkOrderItem:Debug:" + "Done");
                 }
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GenerateWorkOrderItem:Error:" + e.Message);
+                LogMethods.Log.Error("HandleWorkOrderItem:Error:" + e.Message);
             }
         }
 
@@ -559,7 +559,14 @@ namespace MISService.Methods
                         UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
                         break;
                     default:
-                        UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = siteCheckPurposeAsOther;
+                        if (siteCheckPurposeAsOther != null)
+                        {
+                            UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = siteCheckPurposeAsOther;
+                        }
+                        else
+                        {
+                            UpdateCommand.Parameters.Add("@scPurposeOther", SqlDbType.NVarChar, 500).Value = "";
+                        }
                         UpdateCommand.Parameters.Add("@scPurpose1", SqlDbType.Bit).Value = false;
                         UpdateCommand.Parameters.Add("@scPurpose2", SqlDbType.Bit).Value = false;
                         UpdateCommand.Parameters.Add("@scPurpose3", SqlDbType.Bit).Value = false;
@@ -630,7 +637,7 @@ namespace MISService.Methods
                 }
                 catch (SqlException ex)
                 {
-                    LogMethods.Log.Error("InsertCheckList:Crash:" + ex.Message);
+                    LogMethods.Log.Error("InsertNewSiteCheckPurpose:Crash:" + ex.Message);
                 }
                 finally
                 {

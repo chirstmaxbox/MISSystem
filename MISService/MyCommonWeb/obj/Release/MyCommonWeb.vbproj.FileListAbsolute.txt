@@ -20,3 +20,14 @@ C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.vbpr
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.xml
 C:\Forward Signs MIS\SourceCode\MIS2015\MyCommonWeb\obj\Release\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.Resources.resources
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.pdb

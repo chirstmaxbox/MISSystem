@@ -147,24 +147,17 @@ namespace MISService.Methods
                         if (estServiceID == 0)
                         {
                             int printOrder = svc.GetQsMaxPrintOrder() + 1;
-                            if (sl.Service_Cost__c1 != null && sl.Service_Cost__c1 > 0)
-                            {
-                                svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
-                                     sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
-                                     1,
-                                     sl.Detail__c == null ? "" : sl.Detail__c,
-                                     sl.Service_Name__r.Name,
-                                     sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
-                                     printOrder
-                                );
+                            svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
+                                 sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
+                                 1,
+                                 sl.Detail__c == null ? "" : sl.Detail__c,
+                                 sl.Service_Name__r.Name,
+                                 sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
+                                 printOrder
+                            );
 
-                                int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfInvoiceID, salesForceProjectID);
-                            }
-                            else
-                            {
-                                LogMethods.Log.Debug("HandleInvoiceService:Debug:" + "Service cost must be a number");
-                            }
+                            int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfInvoiceID, salesForceProjectID);
                         }
                         else
                         {
@@ -237,7 +230,7 @@ namespace MISService.Methods
             {
                 string UpdateString = "UPDATE FW_QUOTE_SERVICE SET qsAmount = @qsAmount, qsAmountText = @qsAmountText, qsTitle = @qsTitle, qsDescription = @qsDescription, qsServiceID = @qsServiceID WHERE (qsID = @qsID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
-                if (cost != null && cost > 0)
+                if (cost != null)
                 {
                     UpdateCommand.Parameters.AddWithValue("@qsAmount", "$" + cost.ToString());
                     UpdateCommand.Parameters.AddWithValue("@qsAmountText", "$" + cost.ToString());
@@ -254,7 +247,7 @@ namespace MISService.Methods
 
                 UpdateCommand.Parameters.AddWithValue("@qsTitle", name);
                 UpdateCommand.Parameters.AddWithValue("@qsServiceID", qsServiceID);
-                UpdateCommand.Parameters.Add("@qsID", invoiceServiceID);
+                UpdateCommand.Parameters.AddWithValue("@qsID", invoiceServiceID);
 
                 try
                 {
@@ -368,7 +361,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedWorkOrderItems:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedInvoiceItems:Error:" + e.Message);
             }
         }
 

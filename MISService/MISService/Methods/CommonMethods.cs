@@ -47,6 +47,7 @@ namespace MISService.Methods
                     foreach (var user in userList)
                     {
                         un = user.CommunityNickname;
+                        LogMethods.Log.Debug("GetUserName:Debug:User Name = " + un);
                         break;
                     }
                 }

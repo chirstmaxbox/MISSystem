@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PermitDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PermitDbModelStoreContainer">
+    <EntitySet Name="PermitBase" EntityType="PermitDbModel.Store.PermitBase" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitCommunication" EntityType="PermitDbModel.Store.PermitCommunication" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitDocument" EntityType="PermitDbModel.Store.PermitDocument" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitDocumentType" EntityType="PermitDbModel.Store.PermitDocumentType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitForHoisting" EntityType="PermitDbModel.Store.PermitForHoisting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitForSignPermit" EntityType="PermitDbModel.Store.PermitForSignPermit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitForSignVariance" EntityType="PermitDbModel.Store.PermitForSignVariance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitForStakeout" EntityType="PermitDbModel.Store.PermitForStakeout" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitLandlord" EntityType="PermitDbModel.Store.PermitLandlord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitLandlordContact" EntityType="PermitDbModel.Store.PermitLandlordContact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitRequirement" EntityType="PermitDbModel.Store.PermitRequirement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitStatus" EntityType="PermitDbModel.Store.PermitStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PermitTruckType" EntityType="PermitDbModel.Store.PermitTruckType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PermitBase_PermitBase" Association="PermitDbModel.Store.FK_PermitBase_PermitBase">
+      <End Role="PermitRequirement" EntitySet="PermitRequirement" />
+      <End Role="PermitBase" EntitySet="PermitBase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitBase_PermitStatus" Association="PermitDbModel.Store.FK_PermitBase_PermitStatus">
+      <End Role="PermitStatus" EntitySet="PermitStatus" />
+      <End Role="PermitBase" EntitySet="PermitBase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitCommunication_PermitBase" Association="PermitDbModel.Store.FK_PermitCommunication_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitCommunication" EntitySet="PermitCommunication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitDocument_PermitBase" Association="PermitDbModel.Store.FK_PermitDocument_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitDocument" EntitySet="PermitDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitDocument_PermitDocumentType" Association="PermitDbModel.Store.FK_PermitDocument_PermitDocumentType">
+      <End Role="PermitDocumentType" EntitySet="PermitDocumentType" />
+      <End Role="PermitDocument" EntitySet="PermitDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForHoisting_PermitBase" Association="PermitDbModel.Store.FK_PermitForHoisting_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitForHoisting" EntitySet="PermitForHoisting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForHoisting_PermitTruckType" Association="PermitDbModel.Store.FK_PermitForHoisting_PermitTruckType">
+      <End Role="PermitTruckType" EntitySet="PermitTruckType" />
+      <End Role="PermitForHoisting" EntitySet="PermitForHoisting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForSignPermit_PermitBase" Association="PermitDbModel.Store.FK_PermitForSignPermit_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitForSignPermit" EntitySet="PermitForSignPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForSignPermit_PermitLandlord" Association="PermitDbModel.Store.FK_PermitForSignPermit_PermitLandlord">
+      <End Role="PermitLandlord" EntitySet="PermitLandlord" />
+      <End Role="PermitForSignPermit" EntitySet="PermitForSignPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForSignPermit_PermitLandlordContact" Association="PermitDbModel.Store.FK_PermitForSignPermit_PermitLandlordContact">
+      <End Role="PermitLandlordContact" EntitySet="PermitLandlordContact" />
+      <End Role="PermitForSignPermit" EntitySet="PermitForSignPermit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForSignVariance_PermitBase" Association="PermitDbModel.Store.FK_PermitForSignVariance_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitForSignVariance" EntitySet="PermitForSignVariance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitForStakeout_PermitBase" Association="PermitDbModel.Store.FK_PermitForStakeout_PermitBase">
+      <End Role="PermitBase" EntitySet="PermitBase" />
+      <End Role="PermitForStakeout" EntitySet="PermitForStakeout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermitLandlordContact_PermitLandlord" Association="PermitDbModel.Store.FK_PermitLandlordContact_PermitLandlord">
+      <End Role="PermitLandlord" EntitySet="PermitLandlord" />
+      <End Role="PermitLandlordContact" EntitySet="PermitLandlordContact" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PermitBase">
+    <Key>
+      <PropertyRef Name="BaseAppID" />
+    </Key>
+    <Property Name="BaseAppID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="JobNumber" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="RequirementID" Type="int" Nullable="false" />
+    <Property Name="RequestNumber" Type="int" Nullable="false" />
+    <Property Name="RequestBy" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Version" Type="smallint" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="Deadline" Type="smalldatetime" />
+    <Property Name="InstallToCustomerID" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="ReviseReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="FinishedDate" Type="smalldatetime" />
+    <Property Name="ResponseRemark1" Type="nvarchar(max)" />
+    <Property Name="ResponseRemark2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PermitCommunication">
+    <Key>
+      <PropertyRef Name="CommunicationID" />
+    </Key>
+    <Property Name="CommunicationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="PostBy" Type="int" Nullable="false" />
+    <Property Name="PostAt" Type="smalldatetime" />
+    <Property Name="PostContents" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PermitDocument">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Name="DocID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="DocTitle" Type="nvarchar" MaxLength="350" />
+    <Property Name="DocHyperlink" Type="nvarchar" MaxLength="350" />
+    <Property Name="UploadBy" Type="int" Nullable="false" />
+    <Property Name="UploadAt" Type="smalldatetime" />
+    <Property Name="DocType" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="varchar(max)" />
+    <Property Name="IsFinal" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermitDocumentType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SelectTypeID" Type="int" Nullable="false" />
+    <Property Name="PermitType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermitForHoisting">
+    <Key>
+      <PropertyRef Name="AppID" />
+    </Key>
+    <Property Name="AppID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="TypeOfWork" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="OccupationDate" Type="smalldatetime" />
+    <Property Name="OccupationTimeStart" Type="nvarchar" MaxLength="50" />
+    <Property Name="OccupationTimeEnd" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypeOfTruck" Type="int" Nullable="false" />
+    <Property Name="Tonnage" Type="nchar" MaxLength="10" />
+    <Property Name="DutyCopOnly" Type="bit" Nullable="false" />
+    <Property Name="ForemanName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ForemanPhone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PermitForSignPermit">
+    <Key>
+      <PropertyRef Name="AppID" />
+    </Key>
+    <Property Name="AppID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="LandlordID" Type="int" Nullable="false" />
+    <Property Name="LandlordContactID" Type="int" Nullable="false" />
+    <Property Name="NumberOfSigns" Type="float" />
+    <Property Name="ProjectValueEstimated" Type="float" />
+  </EntityType>
+  <EntityType Name="PermitForSignVariance">
+    <Key>
+      <PropertyRef Name="AppID" />
+    </Key>
+    <Property Name="AppID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="LandlordID" Type="int" Nullable="false" />
+    <Property Name="LandlordContactID" Type="int" Nullable="false" />
+    <Property Name="NumberOfSigns" Type="float" />
+    <Property Name="ProjectValueEstimated" Type="float" />
+  </EntityType>
+  <EntityType Name="PermitForStakeout">
+    <Key>
+      <PropertyRef Name="AppID" />
+    </Key>
+    <Property Name="AppID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BaseAppID" Type="int" Nullable="false" />
+    <Property Name="DeptOfHoles" Type="nvarchar" MaxLength="50" />
+    <Property Name="WayofPointLocation" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PermitLandlord">
+    <Key>
+      <PropertyRef Name="ROWID" />
+    </Key>
+    <Property Name="ROWID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="300" />
+    <Property Name="ADDR_1" Type="nvarchar" MaxLength="200" />
+    <Property Name="ADDR_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZIPCODE" Type="nvarchar" MaxLength="25" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="PermitLandlordContact">
+    <Key>
+      <PropertyRef Name="CONTACT_ID" />
+    </Key>
+    <Property Name="CONTACT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ROWID" Type="int" Nullable="false" />
+    <Property Name="CONTACT_FIRST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_LAST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_HONORIFIC" Type="nchar" MaxLength="4" />
+    <Property Name="CONTACT_PHONE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_FAX" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_MOBILE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_EMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="CONTACT_ACTIVE" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermitRequirement">
+    <Key>
+      <PropertyRef Name="RequirementID" />
+    </Key>
+    <Property Name="RequirementID" Type="int" Nullable="false" />
+    <Property Name="RequirementName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PermitStatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PermitTruckType">
+    <Key>
+      <PropertyRef Name="TruckTypeID" />
+    </Key>
+    <Property Name="TruckTypeID" Type="int" Nullable="false" />
+    <Property Name="TruckTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckWeight" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_PermitBase_PermitBase">
+    <End Role="PermitRequirement" Type="PermitDbModel.Store.PermitRequirement" Multiplicity="1" />
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitRequirement">
+        <PropertyRef Name="RequirementID" />
+      </Principal>
+      <Dependent Role="PermitBase">
+        <PropertyRef Name="RequirementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitBase_PermitStatus">
+    <End Role="PermitStatus" Type="PermitDbModel.Store.PermitStatus" Multiplicity="1" />
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="PermitBase">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitCommunication_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitCommunication" Type="PermitDbModel.Store.PermitCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitCommunication">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitDocument_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitDocument" Type="PermitDbModel.Store.PermitDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitDocument">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitDocument_PermitDocumentType">
+    <End Role="PermitDocumentType" Type="PermitDbModel.Store.PermitDocumentType" Multiplicity="1" />
+    <End Role="PermitDocument" Type="PermitDbModel.Store.PermitDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitDocumentType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="PermitDocument">
+        <PropertyRef Name="DocType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForHoisting_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitForHoisting" Type="PermitDbModel.Store.PermitForHoisting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitForHoisting">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForHoisting_PermitTruckType">
+    <End Role="PermitTruckType" Type="PermitDbModel.Store.PermitTruckType" Multiplicity="1" />
+    <End Role="PermitForHoisting" Type="PermitDbModel.Store.PermitForHoisting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitTruckType">
+        <PropertyRef Name="TruckTypeID" />
+      </Principal>
+      <Dependent Role="PermitForHoisting">
+        <PropertyRef Name="TypeOfTruck" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForSignPermit_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitForSignPermit" Type="PermitDbModel.Store.PermitForSignPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitForSignPermit">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForSignPermit_PermitLandlord">
+    <End Role="PermitLandlord" Type="PermitDbModel.Store.PermitLandlord" Multiplicity="1" />
+    <End Role="PermitForSignPermit" Type="PermitDbModel.Store.PermitForSignPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitLandlord">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="PermitForSignPermit">
+        <PropertyRef Name="LandlordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForSignPermit_PermitLandlordContact">
+    <End Role="PermitLandlordContact" Type="PermitDbModel.Store.PermitLandlordContact" Multiplicity="1" />
+    <End Role="PermitForSignPermit" Type="PermitDbModel.Store.PermitForSignPermit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitLandlordContact">
+        <PropertyRef Name="CONTACT_ID" />
+      </Principal>
+      <Dependent Role="PermitForSignPermit">
+        <PropertyRef Name="LandlordContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForSignVariance_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitForSignVariance" Type="PermitDbModel.Store.PermitForSignVariance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitForSignVariance">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitForStakeout_PermitBase">
+    <End Role="PermitBase" Type="PermitDbModel.Store.PermitBase" Multiplicity="1" />
+    <End Role="PermitForStakeout" Type="PermitDbModel.Store.PermitForStakeout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitBase">
+        <PropertyRef Name="BaseAppID" />
+      </Principal>
+      <Dependent Role="PermitForStakeout">
+        <PropertyRef Name="BaseAppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermitLandlordContact_PermitLandlord">
+    <End Role="PermitLandlord" Type="PermitDbModel.Store.PermitLandlord" Multiplicity="1" />
+    <End Role="PermitLandlordContact" Type="PermitDbModel.Store.PermitLandlordContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermitLandlord">
+        <PropertyRef Name="ROWID" />
+      </Principal>
+      <Dependent Role="PermitLandlordContact">
+        <PropertyRef Name="ROWID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

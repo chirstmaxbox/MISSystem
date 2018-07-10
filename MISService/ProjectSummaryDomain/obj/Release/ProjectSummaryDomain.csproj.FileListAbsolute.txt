@@ -7,3 +7,9 @@ F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.xml
 F:\MIS2015\ProjectSummaryDomain\bin\Release\EntityFramework.SqlServer.xml
 F:\MIS2015\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.dll
 F:\MIS2015\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.csprojResolveAssemblyReference.cache

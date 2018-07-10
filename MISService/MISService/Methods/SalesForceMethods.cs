@@ -24,6 +24,7 @@ namespace MISService.Method
         public static bool AuthenticateSfdcEnterpriseUser()
         {
             //print message to console
+            LogMethods.Log.Debug("Authenticating against the Enterprise API ...");
             Console.WriteLine("Authenticating against the Enterprise API ...");
             try
             {
@@ -60,6 +61,7 @@ namespace MISService.Method
             catch (Exception e)
             {
                 Console.WriteLine("Authentication error = ", e.Message);
+                LogMethods.Log.Debug("Authentication error = " + e.Message);
                 return false;
             }
 

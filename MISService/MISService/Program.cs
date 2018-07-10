@@ -18,24 +18,15 @@ namespace MISService
         static void Main()
         {
             /*
-            CUSTOMER_CONTACT cc = new CUSTOMER_CONTACT();
-            cc.CONTACT_ID = 20329;
-            cc.CUSTOMER_ROWID = 18458;
-            cc.CONTACT_FIRST_NAME = "firstname";
-            cc.CONTACT_LAST_NAME = "lastname";
-            cc.CONTACT_ACTIVE = true;
-
-            CustomerMethods cmt = new CustomerMethods();
-            cmt.EditCustomerContact(cc);
-             * */
-
+            LogMethods.Log.Debug("-------------- *** Starting MISService *** ------------ ");
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
                 ProjectMethods pm = new ProjectMethods();
                 pm.GetAllProjects();
             }
+            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
+             * */
 
-            /*
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
@@ -43,7 +34,6 @@ namespace MISService
                 new MyMISService() 
             };
             ServiceBase.Run(ServicesToRun);
-             * */
         }
     }
 }

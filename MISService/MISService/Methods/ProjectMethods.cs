@@ -35,6 +35,7 @@ namespace MISService.Method
         {
             try
             {
+                LogMethods.Log.Debug("GetAllProjects:Debug:" + "Start processing all projects");
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
@@ -99,27 +100,27 @@ namespace MISService.Method
 
                             /* Bill-Quote-Ship */
                             CustomerMethods cm = new CustomerMethods(opportunity.Id);
-//                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             
                             /* Get Estimation and Items and Services */
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-//                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
-//                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
+                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
                             QuoteMethods qm = new QuoteMethods(opportunity.Id);
-//                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+                            qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             PermitMethods pm = new PermitMethods(opportunity.Id);
- //                           pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
- //                           pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
- //                           pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
-//                            wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
+                            wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             InvoiceMethods im = new InvoiceMethods(opportunity.Id);
                             im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
@@ -128,10 +129,10 @@ namespace MISService.Method
                         }
                         else
                         {
-                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "User name " + un + " does not exist in database");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "User Name: " + un + " does not exist in database");
                         }
                     }
-                    LogMethods.Log.Debug("GetAllProjects:Debug:" + "All Projects are done");
+                    LogMethods.Log.Debug("GetAllProjects:Debug:" + "All projects are done");
                 }
             }
             catch (Exception e)
@@ -214,11 +215,11 @@ namespace MISService.Method
                 {
                     Connection.Open();
                     UpdateCommand.ExecuteNonQuery();
-                    LogMethods.Log.Debug("EditNewProject:Debug:" + "DONE");
+                    LogMethods.Log.Debug("UpdateProject:Debug:" + "DONE");
                 }
                 catch (SqlException ex)
                 {
-                    LogMethods.Log.Error("EditNewProject:Crash:" + ex.Message);
+                    LogMethods.Log.Error("UpdateProject:Crash:" + ex.Message);
                 }
                 finally
                 {
@@ -244,7 +245,6 @@ namespace MISService.Method
                 }
                 catch (SqlException ex)
                 {
-                    string errorlog = ex.Message;
                     LogMethods.Log.Error("UpdateJobNumber:Crash:" + ex.Message);
                 }
                 finally
@@ -300,7 +300,7 @@ namespace MISService.Method
                         UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 20);
                         break;
                     case BiddingType.Soft_Bid:
-                        UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 20);
+                        UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 10);
                         break;
                     default:
                         UPdateCommand.Parameters.AddWithValue("@biddingTypeID", 0);

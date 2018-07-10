@@ -68,7 +68,7 @@ namespace MISService.Methods
                         ServiceMethods sm = new ServiceMethods(salesForceProjectID);
                         sm.GetAllServices(el.Id, estRevID);
 
-                        GetApprovalData(el.Id, jobID, estRevID);
+                        //GetApprovalData(el.Id, jobID, estRevID);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
                 }
@@ -293,6 +293,7 @@ namespace MISService.Methods
                 }
                 _db.SaveChanges();
             }
+            LogMethods.Log.Debug("UpdateEstItemSize:Debug:" + "Done");
         }
 
         private void UpdateEstItem(long estItemID, string itemName, double? itemOrder, string signType, string previousEstimation, string saleRequirement,
@@ -367,6 +368,8 @@ namespace MISService.Methods
 
                 _db.Entry(item).State = EntityState.Modified;
                 _db.SaveChanges();
+
+                LogMethods.Log.Debug("UpdateEstItem:Debug:" + "Done");
             }
         }
 

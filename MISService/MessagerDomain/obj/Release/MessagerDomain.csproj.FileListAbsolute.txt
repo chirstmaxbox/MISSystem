@@ -3,3 +3,8 @@ F:\MIS2015\MessagerServer\MessagerDomain\bin\Release\MessagerDomain.dll
 F:\MIS2015\MessagerServer\MessagerDomain\bin\Release\MessagerDomain.pdb
 F:\MIS2015\MessagerServer\MessagerDomain\obj\Release\MessagerDomain.dll
 F:\MIS2015\MessagerServer\MessagerDomain\obj\Release\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.pdb

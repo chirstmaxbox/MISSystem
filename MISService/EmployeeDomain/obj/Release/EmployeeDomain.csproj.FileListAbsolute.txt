@@ -43,3 +43,14 @@ C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\bin\Release\Enti
 C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Release\EmployeeDomain.csprojResolveAssemblyReference.cache
 C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Release\EmployeeDomain.dll
 C:\Forward Signs MIS\SourceCode\MIS2015\Employee\EmployeeDomain\obj\Release\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.pdb

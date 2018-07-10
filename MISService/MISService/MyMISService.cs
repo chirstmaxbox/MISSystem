@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using MISService.Method;
+using System.Threading;
 
 namespace MISService
 {
@@ -40,6 +41,7 @@ namespace MISService
         private int eventId = 1;
         private const string LOGNAME = "MyMISNewLog";
         private const string EVENTNAME = "MyMISSource";
+        public bool Running {get; set;} 
 
         System.Timers.Timer timer = new System.Timers.Timer();
 
@@ -68,21 +70,32 @@ namespace MISService
             SetServiceStatus(this.ServiceHandle, ref serviceStatus);  
 
             eventLog1.WriteEntry("MIS OnStart");
+            eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId++);
 
-            // Set up a timer to trigger every minute.  
-            timer.Interval = 60000; // 60 seconds  
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
-            timer.Start();
+            Running = true;
+            Thread newThread = new Thread(DoWork);
+            newThread.Start(this);
 
             // Update the service state to Running.  
             serviceStatus.dwCurrentState = ServiceState.SERVICE_RUNNING;
             SetServiceStatus(this.ServiceHandle, ref serviceStatus);
         }
 
-        private void OnTimer(object sender, System.Timers.ElapsedEventArgs e)
+        private void DoWork(object parent)
         {
-            // TODO: Insert monitoring activities here.  
-            eventLog1.WriteEntry("Monitoring the System", EventLogEntryType.Information, eventId++);
+            MyMISService m = (MyMISService)parent;
+            LogMethods.Log.Debug("-------------- *** Starting MISService *** ------------ ");
+            int polling = 1;
+            if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
+            {
+                while (m.Running)
+                {
+                    LogMethods.Log.Debug("* Polling:" + polling++);
+                    ProjectMethods pm = new ProjectMethods();
+                    pm.GetAllProjects();
+                }
+            }
+            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
         }
 
         protected override void OnStop()
@@ -94,7 +107,7 @@ namespace MISService
             SetServiceStatus(this.ServiceHandle, ref serviceStatus);  
 
             eventLog1.WriteEntry("MIS OnStop");
-            timer.Stop();
+            Running = false;
 
             // Update the service state to Running.  
             serviceStatus.dwCurrentState = ServiceState.SERVICE_RUNNING;

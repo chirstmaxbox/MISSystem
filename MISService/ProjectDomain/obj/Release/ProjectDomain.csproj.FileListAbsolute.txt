@@ -17,3 +17,8 @@ F:\MIS2015\ProjectDomain\bin\Release\EntityFramework.SqlServer.xml
 F:\MIS2015\ProjectDomain\obj\Release\ProjectDomain.dll
 F:\MIS2015\ProjectDomain\obj\Release\ProjectDomain.pdb
 F:\MIS2015\ProjectDomain\obj\Release\ProjectDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\bin\Release\ProjectDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\bin\Release\ProjectDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\bin\Release\ProjectDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\obj\Release\ProjectDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectDomain\obj\Release\ProjectDomain.pdb

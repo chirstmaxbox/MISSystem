@@ -232,7 +232,7 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("DeleteAllDeletedQuoteServices:Error:" + e.Message);
+                LogMethods.Log.Error("DeleteAllDeletedQuoteNotes:Error:" + e.Message);
             }
         }
 
@@ -534,7 +534,7 @@ namespace MISService.Methods
 
                 UpdateCommand.Parameters.AddWithValue("@qsTitle", name);
                 UpdateCommand.Parameters.AddWithValue("@qsServiceID", qsServiceID);
-                UpdateCommand.Parameters.Add("@qsID", quoteServiceID);
+                UpdateCommand.Parameters.AddWithValue("@qsID", quoteServiceID);
 
                 try
                 {
