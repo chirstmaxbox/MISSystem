@@ -1326,3 +1326,6 @@
 2018-07-10 15:22:12,317 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Done 18P00000104
 2018-07-10 15:22:12,317 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:All projects are done
 2018-07-10 15:22:12,317 DEBUG MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------ 
+2018-07-11 12:00:38,212 DEBUG MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-11 12:00:38,321 DEBUG MISService.Method.LogMethods - Authenticating against the Enterprise API ...
+2018-07-11 12:00:52,502 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects

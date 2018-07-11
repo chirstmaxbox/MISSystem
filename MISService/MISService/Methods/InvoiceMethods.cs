@@ -191,7 +191,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteInvoiceService:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteInvoiceService:Error:" + ex.Message);
             }
             finally
             {
@@ -226,43 +226,50 @@ namespace MISService.Methods
 
         private void UpdateInvoiceService(long invoiceServiceID, double? cost, string detail, string name, short qsServiceID, string note)
         {
-            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            try
             {
-                string UpdateString = "UPDATE FW_QUOTE_SERVICE SET qsAmount = @qsAmount, qsAmountText = @qsAmountText, qsTitle = @qsTitle, qsDescription = @qsDescription, qsServiceID = @qsServiceID WHERE (qsID = @qsID)";
-                var UpdateCommand = new SqlCommand(UpdateString, Connection);
-                if (cost != null)
+                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
                 {
-                    UpdateCommand.Parameters.AddWithValue("@qsAmount", "$" + cost.ToString());
-                    UpdateCommand.Parameters.AddWithValue("@qsAmountText", "$" + cost.ToString());
-                }
+                    string UpdateString = "UPDATE FW_QUOTE_SERVICE SET qsAmount = @qsAmount, qsAmountText = @qsAmountText, qsTitle = @qsTitle, qsDescription = @qsDescription, qsServiceID = @qsServiceID WHERE (qsID = @qsID)";
+                    var UpdateCommand = new SqlCommand(UpdateString, Connection);
+                    if (cost != null)
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qsAmount", "$" + cost.ToString());
+                        UpdateCommand.Parameters.AddWithValue("@qsAmountText", "$" + cost.ToString());
+                    }
 
-                if (detail != null)
-                {
-                    UpdateCommand.Parameters.AddWithValue("@qsDescription", detail);
-                }
-                else
-                {
-                    UpdateCommand.Parameters.AddWithValue("@qsDescription", "");
-                }
+                    if (detail != null)
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qsDescription", detail);
+                    }
+                    else
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qsDescription", "");
+                    }
 
-                UpdateCommand.Parameters.AddWithValue("@qsTitle", name);
-                UpdateCommand.Parameters.AddWithValue("@qsServiceID", qsServiceID);
-                UpdateCommand.Parameters.AddWithValue("@qsID", invoiceServiceID);
+                    UpdateCommand.Parameters.AddWithValue("@qsTitle", name);
+                    UpdateCommand.Parameters.AddWithValue("@qsServiceID", qsServiceID);
+                    UpdateCommand.Parameters.AddWithValue("@qsID", invoiceServiceID);
 
-                try
-                {
-                    Connection.Open();
-                    UpdateCommand.ExecuteNonQuery();
-                    LogMethods.Log.Debug("UpdateInvoiceService:Debug:" + "DONE");
+                    try
+                    {
+                        Connection.Open();
+                        UpdateCommand.ExecuteNonQuery();
+                        LogMethods.Log.Debug("UpdateInvoiceService:Debug:" + "Done");
+                    }
+                    catch (SqlException ex)
+                    {
+                        LogMethods.Log.Error("UpdateInvoiceService:Error:" + ex.Message);
+                    }
+                    finally
+                    {
+                        Connection.Close();
+                    }
                 }
-                catch (SqlException ex)
-                {
-                    LogMethods.Log.Error("UpdateInvoiceService:Crash:" + ex.Message);
-                }
-                finally
-                {
-                    Connection.Close();
-                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateInvoiceService:Error :" + e.Message);
             }
         }
 
@@ -367,163 +374,176 @@ namespace MISService.Methods
 
         private void UpdateInvoiceItem(string salesforceItemID, long invoiceItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
         {
-            var invoiceItem = _db.Invoice_Item.Where(x => x.quoteItemID == invoiceItemID).FirstOrDefault();
-            if (invoiceItem != null)
+            try
             {
-                int estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
-                if (estItemID != 0)
+                var invoiceItem = _db.Invoice_Item.Where(x => x.quoteItemID == invoiceItemID).FirstOrDefault();
+                if (invoiceItem != null)
                 {
-                    invoiceItem.estItemID = estItemID;
-                }
+                    int estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
+                    if (estItemID != 0)
+                    {
+                        invoiceItem.estItemID = estItemID;
+                    }
 
-                invoiceItem.qiItemTitle = itemName;
-                if (description != null)
-                {
-                    invoiceItem.qiDescription = description; 
-                }
-                else
-                {
-                    invoiceItem.qiDescription = ""; 
-                }
+                    invoiceItem.qiItemTitle = itemName;
+                    if (description != null)
+                    {
+                        invoiceItem.qiDescription = description;
+                    }
+                    else
+                    {
+                        invoiceItem.qiDescription = "";
+                    }
 
-                int requirementID = 10;
-                var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
-                if (jobType != null)
-                {
-                    requirementID = jobType.QUOTE_SUPPLY_TYPE;
-                }
-                else
-                {
-                    LogMethods.Log.Error("UpdateInvoiceItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
-                }
-                invoiceItem.supplyType = Convert.ToInt16(requirementID);
+                    int requirementID = 10;
+                    var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
+                    if (jobType != null)
+                    {
+                        requirementID = jobType.QUOTE_SUPPLY_TYPE;
+                    }
+                    else
+                    {
+                        LogMethods.Log.Error("UpdateInvoiceItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    }
+                    invoiceItem.supplyType = Convert.ToInt16(requirementID);
 
-                if (itemCost != null)
-                {
-                    invoiceItem.qiAmount = Convert.ToDecimal(itemCost);
-                    invoiceItem.qiAmountText = "$" + itemCost;
-                }
+                    if (itemCost != null)
+                    {
+                        invoiceItem.qiAmount = Convert.ToDecimal(itemCost);
+                        invoiceItem.qiAmountText = "$" + itemCost;
+                    }
 
-                if (quality != null)
-                {
-                    invoiceItem.qiQty = Convert.ToInt16(quality);
-                }
+                    if (quality != null)
+                    {
+                        invoiceItem.qiQty = Convert.ToInt16(quality);
+                    }
 
-                _db.Entry(invoiceItem).State = EntityState.Modified;
-                _db.SaveChanges();
+                    _db.Entry(invoiceItem).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateInvoiceItem:Error:" + e.Message);
             }
         }
 
         private void UpdateInvoice(int invoiceID, string invoiceNumber, DateTime? issueDate, int sale, string term, string contractNo,
             string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount)
         {
-            var invoice = _db.Sales_JobMasterList_Invoice.Where(x => x.invoiceID == invoiceID).FirstOrDefault();
-            if (invoice != null)
+            try
             {
-                invoice.invoiceNo = invoiceNumber;
-                if (issueDate != null)
+                var invoice = _db.Sales_JobMasterList_Invoice.Where(x => x.invoiceID == invoiceID).FirstOrDefault();
+                if (invoice != null)
                 {
-                    invoice.invoiceDate = issueDate;
-                }
-                invoice.Sales = sale;
-
-                if (!string.IsNullOrEmpty(term))
-                {
-                    switch (term)
+                    invoice.invoiceNo = invoiceNumber;
+                    if (issueDate != null)
                     {
-                        case "Cash On Delivery":
-                            invoice.Term = 0;
+                        invoice.invoiceDate = issueDate;
+                    }
+                    invoice.Sales = sale;
+
+                    if (!string.IsNullOrEmpty(term))
+                    {
+                        switch (term)
+                        {
+                            case "Cash On Delivery":
+                                invoice.Term = 0;
+                                break;
+                            case "Customer Net 7 Days":
+                                invoice.Term = 7;
+                                break;
+                            case "Customer Net 10 Days":
+                                invoice.Term = 10;
+                                break;
+                            case "Customer Net 15 Days":
+                                invoice.Term = 15;
+                                break;
+                            case "Customer Net 20 Days":
+                                invoice.Term = 20;
+                                break;
+                            case "Customer Net 30 Days":
+                                invoice.Term = 30;
+                                break;
+                            case "Customer Net 45 Days":
+                                invoice.Term = 45;
+                                break;
+                            case "Customer Net 60 Days":
+                                invoice.Term = 60;
+                                break;
+                            case "Customer Net 180 Days":
+                                invoice.Term = 180;
+                                break;
+                            case "Due Upon Receipt":
+                                invoice.Term = 100;
+                                break;
+                            case "75 3WD":
+                                invoice.Term = 200;
+                                break;
+                            default:
+                                invoice.Term = 1000;
+                                break;
+                        }
+                    }
+
+                    invoice.ContractNo = contractNo;
+                    if (!string.IsNullOrEmpty(shipMethod))
+                    {
+                        invoice.ShipVia = shipMethod;
+                    }
+
+                    if (contractDate != null)
+                    {
+                        invoice.contractDate = contractDate;
+                    }
+
+                    switch (taxOption)
+                    {
+                        case "HST":
+                            invoice.TaxOption = (short)NTaxOption.HST;
                             break;
-                        case "Customer Net 7 Days":
-                            invoice.Term = 7;
+                        case "HST-BC":
+                            invoice.TaxOption = (int)NTaxOption.HstBC;
                             break;
-                        case "Customer Net 10 Days":
-                            invoice.Term = 10;
+                        case "GST Only":
+                            invoice.TaxOption = (int)NTaxOption.GstOnly;
                             break;
-                        case "Customer Net 15 Days":
-                            invoice.Term = 15;
+                        case "GST & PST":
+                            invoice.TaxOption = (int)NTaxOption.GstAndPst;
                             break;
-                        case "Customer Net 20 Days":
-                            invoice.Term = 20;
+                        case "Manually":
+                            invoice.TaxOption = (int)NTaxOption.Manually;
+                            if (tax != null)
+                            {
+                                invoice.pstAmount = Convert.ToDecimal(tax);
+                            }
                             break;
-                        case "Customer Net 30 Days":
-                            invoice.Term = 30;
-                            break;
-                        case "Customer Net 45 Days":
-                            invoice.Term = 45;
-                            break;
-                        case "Customer Net 60 Days":
-                            invoice.Term = 60;
-                            break;
-                        case "Customer Net 180 Days":
-                            invoice.Term = 180;
-                            break;
-                        case "Due Upon Receipt":
-                            invoice.Term = 100;
-                            break;
-                        case "75 3WD":
-                            invoice.Term = 200;
+                        case "No Tax":
+                            invoice.TaxOption = (int)NTaxOption.NoTax;
                             break;
                         default:
-                            invoice.Term = 1000;
                             break;
                     }
-                }
 
-                invoice.ContractNo = contractNo;
-                if (!string.IsNullOrEmpty(shipMethod))
-                {
-                    invoice.ShipVia = shipMethod;
-                }
+                    if (deposit != null)
+                    {
+                        invoice.Deposit = Convert.ToDecimal(deposit);
+                    }
 
-                if (contractDate != null)
-                {
-                    invoice.contractDate = contractDate;
-                }
+                    if (discount != null)
+                    {
+                        invoice.Discount = (-1) * Convert.ToDecimal(discount);
+                    }
 
-                switch (taxOption)
-                {
-                    case "HST":
-                        invoice.TaxOption = (short)NTaxOption.HST;
-                        break;
-                    case "HST-BC":
-                        invoice.TaxOption = (int)NTaxOption.HstBC;
-                        break;
-                    case "GST Only":
-                        invoice.TaxOption = (int)NTaxOption.GstOnly;
-                        break;
-                    case "GST & PST":
-                        invoice.TaxOption = (int)NTaxOption.GstAndPst;
-                        break;
-                    case "Manually":
-                        invoice.TaxOption = (int)NTaxOption.Manually;
-                        if (tax != null)
-                        {
-                            invoice.pstAmount = Convert.ToDecimal(tax);
-                        }
-                        break;
-                    case "No Tax":
-                        invoice.TaxOption = (int)NTaxOption.NoTax;
-                        break;
-                    default:
-                        break;
+                    _db.Entry(invoice).State = EntityState.Modified;
+                    _db.SaveChanges();
                 }
-
-                if (deposit != null) {
-                    invoice.Deposit = Convert.ToDecimal(deposit);
-                }
-
-                if (discount != null)
-                {
-                    invoice.Discount = (-1) * Convert.ToDecimal(discount);
-                }
-
-                _db.Entry(invoice).State = EntityState.Modified;
-                _db.SaveChanges();
             }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateInvoice:Error:" + e.Message);
+            } 
         }
-
-
 
     }
 }

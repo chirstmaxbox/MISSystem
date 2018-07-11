@@ -137,29 +137,36 @@ namespace MISService.Methods
 
         private void UpdateEstService(long estServiceID, double? cost, string detail, string name, short qsServiceID, string note)
         {
-            var service = _db.EST_Service.Find(estServiceID);
-            if (service != null)
+            try
             {
-                if (cost != null && cost > 0)
+                var service = _db.EST_Service.Find(estServiceID);
+                if (service != null)
                 {
-                    service.qsAmount = "$" + cost.ToString();
-                    service.qsAmountText = "$" + cost.ToString();
+                    if (cost != null && cost > 0)
+                    {
+                        service.qsAmount = "$" + cost.ToString();
+                        service.qsAmountText = "$" + cost.ToString();
+                    }
+                    else
+                    {
+                        service.qsAmount = note;
+                        service.qsAmountText = note;
+                    }
+
+                    service.qsTitle = name;
+                    service.qsDescription = (detail == null ? "" : detail);
+                    service.qsServiceID = qsServiceID;
+
+                    _db.Entry(service).State = EntityState.Modified;
+                    _db.SaveChanges();
+
+                    LogMethods.Log.Debug("UpdateEstService:Debug:" + "Done");
+
                 }
-                else
-                {
-                    service.qsAmount = note;
-                    service.qsAmountText = note;
-                }
-
-                service.qsTitle = name;
-                service.qsDescription = (detail == null ? "" : detail);
-                service.qsServiceID = qsServiceID;
-
-                _db.Entry(service).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                LogMethods.Log.Debug("UpdateEstService:Debug:" + "Done");
-
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateEstService:Error:" + e.Message);
             }
         }
 

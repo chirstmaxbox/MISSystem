@@ -98,7 +98,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteWorkShopInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteWorkShopInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -153,7 +153,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertWorkShopInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertWorkShopInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -180,7 +180,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateWorkShopInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateWorkShopInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -361,7 +361,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteServicerInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteServicerInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -416,7 +416,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateServicerInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateServicerInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -444,7 +444,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertServicerInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertServicerInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -589,7 +589,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteCheckList:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteCheckList:Error:" + ex.Message);
             }
             finally
             {
@@ -650,7 +650,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateCheckListInstruction:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateCheckListInstruction:Error:" + ex.Message);
             }
             finally
             {
@@ -684,7 +684,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertCheckList:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertCheckList:Error:" + ex.Message);
             }
             finally
             {
@@ -756,7 +756,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertNote:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertNote:Error:" + ex.Message);
             }
             finally
             {
@@ -788,7 +788,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateNote:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateNote:Error:" + ex.Message);
             }
             finally
             {
@@ -811,7 +811,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteNote:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteNote:Error:" + ex.Message);
             }
             finally
             {
@@ -850,28 +850,35 @@ namespace MISService.Methods
 
         public void GetAllNotes(int woId, enterprise.QueryResult result, string sfWorkOrderID)
         {
-            if (result != null)
+            try
             {
-                IEnumerable<enterprise.AttachedContentNote> noteList = result.records.Cast<enterprise.AttachedContentNote>();
-                List<string> notes = new List<string>();
-                foreach (var q in noteList)
+                if (result != null)
                 {
-                    notes.Add(q.Id);
-                    int noteID = CommonMethods.GetMISID(TableName.WO_ShippingItem_S, q.Id, sfWorkOrderID, salesForceProjectID);
-                    if (noteID == 0)
+                    IEnumerable<enterprise.AttachedContentNote> noteList = result.records.Cast<enterprise.AttachedContentNote>();
+                    List<string> notes = new List<string>();
+                    foreach (var q in noteList)
                     {
-                        InsertNote(woId, q.Title, q.TextPreview);
-                        int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_ShippingItem);
-                        CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_S, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                        notes.Add(q.Id);
+                        int noteID = CommonMethods.GetMISID(TableName.WO_ShippingItem_S, q.Id, sfWorkOrderID, salesForceProjectID);
+                        if (noteID == 0)
+                        {
+                            InsertNote(woId, q.Title, q.TextPreview);
+                            int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_ShippingItem);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_S, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                        }
+                        else
+                        {
+                            UpdateNote(noteID, q.Title, q.TextPreview);
+                        }
                     }
-                    else
-                    {
-                        UpdateNote(noteID, q.Title, q.TextPreview);
-                    }
-                }
 
-                DeleteAllDeletedNotes(notes.ToArray(), sfWorkOrderID);
-                LogMethods.Log.Debug("GetAllNotes:Debug:" + "Done");
+                    DeleteAllDeletedNotes(notes.ToArray(), sfWorkOrderID);
+                    LogMethods.Log.Debug("GetAllNotes:Debug:" + "Done");
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetAllNotes:Error:" + e.Message);
             }
         }
 

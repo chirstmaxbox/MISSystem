@@ -94,117 +94,130 @@ namespace MISService.Methods
 
         private void HandleLandlord(string sfLandlordID, string addr, string city, string state, string zipCode, string landlordName, string phone)
         {
-            int landlordID = CommonMethods.GetMISID(TableName.PermitLandlord, sfLandlordID, salesForceProjectID);
-            if (landlordID == 0)
+            try
             {
-                // insert to PermitLandlord
-                PermitLandlord pl = new PermitLandlord();
-                pl.NAME = "New Location";
-                pl.ADDR_1 = addr;
-                pl.CITY = city;
-                pl.STATE = state;
-                pl.ZIPCODE = zipCode;
-                pl.Active = true;
-
-                _db.PermitLandlords.Add(pl);
-                _db.SaveChanges();
-
-                int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlord);
-                landlordID = id;
-                CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlord, sfLandlordID, id.ToString(), salesForceProjectID);
-            }
-            else
-            {
-                var item = _db.PermitLandlords.Where(x => x.ROWID == landlordID).FirstOrDefault();
-                if (item != null)
+                int landlordID = CommonMethods.GetMISID(TableName.PermitLandlord, sfLandlordID, salesForceProjectID);
+                if (landlordID == 0)
                 {
-                    item.ADDR_1 = addr;
-                    item.CITY = city;
-                    item.STATE = state;
-                    item.ZIPCODE = zipCode;
+                    // insert to PermitLandlord
+                    PermitLandlord pl = new PermitLandlord();
+                    pl.NAME = "New Location";
+                    pl.ADDR_1 = addr;
+                    pl.CITY = city;
+                    pl.STATE = state;
+                    pl.ZIPCODE = zipCode;
+                    pl.Active = true;
 
-                    _db.Entry(item).State = EntityState.Modified;
+                    _db.PermitLandlords.Add(pl);
                     _db.SaveChanges();
+
+                    int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlord);
+                    landlordID = id;
+                    CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlord, sfLandlordID, id.ToString(), salesForceProjectID);
+                }
+                else
+                {
+                    var item = _db.PermitLandlords.Where(x => x.ROWID == landlordID).FirstOrDefault();
+                    if (item != null)
+                    {
+                        item.ADDR_1 = addr;
+                        item.CITY = city;
+                        item.STATE = state;
+                        item.ZIPCODE = zipCode;
+
+                        _db.Entry(item).State = EntityState.Modified;
+                        _db.SaveChanges();
+                    }
+                }
+
+                /* landlord contact */
+                int landlordContactID = CommonMethods.GetMISID(TableName.PermitLandlordContact, sfLandlordID, salesForceProjectID);
+                if (landlordContactID == 0)
+                {
+                    /* add landloard contact */
+                    PermitLandlordContact plc = new PermitLandlordContact();
+                    plc.ROWID = landlordID;
+                    plc.CONTACT_FIRST_NAME = landlordName;
+                    plc.CONTACT_PHONE = phone;
+
+                    _db.PermitLandlordContacts.Add(plc);
+                    _db.SaveChanges();
+
+                    int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlordContact);
+                    CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlordContact, sfLandlordID, id.ToString(), salesForceProjectID);
+                }
+                else
+                {
+                    var item = _db.PermitLandlordContacts.Where(x => x.CONTACT_ID == landlordContactID).FirstOrDefault();
+                    if (item != null)
+                    {
+                        item.CONTACT_FIRST_NAME = landlordName;
+                        item.CONTACT_PHONE = phone;
+
+                        _db.Entry(item).State = EntityState.Modified;
+                        _db.SaveChanges();
+                    }
                 }
             }
-
-            /* landlord contact */
-            int landlordContactID = CommonMethods.GetMISID(TableName.PermitLandlordContact, sfLandlordID, salesForceProjectID);
-            if (landlordContactID == 0)
+            catch (Exception e)
             {
-                /* add landloard contact */
-                PermitLandlordContact plc = new PermitLandlordContact();
-                plc.ROWID = landlordID;
-                plc.CONTACT_FIRST_NAME = landlordName;
-                plc.CONTACT_PHONE = phone;
-
-                _db.PermitLandlordContacts.Add(plc);
-                _db.SaveChanges();
-
-                int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlordContact);
-                CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlordContact, sfLandlordID, id.ToString(), salesForceProjectID);
-            }
-            else
-            {
-                var item = _db.PermitLandlordContacts.Where(x => x.CONTACT_ID == landlordContactID).FirstOrDefault();
-                if (item != null)
-                {
-                    item.CONTACT_FIRST_NAME = landlordName;
-                    item.CONTACT_PHONE = phone;
-
-                    _db.Entry(item).State = EntityState.Modified;
-                    _db.SaveChanges();
-                }
+                LogMethods.Log.Error("HandleLandLord:Error:" + e.Message);
             }
         }
 
         private void UpdateSignPermit(string sfLandlordID, int sign_permitID, double? numOfSigns, double? proValueEstimated, DateTime? issueDate, DateTime? dueDate, string remarks)
         {
-            int landlordID = CommonMethods.GetMISID(TableName.PermitLandlord, sfLandlordID, salesForceProjectID);
-            int landlordContactID = CommonMethods.GetMISID(TableName.PermitLandlordContact, sfLandlordID, salesForceProjectID);
-
-            var item = _db.PermitForSignPermits.Where(x => x.AppID == sign_permitID).FirstOrDefault();
-            if (item != null)
+            try
             {
-                if (numOfSigns != null)
-                {
-                    item.NumberOfSigns = numOfSigns;
-                }
-                if (proValueEstimated != null)
-                {
-                    item.ProjectValueEstimated = proValueEstimated;
-                }
-                if (landlordID != 0)
-                {
-                    item.LandlordID = landlordID;
-                }
-                if (landlordContactID != 0)
-                {
-                    item.LandlordContactID = landlordContactID;
-                }
+                int landlordID = CommonMethods.GetMISID(TableName.PermitLandlord, sfLandlordID, salesForceProjectID);
+                int landlordContactID = CommonMethods.GetMISID(TableName.PermitLandlordContact, sfLandlordID, salesForceProjectID);
 
-                _db.Entry(item).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
-                if (baseItem != null)
+                var item = _db.PermitForSignPermits.Where(x => x.AppID == sign_permitID).FirstOrDefault();
+                if (item != null)
                 {
-                    if (issueDate != null)
+                    if (numOfSigns != null)
                     {
-                        baseItem.RequestDate = (DateTime)issueDate;
+                        item.NumberOfSigns = numOfSigns;
                     }
-                    if (dueDate != null)
+                    if (proValueEstimated != null)
                     {
-                        baseItem.Deadline = (DateTime)dueDate;
+                        item.ProjectValueEstimated = proValueEstimated;
                     }
-                    baseItem.Remark = remarks;
+                    if (landlordID != 0)
+                    {
+                        item.LandlordID = landlordID;
+                    }
+                    if (landlordContactID != 0)
+                    {
+                        item.LandlordContactID = landlordContactID;
+                    }
 
-                    _db.Entry(baseItem).State = EntityState.Modified;
+                    _db.Entry(item).State = EntityState.Modified;
                     _db.SaveChanges();
+
+                    var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                    if (baseItem != null)
+                    {
+                        if (issueDate != null)
+                        {
+                            baseItem.RequestDate = (DateTime)issueDate;
+                        }
+                        if (dueDate != null)
+                        {
+                            baseItem.Deadline = (DateTime)dueDate;
+                        }
+                        baseItem.Remark = remarks;
+
+                        _db.Entry(baseItem).State = EntityState.Modified;
+                        _db.SaveChanges();
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateSignPermit:Error:" + e.Message);
+            }
         }
-
 
         public void GetAllHoistingPermits(string sfProjectID, int jobID, int userEmployeeID)
         {
@@ -263,73 +276,80 @@ namespace MISService.Methods
         private void UpdateHoistingPermit(int hoist_PermitID, DateTime? issueDate, DateTime? startTime, DateTime? endTime, string truckType, string weight,
             string foremanName, string foremanPhone, string remark)
         {
-            var item = _db.PermitForHoistings.Where(x => x.AppID == hoist_PermitID).FirstOrDefault();
-            if (item != null)
+            try
             {
-                if (startTime != null)
+                var item = _db.PermitForHoistings.Where(x => x.AppID == hoist_PermitID).FirstOrDefault();
+                if (item != null)
                 {
-                    var localTime = startTime.Value.ToLocalTime();
-                    item.OccupationTimeStart = localTime.ToString("hh:mm tt");
-                }
-                if (endTime != null)
-                {
-                    var localTime = endTime.Value.ToLocalTime();
-                    item.OccupationTimeEnd = localTime.ToString("hh:mm tt");
-                }
+                    if (startTime != null)
+                    {
+                        var localTime = startTime.Value.ToLocalTime();
+                        item.OccupationTimeStart = localTime.ToString("hh:mm tt");
+                    }
+                    if (endTime != null)
+                    {
+                        var localTime = endTime.Value.ToLocalTime();
+                        item.OccupationTimeEnd = localTime.ToString("hh:mm tt");
+                    }
 
-                switch (truckType)
-                {
-                    case "Boom Truck 40'":
-                        item.TypeOfTruck = 3;
-                        break;
-                    case "Boom Truck 50'":
-                        item.TypeOfTruck = 4;
-                        break;
-                    case "Boom Truck 85'":
-                        item.TypeOfTruck = 5;
-                        break;
-                    case "Lader Van":
-                        item.TypeOfTruck = 2;
-                        break;
-                    case "Pickup Truck":
-                        item.TypeOfTruck = 1;
-                        break;
-                    case "Scissor Lift Only":
-                        item.TypeOfTruck = 6;
-                        break;
-                    default:
-                        item.TypeOfTruck = 0;
-                        break;
-                }
+                    switch (truckType)
+                    {
+                        case "Boom Truck 40'":
+                            item.TypeOfTruck = 3;
+                            break;
+                        case "Boom Truck 50'":
+                            item.TypeOfTruck = 4;
+                            break;
+                        case "Boom Truck 85'":
+                            item.TypeOfTruck = 5;
+                            break;
+                        case "Lader Van":
+                            item.TypeOfTruck = 2;
+                            break;
+                        case "Pickup Truck":
+                            item.TypeOfTruck = 1;
+                            break;
+                        case "Scissor Lift Only":
+                            item.TypeOfTruck = 6;
+                            break;
+                        default:
+                            item.TypeOfTruck = 0;
+                            break;
+                    }
 
-                item.Tonnage = weight;
-                item.ForemanName = foremanName;
-                item.ForemanPhone = foremanPhone;
+                    item.Tonnage = weight;
+                    item.ForemanName = foremanName;
+                    item.ForemanPhone = foremanPhone;
 
-                _db.Entry(item).State = EntityState.Modified;
-                _db.SaveChanges();
+                    _db.Entry(item).State = EntityState.Modified;
+                    _db.SaveChanges();
 
-                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
-                if (baseItem != null)
-                {
-                    if (issueDate != null)
+                    var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                    if (baseItem != null)
                     {
                         if (issueDate != null)
                         {
-                            baseItem.RequestDate = (DateTime)issueDate;
+                            if (issueDate != null)
+                            {
+                                baseItem.RequestDate = (DateTime)issueDate;
+                            }
                         }
+
+                        if (endTime != null)
+                        {
+                            baseItem.Deadline = endTime.Value.ToLocalTime();
+                        }
+
+                        baseItem.Remark = remark;
+
+                        _db.Entry(baseItem).State = EntityState.Modified;
+                        _db.SaveChanges();
                     }
-
-                    if (endTime != null)
-                    {
-                        baseItem.Deadline = endTime.Value.ToLocalTime();
-                    }
-
-                    baseItem.Remark = remark;
-
-                    _db.Entry(baseItem).State = EntityState.Modified;
-                    _db.SaveChanges();
                 }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateHoistingPermit:Error:" + e.Message);
             }
         }
 
@@ -390,32 +410,39 @@ namespace MISService.Methods
         private void UpdateStakeOutPermit(int stakeout_permitID, string Stick_Position_Radius, string Dept_Of_Holes, DateTime? issueDate, 
             DateTime? dueDate, string remark)
         {
-            var item = _db.PermitForStakeouts.Where(x => x.AppID == stakeout_permitID).FirstOrDefault();
-            if (item != null)
+            try
             {
-                item.DeptOfHoles = Dept_Of_Holes;
-                item.WayofPointLocation = Stick_Position_Radius;
-
-                _db.Entry(item).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
-                if (baseItem != null)
+                var item = _db.PermitForStakeouts.Where(x => x.AppID == stakeout_permitID).FirstOrDefault();
+                if (item != null)
                 {
-                    if (issueDate != null)
-                    {
-                        baseItem.RequestDate = (DateTime)issueDate;
-                    }
-                    if (dueDate != null)
-                    {
-                        baseItem.Deadline = (DateTime)dueDate;
-                    }
-                    baseItem.Remark = remark;
+                    item.DeptOfHoles = Dept_Of_Holes;
+                    item.WayofPointLocation = Stick_Position_Radius;
 
-                    _db.Entry(baseItem).State = EntityState.Modified;
+                    _db.Entry(item).State = EntityState.Modified;
                     _db.SaveChanges();
-                }
 
+                    var baseItem = _db.PermitBases.Where(x => x.BaseAppID == item.BaseAppID).FirstOrDefault();
+                    if (baseItem != null)
+                    {
+                        if (issueDate != null)
+                        {
+                            baseItem.RequestDate = (DateTime)issueDate;
+                        }
+                        if (dueDate != null)
+                        {
+                            baseItem.Deadline = (DateTime)dueDate;
+                        }
+                        baseItem.Remark = remark;
+
+                        _db.Entry(baseItem).State = EntityState.Modified;
+                        _db.SaveChanges();
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateStakeOutPermit:Error:" + e.Message);
             }
         }
 

@@ -27,30 +27,37 @@ namespace MISService.Methods
             header = new enterprise.SessionHeader();
             header.sessionId = SalesForceMethods.sessionId;
 
-            using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+            try
             {
-                //create SQL query statement
-                string query = "SELECT CommunityNickname FROM User WHERE Id = '" + Id + "'";
-
-                enterprise.QueryResult result;
-                queryClient.query(
-                    header, //sessionheader
-                    null, //queryoptions
-                    null, //mruheader
-                    null, //packageversion
-                    query, out result);
-
-                if (result.size != 0)
+                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //cast query results
-                    IEnumerable<enterprise.User> userList = result.records.Cast<enterprise.User>();
-                    foreach (var user in userList)
+                    //create SQL query statement
+                    string query = "SELECT CommunityNickname FROM User WHERE Id = '" + Id + "'";
+
+                    enterprise.QueryResult result;
+                    queryClient.query(
+                        header, //sessionheader
+                        null, //queryoptions
+                        null, //mruheader
+                        null, //packageversion
+                        query, out result);
+
+                    if (result.size != 0)
                     {
-                        un = user.CommunityNickname;
-                        LogMethods.Log.Debug("GetUserName:Debug:User Name = " + un);
-                        break;
+                        //cast query results
+                        IEnumerable<enterprise.User> userList = result.records.Cast<enterprise.User>();
+                        foreach (var user in userList)
+                        {
+                            un = user.CommunityNickname;
+                            LogMethods.Log.Debug("GetUserName:Debug:User Name = " + un);
+                            break;
+                        }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Debug("GetUserName:Error:" + e.Message);
             }
 
             return un;
@@ -73,7 +80,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("Delete:Crash:" + ex.Message);
+                LogMethods.Log.Error("Delete:Error:" + ex.Message);
             }
             finally
             {
@@ -103,7 +110,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("GetAllSalesForceID:Crash:" + ex.Message);
+                LogMethods.Log.Error("GetAllSalesForceID:Error:" + ex.Message);
             }
             finally
             {
@@ -135,7 +142,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("GetMISID:Crash:" + ex.Message);
+                LogMethods.Log.Error("GetMISID:Error:" + ex.Message);
             }
             finally
             {
@@ -168,7 +175,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("GetMISID:Crash:" + ex.Message);
+                LogMethods.Log.Error("GetMISID:Error:" + ex.Message);
             }
             finally
             {
@@ -196,7 +203,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertToMISSalesForceMapping:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertToMISSalesForceMapping:Error:" + ex.Message);
             }
             finally
             {
@@ -225,7 +232,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("InsertToMISSalesForceMapping:Crash:" + ex.Message);
+                LogMethods.Log.Error("InsertToMISSalesForceMapping:Error:" + ex.Message);
             }
             finally
             {
@@ -255,7 +262,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("GetEstRevID:Crash:" + ex.Message);
+                LogMethods.Log.Error("GetEstRevID:Error:" + ex.Message);
             }
             finally
             {

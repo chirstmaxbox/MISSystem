@@ -106,7 +106,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateMISSalesForceMapping:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateMISSalesForceMapping:Error:" + ex.Message);
             }
             finally
             {
@@ -231,149 +231,158 @@ namespace MISService.Methods
             string Is_Site_Check_Photo_Available__c, string Is_Site_Check_Report_Available__c)
         {
             int requisitionId = 0;
-            var DrawingRequisition = _db.Sales_Dispatching_DrawingRequisition_Estimation.FirstOrDefault(x => x.EstRevID == estRevID);
-            if (DrawingRequisition != null)
+            try
             {
-                DrawingRequisition.DrawingType = drawingType;
-                switch (drawingPurpose)
+                var DrawingRequisition = _db.Sales_Dispatching_DrawingRequisition_Estimation.FirstOrDefault(x => x.EstRevID == estRevID);
+                if (DrawingRequisition != null)
                 {
-                    case DrawingPurpose.Estimation_Drawing:
-                        DrawingRequisition.DrawingPurpose = 102;
-                        break;
-                    case DrawingPurpose.Permit_Drawing:
-                        DrawingRequisition.DrawingPurpose = 103;
-                        break;
-                    case DrawingPurpose.Workorder_Drawing:
-                        DrawingRequisition.DrawingPurpose = 104;
-                        break;
-                    case DrawingPurpose.Concept_Design:
-                        DrawingRequisition.DrawingPurpose = 105;
-                        break;
-                    default:
-                        break;
-                }
-
-                bool isValid = true;
-
-                if(Is_Electronic_File_From_Client_Available__c != null) {
-                    switch (Is_Electronic_File_From_Client_Available__c)
+                    DrawingRequisition.DrawingType = drawingType;
+                    switch (drawingPurpose)
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsElectronicFillFromClientAvailable = 1;
+                        case DrawingPurpose.Estimation_Drawing:
+                            DrawingRequisition.DrawingPurpose = 102;
                             break;
-                        case YesNo.No:
-                            DrawingRequisition.IsElectronicFillFromClientAvailable = 2;
+                        case DrawingPurpose.Permit_Drawing:
+                            DrawingRequisition.DrawingPurpose = 103;
+                            break;
+                        case DrawingPurpose.Workorder_Drawing:
+                            DrawingRequisition.DrawingPurpose = 104;
+                            break;
+                        case DrawingPurpose.Concept_Design:
+                            DrawingRequisition.DrawingPurpose = 105;
                             break;
                         default:
                             break;
                     }
-                }
-                else
-                {
-                    isValid = false;
-                }
 
-                if (gIs_GC_Or_Designer_Drawing_Available__c != null)
-                {
-                    switch (gIs_GC_Or_Designer_Drawing_Available__c)
+                    bool isValid = true;
+
+                    if (Is_Electronic_File_From_Client_Available__c != null)
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsGCorDesignerDrawingAvailable = 1;
-                            break;
-                        case YesNo.No:
-                            DrawingRequisition.IsGCorDesignerDrawingAvailable = 2;
-                            break;
-                        default:
-                            break;
+                        switch (Is_Electronic_File_From_Client_Available__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsElectronicFillFromClientAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsElectronicFillFromClientAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
-                else
-                {
-                    isValid = false;
-                }
-
-                if (Is_Landord_Or_Mall_Criteria_Available__c != null)
-                {
-                    switch (Is_Landord_Or_Mall_Criteria_Available__c)
+                    else
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsLandordOrMallCriteriaAvailable = 1;
-                            break;
-                        case YesNo.No:
-                            DrawingRequisition.IsLandordOrMallCriteriaAvailable = 2;
-                            break;
-                        default:
-                            break;
+                        isValid = false;
                     }
-                }
-                else
-                {
-                    isValid = false;
-                }
 
-                if (Is_Latest_Version_Q_D_Quotation_Avail__c != null)
-                {
-                    switch (Is_Latest_Version_Q_D_Quotation_Avail__c)
+                    if (gIs_GC_Or_Designer_Drawing_Available__c != null)
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsQuotationAvailable = 1;
-                            break;
-                        case YesNo.No:
-                            DrawingRequisition.IsQuotationAvailable = 2;
-                            break;
-                        default:
-                            break;
+                        switch (gIs_GC_Or_Designer_Drawing_Available__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsGCorDesignerDrawingAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsGCorDesignerDrawingAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
-                else
-                {
-                    isValid = false;
-                }
-
-                if (Is_Site_Check_Photo_Available__c != null)
-                {
-                    switch (Is_Site_Check_Photo_Available__c)
+                    else
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsSiteCheckPhotoAvailable = 1;
-                            break;
-                        case YesNo.No:
-                            DrawingRequisition.IsSiteCheckPhotoAvailable = 2;
-                            break;
-                        default:
-                            break;
+                        isValid = false;
                     }
-                }
-                else
-                {
-                    isValid = false;
-                }
 
-                if (Is_Site_Check_Report_Available__c != null)
-                {
-                    switch (Is_Site_Check_Report_Available__c)
+                    if (Is_Landord_Or_Mall_Criteria_Available__c != null)
                     {
-                        case YesNo.Yes:
-                            DrawingRequisition.IsSiteCheckReportAvailable = 1;
-                            break;
-                        case YesNo.No:
-                            DrawingRequisition.IsSiteCheckReportAvailable = 2;
-                            break;
-                        default:
-                            break;
+                        switch (Is_Landord_Or_Mall_Criteria_Available__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsLandordOrMallCriteriaAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsLandordOrMallCriteriaAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    else
+                    {
+                        isValid = false;
+                    }
+
+                    if (Is_Latest_Version_Q_D_Quotation_Avail__c != null)
+                    {
+                        switch (Is_Latest_Version_Q_D_Quotation_Avail__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsQuotationAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsQuotationAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        isValid = false;
+                    }
+
+                    if (Is_Site_Check_Photo_Available__c != null)
+                    {
+                        switch (Is_Site_Check_Photo_Available__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsSiteCheckPhotoAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsSiteCheckPhotoAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        isValid = false;
+                    }
+
+                    if (Is_Site_Check_Report_Available__c != null)
+                    {
+                        switch (Is_Site_Check_Report_Available__c)
+                        {
+                            case YesNo.Yes:
+                                DrawingRequisition.IsSiteCheckReportAvailable = 1;
+                                break;
+                            case YesNo.No:
+                                DrawingRequisition.IsSiteCheckReportAvailable = 2;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        isValid = false;
+                    }
+
+                    DrawingRequisition.IsValid = isValid;
+
+                    _db.Entry(DrawingRequisition).State = EntityState.Modified;
+                    _db.SaveChanges();
+
+                    requisitionId = DrawingRequisition.RequisitionID;
+                    LogMethods.Log.Debug("UpdateDrawing:Debug:" + "Done");
                 }
-                else
-                {
-                    isValid = false;
-                }
-
-                DrawingRequisition.IsValid = isValid;
-
-                _db.Entry(DrawingRequisition).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                requisitionId = DrawingRequisition.RequisitionID;
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateDrawing:Error:" + e.Message);
             }
 
             return requisitionId;

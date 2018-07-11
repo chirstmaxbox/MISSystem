@@ -117,75 +117,91 @@ namespace MISService.Methods
 
         private void UpdateNote(string qnTitle, string qnDescription, int qnID)
         {
-            using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
+            try
             {
-                string UpdateString = "UPDATE FW_Quote_Note SET qnTitle = @qnTitle, qnDescription = @qnDescription WHERE (qnID = @qnID)";
-                var UpdateCommand = new SqlCommand(UpdateString, Connection);
-                if (qnTitle != null)
+                using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
                 {
-                    UpdateCommand.Parameters.AddWithValue("@qnTitle", qnTitle);
-                }
-                else
-                {
-                    UpdateCommand.Parameters.AddWithValue("@qnTitle", "");
-                }
+                    string UpdateString = "UPDATE FW_Quote_Note SET qnTitle = @qnTitle, qnDescription = @qnDescription WHERE (qnID = @qnID)";
+                    var UpdateCommand = new SqlCommand(UpdateString, Connection);
+                    if (qnTitle != null)
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qnTitle", qnTitle);
+                    }
+                    else
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qnTitle", "");
+                    }
 
-                if (qnDescription != null)
-                {
-                    UpdateCommand.Parameters.AddWithValue("@qnDescription", qnDescription);
-                }
-                else
-                {
-                    UpdateCommand.Parameters.AddWithValue("@qnDescription", "");
-                }
+                    if (qnDescription != null)
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qnDescription", qnDescription);
+                    }
+                    else
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@qnDescription", "");
+                    }
 
 
-                UpdateCommand.Parameters.AddWithValue("@qnID", qnID);
+                    UpdateCommand.Parameters.AddWithValue("@qnID", qnID);
 
-                try
-                {
-                    Connection.Open();
-                    UpdateCommand.ExecuteNonQuery();
-                    LogMethods.Log.Debug("UpdateNote:Debug:" + "DONE");
+                    try
+                    {
+                        Connection.Open();
+                        UpdateCommand.ExecuteNonQuery();
+                        LogMethods.Log.Debug("UpdateNote:Debug:" + "Done");
+                    }
+                    catch (SqlException ex)
+                    {
+                        LogMethods.Log.Error("UpdateNote:Error:" + ex.Message);
+                    }
+                    finally
+                    {
+                        Connection.Close();
+                    }
                 }
-                catch (SqlException ex)
-                {
-                    LogMethods.Log.Error("UpdateNote:Crash:" + ex.Message);
-                }
-                finally
-                {
-                    Connection.Close();
-                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateNote:Error :" + e.Message);
             }
         }
 
         private void HandleNotes(int jobID, int estRevID, int quoteRevID, enterprise.QueryResult result, string sfQuoteID)
         {
-            if(result != null) {
-
-                IEnumerable<enterprise.AttachedContentNote> quoteList = result.records.Cast<enterprise.AttachedContentNote>();
-                List<string> notes = new List<string>();
-                foreach (var q in quoteList)
+            try
+            {
+                if (result != null)
                 {
-                    notes.Add(q.Id);
-                    int noteID = CommonMethods.GetMISID(TableName.Fw_Quote_Note, q.Id, sfQuoteID, salesForceProjectID);
-                    if(noteID == 0) {
-                        QuoteNoteCreateNew qnc = new QuoteNoteCreateNew(quoteRevID);
-                        qnc.Insert();
 
-                        int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Note);
-                        CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString(), sfQuoteID, salesForceProjectID);
-                        noteID = newNoteId;
-                    }
-
-                    if (noteID != 0)
+                    IEnumerable<enterprise.AttachedContentNote> quoteList = result.records.Cast<enterprise.AttachedContentNote>();
+                    List<string> notes = new List<string>();
+                    foreach (var q in quoteList)
                     {
-                        UpdateNote(q.Title, q.TextPreview, noteID);
-                    }
-                }
+                        notes.Add(q.Id);
+                        int noteID = CommonMethods.GetMISID(TableName.Fw_Quote_Note, q.Id, sfQuoteID, salesForceProjectID);
+                        if (noteID == 0)
+                        {
+                            QuoteNoteCreateNew qnc = new QuoteNoteCreateNew(quoteRevID);
+                            qnc.Insert();
 
-                DeleteAllDeletedQuoteNotes(notes.ToArray(), sfQuoteID);
-                LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+                            int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Note);
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString(), sfQuoteID, salesForceProjectID);
+                            noteID = newNoteId;
+                        }
+
+                        if (noteID != 0)
+                        {
+                            UpdateNote(q.Title, q.TextPreview, noteID);
+                        }
+                    }
+
+                    DeleteAllDeletedQuoteNotes(notes.ToArray(), sfQuoteID);
+                    LogMethods.Log.Debug("HandleNotes:Debug:" + "Done");
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("HandleNotes:Error:" + e.Message);
             }
         }
 
@@ -203,7 +219,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteQuoteNote:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteQuoteNote:Error:" + ex.Message);
             }
             finally
             {
@@ -250,126 +266,140 @@ namespace MISService.Methods
 
         private void UpdateWINContract(int quoteRevID, string contractNum, DateTime? issueDate, DateTime? dueDate, double? contractAmount, double? deposit, string term)
         {
-            var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
-            if (sales_JobMasterList_quoteRev != null)
+            try
             {
-                if (deposit != null)
+                var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
+                if (sales_JobMasterList_quoteRev != null)
                 {
-                    sales_JobMasterList_quoteRev.termDeposit = Convert.ToInt16(deposit);
-                }
-
-                sales_JobMasterList_quoteRev.contractNumber = contractNum;
-
-                if (issueDate != null)
-                {
-                    sales_JobMasterList_quoteRev.isssueDate = issueDate;
-                }
-
-                if (dueDate != null)
-                {
-                    sales_JobMasterList_quoteRev.contractDate = dueDate;
-                }
-
-                if (contractAmount != null)
-                {
-                    sales_JobMasterList_quoteRev.contractAmount = Convert.ToDecimal(contractAmount);
-                }
-
-                if (!string.IsNullOrEmpty(term))
-                {
-                    switch (term)
+                    if (deposit != null)
                     {
-                        case "Cash On Delivery":
-                            sales_JobMasterList_quoteRev.termBalance = 0;
-                            break;
-                        case "Customer Net 7 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 7;
-                            break;
-                        case "Customer Net 10 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 10;
-                            break;
-                        case "Customer Net 15 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 15;
-                            break;
-                        case "Customer Net 20 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 20;
-                            break;
-                        case "Customer Net 30 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 30;
-                            break;
-                        case "Customer Net 45 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 45;
-                            break;
-                        case "Customer Net 60 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 60;
-                            break;
-                        case "Customer Net 180 Days":
-                            sales_JobMasterList_quoteRev.termBalance = 180;
-                            break;
-                        case "Due Upon Receipt":
-                            sales_JobMasterList_quoteRev.termBalance = 100;
-                            break;
-                        case "75 3WD":
-                            sales_JobMasterList_quoteRev.termBalance = 200;
-                            break;
-                        default:
-                            sales_JobMasterList_quoteRev.termBalance = 1000;
-                            break;
+                        sales_JobMasterList_quoteRev.termDeposit = Convert.ToInt16(deposit);
                     }
+
+                    sales_JobMasterList_quoteRev.contractNumber = contractNum;
+
+                    if (issueDate != null)
+                    {
+                        sales_JobMasterList_quoteRev.isssueDate = issueDate;
+                    }
+
+                    if (dueDate != null)
+                    {
+                        sales_JobMasterList_quoteRev.contractDate = dueDate;
+                    }
+
+                    if (contractAmount != null)
+                    {
+                        sales_JobMasterList_quoteRev.contractAmount = Convert.ToDecimal(contractAmount);
+                    }
+
+                    if (!string.IsNullOrEmpty(term))
+                    {
+                        switch (term)
+                        {
+                            case "Cash On Delivery":
+                                sales_JobMasterList_quoteRev.termBalance = 0;
+                                break;
+                            case "Customer Net 7 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 7;
+                                break;
+                            case "Customer Net 10 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 10;
+                                break;
+                            case "Customer Net 15 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 15;
+                                break;
+                            case "Customer Net 20 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 20;
+                                break;
+                            case "Customer Net 30 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 30;
+                                break;
+                            case "Customer Net 45 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 45;
+                                break;
+                            case "Customer Net 60 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 60;
+                                break;
+                            case "Customer Net 180 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 180;
+                                break;
+                            case "Due Upon Receipt":
+                                sales_JobMasterList_quoteRev.termBalance = 100;
+                                break;
+                            case "75 3WD":
+                                sales_JobMasterList_quoteRev.termBalance = 200;
+                                break;
+                            default:
+                                sales_JobMasterList_quoteRev.termBalance = 1000;
+                                break;
+                        }
+                    }
+                    sales_JobMasterList_quoteRev.quoteStatus = (int)NJobStatus.win; //WIN status is defined in Sales_JobStatus
+
+                    _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
+                    _db.SaveChanges();
+
                 }
-                sales_JobMasterList_quoteRev.quoteStatus = (int)NJobStatus.win; //WIN status is defined in Sales_JobStatus
-
-                _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
-                _db.SaveChanges();
-
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateWINContract:Error:" + e.Message);
             }
         }
 
         private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, string taxRate)
         {
-
-            var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
-            if (sales_JobMasterList_quoteRev != null)
+            try
             {
-                if (discountAmount != null)
+                var sales_JobMasterList_quoteRev = _db.Sales_JobMasterList_QuoteRev.Where(x => x.quoteRevID == quoteRevID).FirstOrDefault();
+                if (sales_JobMasterList_quoteRev != null)
                 {
-                    sales_JobMasterList_quoteRev.DiscountAmount = Convert.ToDecimal(discountAmount);
-                }
+                    if (discountAmount != null)
+                    {
+                        sales_JobMasterList_quoteRev.DiscountAmount = Convert.ToDecimal(discountAmount);
+                    }
 
-                if (version != null)
-                {
-                    sales_JobMasterList_quoteRev.quoteRev = Convert.ToByte(version);
-                }
+                    if (version != null)
+                    {
+                        sales_JobMasterList_quoteRev.quoteRev = Convert.ToByte(version);
+                    }
 
-                switch (taxOption)
-                {
-                    case "HST":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HST;
-                        break;
-                    case "HST-BC":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HstBC;
-                        break;
-                    case "GST Only":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstOnly;
-                        break;
-                    case "GST & PST":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstAndPst;
-                        break;
-                    case "Manually":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.Manually;
-                        if(subTotal != null && discountAmount != null) {
-                            sales_JobMasterList_quoteRev.pstAmount = Convert.ToDecimal((subTotal - discountAmount) * Convert.ToInt16(taxRate) * 0.01);
-                        }
-                        break;
-                    case "No Tax":
-                        sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.NoTax;
-                        break;
-                    default:
-                        break;
-                }
+                    switch (taxOption)
+                    {
+                        case "HST":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HST;
+                            break;
+                        case "HST-BC":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.HstBC;
+                            break;
+                        case "GST Only":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstOnly;
+                            break;
+                        case "GST & PST":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.GstAndPst;
+                            break;
+                        case "Manually":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.Manually;
+                            if (subTotal != null && discountAmount != null)
+                            {
+                                sales_JobMasterList_quoteRev.pstAmount = Convert.ToDecimal((subTotal - discountAmount) * Convert.ToInt16(taxRate) * 0.01);
+                            }
+                            break;
+                        case "No Tax":
+                            sales_JobMasterList_quoteRev.TaxOption = (int)NTaxOption.NoTax;
+                            break;
+                        default:
+                            break;
+                    }
 
-                _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
-                _db.SaveChanges();
+                    _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateQuote:Error:" + e.Message);
             }
 
         }
@@ -473,7 +503,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("DeleteQuoteService:Crash:" + ex.Message);
+                LogMethods.Log.Error("DeleteQuoteService:Error:" + ex.Message);
             }
             finally
             {
@@ -540,11 +570,11 @@ namespace MISService.Methods
                 {
                     Connection.Open();
                     UpdateCommand.ExecuteNonQuery();
-                    LogMethods.Log.Debug("UpdateQuoteService:Debug:" + "DONE");
+                    LogMethods.Log.Debug("UpdateQuoteService:Debug:" + "Done");
                 }
                 catch (SqlException ex)
                 {
-                    LogMethods.Log.Error("UpdateQuoteService:Crash:" + ex.Message);
+                    LogMethods.Log.Error("UpdateQuoteService:Error:" + ex.Message);
                 }
                 finally
                 {
@@ -718,11 +748,11 @@ namespace MISService.Methods
                 {
                     Connection.Open();
                     UpdateCommand.ExecuteNonQuery();
-                    LogMethods.Log.Debug("UpdateQuoteItem:Debug:" + "DONE");
+                    LogMethods.Log.Debug("UpdateQuoteItem:Debug:" + "Done");
                 }
                 catch (SqlException ex)
                 {
-                    LogMethods.Log.Error("UpdateQuoteItem:Crash:" + ex.Message);
+                    LogMethods.Log.Error("UpdateQuoteItem:Error:" + ex.Message);
                 }
                 finally
                 {

@@ -17,7 +17,7 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            /*
+
             LogMethods.Log.Debug("-------------- *** Starting MISService *** ------------ ");
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
@@ -25,8 +25,8 @@ namespace MISService
                 pm.GetAllProjects();
             }
             LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
-             * */
 
+            /*
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
@@ -34,6 +34,7 @@ namespace MISService
                 new MyMISService() 
             };
             ServiceBase.Run(ServicesToRun);
+             * */
         }
     }
 }

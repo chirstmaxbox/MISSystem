@@ -341,187 +341,201 @@ namespace MISService.Methods
 
         private void UpdateWorkOrderItem(string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
         {
-            var workOrderItem = _db.WO_Item.Where(x => x.woItemID == workOrderItemID).FirstOrDefault();
-            if (workOrderItem != null)
+            try
             {
-                workOrderItem.estItemNameText = itemName;
-
-                int requirementID = 10;
-                var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
-                if (jobType != null)
+                var workOrderItem = _db.WO_Item.Where(x => x.woItemID == workOrderItemID).FirstOrDefault();
+                if (workOrderItem != null)
                 {
-                    requirementID = jobType.QUOTE_SUPPLY_TYPE;
-                }
-                else
-                {
-                    LogMethods.Log.Error("UpdateWorkOrderItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
-                }
-                workOrderItem.Requirement = requirementID;
-                workOrderItem.woDescription = description;
-                if (quality != null)
-                    workOrderItem.qty = Convert.ToInt16(quality);
+                    workOrderItem.estItemNameText = itemName;
 
-                if (itemCost != null)
-                {
-                    workOrderItem.qiAmount = (double)itemCost;
-                }
+                    int requirementID = 10;
+                    var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
+                    if (jobType != null)
+                    {
+                        requirementID = jobType.QUOTE_SUPPLY_TYPE;
+                    }
+                    else
+                    {
+                        LogMethods.Log.Error("UpdateWorkOrderItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    }
+                    workOrderItem.Requirement = requirementID;
+                    workOrderItem.woDescription = description;
+                    if (quality != null)
+                        workOrderItem.qty = Convert.ToInt16(quality);
 
-                long estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
-                if (estItemID != 0)
-                {
-                    workOrderItem.estItemID = estItemID;
-                }
+                    if (itemCost != null)
+                    {
+                        workOrderItem.qiAmount = (double)itemCost;
+                    }
 
-                _db.Entry(workOrderItem).State = EntityState.Modified;
-                _db.SaveChanges();
+                    long estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
+                    if (estItemID != 0)
+                    {
+                        workOrderItem.estItemID = estItemID;
+                    }
+
+                    _db.Entry(workOrderItem).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateWorkOrderItem:Error:" + e.Message);
             }
         }
 
         private void UpdateWorkOrder(int workOrderID, string woNumber, string woType, string paymentMethod, double? version, string rush, string rushReason,
                         string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, string preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID)
         {
-            var workOrder = _db.Sales_JobMasterList_WO.Where(x => x.woID == workOrderID).FirstOrDefault();
-            if (workOrder != null)
+            try
             {
-                switch (woType)
+                var workOrder = _db.Sales_JobMasterList_WO.Where(x => x.woID == workOrderID).FirstOrDefault();
+                if (workOrder != null)
                 {
-                    case "Production":
-                        workOrder.woType = 10;
-                        break;
-                    case "Service":
-                        workOrder.woType = 20;
-                        break;
-                    case "Site Check":
-                        workOrder.woType = 30;
-                        break;
-                    default:
-                        break;
+                    switch (woType)
+                    {
+                        case "Production":
+                            workOrder.woType = 10;
+                            break;
+                        case "Service":
+                            workOrder.woType = 20;
+                            break;
+                        case "Site Check":
+                            workOrder.woType = 30;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    switch (paymentMethod)
+                    {
+                        case "C.O.D (Invoice Attached)":
+                            workOrder.PayMethods = 10;
+                            break;
+                        case "Invoice Mail Out By Office":
+                            workOrder.PayMethods = 20;
+                            break;
+                        case "Installers Give Invoice To Client":
+                            workOrder.PayMethods = 30;
+                            break;
+                        case "No Charge-Other":
+                            workOrder.PayMethods = 40;
+                            break;
+                        case "No Charge-Mistakes":
+                            workOrder.PayMethods = 41;
+                            break;
+                        case "No Charge-Under Warranty":
+                            workOrder.PayMethods = 42;
+                            break;
+                        case "No Charge-Company Give Out As Gift":
+                            workOrder.PayMethods = 43;
+                            break;
+                        case "No Charge-Sample":
+                            workOrder.PayMethods = 44;
+                            break;
+                        case "No Charge-For Company Internal Use":
+                            workOrder.PayMethods = 45;
+                            break;
+                        case "Decide By Installer":
+                            workOrder.PayMethods = 46;
+                            break;
+                        case "PJ":
+                            workOrder.PayMethods = 50;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (version != null)
+                    {
+                        workOrder.woRev = Convert.ToByte(version);
+                    }
+
+                    switch (rush)
+                    {
+                        case "Yes":
+                            workOrder.rush = true;
+                            workOrder.rushReason = rushReason;
+                            break;
+                        case "No":
+                            workOrder.rush = false;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    workOrder.Remarks = remarks;
+
+                    if (issueDate != null)
+                    {
+                        workOrder.issuedDate = (DateTime)issueDate;
+                    }
+                    if (dueDate != null)
+                    {
+                        workOrder.DeadLine = (DateTime)dueDate;
+                    }
+
+                    switch (cloneType)
+                    {
+                        case "Redo":
+                            workOrder.rush = true;
+                            workOrder.reDo = true;
+                            workOrder.revise = false;
+                            workOrder.reviseVer = null;
+                            workOrder.RedoOfWoNumbers = preWONumber;
+                            workOrder.WorkorderNumber = woNumber;
+                            if (version != null)
+                            {
+                                workOrder.redoVer = Convert.ToInt16(version);
+                            }
+                            break;
+                        case "Revise":
+                            workOrder.rush = true;
+                            workOrder.revise = true;
+                            workOrder.reDo = false;
+                            workOrder.redoVer = null;
+                            workOrder.RedoOfWoNumbers = preWONumber;
+                            workOrder.WorkorderNumber = preWONumber;
+                            if (version != null)
+                            {
+                                workOrder.reviseVer = Convert.ToInt16(version);
+                            }
+                            break;
+                        case "New":
+                            workOrder.revise = false;
+                            workOrder.reviseVer = null;
+                            workOrder.reDo = false;
+                            workOrder.redoVer = null;
+                            workOrder.RedoOfWoNumbers = "";
+                            workOrder.WorkorderNumber = woNumber;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    _db.Entry(workOrder).State = EntityState.Modified;
+                    _db.SaveChanges();
+
                 }
 
-                switch (paymentMethod)
+                if (woType == "Site Check")
                 {
-                    case "C.O.D (Invoice Attached)":
-                        workOrder.PayMethods = 10;
-                        break;
-                    case "Invoice Mail Out By Office":
-                        workOrder.PayMethods = 20;
-                        break;
-                    case "Installers Give Invoice To Client":
-                        workOrder.PayMethods = 30;
-                        break;
-                    case "No Charge-Other":
-                        workOrder.PayMethods = 40;
-                        break;
-                    case "No Charge-Mistakes":
-                        workOrder.PayMethods = 41;
-                        break;
-                    case "No Charge-Under Warranty":
-                        workOrder.PayMethods = 42;
-                        break;
-                    case "No Charge-Company Give Out As Gift":
-                        workOrder.PayMethods = 43;
-                        break;
-                    case "No Charge-Sample":
-                        workOrder.PayMethods = 44;
-                        break;
-                    case "No Charge-For Company Internal Use":
-                        workOrder.PayMethods = 45;
-                        break;
-                    case "Decide By Installer":
-                        workOrder.PayMethods = 46;
-                        break;
-                    case "PJ":
-                        workOrder.PayMethods = 50;
-                        break;
-                    default:
-                        break;
+                    int siteCheckID = CommonMethods.GetMISID(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, salesForceProjectID);
+                    if (siteCheckID == 0)
+                    {
+                        InsertNewSiteCheckPurpose(workOrderID, siteCheckPurpose, siteCheckPurposeAsOther);
+                        int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Sitecheck_Purpose);
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, newId.ToString(), salesForceProjectID);
+                    }
+                    else
+                    {
+                        UpdateSiteCheckPurpose(siteCheckID, siteCheckPurpose, siteCheckPurposeAsOther);
+                    }
                 }
-
-                if (version != null)
-                {
-                    workOrder.woRev = Convert.ToByte(version);
-                }
-
-                switch (rush)
-                {
-                    case "Yes":
-                        workOrder.rush = true;
-                        workOrder.rushReason = rushReason;
-                        break;
-                    case "No":
-                        workOrder.rush = false;
-                        break;
-                    default:
-                        break;
-                }
-
-                workOrder.Remarks = remarks;
-
-                if (issueDate != null)
-                {
-                    workOrder.issuedDate = (DateTime)issueDate;
-                }
-                if (dueDate != null)
-                {
-                    workOrder.DeadLine = (DateTime)dueDate;
-                }
-
-                switch (cloneType)
-                {
-                    case "Redo":
-                        workOrder.rush = true;
-                        workOrder.reDo = true; 
-                        workOrder.revise = false;
-                        workOrder.reviseVer = null;
-                        workOrder.RedoOfWoNumbers = preWONumber;
-                        workOrder.WorkorderNumber = woNumber;
-                        if (version != null)
-                        {
-                            workOrder.redoVer = Convert.ToInt16(version);
-                        }
-                        break;
-                    case "Revise":
-                        workOrder.rush = true;
-                        workOrder.revise = true;
-                        workOrder.reDo = false;
-                        workOrder.redoVer = null;
-                        workOrder.RedoOfWoNumbers = preWONumber;
-                        workOrder.WorkorderNumber = preWONumber;
-                        if (version != null)
-                        {
-                            workOrder.reviseVer = Convert.ToInt16(version);
-                        }
-                        break;
-                    case "New":
-                        workOrder.revise = false;
-                        workOrder.reviseVer = null;
-                        workOrder.reDo = false;
-                        workOrder.redoVer = null;
-                        workOrder.RedoOfWoNumbers = "";
-                        workOrder.WorkorderNumber = woNumber;
-                        break;
-                    default:
-                        break;
-                }
-
-                _db.Entry(workOrder).State = EntityState.Modified;
-                _db.SaveChanges();
-
             }
-
-            if (woType == "Site Check")
+            catch (Exception e)
             {
-                int siteCheckID = CommonMethods.GetMISID(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, salesForceProjectID);
-                if (siteCheckID == 0)
-                {
-                    InsertNewSiteCheckPurpose(workOrderID, siteCheckPurpose, siteCheckPurposeAsOther);
-                    int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Sitecheck_Purpose);
-                    CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, newId.ToString(), salesForceProjectID);
-                }
-                else
-                {
-                    UpdateSiteCheckPurpose(siteCheckID, siteCheckPurpose, siteCheckPurposeAsOther);
-                }
+                LogMethods.Log.Error("UpdateWorkOrder:Error:" + e.Message);
             }
 
         }
@@ -579,7 +593,7 @@ namespace MISService.Methods
             }
             catch (SqlException ex)
             {
-                LogMethods.Log.Error("UpdateSiteCheckPurpose:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateSiteCheckPurpose:Error:" + ex.Message);
             }
             finally
             {
@@ -637,7 +651,7 @@ namespace MISService.Methods
                 }
                 catch (SqlException ex)
                 {
-                    LogMethods.Log.Error("InsertNewSiteCheckPurpose:Crash:" + ex.Message);
+                    LogMethods.Log.Error("InsertNewSiteCheckPurpose:Error:" + ex.Message);
                 }
                 finally
                 {

@@ -237,140 +237,156 @@ namespace MISService.Methods
             string Thickness_Inches__c, string Thickness_Inches1__c, string Thickness_Inches2__c, string Thickness_Inches3__c,
             string PC_s__c, string PC1_s__c, string PC2_s__c, string PC3_s__c)
         {
-
-            List<EST_Item_Specification_Size> est_Item_Specification_SizeList = _db.EST_Item_Specification_Size.Where(x => x.EstItemID == estItemID).ToList();
-            int i = 0;
-            if (est_Item_Specification_SizeList.Any())
+            try
             {
-                foreach (var e in est_Item_Specification_SizeList)
+                List<EST_Item_Specification_Size> est_Item_Specification_SizeList = _db.EST_Item_Specification_Size.Where(x => x.EstItemID == estItemID).ToList();
+                int i = 0;
+                if (est_Item_Specification_SizeList.Any())
                 {
-                    switch (i)
+                    foreach (var e in est_Item_Specification_SizeList)
                     {
-                        case 0:
-                            e.WidthFeet = Width_Feet_s__c == null ? 0 : Convert.ToInt32(Width_Feet_s__c);
-                            e.WidthInch = Width_Inches__c == null ? "" : Width_Inches__c;
+                        switch (i)
+                        {
+                            case 0:
+                                e.WidthFeet = Width_Feet_s__c == null ? 0 : Convert.ToInt32(Width_Feet_s__c);
+                                e.WidthInch = Width_Inches__c == null ? "" : Width_Inches__c;
 
-                            e.HeightFeet = Height_Feet__c == null ? 0 : Convert.ToInt32(Height_Feet__c);
-                            e.HeightInch = Height_Inches__c == null ? "" : Height_Inches__c;
+                                e.HeightFeet = Height_Feet__c == null ? 0 : Convert.ToInt32(Height_Feet__c);
+                                e.HeightInch = Height_Inches__c == null ? "" : Height_Inches__c;
 
-                            e.ThicknessFeet = Thickness_Feet_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet_s__c);
-                            e.ThicknessInch = Thickness_Inches__c == null ? "" : Thickness_Inches__c;
+                                e.ThicknessFeet = Thickness_Feet_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet_s__c);
+                                e.ThicknessInch = Thickness_Inches__c == null ? "" : Thickness_Inches__c;
 
-                            e.Pc = PC_s__c == null ? 0 : Convert.ToInt32(PC_s__c);
-                            break;
-                        case 1:
-                            e.HeightFeet = Height_Feet1_s__c == null ? 0 : Convert.ToInt32(Height_Feet1_s__c);
-                            e.HeightInch = Height_Inches1__c == null ? "" : Height_Inches1__c;
+                                e.Pc = PC_s__c == null ? 0 : Convert.ToInt32(PC_s__c);
+                                break;
+                            case 1:
+                                e.HeightFeet = Height_Feet1_s__c == null ? 0 : Convert.ToInt32(Height_Feet1_s__c);
+                                e.HeightInch = Height_Inches1__c == null ? "" : Height_Inches1__c;
 
-                            e.ThicknessFeet = Thickness_Feet1_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet1_s__c);
-                            e.ThicknessInch = Thickness_Inches1__c == null ? "" : Thickness_Inches1__c;
+                                e.ThicknessFeet = Thickness_Feet1_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet1_s__c);
+                                e.ThicknessInch = Thickness_Inches1__c == null ? "" : Thickness_Inches1__c;
 
-                            e.Pc = PC1_s__c == null ? 0 : Convert.ToInt32(PC1_s__c);
-                            break;
-                        case 2:
-                            e.HeightFeet = Height_Feet2_s__c == null ? 0 : Convert.ToInt32(Height_Feet2_s__c);
-                            e.HeightInch = Height_Inches2__c == null ? "" : Height_Inches2__c;
+                                e.Pc = PC1_s__c == null ? 0 : Convert.ToInt32(PC1_s__c);
+                                break;
+                            case 2:
+                                e.HeightFeet = Height_Feet2_s__c == null ? 0 : Convert.ToInt32(Height_Feet2_s__c);
+                                e.HeightInch = Height_Inches2__c == null ? "" : Height_Inches2__c;
 
-                            e.ThicknessFeet = Thickness_Feet2_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet2_s__c);
-                            e.ThicknessInch = Thickness_Inches2__c == null ? "" : Thickness_Inches2__c;
+                                e.ThicknessFeet = Thickness_Feet2_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet2_s__c);
+                                e.ThicknessInch = Thickness_Inches2__c == null ? "" : Thickness_Inches2__c;
 
-                            e.Pc = PC2_s__c == null ? 0 : Convert.ToInt32(PC2_s__c);
-                            break;
-                        case 3:
-                            e.HeightFeet = Height_Feet3_s__c == null ? 0 : Convert.ToInt32(Height_Feet3_s__c);
-                            e.HeightInch = Height_Inches3__c == null ? "" : Height_Inches3__c;
+                                e.Pc = PC2_s__c == null ? 0 : Convert.ToInt32(PC2_s__c);
+                                break;
+                            case 3:
+                                e.HeightFeet = Height_Feet3_s__c == null ? 0 : Convert.ToInt32(Height_Feet3_s__c);
+                                e.HeightInch = Height_Inches3__c == null ? "" : Height_Inches3__c;
 
-                            e.ThicknessFeet = Thickness_Feet3_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet3_s__c);
-                            e.ThicknessInch = Thickness_Inches3__c == null ? "" : Thickness_Inches3__c;
+                                e.ThicknessFeet = Thickness_Feet3_s__c == null ? 0 : Convert.ToInt32(Thickness_Feet3_s__c);
+                                e.ThicknessInch = Thickness_Inches3__c == null ? "" : Thickness_Inches3__c;
 
-                            e.Pc = PC3_s__c == null ? 0 : Convert.ToInt32(PC3_s__c);
-                            break;
-                        default:
-                            break;
+                                e.Pc = PC3_s__c == null ? 0 : Convert.ToInt32(PC3_s__c);
+                                break;
+                            default:
+                                break;
+                        }
+                        _db.Entry(e).State = EntityState.Modified;
+                        i++;
                     }
-                    _db.Entry(e).State = EntityState.Modified;
-                    i++;
+                    _db.SaveChanges();
                 }
-                _db.SaveChanges();
+                LogMethods.Log.Debug("UpdateEstItemSize:Debug:" + "Done");
             }
-            LogMethods.Log.Debug("UpdateEstItemSize:Debug:" + "Done");
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateEstItemSize:Error:" + e.Message);
+            }
         }
 
         private void UpdateEstItem(long estItemID, string itemName, double? itemOrder, string signType, string previousEstimation, string saleRequirement,
             string EstimatorDesc, string position, string requirement, double? quality, double? itemCost)
         {
-            var item = _db.EST_Item.Find(estItemID);
-            if (item != null)
+            try
             {
-                switch (previousEstimation)
+                var item = _db.EST_Item.Find(estItemID);
+                if (item != null)
                 {
-                    case YesNo.Yes:
-                        item.IsPreviousEstimationAvailable = 1;
-                        break;
-                    case YesNo.No:
-                        item.IsPreviousEstimationAvailable = 2;
-                        break;
-                    default:
-                        item.IsPreviousEstimationAvailable = 0;
-                        break;
-                }
+                    switch (previousEstimation)
+                    {
+                        case YesNo.Yes:
+                            item.IsPreviousEstimationAvailable = 1;
+                            break;
+                        case YesNo.No:
+                            item.IsPreviousEstimationAvailable = 2;
+                            break;
+                        default:
+                            item.IsPreviousEstimationAvailable = 0;
+                            break;
+                    }
 
-                item.ProductName = itemName;
-                if(itemOrder != null)
-                {
-                    item.EstItemNo = Convert.ToInt16(itemOrder);
-                }
-                /* product ID */
-                int productID = 0;
-                Product optionDetails = _db.Products.Where(x => x.ProductName.Trim() == signType & x.Active).FirstOrDefault();
-                if (optionDetails != null)
-                {
-                    productID = optionDetails.ProductID;
-                }
-                item.ProductID = productID;
-                item.SalesDescription = saleRequirement;
-                item.Description = EstimatorDesc;
+                    item.ProductName = itemName;
+                    if (itemOrder != null)
+                    {
+                        item.EstItemNo = Convert.ToInt16(itemOrder);
+                    }
+                    /* product ID */
+                    int productID = 0;
+                    Product optionDetails = _db.Products.Where(x => x.ProductName.Trim() == signType & x.Active).FirstOrDefault();
+                    if (optionDetails != null)
+                    {
+                        productID = optionDetails.ProductID;
+                    }
+                    item.ProductID = productID;
+                    item.SalesDescription = saleRequirement;
+                    item.Description = EstimatorDesc;
 
-                switch (position)
-                {
-                    case ItemPosition.Indoor:
-                        item.PositionID = 10;
-                        break;
-                    case ItemPosition.Outdoor:
-                        item.PositionID = 20;
-                        break;
-                    default:
-                        item.PositionID = 0;
-                        break;
-                }
+                    switch (position)
+                    {
+                        case ItemPosition.Indoor:
+                            item.PositionID = 10;
+                            break;
+                        case ItemPosition.Outdoor:
+                            item.PositionID = 20;
+                            break;
+                        default:
+                            item.PositionID = 0;
+                            break;
+                    }
 
-                int requirementID = 10;
-                FW_JOB_TYPE jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
-                if (jobType != null)
-                {
-                    requirementID = jobType.TYPE_ID;
-                }
-                else
-                {
-                    LogMethods.Log.Error("UpdateEstItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
-                }
-                item.RequirementID = requirementID;
+                    int requirementID = 10;
+                    FW_JOB_TYPE jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
+                    if (jobType != null)
+                    {
+                        requirementID = jobType.TYPE_ID;
+                    }
+                    else
+                    {
+                        LogMethods.Log.Error("UpdateEstItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    }
+                    item.RequirementID = requirementID;
 
-                if(quality != null) {
-                    item.Qty = Convert.ToInt32(quality);
+                    if (quality != null)
+                    {
+                        item.Qty = Convert.ToInt32(quality);
+                    }
+                    else
+                    {
+                        item.Qty = 1;
+                    }
+
+                    item.PriceA = itemCost;
+                    item.IsValidated = true;
+
+                    _db.Entry(item).State = EntityState.Modified;
+                    _db.SaveChanges();
+
+                    LogMethods.Log.Debug("UpdateEstItem:Debug:" + "Done");
                 }
-                else {
-                    item.Qty = 1;
-                }
-
-                item.PriceA = itemCost;
-                item.IsValidated = true;
-
-                _db.Entry(item).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                LogMethods.Log.Debug("UpdateEstItem:Debug:" + "Done");
             }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateEstItem:Error:" + e.Message);
+            }
+
         }
 
     }

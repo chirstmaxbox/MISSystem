@@ -47,11 +47,11 @@ namespace MISService.Methods
                 }
                 _db.CrmLeads.Add(lead);
                 _db.SaveChanges();
-                LogMethods.Log.Debug("CreateLead:Debug:" + "DONE");
+                LogMethods.Log.Debug("CreateLead:Debug:" + "Done");
             }
             catch (DbEntityValidationException dbEx)
             {
-                LogMethods.Log.Error("CreateLead:Crash:" + dbEx.Message);
+                LogMethods.Log.Error("CreateLead:Error:" + dbEx.Message);
             }
         }
 
@@ -73,7 +73,7 @@ namespace MISService.Methods
 
             _db.CrmLeadHistories.Add(history);
             _db.SaveChanges();
-            LogMethods.Log.Debug("UpdateHistory:Debug:" + "DONE");
+            LogMethods.Log.Debug("UpdateHistory:Debug:" + "Done");
         }
 
         //45	UnQualified By Marketing	NULL
@@ -106,13 +106,13 @@ namespace MISService.Methods
             {
                 UpdateHistory(newLead.LeadID, newLead.LastUpdatedBy, eventID);
             }
-            LogMethods.Log.Debug("RecordLeadStatusChangdTime:Debug:" + "DONE");
+            LogMethods.Log.Debug("RecordLeadStatusChangdTime:Debug:" + "Done");
         }
 
         private void RecordLeadAeChangdTime(CrmLead newLead)
         {
             UpdateHistory(newLead.LeadID, newLead.LastUpdatedBy, (int)LeadENumber.NHistoryEvent.AEAssigned);
-            LogMethods.Log.Debug("RecordLeadAeChangdTime:Debug:" + "DONE");
+            LogMethods.Log.Debug("RecordLeadAeChangdTime:Debug:" + "Done");
         }
 
         /// <summary>
@@ -142,11 +142,11 @@ namespace MISService.Methods
 
                 RecordLeadStatusChangdTime(lead);
                 RecordLeadAeChangdTime(lead);
-                LogMethods.Log.Debug("EditLead:Debug:" + "DONE");
+                LogMethods.Log.Debug("EditLead:Debug:" + "Done");
             }
             catch (Exception ex)
             {
-                LogMethods.Log.Error("EditLead:Crash:" + ex.Message);
+                LogMethods.Log.Error("EditLead:Error:" + ex.Message);
             }
         }
 
@@ -177,7 +177,7 @@ namespace MISService.Methods
                     _db.SaveChanges();
                 }
             }
-            LogMethods.Log.Debug("DeleteLead:Debug:" + "DONE");
+            LogMethods.Log.Debug("DeleteLead:Debug:" + "Done");
         }
 
         private void AddMainContact(CrmLeadContact contact)
@@ -188,7 +188,7 @@ namespace MISService.Methods
                 var lead = _db.CrmLeads.Find(contact.LeadID);
                 UpdateCrmLeadContactID(lead, contact.ContactID);
             }
-            LogMethods.Log.Debug("AddMainContact:Debug:" + "DONE");
+            LogMethods.Log.Debug("AddMainContact:Debug:" + "Done");
         }
 
         private void UpdateCrmLeadContactID(CrmLead lead, int contactID)
@@ -198,11 +198,11 @@ namespace MISService.Methods
                 lead.ContactID = contactID;
                 _db.Entry(lead).State = EntityState.Modified;
                 _db.SaveChanges();
-                LogMethods.Log.Debug("UpdateCrmLeadContactID:Debug:" + "DONE");
+                LogMethods.Log.Debug("UpdateCrmLeadContactID:Debug:" + "Done");
             }
             catch (Exception ex)
             {
-                LogMethods.Log.Error("UpdateCrmLeadContactID:Crash:" + ex.Message);
+                LogMethods.Log.Error("UpdateCrmLeadContactID:Error:" + ex.Message);
             }
         }
 
@@ -217,11 +217,11 @@ namespace MISService.Methods
             {
                 _db.SaveChanges();
                 AddMainContact(contact);
-                LogMethods.Log.Debug("CreateLeadContact:Debug:" + "DONE");
+                LogMethods.Log.Debug("CreateLeadContact:Debug:" + "Done");
             }
             catch (DbEntityValidationException dbEx)
             {
-                LogMethods.Log.Error("CreateLeadContact:Crash:" + dbEx.Message);
+                LogMethods.Log.Error("CreateLeadContact:Error:" + dbEx.Message);
             }
         }
 
@@ -236,11 +236,11 @@ namespace MISService.Methods
                 _db.Entry(contact).State = EntityState.Modified;
                 _db.SaveChanges();
                 AddMainContact(contact);
-                LogMethods.Log.Debug("EditLeadContact:Debug:" + "DONE");
+                LogMethods.Log.Debug("EditLeadContact:Debug:" + "Done");
             }
             catch (DbEntityValidationException dbEx)
             {
-                LogMethods.Log.Error("EditLeadContact:Crash:" + dbEx.Message);
+                LogMethods.Log.Error("EditLeadContact:Error:" + dbEx.Message);
             }
         }
 
@@ -286,7 +286,7 @@ namespace MISService.Methods
                 _db.Entry(lead).State = EntityState.Modified;
                 _db.SaveChanges();
             }
-            LogMethods.Log.Debug("DeleteLeadContact:Debug:" + "DONE");
+            LogMethods.Log.Debug("DeleteLeadContact:Debug:" + "Done");
         }
     }
 }

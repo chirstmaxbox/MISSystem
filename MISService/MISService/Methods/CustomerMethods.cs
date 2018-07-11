@@ -97,83 +97,97 @@ namespace MISService.Methods
 
         private void UpdateSales_JobMasterList_Customer(int jcID, int jobID, int contactID, int type)
         {
-            var sales_JobMasterList_Customers = _db.Sales_JobMasterList_Customer.Where(x => x.jobID == jobID).ToList();
-            if (sales_JobMasterList_Customers.Any())
+            try
             {
-                foreach (var element in sales_JobMasterList_Customers)
+                var sales_JobMasterList_Customers = _db.Sales_JobMasterList_Customer.Where(x => x.jobID == jobID).ToList();
+                if (sales_JobMasterList_Customers.Any())
+                {
+                    foreach (var element in sales_JobMasterList_Customers)
+                    {
+                        switch (type)
+                        {
+                            case 1:
+                                element.isBillTo = false;
+                                break;
+                            case 2:
+                                element.isQuoteTo = false;
+                                break;
+                            case 3:
+                                element.isInstallOrShipTo = false;
+                                break;
+                            default:
+                                break;
+                        }
+                        _db.Entry(element).State = EntityState.Modified;
+                    }
+                    _db.SaveChanges();
+                }
+
+
+                Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jcID == jcID);
+                if (sales_JobMasterList_Customer != null)
                 {
                     switch (type)
                     {
                         case 1:
-                            element.isBillTo = false;
+                            sales_JobMasterList_Customer.isBillTo = true;
                             break;
                         case 2:
-                            element.isQuoteTo = false;
+                            sales_JobMasterList_Customer.isQuoteTo = true;
                             break;
                         case 3:
-                            element.isInstallOrShipTo = false;
+                            sales_JobMasterList_Customer.isInstallOrShipTo = true;
                             break;
                         default:
                             break;
                     }
-                    _db.Entry(element).State = EntityState.Modified;
+                    sales_JobMasterList_Customer.contactName = contactID;
                 }
                 _db.SaveChanges();
+
+                LogMethods.Log.Debug("UpdateSales_JobMasterList_Customer:Debug:" + "Done");
             }
-
-
-            Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jcID == jcID);
-            if (sales_JobMasterList_Customer != null)
+            catch (Exception e)
             {
-                switch (type)
-                {
-                    case 1:
-                        sales_JobMasterList_Customer.isBillTo = true;
-                        break;
-                    case 2:
-                        sales_JobMasterList_Customer.isQuoteTo = true;
-                        break;
-                    case 3:
-                        sales_JobMasterList_Customer.isInstallOrShipTo = true;
-                        break;
-                    default:
-                        break;
-                }
-                sales_JobMasterList_Customer.contactName = contactID;
+                LogMethods.Log.Error("UpdateSales_JobMasterList_Customer:Error:" + e.Message);
             }
-            _db.SaveChanges();
-
-            LogMethods.Log.Debug("UpdateSales_JobMasterList_Customer:Debug:" + "Done");
         }
 
         private void HandleAccountContact(int jobID, int jcID, string contactID, int customerRowID, string firstName, string lastName, string phone, string accountID, int type)
         {
-            /* contact info */
-            int vContactID = CommonMethods.GetMISID(TableName.Customer_Contact, contactID, accountID, salesForceProjectID);
-            if (vContactID == 0)
+            try
             {
-                /* add new contact */
-                FsCustomerContact cc = new FsCustomerContact(customerRowID);
-                cc.InsertContact();
-                int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
-                CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
-                vContactID = contact_id;
-            }
+                /* contact info */
+                int vContactID = CommonMethods.GetMISID(TableName.Customer_Contact, contactID, accountID, salesForceProjectID);
+                if (vContactID == 0)
+                {
+                    /* add new contact */
+                    FsCustomerContact cc = new FsCustomerContact(customerRowID);
+                    cc.InsertContact();
+                    int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
+                    CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
+                    vContactID = contact_id;
+                }
 
-            /* update */
-            CUSTOMER_CONTACT customer_contact = _db.CUSTOMER_CONTACT.FirstOrDefault(x => x.CONTACT_ID == vContactID);
-            if (customer_contact != null)
+                /* update */
+                CUSTOMER_CONTACT customer_contact = _db.CUSTOMER_CONTACT.FirstOrDefault(x => x.CONTACT_ID == vContactID);
+                if (customer_contact != null)
+                {
+                    customer_contact.CONTACT_FIRST_NAME = firstName;
+                    customer_contact.CONTACT_LAST_NAME = lastName;
+                    customer_contact.CONTACT_PHONE = phone;
+                    _db.Entry(customer_contact).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+
+                UpdateSales_JobMasterList_Customer(jcID, jobID, vContactID, type);
+
+                LogMethods.Log.Debug("HandleAccountContact:Debug:" + "Done");
+            }
+            catch (Exception e)
             {
-                customer_contact.CONTACT_FIRST_NAME = firstName;
-                customer_contact.CONTACT_LAST_NAME = lastName;
-                customer_contact.CONTACT_PHONE = phone;
-                _db.Entry(customer_contact).State = EntityState.Modified;
-                _db.SaveChanges();
+                LogMethods.Log.Error("HandleAccountContact:Error:" + e.Message);
             }
-
-            UpdateSales_JobMasterList_Customer(jcID, jobID, vContactID, type);
-
-            LogMethods.Log.Debug("HandleAccountContact:Debug:" + "Done");
         }
 
         /**
@@ -184,61 +198,68 @@ namespace MISService.Methods
         private void HandleAccount(string companyName, string companyStreet, string companyProvince, string companyPostalCode,
             string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, int misJobID, int employeeNumber, string accountID, int type)
         {
-            int customerID = CommonMethods.GetMISID(TableName.Customer, accountID, salesForceProjectID);
-            if (customerID == 0)
+            try
             {
-                /* Add new billing address */
-                CUSTOMER customer = new CUSTOMER();
-                customer.NAME = companyName;
-                customer.LEGALNAME_SAMEAS_NAME = true;
-                customer.LEGAL_NAME = companyName;
-                customer.ADDR_1 = companyStreet;
-                customer.ADDR_2 = "";
-                customer.CITY = companyCity;
-                customer.STATE = companyProvince;
-                customer.ZIPCODE = companyPostalCode;
-                customer.COUNTRY = companyCountry;
-                customer.SalesID = employeeNumber;
-                customer.Sa1ID = employeeNumber;
-                customer.TERRITORY = "6"; //other
-                customer.ACTIVE_FLAG = "Y";
-                customer.CURRENCY_ID = "CAD";
-
-                ProjectCompany cp = new ProjectCompany(misJobID);
-                cp.Insert(misJobID, 0, false, false, false);
-                int jcID = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_JobMasterList_Customer);
-                int rowID = CreateCustomer(customer, jcID);
-                CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString(), salesForceProjectID);
-                HandleAccountContact(misJobID, jcID, contactID, rowID, firstName, lastName, phone, accountID, type);
-            }
-            else
-            {
-                CUSTOMER customer = _db.CUSTOMERs.FirstOrDefault(x => x.ROWID == customerID);
-                customer.NAME = companyName;
-                customer.LEGALNAME_SAMEAS_NAME = true;
-                customer.LEGAL_NAME = companyName;
-                customer.ADDR_1 = companyStreet;
-                customer.ADDR_2 = "";
-                customer.CITY = companyCity;
-                customer.STATE = companyProvince;
-                customer.ZIPCODE = companyPostalCode;
-                customer.COUNTRY = companyCountry;
-                customer.SalesID = employeeNumber;
-                customer.Sa1ID = employeeNumber;
-                customer.TERRITORY = "6"; //other
-                customer.ACTIVE_FLAG = "Y";
-                customer.CURRENCY_ID = "CAD";
-                _db.Entry(customer).State = EntityState.Modified;
-                _db.SaveChanges();
-
-                Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jobID == misJobID && x.cID == customer.ROWID);
-                if (sales_JobMasterList_Customer != null)
+                int customerID = CommonMethods.GetMISID(TableName.Customer, accountID, salesForceProjectID);
+                if (customerID == 0)
                 {
-                    HandleAccountContact(misJobID, sales_JobMasterList_Customer.jcID, contactID, customerID, firstName, lastName, phone, accountID, type);
-                }
-            }
+                    /* Add new billing address */
+                    CUSTOMER customer = new CUSTOMER();
+                    customer.NAME = companyName;
+                    customer.LEGALNAME_SAMEAS_NAME = true;
+                    customer.LEGAL_NAME = companyName;
+                    customer.ADDR_1 = companyStreet;
+                    customer.ADDR_2 = "";
+                    customer.CITY = companyCity;
+                    customer.STATE = companyProvince;
+                    customer.ZIPCODE = companyPostalCode;
+                    customer.COUNTRY = companyCountry;
+                    customer.SalesID = employeeNumber;
+                    customer.Sa1ID = employeeNumber;
+                    customer.TERRITORY = "6"; //other
+                    customer.ACTIVE_FLAG = "Y";
+                    customer.CURRENCY_ID = "CAD";
 
-            LogMethods.Log.Debug("HandleAccount:Debug:" + "Done");
+                    ProjectCompany cp = new ProjectCompany(misJobID);
+                    cp.Insert(misJobID, 0, false, false, false);
+                    int jcID = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_JobMasterList_Customer);
+                    int rowID = CreateCustomer(customer, jcID);
+                    CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString(), salesForceProjectID);
+                    HandleAccountContact(misJobID, jcID, contactID, rowID, firstName, lastName, phone, accountID, type);
+                }
+                else
+                {
+                    CUSTOMER customer = _db.CUSTOMERs.FirstOrDefault(x => x.ROWID == customerID);
+                    customer.NAME = companyName;
+                    customer.LEGALNAME_SAMEAS_NAME = true;
+                    customer.LEGAL_NAME = companyName;
+                    customer.ADDR_1 = companyStreet;
+                    customer.ADDR_2 = "";
+                    customer.CITY = companyCity;
+                    customer.STATE = companyProvince;
+                    customer.ZIPCODE = companyPostalCode;
+                    customer.COUNTRY = companyCountry;
+                    customer.SalesID = employeeNumber;
+                    customer.Sa1ID = employeeNumber;
+                    customer.TERRITORY = "6"; //other
+                    customer.ACTIVE_FLAG = "Y";
+                    customer.CURRENCY_ID = "CAD";
+                    _db.Entry(customer).State = EntityState.Modified;
+                    _db.SaveChanges();
+
+                    Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jobID == misJobID && x.cID == customer.ROWID);
+                    if (sales_JobMasterList_Customer != null)
+                    {
+                        HandleAccountContact(misJobID, sales_JobMasterList_Customer.jcID, contactID, customerID, firstName, lastName, phone, accountID, type);
+                    }
+                }
+
+                LogMethods.Log.Debug("HandleAccount:Debug:" + "Done");
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("HandleAccount:Error:" + e.Message);
+            }
         }
 
         /// <summary>
@@ -257,11 +278,11 @@ namespace MISService.Methods
                     mc.UpdateSalesJobMasterListCustomerID(jcID);
                 }
                 rowID = mc.RowID;
-                LogMethods.Log.Debug("CreateCustomer:Debug:" + "DONE");
+                LogMethods.Log.Debug("CreateCustomer:Debug:" + "Done");
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("CreateCustomer:Crash:" + e.Message);
+                LogMethods.Log.Error("CreateCustomer:Error:" + e.Message);
             }
             return rowID;
         }
