@@ -65,7 +65,7 @@ namespace MISService.Method
                         FsEmployee fsEmployee = new FsEmployee(un);
                         if (fsEmployee.EmployeeNumber > 0)
                         {
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing project name:" + opportunity.Name);
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing project name:" + opportunity.Name);
                             int sales_JobMasterListID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id, opportunity.Id);
                             if (sales_JobMasterListID == 0)
                             {
@@ -100,42 +100,41 @@ namespace MISService.Method
                             }
 
                             /* Bill-Quote-Ship */
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing account and contact");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing account and contact");
                             CustomerMethods cm = new CustomerMethods(opportunity.Id);
                             cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
                             
                             /* Get Estimation and Items and Services */
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing estimation");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing estimation");
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
                             em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
                              /* Get Drawing */
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing drawing");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing drawing");
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
                             dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
 
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing quote");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing quote");
                             QuoteMethods qm = new QuoteMethods(opportunity.Id);
                             qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
                             PermitMethods pm = new PermitMethods(opportunity.Id);
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing sign permit");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing sign permit");
                             pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing hoisting permit");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing hoisting permit");
                             pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing stakeout permit");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing stakeout permit");
                             pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing work order");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing work order");
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
                             wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing invoice");
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing invoice");
                             InvoiceMethods im = new InvoiceMethods(opportunity.Id);
                             im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
-                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing project done!");
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
                         }
                         else

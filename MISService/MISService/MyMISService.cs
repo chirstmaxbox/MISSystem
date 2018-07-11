@@ -84,7 +84,7 @@ namespace MISService
         private void DoWork(object parent)
         {
             MyMISService m = (MyMISService)parent;
-            LogMethods.Log.Debug("-------------- *** Starting MISService *** ------------");
+            LogMethods.Log.Info("-------------- *** Starting MISService *** ------------");
             int polling = 1;
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
@@ -93,10 +93,10 @@ namespace MISService
                     LogMethods.Log.Debug("* Polling:" + polling++);
                     ProjectMethods pm = new ProjectMethods();
                     pm.GetAllProjects();
-                    Thread.Sleep(120000);
+                    Thread.Sleep(10000);
                 }
             }
-            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------");
+            LogMethods.Log.Info("-------------- *** Endings MISService *** ------------");
         }
 
         protected override void OnStop()
