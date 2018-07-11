@@ -42,7 +42,6 @@
             this.serviceInstaller1.Description = "MIS Service to achieve Salesforce data and pour them into database";
             this.serviceInstaller1.DisplayName = "MIS Processing";
             this.serviceInstaller1.ServiceName = "MyMISService";
-            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
