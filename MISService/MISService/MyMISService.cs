@@ -84,20 +84,34 @@ namespace MISService
         private void DoWork(object parent)
         {
             MyMISService m = (MyMISService)parent;
-            LogMethods.Log.Info("-------------- *** Starting MISService *** ------------");
+            LogMethods.Log.Warn("-------------- *** Starting MISService *** ------------");
             int polling = 1;
-            if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
+            bool exist = false;
+            while (!exist)
             {
-                while (m.Running)
+                if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
                 {
-                    LogMethods.Log.Debug("* Polling:" + polling++);
-                    ProjectMethods pm = new ProjectMethods();
-                    pm.GetAllProjects();
-                    // wait 10 seconds for next polling
-                    Thread.Sleep(10000);
+                    while (m.Running)
+                    {
+                        LogMethods.Log.Info("Polling:" + polling++);
+                        ProjectMethods pm = new ProjectMethods();
+                        pm.GetAllProjects();
+                        // wait 10 seconds for next polling
+                        Thread.Sleep(10000);
+                    }
+                }
+
+                if (m.Running)
+                {
+                    LogMethods.Log.Warn("Trying another connection to Salesforce after 30 seconds!");
+                    Thread.Sleep(30000);
+                }
+                else
+                {
+                    exist = true;
                 }
             }
-            LogMethods.Log.Info("-------------- *** Endings MISService *** ------------");
+            LogMethods.Log.Warn("-------------- *** Endings MISService *** ------------");
         }
 
         protected override void OnStop()

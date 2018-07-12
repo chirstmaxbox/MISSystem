@@ -1,7 +1,7 @@
-2018-07-11 14:03:08,945 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-11 14:12:00,295 INFO MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-11 15:26:17,727 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-11 15:49:48,937 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-11 17:01:15,382 INFO MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-11 17:02:27,485 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-11 17:26:57,839 INFO MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-12 15:50:10,321 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-12 15:50:24,626 INFO MISService.Method.LogMethods - * Sleeping
+2018-07-12 15:50:54,890 INFO MISService.Method.LogMethods - * Sleeping
+2018-07-12 15:51:25,138 INFO MISService.Method.LogMethods - * Sleeping
+2018-07-12 15:51:55,403 INFO MISService.Method.LogMethods - * Sleeping
+2018-07-12 15:52:25,682 INFO MISService.Method.LogMethods - * exit
+2018-07-12 15:52:25,682 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------

@@ -60,8 +60,7 @@ namespace MISService.Method
             }
             catch (Exception e)
             {
-                Console.WriteLine("Authentication error = ", e.Message);
-                LogMethods.Log.Debug("Authentication error = " + e.Message);
+                LogMethods.Log.Error("AuthenticateSfdcEnterpriseUser:Error = " + e.Message);
                 return false;
             }
 

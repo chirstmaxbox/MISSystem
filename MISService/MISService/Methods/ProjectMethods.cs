@@ -35,7 +35,7 @@ namespace MISService.Method
         {
             try
             {
-                LogMethods.Log.Debug("GetAllProjects:Debug:" + "Start processing all projects");
+                LogMethods.Log.Info("GetAllProjects:Debug:" + "Start processing all projects");
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
@@ -65,7 +65,7 @@ namespace MISService.Method
                         FsEmployee fsEmployee = new FsEmployee(un);
                         if (fsEmployee.EmployeeNumber > 0)
                         {
-                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing project name:" + opportunity.Name);
+                            LogMethods.Log.Info("GetAllProjects:Info:" + "Processing project name:" + opportunity.Name);
                             int sales_JobMasterListID = CommonMethods.GetMISID(TableName.Sales_JobMasterList, opportunity.Id, opportunity.Id);
                             if (sales_JobMasterListID == 0)
                             {
@@ -135,14 +135,14 @@ namespace MISService.Method
                             InvoiceMethods im = new InvoiceMethods(opportunity.Id);
                             im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
-                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Done " + opportunity.Project_Number__c);
+                            LogMethods.Log.Info("GetAllProjects:Info:" + "Done: " + opportunity.Name + "<Project Num:" + opportunity.Project_Number__c + ">");
                         }
                         else
                         {
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "User Name: " + un + " does not exist in database");
                         }
                     }
-                    LogMethods.Log.Debug("GetAllProjects:Debug:" + "All projects are done");
+                    LogMethods.Log.Info("GetAllProjects:Info:" + "All projects are done");
                 }
             }
             catch (Exception e)
