@@ -77,6 +77,7 @@
     <Compile Include="Methods\ServiceMethods.cs" />
     <Compile Include="Methods\ServiceWOMethods.cs" />
     <Compile Include="Methods\SiteCheckWOMethods.cs" />
+    <Compile Include="Methods\SubContractMethods.cs" />
     <Compile Include="Methods\WorkOrderMethods.cs" />
     <Compile Include="MISServiceConfiguration.cs" />
     <Compile Include="Models\CrmEmployee.cs" />
@@ -514,6 +515,10 @@
     <ProjectReference Include="..\SalesCenterDomain\SalesCenterDomain.csproj">
       <Project>{32a698e1-a626-4bb6-a29e-f13ded93f7cb}</Project>
       <Name>SalesCenterDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubContractDomain\SubContractDomain.csproj">
+      <Project>{2b880635-cae6-42fb-90ec-79afe3ed6686}</Project>
+      <Name>SubContractDomain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

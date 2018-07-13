@@ -1,0 +1,16 @@
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\SubContractDomain.dll.config
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\SubContractDomain.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\SubContractDomain.pdb
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\CustomerDomain.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EmployeeDomain.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\MyCommon.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EmployeeDomain.pdb
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\MyCommon.pdb
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\CustomerDomain.pdb
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.xml
+F:\MIS2015\SubContract\SubContractDomain\obj\Debug\SubContractDomain.csprojResolveAssemblyReference.cache
+F:\MIS2015\SubContract\SubContractDomain\obj\Debug\SubContractDomain.dll
+F:\MIS2015\SubContract\SubContractDomain\obj\Debug\SubContractDomain.pdb
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.SqlServer.dll
+F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.SqlServer.xml

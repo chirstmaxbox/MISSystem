@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B880635-CAE6-42FB-90EC-79AFE3ED6686}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SubContractDomain</RootNamespace>
+    <AssemblyName>SubContractDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomerDomain">
+      <HintPath>..\Website\Bin\CustomerDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\MySubcontractWorkorder.cs" />
+    <Compile Include="BLL\MyPurchasingOrder.cs" />
+    <Compile Include="BLL\MySubcontractShipping.cs" />
+    <Compile Include="BLL\MyResponse.cs" />
+    <Compile Include="BLL\MyProjectSubContract.cs" />
+    <Compile Include="BLL\MySubcontractEnum.cs" />
+    <Compile Include="BLL\MySubcontractRequirement.cs" />
+    <Compile Include="BLL\SubContractCreate.cs" />
+    <Compile Include="BLL\MySubContract.cs" />
+    <Compile Include="Model\SubContract.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractCommunication.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubcontractDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractDocument.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubContractInstaller.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractItem.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubContractModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubContractModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractNote.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractResponse.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractShipping.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubcontractWorkorder.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblSubcontractRequirement.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblSubcontractStatus.cs">
+      <DependentUpon>SubcontractDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\SubContractModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SubContractModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Model\SubcontractDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SubcontractDbModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model\SubcontractDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SubcontractDbModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeDomain\EmployeeDomain.csproj">
+      <Project>{7CBA035D-63A6-4D67-B5C8-E5187072A183}</Project>
+      <Name>EmployeeDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyCommon\MyCommon.csproj">
+      <Project>{661DCD9D-AAEF-40BF-BC9A-290693D1DF2D}</Project>
+      <Name>MyCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

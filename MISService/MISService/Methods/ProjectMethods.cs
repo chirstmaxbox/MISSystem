@@ -131,6 +131,10 @@ namespace MISService.Method
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
                             wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
+                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing SubContract");
+                            SubContractMethods sc = new SubContractMethods(opportunity.Id);
+                            sc.GetAllSubContracts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing invoice");
                             InvoiceMethods im = new InvoiceMethods(opportunity.Id);
                             im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);

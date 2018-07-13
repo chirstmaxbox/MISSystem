@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SubContractDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SubContractDbModelStoreContainer">
+    <EntitySet Name="SubContract" EntityType="SubContractDbModel.Store.SubContract" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractCommunication" EntityType="SubContractDbModel.Store.SubcontractCommunication" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractDocument" EntityType="SubContractDbModel.Store.SubcontractDocument" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubContractInstaller" EntityType="SubContractDbModel.Store.SubContractInstaller" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractItem" EntityType="SubContractDbModel.Store.SubcontractItem" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractNote" EntityType="SubContractDbModel.Store.SubcontractNote" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractResponse" EntityType="SubContractDbModel.Store.SubcontractResponse" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractShipping" EntityType="SubContractDbModel.Store.SubcontractShipping" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="SubcontractWorkorder" EntityType="SubContractDbModel.Store.SubcontractWorkorder" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="TblSubcontractRequirement" EntityType="SubContractDbModel.Store.TblSubcontractRequirement" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="TblSubcontractStatus" EntityType="SubContractDbModel.Store.TblSubcontractStatus" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <AssociationSet Name="FK_SubContract_Status" Association="SubContractDbModel.Store.FK_SubContract_Status">
+      <End Role="TblSubcontractStatus" EntitySet="TblSubcontractStatus" />
+      <End Role="SubContract" EntitySet="SubContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubContract_TblSubcontractRequirement" Association="SubContractDbModel.Store.FK_SubContract_TblSubcontractRequirement">
+      <End Role="TblSubcontractRequirement" EntitySet="TblSubcontractRequirement" />
+      <End Role="SubContract" EntitySet="SubContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractCommunication_SubContract" Association="SubContractDbModel.Store.FK_SubcontractCommunication_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractCommunication" EntitySet="SubcontractCommunication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractDocument_SubContract" Association="SubContractDbModel.Store.FK_SubcontractDocument_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractDocument" EntitySet="SubcontractDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractItem_SubContract" Association="SubContractDbModel.Store.FK_SubcontractItem_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractItem" EntitySet="SubcontractItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractNote_SubContract" Association="SubContractDbModel.Store.FK_SubcontractNote_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractNote" EntitySet="SubcontractNote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractResponse_SubContract" Association="SubContractDbModel.Store.FK_SubcontractResponse_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractResponse_SubContractInstaller" Association="SubContractDbModel.Store.FK_SubcontractResponse_SubContractInstaller">
+      <End Role="SubContractInstaller" EntitySet="SubContractInstaller" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractResponse_TblSubcontractStatus" Association="SubContractDbModel.Store.FK_SubcontractResponse_TblSubcontractStatus">
+      <End Role="TblSubcontractStatus" EntitySet="TblSubcontractStatus" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractShipping_SubContract" Association="SubContractDbModel.Store.FK_SubcontractShipping_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractShipping" EntitySet="SubcontractShipping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractWorkorder_SubContract" Association="SubContractDbModel.Store.FK_SubcontractWorkorder_SubContract">
+      <End Role="SubContract" EntitySet="SubContract" />
+      <End Role="SubcontractWorkorder" EntitySet="SubcontractWorkorder" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SubContract">
+    <Key>
+      <PropertyRef Name="SubcontractID" />
+    </Key>
+    <Property Name="SubcontractID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="RequestBy" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="ContactPerson1" Type="int" Nullable="false" />
+    <Property Name="ContactPerson2" Type="int" Nullable="false" />
+    <Property Name="Budget" Type="float" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="2500" />
+    <Property Name="TargetDate" Type="smalldatetime" />
+    <Property Name="BudgetProvideBy" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsRush" Type="bit" Nullable="false" />
+    <Property Name="RequirementID" Type="int" Nullable="false" />
+    <Property Name="Requirement" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReviseReason" Type="nvarchar" MaxLength="500" />
+    <Property Name="RequestNumber" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="RatingRemark" Type="nvarchar" MaxLength="2000" />
+    <Property Name="EstimatedShippingCost" Type="float" />
+    <Property Name="ItemValue" Type="float" />
+  </EntityType>
+  <EntityType Name="SubcontractCommunication">
+    <Key>
+      <PropertyRef Name="CommunicationID" />
+    </Key>
+    <Property Name="CommunicationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="PostBy" Type="int" Nullable="false" />
+    <Property Name="PostAt" Type="smalldatetime" />
+    <Property Name="PostContents" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SubcontractDocument">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Name="DocID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="DocTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="DocHyperlink" Type="nvarchar" MaxLength="500" />
+    <Property Name="UploadBy" Type="int" Nullable="false" />
+    <Property Name="UploadAt" Type="smalldatetime" />
+    <Property Name="DocType" Type="int" Nullable="false" />
+    <Property Name="CommunicationTypeID" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="450" />
+    <Property Name="IsFinal" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubContractInstaller">
+    <Key>
+      <PropertyRef Name="InstallerID" />
+    </Key>
+    <Property Name="InstallerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="City" Type="varchar" MaxLength="30" />
+    <Property Name="Province" Type="varchar" MaxLength="30" />
+    <Property Name="PostCode" Type="varchar" MaxLength="10" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ContactName" Type="varchar" MaxLength="50" />
+    <Property Name="Position" Type="varchar" MaxLength="20" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Rate" Type="tinyint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="SubcontractItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="OrderNumber" Type="smallint" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="3000" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="UnitCost" Type="float" />
+    <Property Name="TotalCost" Type="float" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SubcontractNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="OrderNumber" Type="smallint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="SubcontractResponse">
+    <Key>
+      <PropertyRef Name="ResponseID" />
+    </Key>
+    <Property Name="ResponseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="ResponseStatusID" Type="int" Nullable="false" />
+    <Property Name="Quotation" Type="float" />
+    <Property Name="ScheduleJobDeadline" Type="smalldatetime" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="3500" />
+    <Property Name="InstallerID" Type="int" Nullable="false" />
+    <Property Name="PoNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PoIssueDate" Type="smalldatetime" />
+    <Property Name="ActualFinishDate" Type="smalldatetime" />
+    <Property Name="InvoiceAmount" Type="float" />
+    <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="smalldatetime" />
+    <Property Name="Coordinator" Type="int" Nullable="false" />
+    <Property Name="IsOverBudget" Type="bit" Nullable="false" />
+    <Property Name="IsOverBudgetApproved" Type="bit" Nullable="false" />
+    <Property Name="ApprovedBy" Type="int" Nullable="false" />
+    <Property Name="ApprovedDate" Type="smalldatetime" />
+    <Property Name="ApprovedBudget" Type="float" />
+    <Property Name="OverDueWarningIsSent" Type="bit" Nullable="false" />
+    <Property Name="ExtraCost" Type="float" Nullable="false" />
+    <Property Name="ExtraCostRemark" Type="nvarchar" MaxLength="500" />
+    <Property Name="TotalCost" Type="float" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SubcontractShipping">
+    <Key>
+      <PropertyRef Name="ShippingID" />
+    </Key>
+    <Property Name="ShippingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubContractID" Type="int" Nullable="false" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrackingNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="WaybillNote" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShipToName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" />
+    <Property Name="Postcode" Type="nchar" MaxLength="15" />
+    <Property Name="AttnName" Type="nchar" MaxLength="50" />
+    <Property Name="AttnPhone" Type="nchar" MaxLength="30" />
+    <Property Name="WorkorderNumber" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SubcontractWorkorder">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubcontractID" Type="int" Nullable="false" />
+    <Property Name="WorkorderID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblSubcontractRequirement">
+    <Key>
+      <PropertyRef Name="RequirementID" />
+    </Key>
+    <Property Name="RequirementID" Type="int" Nullable="false" />
+    <Property Name="RequirementContent" Type="nvarchar" MaxLength="250" />
+    <Property Name="Leadtime" Type="int" Nullable="false" />
+    <Property Name="Insturction" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TblSubcontractStatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="StatusConent" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CommunicationTypeID" Type="int" />
+  </EntityType>
+  <Association Name="FK_SubContract_Status">
+    <End Role="TblSubcontractStatus" Type="SubContractDbModel.Store.TblSubcontractStatus" Multiplicity="1" />
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="SubContract">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubContract_TblSubcontractRequirement">
+    <End Role="TblSubcontractRequirement" Type="SubContractDbModel.Store.TblSubcontractRequirement" Multiplicity="1" />
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractRequirement">
+        <PropertyRef Name="RequirementID" />
+      </Principal>
+      <Dependent Role="SubContract">
+        <PropertyRef Name="RequirementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractCommunication_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractCommunication" Type="SubContractDbModel.Store.SubcontractCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractCommunication">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractDocument_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractDocument" Type="SubContractDbModel.Store.SubcontractDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractDocument">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractItem_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractItem" Type="SubContractDbModel.Store.SubcontractItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractItem">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractNote_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractNote" Type="SubContractDbModel.Store.SubcontractNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractNote">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractResponse_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractResponse" Type="SubContractDbModel.Store.SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractResponse_SubContractInstaller">
+    <End Role="SubContractInstaller" Type="SubContractDbModel.Store.SubContractInstaller" Multiplicity="1" />
+    <End Role="SubcontractResponse" Type="SubContractDbModel.Store.SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContractInstaller">
+        <PropertyRef Name="InstallerID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="InstallerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractResponse_TblSubcontractStatus">
+    <End Role="TblSubcontractStatus" Type="SubContractDbModel.Store.TblSubcontractStatus" Multiplicity="1" />
+    <End Role="SubcontractResponse" Type="SubContractDbModel.Store.SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="ResponseStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractShipping_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractShipping" Type="SubContractDbModel.Store.SubcontractShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractShipping">
+        <PropertyRef Name="SubContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractWorkorder_SubContract">
+    <End Role="SubContract" Type="SubContractDbModel.Store.SubContract" Multiplicity="1" />
+    <End Role="SubcontractWorkorder" Type="SubContractDbModel.Store.SubcontractWorkorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractWorkorder">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -63,7 +63,7 @@ namespace MISService.Methods
 
                     foreach (var sp in signPermitList)
                     {
-                        /* check if the quote exists */
+                        /* check if the sign permit exists */
                         int sign_permitID = CommonMethods.GetMISID(TableName.PermitForSignPermit, sp.Id, salesForceProjectID);
                         if (sign_permitID == 0)
                         {

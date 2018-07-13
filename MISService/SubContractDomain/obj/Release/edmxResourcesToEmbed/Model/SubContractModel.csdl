@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SubContractDbModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SubContractDbEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="SubcontractCommunications" EntityType="SubContractDbModel.SubcontractCommunication" />
+    <EntitySet Name="TblSubcontractStatus1" EntityType="SubContractDbModel.TblSubcontractStatus" />
+    <EntitySet Name="TblSubcontractRequirements" EntityType="SubContractDbModel.TblSubcontractRequirement" />
+    <EntitySet Name="SubContracts" EntityType="SubContractDbModel.SubContract" />
+    <AssociationSet Name="FK_SubContract_Status" Association="SubContractDbModel.FK_SubContract_Status">
+      <End Role="TblSubcontractStatus" EntitySet="TblSubcontractStatus1" />
+      <End Role="SubContract" EntitySet="SubContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubContract_TblSubcontractRequirement" Association="SubContractDbModel.FK_SubContract_TblSubcontractRequirement">
+      <End Role="TblSubcontractRequirement" EntitySet="TblSubcontractRequirements" />
+      <End Role="SubContract" EntitySet="SubContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractCommunication_SubContract" Association="SubContractDbModel.FK_SubcontractCommunication_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractCommunication" EntitySet="SubcontractCommunications" />
+    </AssociationSet>
+    <EntitySet Name="SubcontractShippings" EntityType="SubContractDbModel.SubcontractShipping" />
+    <AssociationSet Name="FK_SubcontractShipping_SubContract" Association="SubContractDbModel.FK_SubcontractShipping_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractShipping" EntitySet="SubcontractShippings" />
+    </AssociationSet>
+    <EntitySet Name="SubContractInstallers" EntityType="SubContractDbModel.SubContractInstaller" />
+    <EntitySet Name="SubcontractDocuments" EntityType="SubContractDbModel.SubcontractDocument" />
+    <AssociationSet Name="FK_SubcontractDocument_SubContract" Association="SubContractDbModel.FK_SubcontractDocument_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractDocument" EntitySet="SubcontractDocuments" />
+    </AssociationSet>
+    <EntitySet Name="SubcontractItems" EntityType="SubContractDbModel.SubcontractItem" />
+    <EntitySet Name="SubcontractNotes" EntityType="SubContractDbModel.SubcontractNote" />
+    <AssociationSet Name="FK_SubcontractItem_SubContract" Association="SubContractDbModel.FK_SubcontractItem_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractItem" EntitySet="SubcontractItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractNote_SubContract" Association="SubContractDbModel.FK_SubcontractNote_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractNote" EntitySet="SubcontractNotes" />
+    </AssociationSet>
+    <EntitySet Name="SubcontractWorkorders" EntityType="SubContractDbModel.SubcontractWorkorder" />
+    <AssociationSet Name="FK_SubcontractWorkorder_SubContract" Association="SubContractDbModel.FK_SubcontractWorkorder_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractWorkorder" EntitySet="SubcontractWorkorders" />
+    </AssociationSet>
+    <EntitySet Name="SubcontractResponses" EntityType="SubContractDbModel.SubcontractResponse" />
+    <AssociationSet Name="FK_SubcontractResponse_SubContract" Association="SubContractDbModel.FK_SubcontractResponse_SubContract">
+      <End Role="SubContract" EntitySet="SubContracts" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractResponse_SubContractInstaller" Association="SubContractDbModel.FK_SubcontractResponse_SubContractInstaller">
+      <End Role="SubContractInstaller" EntitySet="SubContractInstallers" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubcontractResponse_TblSubcontractStatus" Association="SubContractDbModel.FK_SubcontractResponse_TblSubcontractStatus">
+      <End Role="TblSubcontractStatus" EntitySet="TblSubcontractStatus1" />
+      <End Role="SubcontractResponse" EntitySet="SubcontractResponses" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SubcontractCommunication">
+    <Key>
+      <PropertyRef Name="CommunicationID" />
+    </Key>
+    <Property Type="Int32" Name="CommunicationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="Int32" Name="PostBy" Nullable="false" />
+    <Property Type="DateTime" Name="PostAt" />
+    <Property Type="String" Name="PostContents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractCommunication_SubContract" FromRole="SubcontractCommunication" ToRole="SubContract" />
+  </EntityType>
+  <EntityType Name="TblSubcontractStatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="String" Name="StatusConent" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CommunicationTypeID" />
+    <NavigationProperty Name="SubContracts" Relationship="SubContractDbModel.FK_SubContract_Status" FromRole="TblSubcontractStatus" ToRole="SubContract" />
+    <NavigationProperty Name="SubcontractResponses" Relationship="SubContractDbModel.FK_SubcontractResponse_TblSubcontractStatus" FromRole="TblSubcontractStatus" ToRole="SubcontractResponse" />
+  </EntityType>
+  <EntityType Name="TblSubcontractRequirement">
+    <Key>
+      <PropertyRef Name="RequirementID" />
+    </Key>
+    <Property Type="Int32" Name="RequirementID" Nullable="false" />
+    <Property Type="String" Name="RequirementContent" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Leadtime" Nullable="false" />
+    <Property Type="String" Name="Insturction" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubContracts" Relationship="SubContractDbModel.FK_SubContract_TblSubcontractRequirement" FromRole="TblSubcontractRequirement" ToRole="SubContract" />
+  </EntityType>
+  <EntityType Name="SubContract">
+    <Key>
+      <PropertyRef Name="SubcontractID" />
+    </Key>
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="DateTime" Name="RequestDate" Nullable="false" />
+    <Property Type="Int32" Name="RequestBy" Nullable="false" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Int32" Name="ContactPerson1" Nullable="false" />
+    <Property Type="Int32" Name="ContactPerson2" Nullable="false" />
+    <Property Type="Double" Name="Budget" />
+    <Property Type="String" Name="Remark" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TargetDate" />
+    <Property Type="String" Name="BudgetProvideBy" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRush" Nullable="false" />
+    <Property Type="Int32" Name="RequirementID" Nullable="false" />
+    <Property Type="String" Name="Requirement" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReviseReason" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RequestNumber" Nullable="false" />
+    <Property Type="Int32" Name="Rating" Nullable="false" />
+    <Property Type="String" Name="RatingRemark" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="EstimatedShippingCost" />
+    <Property Type="Double" Name="ItemValue" />
+    <NavigationProperty Name="TblSubcontractStatu" Relationship="SubContractDbModel.FK_SubContract_Status" FromRole="SubContract" ToRole="TblSubcontractStatus" />
+    <NavigationProperty Name="TblSubcontractRequirement" Relationship="SubContractDbModel.FK_SubContract_TblSubcontractRequirement" FromRole="SubContract" ToRole="TblSubcontractRequirement" />
+    <NavigationProperty Name="SubcontractCommunications" Relationship="SubContractDbModel.FK_SubcontractCommunication_SubContract" FromRole="SubContract" ToRole="SubcontractCommunication" />
+    <NavigationProperty Name="SubcontractShippings" Relationship="SubContractDbModel.FK_SubcontractShipping_SubContract" FromRole="SubContract" ToRole="SubcontractShipping" />
+    <NavigationProperty Name="SubcontractDocuments" Relationship="SubContractDbModel.FK_SubcontractDocument_SubContract" FromRole="SubContract" ToRole="SubcontractDocument" />
+    <NavigationProperty Name="SubcontractItems" Relationship="SubContractDbModel.FK_SubcontractItem_SubContract" FromRole="SubContract" ToRole="SubcontractItem" />
+    <NavigationProperty Name="SubcontractNotes" Relationship="SubContractDbModel.FK_SubcontractNote_SubContract" FromRole="SubContract" ToRole="SubcontractNote" />
+    <NavigationProperty Name="SubcontractWorkorders" Relationship="SubContractDbModel.FK_SubcontractWorkorder_SubContract" FromRole="SubContract" ToRole="SubcontractWorkorder" />
+    <NavigationProperty Name="SubcontractResponses" Relationship="SubContractDbModel.FK_SubcontractResponse_SubContract" FromRole="SubContract" ToRole="SubcontractResponse" />
+  </EntityType>
+  <Association Name="FK_SubContract_Status">
+    <End Type="SubContractDbModel.TblSubcontractStatus" Role="TblSubcontractStatus" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="SubContract">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubContract_TblSubcontractRequirement">
+    <End Type="SubContractDbModel.TblSubcontractRequirement" Role="TblSubcontractRequirement" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractRequirement">
+        <PropertyRef Name="RequirementID" />
+      </Principal>
+      <Dependent Role="SubContract">
+        <PropertyRef Name="RequirementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractCommunication_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractCommunication" Role="SubcontractCommunication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractCommunication">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SubcontractShipping">
+    <Key>
+      <PropertyRef Name="ShippingID" />
+    </Key>
+    <Property Type="Int32" Name="ShippingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubContractID" Nullable="false" />
+    <Property Type="String" Name="Carrier" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrackingNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WaybillNote" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShipToName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Postcode" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="AttnName" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="AttnPhone" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="WorkorderNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractShipping_SubContract" FromRole="SubcontractShipping" ToRole="SubContract" />
+  </EntityType>
+  <Association Name="FK_SubcontractShipping_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractShipping" Role="SubcontractShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractShipping">
+        <PropertyRef Name="SubContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SubContractInstaller">
+    <Key>
+      <PropertyRef Name="InstallerID" />
+    </Key>
+    <Property Type="Int32" Name="InstallerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CompanyName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Province" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PostCode" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Position" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Mobile" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="Byte" Name="Rate" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubcontractResponses" Relationship="SubContractDbModel.FK_SubcontractResponse_SubContractInstaller" FromRole="SubContractInstaller" ToRole="SubcontractResponse" />
+  </EntityType>
+  <EntityType Name="SubcontractDocument">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Type="Int32" Name="DocID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="String" Name="DocTitle" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocHyperlink" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UploadBy" Nullable="false" />
+    <Property Type="DateTime" Name="UploadAt" />
+    <Property Type="Int32" Name="DocType" Nullable="false" />
+    <Property Type="Int32" Name="CommunicationTypeID" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsFinal" Nullable="false" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractDocument_SubContract" FromRole="SubcontractDocument" ToRole="SubContract" />
+  </EntityType>
+  <Association Name="FK_SubcontractDocument_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractDocument" Role="SubcontractDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractDocument">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SubcontractItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="Int16" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Quantity" Nullable="false" />
+    <Property Type="Double" Name="UnitCost" />
+    <Property Type="Double" Name="TotalCost" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractItem_SubContract" FromRole="SubcontractItem" ToRole="SubContract" />
+  </EntityType>
+  <EntityType Name="SubcontractNote">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Type="Int32" Name="NoteID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="Int16" Name="OrderNumber" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractNote_SubContract" FromRole="SubcontractNote" ToRole="SubContract" />
+  </EntityType>
+  <Association Name="FK_SubcontractItem_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractItem" Role="SubcontractItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractItem">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractNote_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractNote" Role="SubcontractNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractNote">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SubcontractWorkorder">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Type="Int32" Name="RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="Int32" Name="WorkorderID" Nullable="false" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractWorkorder_SubContract" FromRole="SubcontractWorkorder" ToRole="SubContract" />
+  </EntityType>
+  <Association Name="FK_SubcontractWorkorder_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractWorkorder" Role="SubcontractWorkorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractWorkorder">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SubcontractResponse">
+    <Key>
+      <PropertyRef Name="ResponseID" />
+    </Key>
+    <Property Type="Int32" Name="ResponseID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubcontractID" Nullable="false" />
+    <Property Type="Int32" Name="ResponseStatusID" Nullable="false" />
+    <Property Type="Double" Name="Quotation" />
+    <Property Type="DateTime" Name="ScheduleJobDeadline" />
+    <Property Type="String" Name="Remarks" MaxLength="3500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="InstallerID" Nullable="false" />
+    <Property Type="String" Name="PoNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PoIssueDate" />
+    <Property Type="DateTime" Name="ActualFinishDate" />
+    <Property Type="Double" Name="InvoiceAmount" />
+    <Property Type="String" Name="InvoiceNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="InvoiceDate" />
+    <Property Type="Int32" Name="Coordinator" Nullable="false" />
+    <Property Type="Boolean" Name="IsOverBudget" Nullable="false" />
+    <Property Type="Boolean" Name="IsOverBudgetApproved" Nullable="false" />
+    <Property Type="Int32" Name="ApprovedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ApprovedDate" />
+    <Property Type="Double" Name="ApprovedBudget" />
+    <Property Type="Boolean" Name="OverDueWarningIsSent" Nullable="false" />
+    <Property Type="Double" Name="ExtraCost" Nullable="false" />
+    <Property Type="String" Name="ExtraCostRemark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="TotalCost" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <NavigationProperty Name="SubContract" Relationship="SubContractDbModel.FK_SubcontractResponse_SubContract" FromRole="SubcontractResponse" ToRole="SubContract" />
+    <NavigationProperty Name="SubContractInstaller" Relationship="SubContractDbModel.FK_SubcontractResponse_SubContractInstaller" FromRole="SubcontractResponse" ToRole="SubContractInstaller" />
+    <NavigationProperty Name="TblSubcontractStatu" Relationship="SubContractDbModel.FK_SubcontractResponse_TblSubcontractStatus" FromRole="SubcontractResponse" ToRole="TblSubcontractStatus" />
+  </EntityType>
+  <Association Name="FK_SubcontractResponse_SubContract">
+    <End Type="SubContractDbModel.SubContract" Role="SubContract" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractResponse" Role="SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContract">
+        <PropertyRef Name="SubcontractID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="SubcontractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractResponse_SubContractInstaller">
+    <End Type="SubContractDbModel.SubContractInstaller" Role="SubContractInstaller" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractResponse" Role="SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubContractInstaller">
+        <PropertyRef Name="InstallerID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="InstallerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubcontractResponse_TblSubcontractStatus">
+    <End Type="SubContractDbModel.TblSubcontractStatus" Role="TblSubcontractStatus" Multiplicity="1" />
+    <End Type="SubContractDbModel.SubcontractResponse" Role="SubcontractResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblSubcontractStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="SubcontractResponse">
+        <PropertyRef Name="ResponseStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

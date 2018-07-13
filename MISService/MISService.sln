@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermitDomain", "PermitDomai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSummaryDomain", "ProjectSummaryDomain\ProjectSummaryDomain.csproj", "{06A4C396-E3A3-41BD-9F47-FD77A5354AEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubContractDomain", "SubContractDomain\SubContractDomain.csproj", "{2B880635-CAE6-42FB-90EC-79AFE3ED6686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,14 @@ Global
 		{06A4C396-E3A3-41BD-9F47-FD77A5354AEC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06A4C396-E3A3-41BD-9F47-FD77A5354AEC}.Release|x64.ActiveCfg = Release|Any CPU
 		{06A4C396-E3A3-41BD-9F47-FD77A5354AEC}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B880635-CAE6-42FB-90EC-79AFE3ED6686}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

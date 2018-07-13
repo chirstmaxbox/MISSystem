@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SubContractDbModelStoreContainer" CdmEntityContainer="SubContractDbEntities">
+    <EntitySetMapping Name="SubcontractCommunications">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractCommunication">
+        <MappingFragment StoreEntitySet="SubcontractCommunication">
+          <ScalarProperty Name="PostContents" ColumnName="PostContents" />
+          <ScalarProperty Name="PostAt" ColumnName="PostAt" />
+          <ScalarProperty Name="PostBy" ColumnName="PostBy" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="CommunicationID" ColumnName="CommunicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSubcontractStatus1">
+      <EntityTypeMapping TypeName="SubContractDbModel.TblSubcontractStatus">
+        <MappingFragment StoreEntitySet="TblSubcontractStatus">
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+          <ScalarProperty Name="StatusConent" ColumnName="StatusConent" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSubcontractRequirements">
+      <EntityTypeMapping TypeName="SubContractDbModel.TblSubcontractRequirement">
+        <MappingFragment StoreEntitySet="TblSubcontractRequirement">
+          <ScalarProperty Name="Insturction" ColumnName="Insturction" />
+          <ScalarProperty Name="Leadtime" ColumnName="Leadtime" />
+          <ScalarProperty Name="RequirementContent" ColumnName="RequirementContent" />
+          <ScalarProperty Name="RequirementID" ColumnName="RequirementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubContracts">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubContract">
+        <MappingFragment StoreEntitySet="SubContract">
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="EstimatedShippingCost" ColumnName="EstimatedShippingCost" />
+          <ScalarProperty Name="RatingRemark" ColumnName="RatingRemark" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+          <ScalarProperty Name="ReviseReason" ColumnName="ReviseReason" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+          <ScalarProperty Name="RequirementID" ColumnName="RequirementID" />
+          <ScalarProperty Name="IsRush" ColumnName="IsRush" />
+          <ScalarProperty Name="BudgetProvideBy" ColumnName="BudgetProvideBy" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="ContactPerson2" ColumnName="ContactPerson2" />
+          <ScalarProperty Name="ContactPerson1" ColumnName="ContactPerson1" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="RequestBy" ColumnName="RequestBy" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractShippings">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractShipping">
+        <MappingFragment StoreEntitySet="SubcontractShipping">
+          <ScalarProperty Name="WorkorderNumber" ColumnName="WorkorderNumber" />
+          <ScalarProperty Name="AttnPhone" ColumnName="AttnPhone" />
+          <ScalarProperty Name="AttnName" ColumnName="AttnName" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ShipToName" ColumnName="ShipToName" />
+          <ScalarProperty Name="WaybillNote" ColumnName="WaybillNote" />
+          <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="SubContractID" ColumnName="SubContractID" />
+          <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubContractInstallers">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubContractInstaller">
+        <MappingFragment StoreEntitySet="SubContractInstaller">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="InstallerID" ColumnName="InstallerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractDocuments">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractDocument">
+        <MappingFragment StoreEntitySet="SubcontractDocument">
+          <ScalarProperty Name="IsFinal" ColumnName="IsFinal" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CommunicationTypeID" ColumnName="CommunicationTypeID" />
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="UploadAt" ColumnName="UploadAt" />
+          <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+          <ScalarProperty Name="DocHyperlink" ColumnName="DocHyperlink" />
+          <ScalarProperty Name="DocTitle" ColumnName="DocTitle" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractItems">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractItem">
+        <MappingFragment StoreEntitySet="SubcontractItem">
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractNotes">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractNote">
+        <MappingFragment StoreEntitySet="SubcontractNote">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractWorkorders">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractWorkorder">
+        <MappingFragment StoreEntitySet="SubcontractWorkorder">
+          <ScalarProperty Name="WorkorderID" ColumnName="WorkorderID" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="RowID" ColumnName="RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubcontractResponses">
+      <EntityTypeMapping TypeName="SubContractDbModel.SubcontractResponse">
+        <MappingFragment StoreEntitySet="SubcontractResponse">
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="ExtraCostRemark" ColumnName="ExtraCostRemark" />
+          <ScalarProperty Name="ExtraCost" ColumnName="ExtraCost" />
+          <ScalarProperty Name="OverDueWarningIsSent" ColumnName="OverDueWarningIsSent" />
+          <ScalarProperty Name="ApprovedBudget" ColumnName="ApprovedBudget" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="IsOverBudgetApproved" ColumnName="IsOverBudgetApproved" />
+          <ScalarProperty Name="IsOverBudget" ColumnName="IsOverBudget" />
+          <ScalarProperty Name="Coordinator" ColumnName="Coordinator" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="ActualFinishDate" ColumnName="ActualFinishDate" />
+          <ScalarProperty Name="PoIssueDate" ColumnName="PoIssueDate" />
+          <ScalarProperty Name="PoNumber" ColumnName="PoNumber" />
+          <ScalarProperty Name="InstallerID" ColumnName="InstallerID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ScheduleJobDeadline" ColumnName="ScheduleJobDeadline" />
+          <ScalarProperty Name="Quotation" ColumnName="Quotation" />
+          <ScalarProperty Name="ResponseStatusID" ColumnName="ResponseStatusID" />
+          <ScalarProperty Name="SubcontractID" ColumnName="SubcontractID" />
+          <ScalarProperty Name="ResponseID" ColumnName="ResponseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

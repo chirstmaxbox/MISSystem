@@ -88,6 +88,61 @@ namespace MISService.Methods
             }
         }
 
+        public static void Delete(string tableName, string salesforceID, string salesforceProjectID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM MISSalesForceMapping WHERE ([TableName] = @tableName) and ([SalesforceID] = @salesforceID) and ([SalesForceProjectID] = @salesForceProjectID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@tableName", tableName);
+                DelCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                DelCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
+                DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("Delete:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        public static List<string> GetAllSalesForceIDWithoutParent(string tableName, string salesforceProjectID)
+        {
+            List<string> ids = new List<string>();
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "SELECT SalesForceID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceProjectID] = @salesForceProjectID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesForceProjectID", salesforceProjectID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        ids.Add(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetAllSalesForceIDWithoutParent:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return ids;
+        }
+
         public static List<string> GetAllSalesForceID(string tableName, string salesforceParentID, string salesforceProjectID)
         {
             List<string> ids = new List<string>();
