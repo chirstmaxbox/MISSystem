@@ -45,7 +45,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, List_Item_Name__c, "
-                        + " List_Service_Name__c, Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quote_Name__r.Tax_Option__c "
+                        + " List_Service_Name__c, Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c "
                         + " FROM Invoice__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
@@ -86,7 +86,7 @@ namespace MISService.Methods
                         if (invoiceID != 0)
                         {
                             UpdateInvoice(invoiceID, ql.Name, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
-                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quote_Name__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c);
+                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c);
 
                             /* handle item */
                             HandleInvoiceItem(invoiceID, ql.List_Item_Name__c, ql.Id);

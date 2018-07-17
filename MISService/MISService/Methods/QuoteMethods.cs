@@ -48,9 +48,9 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status, List_Item_Name__c, List_Service_Name__c, SubTotal__c, SubTotal_Discount__c, "
+                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status__c, List_Item_Name__c, List_Service_Name__c, Sub_Total__c, SubTotal_Discount__c, "
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
-                        + " Tax_Option__c, Tax_Rate__c FROM Quote where OpportunityId = '" + sfProjectID + "'";
+                        + " Tax_Option__c, Tax_Rate__c FROM Quotation__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -64,7 +64,7 @@ namespace MISService.Methods
                     if (result.size == 0) return;
 
                     //cast query results
-                    IEnumerable<enterprise.Quote> quoteList = result.records.Cast<enterprise.Quote>();
+                    IEnumerable<enterprise.Quotation__c> quoteList = result.records.Cast<enterprise.Quotation__c>();
 
                     foreach (var ql in quoteList)
                     {
@@ -83,7 +83,7 @@ namespace MISService.Methods
 
                         if (quoteID != 0)
                         {
-                            UpdateQuote(quoteID, ql.SubTotal__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
+                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
 
                             // handle quote items
                             HandleQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
@@ -94,12 +94,12 @@ namespace MISService.Methods
                             // handle notes
                             HandleNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes, ql.Id);
 
-                            if (ql.Status == "Accepted")
+                            if (ql.Status__c == "Accepted")
                             {
                                 // update contract information
                                 UpdateWINContract(quoteID, ql.Contract_Number__c, ql.Contract_Issue_Date__c, ql.Contract_Due_Date__c, ql.Contract_Amount__c, ql.Deposit__c, ql.Terms__c);
                             }
-                            else if (ql.Status == "Denied")
+                            else if (ql.Status__c == "Denied")
                             {
                                 UpdateLOSSNContract(quoteID);
                             }

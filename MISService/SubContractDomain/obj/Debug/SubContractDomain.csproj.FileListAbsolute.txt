@@ -14,3 +14,17 @@ F:\MIS2015\SubContract\SubContractDomain\obj\Debug\SubContractDomain.dll
 F:\MIS2015\SubContract\SubContractDomain\obj\Debug\SubContractDomain.pdb
 F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.SqlServer.dll
 F:\MIS2015\SubContract\SubContractDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\SubContractDomain.dll.config
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\SubContractDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\SubContractDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EmployeeDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EntityFramework.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\MyCommon.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EmployeeDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\MyCommon.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EntityFramework.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Debug\SubContractDomain.csprojResolveAssemblyReference.cache
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Debug\SubContractDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Debug\SubContractDomain.pdb

@@ -40,8 +40,8 @@ namespace MISService.Method
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Issue_Date__c, Type, OwnerId, Bidding_Type__c, Bidding_Source__c,"
-                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c FROM Opportunity where Sync__c = true and CloseDate >= TODAY"; 
+                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Issue_Date__c, Type, OwnerId, Bidding_Type__c, Bidding_Source__c, Product_Line__c, "
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.Id FROM Opportunity where Sync__c = true and CloseDate >= TODAY"; 
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -70,7 +70,7 @@ namespace MISService.Method
                             if (sales_JobMasterListID == 0)
                             {
                                 int jobID = CreateNewProject(fsEmployee.EmployeeNumber);
-                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type);
+                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r.Id, opportunity.Product_Line__c);
                                 /* update jobnumber */
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
@@ -79,7 +79,7 @@ namespace MISService.Method
                             }
                             else
                             {
-                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type);
+                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r.Id, opportunity.Product_Line__c);
                             }
 
                             /* for bidding project */
@@ -143,7 +143,7 @@ namespace MISService.Method
                         }
                         else
                         {
-                            LogMethods.Log.Debug("GetAllProjects:Debug:" + "User Name: " + un + " does not exist in database");
+                            LogMethods.Log.Error("GetAllProjects:Error:" + "User Name: " + un + " does not exist in database");
                         }
                     }
                     LogMethods.Log.Info("GetAllProjects:Info:" + "All projects are done");
@@ -193,11 +193,11 @@ namespace MISService.Method
         /// <summary>
         /// Edit a project
         /// </summary>
-        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType)
+        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType, string AE, string productLine)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
-                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sa1ID = @sa1ID, sales = @sales, jobTitle = @jobTitle, salesType = @salesType WHERE (jobID = @jobID)";
+                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sa1ID = @sa1ID, sales = @sales, jobTitle = @jobTitle, salesType = @salesType, isBidToProject = @isBidToProject, AETM = @AETM, ProductLine = @ProductLine WHERE (jobID = @jobID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
                 if (targetDate != null)
                 {
@@ -212,12 +212,15 @@ namespace MISService.Method
                 {
                     case SalesType.Repeat:
                         UpdateCommand.Parameters.AddWithValue("@salesType", 0);
+                        UpdateCommand.Parameters.AddWithValue("@isBidToProject", 0);
                         break;
                     case SalesType.Bid:
                         UpdateCommand.Parameters.AddWithValue("@salesType", 2);
+                        UpdateCommand.Parameters.AddWithValue("@isBidToProject", 1);
                         break;
                     default:
                         UpdateCommand.Parameters.AddWithValue("@salesType", 1);
+                        UpdateCommand.Parameters.AddWithValue("@isBidToProject", 0);
                         break;
                 }
 
@@ -225,6 +228,43 @@ namespace MISService.Method
                 UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = sales;
                 UpdateCommand.Parameters.Add("@jobTitle", SqlDbType.VarChar, 150).Value = jobTitle;
                 UpdateCommand.Parameters.Add("@jobID", SqlDbType.Int).Value = jobID;
+
+                if (AE != null)
+                {
+                    string un = CommonMethods.GetUserName(AE);
+                    FsEmployee fsEmployee = new FsEmployee(un);
+                    if (fsEmployee.EmployeeNumber > 0)
+                    {
+                        UpdateCommand.Parameters.AddWithValue("@AETM", fsEmployee.EmployeeNumber);
+                    }
+                    else
+                    {
+                        LogMethods.Log.Error("UpdateProject:Error:" + "User Name: " + un + " does not exist in database");
+                        UpdateCommand.Parameters.AddWithValue("@AETM", 0);
+                    }
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@AETM", 0);
+                }
+
+                if (productLine != null)
+                {
+                    switch (productLine)
+                    {
+                        case "Signage":
+                            UpdateCommand.Parameters.AddWithValue("@ProductLine", 1);
+                            break;
+                        default:
+                            UpdateCommand.Parameters.AddWithValue("@ProductLine", 10);
+                            break;
+                    }
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@ProductLine", 1);
+                }
+
                 try
                 {
                     Connection.Open();

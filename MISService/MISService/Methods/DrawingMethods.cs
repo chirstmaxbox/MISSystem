@@ -127,7 +127,7 @@ namespace MISService.Methods
                     if (items.Length == 0) return;
 
                     //create SQL query statement
-                    string query = "SELECT Id, Drawing_Name__c FROM Item__c where Id in (";
+                    string query = "SELECT Id, Drawing_Name__c, Drawing_Item_Description__c, Quantity__c FROM Item__c where Id in (";
                     foreach (string e in items)
                     {
                         if (!string.IsNullOrEmpty(e.Trim()))
@@ -170,6 +170,10 @@ namespace MISService.Methods
                                 results.Add(r);
                             }
                         }
+                        else
+                        {
+                            UpdateDrawingItem(itemIDTemp, il.Quantity__c, il.Drawing_Item_Description__c);
+                        }
                     }
 
                     if (results.Any())
@@ -193,6 +197,26 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllDrawingItems:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateDrawingItem(int requisitionItemID, double? qty, string description)
+        {
+            var item = _db.Sales_Dispatching_DrawingRequisition_EstimationItem.Where(x => x.RequisitionItemID == requisitionItemID).FirstOrDefault();
+            if (item != null)
+            {
+                if (qty != null)
+                {
+                    item.Qty = qty.ToString();
+                }
+
+                if (!string.IsNullOrEmpty(description))
+                {
+                    item.Description = description;
+                }
+
+                _db.Entry(item).State = EntityState.Modified;
+                _db.SaveChanges();
             }
         }
 

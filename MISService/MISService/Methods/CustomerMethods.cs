@@ -65,11 +65,13 @@ namespace MISService.Methods
                     //show results
                     foreach (var bqs in billQuoteShipList)
                     {
+                        bool hasOne = false;
                         if (bqs.Billing_Company_Name__r != null && bqs.Billing_Contact_Name__r != null)
                         {
                             HandleAccount(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
                                 bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
                                 bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
+                            hasOne = true;
                         }
 
                         if (bqs.Quoting_Company_Name__r != null && bqs.Quoting_Contact_Name__r != null)
@@ -77,6 +79,7 @@ namespace MISService.Methods
                             HandleAccount(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
                                 bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
                                 bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
+                            hasOne = true;
                         }
 
                         if (bqs.Installing_Company_Name__r != null && bqs.Installing_Contact_Name__r != null)
@@ -84,6 +87,22 @@ namespace MISService.Methods
                             HandleAccount(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
                                 bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
                                 bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
+                            hasOne = true;
+                        }
+
+                        /* delete default row if there exists at least one bill/quote/install */
+                        if (hasOne)
+                        {
+                            var records = _db.Sales_JobMasterList_Customer.Where(x => x.jobID == misJobID && x.cID == 0 && x.contactName == 0 && x.isBillTo == false && x.isQuoteTo == false && x.isInstallOrShipTo == false).ToList();
+                            if (records.Any())
+                            {
+                                foreach (var r in records)
+                                {
+                                    //delete it
+                                    _db.Sales_JobMasterList_Customer.Remove(r);
+                                }
+                                _db.SaveChanges();
+                            }
                         }
                     }
                     LogMethods.Log.Debug("GetAllAccounts:Debug:" + "Done");
@@ -123,7 +142,6 @@ namespace MISService.Methods
                     _db.SaveChanges();
                 }
 
-
                 Sales_JobMasterList_Customer sales_JobMasterList_Customer = _db.Sales_JobMasterList_Customer.FirstOrDefault(x => x.jcID == jcID);
                 if (sales_JobMasterList_Customer != null)
                 {
@@ -142,9 +160,10 @@ namespace MISService.Methods
                             break;
                     }
                     sales_JobMasterList_Customer.contactName = contactID;
+                    _db.Entry(sales_JobMasterList_Customer).State = EntityState.Modified;
+                    _db.SaveChanges();
                 }
-                _db.SaveChanges();
-
+ 
                 LogMethods.Log.Debug("UpdateSales_JobMasterList_Customer:Debug:" + "Done");
             }
             catch (Exception e)

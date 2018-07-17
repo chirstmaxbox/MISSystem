@@ -124,3 +124,5 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\Permit
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\ProjectSummaryDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\PermitDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\ProjectSummaryDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\SubContractDomain.dll
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Debug\SubContractDomain.pdb
