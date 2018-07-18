@@ -4657,6 +4657,7 @@
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="TopicAssignments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="UserRecordAccess" nillable="true" type="ens:UserRecordAccess" />
+              <xsd:element minOccurs="0" name="Version__c" nillable="true" type="xsd:double" />
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>

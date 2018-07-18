@@ -63,3 +63,4 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Debug\Expo
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Debug\ExportDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.pdb
+C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Debug\ExportDomain.csprojResolveAssemblyReference.cache

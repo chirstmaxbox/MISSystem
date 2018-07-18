@@ -1,929 +1,531 @@
-2018-07-13 15:21:45,887 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-13 15:21:58,851 INFO MISService.Method.LogMethods - Polling:1
-2018-07-13 15:21:58,851 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:22:02,533 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:22:22,922 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:22:22,922 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:22:32,937 INFO MISService.Method.LogMethods - Polling:2
-2018-07-13 15:22:32,937 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:22:33,374 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:22:43,342 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:22:43,342 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:22:53,357 INFO MISService.Method.LogMethods - Polling:3
-2018-07-13 15:22:53,357 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:22:53,654 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:22:57,913 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:22:57,913 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:23:07,928 INFO MISService.Method.LogMethods - Polling:4
-2018-07-13 15:23:07,928 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:23:08,162 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:23:12,655 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:23:12,655 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:23:22,670 INFO MISService.Method.LogMethods - Polling:5
-2018-07-13 15:23:22,670 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:23:23,107 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:23:28,146 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:23:28,146 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:23:38,161 INFO MISService.Method.LogMethods - Polling:6
-2018-07-13 15:23:38,161 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:23:38,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:23:42,997 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:23:42,997 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:23:53,012 INFO MISService.Method.LogMethods - Polling:7
-2018-07-13 15:23:53,012 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:23:53,230 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:23:57,739 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:23:57,739 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:24:07,754 INFO MISService.Method.LogMethods - Polling:8
-2018-07-13 15:24:07,754 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:24:08,004 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:24:13,822 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:24:13,822 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:24:23,838 INFO MISService.Method.LogMethods - Polling:9
-2018-07-13 15:24:23,838 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:24:23,962 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:24:28,424 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:24:28,424 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:24:38,439 INFO MISService.Method.LogMethods - Polling:10
-2018-07-13 15:24:38,439 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:24:39,360 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:24:45,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:24:45,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:24:55,084 INFO MISService.Method.LogMethods - Polling:11
-2018-07-13 15:24:55,084 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:24:55,209 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:24:58,813 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:24:58,813 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:25:08,828 INFO MISService.Method.LogMethods - Polling:12
-2018-07-13 15:25:08,828 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:25:09,093 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:25:13,508 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:25:13,508 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:25:23,523 INFO MISService.Method.LogMethods - Polling:13
-2018-07-13 15:25:23,523 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:25:24,054 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:25:29,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:25:29,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:25:39,045 INFO MISService.Method.LogMethods - Polling:14
-2018-07-13 15:25:39,045 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:25:39,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:25:44,693 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:25:44,693 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:25:54,723 INFO MISService.Method.LogMethods - Polling:15
-2018-07-13 15:25:54,723 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:25:54,942 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:25:59,591 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:25:59,591 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:26:09,606 INFO MISService.Method.LogMethods - Polling:16
-2018-07-13 15:26:09,606 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:26:09,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:26:14,145 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:26:14,145 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:26:24,161 INFO MISService.Method.LogMethods - Polling:17
-2018-07-13 15:26:24,161 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:26:25,299 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:26:30,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:26:30,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:26:40,759 INFO MISService.Method.LogMethods - Polling:18
-2018-07-13 15:26:40,759 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:26:40,977 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:26:48,715 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:26:48,715 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:26:58,730 INFO MISService.Method.LogMethods - Polling:19
-2018-07-13 15:26:58,730 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:26:58,995 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:27:01,554 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:27:01,710 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:27:11,413 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:27:11,413 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:27:21,428 INFO MISService.Method.LogMethods - Polling:20
-2018-07-13 15:27:21,428 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:27:21,647 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:27:22,942 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:27:23,066 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:27:28,339 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:27:28,339 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:27:38,354 INFO MISService.Method.LogMethods - Polling:21
-2018-07-13 15:27:38,354 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:27:38,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:27:40,320 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:27:40,429 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:27:44,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:27:44,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:27:54,719 INFO MISService.Method.LogMethods - Polling:22
-2018-07-13 15:27:54,719 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:27:54,937 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:27:56,279 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:27:56,388 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:28:00,366 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:28:00,366 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:28:10,381 INFO MISService.Method.LogMethods - Polling:23
-2018-07-13 15:28:10,381 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:28:10,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:28:13,080 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:28:13,189 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:28:17,526 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:28:17,526 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:28:27,541 INFO MISService.Method.LogMethods - Polling:24
-2018-07-13 15:28:27,541 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:28:27,869 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:28:29,023 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:28:29,164 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:28:33,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:28:33,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:28:43,313 INFO MISService.Method.LogMethods - Polling:25
-2018-07-13 15:28:43,313 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:28:43,547 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:28:44,701 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:28:44,810 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:28:49,022 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:28:49,022 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:28:59,038 INFO MISService.Method.LogMethods - Polling:26
-2018-07-13 15:28:59,038 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:28:59,256 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:29:00,566 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:29:00,676 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:29:04,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:29:04,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:29:14,778 INFO MISService.Method.LogMethods - Polling:27
-2018-07-13 15:29:14,778 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:29:14,997 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:29:16,260 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:29:16,385 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:29:20,956 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:29:20,956 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:29:30,971 INFO MISService.Method.LogMethods - Polling:28
-2018-07-13 15:29:30,971 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:29:32,874 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:29:36,025 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:29:36,150 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:29:43,077 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:29:43,077 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:29:53,092 INFO MISService.Method.LogMethods - Polling:29
-2018-07-13 15:29:53,092 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:29:53,373 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:29:55,416 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:29:55,479 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:30:02,795 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:30:02,795 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:30:12,810 INFO MISService.Method.LogMethods - Polling:30
-2018-07-13 15:30:12,810 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:30:13,138 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:30:14,916 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:30:15,072 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:30:21,406 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:30:21,406 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:30:31,421 INFO MISService.Method.LogMethods - Polling:31
-2018-07-13 15:30:31,421 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:30:31,686 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:30:33,636 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:30:33,901 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:30:39,112 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:30:39,112 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:30:49,127 INFO MISService.Method.LogMethods - Polling:32
-2018-07-13 15:30:49,127 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:30:49,689 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:30:51,545 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:30:51,654 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:30:56,958 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:30:56,958 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:31:06,974 INFO MISService.Method.LogMethods - Polling:33
-2018-07-13 15:31:06,974 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:31:07,192 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:31:08,705 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:31:08,814 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:31:13,713 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:31:13,713 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:31:23,728 INFO MISService.Method.LogMethods - Polling:34
-2018-07-13 15:31:23,728 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:31:23,946 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:31:25,694 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:31:25,803 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:31:30,015 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:31:30,015 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:31:40,030 INFO MISService.Method.LogMethods - Polling:35
-2018-07-13 15:31:40,030 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:31:40,358 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:31:42,120 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:31:42,245 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:31:46,379 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:31:46,379 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:31:56,394 INFO MISService.Method.LogMethods - Polling:36
-2018-07-13 15:31:56,394 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:31:56,613 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:31:58,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:31:58,656 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:32:04,787 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:32:04,787 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:32:14,802 INFO MISService.Method.LogMethods - Polling:37
-2018-07-13 15:32:14,802 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:32:15,036 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:32:17,080 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:32:17,189 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:32:21,261 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:32:21,261 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:32:31,276 INFO MISService.Method.LogMethods - Polling:38
-2018-07-13 15:32:31,276 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:32:31,572 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:32:33,398 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:32:33,507 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:32:38,842 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:32:38,842 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:32:48,857 INFO MISService.Method.LogMethods - Polling:39
-2018-07-13 15:32:48,857 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:32:49,076 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:32:50,651 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:32:50,760 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:32:55,565 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:32:55,565 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:33:05,581 INFO MISService.Method.LogMethods - Polling:40
-2018-07-13 15:33:05,581 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:33:05,815 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:33:09,153 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:33:09,262 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:33:13,318 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:33:13,318 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:33:23,333 INFO MISService.Method.LogMethods - Polling:41
-2018-07-13 15:33:23,333 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:33:23,552 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:33:28,091 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:33:28,201 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:33:32,631 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:33:32,631 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:33:42,646 INFO MISService.Method.LogMethods - Polling:42
-2018-07-13 15:33:42,646 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:33:42,865 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:33:46,375 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:33:46,499 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:33:50,665 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:33:50,665 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:34:00,680 INFO MISService.Method.LogMethods - Polling:43
-2018-07-13 15:34:00,680 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:34:00,898 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:34:03,332 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:34:03,441 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:34:07,856 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:34:07,856 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:34:17,871 INFO MISService.Method.LogMethods - Polling:44
-2018-07-13 15:34:17,871 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:34:18,121 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:34:20,726 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:34:20,835 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:34:25,187 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:34:25,187 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:34:35,203 INFO MISService.Method.LogMethods - Polling:45
-2018-07-13 15:34:35,203 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:34:35,421 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:34:37,433 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:34:37,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:34:42,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:34:42,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:34:52,597 INFO MISService.Method.LogMethods - Polling:46
-2018-07-13 15:34:52,597 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:34:52,846 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:34:55,530 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:34:55,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:35:00,428 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:35:00,428 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:35:10,443 INFO MISService.Method.LogMethods - Polling:47
-2018-07-13 15:35:10,443 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:35:11,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:35:13,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:35:13,672 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:35:18,493 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:35:18,493 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:35:28,508 INFO MISService.Method.LogMethods - Polling:48
-2018-07-13 15:35:28,508 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:35:28,758 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:35:31,020 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:35:31,129 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:35:36,261 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:35:36,261 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:35:46,276 INFO MISService.Method.LogMethods - Polling:49
-2018-07-13 15:35:46,276 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:35:46,495 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:35:48,320 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:35:48,382 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:35:53,136 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:35:53,136 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:36:03,151 INFO MISService.Method.LogMethods - Polling:50
-2018-07-13 15:36:03,151 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:36:03,369 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:36:07,176 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:36:07,285 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:36:12,215 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:36:12,215 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:36:22,230 INFO MISService.Method.LogMethods - Polling:51
-2018-07-13 15:36:22,230 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:36:22,464 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:36:24,367 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:36:24,570 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:36:28,673 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:36:28,673 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:36:38,682 INFO MISService.Method.LogMethods - Polling:52
-2018-07-13 15:36:38,682 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:36:40,305 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:36:42,411 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:36:42,520 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:36:48,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:36:48,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:36:58,650 INFO MISService.Method.LogMethods - Polling:53
-2018-07-13 15:36:58,650 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:36:58,869 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:37:02,340 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:37:02,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:37:07,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:37:07,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:37:17,077 INFO MISService.Method.LogMethods - Polling:54
-2018-07-13 15:37:17,077 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:37:17,296 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:37:19,339 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:37:19,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:37:24,175 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:37:24,175 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:37:34,191 INFO MISService.Method.LogMethods - Polling:55
-2018-07-13 15:37:34,191 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:37:34,409 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:37:36,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:37:36,521 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:37:41,263 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:37:41,263 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:37:51,279 INFO MISService.Method.LogMethods - Polling:56
-2018-07-13 15:37:51,279 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:37:51,497 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:37:54,055 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:37:54,165 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:37:58,611 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:37:58,611 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:38:08,626 INFO MISService.Method.LogMethods - Polling:57
-2018-07-13 15:38:08,626 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:38:08,844 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:38:23,150 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:38:23,228 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:38:29,312 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:38:29,312 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:38:39,327 INFO MISService.Method.LogMethods - Polling:58
-2018-07-13 15:38:39,327 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:38:39,545 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:38:42,556 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:38:42,774 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:38:48,921 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:38:48,921 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:38:58,936 INFO MISService.Method.LogMethods - Polling:59
-2018-07-13 15:38:58,936 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:38:59,154 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:39:01,806 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:39:01,916 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:39:06,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:39:06,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:39:16,221 INFO MISService.Method.LogMethods - Polling:60
-2018-07-13 15:39:16,221 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:39:16,455 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:39:21,322 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:39:21,384 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:39:24,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:39:24,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:39:34,941 INFO MISService.Method.LogMethods - Polling:61
-2018-07-13 15:39:34,941 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:39:35,175 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:39:38,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:39:38,139 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:39:42,569 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:39:42,569 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:39:52,584 INFO MISService.Method.LogMethods - Polling:62
-2018-07-13 15:39:52,584 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:39:52,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:40:06,952 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:40:07,061 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:40:11,788 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:40:11,788 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:40:21,803 INFO MISService.Method.LogMethods - Polling:63
-2018-07-13 15:40:21,803 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:40:22,022 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:40:26,374 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:40:26,437 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:40:34,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:40:34,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:40:44,533 INFO MISService.Method.LogMethods - Polling:64
-2018-07-13 15:40:44,533 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:40:44,938 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:40:48,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:40:49,774 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:40:53,596 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:40:53,596 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:41:03,611 INFO MISService.Method.LogMethods - Polling:65
-2018-07-13 15:41:03,611 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:41:03,908 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:41:07,043 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:41:07,168 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:41:11,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:41:11,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:41:21,910 INFO MISService.Method.LogMethods - Polling:66
-2018-07-13 15:41:21,910 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:41:22,129 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:41:36,434 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:41:36,559 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:41:41,067 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:41:41,067 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:41:51,082 INFO MISService.Method.LogMethods - Polling:67
-2018-07-13 15:41:51,082 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:41:51,316 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:41:55,388 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:41:55,513 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:42:00,536 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:42:00,536 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:42:10,551 INFO MISService.Method.LogMethods - Polling:68
-2018-07-13 15:42:10,551 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:42:10,770 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:42:16,042 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:42:16,120 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:42:19,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:42:19,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:42:29,412 INFO MISService.Method.LogMethods - Polling:69
-2018-07-13 15:42:29,412 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:42:29,646 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:42:35,152 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:42:35,558 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:42:39,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:42:39,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:42:49,910 INFO MISService.Method.LogMethods - Polling:70
-2018-07-13 15:42:49,910 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:42:50,128 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:42:54,200 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:42:54,325 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:42:59,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:42:59,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:43:09,706 INFO MISService.Method.LogMethods - Polling:71
-2018-07-13 15:43:09,706 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:43:09,925 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:43:15,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:43:15,541 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:43:20,065 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:43:20,065 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:43:30,080 INFO MISService.Method.LogMethods - Polling:72
-2018-07-13 15:43:30,080 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:43:30,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:43:33,996 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:43:34,105 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:43:39,006 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:43:39,006 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:43:49,010 INFO MISService.Method.LogMethods - Polling:73
-2018-07-13 15:43:49,010 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 15:43:49,229 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 15:43:54,548 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 15:43:54,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 15:44:02,660 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 15:44:02,660 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 15:44:12,676 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-13 16:01:23,127 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-13 16:01:33,221 INFO MISService.Method.LogMethods - Polling:1
-2018-07-13 16:01:33,221 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:01:35,467 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:01:46,668 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:01:46,777 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:01:51,644 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:01:51,644 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:02:01,659 INFO MISService.Method.LogMethods - Polling:2
-2018-07-13 16:02:01,659 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:02:01,925 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:02:05,544 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:02:05,684 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:02:09,974 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:02:09,974 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:02:19,989 INFO MISService.Method.LogMethods - Polling:3
-2018-07-13 16:02:19,989 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:02:20,364 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:02:24,545 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:02:24,654 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:02:30,972 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:02:30,972 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:02:40,987 INFO MISService.Method.LogMethods - Polling:4
-2018-07-13 16:02:40,987 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:02:41,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:02:52,141 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:02:52,297 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:02:59,816 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:02:59,816 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:03:09,832 INFO MISService.Method.LogMethods - Polling:5
-2018-07-13 16:03:09,832 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:03:10,019 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:03:14,293 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:03:14,402 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:03:20,830 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:03:20,830 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:03:30,845 INFO MISService.Method.LogMethods - Polling:6
-2018-07-13 16:03:30,845 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:03:31,063 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:03:35,712 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:03:35,821 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:03:41,422 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:03:41,422 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:03:51,437 INFO MISService.Method.LogMethods - Polling:7
-2018-07-13 16:03:51,437 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:03:51,655 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:03:56,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:03:56,710 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:04:01,717 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:04:01,717 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:04:11,732 INFO MISService.Method.LogMethods - Polling:8
-2018-07-13 16:04:11,732 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:04:11,966 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:04:17,224 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:04:17,348 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:04:21,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:04:21,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:04:31,778 INFO MISService.Method.LogMethods - Polling:9
-2018-07-13 16:04:31,778 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:04:31,997 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:04:36,849 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:04:36,958 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:04:43,385 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:04:43,385 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:04:53,400 INFO MISService.Method.LogMethods - Polling:10
-2018-07-13 16:04:53,400 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:04:53,619 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:04:57,612 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:04:57,737 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:05:03,010 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:05:03,010 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:05:13,025 INFO MISService.Method.LogMethods - Polling:11
-2018-07-13 16:05:13,025 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:05:13,602 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:05:17,939 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:05:18,064 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:05:23,181 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:05:23,181 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:05:33,196 INFO MISService.Method.LogMethods - Polling:12
-2018-07-13 16:05:33,196 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:05:33,523 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:05:40,403 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:05:40,465 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:05:45,395 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:05:45,395 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:05:55,410 INFO MISService.Method.LogMethods - Polling:13
-2018-07-13 16:05:55,410 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:05:55,644 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:05:59,529 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:05:59,638 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:06:05,082 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:06:05,082 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:06:15,097 INFO MISService.Method.LogMethods - Polling:14
-2018-07-13 16:06:15,097 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:06:15,331 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:06:23,007 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:06:23,521 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:06:28,779 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:06:28,779 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:06:38,794 INFO MISService.Method.LogMethods - Polling:15
-2018-07-13 16:06:38,794 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:06:39,028 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:06:44,784 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:06:44,909 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:06:50,322 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:06:50,322 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:07:00,338 INFO MISService.Method.LogMethods - Polling:16
-2018-07-13 16:07:00,338 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:07:00,774 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:07:08,450 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:07:08,559 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:07:12,677 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:07:12,677 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:07:22,708 INFO MISService.Method.LogMethods - Polling:17
-2018-07-13 16:07:22,708 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:07:22,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:07:26,951 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:07:27,060 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:07:33,363 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:07:33,363 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:07:43,378 INFO MISService.Method.LogMethods - Polling:18
-2018-07-13 16:07:43,378 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:07:43,612 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:07:47,918 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:07:48,027 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:07:55,328 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:07:55,328 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:08:05,343 INFO MISService.Method.LogMethods - Polling:19
-2018-07-13 16:08:05,343 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:08:05,468 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:08:09,290 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:08:09,399 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:08:14,812 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:08:14,812 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:08:24,827 INFO MISService.Method.LogMethods - Polling:20
-2018-07-13 16:08:24,827 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:08:25,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:08:29,663 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:08:29,773 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:08:35,716 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:08:35,716 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:08:45,731 INFO MISService.Method.LogMethods - Polling:21
-2018-07-13 16:08:45,731 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:08:45,950 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:08:49,709 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:08:49,819 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:08:58,040 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:08:58,040 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:09:08,055 INFO MISService.Method.LogMethods - Polling:22
-2018-07-13 16:09:08,055 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:09:08,289 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:09:12,938 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:09:13,047 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:09:17,774 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:09:17,774 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:09:27,789 INFO MISService.Method.LogMethods - Polling:23
-2018-07-13 16:09:27,789 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:09:28,023 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:09:34,403 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:09:34,466 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:09:39,052 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:09:39,052 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:09:49,067 INFO MISService.Method.LogMethods - Polling:24
-2018-07-13 16:09:49,067 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:09:49,411 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:09:53,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:09:53,872 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:09:58,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:09:58,895 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:10:08,911 INFO MISService.Method.LogMethods - Polling:25
-2018-07-13 16:10:08,911 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:10:09,051 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:10:14,948 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:10:15,166 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:10:20,876 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:10:20,876 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:10:30,891 INFO MISService.Method.LogMethods - Polling:26
-2018-07-13 16:10:30,891 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:10:31,125 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:10:39,440 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:10:39,580 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:10:43,824 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:10:43,824 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:10:53,839 INFO MISService.Method.LogMethods - Polling:27
-2018-07-13 16:10:53,839 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:10:54,104 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:10:58,800 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:10:58,940 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:11:03,448 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:11:03,448 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:11:13,464 INFO MISService.Method.LogMethods - Polling:28
-2018-07-13 16:11:13,464 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:11:13,682 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:11:17,972 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:11:18,081 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:11:23,931 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:11:23,931 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:11:33,946 INFO MISService.Method.LogMethods - Polling:29
-2018-07-13 16:11:33,946 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:11:34,165 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:11:38,673 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:11:38,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:11:44,929 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:11:44,929 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:11:54,944 INFO MISService.Method.LogMethods - Polling:30
-2018-07-13 16:11:54,944 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:11:55,225 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:12:00,342 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:12:00,451 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:12:05,100 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:12:05,100 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:12:15,115 INFO MISService.Method.LogMethods - Polling:31
-2018-07-13 16:12:15,115 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:12:15,333 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:12:19,530 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:12:19,639 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:12:24,491 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:12:24,491 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:12:34,506 INFO MISService.Method.LogMethods - Polling:32
-2018-07-13 16:12:34,506 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:12:34,943 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:12:39,701 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:12:39,841 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:12:45,005 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:12:45,005 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:12:55,020 INFO MISService.Method.LogMethods - Polling:33
-2018-07-13 16:12:55,020 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:12:55,784 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:13:00,995 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:13:01,104 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:13:06,049 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:13:06,049 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:13:16,064 INFO MISService.Method.LogMethods - Polling:34
-2018-07-13 16:13:16,064 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:13:16,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:13:22,523 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:13:22,663 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:13:27,686 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:13:27,686 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:13:37,701 INFO MISService.Method.LogMethods - Polling:35
-2018-07-13 16:13:37,701 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:13:37,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:13:41,835 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:13:41,976 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:13:47,311 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:13:47,311 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:13:57,326 INFO MISService.Method.LogMethods - Polling:36
-2018-07-13 16:13:57,326 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:13:57,576 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:14:02,318 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:14:02,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:14:07,560 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:14:07,560 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:14:17,575 INFO MISService.Method.LogMethods - Polling:37
-2018-07-13 16:14:17,575 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:14:17,934 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:14:23,347 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:14:23,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:14:27,996 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:14:27,996 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:14:38,011 INFO MISService.Method.LogMethods - Polling:38
-2018-07-13 16:14:38,011 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:14:38,230 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:14:43,565 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:14:43,674 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:14:49,103 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:14:49,103 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:14:59,118 INFO MISService.Method.LogMethods - Polling:39
-2018-07-13 16:14:59,118 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:14:59,336 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:15:06,497 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:15:06,637 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:15:12,768 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:15:12,768 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:15:22,783 INFO MISService.Method.LogMethods - Polling:40
-2018-07-13 16:15:22,783 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:15:23,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:15:27,916 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:15:28,040 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:15:33,110 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:15:33,110 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:15:43,126 INFO MISService.Method.LogMethods - Polling:41
-2018-07-13 16:15:43,126 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:15:43,453 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:15:50,208 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:15:50,333 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Robert Bosch VN
-2018-07-13 16:15:58,133 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Robert Bosch VN<Project Num:18P000110>
-2018-07-13 16:15:58,133 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:16:08,148 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-13 16:22:33,828 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-07-13 16:22:46,136 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:22:48,429 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:30:12,923 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-07-13 16:30:23,437 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:30:25,762 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:40:04,289 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-13 16:40:13,602 INFO MISService.Method.LogMethods - Polling:1
-2018-07-13 16:40:13,602 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:40:15,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:40:25,785 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:40:25,785 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:40:35,801 INFO MISService.Method.LogMethods - Polling:2
-2018-07-13 16:40:35,801 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:40:36,050 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:40:52,617 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:40:52,617 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:41:02,633 INFO MISService.Method.LogMethods - Polling:3
-2018-07-13 16:41:02,633 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:41:02,929 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:41:08,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:41:08,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:41:18,623 INFO MISService.Method.LogMethods - Polling:4
-2018-07-13 16:41:18,623 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:41:18,872 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:41:25,003 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:41:25,003 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:41:35,018 INFO MISService.Method.LogMethods - Polling:5
-2018-07-13 16:41:35,018 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:41:35,284 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:41:43,567 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:41:43,567 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:41:53,582 INFO MISService.Method.LogMethods - Polling:6
-2018-07-13 16:41:53,582 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:41:53,754 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:41:59,167 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:41:59,167 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:42:09,182 INFO MISService.Method.LogMethods - Polling:7
-2018-07-13 16:42:09,182 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:42:09,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:42:15,469 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:42:15,469 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:42:25,484 INFO MISService.Method.LogMethods - Polling:8
-2018-07-13 16:42:25,484 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:42:26,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:42:31,958 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:42:31,958 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:42:41,974 INFO MISService.Method.LogMethods - Polling:9
-2018-07-13 16:42:41,974 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:42:42,364 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:42:48,058 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:42:48,058 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:42:58,073 INFO MISService.Method.LogMethods - Polling:10
-2018-07-13 16:42:58,073 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:42:58,338 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:43:05,436 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:43:05,436 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:43:15,451 INFO MISService.Method.LogMethods - Polling:11
-2018-07-13 16:43:15,451 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:43:15,623 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:43:21,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:43:21,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:43:31,707 INFO MISService.Method.LogMethods - Polling:12
-2018-07-13 16:43:31,707 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:43:31,956 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:43:38,898 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:43:38,898 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:43:48,913 INFO MISService.Method.LogMethods - Polling:13
-2018-07-13 16:43:48,913 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:43:49,163 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:43:55,013 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:43:55,013 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:44:05,028 INFO MISService.Method.LogMethods - Polling:14
-2018-07-13 16:44:05,028 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:44:05,278 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:44:10,270 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:44:10,270 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:44:20,285 INFO MISService.Method.LogMethods - Polling:15
-2018-07-13 16:44:20,285 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:44:20,535 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:44:25,761 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:44:25,761 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:44:35,776 INFO MISService.Method.LogMethods - Polling:16
-2018-07-13 16:44:35,776 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:44:36,025 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:44:42,453 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:44:42,453 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:44:52,468 INFO MISService.Method.LogMethods - Polling:17
-2018-07-13 16:44:52,468 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:44:52,733 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:44:59,425 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:44:59,425 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:45:09,441 INFO MISService.Method.LogMethods - Polling:18
-2018-07-13 16:45:09,441 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:45:09,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:45:15,852 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:45:15,852 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:45:25,868 INFO MISService.Method.LogMethods - Polling:19
-2018-07-13 16:45:25,868 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:45:26,180 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:45:31,624 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:45:31,624 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:45:41,639 INFO MISService.Method.LogMethods - Polling:20
-2018-07-13 16:45:41,639 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:45:41,904 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:45:47,380 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:45:47,380 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:45:57,395 INFO MISService.Method.LogMethods - Polling:21
-2018-07-13 16:45:57,395 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:45:58,019 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:46:05,336 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:46:05,336 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:46:15,351 INFO MISService.Method.LogMethods - Polling:22
-2018-07-13 16:46:15,351 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:46:15,756 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:46:22,480 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:46:22,480 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:46:32,495 INFO MISService.Method.LogMethods - Polling:23
-2018-07-13 16:46:32,495 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:46:32,745 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:46:38,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:46:38,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:46:48,267 INFO MISService.Method.LogMethods - Polling:24
-2018-07-13 16:46:48,267 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:46:48,516 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:46:53,196 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:46:53,196 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:47:03,212 INFO MISService.Method.LogMethods - Polling:25
-2018-07-13 16:47:03,212 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:47:03,461 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:47:10,403 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:47:10,403 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:47:20,419 INFO MISService.Method.LogMethods - Polling:26
-2018-07-13 16:47:20,419 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:47:21,760 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:47:29,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:47:29,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:47:39,279 INFO MISService.Method.LogMethods - Polling:27
-2018-07-13 16:47:39,279 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:47:39,529 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:47:44,989 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:47:44,989 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:47:55,004 INFO MISService.Method.LogMethods - Polling:28
-2018-07-13 16:47:55,004 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:47:55,269 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:48:00,916 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:48:00,916 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:48:10,931 INFO MISService.Method.LogMethods - Polling:29
-2018-07-13 16:48:10,931 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:48:11,181 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:48:16,501 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:48:16,501 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:48:26,516 INFO MISService.Method.LogMethods - Polling:30
-2018-07-13 16:48:26,516 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:48:26,765 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:48:33,910 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:48:33,910 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:48:43,925 INFO MISService.Method.LogMethods - Polling:31
-2018-07-13 16:48:43,925 INFO MISService.Method.LogMethods - GetAllProjects:Debug:Start processing all projects
-2018-07-13 16:48:44,191 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FPT Software
-2018-07-13 16:48:50,072 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FPT Software<Project Num:18P000111>
-2018-07-13 16:48:50,072 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-13 16:49:00,087 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-18 13:31:59,163 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-18 13:36:56,485 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 13:37:08,872 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 13:37:21,508 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 13:37:34,456 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 13:37:48,075 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 13:38:02,879 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: victor.ng does not exist in database
+2018-07-18 14:11:43,004 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-18 14:17:23,639 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 14:17:34,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 14:17:37,039 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 14:25:54,721 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 14:26:06,936 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 14:26:09,058 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 14:31:07,174 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 14:31:19,311 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 14:31:21,963 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 14:44:36,090 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 14:44:48,383 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 14:44:51,253 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 14:46:37,037 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 14:46:47,910 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 14:46:50,172 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:08:09,564 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-07-18 15:14:17,164 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-18 15:14:30,299 INFO MISService.Method.LogMethods - Polling:1
+2018-07-18 15:14:30,315 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:14:33,185 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:15:02,700 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:15:02,700 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:15:12,716 INFO MISService.Method.LogMethods - Polling:2
+2018-07-18 15:15:12,716 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:15:12,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:15:18,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:15:18,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:15:28,472 INFO MISService.Method.LogMethods - Polling:3
+2018-07-18 15:15:28,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:15:28,612 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:15:32,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:15:32,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:15:42,715 INFO MISService.Method.LogMethods - Polling:4
+2018-07-18 15:15:42,715 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:15:42,949 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:15:48,362 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:15:48,362 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:15:58,377 INFO MISService.Method.LogMethods - Polling:5
+2018-07-18 15:15:58,377 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:15:58,627 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:16:06,427 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:16:06,427 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:16:16,442 INFO MISService.Method.LogMethods - Polling:6
+2018-07-18 15:16:16,442 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:16:16,660 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:16:21,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:16:21,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:16:31,090 INFO MISService.Method.LogMethods - Polling:7
+2018-07-18 15:16:31,090 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:16:31,324 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:16:37,408 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:16:37,408 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:16:47,423 INFO MISService.Method.LogMethods - Polling:8
+2018-07-18 15:16:47,423 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:16:47,564 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:16:51,152 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:16:51,152 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:17:01,167 INFO MISService.Method.LogMethods - Polling:9
+2018-07-18 15:17:01,167 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:17:01,666 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:17:06,846 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:17:06,846 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:17:16,861 INFO MISService.Method.LogMethods - Polling:10
+2018-07-18 15:17:16,861 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:17:17,048 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:17:28,202 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:17:28,202 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:17:38,217 INFO MISService.Method.LogMethods - Polling:11
+2018-07-18 15:17:38,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:17:38,451 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:17:45,783 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:17:45,783 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:17:55,798 INFO MISService.Method.LogMethods - Polling:12
+2018-07-18 15:17:55,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:17:56,064 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:18:02,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:18:02,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:18:12,615 INFO MISService.Method.LogMethods - Polling:13
+2018-07-18 15:18:12,615 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:18:12,834 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:18:17,155 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:18:17,155 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:18:27,170 INFO MISService.Method.LogMethods - Polling:14
+2018-07-18 15:18:27,170 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:18:27,420 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:18:33,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:18:33,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:18:43,472 INFO MISService.Method.LogMethods - Polling:15
+2018-07-18 15:18:43,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:18:43,690 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:18:47,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:18:47,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:18:57,980 INFO MISService.Method.LogMethods - Polling:16
+2018-07-18 15:18:57,980 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:18:58,198 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:19:02,769 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:19:02,769 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:19:12,785 INFO MISService.Method.LogMethods - Polling:17
+2018-07-18 15:19:12,785 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:19:13,034 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:19:16,934 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:19:16,934 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:19:26,949 INFO MISService.Method.LogMethods - Polling:18
+2018-07-18 15:19:26,949 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:19:27,183 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:19:31,770 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:19:31,770 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:19:41,785 INFO MISService.Method.LogMethods - Polling:19
+2018-07-18 15:19:41,785 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:19:42,003 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:19:45,794 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:19:45,794 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:19:55,809 INFO MISService.Method.LogMethods - Polling:20
+2018-07-18 15:19:55,809 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:19:56,090 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:20:01,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:20:01,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:20:11,113 INFO MISService.Method.LogMethods - Polling:21
+2018-07-18 15:20:11,113 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:20:11,675 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:20:15,871 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:20:15,871 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:20:25,886 INFO MISService.Method.LogMethods - Polling:22
+2018-07-18 15:20:25,886 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:20:26,027 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:20:41,330 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:20:41,330 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:20:51,345 INFO MISService.Method.LogMethods - Polling:23
+2018-07-18 15:20:51,345 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:20:51,564 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:20:56,322 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:20:56,322 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:21:06,337 INFO MISService.Method.LogMethods - Polling:24
+2018-07-18 15:21:06,337 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:21:06,556 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:21:12,577 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:21:12,577 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:21:22,592 INFO MISService.Method.LogMethods - Polling:25
+2018-07-18 15:21:22,592 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:21:22,826 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:21:27,460 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:21:27,460 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:21:37,475 INFO MISService.Method.LogMethods - Polling:26
+2018-07-18 15:21:37,475 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:21:37,709 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:21:44,542 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:21:44,542 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:21:54,557 INFO MISService.Method.LogMethods - Polling:27
+2018-07-18 15:21:54,557 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:21:54,775 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:21:58,909 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:21:58,909 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:22:08,924 INFO MISService.Method.LogMethods - Polling:28
+2018-07-18 15:22:08,924 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:22:09,143 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:22:26,318 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:22:26,318 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:22:36,334 INFO MISService.Method.LogMethods - Polling:29
+2018-07-18 15:22:36,334 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:22:36,568 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:22:41,653 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:22:41,653 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:22:51,669 INFO MISService.Method.LogMethods - Polling:30
+2018-07-18 15:22:51,669 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:22:51,903 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:22:58,096 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:22:58,096 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:23:08,111 INFO MISService.Method.LogMethods - Polling:31
+2018-07-18 15:23:08,111 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:23:08,361 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:23:13,899 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:23:13,899 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:23:23,914 INFO MISService.Method.LogMethods - Polling:32
+2018-07-18 15:23:23,914 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:23:24,054 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:23:29,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:23:29,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:23:39,826 INFO MISService.Method.LogMethods - Polling:33
+2018-07-18 15:23:39,826 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:23:40,091 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:23:45,395 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:23:45,395 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:23:55,410 INFO MISService.Method.LogMethods - Polling:34
+2018-07-18 15:23:55,410 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:23:55,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:24:04,942 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:24:04,942 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:24:14,957 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-18 15:59:16,751 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-18 15:59:25,472 INFO MISService.Method.LogMethods - Polling:1
+2018-07-18 15:59:25,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:59:27,484 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:59:38,747 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:59:38,747 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 15:59:48,763 INFO MISService.Method.LogMethods - Polling:2
+2018-07-18 15:59:48,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 15:59:48,903 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 15:59:53,755 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 15:59:53,755 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:00:03,770 INFO MISService.Method.LogMethods - Polling:3
+2018-07-18 16:00:03,770 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:00:04,020 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:00:11,492 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:00:11,492 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:00:21,507 INFO MISService.Method.LogMethods - Polling:4
+2018-07-18 16:00:21,507 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:00:21,726 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:00:31,663 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:00:31,663 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:00:41,678 INFO MISService.Method.LogMethods - Polling:5
+2018-07-18 16:00:41,678 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:00:41,928 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:00:48,620 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:00:48,620 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:00:58,635 INFO MISService.Method.LogMethods - Polling:6
+2018-07-18 16:00:58,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:00:58,869 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:01:04,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:01:04,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:01:14,719 INFO MISService.Method.LogMethods - Polling:7
+2018-07-18 16:01:14,719 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:01:14,953 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:01:23,236 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:01:23,236 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:01:33,252 INFO MISService.Method.LogMethods - Polling:8
+2018-07-18 16:01:33,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:01:33,470 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:01:38,166 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:01:38,166 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:01:48,181 INFO MISService.Method.LogMethods - Polling:9
+2018-07-18 16:01:48,181 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:01:48,587 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:01:53,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:01:53,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:02:03,547 INFO MISService.Method.LogMethods - Polling:10
+2018-07-18 16:02:03,547 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:02:03,781 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:02:09,257 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:02:09,257 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:02:19,272 INFO MISService.Method.LogMethods - Polling:11
+2018-07-18 16:02:19,272 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:02:19,521 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:02:27,680 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:02:27,680 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:02:37,695 INFO MISService.Method.LogMethods - Polling:12
+2018-07-18 16:02:37,695 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:02:37,820 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:02:44,388 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:02:44,388 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:02:54,403 INFO MISService.Method.LogMethods - Polling:13
+2018-07-18 16:02:54,403 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:02:54,637 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:02:59,957 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:02:59,957 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:03:09,972 INFO MISService.Method.LogMethods - Polling:14
+2018-07-18 16:03:09,972 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:03:10,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:03:17,819 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:03:17,819 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:03:27,834 INFO MISService.Method.LogMethods - Polling:15
+2018-07-18 16:03:27,834 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:03:28,115 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:03:30,813 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:03:30,923 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:03:35,400 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:03:35,400 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:03:45,415 INFO MISService.Method.LogMethods - Polling:16
+2018-07-18 16:03:45,415 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:03:45,649 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:03:57,817 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:03:57,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:04:04,853 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:04:04,853 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:04:14,868 INFO MISService.Method.LogMethods - Polling:17
+2018-07-18 16:04:14,868 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:04:15,102 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:04:17,411 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:04:17,551 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:04:22,309 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:04:22,309 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:04:32,324 INFO MISService.Method.LogMethods - Polling:18
+2018-07-18 16:04:32,324 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:04:32,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:04:35,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:04:35,710 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:04:40,795 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:04:40,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:04:50,826 INFO MISService.Method.LogMethods - Polling:19
+2018-07-18 16:04:50,826 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:04:51,044 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:04:53,088 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:04:53,197 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:04:58,002 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:04:58,002 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:05:08,017 INFO MISService.Method.LogMethods - Polling:20
+2018-07-18 16:05:08,017 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:05:08,251 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:05:14,132 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:05:14,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:05:21,667 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:05:21,667 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:05:31,683 INFO MISService.Method.LogMethods - Polling:21
+2018-07-18 16:05:31,683 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 16:05:31,917 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 16:05:35,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 16:05:35,458 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 16:05:44,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 16:05:44,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 16:05:54,833 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-18 17:17:38,220 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-18 17:17:47,097 INFO MISService.Method.LogMethods - Polling:1
+2018-07-18 17:17:47,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:17:49,115 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:18:07,235 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:18:07,402 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:18:14,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:18:14,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:18:24,473 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-18 17:29:58,219 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-18 17:30:06,903 INFO MISService.Method.LogMethods - Polling:1
+2018-07-18 17:30:06,908 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:30:08,926 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:30:17,902 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:30:18,012 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:30:23,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:30:23,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:30:33,574 INFO MISService.Method.LogMethods - Polling:2
+2018-07-18 17:30:33,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:30:33,803 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:30:37,732 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:30:37,849 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:30:44,344 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:30:44,344 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:30:54,344 INFO MISService.Method.LogMethods - Polling:3
+2018-07-18 17:30:54,344 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:30:54,582 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:30:57,500 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:30:57,614 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:31:02,738 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:31:02,738 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:31:12,738 INFO MISService.Method.LogMethods - Polling:4
+2018-07-18 17:31:12,738 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:31:12,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:31:15,287 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:31:15,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:31:21,054 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:31:21,054 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:31:31,055 INFO MISService.Method.LogMethods - Polling:5
+2018-07-18 17:31:31,055 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:31:31,289 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:31:33,935 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:31:34,045 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:31:42,843 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:31:42,843 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:31:52,844 INFO MISService.Method.LogMethods - Polling:6
+2018-07-18 17:31:52,844 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:31:53,073 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:31:56,032 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:31:56,146 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:32:01,809 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:32:01,809 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:32:11,810 INFO MISService.Method.LogMethods - Polling:7
+2018-07-18 17:32:11,810 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:32:11,945 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:32:19,883 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:32:19,995 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:32:26,310 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:32:26,310 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:32:36,311 INFO MISService.Method.LogMethods - Polling:8
+2018-07-18 17:32:36,311 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:32:36,553 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:32:39,736 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:32:39,864 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:32:45,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:32:45,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:32:55,206 INFO MISService.Method.LogMethods - Polling:9
+2018-07-18 17:32:55,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:32:55,456 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:32:58,201 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:32:58,316 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:33:04,233 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:33:04,233 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:33:14,233 INFO MISService.Method.LogMethods - Polling:10
+2018-07-18 17:33:14,233 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:33:14,465 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:33:17,327 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:33:17,459 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:33:22,490 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:33:22,490 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:33:32,490 INFO MISService.Method.LogMethods - Polling:11
+2018-07-18 17:33:32,490 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:33:32,717 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:33:37,896 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:33:38,007 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:33:42,515 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:33:42,515 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:33:52,516 INFO MISService.Method.LogMethods - Polling:12
+2018-07-18 17:33:52,516 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:33:52,753 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:33:55,496 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:33:55,605 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:33:59,928 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:33:59,928 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:34:09,929 INFO MISService.Method.LogMethods - Polling:13
+2018-07-18 17:34:09,929 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:34:10,167 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:34:12,652 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:34:12,766 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:34:20,923 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:34:20,924 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:34:30,925 INFO MISService.Method.LogMethods - Polling:14
+2018-07-18 17:34:30,925 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:34:31,081 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:34:34,035 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:34:34,176 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:34:38,867 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:34:38,867 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:34:48,886 INFO MISService.Method.LogMethods - Polling:15
+2018-07-18 17:34:48,886 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:34:49,202 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:34:53,148 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:34:53,257 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:34:59,306 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:34:59,306 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:35:09,307 INFO MISService.Method.LogMethods - Polling:16
+2018-07-18 17:35:09,307 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:35:09,583 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:35:12,418 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:35:12,535 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:35:17,071 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:35:17,071 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:35:27,072 INFO MISService.Method.LogMethods - Polling:17
+2018-07-18 17:35:27,072 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:35:27,308 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:35:30,102 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:35:30,213 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:35:36,029 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:35:36,029 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:35:46,029 INFO MISService.Method.LogMethods - Polling:18
+2018-07-18 17:35:46,029 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:35:46,722 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:35:49,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:35:50,106 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:35:55,564 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:35:55,565 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:36:05,565 INFO MISService.Method.LogMethods - Polling:19
+2018-07-18 17:36:05,565 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:36:05,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:36:08,673 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:36:08,786 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:36:15,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:36:15,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:36:25,161 INFO MISService.Method.LogMethods - Polling:20
+2018-07-18 17:36:25,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:36:25,304 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:36:27,576 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:36:27,684 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:36:32,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:36:32,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:36:42,259 INFO MISService.Method.LogMethods - Polling:21
+2018-07-18 17:36:42,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:36:42,484 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:36:46,394 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:36:46,503 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:36:51,714 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:36:51,714 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:37:01,714 INFO MISService.Method.LogMethods - Polling:22
+2018-07-18 17:37:01,714 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:37:01,947 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:37:05,333 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:37:05,444 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:37:10,394 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:37:10,394 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:37:20,395 INFO MISService.Method.LogMethods - Polling:23
+2018-07-18 17:37:20,395 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:37:20,623 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:37:23,107 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:37:23,224 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:37:29,423 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:37:29,423 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:37:39,424 INFO MISService.Method.LogMethods - Polling:24
+2018-07-18 17:37:39,424 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:37:39,650 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:37:42,523 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:37:42,634 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:37:49,442 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:37:49,442 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:37:59,443 INFO MISService.Method.LogMethods - Polling:25
+2018-07-18 17:37:59,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:37:59,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:38:02,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:38:02,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:38:07,241 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:38:07,241 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:38:17,242 INFO MISService.Method.LogMethods - Polling:26
+2018-07-18 17:38:17,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:38:17,468 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:38:26,230 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:38:26,347 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:38:32,797 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:38:32,797 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:38:42,797 INFO MISService.Method.LogMethods - Polling:27
+2018-07-18 17:38:42,797 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:38:43,033 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:38:45,812 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:38:45,923 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:38:50,603 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:38:50,603 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:39:00,659 INFO MISService.Method.LogMethods - Polling:28
+2018-07-18 17:39:00,659 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:39:00,922 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:39:04,594 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:39:04,731 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:39:09,330 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:39:09,330 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:39:19,331 INFO MISService.Method.LogMethods - Polling:29
+2018-07-18 17:39:19,331 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-18 17:39:19,561 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IBS Solution
+2018-07-18 17:39:22,158 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IBS Solution<Project Num:18P000117>
+2018-07-18 17:39:22,315 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:IMT Solution Pro
+2018-07-18 17:39:27,429 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: IMT Solution Pro<Project Num:18P000116>
+2018-07-18 17:39:27,429 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-18 17:39:37,432 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------

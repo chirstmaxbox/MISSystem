@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-07-17 19:39:18 +0000.
+Generated on 2018-07-18 16:36:23 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -4846,6 +4846,7 @@ All Rights Reserved
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
+                        <element name="Version__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         </sequence>
                     </extension>
                 </complexContent>

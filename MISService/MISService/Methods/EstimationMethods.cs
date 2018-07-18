@@ -42,7 +42,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name FROM Estimation__c where Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c FROM Estimation__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -68,6 +68,8 @@ namespace MISService.Methods
                         ServiceMethods sm = new ServiceMethods(salesForceProjectID);
                         sm.GetAllServices(el.Id, estRevID);
 
+                        UpdateEstimation(estRevID, el.Cost__c, el.Remarks__c, el.Version__c);
+
                         //GetApprovalData(el.Id, jobID, estRevID);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
@@ -76,6 +78,38 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetEstimation:Error:" + e.Message);
+            }
+        }
+
+        private void UpdateEstimation(int estRevID, double? cost, string remarks, double? version)
+        {
+            try
+            {
+                var est = _db.Sales_JobMasterList_EstRev.Where(x => x.EstRevID == estRevID).FirstOrDefault();
+                if (est != null)
+                {
+                    if (cost != null)
+                    {
+                        est.erAmount = Convert.ToDecimal(cost);
+                    }
+
+                    if (!string.IsNullOrEmpty(remarks))
+                    {
+                        est.Remark = remarks;
+                    }
+
+                    if (version != null)
+                    {
+                        est.erRev = Convert.ToByte(version);
+                    }
+
+                    _db.Entry(est).State = EntityState.Modified;
+                    _db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("UpdateEstimation:Error:" + e.Message);
             }
         }
 

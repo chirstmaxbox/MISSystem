@@ -128,7 +128,7 @@ namespace MISService.Methods
         {
             try
             {
-                var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201).FirstOrDefault();
+                var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 720 && x.WoID == woId).FirstOrDefault();
                 if (sales_Dispatching == null)
                 {
                     //create service client to call API endpoint

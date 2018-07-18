@@ -35,7 +35,7 @@ namespace MISService.Method
         {
             try
             {
-                LogMethods.Log.Info("GetAllProjects:Debug:" + "Start processing all projects");
+                LogMethods.Log.Info("GetAllProjects:Info:" + "Start processing all projects");
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
@@ -70,7 +70,7 @@ namespace MISService.Method
                             if (sales_JobMasterListID == 0)
                             {
                                 int jobID = CreateNewProject(fsEmployee.EmployeeNumber);
-                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r.Id, opportunity.Product_Line__c);
+                                UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c);
                                 /* update jobnumber */
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
@@ -79,7 +79,7 @@ namespace MISService.Method
                             }
                             else
                             {
-                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r.Id, opportunity.Product_Line__c);
+                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c);
                             }
 
                             /* for bidding project */
@@ -193,7 +193,7 @@ namespace MISService.Method
         /// <summary>
         /// Edit a project
         /// </summary>
-        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType, string AE, string productLine)
+        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType, enterprise.User AE, string productLine)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
@@ -231,7 +231,7 @@ namespace MISService.Method
 
                 if (AE != null)
                 {
-                    string un = CommonMethods.GetUserName(AE);
+                    string un = CommonMethods.GetUserName(AE.Id);
                     FsEmployee fsEmployee = new FsEmployee(un);
                     if (fsEmployee.EmployeeNumber > 0)
                     {
