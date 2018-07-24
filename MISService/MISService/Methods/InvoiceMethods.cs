@@ -44,8 +44,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, List_Item_Name__c, "
-                        + " List_Service_Name__c, Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c "
+                    string query = "SELECT Id, Name, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
+                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c "
                         + " FROM Invoice__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
@@ -89,10 +89,10 @@ namespace MISService.Methods
                                 ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c);
 
                             /* handle item */
-                            HandleInvoiceItem(invoiceID, ql.List_Item_Name__c, ql.Id);
+                            HandleInvoiceItem(invoiceID, estRevID, ql.Id);
 
                             /* handle service */
-                            HandleInvoiceService(invoiceID, ql.List_Service_Name__c, ql.Id);
+                            HandleInvoiceService(invoiceID, ql.Id);
                         }
 
                     }
@@ -105,28 +105,15 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleInvoiceService(int invoiceID, string listServiceID, string sfInvoiceID)
+        private void HandleInvoiceService(int invoiceID, string sfInvoiceID)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listServiceID)) return;
-                    string[] services = listServiceID.Split(',');
-                    /* if no any items, return */
-                    if (services.Length == 0) return;
 
                     //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Id in (";
-                    foreach (string e in services)
-                    {
-                        if (!string.IsNullOrEmpty(e.Trim()))
-                        {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Invoice_Name__c = '" + sfInvoiceID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -141,8 +128,10 @@ namespace MISService.Methods
 
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new FsService(invoiceID, "Invoice");
+                    List<string> services = new List<string>();
                     foreach (var sl in serviceList)
                     {
+                        services.Add(sl.Id);
                         long estServiceID = CommonMethods.GetMISID(TableName.Fw_Quote_Service, sl.Id, sfInvoiceID, salesForceProjectID);
                         if (estServiceID == 0)
                         {
@@ -166,7 +155,7 @@ namespace MISService.Methods
 
                     }
 
-                    DeleteAllDeletedInvoiceServices(services, sfInvoiceID);
+                    DeleteAllDeletedInvoiceServices(services.ToArray(), sfInvoiceID);
                     LogMethods.Log.Debug("HandleInvoiceService:Debug:" + "Done");
                 }
 
@@ -273,29 +262,16 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleInvoiceItem(int invoiceID, string listItemID, string sfInvoiceID)
+        private void HandleInvoiceItem(int invoiceID, int estRevID, string sfInvoiceID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listItemID)) return;
-                    string[] items = listItemID.Split(',');
-                    /* if no any items, return */
-                    if (items.Length == 0) return;
 
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Quote_Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
-                    foreach (string e in items)
-                    {
-                        if (!string.IsNullOrEmpty(e.Trim()))
-                        {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where 	Invoice_Name__c = '" + sfInvoiceID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -310,10 +286,11 @@ namespace MISService.Methods
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
-
+                    List<string> items = new List<string>();
                     //show results
                     foreach (var il in itemList)
                     {
+                        items.Add(il.Id);
                         int itemIDTemp = CommonMethods.GetMISID(TableName.Invoice_Item, il.Id, sfInvoiceID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
@@ -326,12 +303,12 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateInvoiceItem(il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Quote_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateInvoiceItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
 
                     /* delete work order items which has been removed out of work order */
-                    DeleteAllDeletedInvoiceItems(items, sfInvoiceID);
+                    DeleteAllDeletedInvoiceItems(items.ToArray(), sfInvoiceID);
 
                     LogMethods.Log.Debug("HandleInvoiceItem:Debug:" + "Done");
                 }
@@ -372,14 +349,14 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateInvoiceItem(string salesforceItemID, long invoiceItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void UpdateInvoiceItem(int estRevID, string salesforceItemID, long invoiceItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
         {
             try
             {
                 var invoiceItem = _db.Invoice_Item.Where(x => x.quoteItemID == invoiceItemID).FirstOrDefault();
                 if (invoiceItem != null)
                 {
-                    int estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
+                    int estItemID = CommonMethods.GetEstimationItemID(estRevID, itemName);
                     if (estItemID != 0)
                     {
                         invoiceItem.estItemID = estItemID;

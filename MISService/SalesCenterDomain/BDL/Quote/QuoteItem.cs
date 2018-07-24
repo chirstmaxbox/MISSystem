@@ -13,6 +13,7 @@ namespace SalesCenterDomain.BDL.Quote
     public class QuoteItemBlank
     {
         private readonly int _myParentID;
+        public int NewID { set; get; }
 
         public QuoteItemBlank(int myParentID)
         {
@@ -22,8 +23,8 @@ namespace SalesCenterDomain.BDL.Quote
         public void CreateNew()
         {
             InsertRecord();
-            int myNewID = SqlCommon.GetNewlyInsertedRecordID("Quote_Item");
-            UpdateSerialID(myNewID);
+            NewID = SqlCommon.GetNewlyInsertedRecordID("Quote_Item");
+            UpdateSerialID(NewID);
         }
 
         private void InsertRecord()

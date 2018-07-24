@@ -40,7 +40,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, List_Item_Name__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
+                    string query = "SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
                         + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
                         + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate FROM Drawing__c where Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc limit 1";
 
@@ -64,7 +64,7 @@ namespace MISService.Methods
                         vm.Initialization();
 
                         /* update data */
-                        int requisitionId = UpdateDrawing(estRevID, dl.Drawing_Requisition_Type__c, dl.Drawing_Purpose__c, dl.Is_Electronic_File_From_Client_Available__c,
+                        int requisitionId = UpdateDrawing(estRevID, dl.Version__c, dl.Drawing_Requisition_Type__c, dl.Drawing_Purpose__c, dl.Is_Electronic_File_From_Client_Available__c,
                             dl.Is_GC_Or_Designer_Drawing_Available__c, dl.Is_Landord_Or_Mall_Criteria_Available__c, dl.Is_Latest_Version_Q_D_Quotation_Avail__c,
                             dl.Is_Site_Check_Photo_Available__c, dl.Is_Site_Check_Report_Available__c);
 
@@ -76,7 +76,7 @@ namespace MISService.Methods
                             UpdateMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, dl.Id);
 
                             // add items to drawing
-                            GetAllDrawingItems(sfProjectID, requisitionId, dl.List_Item_Name__c, dl.Id);
+                            GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id);
                         }
                     }
 
@@ -114,29 +114,15 @@ namespace MISService.Methods
             }
         }
 
-        private void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, string listItemID, string sfDrawingID)
+        private void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, int estRevID, string sfDrawingID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listItemID)) return;
-                    string[] items = listItemID.Split(',');
-                    /* if no any items, return */
-                    if (items.Length == 0) return;
-
                     //create SQL query statement
-                    string query = "SELECT Id, Drawing_Name__c, Drawing_Item_Description__c, Quantity__c FROM Item__c where Id in (";
-                    foreach (string e in items)
-                    {
-                        if (!string.IsNullOrEmpty(e.Trim()))
-                        {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Item__c where Drawing_Name__c = '" + sfDrawingID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -154,13 +140,15 @@ namespace MISService.Methods
 
                     //show results
                     var results = new List<MyLongKeyValueBool>();
+                    List<string> items = new List<string>();
                     foreach (var il in itemList)
                     {
+                        items.Add(il.Id);
                         int itemIDTemp = CommonMethods.GetMISID(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, il.Id, sfDrawingID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
-                            /* get item ID from Mapping Table */
-                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id, salesForceProjectID);
+                            /* get item ID from EST_ITEM table */
+                            int itemID = CommonMethods.GetEstimationItemID(estRevID, il.Item_Name__c);
                             if (itemID != 0)
                             {
                                 var r = new MyLongKeyValueBool();
@@ -172,7 +160,7 @@ namespace MISService.Methods
                         }
                         else
                         {
-                            UpdateDrawingItem(itemIDTemp, il.Quantity__c, il.Drawing_Item_Description__c);
+                            UpdateDrawingItem(itemIDTemp, il.Quantity__c, il.Item_Description__c);
                         }
                     }
 
@@ -189,7 +177,7 @@ namespace MISService.Methods
                     }
 
                     // delete old data
-                    DeleteAllDeletedDrawingItems(items, sfDrawingID);
+                    DeleteAllDeletedDrawingItems(items.ToArray(), sfDrawingID);
 
                     LogMethods.Log.Debug("GetAllDrawingItems:Debug:" + "Done");
                 }
@@ -250,7 +238,7 @@ namespace MISService.Methods
             }
         }
 
-        private int UpdateDrawing(int estRevID, string drawingType, string drawingPurpose, string Is_Electronic_File_From_Client_Available__c,
+        private int UpdateDrawing(int estRevID, double? version, string drawingType, string drawingPurpose, string Is_Electronic_File_From_Client_Available__c,
             string gIs_GC_Or_Designer_Drawing_Available__c, string Is_Landord_Or_Mall_Criteria_Available__c, string Is_Latest_Version_Q_D_Quotation_Avail__c,
             string Is_Site_Check_Photo_Available__c, string Is_Site_Check_Report_Available__c)
         {
@@ -277,6 +265,11 @@ namespace MISService.Methods
                             break;
                         default:
                             break;
+                    }
+
+                    if (version != null)
+                    {
+                        DrawingRequisition.Version = Convert.ToInt16(version);
                     }
 
                     bool isValid = true;

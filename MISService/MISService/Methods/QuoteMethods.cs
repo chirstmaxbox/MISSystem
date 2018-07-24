@@ -48,7 +48,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status__c, List_Item_Name__c, List_Service_Name__c, Sub_Total__c, SubTotal_Discount__c, "
+                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status__c, Sub_Total__c, SubTotal_Discount__c, "
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
                         + " Tax_Option__c, Tax_Rate__c FROM Quotation__c where Project_Name__c = '" + sfProjectID + "'";
 
@@ -86,10 +86,10 @@ namespace MISService.Methods
                             UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
 
                             // handle quote items
-                            HandleQuoteItem(jobID, estRevID, quoteID, ql.List_Item_Name__c, ql.Id);
+                            HandleQuoteItem(jobID, estRevID, quoteID, ql.Id);
 
                             // handle services
-                            HandleQuoteService(jobID, estRevID, quoteID, ql.List_Service_Name__c, ql.Id);
+                            HandleQuoteService(jobID, estRevID, quoteID, ql.Id);
 
                             // handle notes
                             HandleNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes, ql.Id);
@@ -404,28 +404,14 @@ namespace MISService.Methods
 
         }
 
-        private void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string listServiceID, string sfQuoteID)
+        private void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string sfQuoteID)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listServiceID)) return;
-                    string[] services = listServiceID.Split(',');
-                    /* if no any items, return */
-                    if (services.Length == 0) return;
-
                     //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Id in (";
-                    foreach (string e in services)
-                    {
-                        if (!string.IsNullOrEmpty(e.Trim()))
-                        {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Quotation_Number__c = '" + sfQuoteID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -440,8 +426,10 @@ namespace MISService.Methods
 
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new FsService(quoteRevID, "Quote");
+                    List<string> services = new List<string>();
                     foreach (var sl in serviceList)
                     {
+                        services.Add(sl.Id);
                         long estServiceID = CommonMethods.GetMISID(TableName.Fw_Quote_Service, sl.Id, sfQuoteID, salesForceProjectID);
                         if (estServiceID == 0)
                         {
@@ -478,7 +466,7 @@ namespace MISService.Methods
 
                     }
 
-                    DeleteAllDeletedQuoteServices(services, sfQuoteID);
+                    DeleteAllDeletedQuoteServices(services.ToArray(), sfQuoteID);
                     LogMethods.Log.Debug("HandleQuoteService:Debug:" + "Done");
                 }
 
@@ -584,28 +572,15 @@ namespace MISService.Methods
 
         }
 
-        private void HandleQuoteItem(int jobID, int estRevID, int quoteRevID, string listItemID, string sfQuoteID)
+        private void HandleQuoteItem(int jobID, int estRevID, int quoteRevID, string sfQuoteID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listItemID)) return;
-                    string[] items = listItemID.Split(',');
-                    /* if no any items, return */
-                    if (items.Length == 0) return;
-
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Quote_Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
-                    foreach (string e in items)
-                    {
-                        if(!string.IsNullOrEmpty(e.Trim())) {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Quotation_Number__c = '" + sfQuoteID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -620,33 +595,47 @@ namespace MISService.Methods
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
-
+                    List<string> items = new List<string>();
                     //show results
                     foreach (var il in itemList)
                     {
+                        items.Add(il.Id);
                         int itemIDTemp = CommonMethods.GetMISID(TableName.Quote_Item, il.Id, sfQuoteID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
                             qt.MyID = quoteRevID;
 
-                            int itemID = CommonMethods.GetMISID(TableName.EST_Item, il.Id, salesForceProjectID);
+                            int itemID = CommonMethods.GetEstimationItemID(estRevID, il.Item_Name__c);
                             if (itemID != 0)
                             {
                                 int quoteItemID = qt.GenerateNewItems(itemID);
                                 if (quoteItemID != 0)
                                 {
                                     CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID, salesForceProjectID);
+                                    itemIDTemp = quoteItemID;
+                                }
+                            }
+                            else
+                            {
+                                QuoteItemBlank qib = new QuoteItemBlank(quoteRevID);
+                                qib.CreateNew();
+                                int quoteItemID = qib.NewID;
+                                if (quoteItemID != 0)
+                                {
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID, salesForceProjectID);
+                                    itemIDTemp = quoteItemID;
                                 }
                             }
                         }
-                        else
+
+                        if (itemIDTemp != 0)
                         {
-                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Quote_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
 
-                    DeleteAllDeletedQuoteItems(items, sfQuoteID);
+                    DeleteAllDeletedQuoteItems(items.ToArray(), sfQuoteID);
                     LogMethods.Log.Debug("HandleQuoteItem:Debug:" + "Done");
                 }
             }

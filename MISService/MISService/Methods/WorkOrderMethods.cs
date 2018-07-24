@@ -44,8 +44,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
-                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, List_Item_Name__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c "
+                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
+                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c "
                         + " FROM Work_Order__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
@@ -77,13 +77,13 @@ namespace MISService.Methods
 
                         if (workOrderID != 0)
                         {
-                            UpdateWorkOrder(workOrderID, ql.Name, ql.Work_Order_Type__c, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
+                            UpdateWorkOrder(workOrderID, ql.Name, ql.RecordType.Name, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
                                 ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__c, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id);
 
                             // generate work order items
-                            HandleWorkOrderItem(workOrderID, ql.List_Item_Name__c, ql.Id);
+                            HandleWorkOrderItem(workOrderID, estRevID, ql.Id);
 
-                            switch (ql.Work_Order_Type__c)
+                            switch (ql.RecordType.Name)
                             {
                                 case "Production":
                                     ProductionWOMethods pm = new ProductionWOMethods(salesForceProjectID);
@@ -110,7 +110,7 @@ namespace MISService.Methods
                             }
 
                             /* check if the work order is approved */
-                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.Work_Order_Type__c);
+                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.RecordType.Name);
 
                         }
 
@@ -236,29 +236,15 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleWorkOrderItem(int workOrderID, string listItemID, string sfWorkOrderID)
+        private void HandleWorkOrderItem(int workOrderID, int estRevID, string sfWorkOrderID)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (string.IsNullOrEmpty(listItemID)) return;
-                    string[] items = listItemID.Split(',');
-                    /* if no any items, return */
-                    if (items.Length == 0) return;
-
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Work_Order_Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Id in (";
-                    foreach (string e in items)
-                    {
-                        if (!string.IsNullOrEmpty(e.Trim()))
-                        {
-                            query += "'" + e + "',";
-                        }
-                    }
-                    query = query.Remove(query.Length - 1);
-                    query += ")";
+                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -273,10 +259,11 @@ namespace MISService.Methods
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();
-
+                    List<string> items = new List<string>();
                     //show results
                     foreach (var il in itemList)
                     {
+                        items.Add(il.Id);
                         int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Item, il.Id, sfWorkOrderID, salesForceProjectID);
                         if (itemIDTemp == 0)
                         {
@@ -293,12 +280,12 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Work_Order_Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
                         }
                     }
 
                     /* delete work order items which has been removed out of work order */
-                    DeleteAllDeletedWorkOrderItems(items, sfWorkOrderID);
+                    DeleteAllDeletedWorkOrderItems(items.ToArray(), sfWorkOrderID);
 
                     LogMethods.Log.Debug("HandleWorkOrderItem:Debug:" + "Done");
                 }
@@ -339,7 +326,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
         {
             try
             {
@@ -352,7 +339,7 @@ namespace MISService.Methods
                     var jobType = _db.FW_JOB_TYPE.Where(x => x.JOB_TYPE.Trim() == requirement.Trim()).FirstOrDefault();
                     if (jobType != null)
                     {
-                        requirementID = jobType.QUOTE_SUPPLY_TYPE;
+                        requirementID = jobType.TYPE_ID;
                     }
                     else
                     {
@@ -368,7 +355,7 @@ namespace MISService.Methods
                         workOrderItem.qiAmount = (double)itemCost;
                     }
 
-                    long estItemID = CommonMethods.GetMISID(TableName.EST_Item, salesforceItemID, salesForceProjectID);
+                    long estItemID = CommonMethods.GetEstimationItemID(estRevID, itemName);
                     if (estItemID != 0)
                     {
                         workOrderItem.estItemID = estItemID;

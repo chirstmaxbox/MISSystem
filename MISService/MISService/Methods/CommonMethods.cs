@@ -326,5 +326,36 @@ namespace MISService.Methods
 
             return estRevID;
         }
+
+        public static int GetEstimationItemID(int estRevID, string productName)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int estItemID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT EstItemID FROM [EST_Item] WHERE ([EstRevID] = @estRevID) and ([ProductName] = @productName)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@EstRevID", estRevID);
+                SelectCommand.Parameters.AddWithValue("@productName", productName);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        estItemID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetEstimationItemID:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return estItemID;
+        }
     }
 }

@@ -96,8 +96,8 @@ namespace MISService
                         LogMethods.Log.Info("Polling:" + polling++);
                         ProjectMethods pm = new ProjectMethods();
                         pm.GetAllProjects();
-                        // wait 10 seconds for next polling
-                        Thread.Sleep(10000);
+                        // wait 1 minutes for next polling
+                        Thread.Sleep(60000);
                     }
                 }
 
