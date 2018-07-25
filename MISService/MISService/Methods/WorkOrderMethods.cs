@@ -244,7 +244,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
+                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -280,7 +280,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c);
                         }
                     }
 
@@ -326,7 +326,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder)
         {
             try
             {
@@ -359,6 +359,11 @@ namespace MISService.Methods
                     if (estItemID != 0)
                     {
                         workOrderItem.estItemID = estItemID;
+                    }
+
+                    if (itemOrder != null)
+                    {
+                        workOrderItem.woPrintOrder = Convert.ToInt16(itemOrder);
                     }
 
                     _db.Entry(workOrderItem).State = EntityState.Modified;

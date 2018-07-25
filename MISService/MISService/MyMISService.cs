@@ -96,8 +96,23 @@ namespace MISService
                         LogMethods.Log.Info("Polling:" + polling++);
                         ProjectMethods pm = new ProjectMethods();
                         pm.GetAllProjects();
-                        // wait 1 minutes for next polling
-                        Thread.Sleep(60000);
+
+                        DateTime dt = DateTime.Now;
+                        DateTime lowerPoint = new DateTime(dt.Year, dt.Month, dt.Day, 20, 0, 0);
+                        //DateTime nextDate = dt.AddDays(1);
+                        //DateTime higherPoint = new DateTime(nextDate.Year, nextDate.Month, nextDate.Day, 8, 0, 0);
+
+                        if (dt > lowerPoint)
+                        {
+                            LogMethods.Log.Warn("Start sleeping from 8:00 PM to 8:00 AM next day!");
+                            Thread.Sleep(43200000);  //sleep around 12 hours from 8:00 PM to 8:00 AM next day
+                            LogMethods.Log.Warn("Waking up!");
+                        }
+                        else
+                        {
+                            // wait 1 minutes for next polling
+                            Thread.Sleep(60000);
+                        }
                     }
                 }
 

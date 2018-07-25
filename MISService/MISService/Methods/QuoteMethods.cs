@@ -580,7 +580,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Quotation_Number__c = '" + sfQuoteID + "'";
+                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Quotation_Number__c = '" + sfQuoteID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -631,7 +631,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c);
                         }
                     }
 
@@ -675,12 +675,12 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuoteItem(long quoteItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void UpdateQuoteItem(long quoteItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
                 string UpdateString = "UPDATE Quote_Item SET qiItemTitle = @qiItemTitle, supplyType = @supplyType, qiDescription = @qiDescription, "
-                               + " qiAmount = @qiAmount, qiAmountText = @qiAmountText, qiQty = @qiQty WHERE (quoteItemID = @quoteItemID)";
+                               + " qiAmount = @qiAmount, qiAmountText = @qiAmountText, qiQty = @qiQty, qiPrintOrder = @qiPrintOrder WHERE (quoteItemID = @quoteItemID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
                 if (itemName != null)
                 {
@@ -732,6 +732,15 @@ namespace MISService.Methods
                     UpdateCommand.Parameters.AddWithValue("@qiQty", 1);
                 }
                 UpdateCommand.Parameters.AddWithValue("@quoteItemID", quoteItemID);
+
+                if (itemOrder != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiPrintOrder", itemOrder);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@qiPrintOrder", 1);
+                }
                     
                 try
                 {

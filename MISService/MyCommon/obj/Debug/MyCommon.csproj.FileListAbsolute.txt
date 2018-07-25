@@ -50,4 +50,3 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Debug\MyCommon
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Debug\MyCommon.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.pdb
-C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Debug\MyCommon.csprojResolveAssemblyReference.cache

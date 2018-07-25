@@ -271,7 +271,7 @@ namespace MISService.Methods
                 {
 
                     //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where 	Invoice_Name__c = '" + sfInvoiceID + "'";
+                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where 	Invoice_Name__c = '" + sfInvoiceID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -303,7 +303,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateInvoiceItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c);
+                            UpdateInvoiceItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c);
                         }
                     }
 
@@ -349,7 +349,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateInvoiceItem(int estRevID, string salesforceItemID, long invoiceItemID, string itemName, string requirement, string description, double? itemCost, double? quality)
+        private void UpdateInvoiceItem(int estRevID, string salesforceItemID, long invoiceItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder)
         {
             try
             {
@@ -393,6 +393,11 @@ namespace MISService.Methods
                     if (quality != null)
                     {
                         invoiceItem.qiQty = Convert.ToInt16(quality);
+                    }
+
+                    if (itemOrder != null)
+                    {
+                        invoiceItem.qiPrintOrder = Convert.ToInt16(itemOrder);
                     }
 
                     _db.Entry(invoiceItem).State = EntityState.Modified;
