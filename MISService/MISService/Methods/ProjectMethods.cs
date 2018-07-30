@@ -40,8 +40,16 @@ namespace MISService.Method
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Issue_Date__c, Type, OwnerId, Bidding_Type__c, Bidding_Source__c, Product_Line__c, "
-                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.Id FROM Opportunity where Sync__c = true and CloseDate >= TODAY"; 
+                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Issue_Date__c, Type, OwnerId, Owner.CommunityNickname, Bidding_Type__c, Bidding_Source__c, Product_Line__c, "
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.CommunityNickname, "
+                                           + " (SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__r.Name, Billing_Company_Name__r.Id, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c, Quoting_Company_City__c, Quoting_Company_Name__r.Name, Quoting_Company_Name__r.Id,  Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c,Installing_Company_City__c, Installing_Company_Name__r.Name, Installing_Company_Name__r.Id, Installing_Contact_Name__r.Account.Id, Installing_Company_Postal_Code__c, Installing_Company_Province__c, Installing_Company_Street__c, Installing_Contact_Name__r.FirstName, Installing_Contact_Name__r.LastName, Installing_Contact_Name__r.Id, Installing_Contact_Phone__c, Installing_Company_Country__c FROM Bill_Quote_Ships__r), "
+                                           + " (SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c,  Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate FROM Drawings__r order by LastModifiedDate desc limit 1),"
+                                           + " (SELECT Id, Number_of_Signs__c, Project_Value_Estimated__c,  Remarks__c, Issue_Date__c, Due_Date__c, LandLord__r.Name, LandLord_Contact__r.Name, LandLord_Phone_Number__c, LandLord__r.BillingStreet, LandLord__r.BillingCity, LandLord__r.BillingState, LandLord__r.BillingPostalCode FROM Sign_Permits__r),"
+                                           + " (SELECT Id, Occupation_Start_Time__c, Occupation_End_Time__c, Issue_Date__c, Type_Of_Truck__c, Truck_Weight__c, Foreman_Name__c, Foreman_Phone__c, Remarks__c FROM Hoisting_Permits__r),"
+                                           + " (SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c FROM StakeOut_Permits__r),"
+                                           + " (SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c,  Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c  FROM SubContracts__r) "
+                                           + " FROM Opportunity "
+                                           + " WHERE Sync__c = true and CloseDate >= TODAY";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -61,7 +69,8 @@ namespace MISService.Method
                     foreach (var opportunity in opportunityList)
                     {
                         /* get project owner */
-                        string un = CommonMethods.GetUserName(opportunity.OwnerId);
+                        //string un = CommonMethods.GetUserName(opportunity.OwnerId);
+                        string un = (opportunity.Owner.CommunityNickname == null ? "" : opportunity.Owner.CommunityNickname);
                         FsEmployee fsEmployee = new FsEmployee(un);
                         if (fsEmployee.EmployeeNumber > 0)
                         {
@@ -110,39 +119,44 @@ namespace MISService.Method
                             /* Bill-Quote-Ship */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing account and contact");
                             CustomerMethods cm = new CustomerMethods(opportunity.Id);
-                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            cm.GetAllAccounts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber, opportunity.Bill_Quote_Ships__r);
                             
-                            /* Get Estimation and Items and Services */
+                            /* Estimation */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing estimation");
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
                             em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
 
-                             /* Get Drawing */
+                            /*Drawing */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing drawing");
                             DrawingMethods dm = new DrawingMethods(opportunity.Id);
-                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID);
+                            dm.GetAllDrawings(opportunity.Id, estRevID, sales_JobMasterListID, opportunity.Drawings__r);
 
+                            /* Quote */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing quote");
                             QuoteMethods qm = new QuoteMethods(opportunity.Id);
                             qm.GetAllQuotes(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
+                            /* Sign/Hoisting/Stakeout permit */
                             PermitMethods pm = new PermitMethods(opportunity.Id);
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing sign permit");
-                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllSignPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber, opportunity.Sign_Permits__r);
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing hoisting permit");
-                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllHoistingPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber, opportunity.Hoisting_Permits__r);
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing stakeout permit");
-                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            pm.GetAllStakeOutPermits(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber, opportunity.StakeOut_Permits__r);
 
+                            /* WorkOrder */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing work order");
                             WorkOrderMethods wo = new WorkOrderMethods(opportunity.Id);
                             wo.GetAllWorkOrders(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
 
+                            /* Sub-Contract */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing SubContract");
                             SubContractMethods sc = new SubContractMethods(opportunity.Id);
-                            sc.GetAllSubContracts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber);
+                            sc.GetAllSubContracts(opportunity.Id, sales_JobMasterListID, fsEmployee.EmployeeNumber, opportunity.SubContracts__r);
 
+                            /* Invoice */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing invoice");
                             InvoiceMethods im = new InvoiceMethods(opportunity.Id);
                             im.GetAllInvoices(opportunity.Id, sales_JobMasterListID, estRevID, fsEmployee.EmployeeNumber);
@@ -239,7 +253,8 @@ namespace MISService.Method
 
                 if (AE != null)
                 {
-                    string un = CommonMethods.GetUserName(AE.Id);
+                    //string un = CommonMethods.GetUserName(AE.Id);
+                    string un = AE.CommunityNickname == null ? "" :  AE.CommunityNickname;
                     FsEmployee fsEmployee = new FsEmployee(un);
                     if (fsEmployee.EmployeeNumber > 0)
                     {

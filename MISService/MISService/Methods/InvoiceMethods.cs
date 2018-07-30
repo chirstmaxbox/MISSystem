@@ -45,8 +45,11 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
-                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c "
-                        + " FROM Invoice__c where Project_Name__c = '" + sfProjectID + "'";
+                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, "
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
+                        + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
+                        + " FROM Invoice__c " 
+                        + " WHERE Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -92,10 +95,10 @@ namespace MISService.Methods
                                 ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c);
 
                             /* handle item */
-                            HandleInvoiceItem(invoiceID, estRevID, ql.Id);
+                            HandleInvoiceItem(invoiceID, estRevID, ql.Id, ql.Items__r);
 
                             /* handle service */
-                            HandleInvoiceService(invoiceID, ql.Id);
+                            HandleInvoiceService(invoiceID, ql.Id, ql.Service_Costs__r);
                         }
 
                     }
@@ -108,26 +111,13 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleInvoiceService(int invoiceID, string sfInvoiceID)
+        private void HandleInvoiceService(int invoiceID, string sfInvoiceID, enterprise.QueryResult result)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-
-                    //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Invoice_Name__c = '" + sfInvoiceID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header,
-                        null,
-                        null,
-                        null,
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new FsService(invoiceID, "Invoice");
@@ -268,27 +258,14 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleInvoiceItem(int invoiceID, int estRevID, string sfInvoiceID)
+        private void HandleInvoiceItem(int invoiceID, int estRevID, string sfInvoiceID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-
-                    //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where 	Invoice_Name__c = '" + sfInvoiceID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

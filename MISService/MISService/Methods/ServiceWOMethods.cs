@@ -29,27 +29,14 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllWorkShopInstructions(int woId, string sfWorkOrderID)
+        public void GetAllWorkShopInstructions(int woId, string sfWorkOrderID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Category__c, Final_Instruction__c, Instruction__c "
-                        + " FROM WorkShop_Instruction__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.WorkShop_Instruction__c> workShopList = result.records.Cast<enterprise.WorkShop_Instruction__c>();
@@ -296,27 +283,14 @@ namespace MISService.Methods
         }
 
 
-        public void GetAllServicerInstructions(int woId, string sfWorkOrderID)
+        public void GetAllServicerInstructions(int woId, string sfWorkOrderID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Category__c, Final_Instruction__c, Instruction__c "
-                        + " FROM Servicer_Instruction__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Servicer_Instruction__c> servInstructionList = result.records.Cast<enterprise.Servicer_Instruction__c>();
@@ -528,27 +502,14 @@ namespace MISService.Methods
             return id;
         }
 
-        public void GetAllCheckLists(int woId, string sfWorkOrderID)
+        public void GetAllCheckLists(int woId, string sfWorkOrderID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c "
-                        + " FROM Service_Check_List__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Service_Check_List__c> checkList = result.records.Cast<enterprise.Service_Check_List__c>();

@@ -50,8 +50,12 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status__c, Sub_Total__c, SubTotal_Discount__c, "
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
-                        + " Tax_Option__c, Tax_Rate__c FROM Quotation__c where Project_Name__c = '" + sfProjectID + "'";
-
+                        + " Tax_Option__c, Tax_Rate__c, "
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
+                        + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
+                        + " FROM Quotation__c "
+                        + " WHERE Project_Name__c = '" + sfProjectID + "'";
+                    
                     enterprise.QueryResult result;
                     queryClient.query(
                         header, //sessionheader
@@ -89,10 +93,10 @@ namespace MISService.Methods
                             UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
 
                             // handle quote items
-                            HandleQuoteItem(jobID, estRevID, quoteID, ql.Id);
+                            HandleQuoteItem(jobID, estRevID, quoteID, ql.Id, ql.Items__r);
 
                             // handle services
-                            HandleQuoteService(jobID, estRevID, quoteID, ql.Id);
+                            HandleQuoteService(jobID, estRevID, quoteID, ql.Id, ql.Service_Costs__r);
 
                             // handle notes
                             HandleNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes, ql.Id);
@@ -410,25 +414,13 @@ namespace MISService.Methods
 
         }
 
-        private void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string sfQuoteID)
+        private void HandleQuoteService(int jobID, int estRevID, int quoteRevID, string sfQuoteID, enterprise.QueryResult result)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Quotation_Number__c = '" + sfQuoteID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header,
-                        null,
-                        null,
-                        null,
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new FsService(quoteRevID, "Quote");
@@ -581,26 +573,14 @@ namespace MISService.Methods
 
         }
 
-        private void HandleQuoteItem(int jobID, int estRevID, int quoteRevID, string sfQuoteID)
+        private void HandleQuoteItem(int jobID, int estRevID, int quoteRevID, string sfQuoteID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Quotation_Number__c = '" + sfQuoteID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

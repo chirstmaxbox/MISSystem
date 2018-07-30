@@ -13,56 +13,7 @@ namespace MISService.Methods
 {
     public class CommonMethods
     {
-        public static string GetUserName(string Id)
-        {
-            string un = string.Empty;
-
-            EndpointAddress apiAddr;
-            enterprise.SessionHeader header;
-
-            //set query endpoint to value returned by login request
-            apiAddr = new EndpointAddress(SalesForceMethods.serverUrl);
-
-            //instantiate session header object and set session id
-            header = new enterprise.SessionHeader();
-            header.sessionId = SalesForceMethods.sessionId;
-
-            try
-            {
-                using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
-                {
-                    //create SQL query statement
-                    string query = "SELECT CommunityNickname FROM User WHERE Id = '" + Id + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    if (result.size != 0)
-                    {
-                        //cast query results
-                        IEnumerable<enterprise.User> userList = result.records.Cast<enterprise.User>();
-                        foreach (var user in userList)
-                        {
-                            un = user.CommunityNickname;
-                            LogMethods.Log.Debug("GetUserName:Debug:User Name = " + un);
-                            break;
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                LogMethods.Log.Debug("GetUserName:Error:" + e.Message);
-            }
-
-            return un;
-        }
-
+ 
         public static void Delete(string tableName, string salesforceID, string salesforceParentID, string salesforceProjectID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);

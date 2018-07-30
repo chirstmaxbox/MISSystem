@@ -33,27 +33,13 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllDrawings(string sfProjectID, int estRevID, int jobID)
+        public void GetAllDrawings(string sfProjectID, int estRevID, int jobID, enterprise.QueryResult result)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
-                        + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
-                        + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate FROM Drawing__c where Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc limit 1";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header,
-                        null,
-                        null,
-                        null,
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     IEnumerable<enterprise.Drawing__c> drawingList = result.records.Cast<enterprise.Drawing__c>();
                     /* in MIS, only one drawing */

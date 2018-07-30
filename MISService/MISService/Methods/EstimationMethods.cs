@@ -42,7 +42,11 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c FROM Estimation__c where Project_Name__c = '" + sfProjectID + "'";
+                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, "
+                                        + " (SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c FROM Items__r),"
+                                        + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
+                                        + " FROM Estimation__c "
+                                        + " WHERE Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -55,6 +59,7 @@ namespace MISService.Methods
                     /* if no any record, return */
                     if (result.size == 0) return;
 
+                    if (result == null || (result != null && result.size == 0)) return;
                     //cast query results
                     IEnumerable<enterprise.Estimation__c> estimationList = result.records.Cast<enterprise.Estimation__c>();
 
@@ -62,11 +67,11 @@ namespace MISService.Methods
                     foreach (var el in estimationList)
                     {
                         /* item */
-                        GetAllItems(el.Id, estRevID);
+                        GetAllItems(el.Id, estRevID, el.Items__r);
 
                         /* services */
                         ServiceMethods sm = new ServiceMethods(salesForceProjectID);
-                        sm.GetAllServices(el.Id, estRevID);
+                        sm.GetAllServices(el.Id, estRevID, el.Service_Costs__r);
 
                         UpdateEstimation(estRevID, el.Cost__c, el.Remarks__c, el.Version__c);
 
@@ -113,82 +118,14 @@ namespace MISService.Methods
             }
         }
 
-        private void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID)
-        {
-            try
-            {
-                var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201).FirstOrDefault();
-                if (sales_Dispatching == null)
-                {
-                    //create service client to call API endpoint
-                    using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
-                    {
-                        string query = "SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstance where TargetObjectId = '" + sfEstimaitonID + "'" + " order by CompletedDate desc limit 1";
-
-                        enterprise.QueryResult result;
-                        queryClient.query(
-                            header, //sessionheader
-                            null, //queryoptions
-                            null, //mruheader
-                            null, //packageversion
-                            query, out result);
-
-                        /* if no any record, return */
-                        if (result.size == 0) return;
-
-                        //cast query results
-                        IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
-
-                        //show results
-                        foreach (var el in processInstanceList)
-                        {
-                            if (el.Status == "Approved")
-                            {
-                                string estimatorName = el.LastActor.Name;
-                                SubmitEstimationRequestVm vm = new SubmitEstimationRequestVm();
-                                vm.JobID = jobId;
-                                vm.EstRevID = estRevID;
-                                vm.Create();
-                                vm.OnEstimationSubmitted();
-                            }
-                        }
-                        LogMethods.Log.Debug("GetApprovalData:Debug:" + "Done");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
-            }
-        }
-
-        private void GetAllItems(string sfEstimation, int estRevID) 
+        private void GetAllItems(string sfEstimation, int estRevID, enterprise.QueryResult result) 
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, "
-                            + "Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, "
-                            + "Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, "
-                            + "Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, "
-                            + "Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, "
-                            + "Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, "
-                            + "PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c " 
-                            + " FROM Item__c where Estimation_Name__c = '" + sfEstimation + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

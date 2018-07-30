@@ -33,28 +33,14 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllSubContracts(string sfProjectID, int jobID, int userEmployeeID)
+        public void GetAllSubContracts(string sfProjectID, int jobID, int userEmployeeID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c, "
-                        + " Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c "
-                        + " FROM SubContract__c where Project_Name__c = '" + sfProjectID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.SubContract__c> subContractList = result.records.Cast<enterprise.SubContract__c>();

@@ -45,8 +45,16 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
-                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c "
-                        + " FROM Work_Order__c where Project_Name__c = '" + sfProjectID + "'";
+                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__c, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, "
+                        + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
+                        + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
+                        + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM Installer_Instructions__r),"
+                        + " (SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c FROM Production_Check_List__r),"
+                        + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM Servicer_Instructions__r),"
+                        + " (SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c FROM Service_Check_Lists__r)"
+                        + " FROM Work_Order__c "
+                        + " WHERE Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -84,22 +92,22 @@ namespace MISService.Methods
                                 ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__c, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id);
 
                             // generate work order items
-                            HandleWorkOrderItem(workOrderID, estRevID, ql.Id);
+                            HandleWorkOrderItem(workOrderID, estRevID, ql.Id, ql.Items__r);
 
                             switch (ql.RecordType.Name)
                             {
                                 case "Production":
                                     ProductionWOMethods pm = new ProductionWOMethods(salesForceProjectID);
-                                    pm.GetAllWorkShopInstructions(workOrderID, ql.Id);
-                                    pm.GetAllInstallerInstructions(workOrderID, ql.Id);
-                                    pm.GetAllCheckLists(workOrderID, ql.Id);
+                                    pm.GetAllWorkShopInstructions(workOrderID, ql.Id, ql.WorkShop_Instructions__r);
+                                    pm.GetAllInstallerInstructions(workOrderID, ql.Id, ql.Installer_Instructions__r);
+                                    pm.GetAllCheckLists(workOrderID, ql.Id, ql.Production_Check_List__r);
                                     pm.GetAllNotes(workOrderID, ql.AttachedContentNotes, ql.Id);
                                     break;
                                 case "Service":
                                     ServiceWOMethods sm = new ServiceWOMethods(salesForceProjectID);
-                                    sm.GetAllWorkShopInstructions(workOrderID, ql.Id);
-                                    sm.GetAllServicerInstructions(workOrderID, ql.Id);
-                                    sm.GetAllCheckLists(workOrderID, ql.Id);
+                                    sm.GetAllWorkShopInstructions(workOrderID, ql.Id, ql.WorkShop_Instructions__r);
+                                    sm.GetAllServicerInstructions(workOrderID, ql.Id, ql.Servicer_Instructions__r);
+                                    sm.GetAllCheckLists(workOrderID, ql.Id, ql.Service_Check_Lists__r);
                                     sm.GetAllNotes(workOrderID, ql.AttachedContentNotes, ql.Id);
                                     break;
                                 case "Site Check":
@@ -113,7 +121,7 @@ namespace MISService.Methods
                             }
 
                             /* check if the work order is approved */
-                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.RecordType.Name);
+                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.RecordType.Name, ql.ProcessInstances);
 
                         }
 
@@ -127,7 +135,7 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int estRevID, int woId, int userEmployeeID, string remarks, DateTime? dueDate, string rush, string woType )
+        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int estRevID, int woId, int userEmployeeID, string remarks, DateTime? dueDate, string rush, string woType, enterprise.QueryResult result)
         {
             try
             {
@@ -137,18 +145,7 @@ namespace MISService.Methods
                     //create service client to call API endpoint
                     using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                     {
-                        string query = "SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstance where TargetObjectId = '" + sfWorkOrderID + "'" + " order by CompletedDate desc limit 1";
-
-                        enterprise.QueryResult result;
-                        queryClient.query(
-                            header, //sessionheader
-                            null, //queryoptions
-                            null, //mruheader
-                            null, //packageversion
-                            query, out result);
-
-                        /* if no any record, return */
-                        if (result.size == 0) return;
+                        if (result == null || (result != null && result.size == 0)) return;
 
                         //cast query results
                         IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
@@ -242,26 +239,14 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleWorkOrderItem(int workOrderID, int estRevID, string sfWorkOrderID)
+        private void HandleWorkOrderItem(int workOrderID, int estRevID, string sfWorkOrderID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Item__c where Work_Order_Name__c = '" + sfWorkOrderID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

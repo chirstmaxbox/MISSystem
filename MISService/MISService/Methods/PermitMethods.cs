@@ -33,30 +33,14 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllSignPermits(string sfProjectID, int jobID, int userEmployeeID)
+        public void GetAllSignPermits(string sfProjectID, int jobID, int userEmployeeID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Number_of_Signs__c, Project_Value_Estimated__c, "
-                        + " Remarks__c, Issue_Date__c, Due_Date__c, "
-                        + " LandLord__r.Name, LandLord_Contact__r.Name, LandLord_Phone_Number__c, LandLord__r.BillingStreet, LandLord__r.BillingCity, "
-                        + " LandLord__r.BillingState, LandLord__r.BillingPostalCode  "
-                        + " FROM Sign_Permit__c where Project_Name__c = '" + sfProjectID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Sign_Permit__c> signPermitList = result.records.Cast<enterprise.Sign_Permit__c>();
@@ -229,28 +213,14 @@ namespace MISService.Methods
             }
         }
 
-        public void GetAllHoistingPermits(string sfProjectID, int jobID, int userEmployeeID)
+        public void GetAllHoistingPermits(string sfProjectID, int jobID, int userEmployeeID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Occupation_Start_Time__c, Occupation_End_Time__c, Issue_Date__c, Type_Of_Truck__c, "
-                        + " Truck_Weight__c, Foreman_Name__c, Foreman_Phone__c, Remarks__c "
-                        + " FROM Hoisting_Permit__c where Project_Name__c = '" + sfProjectID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Hoisting_Permit__c> hoistingPermitList = result.records.Cast<enterprise.Hoisting_Permit__c>();
@@ -367,27 +337,14 @@ namespace MISService.Methods
         }
 
 
-        public void GetAllStakeOutPermits(string sfProjectID, int jobID, int userEmployeeID)
+        public void GetAllStakeOutPermits(string sfProjectID, int jobID, int userEmployeeID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c "
-                        + " FROM StakeOut_Permit__c where Project_Name__c = '" + sfProjectID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.StakeOut_Permit__c> stakeoutPermitList = result.records.Cast<enterprise.StakeOut_Permit__c>();

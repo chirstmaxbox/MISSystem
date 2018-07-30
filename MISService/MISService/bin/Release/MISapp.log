@@ -1,105 +1,291 @@
-2018-07-27 10:37:31,684 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-27 10:37:40,716 INFO MISService.Method.LogMethods - Polling:1
-2018-07-27 10:37:40,732 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:38:02,650 INFO MISService.Method.LogMethods - Polling:2
-2018-07-27 10:38:02,650 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:38:22,789 INFO MISService.Method.LogMethods - Polling:3
-2018-07-27 10:38:22,789 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:38:23,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:38:27,984 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:38:27,984 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:38:47,999 INFO MISService.Method.LogMethods - Polling:4
-2018-07-27 10:38:47,999 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:38:48,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:38:50,698 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:38:50,698 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:39:10,713 INFO MISService.Method.LogMethods - Polling:5
-2018-07-27 10:39:10,713 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:39:10,931 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:39:12,335 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:39:12,335 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:39:32,350 INFO MISService.Method.LogMethods - Polling:6
-2018-07-27 10:39:32,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:39:32,615 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:39:34,160 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:39:34,160 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:39:54,161 INFO MISService.Method.LogMethods - Polling:7
-2018-07-27 10:39:54,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:39:54,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:39:55,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:39:55,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:40:15,990 INFO MISService.Method.LogMethods - Polling:8
-2018-07-27 10:40:15,990 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:40:16,224 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:40:18,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:40:18,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:40:38,267 INFO MISService.Method.LogMethods - Polling:9
-2018-07-27 10:40:38,267 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:40:38,407 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:40:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:40:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:40:59,811 INFO MISService.Method.LogMethods - Polling:10
-2018-07-27 10:40:59,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:41:00,045 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:41:01,417 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:41:01,417 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:41:21,432 INFO MISService.Method.LogMethods - Polling:11
-2018-07-27 10:41:21,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:41:21,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:41:23,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:41:23,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:41:43,116 INFO MISService.Method.LogMethods - Polling:12
-2018-07-27 10:41:43,116 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:41:43,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:41:46,283 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:41:46,283 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:42:06,298 INFO MISService.Method.LogMethods - Polling:13
-2018-07-27 10:42:06,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:42:06,438 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:42:07,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:42:07,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:42:27,935 INFO MISService.Method.LogMethods - Polling:14
-2018-07-27 10:42:27,935 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:42:28,169 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:42:29,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:42:29,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:42:49,588 INFO MISService.Method.LogMethods - Polling:15
-2018-07-27 10:42:49,588 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:42:49,806 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:42:51,210 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:42:51,210 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:43:11,225 INFO MISService.Method.LogMethods - Polling:16
-2018-07-27 10:43:11,225 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:43:11,756 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:43:13,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:43:13,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:43:33,393 INFO MISService.Method.LogMethods - Polling:17
-2018-07-27 10:43:33,393 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:43:33,705 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:43:35,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:43:35,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:43:55,061 INFO MISService.Method.LogMethods - Polling:18
-2018-07-27 10:43:55,061 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-07-27 10:43:55,280 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
-2018-07-27 10:43:56,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
-2018-07-27 10:43:56,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-07-27 10:44:16,714 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-27 11:16:50,846 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-27 12:35:30,686 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
-2018-07-27 14:35:30,788 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-27 16:17:50,783 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:19:03,108 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:19:54,136 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:20:48,812 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:21:44,568 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:22:40,311 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:23:31,921 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
-2018-07-27 16:58:44,397 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
-2018-07-27 19:49:16,836 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:49:46,960 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:50:17,068 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:50:47,176 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:51:17,284 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:51:47,408 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:52:17,734 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
-2018-07-27 19:52:47,748 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-30 15:24:52,065 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-30 15:25:02,268 INFO MISService.Method.LogMethods - Polling:1
+2018-07-30 15:25:02,268 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:25:04,655 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:25:17,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:25:17,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:25:47,274 INFO MISService.Method.LogMethods - Polling:2
+2018-07-30 15:25:47,274 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:25:47,523 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:25:49,068 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:25:49,068 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:26:19,082 INFO MISService.Method.LogMethods - Polling:3
+2018-07-30 15:26:19,082 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:26:19,285 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:26:20,752 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:26:20,752 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:26:50,766 INFO MISService.Method.LogMethods - Polling:4
+2018-07-30 15:26:50,766 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:26:50,953 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:26:53,371 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:26:53,371 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:27:23,386 INFO MISService.Method.LogMethods - Polling:5
+2018-07-30 15:27:23,386 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:27:23,557 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:27:27,364 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:27:27,364 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:27:57,378 INFO MISService.Method.LogMethods - Polling:6
+2018-07-30 15:27:57,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:27:57,518 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:28:02,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:28:02,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:28:32,759 INFO MISService.Method.LogMethods - Polling:7
+2018-07-30 15:28:32,759 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:28:33,009 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:28:35,505 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:28:35,505 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:28:36,503 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:28:36,503 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:29:06,517 INFO MISService.Method.LogMethods - Polling:8
+2018-07-30 15:29:06,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:29:06,658 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:29:08,093 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:29:08,093 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:29:08,764 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:29:08,764 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:29:38,778 INFO MISService.Method.LogMethods - Polling:9
+2018-07-30 15:29:38,778 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:29:39,059 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:29:41,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:29:41,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:29:42,007 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:29:42,007 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:30:12,022 INFO MISService.Method.LogMethods - Polling:10
+2018-07-30 15:30:12,022 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:30:12,474 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:30:13,800 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:30:13,800 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:30:14,502 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:30:14,502 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:30:44,517 INFO MISService.Method.LogMethods - Polling:11
+2018-07-30 15:30:44,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:30:44,720 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:30:47,762 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:30:47,762 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:30:48,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:30:48,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:31:18,338 INFO MISService.Method.LogMethods - Polling:12
+2018-07-30 15:31:18,338 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:31:18,556 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:31:20,116 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:31:20,116 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:31:20,896 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:31:20,896 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:31:50,911 INFO MISService.Method.LogMethods - Polling:13
+2018-07-30 15:31:50,911 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:31:51,191 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:31:52,595 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:31:52,595 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:31:53,157 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:31:53,157 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:32:23,171 INFO MISService.Method.LogMethods - Polling:14
+2018-07-30 15:32:23,171 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:32:23,374 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:32:25,402 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:32:25,402 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:32:26,042 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:32:26,042 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:32:56,056 INFO MISService.Method.LogMethods - Polling:15
+2018-07-30 15:32:56,056 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:32:56,259 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:33:00,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:33:00,206 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:33:01,079 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:33:01,079 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:33:31,094 INFO MISService.Method.LogMethods - Polling:16
+2018-07-30 15:33:31,094 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:33:31,312 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:33:32,779 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:33:32,779 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:33:33,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:33:33,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:34:03,464 INFO MISService.Method.LogMethods - Polling:17
+2018-07-30 15:34:03,464 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:34:03,667 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:34:05,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:34:05,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:34:06,085 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:34:06,085 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:34:36,099 INFO MISService.Method.LogMethods - Polling:18
+2018-07-30 15:34:36,099 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:34:36,302 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:34:39,063 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:34:39,063 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:34:39,812 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:34:39,812 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:35:09,826 INFO MISService.Method.LogMethods - Polling:19
+2018-07-30 15:35:09,826 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:35:10,310 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:35:12,166 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:35:12,166 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:35:13,212 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:35:13,212 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:35:43,226 INFO MISService.Method.LogMethods - Polling:20
+2018-07-30 15:35:43,226 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:35:43,382 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:35:45,176 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:35:45,176 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:35:46,112 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:35:46,112 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:36:16,127 INFO MISService.Method.LogMethods - Polling:21
+2018-07-30 15:36:16,127 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:36:16,329 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:36:18,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:36:18,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:36:19,247 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:36:19,247 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:36:49,261 INFO MISService.Method.LogMethods - Polling:22
+2018-07-30 15:36:49,261 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:36:49,495 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:36:53,005 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:36:53,005 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:36:53,629 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:36:53,629 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:37:23,631 INFO MISService.Method.LogMethods - Polling:23
+2018-07-30 15:37:23,631 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:37:23,756 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:37:25,207 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:37:25,207 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:37:26,190 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:37:26,190 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:37:56,204 INFO MISService.Method.LogMethods - Polling:24
+2018-07-30 15:37:56,204 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:37:56,391 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:37:58,170 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:37:58,170 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:37:59,090 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:37:59,090 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:38:29,105 INFO MISService.Method.LogMethods - Polling:25
+2018-07-30 15:38:29,105 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:38:29,307 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:38:31,616 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:38:31,616 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:38:32,209 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:38:32,209 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:39:02,224 INFO MISService.Method.LogMethods - Polling:26
+2018-07-30 15:39:02,224 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:39:02,364 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:39:04,236 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:39:04,236 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:39:05,047 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:39:05,047 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:39:35,062 INFO MISService.Method.LogMethods - Polling:27
+2018-07-30 15:39:35,062 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:39:35,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:39:36,778 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:39:36,778 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:39:38,447 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:39:38,447 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:40:08,461 INFO MISService.Method.LogMethods - Polling:28
+2018-07-30 15:40:08,461 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:40:08,664 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:40:10,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:40:10,396 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:40:11,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:40:11,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:40:41,393 INFO MISService.Method.LogMethods - Polling:29
+2018-07-30 15:40:41,393 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:40:41,611 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:40:43,125 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:40:43,125 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:40:44,170 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:40:44,170 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:41:14,184 INFO MISService.Method.LogMethods - Polling:30
+2018-07-30 15:41:14,184 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:41:14,387 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:41:17,179 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:41:17,179 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:41:18,037 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:41:18,037 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:41:48,052 INFO MISService.Method.LogMethods - Polling:31
+2018-07-30 15:41:48,052 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:41:48,255 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:41:53,652 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:41:53,652 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:41:54,853 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:41:54,853 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:42:24,861 INFO MISService.Method.LogMethods - Polling:32
+2018-07-30 15:42:24,861 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:42:25,095 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:42:27,497 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:42:27,497 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:42:28,215 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:42:28,215 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:42:58,229 INFO MISService.Method.LogMethods - Polling:33
+2018-07-30 15:42:58,229 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:42:58,416 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:42:59,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:42:59,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:43:01,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:43:01,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:43:31,361 INFO MISService.Method.LogMethods - Polling:34
+2018-07-30 15:43:31,361 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:43:31,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:43:32,952 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:43:32,952 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:43:34,122 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:43:34,122 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:44:04,124 INFO MISService.Method.LogMethods - Polling:35
+2018-07-30 15:44:04,124 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:44:04,421 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:44:05,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:44:05,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:44:06,714 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:44:06,714 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:44:36,728 INFO MISService.Method.LogMethods - Polling:36
+2018-07-30 15:44:36,728 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:44:37,243 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:44:38,990 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:44:38,990 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:44:50,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:44:50,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:45:20,595 INFO MISService.Method.LogMethods - Polling:37
+2018-07-30 15:45:20,595 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:45:20,814 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:45:22,296 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:45:22,296 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:45:23,848 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:45:23,848 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:45:53,849 INFO MISService.Method.LogMethods - Polling:38
+2018-07-30 15:45:53,849 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:45:54,083 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:45:55,877 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:45:55,877 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:45:57,452 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:45:57,452 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:46:27,467 INFO MISService.Method.LogMethods - Polling:39
+2018-07-30 15:46:27,467 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:46:27,670 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:46:29,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:46:29,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:46:36,094 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:46:36,094 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:47:06,108 INFO MISService.Method.LogMethods - Polling:40
+2018-07-30 15:47:06,108 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:47:06,327 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:47:08,464 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:47:08,464 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:47:09,681 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:47:09,681 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:47:39,695 INFO MISService.Method.LogMethods - Polling:41
+2018-07-30 15:47:39,695 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:47:39,913 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:47:41,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:47:41,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:47:42,394 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:47:42,394 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:48:12,404 INFO MISService.Method.LogMethods - Polling:42
+2018-07-30 15:48:12,404 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:48:12,982 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:DeletedProject
+2018-07-30 15:48:14,198 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: DeletedProject<Project Num:18P000136>
+2018-07-30 15:48:14,198 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:48:15,337 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:48:15,337 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:48:45,352 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-30 15:51:34,287 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-30 15:51:43,070 INFO MISService.Method.LogMethods - Polling:1
+2018-07-30 15:51:43,070 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-30 15:51:45,597 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TimHouton
+2018-07-30 15:51:53,163 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TimHouton<Project Num:18P000137>
+2018-07-30 15:51:53,163 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-30 15:52:23,177 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------

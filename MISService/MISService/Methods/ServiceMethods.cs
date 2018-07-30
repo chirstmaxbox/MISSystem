@@ -32,25 +32,13 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllServices(string sfEstimation, int estRevID)
+        public void GetAllServices(string sfEstimation, int estRevID, enterprise.QueryResult result)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Cost__c where Estimation_Name__c = '" + sfEstimation + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header,
-                        null,
-                        null,
-                        null,
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     IEnumerable<enterprise.Service_Cost__c> serviceList = result.records.Cast<enterprise.Service_Cost__c>();
                     var svc = new MyEstServiceCreate(estRevID);

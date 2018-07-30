@@ -35,29 +35,14 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllAccounts(string sfProjectID, int misJobID, int employeeNumber)
+        public void GetAllAccounts(string sfProjectID, int misJobID, int employeeNumber, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__r.Name, Billing_Company_Name__r.Id, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c,"
-                        + " Quoting_Company_City__c, Quoting_Company_Name__r.Name, Quoting_Company_Name__r.Id,  Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c, "
-                        + " Installing_Company_City__c, Installing_Company_Name__r.Name, Installing_Company_Name__r.Id, Installing_Contact_Name__r.Account.Id, Installing_Company_Postal_Code__c, Installing_Company_Province__c, Installing_Company_Street__c, Installing_Contact_Name__r.FirstName, Installing_Contact_Name__r.LastName, Installing_Contact_Name__r.Id, Installing_Contact_Phone__c, Installing_Company_Country__c"
-                        + " FROM Bill_Quote_Install__c where Project_Name__c = '" + sfProjectID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Bill_Quote_Install__c> billQuoteShipList = result.records.Cast<enterprise.Bill_Quote_Install__c>();
