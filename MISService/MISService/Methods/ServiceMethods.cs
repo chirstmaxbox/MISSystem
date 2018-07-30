@@ -86,7 +86,10 @@ namespace MISService.Methods
                                 );
                             }
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Est_Service);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Est_Service, sl.Id, qs_id.ToString(), sfEstimation, salesForceProjectID);
+                            if (qs_id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Est_Service, sl.Id, qs_id.ToString(), sfEstimation, salesForceProjectID);
+                            }
                         }
                         else
                         {

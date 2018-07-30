@@ -43,8 +43,8 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Number_of_Signs__c, Project_Value_Estimated__c, "
                         + " Remarks__c, Issue_Date__c, Due_Date__c, "
-                        + " LandLord_Name__c, LandLord_Name__r.Name, LandLord_Phone_Number__c, LandLord_Name__r.Street__c, LandLord_Name__r.City__c, "
-                        + " LandLord_Name__r.Province__c, LandLord_Name__r.Postal_Code__c "
+                        + " LandLord__r.Name, LandLord_Contact__r.Name, LandLord_Phone_Number__c, LandLord__r.BillingStreet, LandLord__r.BillingCity, "
+                        + " LandLord__r.BillingState, LandLord__r.BillingPostalCode  "
                         + " FROM Sign_Permit__c where Project_Name__c = '" + sfProjectID + "'";
 
                     enterprise.QueryResult result;
@@ -70,14 +70,17 @@ namespace MISService.Methods
                             CreatePermit cpa = new CreatePermit(userEmployeeID, jobID, 10, 0);
                             cpa.Create();
                             int id = cpa.NewlyInsertedID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForSignPermit, sp.Id, id.ToString(), salesForceProjectID);
+                            if (id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForSignPermit, sp.Id, id.ToString(), salesForceProjectID);
+                            }
                             sign_permitID = id;
                         }
 
                         if (sign_permitID != 0)
                         {
-                            HandleLandlord(sp.Id, sp.LandLord_Name__r.Street__c, sp.LandLord_Name__r.City__c, sp.LandLord_Name__r.Province__c, sp.LandLord_Name__r.Postal_Code__c,
-                                sp.LandLord_Name__r.Name, sp.LandLord_Phone_Number__c);
+                            HandleLandlord(sp.Id, sp.LandLord__r.BillingStreet, sp.LandLord__r.BillingCity, sp.LandLord__r.BillingState, sp.LandLord__r.BillingPostalCode,
+                                sp.LandLord_Contact__r.Name, sp.LandLord_Phone_Number__c, sp.LandLord__r.Name);
 
                             UpdateSignPermit(sp.Id, sign_permitID, sp.Number_of_Signs__c, sp.Project_Value_Estimated__c, sp.Issue_Date__c, sp.Due_Date__c, sp.Remarks__c);
                         }
@@ -92,7 +95,7 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleLandlord(string sfLandlordID, string addr, string city, string state, string zipCode, string landlordName, string phone)
+        private void HandleLandlord(string sfLandlordID, string addr, string city, string state, string zipCode, string landlordContactName, string phone, string landlordName)
         {
             try
             {
@@ -101,7 +104,7 @@ namespace MISService.Methods
                 {
                     // insert to PermitLandlord
                     PermitLandlord pl = new PermitLandlord();
-                    pl.NAME = "New Location";
+                    pl.NAME = landlordName;
                     pl.ADDR_1 = addr;
                     pl.CITY = city;
                     pl.STATE = state;
@@ -113,13 +116,17 @@ namespace MISService.Methods
 
                     int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlord);
                     landlordID = id;
-                    CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlord, sfLandlordID, id.ToString(), salesForceProjectID);
+                    if (id > 0)
+                    {
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlord, sfLandlordID, id.ToString(), salesForceProjectID);
+                    }
                 }
                 else
                 {
                     var item = _db.PermitLandlords.Where(x => x.ROWID == landlordID).FirstOrDefault();
                     if (item != null)
                     {
+                        item.NAME = landlordName;
                         item.ADDR_1 = addr;
                         item.CITY = city;
                         item.STATE = state;
@@ -137,21 +144,24 @@ namespace MISService.Methods
                     /* add landloard contact */
                     PermitLandlordContact plc = new PermitLandlordContact();
                     plc.ROWID = landlordID;
-                    plc.CONTACT_FIRST_NAME = landlordName;
+                    plc.CONTACT_FIRST_NAME = landlordContactName;
                     plc.CONTACT_PHONE = phone;
 
                     _db.PermitLandlordContacts.Add(plc);
                     _db.SaveChanges();
 
                     int id = SqlCommon.GetNewlyInsertedRecordID(TableName.PermitLandlordContact);
-                    CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlordContact, sfLandlordID, id.ToString(), salesForceProjectID);
+                    if (id > 0)
+                    {
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.PermitLandlordContact, sfLandlordID, id.ToString(), salesForceProjectID);
+                    }
                 }
                 else
                 {
                     var item = _db.PermitLandlordContacts.Where(x => x.CONTACT_ID == landlordContactID).FirstOrDefault();
                     if (item != null)
                     {
-                        item.CONTACT_FIRST_NAME = landlordName;
+                        item.CONTACT_FIRST_NAME = landlordContactName;
                         item.CONTACT_PHONE = phone;
 
                         _db.Entry(item).State = EntityState.Modified;
@@ -253,7 +263,10 @@ namespace MISService.Methods
                             CreatePermit cpa = new CreatePermit(userEmployeeID, jobID, 30, 0);
                             cpa.Create();
                             int id = cpa.NewlyInsertedID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForHoisting, sp.Id, id.ToString(), salesForceProjectID);
+                            if (id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForHoisting, sp.Id, id.ToString(), salesForceProjectID);
+                            }
                             hoisting_permitID = id;
                         }
 
@@ -387,7 +400,10 @@ namespace MISService.Methods
                             CreatePermit cpa = new CreatePermit(userEmployeeID, jobID, 20, 0);
                             cpa.Create();
                             int id = cpa.NewlyInsertedID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForStakeout, sp.Id, id.ToString(), salesForceProjectID);
+                            if (id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.PermitForStakeout, sp.Id, id.ToString(), salesForceProjectID);
+                            }
                             stakeout_permitID = id;
                         }
 

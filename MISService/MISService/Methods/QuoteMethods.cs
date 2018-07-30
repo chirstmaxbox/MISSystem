@@ -77,7 +77,10 @@ namespace MISService.Methods
                             var qt = new QuoteTitleGenerate(jobID, estRevID);
                             qt.GenerateTitle();
                             int quoteRevID = qt.GetNewID();
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString(), salesForceProjectID);
+                            if (quoteRevID > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_quoteRev, ql.Id, quoteRevID.ToString(), salesForceProjectID);
+                            }
                             quoteID = quoteRevID;
                         }
 
@@ -185,7 +188,10 @@ namespace MISService.Methods
                             qnc.Insert();
 
                             int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Note);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString(), sfQuoteID, salesForceProjectID);
+                            if (newNoteId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Note, q.Id, newNoteId.ToString(), sfQuoteID, salesForceProjectID);
+                            }
                             noteID = newNoteId;
                         }
 
@@ -457,7 +463,10 @@ namespace MISService.Methods
                                );
                             }
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID, salesForceProjectID);
+                            if (qs_id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfQuoteID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -610,7 +619,7 @@ namespace MISService.Methods
                             if (itemID != 0)
                             {
                                 int quoteItemID = qt.GenerateNewItems(itemID);
-                                if (quoteItemID != 0)
+                                if (quoteItemID > 0)
                                 {
                                     CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID, salesForceProjectID);
                                     itemIDTemp = quoteItemID;
@@ -621,7 +630,7 @@ namespace MISService.Methods
                                 QuoteItemBlank qib = new QuoteItemBlank(quoteRevID);
                                 qib.CreateNew();
                                 int quoteItemID = qib.NewID;
-                                if (quoteItemID != 0)
+                                if (quoteItemID > 0)
                                 {
                                     CommonMethods.InsertToMISSalesForceMapping(TableName.Quote_Item, il.Id, quoteItemID.ToString(), sfQuoteID, salesForceProjectID);
                                     itemIDTemp = quoteItemID;

@@ -64,7 +64,10 @@ namespace MISService.Methods
                         {
                             InsertWorkShopInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Instruction_DataTable);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PW, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PW, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -325,7 +328,10 @@ namespace MISService.Methods
                         {
                             InsertInstallerInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Instruction_DataTable);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PI, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_PI, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -632,7 +638,10 @@ namespace MISService.Methods
                         {
                             InsertCheckList(woId, wl.Check_List_Item__c, wl.Content__c, wl.Content_For_Check_List_Item_As_Others__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_PC, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -953,7 +962,10 @@ namespace MISService.Methods
                         {
                             InsertNote(woId, q.Title, q.TextPreview);
                             int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_ShippingItem);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_P, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newNoteId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_P, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {

@@ -82,7 +82,10 @@ namespace MISService.Methods
                             SubContractCreate scCreate = new SubContractCreate(userEmployeeID);
                             scCreate.Create(sc);
                             subContractID = scCreate.NewlyInsertedID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.SubContract, sp.Id, subContractID.ToString(), salesForceProjectID);
+                            if (subContractID > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.SubContract, sp.Id, subContractID.ToString(), salesForceProjectID);
+                            }
                         }
 
                         if (subContractID != 0)

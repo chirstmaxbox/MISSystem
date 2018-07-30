@@ -63,7 +63,10 @@ namespace MISService.Methods
                         {
                             InsertInspectorInstruction(woId, wl.Category__c, wl.Instruction__c, wl.Final_Instruction__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Instruction_DataTable);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_SC_I, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Instruction_DataTable_SC_I, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -288,7 +291,10 @@ namespace MISService.Methods
                         {
                             InsertCheckList(woId, wl.Check_List_Item__c, wl.Content__c);
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_WORKORDER_CHECKLIST_DATATABLE);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC_C, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_WORKORDER_CHECKLIST_DATATABLE_SC_C, wl.Id, newId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -576,7 +582,10 @@ namespace MISService.Methods
                         {
                             InsertNote(woId, q.Title, q.TextPreview);
                             int newNoteId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_ShippingItem);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_SC, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            if (newNoteId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_ShippingItem_SC, q.Id, newNoteId.ToString(), sfWorkOrderID, salesForceProjectID);
+                            }
                         }
                         else
                         {

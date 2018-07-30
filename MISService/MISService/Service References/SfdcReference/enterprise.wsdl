@@ -134,6 +134,7 @@
               <xsd:element minOccurs="0" name="ShippingState" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="ShippingStreet" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="SicDesc" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Sign_Permits__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="SystemModstamp" nillable="true" type="xsd:dateTime" />
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Tasks" nillable="true" type="tns:QueryResult" />
@@ -2635,6 +2636,7 @@
               <xsd:element minOccurs="0" name="ReportsToId" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Salutation" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Shares" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Sign_Permits__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Sub_Contracts1__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Sub_Contracts__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Suffix" nillable="true" type="xsd:string" />
@@ -6319,7 +6321,6 @@
               <xsd:element minOccurs="0" name="Province__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="RecordActions" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="RecordAssociatedGroups" nillable="true" type="tns:QueryResult" />
-              <xsd:element minOccurs="0" name="Sign_Permits__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Street__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="SystemModstamp" nillable="true" type="xsd:dateTime" />
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />
@@ -10678,9 +10679,11 @@
               <xsd:element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="Issue_Date__c" nillable="true" type="xsd:date" />
-              <xsd:element minOccurs="0" name="LandLord_Name__c" nillable="true" type="tns:ID" />
-              <xsd:element minOccurs="0" name="LandLord_Name__r" nillable="true" type="ens:LandLord__c" />
+              <xsd:element minOccurs="0" name="LandLord_Contact__c" nillable="true" type="tns:ID" />
+              <xsd:element minOccurs="0" name="LandLord_Contact__r" nillable="true" type="ens:Contact" />
               <xsd:element minOccurs="0" name="LandLord_Phone_Number__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LandLord__c" nillable="true" type="tns:ID" />
+              <xsd:element minOccurs="0" name="LandLord__r" nillable="true" type="ens:Account" />
               <xsd:element minOccurs="0" name="Landlord_Location__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="LastModifiedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="LastModifiedById" nillable="true" type="tns:ID" />
@@ -13242,6 +13245,7 @@
               <xsd:element minOccurs="0" name="UserRecordAccess" nillable="true" type="ens:UserRecordAccess" />
               <xsd:element minOccurs="0" name="Version__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="WorkShop_Instructions__r" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Work_Order_Hour__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Work_Order_Type__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Worker_Instructions__r" nillable="true" type="tns:QueryResult" />
             </xsd:sequence>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-07-24 15:00:16 +0000.
+Generated on 2018-07-27 18:14:34 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -154,6 +154,7 @@ All Rights Reserved
                         <element name="ShippingState" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="ShippingStreet" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SicDesc" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Sign_Permits__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Tasks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -2747,6 +2748,7 @@ All Rights Reserved
                         <element name="ReportsToId" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Salutation" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Shares" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Sign_Permits__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Sub_Contracts1__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Sub_Contracts__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Suffix" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -6567,7 +6569,6 @@ All Rights Reserved
                         <element name="Province__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
-                        <element name="Sign_Permits__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Street__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -11061,9 +11062,11 @@ All Rights Reserved
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
-                        <element name="LandLord_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
-                        <element name="LandLord_Name__r" nillable="true" minOccurs="0" type="ens:LandLord__c"/>
+                        <element name="LandLord_Contact__c" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="LandLord_Contact__r" nillable="true" minOccurs="0" type="ens:Contact"/>
                         <element name="LandLord_Phone_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="LandLord__c" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="LandLord__r" nillable="true" minOccurs="0" type="ens:Account"/>
                         <element name="Landlord_Location__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="LastModifiedById" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -13705,6 +13708,7 @@ All Rights Reserved
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
                         <element name="Version__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="WorkShop_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Work_Order_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Work_Order_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Worker_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         </sequence>

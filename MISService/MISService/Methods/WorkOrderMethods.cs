@@ -72,7 +72,10 @@ namespace MISService.Methods
                             WorkorderGenerateFromEstimation gw = new WorkorderGenerateFromEstimation(jobID, estRevID);
                             gw.CreateNew();
                             workOrderID = gw.WoID;
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_WO, ql.Id, workOrderID.ToString(), salesForceProjectID);
+                            if (workOrderID > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_WO, ql.Id, workOrderID.ToString(), salesForceProjectID);
+                            }
                         }
 
                         if (workOrderID != 0)
@@ -220,7 +223,10 @@ namespace MISService.Methods
                                     dp.Insert();
 
                                     int newTaskId = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_Dispatching);
-                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching, sfWorkOrderID, newTaskId.ToString(), salesForceProjectID);
+                                    if (newTaskId > 0)
+                                    {
+                                        CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching, sfWorkOrderID, newTaskId.ToString(), salesForceProjectID);
+                                    }
                                 }
 
                             }
@@ -273,7 +279,10 @@ namespace MISService.Methods
                             {
                                 woItem.InsertItem();
                                 int newWOItemID = woItem.NewWorkItemID;
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item, il.Id, newWOItemID.ToString(), sfWorkOrderID, salesForceProjectID);
+                                if (newWOItemID > 0)
+                                {
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item, il.Id, newWOItemID.ToString(), sfWorkOrderID, salesForceProjectID);
+                                }
                                 itemIDTemp = newWOItemID;
                             }
                         }
@@ -517,7 +526,10 @@ namespace MISService.Methods
                     {
                         InsertNewSiteCheckPurpose(workOrderID, siteCheckPurpose, siteCheckPurposeAsOther);
                         int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Sitecheck_Purpose);
-                        CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, newId.ToString(), salesForceProjectID);
+                        if (newId > 0)
+                        {
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Sitecheck_Purpose, sfWorkOrderID, newId.ToString(), salesForceProjectID);
+                        }
                     }
                     else
                     {

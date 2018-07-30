@@ -1,0 +1,105 @@
+2018-07-27 10:37:31,684 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-27 10:37:40,716 INFO MISService.Method.LogMethods - Polling:1
+2018-07-27 10:37:40,732 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:38:02,650 INFO MISService.Method.LogMethods - Polling:2
+2018-07-27 10:38:02,650 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:38:22,789 INFO MISService.Method.LogMethods - Polling:3
+2018-07-27 10:38:22,789 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:38:23,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:38:27,984 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:38:27,984 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:38:47,999 INFO MISService.Method.LogMethods - Polling:4
+2018-07-27 10:38:47,999 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:38:48,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:38:50,698 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:38:50,698 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:39:10,713 INFO MISService.Method.LogMethods - Polling:5
+2018-07-27 10:39:10,713 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:39:10,931 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:39:12,335 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:39:12,335 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:39:32,350 INFO MISService.Method.LogMethods - Polling:6
+2018-07-27 10:39:32,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:39:32,615 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:39:34,160 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:39:34,160 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:39:54,161 INFO MISService.Method.LogMethods - Polling:7
+2018-07-27 10:39:54,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:39:54,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:39:55,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:39:55,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:40:15,990 INFO MISService.Method.LogMethods - Polling:8
+2018-07-27 10:40:15,990 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:40:16,224 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:40:18,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:40:18,252 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:40:38,267 INFO MISService.Method.LogMethods - Polling:9
+2018-07-27 10:40:38,267 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:40:38,407 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:40:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:40:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:40:59,811 INFO MISService.Method.LogMethods - Polling:10
+2018-07-27 10:40:59,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:41:00,045 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:41:01,417 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:41:01,417 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:41:21,432 INFO MISService.Method.LogMethods - Polling:11
+2018-07-27 10:41:21,432 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:41:21,744 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:41:23,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:41:23,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:41:43,116 INFO MISService.Method.LogMethods - Polling:12
+2018-07-27 10:41:43,116 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:41:43,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:41:46,283 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:41:46,283 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:42:06,298 INFO MISService.Method.LogMethods - Polling:13
+2018-07-27 10:42:06,298 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:42:06,438 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:42:07,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:42:07,920 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:42:27,935 INFO MISService.Method.LogMethods - Polling:14
+2018-07-27 10:42:27,935 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:42:28,169 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:42:29,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:42:29,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:42:49,588 INFO MISService.Method.LogMethods - Polling:15
+2018-07-27 10:42:49,588 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:42:49,806 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:42:51,210 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:42:51,210 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:43:11,225 INFO MISService.Method.LogMethods - Polling:16
+2018-07-27 10:43:11,225 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:43:11,756 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:43:13,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:43:13,378 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:43:33,393 INFO MISService.Method.LogMethods - Polling:17
+2018-07-27 10:43:33,393 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:43:33,705 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:43:35,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:43:35,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:43:55,061 INFO MISService.Method.LogMethods - Polling:18
+2018-07-27 10:43:55,061 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-07-27 10:43:55,280 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS
+2018-07-27 10:43:56,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: FF SATURDAY BUBBLE TEA - TAKE DOWN SIGNS<Project Num:18P000131>
+2018-07-27 10:43:56,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-07-27 10:44:16,714 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-27 11:16:50,846 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-27 12:35:30,686 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-07-27 14:35:30,788 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-27 16:17:50,783 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:19:03,108 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:19:54,136 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:20:48,812 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:21:44,568 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:22:40,311 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:23:31,921 ERROR MISService.Method.LogMethods - GetAllSignPermits:Error:Object reference not set to an instance of an object.
+2018-07-27 16:58:44,397 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-07-27 19:49:16,836 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:49:46,960 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:50:17,068 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:50:47,176 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:51:17,284 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:51:47,408 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:52:17,734 ERROR MISService.Method.LogMethods - GetAllProjects:Error:REQUEST_LIMIT_EXCEEDED: TotalRequests Limit exceeded.
+2018-07-27 19:52:47,748 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------

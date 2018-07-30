@@ -125,7 +125,7 @@ namespace SalesCenterDomain.BDL.Workorder
 
         public void CreateNew()
         {
-            if (ValidationErrorID != 0) return;
+            //if (ValidationErrorID != 0) return;
 
             InsertNewWorkOrderHeader();
 

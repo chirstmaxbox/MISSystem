@@ -74,7 +74,15 @@ namespace MISService.Method
                                 /* update jobnumber */
                                 UpdateJobNumber(jobID, opportunity.Project_Number__c);
                                 /* insert data to MISSalesForceMapping */
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString(), opportunity.Id);
+                                if (jobID > 0)
+                                {
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList, opportunity.Id, jobID.ToString(), opportunity.Id);
+                                }
+                                else
+                                {
+                                    LogMethods.Log.Error("GetAllProjects:Error:" + "Cannot create a new project!");
+                                    continue;
+                                }
                                 sales_JobMasterListID = jobID;
                             }
                             else

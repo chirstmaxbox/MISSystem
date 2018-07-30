@@ -75,7 +75,10 @@ namespace MISService.Methods
                                 InvoiceTitleGenerateFromProject inv = new InvoiceTitleGenerateFromProject(jobID);
                                 inv.Generate();
                                 invoiceID = inv.MyID;
-                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_Invoice, ql.Id, invoiceID.ToString(), salesForceProjectID);
+                                if (invoiceID > 0)
+                                {
+                                    CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_JobMasterList_Invoice, ql.Id, invoiceID.ToString(), salesForceProjectID);
+                                }
                             }
                             else
                             {
@@ -146,7 +149,10 @@ namespace MISService.Methods
                             );
 
                             int qs_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Fw_Quote_Service);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfInvoiceID, salesForceProjectID);
+                            if (qs_id > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Fw_Quote_Service, sl.Id, qs_id.ToString(), sfInvoiceID, salesForceProjectID);
+                            }
                         }
                         else
                         {
@@ -297,7 +303,10 @@ namespace MISService.Methods
                             InvoiceItemBlank inv = new InvoiceItemBlank(invoiceID);
                             inv.CreateNew();
                             int newId = SqlCommon.GetNewlyInsertedRecordID(TableName.Invoice_Item);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Invoice_Item, il.Id, newId.ToString(), sfInvoiceID, salesForceProjectID);
+                            if (newId > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Invoice_Item, il.Id, newId.ToString(), sfInvoiceID, salesForceProjectID);
+                            }
                             itemIDTemp = newId;
                         }
 

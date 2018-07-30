@@ -172,7 +172,10 @@ namespace MISService.Methods
                         vm.CreateRequisitionItems();
                         foreach (var ret in results)
                         {
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, ret.Value1, ret.Value2, sfDrawingID, salesForceProjectID);
+                            if (Convert.ToInt16(ret.Value2) > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, ret.Value1, ret.Value2, sfDrawingID, salesForceProjectID);
+                            }
                         }
                     }
 

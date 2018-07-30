@@ -184,7 +184,10 @@ namespace MISService.Methods
                     FsCustomerContact cc = new FsCustomerContact(customerRowID);
                     cc.InsertContact();
                     int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
-                    CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
+                    if (contact_id > 0)
+                    {
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
+                    }
                     vContactID = contact_id;
                 }
 
@@ -243,7 +246,10 @@ namespace MISService.Methods
                     cp.Insert(misJobID, 0, false, false, false);
                     int jcID = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_JobMasterList_Customer);
                     int rowID = CreateCustomer(customer, jcID);
-                    CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString(), salesForceProjectID);
+                    if (rowID > 0)
+                    {
+                        CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString(), salesForceProjectID);
+                    }
                     HandleAccountContact(misJobID, jcID, contactID, rowID, firstName, lastName, phone, accountID, type);
                 }
                 else

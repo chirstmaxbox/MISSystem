@@ -111,7 +111,7 @@ namespace MISService
                         else
                         {
                             // wait 1 minutes for next polling
-                            Thread.Sleep(60000);
+                            Thread.Sleep(30000);
                         }
                     }
                 }

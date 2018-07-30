@@ -208,7 +208,10 @@ namespace MISService.Methods
                                 productID = optionDetails.ProductID;
                             }
                             var est = new MyEstItemCreate(estRevID, productID, il.Item_Name__c);
-                            CommonMethods.InsertToMISSalesForceMapping(TableName.EST_Item, il.Id, est.EstItemID.ToString(), sfEstimation, salesForceProjectID);
+                            if (est != null && est.EstItemID > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.EST_Item, il.Id, est.EstItemID.ToString(), sfEstimation, salesForceProjectID);
+                            }
                             estItemID = est.EstItemID;
                         }
 
