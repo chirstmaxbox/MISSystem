@@ -95,7 +95,7 @@ namespace SalesCenterDomain.BDL.Task
         }
 
 
-        public virtual void Insert()
+        public virtual void Insert(int version)
         {
             ParameterDispatchingTask.RefreshResponsible();
 
@@ -106,7 +106,7 @@ namespace SalesCenterDomain.BDL.Task
 
             if (!IsThisRecordExisting())
             {
-                dti.InsertRecord();
+                dti.InsertRecord(version);
                 ActionResultCode = 1;
             }
             else
@@ -114,7 +114,7 @@ namespace SalesCenterDomain.BDL.Task
                 ActionResultCode = 10010; //existing item
                 if (EnableDuplicateSubmit)
                 {
-                    dti.InsertRecord();
+                    dti.InsertRecord(version);
                     ActionResultCode = 1;
                 }
             }

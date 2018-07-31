@@ -125,7 +125,7 @@ namespace MISService.Method
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing estimation");
                             EstimationMethods em = new EstimationMethods(opportunity.Id);
                             int estRevID = CommonMethods.GetEstRevID(sales_JobMasterListID);
-                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID);
+                            em.GetEstimation(opportunity.Id, estRevID, sales_JobMasterListID, fsEmployee.EmployeeNumber);
 
                             /*Drawing */
                             LogMethods.Log.Debug("GetAllProjects:Debug:" + "Processing drawing");

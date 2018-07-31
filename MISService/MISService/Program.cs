@@ -26,14 +26,14 @@ namespace MISService
             }
             LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
             */
-
+            
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
                 new MyMISService() 
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(ServicesToRun); 
         }
     }
 }

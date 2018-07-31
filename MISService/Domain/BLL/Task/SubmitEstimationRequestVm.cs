@@ -151,8 +151,30 @@ namespace SpecDomain.BLL.Task
 
         }
 
+        public void OnEstimationSubmittedWithoutChangingEstVer()
+        {
+            var items = _db.EST_Item.Where(x => x.EstRevID == EstRevID &&
+                                                (x.StatusID == (int)NEstItemStatus.New | x.StatusID == (int)NEstItemStatus.ContentsChanged) &&
+                                                x.ItemPurposeID == (short)NEstItemPurpose.ForEstimation
+                                                ).ToList();
 
-        
+            //Save Existing Item to backup
+            foreach (var item in items)
+            {
+                item.StatusID = (short)NEstItemStatus.Submitted;
+                item.Version += 1;
+                _db.Entry(item).State = EntityState.Modified;
+            }
+            _db.SaveChanges();
+
+            var est = _db.Sales_JobMasterList_EstRev.Find(EstRevID);
+            var task = _db.Sales_Dispatching.Find(TaskID);
+            task.Importance = est.erRev;
+            _db.Entry(task).State = EntityState.Modified;
+            _db.SaveChanges();
+
+        }
+   
         public SubmitEstimationRequestVm(long taskID)
         {
             //EstRev

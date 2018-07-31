@@ -1,6 +1,7 @@
 ﻿using CustomerDomain.Model;
 using MISService.Method;
 using MISService.Models;
+using MyCommon;
 using SpecDomain.BLL.EstItem;
 using SpecDomain.BLL.Task;
 using SpecDomain.Model;
@@ -34,7 +35,7 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetEstimation(string sfProjectID, int estRevID, int jobID)
+        public void GetEstimation(string sfProjectID, int estRevID, int jobID, int employeeNumber)
         {
             try
             {
@@ -42,7 +43,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, "
+                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, Estimation_Hour__c, "
+                                        + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
                                         + " (SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c FROM Items__r),"
                                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                                         + " FROM Estimation__c "
@@ -75,7 +77,7 @@ namespace MISService.Methods
 
                         UpdateEstimation(estRevID, el.Cost__c, el.Remarks__c, el.Version__c);
 
-                        //GetApprovalData(el.Id, jobID, estRevID);
+                        //GetApprovalData(el.Id, jobID, estRevID, el.ProcessInstances, el.Version__c, employeeNumber, el.Estimation_Hour__c);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
                 }
@@ -85,7 +87,66 @@ namespace MISService.Methods
                 LogMethods.Log.Error("GetEstimation:Error:" + e.Message);
             }
         }
+        /*
+        private void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID, enterprise.QueryResult result, double? version, int employeeNumber, double? estHour)
+        {
+            try
+            {
+                if (version == null || result == null || (result != null && result.size == 0)) return;
 
+                //cast query results
+                IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
+
+                foreach (var el in processInstanceList)
+                {
+                    if (el.Status == "Pending")
+                    {
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201 && x.Importance == version).FirstOrDefault();
+                        if (sales_Dispatching == null)
+                        {
+                            SubmitEstimationRequestVm vm = new SubmitEstimationRequestVm();
+                            vm.JobID = jobId;
+                            vm.EstRevID = estRevID;
+                            vm.SubmitBy = employeeNumber;
+                            vm.EstimatorID = 8;
+
+                            DateTime dt1 = MyDateTime.GetDateOfAddedBusinessDays(DateTime.Today, 2);
+                            DateTime dt2 = DateTime.Now.AddMinutes(2);
+                            vm.FormatedRequiredTime =
+                                new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+
+                            vm.Create();
+                            vm.OnEstimationSubmittedWithoutChangingEstVer();
+                        }
+                    }
+                    else if (el.Status == "Approved")
+                    {
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201 && x.Importance == version).FirstOrDefault();
+                        if (sales_Dispatching != null)
+                        {
+                            if (estHour != null)
+                            {
+                                sales_Dispatching.WorkedHour = estHour;
+                            }
+                            sales_Dispatching.Status = 249;
+                            if (el.CompletedDate != null)
+                            {
+                                sales_Dispatching.FinishedDate = el.CompletedDate.Value.ToLocalTime();
+                            }
+
+                            _db.Entry(sales_Dispatching).State = EntityState.Modified;
+                            _db.SaveChanges();
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
+            }
+        }
+        */
         private void UpdateEstimation(int estRevID, double? cost, string remarks, double? version)
         {
             try

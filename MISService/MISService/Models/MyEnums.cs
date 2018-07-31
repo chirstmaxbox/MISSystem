@@ -50,6 +50,7 @@ namespace MISService.Models
 
         /* End */
         public static string Sales_Dispatching = "Sales_Dispatching";
+
         public static string SubContract = "SubContract";
         public static string Sales_JobMasterList_Invoice = "Sales_JobMasterList_Invoice";
         public static string Invoice_Item = "Invoice_Item";

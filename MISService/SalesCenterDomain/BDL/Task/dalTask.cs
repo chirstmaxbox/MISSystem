@@ -20,12 +20,12 @@ namespace SalesCenterDomain.BDL.Task
             _cp = createParameter;
         }
 
-        public void InsertRecord()
+        public void InsertRecord(int version)
         {
             using (var connection = new SqlConnection(SalesCenterConfiguration.ConnectionString))
             {
                 string InsertString =
-                    "INSERT INTO [Sales_Dispatching] ([taskType], [jobID], [estRevID], [woID], [submitBy], [Responsible], [Subject], [Description], [Status], [submitTime], [lastUpdateTime], [requiredTime],[requestType], [iiOkTime],[Rush]) VALUES (@taskType, @jobID, @estRevID, @woID, @submitBy, @Responsible, @Subject, @Description, @Status, @submitTime, @lastUpdateTime, @requiredTime,@requestType, @iiOkTime,@Rush)";
+                    "INSERT INTO [Sales_Dispatching] ([taskType], [jobID], [estRevID], [woID], [submitBy], [Responsible], [Subject], [Description], [Status], [submitTime], [lastUpdateTime], [requiredTime],[requestType], [iiOkTime],[Rush],[Importance]) VALUES (@taskType, @jobID, @estRevID, @woID, @submitBy, @Responsible, @Subject, @Description, @Status, @submitTime, @lastUpdateTime, @requiredTime,@requestType, @iiOkTime,@Rush, @Importance)";
                 // Create the command and set its properties.
                 var insertCommand = new SqlCommand(InsertString, connection);
                 try
@@ -41,6 +41,7 @@ namespace SalesCenterDomain.BDL.Task
                     insertCommand.Parameters.Add("@Description", SqlDbType.NVarChar, 500).Value = _cp.Description;
                     insertCommand.Parameters.Add("@Status", SqlDbType.SmallInt).Value = _cp.Status;
                     insertCommand.Parameters.Add("@submitTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                    insertCommand.Parameters.Add("@Importance", SqlDbType.SmallInt).Value = version;
 
                     insertCommand.Parameters.Add("@lastUpdateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
                     insertCommand.Parameters.Add("@requiredTime", SqlDbType.SmallDateTime).Value = _cp.RequiredTime;

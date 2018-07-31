@@ -110,7 +110,7 @@ namespace MISService
                         }
                         else
                         {
-                            // wait 30 seconds for next polling
+                            // wait 60 seconds for next polling
                             Thread.Sleep(30000);
                         }
                     }
