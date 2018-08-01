@@ -33,13 +33,31 @@ namespace MISService.Methods
             this.salesForceProjectID = salesForceProjectID;
         }
 
-        public void GetAllDrawings(string sfProjectID, int estRevID, int jobID, enterprise.QueryResult result)
+        public void GetAllDrawings(string sfProjectID, int estRevID, int jobID, int employeeNumber)
         {
             try
             {
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    if (result == null || (result != null && result.size == 0)) return;
+                    //create SQL query statement
+                    string query = "SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
+                                    + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
+                                    + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate, Drawing_Hour__c, Target_Date__c, "
+                                    + " (SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Items__r),"
+                                    + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1)"
+                                    + " FROM Drawing__c "
+                                    + " WHERE Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc limit 1";
+
+                    enterprise.QueryResult result;
+                    queryClient.query(
+                        header, //sessionheader
+                        null, //queryoptions
+                        null, //mruheader
+                        null, //packageversion
+                        query, out result);
+
+                    /* if no any record, return */
+                    if (result.size == 0) return;
 
                     IEnumerable<enterprise.Drawing__c> drawingList = result.records.Cast<enterprise.Drawing__c>();
                     /* in MIS, only one drawing */
@@ -62,7 +80,9 @@ namespace MISService.Methods
                             UpdateMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, dl.Id);
 
                             // add items to drawing
-                            GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id);
+                            GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id, dl.Items__r);
+
+                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c);
                         }
                     }
 
@@ -72,6 +92,75 @@ namespace MISService.Methods
             catch (Exception e)
             {
                 LogMethods.Log.Error("GetAllDrawing:Error:" + e.Message);
+            }
+        }
+
+        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType)
+        {
+            try
+            {
+                if (version == null || result == null || (result != null && result.size == 0)) return;
+
+                //cast query results
+                IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
+
+                foreach (var el in processInstanceList)
+                {
+                    int taskType = 501;
+                    short taskStatus = 549;
+                    if (drawingType.Trim() == "Structure")
+                    {
+                        taskType = 551;
+                        taskStatus = 599;
+                    }
+
+                    if (el.Status == "Pending")
+                    {
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
+                        if (sales_Dispatching == null)
+                        {
+                            var vm = new SubmitDrawingRequestVm(requisitionId, employeeNumber);
+
+                            if (dueDate != null)
+                            {
+                                vm.FormatedRequiredTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, dueDate.Value.Hour, dueDate.Value.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
+                            else
+                            {
+                                DateTime dt1 = MyDateTime.GetDateOfAddedBusinessDays(DateTime.Today, 2);
+                                DateTime dt2 = DateTime.Now.AddMinutes(2);
+                                vm.FormatedRequiredTime =
+                                    new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
+
+                            vm.Create(Convert.ToInt16(version));
+                        }
+                    }
+                    else if (el.Status == "Approved")
+                    {
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
+                        if (sales_Dispatching != null)
+                        {
+                            if (drawHour != null)
+                            {
+                                sales_Dispatching.WorkedHour = drawHour;
+                            }
+                            sales_Dispatching.Status = taskStatus;
+                            if (el.CompletedDate != null)
+                            {
+                                sales_Dispatching.FinishedDate = el.CompletedDate.Value.ToLocalTime();
+                            }
+
+                            _db.Entry(sales_Dispatching).State = EntityState.Modified;
+                            _db.SaveChanges();
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("GetDrawingApprovalData:Error:" + e.Message);
             }
         }
 
@@ -100,26 +189,14 @@ namespace MISService.Methods
             }
         }
 
-        private void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, int estRevID, string sfDrawingID)
+        private void GetAllDrawingItems(string sfProjectID, int drawingRequisitionID, int estRevID, string sfDrawingID, enterprise.QueryResult result)
         {
             try
             {
                 //create service client to call API endpoint
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
-                    //create SQL query statement
-                    string query = "SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Item__c where Drawing_Name__c = '" + sfDrawingID + "'";
-
-                    enterprise.QueryResult result;
-                    queryClient.query(
-                        header, //sessionheader
-                        null, //queryoptions
-                        null, //mruheader
-                        null, //packageversion
-                        query, out result);
-
-                    /* if no any record, return */
-                    if (result.size == 0) return;
+                    if (result == null || (result != null && result.size == 0)) return;
 
                     //cast query results
                     IEnumerable<enterprise.Item__c> itemList = result.records.Cast<enterprise.Item__c>();

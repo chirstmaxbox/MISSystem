@@ -479,3 +479,38 @@
 2018-07-31 16:31:16,308 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:CanadianTire
 2018-07-31 16:31:17,360 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: CanadianTire<Project Num:18P000138>
 2018-07-31 16:31:17,360 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-01 10:24:45,912 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 10:24:59,253 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 10:25:01,809 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 10:27:01,667 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 10:27:11,887 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 10:27:14,145 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 10:30:01,274 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 10:30:12,113 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 10:30:14,314 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 10:49:44,396 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 10:49:54,954 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 10:49:57,222 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 11:56:44,421 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 11:56:56,331 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 11:56:58,630 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 11:57:05,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Water Pro<Project Num:18P000140>
+2018-08-01 11:57:05,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-01 13:15:03,659 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:15:14,508 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:15:17,008 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 13:17:18,179 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:17:30,453 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:17:33,179 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 13:20:31,400 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:20:42,781 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:20:44,995 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 13:22:43,079 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:22:53,383 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:22:55,641 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 13:27:22,264 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:27:35,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:27:37,692 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro
+2018-08-01 13:28:49,257 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-01 13:29:00,860 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-01 13:29:03,311 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Water Pro

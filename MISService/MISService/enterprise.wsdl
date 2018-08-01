@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-07-27 18:14:34 +0000.
+Generated on 2018-08-01 17:37:28 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -7694,6 +7694,7 @@ All Rights Reserved
                         <element name="Contract" nillable="true" minOccurs="0" type="ens:Contract"/>
                         <element name="ContractId" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Count_Bill_Quote_Ship__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Count_Drawing_Record__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Count_Estimation_Record__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>

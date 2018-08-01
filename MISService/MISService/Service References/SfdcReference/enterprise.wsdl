@@ -7406,6 +7406,7 @@
               <xsd:element minOccurs="0" name="Contract" nillable="true" type="ens:Contract" />
               <xsd:element minOccurs="0" name="ContractId" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Count_Bill_Quote_Ship__c" nillable="true" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Count_Drawing_Record__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Count_Estimation_Record__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="CreatedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="CreatedById" nillable="true" type="tns:ID" />

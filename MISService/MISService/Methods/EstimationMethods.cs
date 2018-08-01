@@ -43,7 +43,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, Estimation_Hour__c, "
+                    string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, Estimation_Hour__c, Target_Date__c, "
                                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
                                         + " (SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c FROM Items__r),"
                                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
@@ -77,7 +77,7 @@ namespace MISService.Methods
 
                         UpdateEstimation(estRevID, el.Cost__c, el.Remarks__c, el.Version__c);
 
-                        //GetApprovalData(el.Id, jobID, estRevID, el.ProcessInstances, el.Version__c, employeeNumber, el.Estimation_Hour__c);
+                        GetEstimationApprovalData(el.Id, jobID, estRevID, el.ProcessInstances, el.Version__c, employeeNumber, el.Estimation_Hour__c, el.Target_Date__c);
                     }
                     LogMethods.Log.Debug("GetEstimation:Debug:" + "Done");
                 }
@@ -87,8 +87,8 @@ namespace MISService.Methods
                 LogMethods.Log.Error("GetEstimation:Error:" + e.Message);
             }
         }
-        /*
-        private void GetApprovalData(string sfEstimaitonID, int jobId, int estRevID, enterprise.QueryResult result, double? version, int employeeNumber, double? estHour)
+        
+        private void GetEstimationApprovalData(string sfEstimaitonID, int jobId, int estRevID, enterprise.QueryResult result, double? version, int employeeNumber, double? estHour, DateTime? dueDate )
         {
             try
             {
@@ -110,10 +110,17 @@ namespace MISService.Methods
                             vm.SubmitBy = employeeNumber;
                             vm.EstimatorID = 8;
 
-                            DateTime dt1 = MyDateTime.GetDateOfAddedBusinessDays(DateTime.Today, 2);
-                            DateTime dt2 = DateTime.Now.AddMinutes(2);
-                            vm.FormatedRequiredTime =
-                                new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            if (dueDate != null)
+                            {
+                                vm.FormatedRequiredTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, dueDate.Value.Hour, dueDate.Value.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
+                            else
+                            {
+                                DateTime dt1 = MyDateTime.GetDateOfAddedBusinessDays(DateTime.Today, 2);
+                                DateTime dt2 = DateTime.Now.AddMinutes(2);
+                                vm.FormatedRequiredTime =
+                                    new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
 
                             vm.Create();
                             vm.OnEstimationSubmittedWithoutChangingEstVer();
@@ -143,10 +150,10 @@ namespace MISService.Methods
             }
             catch (Exception e)
             {
-                LogMethods.Log.Error("GetApprovalData:Error:" + e.Message);
+                LogMethods.Log.Error("GetEstimationApprovalData:Error:" + e.Message);
             }
         }
-        */
+     
         private void UpdateEstimation(int estRevID, double? cost, string remarks, double? version)
         {
             try
