@@ -12,8 +12,10 @@ namespace MISService.Method
     public class SalesForceMethods
     {
         public static string userName = "anh.tran@exocloud.ca";
+        //public static string userName = "anh.tran@exocloud.ca.testing";
         public static string password = "6%namnhumoinamA";
         public static string token = "4OtoAt7RYUMt7NVhgdsCaKS8z";
+        //public static string token = "8AUgkOkaesxHncSWplLKVrB4";
 
         public static string sessionId = string.Empty;
         public static string serverUrl = string.Empty;

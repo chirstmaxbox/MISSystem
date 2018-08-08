@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-08-01 17:37:28 +0000.
+Generated on 2018-08-07 14:37:18 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -6364,6 +6364,7 @@ All Rights Reserved
                         <element name="Installing_Address__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Invoice_Grand_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Invoice_Sub_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Invoice_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="ItemCost1Set__c" nillable="true" minOccurs="0" type="xsd:double"/>
@@ -7770,6 +7771,8 @@ All Rights Reserved
                         <element name="SyncedQuote" nillable="true" minOccurs="0" type="ens:Quote"/>
                         <element name="SyncedQuoteId" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="TEST_PATH_URL__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="TEST_Path__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Tasks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13644,6 +13647,7 @@ All Rights Reserved
                 <complexContent>
                     <extension base="ens:sObject">
                         <sequence>
+                        <element name="Amount__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13686,7 +13690,8 @@ All Rights Reserved
                         <element name="NotesAndAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Number_Of_Items__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Payment_Method__c" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="Previous_Work_Order_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Previous_Work_Order_Number__c" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="Previous_Work_Order_Number__r" nillable="true" minOccurs="0" type="ens:Work_Order__c"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Production_Check_List__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13711,6 +13716,7 @@ All Rights Reserved
                         <element name="WorkShop_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Work_Order_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Work_Order_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Work_Orders__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Worker_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         </sequence>
                     </extension>

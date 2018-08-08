@@ -44,7 +44,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
+                    string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
                         + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
@@ -92,7 +92,7 @@ namespace MISService.Methods
                         if (invoiceID != 0)
                         {
                             UpdateInvoice(invoiceID, ql.Name, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
-                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c);
+                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c);
 
                             /* handle item */
                             HandleInvoiceItem(invoiceID, estRevID, ql.Id, ql.Items__r);
@@ -397,7 +397,7 @@ namespace MISService.Methods
         }
 
         private void UpdateInvoice(int invoiceID, string invoiceNumber, DateTime? issueDate, int sale, string term, string contractNo,
-            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount)
+            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType)
         {
             try
             {
@@ -501,6 +501,21 @@ namespace MISService.Methods
                     if (discount != null)
                     {
                         invoice.Discount = (-1) * Convert.ToDecimal(discount);
+                    }
+
+                    if (invoiceType != null)
+                    {
+                        switch (invoiceType)
+                        {
+                            case "Regular":
+                                invoice.invoiceType = 1;
+                                break;
+                            case "Proforma":
+                                invoice.invoiceType = 2;
+                                break;
+                            default:
+                                break;
+                        }
                     }
 
                     _db.Entry(invoice).State = EntityState.Modified;

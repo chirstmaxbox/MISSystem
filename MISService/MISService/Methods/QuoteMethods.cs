@@ -90,7 +90,7 @@ namespace MISService.Methods
 
                         if (quoteID != 0)
                         {
-                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c);
+                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c, ql.Terms__c);
 
                             // handle quote items
                             HandleQuoteItem(jobID, estRevID, quoteID, ql.Id, ql.Items__r);
@@ -358,7 +358,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, string taxRate)
+        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, string taxRate, string term)
         {
             try
             {
@@ -401,6 +401,49 @@ namespace MISService.Methods
                             break;
                         default:
                             break;
+                    }
+
+                    if (!string.IsNullOrEmpty(term))
+                    {
+                        switch (term)
+                        {
+                            case "Cash On Delivery":
+                                sales_JobMasterList_quoteRev.termBalance = 0;
+                                break;
+                            case "Customer Net 7 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 7;
+                                break;
+                            case "Customer Net 10 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 10;
+                                break;
+                            case "Customer Net 15 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 15;
+                                break;
+                            case "Customer Net 20 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 20;
+                                break;
+                            case "Customer Net 30 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 30;
+                                break;
+                            case "Customer Net 45 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 45;
+                                break;
+                            case "Customer Net 60 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 60;
+                                break;
+                            case "Customer Net 180 Days":
+                                sales_JobMasterList_quoteRev.termBalance = 180;
+                                break;
+                            case "Due Upon Receipt":
+                                sales_JobMasterList_quoteRev.termBalance = 100;
+                                break;
+                            case "75 3WD":
+                                sales_JobMasterList_quoteRev.termBalance = 200;
+                                break;
+                            default:
+                                sales_JobMasterList_quoteRev.termBalance = 1000;
+                                break;
+                        }
                     }
 
                     _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;
