@@ -47,7 +47,7 @@ namespace MISService.Methods
                     string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
                         + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c,"
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
-                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c, Item_Link__c FROM Items__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM Installer_Instructions__r),"
                         + " (SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c FROM Production_Check_List__r),"
@@ -266,7 +266,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.Item_Link__c);
                         }
                     }
 
@@ -312,7 +312,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string itemLink)
         {
             try
             {
@@ -354,12 +354,116 @@ namespace MISService.Methods
 
                     _db.Entry(workOrderItem).State = EntityState.Modified;
                     _db.SaveChanges();
+
+
+                    int drawingID = GetItemLink(workOrderItemID);
+                    if (drawingID == 0)
+                    {
+                        // insert
+                        if (!string.IsNullOrEmpty(itemLink))
+                        {
+                            InsertItemLink(workOrderItemID, itemLink);
+                        }
+                    }
+                    else
+                    {
+                        //update
+                        UpdateItemLink(drawingID, itemLink);
+                    }
+
                 }
             }
             catch (Exception e)
             {
                 LogMethods.Log.Error("UpdateWorkOrderItem:Error:" + e.Message);
             }
+        }
+
+        private void UpdateItemLink(long drawingID, string itemLink)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlUpdateString = "UPDATE WO_Item_Drawing SET DrawingHyperlink = @DrawingHyperlink WHERE (DrawingID = @DrawingID)";
+                var UpdateCommand = new SqlCommand(SqlUpdateString, Connection);
+                UpdateCommand.Parameters.AddWithValue("@DrawingID", drawingID);
+                if (itemLink != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@DrawingHyperlink", itemLink);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@DrawingHyperlink", "");
+                }
+                Connection.Open();
+                UpdateCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("UpdateItemLink:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private void InsertItemLink(long workOrderItemID, string itemLink)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "INSERT INTO [WO_Item_Drawing] ([ParentID], [DrawingType], [DrawingPurpose], [DrawingName], [DrawingHyperlink], [IsFinalDrawing], [Note]) VALUES (@ParentID, @DrawingType, @DrawingPurpose, @DrawingName, @DrawingHyperlink, @IsFinalDrawing, @Note)";
+                var InsertCommand = new SqlCommand(SqlSelectString, Connection);
+                InsertCommand.Parameters.AddWithValue("@ParentID", workOrderItemID);
+                InsertCommand.Parameters.AddWithValue("@DrawingType", "Customer File");
+                InsertCommand.Parameters.AddWithValue("@DrawingPurpose", 1);
+                InsertCommand.Parameters.AddWithValue("@DrawingName", "");
+                InsertCommand.Parameters.AddWithValue("@DrawingHyperlink", itemLink);
+                InsertCommand.Parameters.AddWithValue("@IsFinalDrawing", 0);
+                InsertCommand.Parameters.AddWithValue("@Note", "");
+                Connection.Open();
+                InsertCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("InsertItemLink:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        private int GetItemLink(long workOrderItemID)
+        {
+            /* Check if item link is being existed */
+            int drawingID = 0;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                string SqlSelectString = "SELECT DrawingID FROM [WO_Item_Drawing] WHERE ([ParentID] = @ParentID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@ParentID", workOrderItemID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        drawingID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetItemLink:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return drawingID;
         }
 
         private void UpdateWorkOrder(int workOrderID, string woNumber, string woType, string paymentMethod, double? version, string rush, string rushReason,

@@ -1,45 +1,123 @@
-2018-08-07 10:58:59,576 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 10:59:09,294 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 10:59:11,681 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:00:07,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:00:07,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 11:04:33,254 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 11:04:43,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 11:04:45,282 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:04:49,852 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:04:49,852 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 11:22:17,220 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 11:22:27,392 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 11:22:30,683 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:24:30,226 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:24:30,226 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 11:32:42,528 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 11:32:52,325 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 11:32:54,431 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:33:06,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:33:06,349 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 11:40:03,471 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 11:40:14,672 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 11:40:16,903 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:40:31,957 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:40:31,957 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 11:43:38,073 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 11:43:47,936 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 11:43:49,933 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 11:43:54,535 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 11:43:54,535 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 12:58:33,613 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 12:58:46,281 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 12:58:48,574 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 12:59:05,047 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 12:59:05,047 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 13:50:21,420 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 13:50:31,747 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 13:50:33,962 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 13:54:00,366 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 13:54:00,366 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-07 15:51:16,559 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-07 15:51:26,496 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-07 15:51:28,696 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:TTC Pro
-2018-08-07 15:51:33,610 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: TTC Pro<Project Num:18P000147>
-2018-08-07 15:51:33,610 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-08 14:20:13,634 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-08-08 14:20:22,381 INFO MISService.Method.LogMethods - Polling:1
+2018-08-08 14:20:22,386 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:21:24,610 INFO MISService.Method.LogMethods - Polling:2
+2018-08-08 14:21:24,610 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:22:24,834 INFO MISService.Method.LogMethods - Polling:3
+2018-08-08 14:22:24,834 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:23:25,008 INFO MISService.Method.LogMethods - Polling:4
+2018-08-08 14:23:25,008 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:24:27,686 INFO MISService.Method.LogMethods - Polling:5
+2018-08-08 14:24:27,686 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:25:27,785 INFO MISService.Method.LogMethods - Polling:6
+2018-08-08 14:25:27,785 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:26:27,901 INFO MISService.Method.LogMethods - Polling:7
+2018-08-08 14:26:27,901 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:27:28,184 INFO MISService.Method.LogMethods - Polling:8
+2018-08-08 14:27:28,184 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:28:28,339 INFO MISService.Method.LogMethods - Polling:9
+2018-08-08 14:28:28,339 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:29:28,497 INFO MISService.Method.LogMethods - Polling:10
+2018-08-08 14:29:28,497 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:30:29,361 INFO MISService.Method.LogMethods - Polling:11
+2018-08-08 14:30:29,361 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:31:29,524 INFO MISService.Method.LogMethods - Polling:12
+2018-08-08 14:31:29,524 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:32:29,678 INFO MISService.Method.LogMethods - Polling:13
+2018-08-08 14:32:29,678 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:33:29,840 INFO MISService.Method.LogMethods - Polling:14
+2018-08-08 14:33:29,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:34:30,182 INFO MISService.Method.LogMethods - Polling:15
+2018-08-08 14:34:30,182 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:35:30,336 INFO MISService.Method.LogMethods - Polling:16
+2018-08-08 14:35:30,336 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:36:30,519 INFO MISService.Method.LogMethods - Polling:17
+2018-08-08 14:36:30,519 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:37:30,674 INFO MISService.Method.LogMethods - Polling:18
+2018-08-08 14:37:30,674 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:38:30,821 INFO MISService.Method.LogMethods - Polling:19
+2018-08-08 14:38:30,821 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:39:30,972 INFO MISService.Method.LogMethods - Polling:20
+2018-08-08 14:39:30,972 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:40:31,141 INFO MISService.Method.LogMethods - Polling:21
+2018-08-08 14:40:31,141 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:41:31,328 INFO MISService.Method.LogMethods - Polling:22
+2018-08-08 14:41:31,328 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:42:31,495 INFO MISService.Method.LogMethods - Polling:23
+2018-08-08 14:42:31,495 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:43:31,948 INFO MISService.Method.LogMethods - Polling:24
+2018-08-08 14:43:31,948 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:44:32,098 INFO MISService.Method.LogMethods - Polling:25
+2018-08-08 14:44:32,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:45:32,254 INFO MISService.Method.LogMethods - Polling:26
+2018-08-08 14:45:32,254 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:46:32,990 INFO MISService.Method.LogMethods - Polling:27
+2018-08-08 14:46:32,990 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:47:33,626 INFO MISService.Method.LogMethods - Polling:28
+2018-08-08 14:47:33,626 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:48:33,789 INFO MISService.Method.LogMethods - Polling:29
+2018-08-08 14:48:33,789 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:49:33,931 INFO MISService.Method.LogMethods - Polling:30
+2018-08-08 14:49:33,931 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:50:34,065 INFO MISService.Method.LogMethods - Polling:31
+2018-08-08 14:50:34,065 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:51:34,235 INFO MISService.Method.LogMethods - Polling:32
+2018-08-08 14:51:34,235 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:52:34,391 INFO MISService.Method.LogMethods - Polling:33
+2018-08-08 14:52:34,391 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:53:34,666 INFO MISService.Method.LogMethods - Polling:34
+2018-08-08 14:53:34,666 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:54:34,818 INFO MISService.Method.LogMethods - Polling:35
+2018-08-08 14:54:34,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:55:34,997 INFO MISService.Method.LogMethods - Polling:36
+2018-08-08 14:55:34,997 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:56:35,179 INFO MISService.Method.LogMethods - Polling:37
+2018-08-08 14:56:35,179 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:57:35,319 INFO MISService.Method.LogMethods - Polling:38
+2018-08-08 14:57:35,320 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:58:35,484 INFO MISService.Method.LogMethods - Polling:39
+2018-08-08 14:58:35,484 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 14:59:35,637 INFO MISService.Method.LogMethods - Polling:40
+2018-08-08 14:59:35,637 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:00:35,793 INFO MISService.Method.LogMethods - Polling:41
+2018-08-08 15:00:35,793 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:01:35,960 INFO MISService.Method.LogMethods - Polling:42
+2018-08-08 15:01:35,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:02:36,118 INFO MISService.Method.LogMethods - Polling:43
+2018-08-08 15:02:36,118 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:03:36,257 INFO MISService.Method.LogMethods - Polling:44
+2018-08-08 15:03:36,257 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:04:36,416 INFO MISService.Method.LogMethods - Polling:45
+2018-08-08 15:04:36,416 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:05:36,571 INFO MISService.Method.LogMethods - Polling:46
+2018-08-08 15:05:36,571 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:06:36,737 INFO MISService.Method.LogMethods - Polling:47
+2018-08-08 15:06:36,737 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:07:37,328 INFO MISService.Method.LogMethods - Polling:48
+2018-08-08 15:07:37,328 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:08:37,483 INFO MISService.Method.LogMethods - Polling:49
+2018-08-08 15:08:37,483 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:09:37,638 INFO MISService.Method.LogMethods - Polling:50
+2018-08-08 15:09:37,638 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:10:37,787 INFO MISService.Method.LogMethods - Polling:51
+2018-08-08 15:10:37,787 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:11:37,956 INFO MISService.Method.LogMethods - Polling:52
+2018-08-08 15:11:37,956 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:12:38,113 INFO MISService.Method.LogMethods - Polling:53
+2018-08-08 15:12:38,113 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:13:38,383 INFO MISService.Method.LogMethods - Polling:54
+2018-08-08 15:13:38,383 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:14:38,538 INFO MISService.Method.LogMethods - Polling:55
+2018-08-08 15:14:38,538 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:15:38,702 INFO MISService.Method.LogMethods - Polling:56
+2018-08-08 15:15:38,702 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:16:38,861 INFO MISService.Method.LogMethods - Polling:57
+2018-08-08 15:16:38,861 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:17:39,041 INFO MISService.Method.LogMethods - Polling:58
+2018-08-08 15:17:39,041 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:18:39,200 INFO MISService.Method.LogMethods - Polling:59
+2018-08-08 15:18:39,200 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:19:39,360 INFO MISService.Method.LogMethods - Polling:60
+2018-08-08 15:19:39,360 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-08 15:20:39,568 INFO MISService.Method.LogMethods - Polling:61
+2018-08-08 15:20:39,568 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
