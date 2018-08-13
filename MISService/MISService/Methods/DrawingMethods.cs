@@ -46,7 +46,7 @@ namespace MISService.Methods
                                     + " (SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Items__r),"
                                     + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1)"
                                     + " FROM Drawing__c "
-                                    + " WHERE Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc limit 1";
+                                    + " WHERE Project_Name__c = '" + sfProjectID + "'" + " order by LastModifiedDate desc";
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -61,28 +61,38 @@ namespace MISService.Methods
 
                     IEnumerable<enterprise.Drawing__c> drawingList = result.records.Cast<enterprise.Drawing__c>();
                     /* in MIS, only one drawing */
+                    int requisitionId = 0;
+                    bool flag = false;
                     foreach (var dl in drawingList)
                     {
-                        /* one unique row will be inserted if it is not existent */
-                        var vm = new DrawingRequisitionFormVm(jobID, estRevID);
-                        vm.Initialization();
-
-                        /* update data */
-                        int requisitionId = UpdateDrawing(estRevID, dl.Version__c, dl.Drawing_Requisition_Type__c, dl.Drawing_Purpose__c, dl.Is_Electronic_File_From_Client_Available__c,
-                            dl.Is_GC_Or_Designer_Drawing_Available__c, dl.Is_Landord_Or_Mall_Criteria_Available__c, dl.Is_Latest_Version_Q_D_Quotation_Avail__c,
-                            dl.Is_Site_Check_Photo_Available__c, dl.Is_Site_Check_Report_Available__c);
-
-                        if (requisitionId != 0)
+                        if (!flag)
                         {
-                            /* Salesforce can create multi-drawing request but the MIS only supports one at a time so 
-                             I will only show the latest one on the MIS system*/
-                            // update SalesForceParentID in MISSalesForceMapping 
-                            UpdateMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, dl.Id);
+                            /* one unique row will be inserted if it is not existent */
+                            var vm = new DrawingRequisitionFormVm(jobID, estRevID);
+                            vm.Initialization();
 
-                            // add items to drawing
-                            GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id, dl.Items__r);
+                            /* update data */
+                            requisitionId = UpdateDrawing(estRevID, dl.Version__c, dl.Drawing_Requisition_Type__c, dl.Drawing_Purpose__c, dl.Is_Electronic_File_From_Client_Available__c,
+                                dl.Is_GC_Or_Designer_Drawing_Available__c, dl.Is_Landord_Or_Mall_Criteria_Available__c, dl.Is_Latest_Version_Q_D_Quotation_Avail__c,
+                                dl.Is_Site_Check_Photo_Available__c, dl.Is_Site_Check_Report_Available__c);
 
-                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c);
+                            if (requisitionId != 0)
+                            {
+                                /* Salesforce can create multi-drawing request but the MIS only supports one at a time so 
+                                 I will only show the latest one on the MIS system*/
+                                // update SalesForceParentID in MISSalesForceMapping 
+                                UpdateMISSalesForceMapping(TableName.Sales_Dispatching_DrawingRequisition_EstimationItem, dl.Id);
+
+                                // add items to drawing
+                                GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id, dl.Items__r);
+
+                                GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id);
+                            }
+                            flag = true;
+                        }
+                        else
+                        {
+                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id);
                         }
                     }
 
@@ -95,7 +105,7 @@ namespace MISService.Methods
             }
         }
 
-        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType)
+        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType, string sfDrawingID)
         {
             try
             {
@@ -116,11 +126,11 @@ namespace MISService.Methods
 
                     if (el.Status == "Pending")
                     {
-                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
-                        if (sales_Dispatching == null)
+                        int drawingID = CommonMethods.GetMISID(TableName.Sales_Dispatching, sfDrawingID, salesForceProjectID);
+                        if (drawingID == 0)
                         {
+                            //not exist
                             var vm = new SubmitDrawingRequestVm(requisitionId, employeeNumber);
-
                             if (dueDate != null)
                             {
                                 vm.FormatedRequiredTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, dueDate.Value.Hour, dueDate.Value.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
@@ -132,12 +142,57 @@ namespace MISService.Methods
                                 vm.FormatedRequiredTime =
                                     new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
                             }
-
-                            vm.Create(Convert.ToInt16(version));
+                            long taskID = vm.Create();
+                            if (taskID > 0)
+                            {
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching, sfDrawingID, taskID.ToString(), salesForceProjectID);
+                            }
                         }
+
+                        /*
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
+                        if (sales_Dispatching == null)
+                        {
+                            var vm = new SubmitDrawingRequestVm(requisitionId, employeeNumber);
+                            if (dueDate != null)
+                            {
+                                vm.FormatedRequiredTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, dueDate.Value.Hour, dueDate.Value.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
+                            else
+                            {
+                                DateTime dt1 = MyDateTime.GetDateOfAddedBusinessDays(DateTime.Today, 2);
+                                DateTime dt2 = DateTime.Now.AddMinutes(2);
+                                vm.FormatedRequiredTime =
+                                    new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                            }
+                            vm.Create();
+                        }
+                         * */
                     }
                     else if (el.Status == "Approved")
                     {
+                        int drawingID = CommonMethods.GetMISID(TableName.Sales_Dispatching, sfDrawingID, salesForceProjectID);
+                        if (drawingID > 0)
+                        {
+                            var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.TaskID == drawingID).FirstOrDefault();
+                            if (sales_Dispatching != null)
+                            {
+                                if (drawHour != null)
+                                {
+                                    sales_Dispatching.WorkedHour = drawHour;
+                                }
+                                sales_Dispatching.Status = taskStatus;
+                                if (el.CompletedDate != null)
+                                {
+                                    sales_Dispatching.FinishedDate = el.CompletedDate.Value.ToLocalTime();
+                                }
+
+                                _db.Entry(sales_Dispatching).State = EntityState.Modified;
+                                _db.SaveChanges();
+                            }
+                        }
+
+                        /*
                         var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
                         if (sales_Dispatching != null)
                         {
@@ -154,6 +209,7 @@ namespace MISService.Methods
                             _db.Entry(sales_Dispatching).State = EntityState.Modified;
                             _db.SaveChanges();
                         }
+                        */
                     }
                 }
 

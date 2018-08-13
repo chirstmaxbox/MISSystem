@@ -7436,7 +7436,6 @@
               <xsd:element minOccurs="0" name="IsClosed" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="IsWon" nillable="true" type="xsd:boolean" />
-              <xsd:element minOccurs="0" name="Issue_Date__c" nillable="true" type="xsd:date" />
               <xsd:element minOccurs="0" name="LastActivityDate" nillable="true" type="xsd:date" />
               <xsd:element minOccurs="0" name="LastModifiedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="LastModifiedById" nillable="true" type="tns:ID" />
@@ -7452,6 +7451,7 @@
               <xsd:element minOccurs="0" name="Notes" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="NotesAndAttachments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="OpenActivities" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Open_Date__c" nillable="true" type="xsd:date" />
               <xsd:element minOccurs="0" name="OpportunityCompetitors" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="OpportunityContactRoles" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="OpportunityHistories" nillable="true" type="tns:QueryResult" />
@@ -7483,8 +7483,6 @@
               <xsd:element minOccurs="0" name="SyncedQuote" nillable="true" type="ens:Quote" />
               <xsd:element minOccurs="0" name="SyncedQuoteId" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="SystemModstamp" nillable="true" type="xsd:dateTime" />
-              <xsd:element minOccurs="0" name="TEST_PATH_URL__c" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="TEST_Path__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="TaskRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Tasks" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="TopicAssignments" nillable="true" type="tns:QueryResult" />

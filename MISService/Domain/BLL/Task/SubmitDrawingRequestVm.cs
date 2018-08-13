@@ -78,16 +78,17 @@ namespace SpecDomain.BLL.Task
             if (!IsValidated) return;
         }
         
-        public void Create(short version)
+        public long Create()
         {
             InitializeCreateData();
             var task = new Sales_Dispatching();
             MyReflection.Copy(this,task);
-            task.Importance = version;
             _db.Sales_Dispatching.Add(task);
             _db.SaveChanges();
-            
+
             OnSubmitted(task.TaskID);
+
+            return task.TaskID;
         }
 
         private void InitializeCreateData()

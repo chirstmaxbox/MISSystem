@@ -266,7 +266,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.Item_Link__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.Item_Link__c, il.PC_s__c);
                         }
                     }
 
@@ -312,7 +312,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string itemLink)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string itemLink, string PC)
         {
             try
             {
@@ -335,6 +335,15 @@ namespace MISService.Methods
                     workOrderItem.woDescription = description;
                     if (quality != null)
                         workOrderItem.qty = Convert.ToInt16(quality);
+
+                    if (PC != null)
+                    {
+                        workOrderItem.qtyPC = Convert.ToInt16(PC);
+                    }
+                    else
+                    {
+                        workOrderItem.qtyPC = 0;
+                    }
 
                     if (itemCost != null)
                     {
