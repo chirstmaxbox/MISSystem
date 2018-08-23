@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -47,7 +48,7 @@ namespace MISService.Methods
                     string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
                         + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c,"
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
-                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c, Item_Link__c FROM Items__r),"
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM Installer_Instructions__r),"
                         + " (SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c FROM Production_Check_List__r),"
@@ -266,7 +267,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.Item_Link__c, il.PC_s__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.PC_s__c);
                         }
                     }
 
@@ -312,7 +313,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string itemLink, string PC)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string PC)
         {
             try
             {
@@ -364,20 +365,73 @@ namespace MISService.Methods
                     _db.Entry(workOrderItem).State = EntityState.Modified;
                     _db.SaveChanges();
 
+                    //create service client to call API endpoint
+                    using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                    {
+                        //create SQL query statement
+                        string query = "SELECT Id, Purpose__c, Type__c, Hyperlink__c "
+                            + " FROM Drawing_Attachment__c "
+                            + " WHERE Item_Number__c = '" + salesforceItemID + "'";
 
-                    int drawingID = GetItemLink(workOrderItemID);
-                    if (drawingID == 0)
-                    {
-                        // insert
-                        if (!string.IsNullOrEmpty(itemLink))
+                        enterprise.QueryResult result;
+                        queryClient.query(
+                            header, //sessionheader
+                            null, //queryoptions
+                            null, //mruheader
+                            null, //packageversion
+                            query, out result);
+
+                        /* if no any record, return */
+                        if (result.size == 0) return;
+
+                        //cast query results
+                        IEnumerable<enterprise.Drawing_Attachment__c> drawingAttachmentList = result.records.Cast<enterprise.Drawing_Attachment__c>();
+                        List<string> items = new List<string>();
+                        foreach (var ql in drawingAttachmentList)
                         {
-                            InsertItemLink(workOrderItemID, itemLink);
+                            items.Add(ql.Id);
+                            /* check if the work order exists */
+                            int drawingAttachmentID = CommonMethods.GetMISID(TableName.WO_Item_Drawing, ql.Id, salesforceItemID, salesForceProjectID);
+                            int purpose = 1;
+
+                            switch (ql.Purpose__c)
+                            {
+                                case "Concept Design":
+                                    purpose = 4;
+                                    break;
+                                case "Permit Drawing":
+                                    purpose = 2;
+                                    break;
+                                case "Work-Order Drawing":
+                                    purpose = 3;
+                                    break;
+                            }
+
+                            string fileName = "";
+                            try
+                            {
+                                fileName = Path.GetFileName(ql.Hyperlink__c);
+                            }
+                            catch (Exception e)
+                            {
+                                fileName = "";
+                            }
+
+                            if (drawingAttachmentID == 0)
+                            {
+                                InsertItemLink(workOrderItemID, ql.Hyperlink__c, purpose, ql.Type__c, fileName);
+                                int temp = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Item_Drawing);
+                                CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item_Drawing, ql.Id, temp.ToString(), salesforceItemID, salesForceProjectID);
+                            }
+                            else
+                            {
+                                UpdateItemLink(drawingAttachmentID, ql.Hyperlink__c, purpose, ql.Type__c, fileName);
+                            }
                         }
-                    }
-                    else
-                    {
-                        //update
-                        UpdateItemLink(drawingID, itemLink);
+
+                        DeleteAllDeletedDrawingAttachments(items.ToArray(), salesforceItemID);
+
+                        LogMethods.Log.Debug("UpdateWorkOrderItem:Debug:" + "Done");
                     }
 
                 }
@@ -388,22 +442,72 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateItemLink(long drawingID, string itemLink)
+        private void DeleteAllDeletedDrawingAttachments(string[] items, string salesforceItemID)
+        {
+            try
+            {
+                List<string> ids = CommonMethods.GetAllSalesForceID(TableName.WO_Item_Drawing, salesforceItemID, salesForceProjectID);
+                foreach (string i in ids)
+                {
+                    // not found
+                    if (Array.IndexOf(items, i) == -1)
+                    {
+                        // get MISID
+                        int itemIDTemp = CommonMethods.GetMISID(TableName.WO_Item_Drawing, i, salesforceItemID, salesForceProjectID);
+                        // get a row
+                        int row = DeleteDrawingAttachment(itemIDTemp);
+                        if (row > 0)
+                        {
+                            // remove MISID out of MISSalesForceMapping
+                            CommonMethods.Delete(TableName.WO_Item_Drawing, i, salesforceItemID, salesForceProjectID);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LogMethods.Log.Error("DeleteAllDeletedDrawingAttachments:Error:" + e.Message);
+            }
+        }
+
+        private int DeleteDrawingAttachment(int dId)
+        {
+            int row = 0;
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            try
+            {
+                Connection.Open();
+                string SqlDelString = "DELETE FROM WO_Item_Drawing WHERE ([DrawingID] = @dDrawingID)";
+                var DelCommand = new SqlCommand(SqlDelString, Connection);
+                DelCommand.Parameters.AddWithValue("@dDrawingID", dId);
+                row = DelCommand.ExecuteNonQuery();
+                Connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("DeleteDrawingAttachment:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return row;
+        }
+
+        private void UpdateItemLink(long drawingID, string itemLink, int purpose, string type, string fileName)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             try
             {
-                string SqlUpdateString = "UPDATE WO_Item_Drawing SET DrawingHyperlink = @DrawingHyperlink WHERE (DrawingID = @DrawingID)";
+                string SqlUpdateString = "UPDATE WO_Item_Drawing SET DrawingHyperlink = @DrawingHyperlink, DrawingPurpose = @DrawingPurpose, DrawingName = @DrawingName, DrawingType = @DrawingType WHERE (DrawingID = @DrawingID)";
                 var UpdateCommand = new SqlCommand(SqlUpdateString, Connection);
                 UpdateCommand.Parameters.AddWithValue("@DrawingID", drawingID);
-                if (itemLink != null)
-                {
-                    UpdateCommand.Parameters.AddWithValue("@DrawingHyperlink", itemLink);
-                }
-                else
-                {
-                    UpdateCommand.Parameters.AddWithValue("@DrawingHyperlink", "");
-                }
+                UpdateCommand.Parameters.AddWithValue("@DrawingPurpose", purpose);
+                UpdateCommand.Parameters.AddWithValue("@DrawingName", fileName);
+                UpdateCommand.Parameters.AddWithValue("@DrawingType", type);
+                UpdateCommand.Parameters.AddWithValue("@DrawingHyperlink", itemLink);
+
                 Connection.Open();
                 UpdateCommand.ExecuteNonQuery();
             }
@@ -417,7 +521,7 @@ namespace MISService.Methods
             }
         }
 
-        private void InsertItemLink(long workOrderItemID, string itemLink)
+        private void InsertItemLink(long workOrderItemID, string itemLink, int purpose, string type, string fileName)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
             try
@@ -425,9 +529,9 @@ namespace MISService.Methods
                 string SqlSelectString = "INSERT INTO [WO_Item_Drawing] ([ParentID], [DrawingType], [DrawingPurpose], [DrawingName], [DrawingHyperlink], [IsFinalDrawing], [Note]) VALUES (@ParentID, @DrawingType, @DrawingPurpose, @DrawingName, @DrawingHyperlink, @IsFinalDrawing, @Note)";
                 var InsertCommand = new SqlCommand(SqlSelectString, Connection);
                 InsertCommand.Parameters.AddWithValue("@ParentID", workOrderItemID);
-                InsertCommand.Parameters.AddWithValue("@DrawingType", "Customer File");
-                InsertCommand.Parameters.AddWithValue("@DrawingPurpose", 1);
-                InsertCommand.Parameters.AddWithValue("@DrawingName", "");
+                InsertCommand.Parameters.AddWithValue("@DrawingType", type);
+                InsertCommand.Parameters.AddWithValue("@DrawingPurpose", purpose);
+                InsertCommand.Parameters.AddWithValue("@DrawingName", fileName);
                 InsertCommand.Parameters.AddWithValue("@DrawingHyperlink", itemLink);
                 InsertCommand.Parameters.AddWithValue("@IsFinalDrawing", 0);
                 InsertCommand.Parameters.AddWithValue("@Note", "");

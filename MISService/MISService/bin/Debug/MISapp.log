@@ -114,3 +114,32 @@
 2018-08-13 14:14:04,229 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug13
 2018-08-13 14:14:09,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug13<Project Num:18P000154>
 2018-08-13 14:14:09,965 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-23 14:23:46,291 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 14:23:57,027 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 14:23:59,185 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:31:12,902 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:31:21,361 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:31:23,332 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:35:25,668 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:35:33,904 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:35:35,843 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:42:41,534 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:42:50,300 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:42:52,186 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:44:46,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug23<Project Num:18P000180>
+2018-08-23 15:44:46,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-23 15:46:02,716 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:46:10,738 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:46:12,699 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:46:19,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug23<Project Num:18P000180>
+2018-08-23 15:46:19,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-23 15:46:55,185 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:47:03,193 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:47:05,217 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:56:18,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug23<Project Num:18P000180>
+2018-08-23 15:56:18,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-08-23 15:57:02,646 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-08-23 15:57:11,209 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-08-23 15:57:13,177 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug23
+2018-08-23 15:57:19,566 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug23<Project Num:18P000180>
+2018-08-23 15:57:19,566 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done

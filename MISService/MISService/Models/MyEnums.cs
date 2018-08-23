@@ -31,6 +31,7 @@ namespace MISService.Models
         public static string WO_Instruction_DataTable = "WO_Instruction_DataTable";
         public static string WO_WORKORDER_CHECKLIST_DATATABLE = "WO_WORKORDER_CHECKLIST_DATATABLE";
         public static string WO_ShippingItem = "WO_ShippingItem";
+        public static string WO_Item_Drawing = "WO_Item_Drawing";
         /* For Work Order Production */
         public static string WO_Instruction_DataTable_PW = "WO_Instruction_DataTable_PW";
         public static string WO_Instruction_DataTable_PI = "WO_Instruction_DataTable_PI";

@@ -731,7 +731,14 @@ namespace MISService.Methods
                 }
                 else
                 {
-                    LogMethods.Log.Error("UpdateQuoteItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    if (requirement.Trim() == "Supply Only")
+                    {
+                        requirementID = 70;
+                    }
+                    else
+                    {
+                        LogMethods.Log.Error("UpdateQuoteItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                    }
                 }
                 UpdateCommand.Parameters.AddWithValue("@supplyType", requirementID);
 
