@@ -93,7 +93,7 @@ namespace MISService
                 {
                     while (m.Running)
                     {
-                        LogMethods.Log.Info("Polling:" + polling++);
+                        LogMethods.Log.Warn("Polling:" + polling++);
                         ProjectMethods pm = new ProjectMethods();
                         pm.GetAllProjects();
 

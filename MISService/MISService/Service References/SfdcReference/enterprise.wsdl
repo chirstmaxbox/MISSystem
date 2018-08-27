@@ -75,6 +75,7 @@
               <xsd:element minOccurs="0" name="Contacts" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="ContentDocumentLinks" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Contracts" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Corner__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="CreatedBy" nillable="true" type="ens:User" />
               <xsd:element minOccurs="0" name="CreatedById" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="CreatedDate" nillable="true" type="xsd:dateTime" />
@@ -87,6 +88,7 @@
               <xsd:element minOccurs="0" name="Feeds" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Histories" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Industry" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Intersection__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="Jigsaw" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="JigsawCompanyId" nillable="true" type="xsd:string" />
@@ -1442,6 +1444,8 @@
               <xsd:element minOccurs="0" name="AttachedContentDocuments" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="AttachedContentNotes" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Attachments" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Billing_Account_Corner__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Billing_Account_Intersection__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_City__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Billing_Company_Name__c" nillable="true" type="tns:ID" />
@@ -1461,6 +1465,8 @@
               <xsd:element minOccurs="0" name="Emails" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="EventRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Installing_Account_Corner__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Installing_Account_Intersection__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Company_City__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Company_Name__c" nillable="true" type="tns:ID" />
@@ -1486,6 +1492,8 @@
               <xsd:element minOccurs="0" name="Project_Name__c" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Project_Name__r" nillable="true" type="ens:Opportunity" />
               <xsd:element minOccurs="0" name="Projects__r" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Quoting_Account_Corner__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Quoting_Account_Intersection__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_City__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_Country__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quoting_Company_Name__c" nillable="true" type="tns:ID" />
@@ -6184,6 +6192,7 @@
               <xsd:element minOccurs="0" name="HST__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Installing_Address__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Invoice_Grand_Total__c" nillable="true" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Invoice_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Invoice_Sub_Total__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Invoice_Type__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
@@ -9825,7 +9834,6 @@
               <xsd:element minOccurs="0" name="List_Item_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="List_Service_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="LookedUpFromActivities" nillable="true" type="tns:QueryResult" />
-              <xsd:element minOccurs="0" name="MIS_Quote_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Max_Item_Order__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Notes" nillable="true" type="tns:QueryResult" />
@@ -9837,6 +9845,7 @@
               <xsd:element minOccurs="0" name="ProcessSteps" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Project_Name__c" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Project_Name__r" nillable="true" type="ens:Opportunity" />
+              <xsd:element minOccurs="0" name="Quotation_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quote_Sub_Total__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="RecordActions" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="RecordAssociatedGroups" nillable="true" type="tns:QueryResult" />
@@ -13238,6 +13247,8 @@
               <xsd:element minOccurs="0" name="Installing_Address__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Company_Name__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Contact_Name__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Installing_Corner__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Installing_Intersection__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Installing_Phone_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="Issue_Date__c" nillable="true" type="xsd:date" />

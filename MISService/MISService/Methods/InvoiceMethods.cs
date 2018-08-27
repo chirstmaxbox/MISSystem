@@ -67,6 +67,16 @@ namespace MISService.Methods
 
                     foreach (var ql in invoiceList)
                     {
+                        string invoiceName = ql.Name;
+                        if (ql.Invoice_Type__c == "Regular")
+                        {
+                            invoiceName = invoiceName.Replace("PRO", "");
+                        }
+                        else
+                        {
+                            invoiceName = invoiceName.Replace("V", "");
+                        }
+
                         /* check if the work order exists */
                         int invoiceID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_Invoice, ql.Id, salesForceProjectID);
                         if (invoiceID == 0)
@@ -91,7 +101,7 @@ namespace MISService.Methods
 
                         if (invoiceID != 0)
                         {
-                            UpdateInvoice(invoiceID, ql.Name, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
+                            UpdateInvoice(invoiceID, invoiceName, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
                                 ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c);
 
                             /* handle item */

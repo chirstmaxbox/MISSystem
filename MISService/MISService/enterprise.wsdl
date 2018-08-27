@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-08-23 18:15:16 +0000.
+Generated on 2018-08-27 19:57:35 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -95,6 +95,7 @@ All Rights Reserved
                         <element name="Contacts" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ContentDocumentLinks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Contracts" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Corner__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
@@ -107,6 +108,7 @@ All Rights Reserved
                         <element name="Feeds" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Histories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Industry" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Jigsaw" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="JigsawCompanyId" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -1512,6 +1514,8 @@ All Rights Reserved
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Billing_Account_Corner__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Billing_Account_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Billing_Company_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -1531,6 +1535,8 @@ All Rights Reserved
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Installing_Account_Corner__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Installing_Account_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Company_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -1556,6 +1562,8 @@ All Rights Reserved
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Project_Name__r" nillable="true" minOccurs="0" type="ens:Opportunity"/>
                         <element name="Projects__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Quoting_Account_Corner__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Quoting_Account_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_City__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_Country__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quoting_Company_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -6430,6 +6438,7 @@ All Rights Reserved
                         <element name="HST__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Installing_Address__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Invoice_Grand_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Invoice_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Invoice_Sub_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Invoice_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -10181,7 +10190,6 @@ All Rights Reserved
                         <element name="List_Item_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="List_Service_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
-                        <element name="MIS_Quote_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Max_Item_Order__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -10193,6 +10201,7 @@ All Rights Reserved
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Project_Name__r" nillable="true" minOccurs="0" type="ens:Opportunity"/>
+                        <element name="Quotation_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quote_Sub_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13702,6 +13711,8 @@ All Rights Reserved
                         <element name="Installing_Address__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Company_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Contact_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Installing_Corner__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Installing_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Phone_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>

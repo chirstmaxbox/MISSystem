@@ -55,7 +55,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
                                 bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
-                                bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
+                                bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, bqs.Billing_Account_Intersection__c, bqs.Billing_Account_Corner__c,  misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
                             hasOne = true;
                         }
 
@@ -63,7 +63,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
                                 bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
-                                bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
+                                bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, bqs.Quoting_Account_Intersection__c, bqs.Quoting_Account_Corner__c,  misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
                             hasOne = true;
                         }
 
@@ -71,7 +71,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
                                 bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
-                                bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
+                                bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id,bqs.Installing_Account_Intersection__c, bqs.Installing_Account_Corner__c, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
                             hasOne = true;
                         }
 
@@ -203,7 +203,7 @@ namespace MISService.Methods
          * Type = 3 => Shipping
         */
         private void HandleAccount(string companyName, string companyStreet, string companyProvince, string companyPostalCode,
-            string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, int misJobID, int employeeNumber, string accountID, int type)
+            string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, string intersection, string corner, int misJobID, int employeeNumber, string accountID, int type)
         {
             try
             {
@@ -226,6 +226,22 @@ namespace MISService.Methods
                     customer.TERRITORY = "6"; //other
                     customer.ACTIVE_FLAG = "Y";
                     customer.CURRENCY_ID = "CAD";
+                    customer.Intersection = intersection;
+                    switch (corner)
+                    {
+                        case "North West":
+                            customer.NorthWest = true;
+                            break;
+                        case "North East":
+                            customer.NorthEast = true;
+                            break;
+                        case "South West":
+                            customer.SouthWest = true;
+                            break;
+                        case "South East":
+                            customer.SouthEast = true;
+                            break;
+                    }
 
                     ProjectCompany cp = new ProjectCompany(misJobID);
                     cp.Insert(misJobID, 0, false, false, false);
@@ -254,6 +270,24 @@ namespace MISService.Methods
                     customer.TERRITORY = "6"; //other
                     customer.ACTIVE_FLAG = "Y";
                     customer.CURRENCY_ID = "CAD";
+
+                    customer.Intersection = intersection;
+                    switch (corner)
+                    {
+                        case "North West":
+                            customer.NorthWest = true;
+                            break;
+                        case "North East":
+                            customer.NorthEast = true;
+                            break;
+                        case "South West":
+                            customer.SouthWest = true;
+                            break;
+                        case "South East":
+                            customer.SouthEast = true;
+                            break;
+                    }
+
                     _db.Entry(customer).State = EntityState.Modified;
                     _db.SaveChanges();
 
