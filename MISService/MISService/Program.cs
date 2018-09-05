@@ -17,7 +17,6 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            
             LogMethods.Log.Info("-------------- *** Starting MISService *** ------------ ");
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
@@ -34,7 +33,7 @@ namespace MISService
                 new MyMISService() 
             };
             ServiceBase.Run(ServicesToRun);
-             * */
+            */
         }
     }
 }

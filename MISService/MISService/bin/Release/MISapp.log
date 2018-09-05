@@ -1,15 +1,605 @@
-2018-08-27 10:56:17,311 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-27 10:56:29,585 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-27 10:56:31,708 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug24
-2018-08-27 10:56:37,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug24<Project Num:18P000190>
-2018-08-27 10:56:37,101 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-27 10:57:33,029 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-27 10:57:43,477 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-27 10:57:45,612 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug24
-2018-08-27 10:57:52,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug24<Project Num:18P000190>
-2018-08-27 10:57:52,161 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
-2018-08-27 16:05:36,544 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
-2018-08-27 16:05:46,934 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
-2018-08-27 16:05:49,866 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:Aug27
-2018-08-27 16:05:59,866 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: Aug27<Project Num:18P000192>
-2018-08-27 16:05:59,866 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:09:03,086 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-09-04 14:09:11,323 WARN MISService.Method.LogMethods - Polling:1
+2018-09-04 14:09:11,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:09:13,475 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:09:34,223 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:09:34,223 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:10:34,237 WARN MISService.Method.LogMethods - Polling:2
+2018-09-04 14:10:34,237 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:10:34,408 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:10:35,703 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:10:35,703 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:11:35,716 WARN MISService.Method.LogMethods - Polling:3
+2018-09-04 14:11:35,716 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:11:35,919 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:11:37,214 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:11:37,214 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:12:37,227 WARN MISService.Method.LogMethods - Polling:4
+2018-09-04 14:12:37,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:12:37,414 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:12:38,631 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:12:38,631 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:13:38,645 WARN MISService.Method.LogMethods - Polling:5
+2018-09-04 14:13:38,645 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:13:38,816 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:13:40,033 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:13:40,033 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:14:40,046 WARN MISService.Method.LogMethods - Polling:6
+2018-09-04 14:14:40,046 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:14:40,234 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:14:41,762 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:14:41,762 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:15:41,776 WARN MISService.Method.LogMethods - Polling:7
+2018-09-04 14:15:41,776 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:15:41,963 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:15:43,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:15:43,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:16:43,255 WARN MISService.Method.LogMethods - Polling:8
+2018-09-04 14:16:43,255 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:16:43,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:16:44,784 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:16:44,784 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:17:44,797 WARN MISService.Method.LogMethods - Polling:9
+2018-09-04 14:17:44,797 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:17:45,016 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:17:46,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:17:46,264 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:18:46,277 WARN MISService.Method.LogMethods - Polling:10
+2018-09-04 14:18:46,277 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:18:46,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:18:47,759 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:18:47,759 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:19:47,772 WARN MISService.Method.LogMethods - Polling:11
+2018-09-04 14:19:47,772 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:19:47,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:19:49,208 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:19:49,208 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:20:49,221 WARN MISService.Method.LogMethods - Polling:12
+2018-09-04 14:20:49,221 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:20:49,627 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:20:50,953 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:20:50,953 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:21:50,966 WARN MISService.Method.LogMethods - Polling:13
+2018-09-04 14:21:50,966 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:21:51,917 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:21:53,321 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:21:53,321 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:22:53,335 WARN MISService.Method.LogMethods - Polling:14
+2018-09-04 14:22:53,335 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:22:53,553 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:22:54,801 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:22:54,801 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:23:54,814 WARN MISService.Method.LogMethods - Polling:15
+2018-09-04 14:23:54,814 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:23:55,002 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:23:56,234 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:23:56,234 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:24:56,247 WARN MISService.Method.LogMethods - Polling:16
+2018-09-04 14:24:56,247 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:24:56,435 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:24:57,683 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:24:57,683 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:25:57,696 WARN MISService.Method.LogMethods - Polling:17
+2018-09-04 14:25:57,696 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:25:57,883 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:25:59,147 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:25:59,147 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:26:59,160 WARN MISService.Method.LogMethods - Polling:18
+2018-09-04 14:26:59,160 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:26:59,347 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:27:00,611 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:27:00,611 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:28:00,624 WARN MISService.Method.LogMethods - Polling:19
+2018-09-04 14:28:00,624 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:28:00,811 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:28:02,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:28:02,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:29:02,088 WARN MISService.Method.LogMethods - Polling:20
+2018-09-04 14:29:02,088 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:29:02,244 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:29:03,492 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:29:03,492 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:30:03,506 WARN MISService.Method.LogMethods - Polling:21
+2018-09-04 14:30:03,506 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:30:04,098 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:30:05,752 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:30:05,752 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:31:05,765 WARN MISService.Method.LogMethods - Polling:22
+2018-09-04 14:31:05,765 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:31:05,968 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:31:07,216 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:31:07,216 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:32:07,229 WARN MISService.Method.LogMethods - Polling:23
+2018-09-04 14:32:07,229 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:32:07,417 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:32:08,883 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:32:08,883 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:33:08,896 WARN MISService.Method.LogMethods - Polling:24
+2018-09-04 14:33:08,896 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:33:09,083 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:33:10,519 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:33:10,519 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:34:10,532 WARN MISService.Method.LogMethods - Polling:25
+2018-09-04 14:34:10,532 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:34:10,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:34:12,014 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:34:12,014 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:35:12,027 WARN MISService.Method.LogMethods - Polling:26
+2018-09-04 14:35:12,027 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:35:12,214 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:35:13,494 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:35:13,494 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:36:13,507 WARN MISService.Method.LogMethods - Polling:27
+2018-09-04 14:36:13,507 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:36:13,694 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:36:14,927 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:36:14,927 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:37:14,940 WARN MISService.Method.LogMethods - Polling:28
+2018-09-04 14:37:14,940 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:37:15,111 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:37:17,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:37:17,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:38:17,044 WARN MISService.Method.LogMethods - Polling:29
+2018-09-04 14:38:17,044 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:38:17,683 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:38:19,103 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:38:19,103 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:39:19,116 WARN MISService.Method.LogMethods - Polling:30
+2018-09-04 14:39:19,116 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:39:19,303 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:39:20,645 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:39:20,645 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:40:20,658 WARN MISService.Method.LogMethods - Polling:31
+2018-09-04 14:40:20,658 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:40:20,830 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:40:23,575 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:40:23,575 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:41:23,589 WARN MISService.Method.LogMethods - Polling:32
+2018-09-04 14:41:23,589 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:41:23,729 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:41:24,728 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:41:24,728 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:42:24,741 WARN MISService.Method.LogMethods - Polling:33
+2018-09-04 14:42:24,741 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:42:24,866 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:42:25,817 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:42:25,817 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:43:25,831 WARN MISService.Method.LogMethods - Polling:34
+2018-09-04 14:43:25,831 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:43:25,971 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:43:26,954 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:43:26,954 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:44:26,967 WARN MISService.Method.LogMethods - Polling:35
+2018-09-04 14:44:26,967 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:44:27,107 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:44:28,324 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:44:28,324 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:45:28,338 WARN MISService.Method.LogMethods - Polling:36
+2018-09-04 14:45:28,338 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:45:28,525 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:45:29,710 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:45:29,710 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:46:29,724 WARN MISService.Method.LogMethods - Polling:37
+2018-09-04 14:46:29,724 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:46:30,316 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:46:31,486 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:46:31,486 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:47:31,500 WARN MISService.Method.LogMethods - Polling:38
+2018-09-04 14:47:31,500 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:47:31,687 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:47:33,278 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:47:33,278 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:48:33,291 WARN MISService.Method.LogMethods - Polling:39
+2018-09-04 14:48:33,291 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:48:33,463 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:48:34,789 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:48:34,789 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:49:34,802 WARN MISService.Method.LogMethods - Polling:40
+2018-09-04 14:49:34,802 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:49:35,052 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:49:36,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:49:36,581 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:50:36,594 WARN MISService.Method.LogMethods - Polling:41
+2018-09-04 14:50:36,594 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:50:36,797 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:50:38,107 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:50:38,107 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:51:38,121 WARN MISService.Method.LogMethods - Polling:42
+2018-09-04 14:51:38,121 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:51:38,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:51:39,618 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:51:39,618 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:52:39,632 WARN MISService.Method.LogMethods - Polling:43
+2018-09-04 14:52:39,632 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:52:39,819 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:52:41,082 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:52:41,082 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:53:41,096 WARN MISService.Method.LogMethods - Polling:44
+2018-09-04 14:53:41,096 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:53:41,283 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:53:42,578 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:53:42,578 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:54:42,591 WARN MISService.Method.LogMethods - Polling:45
+2018-09-04 14:54:42,591 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:54:42,747 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:54:44,011 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:54:44,011 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:55:44,024 WARN MISService.Method.LogMethods - Polling:46
+2018-09-04 14:55:44,024 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:55:44,195 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:55:45,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:55:45,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:56:45,457 WARN MISService.Method.LogMethods - Polling:47
+2018-09-04 14:56:45,457 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:56:45,644 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:56:46,939 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:56:46,939 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:57:46,952 WARN MISService.Method.LogMethods - Polling:48
+2018-09-04 14:57:46,952 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:57:47,139 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:57:48,450 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:57:48,450 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:58:48,463 WARN MISService.Method.LogMethods - Polling:49
+2018-09-04 14:58:48,463 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:58:48,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:58:50,039 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:58:50,039 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 14:59:50,052 WARN MISService.Method.LogMethods - Polling:50
+2018-09-04 14:59:50,052 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 14:59:50,239 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 14:59:51,456 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 14:59:51,456 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:00:51,469 WARN MISService.Method.LogMethods - Polling:51
+2018-09-04 15:00:51,469 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:00:51,688 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:00:53,014 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:00:53,014 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:01:53,027 WARN MISService.Method.LogMethods - Polling:52
+2018-09-04 15:01:53,027 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:01:53,214 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:01:54,587 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:01:54,587 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:02:54,600 WARN MISService.Method.LogMethods - Polling:53
+2018-09-04 15:02:54,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:02:54,834 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:02:56,129 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:02:56,129 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:03:56,142 WARN MISService.Method.LogMethods - Polling:54
+2018-09-04 15:03:56,142 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:03:56,314 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:03:57,515 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:03:57,515 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:04:57,528 WARN MISService.Method.LogMethods - Polling:55
+2018-09-04 15:04:57,528 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:04:57,700 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:04:59,026 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:04:59,026 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:05:59,039 WARN MISService.Method.LogMethods - Polling:56
+2018-09-04 15:05:59,039 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:05:59,242 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:06:00,459 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:06:00,459 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:07:00,472 WARN MISService.Method.LogMethods - Polling:57
+2018-09-04 15:07:00,472 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:07:00,706 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:07:02,516 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:07:02,516 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:08:02,529 WARN MISService.Method.LogMethods - Polling:58
+2018-09-04 15:08:02,529 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:08:02,654 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:08:03,949 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:08:03,949 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:09:03,962 WARN MISService.Method.LogMethods - Polling:59
+2018-09-04 15:09:03,962 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:09:04,149 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:09:05,428 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:09:05,428 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:10:05,442 WARN MISService.Method.LogMethods - Polling:60
+2018-09-04 15:10:05,442 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:10:05,629 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:10:07,205 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:10:07,205 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:11:07,218 WARN MISService.Method.LogMethods - Polling:61
+2018-09-04 15:11:07,218 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:11:07,405 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:11:08,622 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:11:08,622 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:12:08,635 WARN MISService.Method.LogMethods - Polling:62
+2018-09-04 15:12:08,635 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:12:08,854 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:12:11,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:12:11,350 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:13:11,363 WARN MISService.Method.LogMethods - Polling:63
+2018-09-04 15:13:11,363 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:13:11,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:13:12,392 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:13:12,392 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:14:12,406 WARN MISService.Method.LogMethods - Polling:64
+2018-09-04 15:14:12,406 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:14:12,531 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:14:13,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:14:13,763 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:15:13,776 WARN MISService.Method.LogMethods - Polling:65
+2018-09-04 15:15:13,776 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:15:13,963 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:15:15,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:15:15,227 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:16:15,240 WARN MISService.Method.LogMethods - Polling:66
+2018-09-04 15:16:15,240 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:16:15,443 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:16:16,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:16:16,691 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:17:16,705 WARN MISService.Method.LogMethods - Polling:67
+2018-09-04 15:17:16,705 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:17:16,907 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:17:18,639 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:17:18,639 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:18:18,652 WARN MISService.Method.LogMethods - Polling:68
+2018-09-04 15:18:18,652 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:18:18,855 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:18:20,711 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:18:20,711 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:19:20,725 WARN MISService.Method.LogMethods - Polling:69
+2018-09-04 15:19:20,725 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:19:20,943 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:19:22,690 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:19:22,690 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:20:22,704 WARN MISService.Method.LogMethods - Polling:70
+2018-09-04 15:20:22,704 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:20:22,891 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:20:24,139 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:20:24,139 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:21:24,152 WARN MISService.Method.LogMethods - Polling:71
+2018-09-04 15:21:24,152 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:21:24,339 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:21:25,634 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:21:25,634 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:22:25,647 WARN MISService.Method.LogMethods - Polling:72
+2018-09-04 15:22:25,647 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:22:25,850 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:22:27,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:22:27,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:23:27,127 WARN MISService.Method.LogMethods - Polling:73
+2018-09-04 15:23:27,127 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:23:27,314 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:23:28,531 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:23:28,531 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:24:28,544 WARN MISService.Method.LogMethods - Polling:74
+2018-09-04 15:24:28,544 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:24:28,716 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:24:30,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:24:30,323 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:25:30,336 WARN MISService.Method.LogMethods - Polling:75
+2018-09-04 15:25:30,336 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:25:30,555 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:25:31,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:25:31,818 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:26:31,831 WARN MISService.Method.LogMethods - Polling:76
+2018-09-04 15:26:31,831 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:26:32,003 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:26:35,560 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:26:35,560 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:27:35,573 WARN MISService.Method.LogMethods - Polling:77
+2018-09-04 15:27:35,573 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:27:35,729 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:27:36,962 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:27:36,962 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:28:36,975 WARN MISService.Method.LogMethods - Polling:78
+2018-09-04 15:28:36,975 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:28:37,162 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:28:38,363 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:28:38,363 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:29:38,377 WARN MISService.Method.LogMethods - Polling:79
+2018-09-04 15:29:38,377 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:29:38,548 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:29:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:29:39,796 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:30:39,810 WARN MISService.Method.LogMethods - Polling:80
+2018-09-04 15:30:39,810 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:30:39,981 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:30:41,276 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:30:41,276 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:31:41,289 WARN MISService.Method.LogMethods - Polling:81
+2018-09-04 15:31:41,289 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:31:41,461 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:31:42,709 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:31:42,709 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:32:42,722 WARN MISService.Method.LogMethods - Polling:82
+2018-09-04 15:32:42,722 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:32:42,941 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:32:44,329 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:32:44,329 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:33:44,342 WARN MISService.Method.LogMethods - Polling:83
+2018-09-04 15:33:44,342 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:33:44,841 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:33:46,136 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:33:46,136 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:34:46,150 WARN MISService.Method.LogMethods - Polling:84
+2018-09-04 15:34:46,150 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:34:46,321 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:34:47,554 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:34:47,554 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:35:47,567 WARN MISService.Method.LogMethods - Polling:85
+2018-09-04 15:35:47,567 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:35:47,770 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:35:49,096 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:35:49,096 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:36:49,109 WARN MISService.Method.LogMethods - Polling:86
+2018-09-04 15:36:49,109 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:36:49,296 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:36:50,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:36:50,607 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:37:50,620 WARN MISService.Method.LogMethods - Polling:87
+2018-09-04 15:37:50,620 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:37:50,791 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:37:52,024 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:37:52,024 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:38:52,037 WARN MISService.Method.LogMethods - Polling:88
+2018-09-04 15:38:52,037 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:38:52,256 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:38:53,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:38:53,488 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:39:53,501 WARN MISService.Method.LogMethods - Polling:89
+2018-09-04 15:39:53,501 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:39:53,673 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:39:55,888 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:39:55,888 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:40:55,901 WARN MISService.Method.LogMethods - Polling:90
+2018-09-04 15:40:55,901 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:40:56,089 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:40:57,914 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:40:57,914 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:41:57,927 WARN MISService.Method.LogMethods - Polling:91
+2018-09-04 15:41:57,927 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:41:58,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:41:59,986 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:41:59,986 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:43:00,000 WARN MISService.Method.LogMethods - Polling:92
+2018-09-04 15:43:00,000 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:43:00,171 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:43:01,700 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:43:01,700 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:44:01,713 WARN MISService.Method.LogMethods - Polling:93
+2018-09-04 15:44:01,713 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:44:01,901 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:44:03,102 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:44:03,102 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:45:03,115 WARN MISService.Method.LogMethods - Polling:94
+2018-09-04 15:45:03,115 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:45:03,271 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:45:04,550 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:45:04,550 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:46:04,564 WARN MISService.Method.LogMethods - Polling:95
+2018-09-04 15:46:04,564 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:46:04,798 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:46:05,999 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:46:05,999 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:47:06,012 WARN MISService.Method.LogMethods - Polling:96
+2018-09-04 15:47:06,012 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:47:06,199 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:47:07,603 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:47:07,603 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:48:07,617 WARN MISService.Method.LogMethods - Polling:97
+2018-09-04 15:48:07,617 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:48:07,819 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:48:09,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:48:09,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:49:09,127 WARN MISService.Method.LogMethods - Polling:98
+2018-09-04 15:49:09,127 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:49:09,346 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:49:10,641 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:49:10,641 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:50:10,654 WARN MISService.Method.LogMethods - Polling:99
+2018-09-04 15:50:10,654 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:50:10,826 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:50:12,074 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:50:12,074 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:51:12,087 WARN MISService.Method.LogMethods - Polling:100
+2018-09-04 15:51:12,087 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:51:12,258 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:51:13,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:51:13,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:52:13,613 WARN MISService.Method.LogMethods - Polling:101
+2018-09-04 15:52:13,613 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:52:13,816 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:52:15,064 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:52:15,064 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:53:15,077 WARN MISService.Method.LogMethods - Polling:102
+2018-09-04 15:53:15,077 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:53:15,296 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:53:16,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:53:16,840 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:54:16,854 WARN MISService.Method.LogMethods - Polling:103
+2018-09-04 15:54:16,854 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:54:17,041 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:54:18,445 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:54:18,445 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:55:18,458 WARN MISService.Method.LogMethods - Polling:104
+2018-09-04 15:55:18,458 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:55:18,645 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:55:19,971 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:55:19,971 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:56:19,985 WARN MISService.Method.LogMethods - Polling:105
+2018-09-04 15:56:19,985 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:56:20,156 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:56:21,436 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:56:21,436 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:57:21,449 WARN MISService.Method.LogMethods - Polling:106
+2018-09-04 15:57:21,449 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:57:21,667 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:57:22,868 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:57:22,868 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:58:22,882 WARN MISService.Method.LogMethods - Polling:107
+2018-09-04 15:58:22,882 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:58:23,069 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:58:24,286 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:58:24,286 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 15:59:24,299 WARN MISService.Method.LogMethods - Polling:108
+2018-09-04 15:59:24,299 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 15:59:24,517 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 15:59:25,781 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 15:59:25,781 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:00:25,794 WARN MISService.Method.LogMethods - Polling:109
+2018-09-04 16:00:25,794 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:00:25,982 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:00:28,041 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:00:28,041 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:01:28,054 WARN MISService.Method.LogMethods - Polling:110
+2018-09-04 16:01:28,054 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:01:28,241 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:01:29,505 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:01:29,505 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:02:29,518 WARN MISService.Method.LogMethods - Polling:111
+2018-09-04 16:02:29,518 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:02:29,705 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:02:30,985 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:02:30,985 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:03:30,998 WARN MISService.Method.LogMethods - Polling:112
+2018-09-04 16:03:30,998 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:03:31,169 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:03:32,386 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:03:32,386 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:04:32,400 WARN MISService.Method.LogMethods - Polling:113
+2018-09-04 16:04:32,400 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:04:32,602 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:04:33,850 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:04:33,850 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:05:33,864 WARN MISService.Method.LogMethods - Polling:114
+2018-09-04 16:05:33,864 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:05:34,269 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:05:35,486 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:05:35,486 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:06:35,499 WARN MISService.Method.LogMethods - Polling:115
+2018-09-04 16:06:35,499 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:06:35,733 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:06:37,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:06:37,075 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:07:37,088 WARN MISService.Method.LogMethods - Polling:116
+2018-09-04 16:07:37,088 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:07:37,276 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:07:38,477 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:07:38,477 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:08:38,490 WARN MISService.Method.LogMethods - Polling:117
+2018-09-04 16:08:38,490 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-04 16:08:38,662 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-04 16:08:41,111 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-04 16:08:41,111 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-04 16:09:41,124 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-09-05 10:01:29,931 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-05 10:01:40,179 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-05 10:01:42,807 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-05 10:05:26,226 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-05 10:05:36,148 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-05 10:05:38,626 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-05 10:06:01,149 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-05 10:06:01,149 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-05 10:10:20,758 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-05 10:10:30,401 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-05 10:10:32,703 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-05 10:10:39,266 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-05 10:10:39,266 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-05 10:11:08,114 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-05 10:11:18,114 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-05 10:11:20,314 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
+2018-09-05 10:11:26,908 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
+2018-09-05 10:11:26,909 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done

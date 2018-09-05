@@ -48,9 +48,10 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), Status__c, Sub_Total__c, SubTotal_Discount__c, "
+                    string query = "SELECT Id, Name, Status__c, Sub_Total__c, SubTotal_Discount__c, "
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
                         + " Tax_Option__c, Tax_Rate__c, "
+                        + " (SELECT Id, Title__c, Content__c FROM Notes__r), "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                         + " FROM Quotation__c "
@@ -99,7 +100,7 @@ namespace MISService.Methods
                             HandleQuoteService(jobID, estRevID, quoteID, ql.Id, ql.Service_Costs__r);
 
                             // handle notes
-                            HandleNotes(jobID, estRevID, quoteID, ql.AttachedContentNotes, ql.Id);
+                            HandleNotes(jobID, estRevID, quoteID, ql.Notes__r, ql.Id);
 
                             if (ql.Status__c == "Accepted")
                             {
@@ -179,12 +180,12 @@ namespace MISService.Methods
             {
                 if (result != null)
                 {
-
-                    IEnumerable<enterprise.AttachedContentNote> quoteList = result.records.Cast<enterprise.AttachedContentNote>();
+                    IEnumerable<enterprise.Note__c> quoteList = result.records.Cast<enterprise.Note__c>();
                     List<string> notes = new List<string>();
                     foreach (var q in quoteList)
                     {
                         notes.Add(q.Id);
+
                         int noteID = CommonMethods.GetMISID(TableName.Fw_Quote_Note, q.Id, sfQuoteID, salesForceProjectID);
                         if (noteID == 0)
                         {
@@ -201,7 +202,7 @@ namespace MISService.Methods
 
                         if (noteID != 0)
                         {
-                            UpdateNote(q.Title, q.TextPreview, noteID);
+                            UpdateNote(q.Title__c, q.Content__c, noteID);
                         }
                     }
 
