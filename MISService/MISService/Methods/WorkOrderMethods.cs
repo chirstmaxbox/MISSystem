@@ -1,7 +1,9 @@
 ﻿using MISService.Method;
 using MISService.Models;
+using MyCommon.MyEnum;
 using ProjectDomain;
 using SalesCenterDomain.BDL;
+using SalesCenterDomain.BDL.Item;
 using SalesCenterDomain.BDL.Task;
 using SalesCenterDomain.BDL.Workorder;
 using SalesCenterDomain.BO;
@@ -48,7 +50,7 @@ namespace MISService.Methods
                     string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
                         + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c,"
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
-                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Sign_Type__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM Installer_Instructions__r),"
                         + " (SELECT Id, Check_List_Item__c, Content__c, Content_For_Check_List_Item_As_Others__c FROM Production_Check_List__r),"
@@ -93,7 +95,7 @@ namespace MISService.Methods
                                 ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__r, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id, ql.Amount__c);
 
                             // generate work order items
-                            HandleWorkOrderItem(workOrderID, estRevID, ql.Id, ql.Items__r);
+                            HandleWorkOrderItem(workOrderID, estRevID, ql.Id, ql.Items__r, ql.RecordType.Name);
 
                             switch (ql.RecordType.Name)
                             {
@@ -232,7 +234,7 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleWorkOrderItem(int workOrderID, int estRevID, string sfWorkOrderID, enterprise.QueryResult result)
+        private void HandleWorkOrderItem(int workOrderID, int estRevID, string sfWorkOrderID, enterprise.QueryResult result, string woType)
         {
             try
             {
@@ -267,7 +269,10 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.PC_s__c);
+                            UpdateWorkOrderItem(estRevID, il.Id, itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.PC_s__c, il.Sign_Type__c);
+
+                            //Update Leadtime Table
+                            UpdateLeadtimetable(itemIDTemp, woType);
                         }
                     }
 
@@ -281,6 +286,25 @@ namespace MISService.Methods
             {
                 LogMethods.Log.Error("HandleWorkOrderItem:Error:" + e.Message);
             }
+        }
+
+        private void UpdateLeadtimetable(int woItemID, string woType) {
+            LeadtimeTableBase lt;
+
+            switch (woType)
+            {
+                case "Production":
+                    lt = new LeadtimeTableProduction(woItemID);
+                    break;
+                case "Service":
+                    lt = new LeadtimeTableService(woItemID);
+                    break;
+                default:
+                    lt = new LeadtimeTableSitecheck(woItemID);
+                    break;
+            }
+
+            lt.Update();
         }
 
         private void DeleteAllDeletedWorkOrderItems(string[] items, string sfWorkOrderID)
@@ -313,7 +337,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string PC)
+        private void UpdateWorkOrderItem(int estRevID, string salesforceItemID, long workOrderItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, string PC, string signType)
         {
             try
             {
@@ -360,6 +384,12 @@ namespace MISService.Methods
                     if (itemOrder != null)
                     {
                         workOrderItem.woPrintOrder = Convert.ToInt16(itemOrder);
+                    }
+
+                    Product optionDetails = _db.Products.Where(x => x.ProductName.Trim() == signType & x.Active).FirstOrDefault();
+                    if (optionDetails != null)
+                    {
+                        workOrderItem.NameDetailsID = optionDetails.ProductID;
                     }
 
                     _db.Entry(workOrderItem).State = EntityState.Modified;

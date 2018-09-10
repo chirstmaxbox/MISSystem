@@ -177,3 +177,16 @@
 2018-08-29 22:20:29,851 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO RFP #2014-05 - STORE 503 - Plevna Awning
 2018-08-29 22:20:36,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: LCBO RFP #2014-05 - STORE 503 - Plevna Awning<Project Num:18P000195>
 2018-08-29 22:20:36,960 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2018-09-10 12:09:01,714 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-10 12:09:10,600 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-10 12:09:12,643 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO #083- Hawkesbury
+2018-09-10 12:11:23,365 ERROR MISService.Method.LogMethods - HandleQuoteItem:Error:Object reference not set to an instance of an object.
+2018-09-10 12:11:33,336 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-10 12:11:42,109 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-10 12:11:44,168 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO #083- Hawkesbury
+2018-09-10 12:14:32,234 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-10 12:14:41,032 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-10 12:14:43,030 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO #083- Hawkesbury
+2018-09-10 12:15:34,595 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2018-09-10 12:15:42,650 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2018-09-10 12:15:44,773 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:LCBO #083- Hawkesbury

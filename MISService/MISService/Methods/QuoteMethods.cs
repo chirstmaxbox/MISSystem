@@ -732,7 +732,7 @@ namespace MISService.Methods
                 }
                 else
                 {
-                    if (requirement.Trim() == "Supply Only")
+                    if (requirement != null && requirement.Trim() == "Supply Only")
                     {
                         requirementID = 70;
                     }
