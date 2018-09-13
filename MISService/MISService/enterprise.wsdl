@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-09-05 13:51:47 +0000.
+Generated on 2018-09-13 14:45:09 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
-CloudRebelz Alert Message (Version: 1.3, Namespace: alertmessage)
+CT Consulting Alert Message (Version: 1.3, Namespace: alertmessage)
 Declarative Lookup Rollup Summaries Tool (Version: 2.11, Namespace: dlrs)
 
 Copyright 1999-2018 salesforce.com, inc.
@@ -6461,7 +6461,7 @@ All Rights Reserved
                         <element name="Number_Of_Items__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Number_Of_Services__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="PO_No__c" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="Print_Option__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Payment__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -10217,6 +10217,8 @@ All Rights Reserved
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Deposit_Amount__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Deposit_Percentage__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Deposit__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Discount__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -10228,6 +10230,7 @@ All Rights Reserved
                         <element name="Grand_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Invoices__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="Is_Clone__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="ItemCost1Set__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13779,6 +13782,7 @@ All Rights Reserved
                         <element name="Installing_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Phone_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="Is_Clone__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
