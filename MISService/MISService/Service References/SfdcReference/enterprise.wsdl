@@ -2595,6 +2595,7 @@
               <xsd:element minOccurs="0" name="Feeds" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Histories" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Hoisting_Permits__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="IsEmailBounced" nillable="true" type="xsd:boolean" />
               <xsd:element minOccurs="0" name="Jigsaw" nillable="true" type="xsd:string" />
@@ -4697,6 +4698,7 @@
               <xsd:element minOccurs="0" name="Estimation_Hour__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="EventRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" type="tns:QueryResult" />
+              <xsd:element minOccurs="0" name="Has_New_Or_Update_Item__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Histories" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Installing_Address__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
@@ -4717,6 +4719,7 @@
               <xsd:element minOccurs="0" name="ProcessSteps" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Project_Name__c" nillable="true" type="tns:ID" />
               <xsd:element minOccurs="0" name="Project_Name__r" nillable="true" type="ens:Opportunity" />
+              <xsd:element minOccurs="0" name="Project_Number__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Quotations__r" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="RecordActions" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="RecordAssociatedGroups" nillable="true" type="tns:QueryResult" />
@@ -5887,7 +5890,8 @@
               <xsd:element minOccurs="0" name="Emails" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="EventRelations" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" type="tns:QueryResult" />
-              <xsd:element minOccurs="0" name="Foreman_Name__c" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Foreman_Name__c" nillable="true" type="tns:ID" />
+              <xsd:element minOccurs="0" name="Foreman_Name__r" nillable="true" type="ens:Contact" />
               <xsd:element minOccurs="0" name="Foreman_Phone__c" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Hoisting_Permit_Number__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="IsDeleted" nillable="true" type="xsd:boolean" />
@@ -6215,7 +6219,6 @@
               <xsd:element minOccurs="0" name="Number_Of_Items__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="Number_Of_Services__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="PO_No__c" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="Payment__c" nillable="true" type="xsd:double" />
               <xsd:element minOccurs="0" name="ProcessInstances" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="ProcessSteps" nillable="true" type="tns:QueryResult" />
               <xsd:element minOccurs="0" name="Project_Name__c" nillable="true" type="tns:ID" />

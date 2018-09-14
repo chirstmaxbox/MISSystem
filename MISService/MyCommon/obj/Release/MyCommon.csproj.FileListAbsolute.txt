@@ -16,4 +16,3 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Release\MyComm
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\bin\Release\MyCommon.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Release\MyCommon.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Release\MyCommon.pdb
-C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommon\obj\Release\MyCommon.csprojResolveAssemblyReference.cache

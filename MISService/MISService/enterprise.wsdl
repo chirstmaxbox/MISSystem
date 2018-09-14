@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-09-13 14:45:09 +0000.
+Generated on 2018-09-14 01:41:51 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -2707,6 +2707,7 @@ All Rights Reserved
                         <element name="Feeds" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FirstName" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Histories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Hoisting_Permits__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="IsEmailBounced" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Jigsaw" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -4889,6 +4890,7 @@ All Rights Reserved
                         <element name="Estimation_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Has_New_Or_Update_Item__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Histories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Installing_Address__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -4909,6 +4911,7 @@ All Rights Reserved
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="Project_Name__r" nillable="true" minOccurs="0" type="ens:Opportunity"/>
+                        <element name="Project_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quotations__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -6124,7 +6127,8 @@ All Rights Reserved
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
-                        <element name="Foreman_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Foreman_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="Foreman_Name__r" nillable="true" minOccurs="0" type="ens:Contact"/>
                         <element name="Foreman_Phone__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Hoisting_Permit_Number__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -6461,7 +6465,6 @@ All Rights Reserved
                         <element name="Number_Of_Items__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Number_Of_Services__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="PO_No__c" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="Payment__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>

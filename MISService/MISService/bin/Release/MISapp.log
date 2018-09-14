@@ -1,0 +1,8 @@
+2018-09-13 10:49:18,795 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-09-13 10:49:27,079 WARN MISService.Method.LogMethods - Polling:1
+2018-09-13 10:51:42,565 WARN MISService.Method.LogMethods - Polling:2
+2018-09-13 10:52:45,371 WARN MISService.Method.LogMethods - Polling:3
+2018-09-13 10:53:48,020 WARN MISService.Method.LogMethods - Polling:4
+2018-09-13 10:54:50,904 WARN MISService.Method.LogMethods - Polling:5
+2018-09-13 10:55:53,710 WARN MISService.Method.LogMethods - Polling:6
+2018-09-13 10:56:56,391 WARN MISService.Method.LogMethods - Polling:7

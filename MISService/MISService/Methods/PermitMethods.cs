@@ -243,7 +243,7 @@ namespace MISService.Methods
                         if (hoisting_permitID != 0)
                         {
                             UpdateHoistingPermit(hoisting_permitID, sp.Issue_Date__c, sp.Occupation_Start_Time__c, sp.Occupation_End_Time__c, sp.Type_Of_Truck__c,
-                                sp.Truck_Weight__c, sp.Foreman_Name__c, sp.Foreman_Phone__c, sp.Remarks__c);
+                                sp.Truck_Weight__c, sp.Foreman_Name__r.Name, sp.Foreman_Phone__c, sp.Remarks__c);
                         }
 
                     }
