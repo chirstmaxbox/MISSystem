@@ -50,7 +50,7 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Name, Status__c, Sub_Total__c, SubTotal_Discount__c, "
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
-                        + " Tax_Option__c, Tax_Rate__c, "
+                        + " Tax_Option__c, Tax_Rate__c, Project_Name__r.Currency__c, "
                         + " (SELECT Id, Title__c, Content__c FROM Notes__r), "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
@@ -91,7 +91,7 @@ namespace MISService.Methods
 
                         if (quoteID != 0)
                         {
-                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c, ql.Terms__c);
+                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c, ql.Terms__c, ql.Project_Name__r.Currency__c);
 
                             // handle quote items
                             HandleQuoteItem(jobID, estRevID, quoteID, ql.Id, ql.Items__r);
@@ -359,7 +359,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, string taxRate, string term)
+        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, double? taxRate, string term, string currency)
         {
             try
             {
@@ -374,6 +374,11 @@ namespace MISService.Methods
                     if (version != null)
                     {
                         sales_JobMasterList_quoteRev.quoteRev = Convert.ToByte(version);
+                    }
+
+                    if (currency != null)
+                    {
+                        sales_JobMasterList_quoteRev.Currency = currency;
                     }
 
                     switch (taxOption)

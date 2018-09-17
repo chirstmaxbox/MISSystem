@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-09-14 01:41:51 +0000.
+Generated on 2018-09-17 16:59:28 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.17, Namespace: sf_chttr_apps)
@@ -72,6 +72,7 @@ All Rights Reserved
                         <element name="AccountPartnersFrom" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AccountPartnersTo" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AccountSource" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="AccountTeamMembers" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ActivityHistories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Assets" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -313,6 +314,34 @@ All Rights Reserved
                         <element name="RowCause" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="UserOrGroup" nillable="true" minOccurs="0" type="ens:Name"/>
                         <element name="UserOrGroupId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+
+            <complexType name="AccountTeamMember">
+                <complexContent>
+                    <extension base="ens:sObject">
+                        <sequence>
+                        <element name="Account" nillable="true" minOccurs="0" type="ens:Account"/>
+                        <element name="AccountAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="AccountId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="CaseAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="ContactAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="LastModifiedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="OpportunityAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="PhotoUrl" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="TeamMemberRole" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Title" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="User" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="UserId" nillable="true" minOccurs="0" type="tns:ID"/>
                         </sequence>
                     </extension>
                 </complexContent>
@@ -7781,6 +7810,7 @@ All Rights Reserved
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Currency__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Description" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Discovery_Completed__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Drawings__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -10272,7 +10302,7 @@ All Rights Reserved
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Tax_Option__c" nillable="true" minOccurs="0" type="xsd:string"/>
-                        <element name="Tax_Rate__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Tax_Rate__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Terms__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
@@ -12364,6 +12394,7 @@ All Rights Reserved
                         <element name="AcceptedEventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Account" nillable="true" minOccurs="0" type="ens:Account"/>
                         <element name="AccountId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="AccountTeams" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Address" nillable="true" minOccurs="0" type="tns:address"/>
                         <element name="Alias" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="April_Quota__c" nillable="true" minOccurs="0" type="xsd:double"/>
@@ -12480,7 +12511,9 @@ All Rights Reserved
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="TimeZoneSidKey" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Title" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Total_Quota__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="UndecidedEventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="UserAccountTeams" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserEntityAccessRights" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserFieldAccessRights" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserPermissionsAvantgoUser" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -12570,6 +12603,34 @@ All Rights Reserved
                         <element name="UserSites" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserType" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Username" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="X1st_Quarter__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="X2nd_Quarter__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="X3rd_Quarter__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="X4th_Quarter__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+
+            <complexType name="UserAccountTeamMember">
+                <complexContent>
+                    <extension base="ens:sObject">
+                        <sequence>
+                        <element name="AccountAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="CaseAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="ContactAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="LastModifiedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="OpportunityAccessLevel" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="OwnerId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="TeamMemberRole" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="User" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="UserId" nillable="true" minOccurs="0" type="tns:ID"/>
                         </sequence>
                     </extension>
                 </complexContent>
