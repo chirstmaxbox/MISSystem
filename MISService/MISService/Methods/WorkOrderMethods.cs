@@ -47,8 +47,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
-                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c,"
+                    string query = "SELECT Id, Name, Work_Order_Number__c, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
+                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c, Previous_Work_Order_Number__r.Work_Order_Number__c, Revise_WO_Count__c, "
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Sign_Type__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
@@ -91,8 +91,8 @@ namespace MISService.Methods
 
                         if (workOrderID != 0)
                         {
-                            UpdateWorkOrder(workOrderID, ql.Name, ql.RecordType.Name, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
-                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__r, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id, ql.Amount__c);
+                            UpdateWorkOrder(workOrderID, ql.Work_Order_Number__c, ql.RecordType.Name, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
+                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__r, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id, ql.Amount__c, ql.Revise_WO_Count__c);
 
                             // generate work order items
                             HandleWorkOrderItem(workOrderID, estRevID, ql.Id, ql.Items__r, ql.RecordType.Name);
@@ -437,10 +437,17 @@ namespace MISService.Methods
                                     break;
                             }
 
+                            /* remove special character */
+                            string hyperlink = ql.Hyperlink__c.TrimStart();
+                            while (hyperlink[0] != 'P' && hyperlink[0] != 'K' && hyperlink[0] != 'Q' && hyperlink[0] != 'H')
+                            {
+                                hyperlink = hyperlink.Substring(1);
+                            }
+
                             string fileName = "";
                             try
                             {
-                                fileName = Path.GetFileName(ql.Hyperlink__c);
+                                fileName = Path.GetFileNameWithoutExtension(hyperlink);
                             }
                             catch (Exception e)
                             {
@@ -449,13 +456,13 @@ namespace MISService.Methods
 
                             if (drawingAttachmentID == 0)
                             {
-                                InsertItemLink(workOrderItemID, ql.Hyperlink__c, purpose, ql.Type__c, fileName);
+                                InsertItemLink(workOrderItemID, hyperlink, purpose, ql.Type__c, fileName);
                                 int temp = SqlCommon.GetNewlyInsertedRecordID(TableName.WO_Item_Drawing);
                                 CommonMethods.InsertToMISSalesForceMapping(TableName.WO_Item_Drawing, ql.Id, temp.ToString(), salesforceItemID, salesForceProjectID);
                             }
                             else
                             {
-                                UpdateItemLink(drawingAttachmentID, ql.Hyperlink__c, purpose, ql.Type__c, fileName);
+                                UpdateItemLink(drawingAttachmentID, hyperlink, purpose, ql.Type__c, fileName);
                             }
                         }
 
@@ -610,7 +617,7 @@ namespace MISService.Methods
         }
 
         private void UpdateWorkOrder(int workOrderID, string woNumber, string woType, string paymentMethod, double? version, string rush, string rushReason,
-                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, enterprise.Work_Order__c preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID, double? amount)
+                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, enterprise.Work_Order__c preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID, double? amount, double? reviseWOCount)
         {
             try
             {
@@ -711,12 +718,12 @@ namespace MISService.Methods
                             workOrder.rush = true;
                             workOrder.reDo = true;
 
-                            if (preWONumber != null)
+                            if (reviseWOCount != null)
                             {
-                                if (preWONumber.Clone_Type__c != "New" && preWONumber.Clone_Type__c != cloneType)
+                                if (reviseWOCount > 0)
                                 {
                                     workOrder.revise = true;
-                                    workOrder.reviseVer = preWONumber.Version__c != null ? Convert.ToInt16(preWONumber.Version__c) : (short)1;
+                                    workOrder.reviseVer = Convert.ToInt16(reviseWOCount);
                                 }
                                 else
                                 {
@@ -730,8 +737,8 @@ namespace MISService.Methods
                                 workOrder.reviseVer = null;
                             }
                             
-                            workOrder.RedoOfWoNumbers = preWONumber != null ? preWONumber.Name : "";
-                            workOrder.WorkorderNumber = woNumber;
+                            workOrder.RedoOfWoNumbers = preWONumber != null ? preWONumber.Work_Order_Number__c : "";
+                            //workOrder.WorkorderNumber = woNumber;
                             if (version != null)
                             {
                                 workOrder.redoVer = Convert.ToInt16(version);
@@ -740,28 +747,11 @@ namespace MISService.Methods
                         case "Revise":
                             workOrder.rush = true;
                             workOrder.revise = true;
+                            workOrder.reDo = false;
+                            workOrder.redoVer = null;
 
-                            if (preWONumber != null)
-                            {
-                                if (preWONumber.Clone_Type__c != "New" && preWONumber.Clone_Type__c != cloneType)
-                                {
-                                    workOrder.reDo = true;
-                                    workOrder.redoVer = preWONumber.Version__c != null ? Convert.ToInt16(preWONumber.Version__c) : (short)1;
-                                }
-                                else
-                                {
-                                    workOrder.reDo = false;
-                                    workOrder.redoVer = null;
-                                }
-                            }
-                            else
-                            {
-                                workOrder.reDo = false;
-                                workOrder.redoVer = null;
-                            }
-
-                            workOrder.RedoOfWoNumbers = preWONumber != null ? preWONumber.Name : "";
-                            workOrder.WorkorderNumber = preWONumber != null ? preWONumber.Name : "";
+                            workOrder.RedoOfWoNumbers = preWONumber != null ? preWONumber.Work_Order_Number__c : "";
+                            //workOrder.WorkorderNumber = preWONumber != null ? preWONumber.Name : "";
                             if (version != null)
                             {
                                 workOrder.reviseVer = Convert.ToInt16(version);
@@ -773,11 +763,13 @@ namespace MISService.Methods
                             workOrder.reDo = false;
                             workOrder.redoVer = null;
                             workOrder.RedoOfWoNumbers = "";
-                            workOrder.WorkorderNumber = woNumber;
+                            //workOrder.WorkorderNumber = woNumber;
                             break;
                         default:
                             break;
                     }
+
+                    workOrder.WorkorderNumber = woNumber;
 
                     _db.Entry(workOrder).State = EntityState.Modified;
                     _db.SaveChanges();

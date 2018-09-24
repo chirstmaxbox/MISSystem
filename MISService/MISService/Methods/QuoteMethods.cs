@@ -52,7 +52,7 @@ namespace MISService.Methods
                         + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
                         + " Tax_Option__c, Tax_Rate__c, Project_Name__r.Currency__c, "
                         + " (SELECT Id, Title__c, Content__c FROM Notes__r), "
-                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
+                        + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c, Item_Option__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                         + " FROM Quotation__c "
                         + " WHERE Project_Name__c = '" + sfProjectID + "'";
@@ -669,7 +669,7 @@ namespace MISService.Methods
 
                         if (itemIDTemp != 0)
                         {
-                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c);
+                            UpdateQuoteItem(itemIDTemp, il.Item_Name__c, il.Requirement__c, il.Item_Description__c, il.Item_Cost__c, il.Quantity__c, il.Item_Order__c, il.Item_Option__c);
                         }
                     }
 
@@ -713,12 +713,12 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuoteItem(long quoteItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder)
+        private void UpdateQuoteItem(long quoteItemID, string itemName, string requirement, string description, double? itemCost, double? quality, double? itemOrder, double? itemOption)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
                 string UpdateString = "UPDATE Quote_Item SET qiItemTitle = @qiItemTitle, supplyType = @supplyType, qiDescription = @qiDescription, "
-                               + " qiAmount = @qiAmount, qiAmountText = @qiAmountText, qiQty = @qiQty, qiPrintOrder = @qiPrintOrder WHERE (quoteItemID = @quoteItemID)";
+                               + " qiAmount = @qiAmount, qiAmountText = @qiAmountText, qiQty = @qiQty, qiPrintOrder = @qiPrintOrder, quoteOption = @quoteOption, quoteOptionText = @quoteOptionText WHERE (quoteItemID = @quoteItemID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
                 if (itemName != null)
                 {
@@ -785,6 +785,17 @@ namespace MISService.Methods
                 else
                 {
                     UpdateCommand.Parameters.AddWithValue("@qiPrintOrder", 1);
+                }
+
+                if (itemOption != null)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@quoteOption", itemOption);
+                    UpdateCommand.Parameters.AddWithValue("@quoteOptionText", Convert.ToInt16(itemOption).ToString());
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@quoteOption", 1);
+                    UpdateCommand.Parameters.AddWithValue("@quoteOptionText", "1");
                 }
                     
                 try

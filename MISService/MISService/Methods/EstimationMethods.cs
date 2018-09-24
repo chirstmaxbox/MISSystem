@@ -45,7 +45,7 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Name, Cost__c, Remarks__c, Version__c, Estimation_Hour__c, Target_Date__c, "
                                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
-                                        + " (SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c FROM Items__r),"
+                                        + " (SELECT Id, Name, Item_Order__c, Category__c, Sign_Type__c, Feature_1__c, Feature_2__c, Graphic__c, Item_Name__c, Previous_Estimation_Available__c, Sale_Requirement__c, Estimator_Description__c, Position__c, Requirement__c, Quantity__c, Item_Cost__c, Height_Feet__c, Height_Feet1_s__c, Height_Feet2_s__c, Height_Feet3_s__c, Height_Inches__c, Height_Inches1__c, Height_Inches2__c, Height_Inches3__c, Width_Feet_s__c, Width_Inches__c, Thickness_Feet_s__c, Thickness_Feet1_s__c, Thickness_Feet2_s__c, Thickness_Feet3_s__c, Thickness_Inches__c, Thickness_Inches1__c, Thickness_Inches2__c, Thickness_Inches3__c, PC_s__c, PC1_s__c, PC2_s__c, PC3_s__c, Item_Option__c FROM Items__r),"
                                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c, Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                                         + " FROM Estimation__c "
                                         + " WHERE Project_Name__c = '" + sfProjectID + "'";
@@ -221,7 +221,7 @@ namespace MISService.Methods
                         }
 
                         UpdateEstItem(estItemID, il.Item_Name__c, il.Item_Order__c, il.Sign_Type__c, il.Previous_Estimation_Available__c, il.Sale_Requirement__c,  
-                            il.Estimator_Description__c, il.Position__c, il.Requirement__c, il.Quantity__c, il.Item_Cost__c );
+                            il.Estimator_Description__c, il.Position__c, il.Requirement__c, il.Quantity__c, il.Item_Cost__c, il.Item_Option__c );
 
                         UpdateEstItemSize(estItemID, il.Height_Feet__c, il.Height_Feet1_s__c, il.Height_Feet2_s__c, il.Height_Feet3_s__c,
                              il.Height_Inches__c, il.Height_Inches1__c, il.Height_Inches2__c, il.Height_Inches3__c, il.Width_Feet_s__c, il.Width_Inches__c,
@@ -345,7 +345,7 @@ namespace MISService.Methods
         }
 
         private void UpdateEstItem(long estItemID, string itemName, double? itemOrder, string signType, string previousEstimation, string saleRequirement,
-            string EstimatorDesc, string position, string requirement, double? quality, double? itemCost)
+            string EstimatorDesc, string position, string requirement, double? quality, double? itemCost, double? itemOption)
         {
             try
             {
@@ -369,6 +369,11 @@ namespace MISService.Methods
                     if (itemOrder != null)
                     {
                         item.EstItemNo = Convert.ToInt16(itemOrder);
+                    }
+
+                    if (itemOption != null)
+                    {
+                        item.ItemOption = Convert.ToInt16(itemOption);
                     }
                     /* product ID */
                     int productID = 0;

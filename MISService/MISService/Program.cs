@@ -3,6 +3,7 @@ using MISService.Method;
 using MISService.Methods;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
@@ -17,22 +18,22 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            /*
             LogMethods.Log.Info("-------------- *** Starting MISService *** ------------ ");
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
                 ProjectMethods pm = new ProjectMethods();
                 pm.GetAllProjects();
             }
-            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");*/
-            
+            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
+
+            /*
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
                 new MyMISService() 
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(ServicesToRun);*/
         }
     }
 }

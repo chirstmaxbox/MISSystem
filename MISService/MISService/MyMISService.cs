@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using MISService.Method;
 using System.Threading;
+using System.Configuration;
 
 namespace MISService
 {
@@ -87,6 +88,7 @@ namespace MISService
             LogMethods.Log.Warn("-------------- *** Starting MISService *** ------------");
             int polling = 1;
             bool exist = false;
+            int pollingInterval = Int32.Parse(ConfigurationManager.AppSettings["PollingInterval"]) * 1000;
             while (!exist)
             {
                 if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
@@ -111,7 +113,7 @@ namespace MISService
                         else
                         {
                             // wait 60 seconds for next polling
-                            Thread.Sleep(60000);
+                            Thread.Sleep(pollingInterval);
                         }
                     }
                 }
