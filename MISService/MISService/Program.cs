@@ -18,22 +18,22 @@ namespace MISService
         /// </summary>
         static void Main()
         {
+            /*
             LogMethods.Log.Info("-------------- *** Starting MISService *** ------------ ");
             if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
             {
                 ProjectMethods pm = new ProjectMethods();
                 pm.GetAllProjects();
             }
-            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
+            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");*/
 
-            /*
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
                 new MyMISService() 
             };
-            ServiceBase.Run(ServicesToRun);*/
+            ServiceBase.Run(ServicesToRun);
         }
     }
 }

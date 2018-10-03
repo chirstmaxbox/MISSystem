@@ -45,7 +45,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
-                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, "
+                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, Invoice_Number__c, "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                         + " FROM Invoice__c " 
@@ -67,16 +67,7 @@ namespace MISService.Methods
 
                     foreach (var ql in invoiceList)
                     {
-                        string invoiceName = ql.Name;
-                        if (ql.Invoice_Type__c == "Regular")
-                        {
-                            invoiceName = invoiceName.Replace("PRO", "");
-                        }
-                        else
-                        {
-                            invoiceName = invoiceName.Replace("V", "");
-                        }
-
+                        string invoiceName = ql.Invoice_Number__c;
                         /* check if the work order exists */
                         int invoiceID = CommonMethods.GetMISID(TableName.Sales_JobMasterList_Invoice, ql.Id, salesForceProjectID);
                         if (invoiceID == 0)
@@ -529,6 +520,7 @@ namespace MISService.Methods
                                 invoice.invoiceType = 2;
                                 break;
                             default:
+                                invoice.invoiceType = 3;
                                 break;
                         }
                     }

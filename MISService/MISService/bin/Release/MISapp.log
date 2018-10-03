@@ -1,0 +1,52 @@
+2018-09-26 14:16:37,944 ERROR MISService.Method.LogMethods - AuthenticateSfdcEnterpriseUser:Error = There was an error in serializing one of the headers in message loginRequest: 'Unable to generate a temporary class (result=1).
+error CS0030: Cannot convert type 'MISService.SfdcReference.ListViewRecordColumn[]' to 'MISService.SfdcReference.ListViewRecordColumn'
+error CS0030: Cannot convert type 'MISService.SfdcReference.ListViewRecordColumn[]' to 'MISService.SfdcReference.ListViewRecordColumn'
+error CS0029: Cannot implicitly convert type 'MISService.SfdcReference.ListViewRecordColumn' to 'MISService.SfdcReference.ListViewRecordColumn[]'
+error CS0029: Cannot implicitly convert type 'MISService.SfdcReference.ListViewRecordColumn' to 'MISService.SfdcReference.ListViewRecordColumn[]'
+'.  Please see InnerException for more details.
+2018-10-02 09:54:21,349 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-10-02 09:54:30,288 WARN MISService.Method.LogMethods - Polling:1
+2018-10-02 09:55:44,544 WARN MISService.Method.LogMethods - Polling:2
+2018-10-02 09:56:45,431 WARN MISService.Method.LogMethods - Polling:3
+2018-10-02 09:57:46,271 WARN MISService.Method.LogMethods - Polling:4
+2018-10-02 09:58:47,174 WARN MISService.Method.LogMethods - Polling:5
+2018-10-02 09:59:48,014 WARN MISService.Method.LogMethods - Polling:6
+2018-10-02 10:00:48,932 WARN MISService.Method.LogMethods - Polling:7
+2018-10-02 10:01:49,803 WARN MISService.Method.LogMethods - Polling:8
+2018-10-02 10:02:50,597 WARN MISService.Method.LogMethods - Polling:9
+2018-10-02 10:03:51,593 WARN MISService.Method.LogMethods - Polling:10
+2018-10-02 10:04:52,495 WARN MISService.Method.LogMethods - Polling:11
+2018-10-02 10:05:53,507 WARN MISService.Method.LogMethods - Polling:12
+2018-10-02 10:06:54,472 WARN MISService.Method.LogMethods - Polling:13
+2018-10-02 10:07:55,515 WARN MISService.Method.LogMethods - Polling:14
+2018-10-02 10:08:56,667 WARN MISService.Method.LogMethods - Polling:15
+2018-10-02 10:09:57,944 WARN MISService.Method.LogMethods - Polling:16
+2018-10-02 10:10:59,236 WARN MISService.Method.LogMethods - Polling:17
+2018-10-02 10:12:00,388 WARN MISService.Method.LogMethods - Polling:18
+2018-10-02 10:13:01,431 WARN MISService.Method.LogMethods - Polling:19
+2018-10-02 10:14:02,771 WARN MISService.Method.LogMethods - Polling:20
+2018-10-02 10:15:03,720 WARN MISService.Method.LogMethods - Polling:21
+2018-10-02 10:16:04,716 WARN MISService.Method.LogMethods - Polling:22
+2018-10-02 10:17:05,650 WARN MISService.Method.LogMethods - Polling:23
+2018-10-02 10:18:06,599 WARN MISService.Method.LogMethods - Polling:24
+2018-10-02 10:19:07,595 WARN MISService.Method.LogMethods - Polling:25
+2018-10-02 10:20:08,544 WARN MISService.Method.LogMethods - Polling:26
+2018-10-02 10:21:09,525 WARN MISService.Method.LogMethods - Polling:27
+2018-10-02 10:22:10,490 WARN MISService.Method.LogMethods - Polling:28
+2018-10-02 10:23:11,439 WARN MISService.Method.LogMethods - Polling:29
+2018-10-02 10:24:12,752 WARN MISService.Method.LogMethods - Polling:30
+2018-10-02 10:25:13,720 WARN MISService.Method.LogMethods - Polling:31
+2018-10-02 10:26:14,607 WARN MISService.Method.LogMethods - Polling:32
+2018-10-02 10:27:15,525 WARN MISService.Method.LogMethods - Polling:33
+2018-10-02 10:28:16,474 WARN MISService.Method.LogMethods - Polling:34
+2018-10-02 10:29:17,439 WARN MISService.Method.LogMethods - Polling:35
+2018-10-02 10:30:18,466 WARN MISService.Method.LogMethods - Polling:36
+2018-10-02 10:31:19,696 WARN MISService.Method.LogMethods - Polling:37
+2018-10-02 10:32:21,691 WARN MISService.Method.LogMethods - Polling:38
+2018-10-02 10:33:23,280 WARN MISService.Method.LogMethods - Polling:39
+2018-10-02 10:34:24,276 WARN MISService.Method.LogMethods - Polling:40
+2018-10-02 10:35:25,241 WARN MISService.Method.LogMethods - Polling:41
+2018-10-02 10:36:26,221 WARN MISService.Method.LogMethods - Polling:42
+2018-10-02 10:37:27,202 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2018-10-03 10:17:42,515 WARN MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------
+2018-10-03 10:17:51,048 WARN MISService.Method.LogMethods - Polling:1

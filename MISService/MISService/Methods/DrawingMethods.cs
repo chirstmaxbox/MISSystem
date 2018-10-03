@@ -42,7 +42,7 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
                                     + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
-                                    + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate, Drawing_Hour__c, Target_Date__c, "
+                                    + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate, Drawing_Hour__c, Number_Of_Drawings__c, Target_Date__c, "
                                     + " (SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Items__r),"
                                     + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1)"
                                     + " FROM Drawing__c "
@@ -86,13 +86,13 @@ namespace MISService.Methods
                                 // add items to drawing
                                 GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id, dl.Items__r);
 
-                                GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id);
+                                GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c);
                             }
                             flag = true;
                         }
                         else
                         {
-                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id);
+                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c);
                         }
                     }
 
@@ -105,7 +105,7 @@ namespace MISService.Methods
             }
         }
 
-        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType, string sfDrawingID)
+        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType, string sfDrawingID, double? NumofDrawings)
         {
             try
             {
@@ -181,6 +181,12 @@ namespace MISService.Methods
                                 {
                                     sales_Dispatching.WorkedHour = drawHour;
                                 }
+
+                                if (NumofDrawings != null)
+                                {
+                                    sales_Dispatching.NumberOfDrawing = Convert.ToInt32(NumofDrawings);
+                                }
+
                                 sales_Dispatching.Status = taskStatus;
                                 if (el.CompletedDate != null)
                                 {
@@ -191,25 +197,20 @@ namespace MISService.Methods
                                 _db.SaveChanges();
                             }
                         }
-
-                        /*
-                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == taskType && x.Importance == version).FirstOrDefault();
-                        if (sales_Dispatching != null)
+                    }
+                    else if (el.Status == "Removed")
+                    {
+                        int drawingID = CommonMethods.GetMISID(TableName.Sales_Dispatching, sfDrawingID, salesForceProjectID);
+                        if (drawingID > 0)
                         {
-                            if (drawHour != null)
+                            var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.TaskID == drawingID).FirstOrDefault();
+                            if (sales_Dispatching != null)
                             {
-                                sales_Dispatching.WorkedHour = drawHour;
+                                /* delete a row in Sales_Dispatching */
+                                _db.Sales_Dispatching.Remove(sales_Dispatching);
+                                _db.SaveChanges();
                             }
-                            sales_Dispatching.Status = taskStatus;
-                            if (el.CompletedDate != null)
-                            {
-                                sales_Dispatching.FinishedDate = el.CompletedDate.Value.ToLocalTime();
-                            }
-
-                            _db.Entry(sales_Dispatching).State = EntityState.Modified;
-                            _db.SaveChanges();
                         }
-                        */
                     }
                 }
 

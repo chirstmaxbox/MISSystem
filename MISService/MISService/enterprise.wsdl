@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 43.0
-Generated on 2018-09-24 20:07:42 +0000.
+Generated on 2018-10-01 14:15:06 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.18, Namespace: sf_chttr_apps)
@@ -4315,6 +4315,7 @@ All Rights Reserved
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Drawer_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Drawing_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Drawing_Purpose__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Drawing_Requisition_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -4339,11 +4340,13 @@ All Rights Reserved
                         <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Level__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="List_Item_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="NotesAndAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Number_Of_Drawings__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Number_Of_Items__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -4917,6 +4920,7 @@ All Rights Reserved
                         <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Estimation_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Estimator_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Has_New_Or_Update_Item__c" nillable="true" minOccurs="0" type="xsd:double"/>
@@ -4931,6 +4935,7 @@ All Rights Reserved
                         <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Level__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Max_Item_Order__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
@@ -4952,6 +4957,7 @@ All Rights Reserved
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Target_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Temp_Estimation_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Total_Estimation_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Total_Last_Estimation_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
@@ -6448,6 +6454,7 @@ All Rights Reserved
                 <complexContent>
                     <extension base="ens:sObject">
                         <sequence>
+                        <element name="Accountant_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -6478,6 +6485,7 @@ All Rights Reserved
                         <element name="Invoice_Sub_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Invoice_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="Is_Clone__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="ItemCost1Set__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -6498,6 +6506,7 @@ All Rights Reserved
                         <element name="Number_Of_Services__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="PO_No__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Payment__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Previous_Invoice_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Project_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -10299,6 +10308,7 @@ All Rights Reserved
                         <element name="Project_Name__r" nillable="true" minOccurs="0" type="ens:Opportunity"/>
                         <element name="Quotation_Number_Search__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quotation_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Quotation_Status_Image__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Quote_Sub_Total__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -11209,6 +11219,7 @@ All Rights Reserved
                         <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Level__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -11767,6 +11778,7 @@ All Rights Reserved
                         <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Level__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -13864,6 +13876,7 @@ All Rights Reserved
                         <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="Level__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="List_Item_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Max_Item_Order__c" nillable="true" minOccurs="0" type="xsd:double"/>
@@ -13899,10 +13912,12 @@ All Rights Reserved
                         <element name="Version__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="WorkShop_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Work_Order_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Work_Order_Number_Search__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Work_Order_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Work_Order_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Work_Orders__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Worker_Instructions__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Worker_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         </sequence>
                     </extension>
                 </complexContent>

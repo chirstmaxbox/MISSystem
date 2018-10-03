@@ -159,11 +159,7 @@ namespace MISService.Methods
                         //show results
                         foreach (var el in processInstanceList)
                         {
-                            if (el.Status == "Approved")
-                            {
-                                //nothing to do as in production department they will fill some information before approving
-                            }
-                            else if (el.Status == "Pending")
+                            if (el.Status == "Pending")
                             {
                                 int taskCategory = 720; //-- [Work order Approval] is defined in Sales_Dispatching_Task_Category
                                 int submitBy = userEmployeeID;
@@ -225,6 +221,36 @@ namespace MISService.Methods
                         }
 
                         LogMethods.Log.Debug("HandleApprovalStatus:Debug:" + "Done");
+                    }
+                }
+                else
+                {
+                    // this work order has been submitted
+                    using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
+                    {
+                        if (result == null || (result != null && result.size == 0)) return;
+
+                        //cast query results
+                        IEnumerable<enterprise.ProcessInstance> processInstanceList = result.records.Cast<enterprise.ProcessInstance>();
+
+                        //show results
+                        foreach (var el in processInstanceList)
+                        {
+                            if (el.Status == "Removed")
+                            {
+                                var workOrder = _db.Sales_JobMasterList_WO.Where(x => x.woID == sales_Dispatching.WoID).FirstOrDefault();
+                                if (workOrder != null)
+                                {
+                                    workOrder.woStatus = (short) NJobStatus.woNew;
+                                }
+                                _db.Entry(workOrder).State = EntityState.Modified;
+                                _db.SaveChanges();
+
+                                /* delete a row in Sales_Dispatching */
+                                _db.Sales_Dispatching.Remove(sales_Dispatching);
+                                _db.SaveChanges();
+                            }
+                        }
                     }
                 }
             }
