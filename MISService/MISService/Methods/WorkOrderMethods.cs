@@ -380,7 +380,7 @@ namespace MISService.Methods
                     }
                     else
                     {
-                        LogMethods.Log.Error("UpdateWorkOrderItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                        LogMethods.Log.Warn("UpdateWorkOrderItem:Warn:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
                     }
                     workOrderItem.Requirement = requirementID;
                     workOrderItem.woDescription = description;

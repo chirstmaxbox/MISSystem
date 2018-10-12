@@ -417,7 +417,7 @@ namespace MISService.Methods
                     }
                     else
                     {
-                        LogMethods.Log.Error("UpdateEstItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                        LogMethods.Log.Warn("UpdateEstItem:Warn:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
                     }
                     item.RequirementID = requirementID;
 

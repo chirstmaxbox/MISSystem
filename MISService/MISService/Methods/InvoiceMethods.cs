@@ -367,7 +367,7 @@ namespace MISService.Methods
                     }
                     else
                     {
-                        LogMethods.Log.Error("UpdateInvoiceItem:Debug:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
+                        LogMethods.Log.Warn("UpdateInvoiceItem:Warn:" + "Requirement of " + requirement + " doesn't exist on FW_JOB_TYPE table.");
                     }
                     invoiceItem.supplyType = Convert.ToInt16(requirementID);
 

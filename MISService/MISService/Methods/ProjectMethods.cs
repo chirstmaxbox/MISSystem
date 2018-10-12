@@ -41,7 +41,7 @@ namespace MISService.Method
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Owner.CommunityNickname, Bidding_Type__c, Bidding_Source__c, Product_Line__c, "
-                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.CommunityNickname, "
+                                           + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.CommunityNickname, Project_Coordinator__r.CommunityNickname, "
                                            + " (SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__r.Name, Billing_Company_Name__r.Id, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c, Quoting_Company_City__c, Quoting_Company_Name__r.Name, Quoting_Company_Name__r.Id,  Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c,Installing_Company_City__c, Installing_Company_Name__r.Name, Installing_Company_Name__r.Id, Installing_Contact_Name__r.Account.Id, Installing_Company_Postal_Code__c, Installing_Company_Province__c, Installing_Company_Street__c, Installing_Contact_Name__r.FirstName, Installing_Contact_Name__r.LastName, Installing_Contact_Name__r.Id, Installing_Contact_Phone__c, Installing_Company_Country__c, Billing_Account_Intersection__c, Billing_Account_Corner__c, Installing_Account_Intersection__c,Installing_Account_Corner__c,Quoting_Account_Intersection__c,Quoting_Account_Corner__c FROM Bill_Quote_Ships__r), "
                                            + " (SELECT Id, Number_of_Signs__c, Project_Value_Estimated__c,  Remarks__c, Issue_Date__c, Due_Date__c, LandLord__r.Name, LandLord_Contact__r.Name, LandLord_Phone_Number__c, LandLord__r.BillingStreet, LandLord__r.BillingCity, LandLord__r.BillingState, LandLord__r.BillingPostalCode FROM Sign_Permits__r),"
                                            + " (SELECT Id, Occupation_Start_Time__c, Occupation_End_Time__c, Issue_Date__c, Type_Of_Truck__c, Truck_Weight__c, Foreman_Name__r.Name, Foreman_Phone__c, Remarks__c FROM Hoisting_Permits__r),"
@@ -82,7 +82,7 @@ namespace MISService.Method
                                 /* insert data to MISSalesForceMapping */
                                 if (jobID > 0)
                                 {
-                                    UpdateProject(jobID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c);
+                                    UpdateProject(jobID, opportunity.CloseDate, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c, opportunity.Project_Coordinator__r);
                                     /* update jobnumber */
                                     UpdateJobNumber(jobID, opportunity.Project_Number__c);
 
@@ -97,7 +97,7 @@ namespace MISService.Method
                             }
                             else
                             {
-                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, 110, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c);
+                                UpdateProject(sales_JobMasterListID, opportunity.CloseDate, fsEmployee.EmployeeNumber, opportunity.Name, opportunity.Type, opportunity.Account_Executive__r, opportunity.Product_Line__c, opportunity.Project_Coordinator__r);
                             }
 
                             /* for bidding project */
@@ -216,11 +216,11 @@ namespace MISService.Method
         /// <summary>
         /// Edit a project
         /// </summary>
-        private void UpdateProject(int jobID, DateTime? targetDate, int sa1ID, int sales, string jobTitle, string salesType, enterprise.User AE, string productLine)
+        private void UpdateProject(int jobID, DateTime? targetDate, int sales, string jobTitle, string salesType, enterprise.User AE, string productLine, enterprise.User projectCoordinatorName)
         {
             using (var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString))
             {
-                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sa1ID = @sa1ID, sales = @sales, jobTitle = @jobTitle, salesType = @salesType, isBidToProject = @isBidToProject, AETM = @AETM, ProductLine = @ProductLine WHERE (jobID = @jobID)";
+                string UpdateString = "UPDATE Sales_JobMasterList SET targetDate = @targetDate, sales = @sales, jobTitle = @jobTitle, salesType = @salesType, isBidToProject = @isBidToProject, AETM = @AETM, ProductLine = @ProductLine, sa1ID = @sa1ID WHERE (jobID = @jobID)";
                 var UpdateCommand = new SqlCommand(UpdateString, Connection);
                 if (targetDate != null)
                 {
@@ -247,7 +247,6 @@ namespace MISService.Method
                         break;
                 }
 
-                UpdateCommand.Parameters.Add("@sa1ID", SqlDbType.Int).Value = sa1ID;
                 UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = sales;
                 UpdateCommand.Parameters.Add("@jobTitle", SqlDbType.VarChar, 150).Value = jobTitle;
                 UpdateCommand.Parameters.Add("@jobID", SqlDbType.Int).Value = jobID;
@@ -287,6 +286,17 @@ namespace MISService.Method
                 else
                 {
                     UpdateCommand.Parameters.AddWithValue("@ProductLine", 1);
+                }
+
+                string op = (projectCoordinatorName == null ? "" : projectCoordinatorName.CommunityNickname);
+                FsEmployee poEmployee = new FsEmployee(op);
+                if (projectCoordinatorName != null && poEmployee.EmployeeNumber > 0)
+                {
+                    UpdateCommand.Parameters.AddWithValue("@sa1ID", poEmployee.EmployeeNumber);
+                }
+                else
+                {
+                    UpdateCommand.Parameters.AddWithValue("@sa1ID", 110);
                 }
 
                 try
