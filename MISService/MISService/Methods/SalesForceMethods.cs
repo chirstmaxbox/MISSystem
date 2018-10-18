@@ -11,11 +11,10 @@ namespace MISService.Method
 {
     public class SalesForceMethods
     {
+        /*
         public static string userName = "anh.tran@exocloud.ca";
-        //public static string userName = "anh.tran@exocloud.ca.testing";
         public static string password = "6%namnhumoinamA";
-        public static string token = "4OtoAt7RYUMt7NVhgdsCaKS8z";
-        //public static string token = "8AUgkOkaesxHncSWplLKVrB4";
+        public static string token = "4OtoAt7RYUMt7NVhgdsCaKS8z";*/
 
         public static string sessionId = string.Empty;
         public static string serverUrl = string.Empty;
@@ -23,7 +22,7 @@ namespace MISService.Method
         /// Call SFDC endpoint and retrieve authentication token and API URL for SOAP callers
         /// </summary>
         /// 
-        public static bool AuthenticateSfdcEnterpriseUser()
+        public static bool AuthenticateSfdcEnterpriseUser(string user, string pass, string token)
         {
             //print message to console
             LogMethods.Log.Debug("Authenticating against the Enterprise API ...");
@@ -35,11 +34,11 @@ namespace MISService.Method
                 using (enterprise.SoapClient loginClient = new enterprise.SoapClient("Soap"))
                 {
                     //set account password and account token variables
-                    string sfdcPassword = password;
+                    string sfdcPassword = pass;
                     string sfdcToken = token;
 
                     //set to Force.com user account that has API access enabled
-                    string sfdcUserName = userName;
+                    string sfdcUserName = user;
 
                     //create login password value
                     string loginPassword = sfdcPassword + sfdcToken;

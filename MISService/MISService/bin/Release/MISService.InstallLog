@@ -418,3 +418,11 @@ Affected parameters are:
    logtoconsole = 
    logfile = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.InstallLog
    assemblypath = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe
+Uninstalling assembly 'C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.InstallLog
+   assemblypath = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe
+Removing EventLog source MyMISService.
+Service MyMISService is being removed from the system...
+Service MyMISService was successfully removed from the system.

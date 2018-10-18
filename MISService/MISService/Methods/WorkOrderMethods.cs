@@ -1,4 +1,5 @@
-﻿using MISService.Method;
+﻿using EmployeeDomain.BLL;
+using MISService.Method;
 using MISService.Models;
 using MyCommon.MyEnum;
 using ProjectDomain;
@@ -47,7 +48,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Work_Order_Number__c, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, "
+                    string query = "SELECT Id, Name, Work_Order_Number__c, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, Project_Name__r.Account_Executive__r.CommunityNickname, "
                         + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c, Previous_Work_Order_Number__r.Work_Order_Number__c, Revise_WO_Count__c, "
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Sign_Type__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
@@ -92,7 +93,7 @@ namespace MISService.Methods
                         if (workOrderID != 0)
                         {
                             UpdateWorkOrder(workOrderID, ql.Work_Order_Number__c, ql.RecordType.Name, ql.Payment_Method__c, ql.Version__c, ql.Rush__c, ql.Rush_Reason__c,
-                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__r, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id, ql.Amount__c, ql.Revise_WO_Count__c);
+                                ql.Remarks__c, ql.Issue_Date__c, ql.Due_Date__c, ql.Clone_Type__c, ql.Previous_Work_Order_Number__r, ql.Site_Check_Purpose__c, ql.Site_Check_Purpose_As_Other__c, ql.Id, ql.Amount__c, ql.Revise_WO_Count__c, ql.Project_Name__r.Account_Executive__r);
 
                             // generate work order items
                             HandleWorkOrderItem(workOrderID, estRevID, ql.Id, ql.Items__r, ql.RecordType.Name);
@@ -643,7 +644,7 @@ namespace MISService.Methods
         }
 
         private void UpdateWorkOrder(int workOrderID, string woNumber, string woType, string paymentMethod, double? version, string rush, string rushReason,
-                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, enterprise.Work_Order__c preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID, double? amount, double? reviseWOCount)
+                        string remarks, DateTime? issueDate, DateTime? dueDate, string cloneType, enterprise.Work_Order__c preWONumber, string siteCheckPurpose, string siteCheckPurposeAsOther, string sfWorkOrderID, double? amount, double? reviseWOCount, enterprise.User accountExecutive)
         {
             try
             {
@@ -736,6 +737,15 @@ namespace MISService.Methods
                     if (amount != null)
                     {
                         workOrder.WorkorderAmount = Convert.ToDouble(amount);
+                    }
+
+                    if (accountExecutive != null)
+                    {
+                        FsEmployee poEmployee = new FsEmployee(accountExecutive.CommunityNickname);
+                        if (poEmployee.EmployeeNumber > 0)
+                        {
+                            workOrder.Sales = poEmployee.EmployeeNumber;
+                        }
                     }
 
                     switch (cloneType)

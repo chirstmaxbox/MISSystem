@@ -89,9 +89,12 @@ namespace MISService
             int polling = 1;
             bool exist = false;
             int pollingInterval = Int32.Parse(ConfigurationManager.AppSettings["PollingInterval"]) * 1000;
+            string userName = Convert.ToString(ConfigurationManager.AppSettings["SFUsername"]);
+            string password = Convert.ToString(ConfigurationManager.AppSettings["SFPassword"]);
+            string token = Convert.ToString(ConfigurationManager.AppSettings["SFToken"]);
             while (!exist)
             {
-                if (SalesForceMethods.AuthenticateSfdcEnterpriseUser())
+                if (SalesForceMethods.AuthenticateSfdcEnterpriseUser(userName, password, token))
                 {
                     while (m.Running)
                     {

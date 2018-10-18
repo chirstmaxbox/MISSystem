@@ -99,7 +99,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateSales_JobMasterList_Customer(int jcID, int jobID, int contactID, int type)
+        private void UpdateSales_JobMasterList_Customer(int jcID, int jobID, int contactID, int customerID, int type)
         {
             try
             {
@@ -145,6 +145,7 @@ namespace MISService.Methods
                             break;
                     }
                     sales_JobMasterList_Customer.contactName = contactID;
+                    sales_JobMasterList_Customer.cID = customerID;
                     _db.Entry(sales_JobMasterList_Customer).State = EntityState.Modified;
                     _db.SaveChanges();
                 }
@@ -165,15 +166,20 @@ namespace MISService.Methods
                 int vContactID = CommonMethods.GetMISID(TableName.Customer_Contact, contactID, accountID, salesForceProjectID);
                 if (vContactID == 0)
                 {
-                    /* add new contact */
-                    FsCustomerContact cc = new FsCustomerContact(customerRowID);
-                    cc.InsertContact();
-                    int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
-                    if (contact_id > 0)
+                    /* check if the contact is existent */
+                    vContactID = CommonMethods.GetContactCompanyMISID(TableName.Customer_Contact, contactID, accountID);
+                    if (vContactID == 0)
                     {
-                        CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
+                        /* add new contact */
+                        FsCustomerContact cc = new FsCustomerContact(customerRowID);
+                        cc.InsertContact();
+                        int contact_id = SqlCommon.GetNewlyInsertedRecordID(TableName.Customer_Contact);
+                        if (contact_id > 0)
+                        {
+                            CommonMethods.InsertToMISSalesForceMapping(TableName.Customer_Contact, contactID, contact_id.ToString(), accountID, salesForceProjectID);
+                        }
+                        vContactID = contact_id;
                     }
-                    vContactID = contact_id;
                 }
 
                 /* update */
@@ -187,7 +193,7 @@ namespace MISService.Methods
                     _db.SaveChanges();
                 }
 
-                UpdateSales_JobMasterList_Customer(jcID, jobID, vContactID, type);
+                UpdateSales_JobMasterList_Customer(jcID, jobID, vContactID, customerRowID, type);
 
                 LogMethods.Log.Debug("HandleAccountContact:Debug:" + "Done");
             }
@@ -246,7 +252,15 @@ namespace MISService.Methods
                     ProjectCompany cp = new ProjectCompany(misJobID);
                     cp.Insert(misJobID, 0, false, false, false);
                     int jcID = SqlCommon.GetNewlyInsertedRecordID(TableName.Sales_JobMasterList_Customer);
-                    int rowID = CreateCustomer(customer, jcID);
+
+                    /* check if the customer has existed */
+                    int rowID = CommonMethods.GetCompanyMISID(TableName.Customer, accountID);
+                    if (rowID == 0)
+                    {
+                        //if it is not existent
+                        rowID = CreateCustomer(customer, jcID);
+                    }
+
                     if (rowID > 0)
                     {
                         CommonMethods.InsertToMISSalesForceMapping(TableName.Customer, accountID, rowID.ToString(), salesForceProjectID);

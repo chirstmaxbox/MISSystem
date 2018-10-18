@@ -48,7 +48,8 @@ namespace MISService.Method
                                            + " (SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c FROM StakeOut_Permits__r),"
                                            + " (SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c,  Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c  FROM SubContracts__r) "
                                            + " FROM Opportunity "
-                                           + " WHERE Sync__c = true and CloseDate >= TODAY";
+                                           + " WHERE Sync__c = true and CloseDate >= TODAY ";
+                                          // + " WHERE Name='(Test Project) LCBO RFP #2014-05 - Store 330 - Port Stanley'";
 
                     enterprise.QueryResult result;
                     queryClient.query(

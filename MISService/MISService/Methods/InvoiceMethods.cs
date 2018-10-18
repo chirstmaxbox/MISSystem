@@ -1,4 +1,5 @@
-﻿using MISService.Method;
+﻿using EmployeeDomain.BLL;
+using MISService.Method;
 using MISService.Models;
 using ProjectDomain;
 using SalesCenterDomain.BDL;
@@ -44,7 +45,7 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, "
+                    string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, Project_Name__r.Account_Executive__r.CommunityNickname, "
                         + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, Invoice_Number__c, "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
@@ -93,7 +94,7 @@ namespace MISService.Methods
                         if (invoiceID != 0)
                         {
                             UpdateInvoice(invoiceID, invoiceName, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
-                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c);
+                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Account_Executive__r);
 
                             /* handle item */
                             HandleInvoiceItem(invoiceID, estRevID, ql.Id, ql.Items__r);
@@ -398,7 +399,7 @@ namespace MISService.Methods
         }
 
         private void UpdateInvoice(int invoiceID, string invoiceNumber, DateTime? issueDate, int sale, string term, string contractNo,
-            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency)
+            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency, enterprise.User accountExecutive)
         {
             try
             {
@@ -522,6 +523,15 @@ namespace MISService.Methods
                             default:
                                 invoice.invoiceType = 3;
                                 break;
+                        }
+                    }
+
+                    if (accountExecutive != null)
+                    {
+                        FsEmployee poEmployee = new FsEmployee(accountExecutive.CommunityNickname);
+                        if (poEmployee.EmployeeNumber > 0)
+                        {
+                            invoice.Sales = poEmployee.EmployeeNumber;
                         }
                     }
 

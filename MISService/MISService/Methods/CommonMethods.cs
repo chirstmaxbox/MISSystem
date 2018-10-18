@@ -126,6 +126,69 @@ namespace MISService.Methods
             return ids;
         }
 
+        public static int GetCompanyMISID(string tableName, string salesforceID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int MISID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        MISID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetMISID:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MISID;
+        }
+
+        public static int GetContactCompanyMISID(string tableName, string salesforceID, string salesforceParentID)
+        {
+            var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
+            int MISID = 0;
+            try
+            {
+                string SqlSelectString = "SELECT MISID FROM [MISSalesForceMapping] WHERE ([TableName] = @tableName) and ([SalesForceID] = @salesforceID) and ([SalesForceParentID] = @salesForceParentID)";
+                var SelectCommand = new SqlCommand(SqlSelectString, Connection);
+                SelectCommand.Parameters.AddWithValue("@tableName", tableName);
+                SelectCommand.Parameters.AddWithValue("@salesforceID", salesforceID);
+                SelectCommand.Parameters.AddWithValue("@salesforceParentID", salesforceParentID);
+                Connection.Open();
+                using (SqlDataReader dr = SelectCommand.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        MISID = Convert.ToInt32(dr[0].ToString());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                LogMethods.Log.Error("GetMISID:Error:" + ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return MISID;
+        }
+
         public static int GetMISID(string tableName, string salesforceID, string salesforceProjectID)
         {
             var Connection = new SqlConnection(MISServiceConfiguration.ConnectionString);
