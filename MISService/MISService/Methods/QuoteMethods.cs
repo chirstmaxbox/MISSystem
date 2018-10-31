@@ -1,4 +1,5 @@
-﻿using MISService.Method;
+﻿using EmployeeDomain.BLL;
+using MISService.Method;
 using MISService.Models;
 using MyCommon.MyEnum;
 using ProjectDomain;
@@ -49,7 +50,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Status__c, Sub_Total__c, SubTotal_Discount__c, "
-                        + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, "
+                        + " Contract_Number__c, Contract_Amount__c, Contract_Issue_Date__c, Contract_Due_Date__c, Deposit__c, Terms__c, Version__c, Project_Name__r.Project_Coordinator__r.CommunityNickname, "
                         + " Tax_Option__c, Tax_Rate__c, Project_Name__r.Currency__c, "
                         + " (SELECT Id, Title__c, Content__c FROM Notes__r), "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c, Item_Option__c FROM Items__r), "
@@ -91,7 +92,7 @@ namespace MISService.Methods
 
                         if (quoteID != 0)
                         {
-                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c, ql.Terms__c, ql.Project_Name__r.Currency__c);
+                            UpdateQuote(quoteID, ql.Sub_Total__c, ql.SubTotal_Discount__c, ql.Version__c, ql.Tax_Option__c, ql.Tax_Rate__c, ql.Terms__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Project_Coordinator__r);
 
                             // handle quote items
                             HandleQuoteItem(jobID, estRevID, quoteID, ql.Id, ql.Items__r);
@@ -359,7 +360,7 @@ namespace MISService.Methods
             }
         }
 
-        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, double? taxRate, string term, string currency)
+        private void UpdateQuote(int quoteRevID, double? subTotal, double? discountAmount, double? version, string taxOption, double? taxRate, string term, string currency, enterprise.User po)
         {
             try
             {
@@ -450,6 +451,15 @@ namespace MISService.Methods
                                 sales_JobMasterList_quoteRev.termBalance = 1000;
                                 break;
                         }
+                    }
+
+                    if (po != null)
+                    {
+                        FsEmployee poEmployee = new FsEmployee(po.CommunityNickname);
+                        if (poEmployee.EmployeeNumber > 0)
+                        {
+                            sales_JobMasterList_quoteRev.sa1ID = poEmployee.EmployeeNumber;
+                        } 
                     }
 
                     _db.Entry(sales_JobMasterList_quoteRev).State = EntityState.Modified;

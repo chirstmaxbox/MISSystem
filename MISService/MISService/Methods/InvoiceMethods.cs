@@ -45,8 +45,8 @@ namespace MISService.Methods
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, Project_Name__r.Account_Executive__r.CommunityNickname, "
-                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, Invoice_Number__c, "
+                    string query = "SELECT Id, Name, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, Project_Name__r.Account_Executive__r.CommunityNickname, Project_Name__r.Project_Coordinator__r.CommunityNickname, "
+                        + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, Invoice_Number__c, Quotation_Number__r.PO_No__c, Suffix__c, Version__c, "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
                         + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                         + " FROM Invoice__c " 
@@ -94,7 +94,7 @@ namespace MISService.Methods
                         if (invoiceID != 0)
                         {
                             UpdateInvoice(invoiceID, invoiceName, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
-                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Account_Executive__r);
+                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Account_Executive__r, ql.Project_Name__r.Project_Coordinator__r, ql.Quotation_Number__r, ql.Suffix__c, ql.Version__c);
 
                             /* handle item */
                             HandleInvoiceItem(invoiceID, estRevID, ql.Id, ql.Items__r);
@@ -399,7 +399,7 @@ namespace MISService.Methods
         }
 
         private void UpdateInvoice(int invoiceID, string invoiceNumber, DateTime? issueDate, int sale, string term, string contractNo,
-            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency, enterprise.User accountExecutive)
+            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency, enterprise.User accountExecutive, enterprise.User projectCoordinator, enterprise.Quotation__c po, string suffix, double? version)
         {
             try
             {
@@ -416,6 +416,16 @@ namespace MISService.Methods
                     if (currency != null)
                     {
                         invoice.Currency = currency;
+                    }
+
+                    if (suffix != null)
+                    {
+                        invoice.NameSurfix = suffix;
+                    }
+
+                    if (version != null)
+                    {
+                        invoice.Revision = Convert.ToByte(version);
                     }
 
                     if (!string.IsNullOrEmpty(term))
@@ -533,6 +543,20 @@ namespace MISService.Methods
                         {
                             invoice.Sales = poEmployee.EmployeeNumber;
                         }
+                    }
+
+                    if (projectCoordinator != null)
+                    {
+                        FsEmployee poEmployee = new FsEmployee(projectCoordinator.CommunityNickname);
+                        if (poEmployee.EmployeeNumber > 0)
+                        {
+                            invoice.SA1 = poEmployee.EmployeeNumber;
+                        }
+                    }
+
+                    if (po != null && po.PO_No__c != null)
+                    {
+                        invoice.po = po.PO_No__c;
                     }
 
                     string workOrders = "";

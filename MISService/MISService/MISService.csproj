@@ -180,6 +180,12 @@
     <None Include="Service References\SfdcReference\MISService.SfdcReference.describeDataCategoryGroupStructuresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\SfdcReference\MISService.SfdcReference.DescribeDataCategoryMappingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SfdcReference\MISService.SfdcReference.describeDataCategoryMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SfdcReference\MISService.SfdcReference.describeGlobalResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
