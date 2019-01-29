@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Enterprise Web Services API Version 44.0
-Generated on 2018-10-31 14:38:38 +0000.
+Generated on 2019-01-29 01:41:16 +0000.
 
 Package Versions:
 Salesforce and Chatter Apps (Version: 1.18, Namespace: sf_chttr_apps)
 CT Consulting Alert Message (Version: 1.3, Namespace: alertmessage)
 Declarative Lookup Rollup Summaries Tool (Version: 2.11, Namespace: dlrs)
 
-Copyright 1999-2018 salesforce.com, inc.
+Copyright 1999-2019 salesforce.com, inc.
 All Rights Reserved
 -->
 <definitions targetNamespace="urn:enterprise.soap.sforce.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:enterprise.soap.sforce.com" xmlns:fns="urn:fault.enterprise.soap.sforce.com" xmlns:ens="urn:sobject.enterprise.soap.sforce.com">
@@ -4473,6 +4473,7 @@ All Rights Reserved
                 <complexContent>
                     <extension base="ens:sObject">
                         <sequence>
+                        <element name="Approval_Date__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -4485,6 +4486,7 @@ All Rights Reserved
                         <element name="Drawing_Hour__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Drawing_Purpose__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Drawing_Requisition_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Due_Time_String__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Due_Time__c" nillable="true" minOccurs="0" type="xsd:time"/>
                         <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -4501,6 +4503,7 @@ All Rights Reserved
                         <element name="Is_Latest_Version_Q_D_Quotation_Avail__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Is_Site_Check_Photo_Available__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Is_Site_Check_Report_Available__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Issue_Date_Time__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
@@ -5130,6 +5133,7 @@ All Rights Reserved
                 <complexContent>
                     <extension base="ens:sObject">
                         <sequence>
+                        <element name="Approval_Date__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -5140,6 +5144,7 @@ All Rights Reserved
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Drawings__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Due_Time_String__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Due_Time__c" nillable="true" minOccurs="0" type="xsd:time"/>
                         <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -5148,10 +5153,13 @@ All Rights Reserved
                         <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Feeds" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="File_Attachments__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Has_New_Or_Update_Item__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Histories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="InputtedHour__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Installing_Address__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="Issue_Date_Time__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="ItemCost1Set__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -5858,6 +5866,52 @@ All Rights Reserved
                         <element name="QueryLanguage" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SearchTerm" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+
+            <complexType name="File_Attachment__c">
+                <complexContent>
+                    <extension base="ens:sObject">
+                        <sequence>
+                        <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="CombinedAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="ContentDocumentLinks" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Estimation_Number__c" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="Estimation_Number__r" nillable="true" minOccurs="0" type="ens:Estimation__c"/>
+                        <element name="EventRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="FeedSubscriptionsForEntity" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="File_Path__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="File_URL__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
+                        <element name="LastModifiedById" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="LastModifiedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="LastReferencedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="LastViewedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="LookedUpFromActivities" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Notes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="NotesAndAttachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Owner" nillable="true" minOccurs="0" type="ens:Name"/>
+                        <element name="OwnerId" nillable="true" minOccurs="0" type="tns:ID"/>
+                        <element name="ProcessInstances" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="ProcessSteps" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="RecordActionHistories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="SystemModstamp" nillable="true" minOccurs="0" type="xsd:dateTime"/>
+                        <element name="TaskRelations" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="TopicAssignments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
                         </sequence>
                     </extension>
@@ -8352,6 +8406,7 @@ All Rights Reserved
                         <element name="Project_Coordinator__r" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="Project_Number_Search__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Project_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Quotation_Amount_Open__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Quotation_Amount__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Quotations__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Quotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -8375,6 +8430,7 @@ All Rights Reserved
                         <element name="Type" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="UserRecordAccess" nillable="true" minOccurs="0" type="ens:UserRecordAccess"/>
                         <element name="Work_Orders__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="url_test__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         </sequence>
                     </extension>
                 </complexContent>
@@ -9162,6 +9218,7 @@ All Rights Reserved
                         <element name="PermissionsAccessCMC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateContract" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateOrder" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="PermissionsActivitiesAccess" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAddDirectMessageMembers" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowEmailIC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowLightningLogin" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -9393,6 +9450,7 @@ All Rights Reserved
                         <element name="MaximumPermissionsAccessCMC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="MaximumPermissionsActivateContract" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="MaximumPermissionsActivateOrder" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="MaximumPermissionsActivitiesAccess" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="MaximumPermissionsAddDirectMessageMembers" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="MaximumPermissionsAllowEmailIC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="MaximumPermissionsAllowLightningLogin" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -10145,6 +10203,7 @@ All Rights Reserved
                         <element name="PermissionsAccessCMC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateContract" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateOrder" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="PermissionsActivitiesAccess" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAddDirectMessageMembers" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowEmailIC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowLightningLogin" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -10839,6 +10898,7 @@ All Rights Reserved
                         <element name="RecordActionHistories" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordActions" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="RecordAssociatedGroups" nillable="true" minOccurs="0" type="tns:QueryResult"/>
+                        <element name="Required_Deposit__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="ServiceCost1Set__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Service_Cost_Subtotal__c" nillable="true" minOccurs="0" type="xsd:double"/>
                         <element name="Service_Costs__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -11563,7 +11623,6 @@ All Rights Reserved
                         <element name="CreatedBy" nillable="true" minOccurs="0" type="ens:User"/>
                         <element name="CreatedById" nillable="true" minOccurs="0" type="tns:ID"/>
                         <element name="CreatedDate" nillable="true" minOccurs="0" type="xsd:dateTime"/>
-                        <element name="Detail__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="DuplicateRecordItems" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Emails" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Estimation_Name__c" nillable="true" minOccurs="0" type="tns:ID"/>
@@ -13692,6 +13751,7 @@ All Rights Reserved
                         <element name="PermissionsAccessCMC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateContract" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsActivateOrder" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="PermissionsActivitiesAccess" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAddDirectMessageMembers" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowEmailIC" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="PermissionsAllowLightningLogin" nillable="true" minOccurs="0" type="xsd:boolean"/>
@@ -14647,6 +14707,7 @@ All Rights Reserved
                     <extension base="ens:sObject">
                         <sequence>
                         <element name="Amount__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="Approval_Date__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="AttachedContentDocuments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="AttachedContentNotes" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="Attachments" nillable="true" minOccurs="0" type="tns:QueryResult"/>
@@ -14676,7 +14737,9 @@ All Rights Reserved
                         <element name="Installing_Intersection__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="Installing_Phone_Number__c" nillable="true" minOccurs="0" type="xsd:string"/>
                         <element name="IsDeleted" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="IsPendingStatus__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
                         <element name="Is_Clone__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        <element name="Issue_Date_Time__c" nillable="true" minOccurs="0" type="xsd:dateTime"/>
                         <element name="Issue_Date__c" nillable="true" minOccurs="0" type="xsd:date"/>
                         <element name="Items__r" nillable="true" minOccurs="0" type="tns:QueryResult"/>
                         <element name="LastModifiedBy" nillable="true" minOccurs="0" type="ens:User"/>
@@ -19920,6 +19983,16 @@ All Rights Reserved
             <complexType>
                 <sequence>
                     <element name="allOrNone" type="xsd:boolean"/>
+                </sequence>
+            </complexType>
+        </element>
+
+
+
+        <element name="CurrencyConversionHeader">
+            <complexType>
+                <sequence>
+                    <element name="skipCurrencyConversion" type="xsd:boolean"/>
                 </sequence>
             </complexType>
         </element>

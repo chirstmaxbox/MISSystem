@@ -56,7 +56,7 @@ namespace MISService.Methods
                                 svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
                                      "$" + sl.Service_Cost__c1.ToString(),
                                      1,
-                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Detail__c == null ? "" : sl.Service_Detail__c,
                                      sl.Service_Name__r.Name,
                                      "$" + sl.Service_Cost__c1.ToString(),
                                      printOrder
@@ -67,7 +67,7 @@ namespace MISService.Methods
                                 svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
                                      sl.Note__c,
                                      1,
-                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Detail__c == null ? "" : sl.Service_Detail__c,
                                      sl.Service_Name__r.Name,
                                      sl.Note__c,
                                      printOrder
@@ -81,7 +81,7 @@ namespace MISService.Methods
                         }
                         else
                         {
-                            UpdateEstService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
+                            UpdateEstService(estServiceID, sl.Service_Cost__c1, sl.Service_Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
                         }
                     }
 

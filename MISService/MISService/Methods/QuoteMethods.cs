@@ -54,7 +54,7 @@ namespace MISService.Methods
                         + " Tax_Option__c, Tax_Rate__c, Project_Name__r.Currency__c, "
                         + " (SELECT Id, Title__c, Content__c FROM Notes__r), "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c, Item_Option__c FROM Items__r), "
-                        + " (SELECT Id, Service_Name__r.Name, Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
+                        + " (SELECT Id, Service_Name__r.Name, Service_Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
                         + " FROM Quotation__c "
                         + " WHERE Project_Name__c = '" + sfProjectID + "'";
                     
@@ -496,7 +496,7 @@ namespace MISService.Methods
                                 svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
                                      sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
                                      1,
-                                     sl.Detail__c == null ? "" : sl.Detail__c,
+                                     sl.Service_Detail__c == null ? "" : sl.Service_Detail__c,
                                      sl.Service_Name__r.Name,
                                      sl.Service_Cost__c1 == null ? "0" : sl.Service_Cost__c1.ToString(),
                                      printOrder
@@ -507,7 +507,7 @@ namespace MISService.Methods
                                 svc.InsertRecord(Convert.ToInt32(sl.Service_Name__r.MIS_Service_Number__c),
                                     sl.Note__c,
                                     1,
-                                    sl.Detail__c == null ? "" : sl.Detail__c,
+                                    sl.Service_Detail__c == null ? "" : sl.Service_Detail__c,
                                     sl.Service_Name__r.Name,
                                     sl.Note__c,
                                     printOrder
@@ -521,7 +521,7 @@ namespace MISService.Methods
                         }
                         else
                         {
-                            UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
+                            UpdateQuoteService(estServiceID, sl.Service_Cost__c1, sl.Service_Detail__c, sl.Service_Name__r.Name, Convert.ToInt16(sl.Service_Name__r.MIS_Service_Number__c), sl.Note__c);
                         }
 
                     }

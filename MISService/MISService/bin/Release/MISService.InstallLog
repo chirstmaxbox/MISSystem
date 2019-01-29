@@ -426,3 +426,24 @@ Affected parameters are:
 Removing EventLog source MyMISService.
 Service MyMISService is being removed from the system...
 Service MyMISService was successfully removed from the system.
+Uninstalling assembly 'C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe
+   logfile = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.InstallLog
+Removing EventLog source MyMISService.
+Service MyMISService is being removed from the system...
+Service MyMISService was successfully removed from the system.
+Installing assembly 'C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe
+   logfile = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.InstallLog
+Installing service MyMISService...
+Service MyMISService has been successfully installed.
+Creating EventLog source MyMISService in log Application...
+Committing assembly 'C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.exe
+   logfile = C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MISService\bin\Release\MISService.InstallLog
