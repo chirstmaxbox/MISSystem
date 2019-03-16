@@ -1,0 +1,148 @@
+2019-02-11 19:55:40,161 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2019-02-11 19:55:40,177 DEBUG MISService.Method.LogMethods - Authenticating against the Enterprise API ...
+2019-02-11 19:55:56,463 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2019-02-11 19:57:22,513 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:(TEST) ABC COMPANY - STORE 123 - SCARBOROUGH
+2019-02-11 19:57:51,529 DEBUG MISService.Method.LogMethods - UpdateProject:Debug:Done
+2019-02-11 19:57:54,524 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing account and contact
+2019-02-11 19:57:58,081 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 19:57:58,081 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 19:57:58,081 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 19:57:58,128 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 19:57:58,128 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 19:57:58,128 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 19:57:58,144 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 19:57:58,144 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 19:57:58,144 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 19:57:58,144 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2019-02-11 19:58:07,363 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing estimation
+2019-02-11 19:58:09,703 DEBUG MISService.Method.LogMethods - UpdateEstItem:Debug:Done
+2019-02-11 19:58:09,750 DEBUG MISService.Method.LogMethods - UpdateEstItemSize:Debug:Done
+2019-02-11 19:58:09,750 DEBUG MISService.Method.LogMethods - UpdateEstItem:Debug:Done
+2019-02-11 19:58:09,828 DEBUG MISService.Method.LogMethods - UpdateEstItemSize:Debug:Done
+2019-02-11 19:58:09,828 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2019-02-11 19:58:09,953 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2019-02-11 19:58:10,515 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing drawing
+2019-02-11 19:58:11,622 DEBUG MISService.Method.LogMethods - UpdateDrawing:Debug:Done
+2019-02-11 19:58:11,622 DEBUG MISService.Method.LogMethods - UpdateMISSalesForceMapping:Debug:Done
+2019-02-11 19:58:11,653 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2019-02-11 19:58:12,246 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing quote
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 19:58:13,697 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2019-02-11 19:58:13,791 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 19:58:13,837 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 19:58:13,837 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2019-02-11 19:58:13,915 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2019-02-11 19:58:14,493 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:Done
+2019-02-11 19:58:14,493 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2019-02-11 19:58:14,493 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2019-02-11 19:58:15,429 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing sign permit
+2019-02-11 19:58:15,990 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2019-02-11 19:58:16,053 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing hoisting permit
+2019-02-11 19:58:16,692 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing stakeout permit
+2019-02-11 19:58:17,644 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2019-02-11 19:58:18,221 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing work order
+2019-02-11 19:58:20,608 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 19:58:20,889 DEBUG MISService.Method.LogMethods - GetAllNotes:Debug:Done
+2019-02-11 19:58:20,920 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 19:58:21,263 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 19:58:21,575 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 19:58:21,918 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 19:58:22,183 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 19:58:22,183 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2019-02-11 19:58:23,353 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing SubContract
+2019-02-11 19:58:36,239 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing invoice
+2019-02-11 19:58:37,487 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2019-02-11 19:58:37,487 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,487 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,487 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,487 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2019-02-11 19:58:37,565 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2019-02-11 19:58:37,565 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,581 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,596 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,596 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 19:58:37,596 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2019-02-11 19:58:37,596 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2019-02-11 19:58:38,189 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: (TEST) ABC COMPANY - STORE 123 - SCARBOROUGH<Project Num:18P05032>
+2019-02-11 19:58:39,531 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done
+2019-02-11 20:00:12,741 INFO MISService.Method.LogMethods - -------------- *** Starting MISService *** ------------ 
+2019-02-11 20:00:12,741 DEBUG MISService.Method.LogMethods - Authenticating against the Enterprise API ...
+2019-02-11 20:00:24,909 INFO MISService.Method.LogMethods - GetAllProjects:Info:Start processing all projects
+2019-02-11 20:00:27,420 INFO MISService.Method.LogMethods - GetAllProjects:Info:Processing project name:(TEST) ABC COMPANY - STORE 123 - SCARBOROUGH
+2019-02-11 20:00:27,436 DEBUG MISService.Method.LogMethods - UpdateProject:Debug:Done
+2019-02-11 20:00:27,436 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing account and contact
+2019-02-11 20:00:29,604 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 20:00:29,604 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 20:00:29,604 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 20:00:29,620 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 20:00:29,620 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 20:00:29,620 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 20:00:29,636 DEBUG MISService.Method.LogMethods - UpdateSales_JobMasterList_Customer:Debug:Done
+2019-02-11 20:00:29,636 DEBUG MISService.Method.LogMethods - HandleAccountContact:Debug:Done
+2019-02-11 20:00:29,636 DEBUG MISService.Method.LogMethods - HandleAccount:Debug:Done
+2019-02-11 20:00:29,651 DEBUG MISService.Method.LogMethods - GetAllAccounts:Debug:Done
+2019-02-11 20:00:29,651 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing estimation
+2019-02-11 20:00:30,416 DEBUG MISService.Method.LogMethods - UpdateEstItem:Debug:Done
+2019-02-11 20:00:30,462 DEBUG MISService.Method.LogMethods - UpdateEstItemSize:Debug:Done
+2019-02-11 20:00:30,478 DEBUG MISService.Method.LogMethods - UpdateEstItem:Debug:Done
+2019-02-11 20:00:30,494 DEBUG MISService.Method.LogMethods - UpdateEstItemSize:Debug:Done
+2019-02-11 20:00:30,494 DEBUG MISService.Method.LogMethods - GetAllItems:Debug:Done
+2019-02-11 20:00:30,618 DEBUG MISService.Method.LogMethods - GetEstimation:Debug:Done
+2019-02-11 20:00:30,618 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing drawing
+2019-02-11 20:00:31,554 DEBUG MISService.Method.LogMethods - UpdateDrawing:Debug:Done
+2019-02-11 20:00:31,554 DEBUG MISService.Method.LogMethods - UpdateMISSalesForceMapping:Debug:Done
+2019-02-11 20:00:31,695 DEBUG MISService.Method.LogMethods - GetAllDrawingItems:Debug:Done
+2019-02-11 20:00:31,710 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing quote
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,537 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,553 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2019-02-11 20:00:32,553 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 20:00:32,553 DEBUG MISService.Method.LogMethods - UpdateQuoteItem:Debug:Done
+2019-02-11 20:00:32,553 DEBUG MISService.Method.LogMethods - HandleQuoteItem:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - UpdateQuoteService:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - HandleQuoteService:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - UpdateNote:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - HandleNotes:Debug:Done
+2019-02-11 20:00:32,568 DEBUG MISService.Method.LogMethods - GetAllQuote:Debug:Done
+2019-02-11 20:00:32,584 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing sign permit
+2019-02-11 20:00:32,802 DEBUG MISService.Method.LogMethods - GetAllSignPermits:Debug:Done
+2019-02-11 20:00:32,802 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing hoisting permit
+2019-02-11 20:00:32,802 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing stakeout permit
+2019-02-11 20:00:32,834 DEBUG MISService.Method.LogMethods - GetAllStakeOutPermits:Debug:Done
+2019-02-11 20:00:32,834 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing work order
+2019-02-11 20:00:34,082 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 20:00:34,409 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 20:00:34,565 DEBUG MISService.Method.LogMethods - GetAllNotes:Debug:Done
+2019-02-11 20:00:34,565 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 20:00:34,940 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 20:00:35,766 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 20:00:36,094 DEBUG MISService.Method.LogMethods - HandleWorkOrderItem:Debug:Done
+2019-02-11 20:00:36,250 DEBUG MISService.Method.LogMethods - HandleApprovalStatus:Debug:Done
+2019-02-11 20:00:36,250 DEBUG MISService.Method.LogMethods - GetAllWorkOrders:Debug:Done
+2019-02-11 20:00:36,250 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing SubContract
+2019-02-11 20:00:36,266 DEBUG MISService.Method.LogMethods - GetAllProjects:Debug:Processing invoice
+2019-02-11 20:00:37,264 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2019-02-11 20:00:37,264 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,280 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,280 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,280 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - HandleInvoiceItem:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - UpdateInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - HandleInvoiceService:Debug:Done
+2019-02-11 20:00:37,404 DEBUG MISService.Method.LogMethods - GetAllInvoices:Debug:Done
+2019-02-11 20:00:37,404 INFO MISService.Method.LogMethods - GetAllProjects:Info:Done: (TEST) ABC COMPANY - STORE 123 - SCARBOROUGH<Project Num:18P05032>
+2019-02-11 20:01:45,420 INFO MISService.Method.LogMethods - GetAllProjects:Info:All projects are done

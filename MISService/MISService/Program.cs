@@ -29,9 +29,10 @@ namespace MISService
                 ProjectMethods pm = new ProjectMethods();
                 pm.GetAllProjects();
             }
-            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");*/
-            
+            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
+            */
             // Making a window service
+            
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 

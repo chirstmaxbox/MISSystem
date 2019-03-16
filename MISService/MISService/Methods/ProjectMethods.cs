@@ -49,7 +49,7 @@ namespace MISService.Method
                                            + " (SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c,  Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c  FROM SubContracts__r) "
                                            + " FROM Opportunity "
                                            + " WHERE Sync__c = true and CloseDate >= TODAY ";
-                                        //   + " WHERE Name='(TEST) ABC COMPANY - STORE 123 - SCARBOROUGH'";
+                                       //    + " WHERE Name='(TEST) ABC COMPANY - STORE 123 - SCARBOROUGH'";
 
                     enterprise.QueryResult result;
                     queryClient.query(
