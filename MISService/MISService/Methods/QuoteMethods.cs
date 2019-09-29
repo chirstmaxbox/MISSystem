@@ -303,6 +303,7 @@ namespace MISService.Methods
                     if (contractAmount != null)
                     {
                         sales_JobMasterList_quoteRev.contractAmount = Convert.ToDecimal(contractAmount);
+                        sales_JobMasterList_quoteRev.quoteAmount = Convert.ToDecimal(contractAmount); //Updated by Victor Ng, Aug-21-2019
                     }
 
                     if (!string.IsNullOrEmpty(term))
@@ -381,6 +382,13 @@ namespace MISService.Methods
                     {
                         sales_JobMasterList_quoteRev.Currency = currency;
                     }
+
+                    //Updated by Victor Ng, Aug-30-2019
+                    if (subTotal != null)
+                    {
+                        sales_JobMasterList_quoteRev.quoteAmount = Convert.ToDecimal(subTotal);
+                    }
+                    //
 
                     switch (taxOption)
                     {
