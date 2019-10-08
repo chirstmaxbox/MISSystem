@@ -156,7 +156,7 @@ namespace MISService.Methods
                     }
                     else if (el.Status == "Removed")
                     {
-                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201 && x.Importance == version).FirstOrDefault();
+                        var sales_Dispatching = _db.Sales_Dispatching.Where(x => x.JobID == jobId && x.TaskType == 201 && x.Importance == version + 1).FirstOrDefault();
                         if (sales_Dispatching != null)
                         {
                             /* delete a row in Sales_Dispatching */
