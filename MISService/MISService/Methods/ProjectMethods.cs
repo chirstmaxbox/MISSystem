@@ -248,7 +248,6 @@ namespace MISService.Method
                         break;
                 }
 
-                UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = sales;
                 UpdateCommand.Parameters.Add("@jobTitle", SqlDbType.VarChar, 150).Value = jobTitle;
                 UpdateCommand.Parameters.Add("@jobID", SqlDbType.Int).Value = jobID;
 
@@ -260,11 +259,13 @@ namespace MISService.Method
                     if (fsEmployee.EmployeeNumber > 0)
                     {
                         UpdateCommand.Parameters.AddWithValue("@AETM", fsEmployee.EmployeeNumber);
+                        UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = fsEmployee.EmployeeNumber;
                     }
                     else
                     {
                         LogMethods.Log.Error("UpdateProject:Error:" + "User Name: " + un + " does not exist in database");
                         UpdateCommand.Parameters.AddWithValue("@AETM", 0);
+                        UpdateCommand.Parameters.Add("@sales", SqlDbType.Int).Value = sales;
                     }
                 }
                 else
