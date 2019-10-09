@@ -40,7 +40,7 @@ namespace SalesCenterDomain.BDL.Task
                     insertCommand.Parameters.Add("@Subject", SqlDbType.NVarChar, 200).Value = _cp.Subject;
                     insertCommand.Parameters.Add("@Description", SqlDbType.NVarChar, 500).Value = _cp.Description;
                     insertCommand.Parameters.Add("@Status", SqlDbType.SmallInt).Value = _cp.Status;
-                    insertCommand.Parameters.Add("@submitTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                    insertCommand.Parameters.Add("@submitTime", SqlDbType.SmallDateTime).Value = _cp.SubmitTime;
                     insertCommand.Parameters.Add("@Importance", SqlDbType.SmallInt).Value = version;
 
                     insertCommand.Parameters.Add("@lastUpdateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;

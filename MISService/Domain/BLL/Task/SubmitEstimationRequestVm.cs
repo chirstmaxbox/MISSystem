@@ -36,6 +36,19 @@ namespace SpecDomain.BLL.Task
 
         }
 
+        public void Create(DateTime issueTime)
+        {
+            InitializeCreateData(issueTime);
+            var task = new Sales_Dispatching();
+            MyReflection.Copy(this, task);
+            task.Responsible = (short)EstimatorID;
+            _db.Sales_Dispatching.Add(task);
+            _db.SaveChanges();
+
+            TaskID = task.TaskID;
+
+        }
+
 
         public void RefreshDropdownlist()
         {
@@ -44,7 +57,7 @@ namespace SpecDomain.BLL.Task
             Estimators = new List<SelectListItem>() {t1, t2};
         }
 
-        private void InitializeCreateData()
+        private void InitializeCreateData(DateTime? issueDateTime = null)
         {
             //3 fields from UI: RequiredTime, SubmitBy and Description
 
@@ -58,8 +71,14 @@ namespace SpecDomain.BLL.Task
 
             //By Configuration
        //     
-
-            SubmitTime = DateTime.Now;
+            if (issueDateTime == null)
+            {
+                SubmitTime = DateTime.Now;
+            }
+            else
+            {
+                SubmitTime = issueDateTime.Value;
+            }
             LastUpdateTime = DateTime.Now;
             RequiredTime = MyConvert.ConvertToDate(FormatedRequiredTime);
 

@@ -91,7 +91,20 @@ namespace SpecDomain.BLL.Task
             return task.TaskID;
         }
 
-        private void InitializeCreateData()
+        public long Create(DateTime issueDateTime)
+        {
+            InitializeCreateData(issueDateTime);
+            var task = new Sales_Dispatching();
+            MyReflection.Copy(this, task);
+            _db.Sales_Dispatching.Add(task);
+            _db.SaveChanges();
+
+            OnSubmitted(task.TaskID);
+
+            return task.TaskID;
+        }
+
+        private void InitializeCreateData(DateTime? issueDateTime = null)
         {
             //3 fields from UI: RequiredTime, SubmitBy and Description
             if(DrawingType.Trim() =="Graphic")
@@ -114,8 +127,15 @@ namespace SpecDomain.BLL.Task
 
             var reqTitle = est.Sales_Dispatching_DrawingRequisition_Estimation.First();
             Subject = reqTitle.Sales_Dispatching_DrawingReq_Purpose.dpName;
- 
-            SubmitTime = DateTime.Now;
+
+            if (issueDateTime == null)
+            {
+                SubmitTime = DateTime.Now;
+            }
+            else
+            {
+                SubmitTime = issueDateTime.Value;
+            }
             LastUpdateTime = DateTime.Now;
             RequiredTime = MyConvert.ConvertToDate(FormatedRequiredTime);
 

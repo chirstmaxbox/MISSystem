@@ -42,7 +42,7 @@ namespace MISService.Methods
                     //create SQL query statement
                     string query = "SELECT Id, Name, Version__c, Drawing_Requisition_Type__c, Drawing_Purpose__c, Is_Electronic_File_From_Client_Available__c, "
                                     + " Is_GC_Or_Designer_Drawing_Available__c, Is_Landord_Or_Mall_Criteria_Available__c, Is_Latest_Version_Q_D_Quotation_Avail__c, "
-                                    + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate, Drawing_Hour__c, Number_Of_Drawings__c, Target_Date__c, Due_Time__c, "
+                                    + " Is_Site_Check_Photo_Available__c, Is_Site_Check_Report_Available__c, LastModifiedDate, Drawing_Hour__c, Number_Of_Drawings__c, Target_Date__c, Due_Time__c, Issue_Date_Time__c, "
                                     + " (SELECT Id, Item_Name__c, Item_Description__c, Quantity__c FROM Items__r),"
                                     + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1)"
                                     + " FROM Drawing__c "
@@ -86,13 +86,13 @@ namespace MISService.Methods
                                 // add items to drawing
                                 GetAllDrawingItems(sfProjectID, requisitionId, estRevID, dl.Id, dl.Items__r);
 
-                                GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c, dl.Due_Time__c);
+                                GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c, dl.Due_Time__c, dl.Issue_Date_Time__c);
                             }
                             flag = true;
                         }
                         else
                         {
-                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c, dl.Due_Time__c);
+                            GetDrawingApprovalData(jobID, dl.ProcessInstances, dl.Version__c, employeeNumber, dl.Drawing_Hour__c, dl.Target_Date__c, requisitionId, dl.Drawing_Requisition_Type__c, dl.Id, dl.Number_Of_Drawings__c, dl.Due_Time__c, dl.Issue_Date_Time__c);
                         }
                     }
 
@@ -105,7 +105,7 @@ namespace MISService.Methods
             }
         }
 
-        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType, string sfDrawingID, double? NumofDrawings, DateTime? dueTime)
+        private void GetDrawingApprovalData( int jobId, enterprise.QueryResult result, double? version, int employeeNumber, double? drawHour, DateTime? dueDate, int requisitionId, string drawingType, string sfDrawingID, double? NumofDrawings, DateTime? dueTime, DateTime? issueDateTime)
         {
             try
             {
@@ -137,7 +137,12 @@ namespace MISService.Methods
                                 {
                                     TimeZone localZone = TimeZone.CurrentTimeZone;
                                     DateTime currentUTC = localZone.ToUniversalTime(dueTime.Value);
-                                    vm.FormatedRequiredTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, currentUTC.Hour, currentUTC.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
+                                    DateTime localTime = new DateTime(dueDate.Value.Year, dueDate.Value.Month, dueDate.Value.Day, currentUTC.Hour, currentUTC.Minute, 00);
+                                    if (localZone.IsDaylightSavingTime(localTime))
+                                    {
+                                        localTime = localTime.AddHours(-1);
+                                    }
+                                    vm.FormatedRequiredTime = localTime.ToString("MMM dd, yyyy  hh:mm tt");
                                 }
                                 else
                                 {
@@ -151,7 +156,15 @@ namespace MISService.Methods
                                 vm.FormatedRequiredTime =
                                     new DateTime(dt1.Year, dt1.Month, dt1.Day, dt2.Hour, dt2.Minute, 00).ToString("MMM dd, yyyy  hh:mm tt");
                             }
-                            long taskID = vm.Create();
+                            long taskID;
+                            if (issueDateTime == null)
+                            {
+                                taskID = vm.Create();
+                            }
+                            else
+                            {
+                                taskID = vm.Create(issueDateTime.Value.ToLocalTime());
+                            }
                             if (taskID > 0)
                             {
                                 CommonMethods.InsertToMISSalesForceMapping(TableName.Sales_Dispatching, sfDrawingID, taskID.ToString(), salesForceProjectID);

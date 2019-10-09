@@ -49,7 +49,7 @@ namespace MISService.Methods
                 {
                     //create SQL query statement
                     string query = "SELECT Id, Name, Work_Order_Number__c, (select Id, Title, TextPreview from AttachedContentNotes), RecordType.Name, Work_Order_Type__c, Payment_Method__c, Version__c, Rush__c, Rush_Reason__c, Remarks__c, Project_Name__r.Account_Executive__r.CommunityNickname, "
-                        + " Issue_Date__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c, Previous_Work_Order_Number__r.Work_Order_Number__c, Revise_WO_Count__c, "
+                        + " Issue_Date__c, Issue_Date_Time__c, Due_Date__c, Clone_Type__c, Previous_Work_Order_Number__r.Name, Site_Check_Purpose__c, Site_Check_Purpose_As_Other__c, Amount__c, Previous_Work_Order_Number__r.Clone_Type__c, Previous_Work_Order_Number__r.Version__c, Previous_Work_Order_Number__r.Work_Order_Number__c, Revise_WO_Count__c, "
                         + " (SELECT Status, LastActor.Name, CompletedDate FROM ProcessInstances order by CompletedDate desc limit 1),"
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Sign_Type__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r),"
                         + " (SELECT Id, Category__c, Final_Instruction__c, Instruction__c FROM WorkShop_Instructions__r),"
@@ -125,7 +125,7 @@ namespace MISService.Methods
                             }
 
                             /* check if the work order is approved */
-                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.RecordType.Name, ql.ProcessInstances, ql.Version__c);
+                            HandleApprovalStatus(ql.Id, jobID, estRevID, workOrderID, userEmployeeID, ql.Remarks__c, ql.Due_Date__c, ql.Rush__c, ql.RecordType.Name, ql.ProcessInstances, ql.Version__c, ql.Issue_Date_Time__c);
 
                         }
 
@@ -139,7 +139,7 @@ namespace MISService.Methods
             }
         }
 
-        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int estRevID, int woId, int userEmployeeID, string remarks, DateTime? dueDate, string rush, string woType, enterprise.QueryResult result, double? version)
+        private void HandleApprovalStatus(string sfWorkOrderID, int jobId, int estRevID, int woId, int userEmployeeID, string remarks, DateTime? dueDate, string rush, string woType, enterprise.QueryResult result, double? version, DateTime? issueDateTime)
         {
             try
             {
@@ -189,7 +189,14 @@ namespace MISService.Methods
                                     dp.ParameterDispatchingTask.RequiredTime = DateTime.Now.AddDays(1);
                                 }
 
-                                dp.ParameterDispatchingTask.SubmitTime = DateTime.Now;
+                                if (issueDateTime != null)
+                                {
+                                    dp.ParameterDispatchingTask.SubmitTime = issueDateTime.Value.ToLocalTime();
+                                }
+                                else
+                                {
+                                    dp.ParameterDispatchingTask.SubmitTime = DateTime.Now;
+                                }
 
                                 switch (rush)
                                 {

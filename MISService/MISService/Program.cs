@@ -18,7 +18,6 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            /*
             string userName = Convert.ToString(ConfigurationManager.AppSettings["SFUsername"]);
             string password = Convert.ToString(ConfigurationManager.AppSettings["SFPassword"]);
             string token = Convert.ToString(ConfigurationManager.AppSettings["SFToken"]);
@@ -30,15 +29,15 @@ namespace MISService
                 pm.GetAllProjects();
             }
             LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
-            */
+
             // Making a window service
-            
+            /*
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
                 new MyMISService() 
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(ServicesToRun);*/
         }
     }
 }
