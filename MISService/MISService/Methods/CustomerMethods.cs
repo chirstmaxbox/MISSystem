@@ -55,7 +55,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Billing_Company_Name__r.Name, bqs.Billing_Company_Street__c, bqs.Billing_Company_Province__c, bqs.Billing_Company_Postal_Code__c,
                                 bqs.Billing_Company_City__c, bqs.Billing_Company_Country__c, bqs.Billing_Contact_Name__r.FirstName,
-                                bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, bqs.Billing_Account_Intersection__c, bqs.Billing_Account_Corner__c,  misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1);
+                                bqs.Billing_Contact_Name__r.LastName, bqs.Billing_Contact_Phone__c, bqs.Billing_Contact_Name__r.Id, bqs.Billing_Account_Intersection__c, bqs.Billing_Account_Corner__c, misJobID, employeeNumber, bqs.Billing_Company_Name__r.Id, 1, bqs.Billing_Company_Name__r.Legal_Name__c);
                             hasOne = true;
                         }
 
@@ -63,7 +63,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Quoting_Company_Name__r.Name, bqs.Quoting_Company_Street__c, bqs.Quoting_Company_Province__c, bqs.Quoting_Company_Postal_Code__c,
                                 bqs.Quoting_Company_City__c, bqs.Quoting_Company_Country__c, bqs.Quoting_Contact_Name__r.FirstName,
-                                bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, bqs.Quoting_Account_Intersection__c, bqs.Quoting_Account_Corner__c,  misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2);
+                                bqs.Quoting_Contact_Name__r.LastName, bqs.Quoting_Contact_Phone__c, bqs.Quoting_Contact_Name__r.Id, bqs.Quoting_Account_Intersection__c, bqs.Quoting_Account_Corner__c, misJobID, employeeNumber, bqs.Quoting_Company_Name__r.Id, 2, bqs.Billing_Company_Name__r.Legal_Name__c);
                             hasOne = true;
                         }
 
@@ -71,7 +71,7 @@ namespace MISService.Methods
                         {
                             HandleAccount(bqs.Installing_Company_Name__r.Name, bqs.Installing_Company_Street__c, bqs.Installing_Company_Province__c, bqs.Installing_Company_Postal_Code__c,
                                 bqs.Installing_Company_City__c, bqs.Installing_Company_Country__c, bqs.Installing_Contact_Name__r.FirstName,
-                                bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id,bqs.Installing_Account_Intersection__c, bqs.Installing_Account_Corner__c, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3);
+                                bqs.Installing_Contact_Name__r.LastName, bqs.Installing_Contact_Phone__c, bqs.Installing_Contact_Name__r.Id, bqs.Installing_Account_Intersection__c, bqs.Installing_Account_Corner__c, misJobID, employeeNumber, bqs.Installing_Company_Name__r.Id, 3, bqs.Billing_Company_Name__r.Legal_Name__c);
                             hasOne = true;
                         }
 
@@ -209,7 +209,7 @@ namespace MISService.Methods
          * Type = 3 => Shipping
         */
         private void HandleAccount(string companyName, string companyStreet, string companyProvince, string companyPostalCode,
-            string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, string intersection, string corner, int misJobID, int employeeNumber, string accountID, int type)
+            string companyCity, string companyCountry, string firstName, string lastName, string phone, string contactID, string intersection, string corner, int misJobID, int employeeNumber, string accountID, int type, string legalName)
         {
             try
             {
@@ -219,8 +219,18 @@ namespace MISService.Methods
                     /* Add new billing address */
                     CUSTOMER customer = new CUSTOMER();
                     customer.NAME = companyName;
-                    customer.LEGALNAME_SAMEAS_NAME = true;
-                    customer.LEGAL_NAME = companyName;
+                    //customer.LEGALNAME_SAMEAS_NAME = true;
+
+                    if (legalName == null)
+                    {
+                        customer.LEGALNAME_SAMEAS_NAME = true;
+                        customer.LEGAL_NAME = companyName;
+                    }
+                    else
+                    {
+                        customer.LEGALNAME_SAMEAS_NAME = false;
+                        customer.LEGAL_NAME = legalName;//companyName; 
+                    }
                     customer.ADDR_1 = companyStreet;
                     customer.ADDR_2 = "";
                     customer.CITY = companyCity;
@@ -271,8 +281,18 @@ namespace MISService.Methods
                 {
                     CUSTOMER customer = _db.CUSTOMERs.FirstOrDefault(x => x.ROWID == customerID);
                     customer.NAME = companyName;
-                    customer.LEGALNAME_SAMEAS_NAME = true;
-                    customer.LEGAL_NAME = companyName;
+                    //customer.LEGALNAME_SAMEAS_NAME = true;
+                    if (legalName == null)
+                    {
+                        customer.LEGALNAME_SAMEAS_NAME = true;
+                        customer.LEGAL_NAME = companyName;
+                    }
+                    else
+                    {
+                        customer.LEGALNAME_SAMEAS_NAME = false;
+                        customer.LEGAL_NAME = legalName;//companyName; 
+                    }
+                    
                     customer.ADDR_1 = companyStreet;
                     customer.ADDR_2 = "";
                     customer.CITY = companyCity;
