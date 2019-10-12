@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="67r9xt2nokYlUHRWdmcCKNwg2ME=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/wx/6UAWwfhXwLvgZZt+Ysjr7DM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="SoapBinding">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Soap" contract="SfdcReference.Soap" bindingType="basicHttpBinding" address="https://login.salesforce.com/services/Soap/c/46.0/0DFf4000000hJ2i" bindingConfiguration="SoapBinding">
+    <endpoint name="Soap" contract="SfdcReference.Soap" bindingType="basicHttpBinding" address="https://login.salesforce.com/services/Soap/c/47.0/0DFf4000000hJ3H" bindingConfiguration="SoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://login.salesforce.com/services/Soap/c/46.0/0DFf4000000hJ2i</serializedValue>
+          <serializedValue>https://login.salesforce.com/services/Soap/c/47.0/0DFf4000000hJ3H</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

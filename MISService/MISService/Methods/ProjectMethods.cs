@@ -40,7 +40,7 @@ namespace MISService.Method
                 using (enterprise.SoapClient queryClient = new enterprise.SoapClient("Soap", apiAddr))
                 {
                     //create SQL query statement
-                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Owner.CommunityNickname, Bidding_Type__c, Bidding_Source__c, Product_Line__c, "
+                    string query = "SELECT Id, Project_Number__c, Name, CloseDate, Type, OwnerId, Owner.CommunityNickname, Bidding_Type__c, Bidding_Source__c, Product_Line__c, Middle_Updated_Flag__c, "
                                            + " Bidding_Due_Date__c, Bidding_Remark__c, Sync__c, Account_Executive__r.CommunityNickname, Project_Coordinator__r.CommunityNickname, "
                                            + " (SELECT Id, Name, Billing_Company_City__c, Billing_Contact_Name__r.Account.Id, Billing_Company_Name__r.Name, Billing_Company_Name__r.Id, Billing_Company_Postal_Code__c, Billing_Company_Province__c, Billing_Company_Street__c, Billing_Contact_Name__r.FirstName, Billing_Contact_Name__r.LastName, Billing_Contact_Name__r.Id, Billing_Contact_Phone__c, Billing_Company_Country__c, Quoting_Company_City__c, Quoting_Company_Name__r.Name, Quoting_Company_Name__r.Id,  Quoting_Contact_Name__r.Account.Id, Quoting_Company_Postal_Code__c, Quoting_Company_Province__c, Quoting_Company_Street__c, Quoting_Contact_Name__r.FirstName, Quoting_Contact_Name__r.LastName, Quoting_Contact_Name__r.Id, Quoting_Contact_Phone__c, Quoting_Company_Country__c,Installing_Company_City__c, Installing_Company_Name__r.Name, Installing_Company_Name__r.Id, Installing_Contact_Name__r.Account.Id, Installing_Company_Postal_Code__c, Installing_Company_Province__c, Installing_Company_Street__c, Installing_Contact_Name__r.FirstName, Installing_Contact_Name__r.LastName, Installing_Contact_Name__r.Id, Installing_Contact_Phone__c, Installing_Company_Country__c, Billing_Account_Intersection__c, Billing_Account_Corner__c, Installing_Account_Intersection__c,Installing_Account_Corner__c,Quoting_Account_Intersection__c,Quoting_Account_Corner__c,Billing_Company_Name__r.Legal_Name__c  FROM Bill_Quote_Ships__r), "
                                            + " (SELECT Id, Number_of_Signs__c, Project_Value_Estimated__c,  Remarks__c, Issue_Date__c, Due_Date__c, LandLord__r.Name, LandLord_Contact__r.Name, LandLord_Phone_Number__c, LandLord__r.BillingStreet, LandLord__r.BillingCity, LandLord__r.BillingState, LandLord__r.BillingPostalCode FROM Sign_Permits__r),"
@@ -48,9 +48,9 @@ namespace MISService.Method
                                            + " (SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c FROM StakeOut_Permits__r),"
                                            + " (SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c,  Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c  FROM SubContracts__r) "
                                            + " FROM Opportunity "
-                                          // + " WHERE Sync__c = true and CloseDate >= TODAY ";
-                                           //+ " WHERE Name='(TEST) 20191003'";
-                    +" WHERE Name='(TEST) PROJECT AUG 8 2019' or Name = '(TEST) 20191009' or Name = '(TEST) 20191003' or Name = '(TEST) NEW PROJECT 20190912' or Name = '(TEST) FS PROJECT'";
+                                           + " WHERE Sync__c = true and CloseDate >= TODAY and Middle_Updated_Flag__c = 1 ";
+                   //                        + " WHERE Middle_Updated_Flag__c = 1 and (Name='(TEST) 20191003' or Name='(TEST) PROJECT AUG 8 2019')  ";
+
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -65,6 +65,21 @@ namespace MISService.Method
 
                     //cast query results
                     IEnumerable<enterprise.Opportunity> opportunityList = result.records.Cast<enterprise.Opportunity>();
+
+                    enterprise.Opportunity[] opp = new enterprise.Opportunity[result.size];
+                    int i = 0;
+                    foreach (var opportunity in opportunityList)
+                    {
+                        enterprise.Opportunity temp = new enterprise.Opportunity();
+                        temp.Id = opportunity.Id;
+                        temp.Middle_Updated_Flag__c = 0;
+                        temp.Middle_Updated_Flag__cSpecified = true;
+                        opp[i] = temp;
+                        i++;
+                    }
+                    enterprise.LimitInfo[] l1;
+                    enterprise.SaveResult[] s1;
+                    queryClient.update(header, null, null, null, null, null, null, null, null, null, null, null, null, opp, out l1, out s1);
 
                     //show results
                     foreach (var opportunity in opportunityList)

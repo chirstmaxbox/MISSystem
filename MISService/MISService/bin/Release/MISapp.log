@@ -10647,3 +10647,4 @@ error CS0029: Cannot implicitly convert type 'MISService.SfdcReference.ListViewR
 error CS0029: Cannot implicitly convert type 'MISService.SfdcReference.ListViewRecordColumn' to 'MISService.SfdcReference.ListViewRecordColumn[]'
 '.  Please see InnerException for more details.
 2019-08-06 02:40:03,390 WARN MISService.Method.LogMethods - -------------- *** Endings MISService *** ------------
+2019-10-12 10:31:29,361 ERROR MISService.Method.LogMethods - AuthenticateSfdcEnterpriseUser:Error = INVALID_LOGIN: Invalid username, password, security token; or user locked out.
