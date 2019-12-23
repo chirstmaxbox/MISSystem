@@ -48,8 +48,8 @@ namespace MISService.Method
                                            + " (SELECT Id, Stick_Position_Radius__c, Dept_Of_Holes__c, Issue_Date__c, Due_Date__c, Remarks__c FROM StakeOut_Permits__r),"
                                            + " (SELECT Id, Name, First_Site_Contact__c, Second_Site_Contact__c, Budget__c, Provided_By__c,  Remarks__c, Due_Date__c, Rush__c, Requirement__c, Requirement_As_Other__c, Estimated_Shipping_Cost__c, Shipping_Items_Total_Value__c, Work_Order_Number__c  FROM SubContracts__r) "
                                            + " FROM Opportunity "
-                            //              + " WHERE Sync__c = true and Middle_Updated_Flag__c = 1 ";
-                                          + " WHERE name='F.S-Structure-Hugo Boss West Edmonton Mall-Hummingbird'  ";
+                                           + " WHERE Sync__c = true and Middle_Updated_Flag__c = 1 ";
+                            //              + " WHERE name='(TEST) PROJECT AUG 8 2019'";
 
 
                     enterprise.QueryResult result;
@@ -66,6 +66,7 @@ namespace MISService.Method
                     //cast query results
                     IEnumerable<enterprise.Opportunity> opportunityList = result.records.Cast<enterprise.Opportunity>();
 
+                    /*
                     enterprise.Opportunity[] opp = new enterprise.Opportunity[result.size];
                     int i = 0;
                     foreach (var opportunity in opportunityList)
@@ -80,6 +81,32 @@ namespace MISService.Method
                     enterprise.LimitInfo[] l1;
                     enterprise.SaveResult[] s1;
                     queryClient.update(header, null, null, null, null, null, null, null, null, null, null, null, null, opp, out l1, out s1);
+                     * */
+
+                    int size = result.size;
+                    int j = 1;
+                    int k = 0;
+                    while (j <= size)
+                    {
+                        int limitArray = (size > 150) ? 150 : size;
+                        size -= limitArray;
+                        
+                        enterprise.Opportunity[] opp = new enterprise.Opportunity[limitArray];
+                        int i = 0;
+                        for (int m = k; m < k + limitArray; m++)
+                        {
+                            enterprise.Opportunity temp = new enterprise.Opportunity();
+                            temp.Id = opportunityList.ElementAt(m).Id;
+                            temp.Middle_Updated_Flag__c = 0;
+                            temp.Middle_Updated_Flag__cSpecified = true;
+                            opp[i] = temp;
+                            i++;
+                        }
+                        k += limitArray;
+                        enterprise.LimitInfo[] l1;
+                        enterprise.SaveResult[] s1;
+                        queryClient.update(header, null, null, null, null, null, null, null, null, null, null, null, null, opp, out l1, out s1);
+                    }
 
                     //show results
                     foreach (var opportunity in opportunityList)
