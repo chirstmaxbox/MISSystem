@@ -48,9 +48,11 @@ namespace MISService.Methods
                     string query = "SELECT Id, Name, Status__c, Invoice_Type__c, Issue_Date__c, Shipping_Method__c, Contract_Number__c, Contract_Date__c, Project_Name__r.Account_Executive__r.CommunityNickname, Project_Name__r.Project_Coordinator__r.CommunityNickname, "
                         + " Terms__c, SubTotal__c, Discount__c, HST__c, Deposit__c, Quotation_Number__r.Tax_Option__c, Work_Order_Number__c, Project_Name__r.Currency__c, Invoice_Number__c, Quotation_Number__r.PO_No__c, Suffix__c, Version__c, "
                         + " (SELECT Id, Item_Name__c, Item_Order__c, Requirement__c, Item_Description__c, Item_Cost__c, Quantity__c FROM Items__r), "
-                        + " (SELECT Id, Service_Name__r.Name, Service_Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) "
+                        + " (SELECT Id, Service_Name__r.Name, Service_Detail__c, Service_Cost__c,Note__c, Service_Name__r.MIS_Service_Number__c FROM Service_Costs__r) ,"
+                        + "	Subtotal_After_Discount__c "
                         + " FROM Invoice__c " 
                         + " WHERE Project_Name__c = '" + sfProjectID + "'";
+                      
 
                     enterprise.QueryResult result;
                     queryClient.query(
@@ -94,7 +96,7 @@ namespace MISService.Methods
                         if (invoiceID != 0)
                         {
                             UpdateInvoice(invoiceID, invoiceName, ql.Issue_Date__c, userEmployeeID, ql.Terms__c, ql.Contract_Number__c,
-                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Account_Executive__r, ql.Project_Name__r.Project_Coordinator__r, ql.Quotation_Number__r, ql.Suffix__c, ql.Version__c, ql.Status__c);
+                                ql.Shipping_Method__c, ql.Contract_Date__c, ql.Quotation_Number__r.Tax_Option__c, ql.HST__c, ql.Deposit__c, ql.Discount__c, ql.Invoice_Type__c, ql.Work_Order_Number__c, ql.Project_Name__r.Currency__c, ql.Project_Name__r.Account_Executive__r, ql.Project_Name__r.Project_Coordinator__r, ql.Quotation_Number__r, ql.Suffix__c, ql.Version__c, ql.Status__c,ql.Subtotal_After_Discount__c);
 
                             /* handle item */
                             HandleInvoiceItem(invoiceID, estRevID, ql.Id, ql.Items__r);
@@ -399,7 +401,7 @@ namespace MISService.Methods
         }
 
         private void UpdateInvoice(int invoiceID, string invoiceNumber, DateTime? issueDate, int sale, string term, string contractNo,
-            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency, enterprise.User accountExecutive, enterprise.User projectCoordinator, enterprise.Quotation__c po, string suffix, double? version, String status)
+            string shipMethod, DateTime? contractDate, string taxOption, double? tax, double? deposit, double? discount, string invoiceType, string workOrderList, string currency, enterprise.User accountExecutive, enterprise.User projectCoordinator, enterprise.Quotation__c po, string suffix, double? version, String status, double? subTotal)
         {
             try
             {
@@ -583,7 +585,10 @@ namespace MISService.Methods
                     {
                         invoice.po = po.PO_No__c;
                     }
-
+                    if (subTotal != null)
+                    {
+                        invoice.InvoiceAmount = Convert.ToDecimal(subTotal);
+                    }
                     string workOrders = "";
                     if (!string.IsNullOrEmpty(workOrderList))
                     {
