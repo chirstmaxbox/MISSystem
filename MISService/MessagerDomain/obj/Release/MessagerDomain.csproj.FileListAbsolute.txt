@@ -8,3 +8,8 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MessagerDomain\bin\Release\MessagerDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MessagerDomain\obj\Release\MessagerDomain.pdb

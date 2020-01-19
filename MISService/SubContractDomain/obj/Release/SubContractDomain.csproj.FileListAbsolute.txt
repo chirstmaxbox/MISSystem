@@ -28,3 +28,17 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Relea
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\SubContractDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\SubContractDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\SubContractDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EmployeeDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EntityFramework.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\MyCommon.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EmployeeDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\MyCommon.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EntityFramework.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.csprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\SubContractDomain\obj\Release\SubContractDomain.pdb

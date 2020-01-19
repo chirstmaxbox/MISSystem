@@ -1,0 +1,115 @@
+2020-01-16 19:18:32,918 ERROR MISService.Method.LogMethods - CreateNewProject:Error:12
+2020-01-16 19:18:32,918 ERROR MISService.Method.LogMethods - GetAllProjects:Error:Cannot create a new project!
+2020-01-16 19:19:58,640 ERROR MISService.Method.LogMethods - CreateNewProject:Error:12
+2020-01-16 19:19:58,656 ERROR MISService.Method.LogMethods - GetAllProjects:Error:Cannot create a new project!
+2020-01-16 19:21:32,569 ERROR MISService.Method.LogMethods - CreateNewProject:Error:12
+2020-01-16 19:22:05,681 ERROR MISService.Method.LogMethods - GetAllProjects:Error:Cannot create a new project!
+2020-01-16 19:30:53,931 ERROR MISService.Method.LogMethods - CreateNewProject:Error:12
+2020-01-16 19:30:59,126 ERROR MISService.Method.LogMethods - GetAllProjects:Error:Cannot create a new project!
+2020-01-16 20:31:23,583 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:23,646 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:23,742 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:23,792 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:23,844 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:23,894 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:24,479 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:24,592 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:24,618 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:31:24,667 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:57,462 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:59,792 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:59,827 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:59,862 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:59,895 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:40:59,928 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:44:46,417 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:44:46,453 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:44:46,470 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 20:44:46,505 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-16 22:29:36,898 ERROR MISService.Method.LogMethods - UpdateBiddingProject:Error:The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList", column 'jobID'.
+The statement has been terminated.
+2020-01-16 22:34:36,000 ERROR MISService.Method.LogMethods - UpdateBiddingProject:Error:The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList", column 'jobID'.
+The statement has been terminated.
+2020-01-16 23:10:03,693 ERROR MISService.Method.LogMethods - UpdateBiddingProject:Error:The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList", column 'jobID'.
+The statement has been terminated.
+2020-01-17 09:33:56,068 ERROR MISService.Method.LogMethods - UpdateBiddingProject:Error:The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_Sales_JobMaster_BiddingJob_Sales_JobMaster_BiddingJob". The conflict occurred in database "SQLLHDB", table "dbo.Sales_JobMasterList", column 'jobID'.
+The statement has been terminated.
+2020-01-17 11:34:12,700 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-17 11:34:13,624 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-17 11:34:13,647 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-17 11:46:49,689 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-17 11:46:50,640 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-17 11:46:50,656 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:43,733 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:47,870 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:47,922 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:47,949 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:48,243 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:48,301 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:48,364 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:48,450 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:00:48,522 ERROR MISService.Method.LogMethods - UpdateWorkOrderItem:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:34:47,294 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:34:51,025 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:34:53,803 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:34:56,233 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:35:57,452 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:35:59,520 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:36:00,999 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:36:02,429 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:51:08,303 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:55:07,077 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:55:14,698 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:55:15,527 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:02,960 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:06,816 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:09,886 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:12,742 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:47,688 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:51,317 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:53,489 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-18 23:58:58,421 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:49:16,619 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:49:17,206 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:49:17,224 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:49:17,244 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:50:57,197 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:50:59,284 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:00,268 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:01,015 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:33,699 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:34,444 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:34,668 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:51:34,896 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:52:23,954 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:52:25,270 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:52:26,414 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:52:27,506 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:53:20,923 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:53:22,545 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:53:27,099 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:53:28,293 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:56:47,408 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:56:48,848 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:56:50,648 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 00:56:52,781 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 01:06:21,582 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 01:06:24,592 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 01:06:25,441 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 01:06:25,678 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 09:53:37,884 ERROR MISService.Method.LogMethods - GetAllProjects:Error:MALFORMED_QUERY: 
+Opportunity  WHERE name= 'TEST_MY1''
+                                   ^
+ERROR at Row:1:Column:2601
+line 1:2601 mismatched character '<EOF>' expecting '''
+2020-01-19 09:56:29,089 ERROR MISService.Method.LogMethods - GetAllProjects:Error:MALFORMED_QUERY: 
+Opportunity  WHERE name= 'TEST_MY1''
+                                   ^
+ERROR at Row:1:Column:2601
+line 1:2601 mismatched character '<EOF>' expecting '''
+2020-01-19 10:21:41,399 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 10:21:43,762 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 10:21:45,999 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 10:21:46,022 ERROR MISService.Method.LogMethods - UpdateWorkOrder:Error:Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+2020-01-19 10:33:40,705 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: kerry.fan does not exist in database
+2020-01-19 10:33:47,842 ERROR MISService.Method.LogMethods - UpdateProject:Error:User Name: kerry.fan does not exist in database

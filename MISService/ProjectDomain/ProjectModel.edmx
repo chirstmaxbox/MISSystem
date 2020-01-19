@@ -2739,7 +2739,7 @@
           <Property Type="String" Name="permit" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="stakeout" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="outsourcingInstaller" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Remarks" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remarks" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Sales" Nullable="false" />
           <Property Type="Int32" Name="Sa1ID" />
           <Property Type="Int32" Name="preWorkOrder" />
@@ -4592,7 +4592,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <edmx:Diagram Name="ProjectModel" ZoomLevel="62">
+      <edmx:Diagram Name="ProjectModel" ZoomLevel="53">
         <edmx:EntityTypeShape EntityType="ProjectModel.Sales_JobMasterList_Invoice_Workorder" Width="3.75" PointX="21.375" PointY="35.375" Height="1.9802864583333388" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="ProjectModel.Sales_Wip" Width="1.5" PointX="23.25" PointY="28.25" Height="4.8648079427083317" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="ProjectModel.tblWipTask" Width="1.5" PointX="32.625" PointY="28.25" Height="3.5186979166666674" IsExpanded="true" />

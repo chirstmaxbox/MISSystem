@@ -1025,7 +1025,7 @@
     <Property Type="String" Name="permit" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="stakeout" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="outsourcingInstaller" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Remarks" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="Sales" Nullable="false" />
     <Property Type="Int32" Name="Sa1ID" />
     <Property Type="Int32" Name="preWorkOrder" />

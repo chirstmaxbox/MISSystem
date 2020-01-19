@@ -54,3 +54,14 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\EmployeeDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommon.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommonWeb.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\bin\Release\MyCommon.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.csprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\EmployeeDomain\obj\Release\EmployeeDomain.pdb

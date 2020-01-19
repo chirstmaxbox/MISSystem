@@ -34,3 +34,15 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\CustomerDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\MyCommon.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\MyCommon.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.csprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\CustomerDomain\obj\Release\CustomerDomain.pdb

@@ -31,3 +31,14 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyC
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.xml
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommonWeb.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommon.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\bin\Release\MyCommon.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.vbprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.Resources.resources
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.vbproj.GenerateResource.Cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\MyCommonWeb\obj\Release\MyCommonWeb.pdb

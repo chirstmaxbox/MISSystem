@@ -21,3 +21,8 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\Ex
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ExportDomain\bin\Release\ExportDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ExportDomain\obj\Release\ExportDomain.pdb

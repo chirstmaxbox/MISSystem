@@ -39,3 +39,15 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\bin\Release\Microsof
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.csprojResolveAssemblyReference.cache
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\SpecDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\EmployeeDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\MyCommon.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\EmployeeDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\MyCommon.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\bin\Release\Microsoft.Web.Infrastructure.xml
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.csprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\Domain\obj\Release\SpecDomain.pdb

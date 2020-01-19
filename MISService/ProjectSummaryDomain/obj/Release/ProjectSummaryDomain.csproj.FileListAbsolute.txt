@@ -12,3 +12,9 @@ C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Re
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.pdb
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.dll
 C:\Users\anh.tran\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll.config
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\bin\Release\ProjectSummaryDomain.pdb
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.csprojResolveAssemblyReference.cache
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.dll
+C:\Users\ngocmy.le\Documents\GIT\MISSystem\MISService\ProjectSummaryDomain\obj\Release\ProjectSummaryDomain.pdb

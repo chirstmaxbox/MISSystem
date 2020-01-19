@@ -18,19 +18,19 @@ namespace MISService
         /// </summary>
         static void Main()
         {
-            /*
-            string userName = Convert.ToString(ConfigurationManager.AppSettings["SFUsername"]);
-            string password = Convert.ToString(ConfigurationManager.AppSettings["SFPassword"]);
-            string token = Convert.ToString(ConfigurationManager.AppSettings["SFToken"]);
 
-            LogMethods.Log.Info("-------------- *** Starting MISService *** ------------ ");
-            if (SalesForceMethods.AuthenticateSfdcEnterpriseUser(userName, password, token))
-            {
-                ProjectMethods pm = new ProjectMethods();
-                pm.GetAllProjects();
-            }
-            LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");*/
-            
+            //string userName = Convert.ToString(ConfigurationManager.AppSettings["SFUsername"]);
+            //string password = Convert.ToString(ConfigurationManager.AppSettings["SFPassword"]);
+            //string token = Convert.ToString(ConfigurationManager.AppSettings["SFToken"]);
+
+            //LogMethods.Log.Info("-------------- *** Starting MISService *** ------------ ");
+            //if (SalesForceMethods.AuthenticateSfdcEnterpriseUser(userName, password, token))
+            //{
+            //    ProjectMethods pm = new ProjectMethods();
+            //    pm.GetAllProjects();
+            //}
+            //LogMethods.Log.Debug("-------------- *** Endings MISService *** ------------ ");
+
             // Making a window service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
